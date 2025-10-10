@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoCloudGPT — Private AI for Business</title>
+  <meta name="description" content="Your own ChatGPT — self-hosted, secure, and private.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --accent: #238636;
+      --muted: #8b949e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #21262d;
+    }
+    header h1 { font-size: 1.4rem; margin: 0; }
+    nav a {
+      color: var(--fg);
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover { color: var(--accent); }
+    main { text-align: center; padding: 4rem 1rem 6rem; }
+    main h2 { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    main p.lead { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; color: var(--muted); }
+    .button {
+      background: var(--accent);
+      color: white;
+      padding: 0.9rem 1.6rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    section.features {
+      background: #161b22;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #0d1117;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #21262d;
+    }
+    .card h3 { color: var(--accent); margin-top: 0; }
+    footer {
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-top: 1px solid #21262d;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NoCloudGPT</h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="https://github.com/funtech64/nocloudgpt">GitHub</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Your Private ChatGPT — No Cloud Required</h2>
+    <p class="lead">
+      Run large language models locally with full privacy. No API keys. No data leaks.
+      Built with <strong>Ollama</strong>, <strong>Khoj</strong>, <strong>Qdrant</strong>, and <strong>Open-WebUI</strong>.
+    </p>
+    <a class="button" href="https://github.com/funtech64/nocloudgpt">Get Started</a>
+  </main>
+
+  <section id="features" class="features">
+    <h2>Why NoCloudGPT?</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🔐 100% Private</h3>
+        <p>Your data never leaves your network. Perfect for legal, medical, or educational use.</p>
+      </div>
+      <div class="card">
+        <h3>⚙️ Self-Hosted Stack</h3>
+        <p>Docker-based deployment with Ollama, Qdrant, Postgres, and Open-WebUI — ready in minutes.</p>
+      </div>
+      <div class="card">
+        <h3>🧠 Smart RAG Search</h3>
+        <p>Upload documents and chat with your data using local embeddings and retrieval.</p>
+      </div>
+      <div class="card">
+        <h3>💼 Business-Ready</h3>
+        <p>Multi-user access, backups, and SSL out of the box — all under your control.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>Built by <a href="https://github.com/funtech64" style="color: var(--accent);">Jonathan Jolly</a> • <a href="mailto:jonathanjolly@hushmail.com" style="color: var(--accent);">Contact</a></p>
+    <p>© 2025 NoCloudGPT. All rights reserved.</p>
+  </footer>
+</body>
+</html>
