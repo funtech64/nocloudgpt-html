@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NoCloudGPT — FAQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Frequently asked questions about NoCloudGPT — a private, self-hosted AI chat system for your documents." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    :root { --bg:#0d1117; --fg:#e6edf3; --accent:#238636; --muted:#8b949e; --border:#21262d; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; }
+    header, footer { border-bottom: 1px solid var(--border); }
+    header { display:flex; justify-content:space-between; align-items:center; padding:1.25rem 2rem; }
+    header h1 { margin:0; font-size:1.25rem; }
+    nav a { color:var(--fg); text-decoration:none; margin-left:1rem; font-weight:500; }
+    nav a:hover { color:var(--accent); }
+    main { max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+    h2 { font-size: 2rem; margin: 0.25rem 0 1rem; }
+    p.lead { color: var(--muted); margin-top: 0; }
+    details { background:#0d1117; border:1px solid var(--border); border-radius:10px; padding:1rem 1.25rem; margin:1rem 0; }
+    summary { cursor:pointer; font-weight:700; color:var(--fg); }
+    .pill { display:inline-block; background:#161b22; color:var(--muted); border:1px solid var(--border); padding:0.2rem 0.6rem; border-radius:999px; font-size:0.8rem; margin-right:0.4rem; }
+    a.button { display:inline-block; margin-top:1.25rem; background:var(--accent); color:#fff; text-decoration:none; padding:0.8rem 1.2rem; border-radius:8px; font-weight:700; }
+    footer { border-top:1px solid var(--border); text-align:center; padding:2rem 1rem; color:var(--muted); }
+  </style>
+
+  <!-- SEO: FAQ schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Will it be 'dumb'?",
+        "acceptedAnswer":{"@type":"Answer","text":"No. NoCloudGPT runs strong open models (e.g., Meta, Google–licensed open weights) locally. We don’t send your prompts to a cloud API. We connect the model to your documents via retrieval (RAG) so it can answer with your content."}
+      },
+      {
+        "@type":"Question",
+        "name":"Do you fine-tune the model on our data?",
+        "acceptedAnswer":{"@type":"Answer","text":"For most small businesses, we use Retrieval-Augmented Generation (RAG) instead of full fine-tuning. Your files are indexed privately; at question time the model reads the most relevant snippets and answers. This is faster, cheaper, and keeps data private. Fine-tuning is optional for narrow use-cases."}
+      },
+      {
+        "@type":"Question",
+        "name":"Where does it run?",
+        "acceptedAnswer":{"@type":"Answer","text":"On your own hardware (office or home) or a private VM you control. The chat UI is open-source and served from your box. No third-party runtimes."}
+      },
+      {
+        "@type":"Question",
+        "name":"Does any data leave our network?",
+        "acceptedAnswer":{"@type":"Answer","text":"By default, no. Models, embeddings, indexes, and chat history live on your machine. We can optionally enable updates or off-site backups through your chosen storage with encryption."}
+      },
+      {
+        "@type":"Question",
+        "name":"What types of documents can it use?",
+        "acceptedAnswer":{"@type":"Answer","text":"PDF, DOCX, PPTX, TXT, Markdown, and many HTML pages. We can also sync from Google Drive, OneDrive, SharePoint, SMB/NFS, or an S3 bucket you control."}
+      },
+      {
+        "@type":"Question",
+        "name":"How private and secure is this?",
+        "acceptedAnswer":{"@type":"Answer","text":"It’s designed for privacy: local compute, no external API calls, optional SSO/MFA, role-based access per collection, encrypted backups. We’ll help you lock it down to LAN/VPN."}
+      },
+      {
+        "@type":"Question",
+        "name":"What hardware do we need?",
+        "acceptedAnswer":{"@type":"Answer","text":"A modern desktop or small tower with 32–64GB RAM and fast NVMe storage works well. A 12–16GB NVIDIA GPU boosts speed, but CPU-only deployments are possible with smaller models."}
+      },
+      {
+        "@type":"Question",
+        "name":"Will it remember chats?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes. Multi-user chat history and document citations are stored locally. Admins can export or prune history as needed."}
+      },
+      {
+        "@type":"Question",
+        "name":"What’s the difference between RAG and training?",
+        "acceptedAnswer":{"@type":"Answer","text":"RAG indexes your files and fetches the relevant chunks at answer time—fast, up-to-date, and private. Training (fine-tuning) changes the model’s weights and is usually slower, costlier, and less flexible for dynamic documents."}
+      },
+      {
+        "@type":"Question",
+        "name":"Can it run fully offline?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes. Once models are downloaded and your docs are indexed, it can run with no internet. (You may reconnect for software updates or off-site backups when you choose.)"}
+      },
+      {
+        "@type":"Question",
+        "name":"How are updates and backups handled?",
+        "acceptedAnswer":{"@type":"Answer","text":"We include a simple update routine (Docker images) and encrypted backup jobs for indexes, chat DB, and config. You control the target: local disk, NAS, or S3-compatible storage."}
+      },
+      {
+        "@type":"Question",
+        "name":"Is this legal/medical advice?",
+        "acceptedAnswer":{"@type":"Answer","text":"No. The system can summarize and retrieve your documents, but it does not replace professional judgment. You retain responsibility for reviewing outputs."}
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>NoCloudGPT</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="https://github.com/funtech64/nocloudgpt">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Frequently Asked Questions</h2>
+    <p class="lead">Straight answers about how our private, self-hosted AI works — and why “no cloud” matters.</p>
+
+    <div class="pill">Private</div>
+    <div class="pill">Self-Hosted</div>
+    <div class="pill">RAG (not just chat)</div>
+
+    <details open>
+      <summary>1) Will it be “dumb”?</summary>
+      <p>Not at all. We run strong open models locally (e.g., from Meta or Google-licensed open weights). Then we connect the model to <em>your</em> documents using retrieval-augmented generation (RAG), so answers are grounded in your content — without sending data to external APIs.</p>
+    </details>
+
+    <details>
+      <summary>2) Do you “train the model” on our data?</summary>
+      <p>Most deployments use <strong>RAG</strong>: we privately index your files and fetch relevant snippets at answer time. This keeps results fresh and private. Full fine-tuning is possible for narrow or repetitive tasks, but usually unnecessary.</p>
+    </details>
+
+    <details>
+      <summary>3) Where does it run?</summary>
+      <p>On your own machine (office or home) or on a VM you control. The web UI is open-source and served from your box. No shared SaaS runtime.</p>
+    </details>
+
+    <details>
+      <summary>4) Does any data leave our network?</summary>
+      <p>By default, no. Models, indexes, and chat history remain on your hardware. Optional updates and backups can be configured to your approved destinations with encryption.</p>
+    </details>
+
+    <details>
+      <summary>5) What documents can it use?</summary>
+      <p>PDF, DOCX, PPTX, TXT, Markdown, many HTML pages — plus sync from Google Drive, OneDrive/SharePoint, SMB/NAS, or S3 you control.</p>
+    </details>
+
+    <details>
+      <summary>6) How private and secure is this?</summary>
+      <p>Local compute, no external inference calls, optional SSO/MFA, role-based access per collection, LAN/VPN-only exposure, and encrypted backups. We’ll harden it with you.</p>
+    </details>
+
+    <details>
+      <summary>7) What hardware do we need?</summary>
+      <p>Great baseline: modern i7/Ryzen 7, 32–64GB RAM, fast NVMe. A 12–16GB NVIDIA GPU (e.g., 3060/4060) speeds things up. CPU-only is fine with smaller models.</p>
+    </details>
+
+    <details>
+      <summary>8) Will it remember chats and cite sources?</summary>
+      <p>Yes. Multi-user chat history lives locally, and answers can include citations back to your documents for easy verification.</p>
+    </details>
+
+    <details>
+      <summary>9) RAG vs. training — what’s the real difference?</summary>
+      <p><strong>RAG</strong> = index + fetch snippets at answer time (fast, flexible, up-to-date). <strong>Training</strong> = change model weights (slower, costlier, static until retrained). We default to RAG.</p>
+    </details>
+
+    <details>
+      <summary>10) Can it run fully offline?</summary>
+      <p>Yes. After initial setup (models downloaded, docs indexed), it runs without internet. Reconnect when you want updates or to push encrypted backups.</p>
+    </details>
+
+    <details>
+      <summary>11) How do updates and backups work?</summary>
+      <p>Updates are a simple Docker refresh. Backups cover the vector index, chat DB, and config — to your NAS or S3-compatible storage with encryption and retention.</p>
+    </details>
+
+    <details>
+      <summary>12) Is this legal/medical advice?</summary>
+      <p>No. The system helps you search and summarize your own materials. You’re responsible for professional review and compliance.</p>
+    </details>
+
+    <a class="button" href="mailto:jonathanjolly@hushmail.com">Ask a question not listed</a>
+  </main>
+
+  <footer>
+    <p>© 2025 NoCloudGPT • Built by <a href="https://github.com/funtech64" style="color:var(--accent);">Jonathan Jolly</a></p>
+  </footer>
+</body>
+</html>
