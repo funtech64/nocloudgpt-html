@@ -1,88 +1,440 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services | NoCloudGPT</title>
-  <meta name="description" content="Linux server administration, VPS configuration, Docker troubleshooting, and secure technical services.">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Remote technical services for Linux servers, VPS setup, Docker support, cloud infrastructure, and private AI deployment. In-person services available in the Denver Metro Area only." />
+  <meta name="keywords" content="Linux server administration, VPS support, Docker troubleshooting, private AI deployment, Ollama support, Open WebUI setup, cloud configuration, Denver Metro technical services" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="NoCloudGPT" />
+  <meta property="og:title" content="Services | NoCloudGPT" />
+  <meta property="og:description" content="Remote Linux, cloud, Docker, and private AI deployment support. In-person services available in the Denver Metro Area only." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nocloudgpt.com/services.html" />
+  <meta property="og:site_name" content="NoCloudGPT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Services | NoCloudGPT" />
+  <meta name="twitter:description" content="Remote technical services for Linux, cloud infrastructure, Docker, and private AI deployment." />
+  <link rel="canonical" href="https://nocloudgpt.com/services.html" />
+  <style>
+    :root {
+      --bg: #f4f8fc;
+      --panel: #ffffff;
+      --panel-2: #eef4fb;
+      --text: #18324a;
+      --muted: #5f748b;
+      --line: #d7e3f0;
+      --accent: #2f6fed;
+      --accent-2: #5f9cff;
+      --success: #1f8f5f;
+      --shadow: 0 14px 34px rgba(34, 66, 110, 0.10);
+      --radius: 18px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef5fb 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(47, 111, 237, 0.10);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #10263a;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text);
+      opacity: 0.95;
+      font-size: 0.98rem;
+    }
+
+    .hero {
+      padding: 4.5rem 0 2.5rem;
+    }
+
+    .hero-copy,
+    .section-card,
+    .service-card,
+    .cta-panel,
+    .faq {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 249, 255, 0.98));
+      border: 1px solid rgba(47, 111, 237, 0.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      margin: 0 0 0.8rem;
+      color: #10263a;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin-bottom: 0.8rem;
+    }
+
+    h2 {
+      font-size: clamp(1.55rem, 3vw, 2.3rem);
+      margin-bottom: 0.9rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+    }
+
+    p, li { color: var(--muted); }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(47, 111, 237, 0.08);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .note-box {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 14px;
+      background: rgba(47, 111, 237, 0.05);
+      border: 1px solid rgba(47, 111, 237, 0.10);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.85rem 1.1rem;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      text-align: center;
+      transition: 0.2s ease;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #7db0ff);
+      color: #ffffff;
+    }
+
+    .btn-secondary {
+      background: rgba(47, 111, 237, 0.04);
+      border-color: rgba(47, 111, 237, 0.16);
+      color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    main section {
+      padding: 1rem 0 2.2rem;
+    }
+
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .check-list {
+      padding-left: 1.1rem;
+      margin: 0.8rem 0 0;
+    }
+
+    .check-list li + li {
+      margin-top: 0.55rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(47, 111, 237, 0.10);
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .hero-copy,
+      .section-card,
+      .service-card,
+      .cta-panel,
+      .faq {
+        padding: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <div class="container nav">
-    <div class="logo">NoCloudGPT</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="software.html">Software</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<section class="page-hero">
-  <div class="container">
-    <h1>Technical Services</h1>
-    <p>Remote Linux server administration and secure infrastructure support.</p>
-  </div>
-</section>
-
-<section class="card-section">
-  <div class="container cards">
-
-    <div class="card">
-      <h3>Linux Server Administration</h3>
-      <ul>
-        <li>Ubuntu & Debian server setup</li>
-        <li>User & permission management</li>
-        <li>Firewall configuration (UFW / iptables)</li>
-        <li>SSH hardening</li>
-        <li>Log analysis & system diagnostics</li>
-        <li>Performance tuning</li>
-      </ul>
+  <header>
+    <div class="container nav-wrap">
+      <div class="brand">NoCloudGPT</div>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/services.html" aria-current="page">Services</a>
+        <a href="/index-nc.html">NC-GPT</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/software.html">Software</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="card">
-      <h3>VPS & Cloud Configuration</h3>
-      <ul>
-        <li>DigitalOcean, Linode, AWS VPS setup</li>
-        <li>SSL certificate installation (Let's Encrypt)</li>
-        <li>Nginx / Apache configuration</li>
-        <li>Reverse proxy setup</li>
-        <li>Backup configuration</li>
-      </ul>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <div class="eyebrow">Remote Technical Services</div>
+          <h1>Technical Services</h1>
+          <p class="lead">
+            NoCloudGPT provides practical technical services for Linux servers, cloud systems, Docker environments, and private AI infrastructure. This page is for customers who need direct help with setup, recovery, troubleshooting, and ongoing technical support.
+          </p>
+
+          <div class="note-box">
+            <p>
+              <strong>Remote services are available broadly.</strong> In-person services are available in the <strong>Denver Metro Area only</strong>.
+            </p>
+          </div>
+
+          <div class="button-row">
+            <a class="btn btn-primary" href="/contact.html">Request Service</a>
+            <a class="btn btn-secondary" href="/pricing.html">View Pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>How services fit with NoCloudGPT</h2>
+        <div class="grid-3">
+          <article class="section-card">
+            <h3>Implementation help</h3>
+            <p>
+              Some customers want software. Others need hands-on technical help to get the environment working correctly. Services support that second path.
+            </p>
+          </article>
+          <article class="section-card">
+            <h3>Recovery and troubleshooting</h3>
+            <p>
+              When a Linux, Docker, or cloud environment becomes unstable, services provide a way to recover systems and reduce downtime.
+            </p>
+          </article>
+          <article class="section-card">
+            <h3>Private AI deployment support</h3>
+            <p>
+              Services can also support YC-GPT and NC-GPT deployments when a customer needs help with setup, hosting, or operational cleanup.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Available services</h2>
+        <div class="grid-2">
+          <article class="service-card">
+            <h3>Linux Server Administration</h3>
+            <ul class="check-list">
+              <li>Ubuntu and Debian server setup</li>
+              <li>User and permission management</li>
+              <li>SSH hardening</li>
+              <li>Firewall configuration with UFW or iptables</li>
+              <li>System diagnostics and log review</li>
+              <li>Performance tuning and stability review</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>VPS and Cloud Configuration</h3>
+            <ul class="check-list">
+              <li>AWS, DigitalOcean, Linode, and similar VPS setup</li>
+              <li>Reverse proxy configuration</li>
+              <li>Nginx or Apache configuration</li>
+              <li>SSL certificate installation</li>
+              <li>Backup setup and basic recovery planning</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Docker and Application Support</h3>
+            <ul class="check-list">
+              <li>Docker installation and troubleshooting</li>
+              <li>Docker Compose corrections</li>
+              <li>Port conflict resolution</li>
+              <li>Service recovery and restart cleanup</li>
+              <li>Container networking support</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Private AI Deployment Support</h3>
+            <ul class="check-list">
+              <li>Ollama deployment help</li>
+              <li>Open WebUI setup and repair</li>
+              <li>Private AI environment cleanup</li>
+              <li>Support for YC-GPT or NC-GPT rollout</li>
+              <li>Model deployment and hosting guidance</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Network and Security Services</h3>
+            <ul class="check-list">
+              <li>WireGuard setup</li>
+              <li>DNS configuration</li>
+              <li>Firewall troubleshooting</li>
+              <li>Secure remote access configuration</li>
+              <li>Basic hardening recommendations</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Recovery and Troubleshooting</h3>
+            <ul class="check-list">
+              <li>Broken cloud deployment recovery</li>
+              <li>Service triage and cleanup</li>
+              <li>Environment drift correction</li>
+              <li>Basic rebuild planning</li>
+              <li>Practical next-step recommendations</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container grid-2">
+        <article class="faq">
+          <h3>Who is this page for?</h3>
+          <p>
+            This page is for customers who need direct technical help, not just software. That includes Linux support, cloud deployment assistance, Docker troubleshooting, and private AI environment setup.
+          </p>
+        </article>
+
+        <article class="faq">
+          <h3>Do you offer in-person service?</h3>
+          <p>
+            Yes, but only in the Denver Metro Area. Remote services remain the primary offering for most technical work.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-panel">
+          <h2>Need direct technical help?</h2>
+          <p>
+            If you need hands-on support for Linux servers, cloud deployment, Docker issues, or private AI infrastructure, reach out with your environment details and goals.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="/contact.html">Contact NoCloudGPT</a>
+            <a class="btn btn-secondary" href="/pricing.html">See Pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-flex">
+      <div>Colorado, USA • Remote Services Available • In-Person: Denver Metro Area Only</div>
+      <div>© 2026 NoCloudGPT</div>
     </div>
-
-    <div class="card">
-      <h3>Docker & Application Support</h3>
-      <ul>
-        <li>Docker installation & troubleshooting</li>
-        <li>Docker Compose corrections</li>
-        <li>Port conflicts & service recovery</li>
-        <li>Container networking issues</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Network & Security Services</h3>
-      <ul>
-        <li>WireGuard setup</li>
-        <li>DNS configuration</li>
-        <li>Firewall troubleshooting</li>
-        <li>Secure remote access configuration</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <p>Colorado, USA • Remote Services Available</p>
-    <p>© 2026 NoCloudGPT</p>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
