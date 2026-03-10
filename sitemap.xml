@@ -2,17 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nocloudgpt.com/</loc>
+    <lastmod>2026-03-09</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/index-nc.html</loc>
+    <lastmod>2026-03-09</lastmod>
   </url>
   <url>
     <loc>https://nocloudgpt.com/services.html</loc>
+    <lastmod>2026-03-09</lastmod>
   </url>
   <url>
     <loc>https://nocloudgpt.com/pricing.html</loc>
+    <lastmod>2026-03-09</lastmod>
   </url>
   <url>
     <loc>https://nocloudgpt.com/software.html</loc>
+    <lastmod>2026-03-09</lastmod>
   </url>
   <url>
     <loc>https://nocloudgpt.com/contact.html</loc>
+    <lastmod>2026-03-09</lastmod>
   </url>
 </urlset>
