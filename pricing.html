@@ -1,78 +1,486 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pricing | NoCloudGPT</title>
-  <meta name="description" content="Clear and simple pricing for Linux server administration and technical services.">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Pricing for YC-GPT cloud deployments, NC-GPT on-site deployments, and support services from NoCloudGPT." />
+  <meta name="keywords" content="YC-GPT pricing, NC-GPT pricing, cloud AI pricing, private AI pricing, Ollama pricing, NoCloudGPT pricing" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="NoCloudGPT" />
+  <meta property="og:title" content="Pricing | NoCloudGPT" />
+  <meta property="og:description" content="Choose cloud, on-site, or support pricing for YC-GPT and NC-GPT." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nocloudgpt.com/pricing.html" />
+  <meta property="og:site_name" content="NoCloudGPT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pricing | NoCloudGPT" />
+  <meta name="twitter:description" content="Cloud, on-site, and support pricing for NoCloudGPT products." />
+  <link rel="canonical" href="https://nocloudgpt.com/pricing.html" />
+  <style>
+    :root {
+      --bg: #f4f8fc;
+      --panel: #ffffff;
+      --panel-2: #eef4fb;
+      --text: #18324a;
+      --muted: #5f748b;
+      --line: #d7e3f0;
+      --accent: #2f6fed;
+      --accent-2: #5f9cff;
+      --success: #1f8f5f;
+      --disabled: #a6b6c8;
+      --shadow: 0 14px 34px rgba(34, 66, 110, 0.10);
+      --radius: 18px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef5fb 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(47, 111, 237, 0.10);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #10263a;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text);
+      opacity: 0.95;
+      font-size: 0.98rem;
+    }
+
+    .hero {
+      padding: 4.5rem 0 2.5rem;
+    }
+
+    .hero-copy,
+    .section-card,
+    .pricing-card,
+    .cloud-card,
+    .cta-panel,
+    .faq {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 249, 255, 0.98));
+      border: 1px solid rgba(47, 111, 237, 0.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy,
+    .section-card,
+    .pricing-card,
+    .cloud-card,
+    .cta-panel,
+    .faq {
+      padding: 1.5rem;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      margin: 0 0 0.8rem;
+      color: #10263a;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin-bottom: 0.8rem;
+    }
+
+    h2 {
+      font-size: clamp(1.55rem, 3vw, 2.3rem);
+      margin-bottom: 0.9rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+    }
+
+    p, li { color: var(--muted); }
+
+    .switcher,
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+
+    .switch-btn,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.85rem 1.1rem;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      text-align: center;
+      transition: 0.2s ease;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .switch-btn.active,
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #7db0ff);
+      color: #ffffff;
+    }
+
+    .switch-btn,
+    .btn-secondary {
+      background: rgba(47, 111, 237, 0.04);
+      border-color: rgba(47, 111, 237, 0.16);
+      color: var(--text);
+    }
+
+    .switch-btn:hover,
+    .btn:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    main section {
+      padding: 1rem 0 2.2rem;
+    }
+
+    .cloud-grid,
+    .pricing-grid,
+    .faq-grid {
+      display: grid;
+      gap: 1.2rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pricing-grid.two,
+    .faq-grid.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cloud-card.disabled {
+      opacity: 0.68;
+      background: linear-gradient(180deg, rgba(247, 250, 253, 0.98), rgba(240, 245, 250, 0.98));
+      border-color: rgba(95, 116, 139, 0.16);
+      box-shadow: none;
+    }
+
+    .cloud-label {
+      display: inline-block;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(47, 111, 237, 0.08);
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.8rem;
+    }
+
+    .cloud-card.disabled .cloud-label {
+      background: rgba(95, 116, 139, 0.08);
+      color: var(--disabled);
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #10263a;
+      margin: 0.3rem 0 0.5rem;
+    }
+
+    .price-note {
+      font-size: 0.95rem;
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    .check-list {
+      padding-left: 1.1rem;
+      margin: 0.8rem 0 0;
+    }
+
+    .check-list li + li {
+      margin-top: 0.55rem;
+    }
+
+    .fine-print {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(47, 111, 237, 0.10);
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .cloud-grid,
+      .pricing-grid,
+      .pricing-grid.two,
+      .faq-grid.two {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .hero-copy,
+      .section-card,
+      .pricing-card,
+      .cloud-card,
+      .cta-panel,
+      .faq {
+        padding: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <div class="container nav">
-    <div class="logo">NoCloudGPT</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="software.html">Software</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<section class="page-hero">
-  <div class="container">
-    <h1>Pricing</h1>
-    <p>Transparent, straightforward technical service rates.</p>
-  </div>
-</section>
-
-<section class="card-section">
-  <div class="container cards">
-
-    <div class="card">
-      <h3>Hourly Technical Support</h3>
-      <p><strong>$75 per hour</strong></p>
-      <p>Remote troubleshooting, diagnostics, and configuration assistance for Linux servers and VPS environments.</p>
+  <header>
+    <div class="container nav-wrap">
+      <div class="brand">NoCloudGPT</div>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/index-nc.html">NC-GPT</a>
+        <a href="/pricing.html" aria-current="page">Pricing</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/software.html">Software</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="card">
-      <h3>Flat Fix</h3>
-      <p><strong>$95</strong></p>
-      <p>Single-issue resolution such as SSL installation, Docker errors, Nginx configuration fixes, or firewall adjustments.</p>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <h1>Pricing</h1>
+
+          <div class="switcher" aria-label="Pricing path switcher">
+            <a class="switch-btn active" href="#cloud">Cloud</a>
+            <a class="switch-btn" href="#onsite">On Site</a>
+            <a class="switch-btn" href="#support">Support</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cloud">
+      <div class="container">
+        <h2>Cloud</h2>
+        <div class="cloud-grid">
+          <article class="cloud-card">
+            <div class="cloud-label">Available Now</div>
+            <h3>AWS</h3>
+            <p>
+              Launch YC-GPT on AWS with prebuilt cloud images designed for fast deployment and simple access.
+            </p>
+            <div class="price">$100 / year*</div>
+            <p class="price-note">YC-GPT Basic software license</p>
+            <ul class="check-list">
+              <li>Fast YC-GPT launch path</li>
+              <li>Cloud-ready deployment</li>
+              <li>Simple product entry point</li>
+              <li>Built for immediate buying intent</li>
+            </ul>
+            <div class="button-row">
+              <a class="btn btn-primary" href="https://aws.amazon.com/marketplace/" target="_blank" rel="noopener noreferrer">View AWS Images</a>
+            </div>
+          </article>
+
+          <article class="cloud-card disabled" aria-disabled="true">
+            <div class="cloud-label">Coming Soon</div>
+            <h3>Azure</h3>
+            <p>
+              Azure image support is planned for future YC-GPT cloud releases.
+            </p>
+            <div class="price">Coming Soon</div>
+          </article>
+
+          <article class="cloud-card disabled" aria-disabled="true">
+            <div class="cloud-label">Coming Soon</div>
+            <h3>Google Cloud</h3>
+            <p>
+              Google Cloud image support is planned for future YC-GPT cloud releases.
+            </p>
+            <div class="price">Coming Soon</div>
+          </article>
+        </div>
+
+        <p class="fine-print">
+          * Hosting and infrastructure costs are separate from NoCloudGPT software pricing and are billed by the cloud provider. Model availability and terms may vary by deployment.
+        </p>
+      </div>
+    </section>
+
+    <section id="onsite">
+      <div class="container">
+        <h2>On Site</h2>
+        <div class="pricing-grid two">
+          <article class="pricing-card">
+            <h3>NC-GPT On-Site</h3>
+            <div class="price">Custom Quote</div>
+            <p>
+              Private deployment for businesses that want a no-cloud path on their own Linux infrastructure.
+            </p>
+            <ul class="check-list">
+              <li>Private environment you control</li>
+              <li>Linux-friendly deployment path</li>
+              <li>Built for internal business use</li>
+              <li>Ideal for organizations with stronger privacy needs</li>
+            </ul>
+            <div class="button-row">
+              <a class="btn btn-primary" href="/contact.html">Request Quote</a>
+            </div>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Custom Deployment</h3>
+            <div class="price">Custom Quote</div>
+            <p>
+              Tailored deployment options for businesses that need specialized setup, infrastructure guidance, or product customization.
+            </p>
+            <ul class="check-list">
+              <li>Custom deployment planning</li>
+              <li>Model and environment alignment</li>
+              <li>Business-specific rollout support</li>
+              <li>Expandable path for advanced needs</li>
+            </ul>
+            <div class="button-row">
+              <a class="btn btn-secondary" href="/contact.html">Contact for Details</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="support">
+      <div class="container">
+        <h2>Support</h2>
+        <div class="pricing-grid two">
+          <article class="pricing-card">
+            <h3>Personal Support</h3>
+            <div class="price">$300</div>
+            <p>
+              Single-user support for local or private Linux deployment environments.
+            </p>
+            <ul class="check-list">
+              <li>Single-user deployment help</li>
+              <li>Maintenance-minded setup guidance</li>
+              <li>Practical support for private environments</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <h3>Business Support</h3>
+            <div class="price">$600</div>
+            <p>
+              Multi-user support for small business or organizational environments.
+            </p>
+            <ul class="check-list">
+              <li>Multi-user internal deployment support</li>
+              <li>Business-oriented hosting guidance</li>
+              <li>Longer-term operational support path</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container faq-grid two">
+        <article class="faq">
+          <h3>Is cloud hosting included?</h3>
+          <p>
+            No. Cloud infrastructure is billed separately by the cloud provider. NoCloudGPT software pricing and cloud hosting costs are separate.
+          </p>
+        </article>
+        <article class="faq">
+          <h3>Why are Azure and Google Cloud greyed out?</h3>
+          <p>
+            They are planned paths, but AWS is the current launch focus for faster product rollout and simpler early buying decisions.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-panel">
+          <h2>Ready to get started?</h2>
+          <p>
+            Start with YC-GPT in the cloud, request a private NC-GPT on-site quote, or contact NoCloudGPT for direct support.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="https://aws.amazon.com/marketplace/" target="_blank" rel="noopener noreferrer">View AWS Images</a>
+            <a class="btn btn-secondary" href="/contact.html">Contact NoCloudGPT</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-flex">
+      <div>Colorado, USA • Remote Services Available</div>
+      <div>© 2026 NoCloudGPT</div>
     </div>
-
-    <div class="card">
-      <h3>Server Setup Package</h3>
-      <p><strong>$250</strong></p>
-      <p>Initial Linux server configuration including firewall setup, SSH hardening, user management, and base security configuration.</p>
-    </div>
-
-    <div class="card">
-      <h3>Monthly Maintenance</h3>
-      <p><strong>$150 per month</strong></p>
-      <p>Ongoing monitoring, updates, minor troubleshooting, and configuration adjustments for small environments.</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="page-hero" style="padding-top: 0;">
-  <div class="container">
-    <p style="color: var(--muted); font-size: 16px;">
-      Custom projects and advanced infrastructure deployments are quoted individually.
-      Payment is invoiced upon agreement of scope.
-    </p>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <p>Colorado, USA • Remote Services Available</p>
-    <p>© 2026 NoCloudGPT</p>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
