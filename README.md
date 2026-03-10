@@ -1,27 +1,42 @@
-# NoCloudGPT
+# NoCloudGPT Website
 
-Public website source for NoCloudGPT, including YC-GPT, NC-GPT, pricing, services, and contact pages.
+This repository contains the public HTML, CSS, and supporting files for the NoCloudGPT website.
 
-## Website structure
+## Main pages
 
 - `index.html` — YC-GPT homepage
-- `index-nc.html` — NC-GPT private deployment page
-- `services.html` — technical and deployment services
-- `pricing.html` — cloud, on-site, and support pricing
+- `index-nc.html` — NC-GPT page
+- `services.html` — technical services
+- `pricing.html` — pricing and deployment paths
 - `software.html` — software suite overview
-- `contact.html` — Formspree contact page
-- `styles.css` — shared site styling
-- `sitemap.xml` — search engine sitemap
-- `robots.txt` — crawler guidance
+- `contact.html` — contact form
 
-## Products
+## Products featured
 
 ### YC-GPT
-Your Cloud GPT — cloud-ready AI deployment designed for fast launch and online monetization.
+Your Cloud GPT.  
+A cloud-oriented AI deployment path designed for faster rollout, simpler packaging, and cloud-hosted product offerings.
 
 ### NC-GPT
-No Cloud GPT — private AI deployment for Linux-based environments and controlled infrastructure.
+No Cloud GPT.  
+A private, no-cloud deployment path for organizations that want AI on infrastructure they control directly.
 
-## Website
+## Technical notes
 
-Live site: `https://nocloudgpt.com`
+This site currently uses:
+
+- static HTML
+- shared `styles.css`
+- `sitemap.xml`
+- `robots.txt`
+- Formspree for contact handling
+
+## Domain
+
+The site is published at:
+
+`https://nocloudgpt.com`
+
+## Status
+
+Active website repository for NoCloudGPT product and services pages.
