@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | NoCloudGPT</title>
   <meta name="description" content="Contact NoCloudGPT for YC-GPT cloud inquiries, NC-GPT on-site deployment requests, or technical support services." />
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
   <style>
     .contact-wrap {
       max-width: 760px;
@@ -154,16 +154,17 @@
       </p>
 
       <form action="https://formspree.io/f/xykdwzqp" method="POST" style="text-align: left;">
-        <input type="hidden" name="inquiry_type" id="inquiry_type" value="Cloud">
+        <input type="hidden" name="inquiry_type" id="inquiry_type" value="Cloud" />
+        <input type="hidden" name="_subject" id="form_subject" value="NoCloudGPT Cloud Inquiry" />
 
         <label for="name" class="field-label">Name</label>
-        <input type="text" id="name" name="name" required class="field">
+        <input type="text" id="name" name="name" required class="field" />
 
         <label for="email" class="field-label">Email</label>
-        <input type="email" id="email" name="_replyto" required class="field">
+        <input type="email" id="email" name="_replyto" required class="field" />
 
         <label for="company" class="field-label">Company or Organization</label>
-        <input type="text" id="company" name="company" class="field">
+        <input type="text" id="company" name="company" class="field" />
 
         <label for="message" class="field-label">Message</label>
         <textarea id="message" name="message" rows="6" required class="field"></textarea>
@@ -172,8 +173,8 @@
       </form>
 
       <div class="contact-help">
-        <strong>Cloud</strong> is best for YC-GPT sales and AWS image questions.<br>
-        <strong>On Site</strong> is best for NC-GPT private deployment and internal infrastructure needs.<br>
+        <strong>Cloud</strong> is best for YC-GPT sales and AWS image questions.<br />
+        <strong>On Site</strong> is best for NC-GPT private deployment and internal infrastructure needs.<br />
         <strong>Support</strong> is best for technical help, troubleshooting, and general service requests.
       </div>
 
@@ -194,12 +195,19 @@
 <script>
   const buttons = document.querySelectorAll('.switch-btn');
   const inquiryType = document.getElementById('inquiry_type');
+  const formSubject = document.getElementById('form_subject');
   const contactNote = document.getElementById('contact-note');
 
   const notes = {
     "Cloud": "Use this option for YC-GPT cloud deployment questions, AWS image interest, and cloud-related sales inquiries.",
     "On Site": "Use this option for NC-GPT private deployment, internal Linux hosting, and on-site deployment questions.",
     "Support": "Use this option for technical help, troubleshooting, recovery, or general support requests."
+  };
+
+  const subjects = {
+    "Cloud": "NoCloudGPT Cloud Inquiry",
+    "On Site": "NoCloudGPT On-Site Inquiry",
+    "Support": "NoCloudGPT Support Request"
   };
 
   buttons.forEach(button => {
@@ -209,6 +217,7 @@
 
       const type = button.getAttribute('data-type');
       inquiryType.value = type;
+      formSubject.value = subjects[type];
       contactNote.textContent = notes[type];
     });
   });
