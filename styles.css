@@ -4,6 +4,16 @@
   --muted: #6B7280;
   --accent: #2563EB;
   --border: #E5E7EB;
+  --panel: #FFFFFF;
+  --shadow: 0 10px 24px rgba(31, 41, 51, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -14,6 +24,15 @@ body {
   line-height: 1.6;
 }
 
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .container {
   max-width: 1000px;
   margin: auto;
@@ -21,7 +40,7 @@ body {
 }
 
 header {
-  background: white;
+  background: var(--panel);
   border-bottom: 1px solid var(--border);
 }
 
@@ -29,22 +48,36 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  min-height: 70px;
+  gap: 16px;
 }
 
 .logo {
   font-weight: 600;
   font-size: 18px;
+  color: var(--text);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
 }
 
 nav a {
-  margin-left: 20px;
+  margin-left: 0;
   text-decoration: none;
   color: var(--text);
 }
 
 nav a:hover {
   color: var(--accent);
+}
+
+nav a[aria-current="page"] {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .page-hero {
@@ -73,10 +106,11 @@ nav a:hover {
 }
 
 .card {
-  background: white;
+  background: var(--panel);
   padding: 25px;
   border-radius: 8px;
   border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
 
 .card h3 {
@@ -90,9 +124,38 @@ nav a:hover {
 
 footer {
   padding: 40px 0;
-  background: white;
+  background: var(--panel);
   border-top: 1px solid var(--border);
   text-align: center;
   font-size: 14px;
   color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 0;
+  }
+
+  nav {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .page-hero {
+    padding: 44px 0;
+  }
+
+  .page-hero h1 {
+    font-size: 28px;
+  }
+
+  .page-hero p {
+    font-size: 16px;
+  }
+
+  .card-section {
+    padding: 32px 0 64px;
+  }
 }
