@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Private Cloud AI Deployment | NoCloudGPT + Ollama</title>
+  <meta name="description" content="Deploy NoCloudGPT with Ollama and OpenWebUI on a private cloud, Proxmox host, GPU server, or internal Linux infrastructure.">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="../index.html" class="text-sm font-semibold text-cyan-300">← Back to NoCloudGPT menu</a>
+      <p class="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Private Cloud Deployment</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Build a private AI cloud your business actually owns.</h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">NoCloudGPT private cloud deployments are for customers who want more than a small pilot. This path is for offices, homelabs, consultants, churches, clinics, legal teams, research groups, and small businesses that want local AI services without handing every prompt to an external API.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="../quote.html" class="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Plan a private cloud quote</a>
+        <a href="on-premise.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Compare on-premise</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section class="grid gap-8 lg:grid-cols-[1.5fr_0.9fr]">
+      <article class="rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10">
+        <h2 class="text-3xl font-black">What “private cloud” means for NoCloudGPT</h2>
+        <p class="mt-5 text-slate-300">A private cloud is not necessarily a massive enterprise data center. For NoCloudGPT, it can be as simple as a Proxmox host in a basement, a Linux GPU workstation in an office closet, or a small rack server running a few virtual machines. The important point is ownership: the customer controls the server, the models, the chat interface, and the data path.</p>
+        <p class="mt-4 text-slate-300">This is the natural next step after the AWS Lightsail pilot. Lightsail proves the concept quickly. A private cloud makes it durable, expandable, and better suited for real business workflows.</p>
+
+        <h2 class="mt-10 text-3xl font-black">The NoCloudGPT private cloud stack</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Linux host</h3>
+            <p class="mt-3 text-slate-400">Ubuntu or Debian is recommended for predictable package management, GPU driver support, and Ollama compatibility.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Ollama runtime</h3>
+            <p class="mt-3 text-slate-400">Ollama manages model pulls, local inference, and simple model execution without forcing customers into external API billing.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">OpenWebUI</h3>
+            <p class="mt-3 text-slate-400">OpenWebUI provides the friendly browser chat interface, user experience layer, and model interaction surface.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">NoCloudGPT</h3>
+            <p class="mt-3 text-slate-400">NoCloudGPT packages the deployment story, recommended models, support workflow, and customer-facing guidance.</p>
+          </div>
+        </div>
+
+        <h2 class="mt-10 text-3xl font-black">Recommended private cloud levels</h2>
+        <p class="mt-5 text-slate-300">Private cloud customers should not be forced into a single fixed tier. The clean model is to separate the NoCloudGPT platform tier from the compute level. A smaller customer might run a modest model today and expand into GPU-backed inference later. A technical customer may already own hardware and only need the software packaging and deployment support.</p>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Compute Level</th>
+                <th class="px-4 py-3">Best Fit</th>
+                <th class="px-4 py-3">Typical Models</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr><td class="px-4 py-3 font-semibold text-white">Starter AI</td><td class="px-4 py-3">Small office experiments</td><td class="px-4 py-3">TinyLlama, SmolLM, small Qwen/Gemma</td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-white">Standard AI</td><td class="px-4 py-3">Daily assistant use</td><td class="px-4 py-3">Llama 8B, Gemma, Mistral 7B, Phi</td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-white">Professional AI</td><td class="px-4 py-3">Coding, RAG, office workflows</td><td class="px-4 py-3">Qwen Coder, DeepSeek Coder, Mixtral</td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-white">Heavy AI</td><td class="px-4 py-3">GPU-backed reasoning</td><td class="px-4 py-3">DeepSeek R1, Llama 70B-class, Qwen 32B+</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="mt-10 text-3xl font-black">Who should choose this path?</h2>
+        <ul class="mt-5 space-y-3 text-slate-300">
+          <li><strong class="text-white">Small businesses</strong> that want internal AI without sending every document to a third-party chat service.</li>
+          <li><strong class="text-white">Technical founders</strong> who want control over models, update cycles, storage, and authentication.</li>
+          <li><strong class="text-white">Consultants</strong> who want to offer private AI as a service to local businesses.</li>
+          <li><strong class="text-white">Homelab operators</strong> with Proxmox, QEMU, Docker, or bare-metal Linux experience.</li>
+          <li><strong class="text-white">Organizations with sensitive documents</strong> that need private search, drafting, summarization, and RAG workflows.</li>
+        </ul>
+
+        <h2 class="mt-10 text-3xl font-black">The customer-facing promise</h2>
+        <p class="mt-5 text-slate-300">The customer should hear a simple promise: NoCloudGPT helps turn a Linux server into a private AI system. The technical reality can include Ollama, OpenWebUI, GPUs, model quantization, vector databases, and network routing. But the sales message should stay clear: private AI that you can deploy, own, expand, and understand.</p>
+      </article>
+
+      <aside class="space-y-6">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-8">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">Deployment CTA</p>
+          <h2 class="mt-3 text-3xl font-black">Fast, efficient pre-built private AI</h2>
+          <p class="mt-4 text-cyan-50">Package Ollama and OpenWebUI into a private cloud deployment your customer can understand.</p>
+          <a href="../quote.html" class="mt-6 inline-block rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Start a quote</a>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Good first private-cloud targets</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li>Ubuntu VM on Proxmox</li>
+            <li>Dedicated Linux GPU workstation</li>
+            <li>Small office server</li>
+            <li>Internal AI appliance</li>
+            <li>Consultant-managed client node</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Next pages to connect</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li><a class="text-cyan-300" href="lightsail-guide.html">90-day Lightsail pilot</a></li>
+            <li><a class="text-cyan-300" href="on-premise.html">On-premise Linux guide</a></li>
+            <li><a class="text-cyan-300" href="../deepseek/index.html">DeepSeek family</a></li>
+            <li><a class="text-cyan-300" href="../qwen/index.html">Qwen family</a></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
