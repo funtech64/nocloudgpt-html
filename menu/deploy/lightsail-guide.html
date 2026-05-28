@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>90-Day Private AI Pilot on AWS Lightsail | NoCloudGPT</title>
+<meta name="description" content="A simple small-business guide to launching a private AI pilot on AWS Lightsail with NoCloudGPT, Ollama, and OpenWebUI.">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+<header class="border-b border-slate-800">
+<div class="mx-auto max-w-5xl px-6 py-12">
+<a href="../index.html" class="text-sm text-cyan-300">← Back to NoCloudGPT menu</a>
+<h1 class="mt-6 text-4xl font-black md:text-6xl">Launch a 90-day private AI pilot on AWS Lightsail.</h1>
+<p class="mt-6 text-lg text-slate-300">A practical small-business path for testing private AI without committing to complex infrastructure first.</p>
+</div>
+</header>
+<main class="mx-auto grid max-w-6xl gap-8 px-6 py-12 lg:grid-cols-[1.6fr_0.9fr]">
+<article class="prose prose-invert max-w-none prose-headings:text-white prose-a:text-cyan-300">
+<h2>The simple promise</h2>
+<p>NoCloudGPT is designed to make private AI feel approachable. The business owner should not need to understand GPU provisioning, model registries, API keys, Docker networking, or reverse proxies before seeing value. With a small AWS Lightsail server, Ollama, OpenWebUI, and a guided NoCloudGPT installation path, a company can test private AI quickly and learn what model size they actually need.</p>
+<h2>What the customer needs before starting</h2>
+<p>A small-business owner needs four ordinary items to create the AWS account and launch the pilot:</p>
+<ul>
+<li>A valid email address for the AWS login.</li>
+<li>A valid phone number for AWS identity verification.</li>
+<li>A valid physical address for billing and account records.</li>
+<li>A valid credit or debit card for the AWS account.</li>
+</ul>
+<p>AWS may offer eligible Lightsail bundles with a 90-day free trial. This should be presented as a pilot opportunity, not a permanent guarantee. The customer should always review current AWS terms before launching.</p>
+<h2>Recommended pilot size</h2>
+<p>For NoCloudGPT, the pilot should be framed as an AI power level instead of raw infrastructure. Start with <strong>Starter AI</strong> for the smallest experiments, or <strong>Standard AI</strong> when the customer wants a more comfortable OpenWebUI experience and room for small Ollama models.</p>
+<h2>Step 1: Create the AWS account</h2>
+<p>Go to AWS, create an account, and complete the normal verification flow. The customer enters their email, phone, address, and card. After account verification, they can open the Lightsail service from the AWS console.</p>
+<h2>Step 2: Create a Lightsail instance</h2>
+<p>Inside Lightsail, choose a Linux instance. Ubuntu is the default recommendation for most customers because it is familiar, well documented, and compatible with common Ollama and OpenWebUI workflows. Choose a region close to the business. Name the instance clearly, such as <code>nocloudgpt-pilot</code>.</p>
+<h2>Step 3: Connect to the terminal</h2>
+<p>After the instance is running, open the built-in Lightsail browser SSH terminal. This keeps the setup simple because the customer does not need to install a local SSH client or manage keys on day one.</p>
+<h2>Step 4: Run the NoCloudGPT installer</h2>
+<p>The goal is a one-command setup experience. The customer opens the terminal, pastes the command, and lets the installer do the work.</p>
+<pre><code>curl -fsSL https://get.nocloudgpt.com | bash</code></pre>
+<p>The installer path should explain what happens in plain English: install system requirements, install Ollama, prepare OpenWebUI, recommend a small model, and print the access URL when complete.</p>
+<h2>What they get</h2>
+<p>The customer gets a private AI chat environment they control. NoCloudGPT should position OpenWebUI as the friendly chat interface and Ollama as the local model engine. The customer can start with small models, then upgrade compute or switch models later.</p>
+<h2>Call to action</h2>
+<p>Use the 90-day pilot to validate whether private AI helps the business. If it does, NoCloudGPT can transition the customer into a paid platform tier, a larger compute level, or an on-premise deployment.</p>
+</article>
+<aside class="space-y-6">
+<div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-8">
+<p class="text-sm font-bold uppercase tracking-widest text-cyan-200">Pilot offer</p>
+<h2 class="mt-3 text-3xl font-black">Fast, efficient pre-built private AI</h2>
+<p class="mt-4 text-cyan-50">Use the 90-day Lightsail window to test a private AI workflow before committing to bigger infrastructure.</p>
+<a href="../quote.html" class="mt-6 inline-block rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950">Build my pilot quote</a>
+</div>
+<div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+<h3 class="text-xl font-bold">Plain-English stack</h3>
+<ul class="mt-4 space-y-3 text-slate-300">
+<li><strong>NoCloudGPT:</strong> deployment and packaging layer.</li>
+<li><strong>Ollama:</strong> local model runtime.</li>
+<li><strong>OpenWebUI:</strong> browser-based chat interface.</li>
+<li><strong>Lightsail:</strong> simple private cloud server.</li>
+</ul>
+</div>
+</aside>
+</main>
+</body>
+</html>
