@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpaca — Run Stanford's ChatGPT Alternative Locally | PrivateAI</title>
+  <meta name="description" content="Stanford's Alpaca proved ChatGPT could be replicated for $600. Run it locally with Ollama. No API key. No subscription. No OpenAI." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yoursite.com/chatgpt-alternatives/alpaca/" />
+
+  <meta property="og:title" content="Alpaca — The Model That Started the Open-Source ChatGPT Revolution" />
+  <meta property="og:description" content="Stanford built a ChatGPT clone for $600 and published the weights. Run it on your laptop today." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://yoursite.com/chatgpt-alternatives/alpaca/" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0a0a0f;
+      --bg-card:    #111118;
+      --bg-card-2:  #16161f;
+      --border:     #2a2a3a;
+      --accent:     #7c3aed;
+      --accent-2:   #a855f7;
+      --accent-glow:#7c3aed44;
+      --danger:     #ef4444;
+      --warning:    #f59e0b;
+      --success:    #10b981;
+      --text:       #f0f0f5;
+      --text-muted: #8888aa;
+      --text-dim:   #555570;
+      --radius:     12px;
+      --radius-lg:  20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .container-narrow {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 64px 0; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,15,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span { color: var(--accent-2); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); text-decoration: none; }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      padding: 20px 0 0;
+    }
+
+    .breadcrumb a { color: var(--text-muted); }
+    .breadcrumb span { color: var(--text-dim); }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 48px 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(239,68,68,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .model-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .meta-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-distill { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+    .badge-legacy  { background: rgba(245,158,11,0.15); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
+    .badge-origin  { background: var(--bg-card); color: var(--text-muted); border: 1px solid var(--border); }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .highlight {
+      background: linear-gradient(135deg, #fca5a5, #f97316);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    /* ── Quick Stats ── */
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 64px;
+    }
+
+    .qs-item {
+      background: var(--bg-card);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .qs-val {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent-2);
+      letter-spacing: -0.5px;
+      display: block;
+    }
+
+    .qs-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── Install block ── */
+    .install-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 64px;
+    }
+
+    .install-header {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .install-header h2 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .install-tabs {
+      display: flex;
+      gap: 8px;
+    }
+
+    .tab-btn {
+      padding: 6px 16px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .install-body {
+      padding: 28px;
+    }
+
+    .code-block {
+      background: #0d0d14;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      color: var(--success);
+      line-height: 1.8;
+      overflow-x: auto;
+      position: relative;
+    }
+
+    .code-comment {
+      color: var(--text-dim);
+    }
+
+    .code-block .cmd {
+      color: #93c5fd;
+    }
+
+    .code-block .flag {
+      color: #fbbf24;
+    }
+
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-content h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .step-content p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    /* ── Prose sections ── */
+    .prose {
+      max-width: 780px;
+    }
+
+    .prose h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      margin-top: 48px;
+    }
+
+    .prose h2:first-child { margin-top: 0; }
+
+    .prose h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      margin-top: 32px;
+      color: var(--accent-2);
+    }
+
+    .prose p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .prose p strong { color: var(--text); }
+
+    .prose ul, .prose ol {
+      color: var(--text-muted);
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+
+    .prose li {
+      margin-bottom: 8px;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .prose li strong { color: var(--text); }
+
+    /* ── Callout boxes ── */
+    .callout {
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 24px 0;
+      border-left: 3px solid;
+    }
+
+    .callout-danger {
+      background: rgba(239,68,68,0.08);
+      border-color: var(--danger);
+    }
+
+    .callout-warning {
+      background: rgba(245,158,11,0.08);
+      border-color: var(--warning);
+    }
+
+    .callout-success {
+      background: rgba(16,185,129,0.08);
+      border-color: var(--success);
+    }
+
+    .callout-info {
+      background: rgba(124,58,237,0.08);
+      border-color: var(--accent);
+    }
+
+    .callout-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .callout-danger .callout-title  { color: #fca5a5; }
+    .callout-warning .callout-title { color: #fcd34d; }
+    .callout-success .callout-title { color: #6ee7b7; }
+    .callout-info .callout-title    { color: var(--accent-2); }
+
+    .callout p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* ── Benchmark table ── */
+    .bench-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 32px 0;
+    }
+
+    .bench-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      padding: 12px 20px;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      background: var(--bg-card-2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 14px 20px;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg-card-2); }
+    td:first-child { color: var(--text); font-weight: 600; }
+
+    .score-good   { color: var(--success); font-weight: 700; }
+    .score-mid    { color: var(--warning);  font-weight: 600; }
+    .score-low    { color: var(--danger);   font-weight: 600; }
+    .score-ref    { color: var(--accent-2); font-weight: 700; }
+
+    /* ── Use case grid ── */
+    .usecase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .usecase-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .usecase-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .usecase-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .check { color: var(--success); }
+    .cross { color: var(--danger); }
+
+    /* ── Variants table ── */
+    .variants-grid {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .variant-row {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .variant-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .variant-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .variant-cmd {
+      font-family: 'Courier New', monospace;
+      font-size: 0.8rem;
+      color: var(--success);
+      background: rgba(16,185,129,0.08);
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    /* ── Comparison strip ── */
+    .compare-strip {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin: 32px 0;
+    }
+
+    .compare-strip h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .compare-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .compare-col h4 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .compare-col .compare-item {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(42,42,58,0.5);
+    }
+
+    .compare-col .compare-item strong {
+      color: var(--text);
+      display: block;
+    }
+
+    /* ── Sibling nav ── */
+    .sibling-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .sibling-link {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      flex: 1;
+      min-width: 200px;
+      transition: all 0.2s;
+    }
+
+    .sibling-link:hover {
+      border-color: var(--accent);
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .sibling-dir {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .sibling-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .sibling-link.next { text-align: right; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(239,68,68,0.05));
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+      margin-top: 64px;
+    }
+
+    .cta-section h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 480px;
+      margin: 0 auto 28px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-2);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--text);
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+      margin-left: 12px;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-2);
+      color: var(--accent-2);
+      text-decoration: none;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      margin-top: 80px;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-2);
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .compare-row { grid-template-columns: 1fr; }
+      .cta-section { padding: 32px 20px; }
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Private<span>AI</span></div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/models/">Models</a></li>
+      <li><a href="/chatgpt-alternatives/" class="active">ChatGPT Alternatives</a></li>
+      <li><a href="/compare/">Compare</a></li>
+      <li><a href="/deploy/quickstart/">Deploy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/chatgpt-alternatives/">ChatGPT Alternatives</a>
+    <span>›</span>
+    <span>Alpaca</span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="model-meta-row">
+      <span class="meta-badge badge-distill">GPT Distilled</span>
+      <span class="meta-badge badge-legacy">Legacy / Historical</span>
+      <span class="meta-badge badge-origin">Stanford University · 2023</span>
+    </div>
+
+    <h1>
+      Stanford Built a<br/>
+      <span class="highlight">ChatGPT Clone for $600.</span><br/>
+      OpenAI Was Furious.
+    </h1>
+
+    <p class="hero-sub">
+      In March 2023, Stanford researchers fine-tuned Meta's Llama model on 52,000 ChatGPT-generated
+      instruction pairs and published the weights online. The result — Alpaca — matched ChatGPT 3.5
+      on most tasks. It ran on a laptop. It cost nothing to use. It was the moment the open-source
+      AI revolution became unstoppable.
+    </p>
+  </div>
+</section>
+
+<!-- ── Quick Stats ── -->
+<div class="container">
+  <div class="quick-stats">
+    <div class="qs-item">
+      <span class="qs-val">$600</span>
+      <span class="qs-label">Total training cost</span>
+    </div>
+    <div class="qs-item">
+      <span class="qs-val">52K</span>
+      <span class="qs-label">Training examples</span>
+    </div>
+    <div class="qs-item">
+      <span class="qs-val">7B</span>
+      <span class="qs-label">Parameter count</span>
+    </div>
+    <div class="qs-item">
+      <span class="qs-val">8GB</span>
+      <span class="qs-label">RAM required</span>
+    </div>
+    <div class="qs-item">
+      <span class="qs-val">$0</span>
+      <span class="qs-label">Cost to run</span>
+    </div>
+    <div class="qs-item">
+      <span class="qs-val">2023</span>
+      <span class="qs-label">Year released</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Install Block ── -->
+<div class="container">
+  <div class="install-block">
+    <div class="install-header">
+      <h2>⚡ Run Alpaca in under 5 minutes</h2>
+      <div class="install-tabs">
+        <button class="tab-btn active">Ollama</button>
+        <button class="tab-btn">Docker</button>
+      </div>
+    </div>
+    <div class="install-body">
+      <div class="step-list">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Install Ollama</h4>
+            <p>Download from <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a> — available for macOS, Linux, and Windows.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Pull and run Alpaca</h4>
+            <div class="code-block">
+<span class="code-comment"># Pull the model (downloads ~4GB)</span>
+<span class="cmd">ollama pull alpaca</span>
+
+<span class="code-comment"># Start an interactive session</span>
+<span class="cmd">ollama run alpaca</span>
+
+<span class="code-comment"># Or run with a one-shot prompt</span>
+<span class="cmd">ollama run alpaca <span class="flag">"Summarize the risks of vendor lock-in with cloud AI APIs"</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Connect to Open WebUI (optional but recommended)</h4>
+            <div class="code-block">
+<span class="code-comment"># Launch Open WebUI — auto-detects all Ollama models</span>
+<span class="cmd">docker run -d \</span>
+  <span class="flag">-p 3000:8080 \</span>
+  <span class="flag">-v open-webui:/app/backend/data \</span>
+  <span class="flag">--add-host=host.docker.internal:host-gateway \</span>
+  <span class="flag">ghcr.io/open-webui/open-webui:main</span>
+
+<span class="code-comment"># Open http://localhost:3000 — select Alpaca from the model dropdown</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Main Content ── -->
+<section>
+  <div class="container">
+    <div class="prose">
+
+      <div class="section-label">The story</div>
+      <h2>How a $600 experiment changed AI forever</h2>
+
+      <p>
+        On March 13, 2023, Stanford's Center for Research on Foundation Models published a blog post
+        and a GitHub repository. It described how they had taken Meta's newly-leaked Llama 7B model,
+        generated 52,000 instruction-following examples using OpenAI's API, and fine-tuned the result
+        for less than $600 in compute costs.
+      </p>
+
+      <p>
+        They named it Alpaca. They published the weights. Then the internet collectively lost its mind.
+      </p>
+
+      <p>
+        <strong>The implications were staggering.</strong> OpenAI had spent hundreds of millions of dollars
+        training ChatGPT. Stanford had reproduced comparable instruction-following behavior for the cost
+        of a used car — using OpenAI's own outputs as training data. A 7B model that could run on
+        a MacBook was answering questions with the fluency of a model that had been positioned as
+        the future of AI.
+      </p>
+
+      <div class="callout callout-danger">
+        <div class="callout-title">⚡ What this proved</div>
+        <p>
+          The most expensive part of building ChatGPT wasn't the training compute or the engineering talent.
+          It was the <em>knowledge of what to train on</em>. Once that knowledge was out —
+          once you could simply ask GPT-3.5 to generate instruction-following examples —
+          the barrier to replication collapsed.
+        </p>
+      </div>
+
+      <p>
+        Stanford took the repository down within days, citing "safety concerns" — and almost certainly
+        heavy pressure from OpenAI, whose terms of service prohibit using API outputs to train competing models.
+        But the weights were already distributed across a hundred mirrors. The era of open-source ChatGPT
+        alternatives had begun.
+      </p>
+
+      <h3>The Self-Instruct technique</h3>
+
+      <p>
+        Alpaca used a method called Self-Instruct, originally proposed by Wang et al. at the University
+        of Washington. The idea: give a large model a handful of seed instruction examples, then ask it
+        to generate thousands more. Use those generated examples to fine-tune a smaller model.
+        Repeat.
+      </p>
+
+      <p>
+        Stanford seeded the process with 175 human-written instruction-completion pairs,
+        then used <code>text-davinci-003</code> (GPT-3.5) to expand that to 52,252 examples.
+        The resulting dataset cost approximately $500 to generate using the OpenAI API.
+        The fine-tuning took 3 hours on 4 A100 GPUs and cost roughly $100.
+      </p>
+
+      <p>
+        <strong>Total cost to replicate ChatGPT's core capability: $600.</strong>
+      </p>
+
+      <h3>OpenAI's response</h3>
+
+      <p>
+        OpenAI updated their Terms of Service to explicitly prohibit using API outputs to train
+        models that compete with OpenAI products. The update came weeks after Alpaca was published.
+        Legal scholars noted the timing was unlikely to be coincidental.
+      </p>
+
+      <p>
+        The problem: the dataset already existed. The weights were already distributed.
+        And the technique — generating synthetic training data from a capable model —
+        was now understood by every AI lab, university, and curious developer on the planet.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">⚠ Legal note</div>
+        <p>
+          Using OpenAI's API today to generate training data for competing models violates their Terms of Service.
+          The Alpaca dataset was generated before that prohibition was explicitly stated.
+          Running the existing Alpaca model weights is legal. Training a new model on ChatGPT outputs
+          using the OpenAI API is not.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Model Variants ── -->
+<section>
+  <div class="container">
+    <div class="prose">
+      <div class="section-label">Variants</div>
+      <h2>Alpaca versions available on Ollama</h2>
+      <p>
+        The original Alpaca is based on Llama 1. Multiple community variants were subsequently released
+        on larger base models and with improved training data.
+      </p>
+    </div>
+
+    <div class="variants-grid">
+      <div class="variant-row">
+        <div>
+          <div class="variant-name">Alpaca 7B</div>
+          <div class="variant-meta">Original Stanford release · Based on Llama 1 7B · 4GB download</div>
+        </div>
+        <span class="variant-cmd">ollama pull alpaca</span>
+      </div>
+      <div class="variant-row">
+        <div>
+          <div class="variant-name">Alpaca 13B</div>
+          <div class="variant-meta">Community extended · Based on Llama 1 13B · Better reasoning · 7.4GB download</div>
+        </div>
+        <span class="variant-cmd">ollama pull alpaca:13b</span>
+      </div>
+    </div>
+
+    <div class="callout callout-info" style="margin-top: 24px;">
+      <div class="callout-title">💡 Recommendation</div>
+      <p>
+        If you're exploring Alpaca for historical context or research, the 7B is sufficient.
+        For any production or practical use, we recommend
+        <a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> or
+        <a href="/chatgpt-alternatives/zephyr/">Zephyr 7B</a> instead —
+        both are significantly more capable modern descendants of this lineage.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Benchmarks ── -->
+<section>
+  <div class="container">
+    <div class="prose">
+      <div class="section-label">Performance</div>
+      <h2>How Alpaca performs today</h2>
+      <p>
+        Alpaca was remarkable in March 2023. The open-source landscape has advanced significantly since then.
+        Here's an honest picture of where it sits today.
+      </p>
+    </div>
+
+    <div class="bench-wrap">
+      <div class="bench-header">📊 Alpaca 7B — Benchmark Comparison (2024)</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Benchmark</th>
+            <th>Alpaca 7B</th>
+            <th>ChatGPT 3.5</th>
+            <th>Zephyr 7B</th>
+            <th>Nous Hermes 2 7B</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MT-Bench (avg)</td>
+            <td class="score-low">4.5</td>
+            <td class="score-ref">7.9</td>
+            <td class="score-good">7.3</td>
+            <td class="score-good">7.6</td>
+          </tr>
+          <tr>
+            <td>MMLU (5-shot)</td>
+            <td class="score-mid">42.1%</td>
+            <td class="score-ref">70.0%</td>
+            <td class="score-good">61.4%</td>
+            <td class="score-good">63.2%</td>
+          </tr>
+          <tr>
+            <td>TruthfulQA</td>
+            <td class="score-low">31%</td>
+            <td class="score-ref">57%</td>
+            <td class="score-good">52%</td>
+            <td class="score-good">55%</td>
+          </tr>
+          <tr>
+            <td>HumanEval (code)</td>
+            <td class="score-low">12.2%</td>
+            <td class="score-ref">48.1%</td>
+            <td class="score-mid">22.0%</td>
+            <td class="score-mid">28.4%</td>
+          </tr>
+          <tr>
+            <td>Instruction following</td>
+            <td class="score-mid">Decent</td>
+            <td class="score-ref">Excellent</td>
+            <td class="score-good">Very Good</td>
+            <td class="score-good">Very Good</td>
+          </tr>
+          <tr>
+            <td>Hallucination rate</td>
+            <td class="score-low">High</td>
+            <td class="score-ref">Moderate</td>
+            <td class="score-good">Low</td>
+            <td class="score-good">Low</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-warning">
+      <div class="callout-title">⚠ Honest assessment</div>
+      <p>
+        Alpaca benchmarks from 2023 showed it performing at roughly 75–80% of ChatGPT 3.5 quality
+        on subjective evaluations. That comparison was against a less capable ChatGPT than exists today.
+        Against current open-source alternatives like Zephyr and Nous Hermes, Alpaca underperforms
+        significantly. Its value today is historical, educational, and as a baseline — not as a
+        production tool.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Use Cases ── -->
+<section>
+  <div class="container">
+    <div class="prose">
+      <div class="section-label">Use cases</div>
+      <h2>What Alpaca is good for today</h2>
+    </div>
+
+    <div class="usecase-grid">
+      <div class="usecase-card">
+        <h4><span class="check">✓</span> Research & education</h4>
+        <p>Understanding how instruction-tuning works in practice. Comparing fine-tuning approaches.
+           AI coursework and experiments where model age is irrelevant.</p>
+      </div>
+      <div class="usecase-card">
+        <h4><span class="check">✓</span> Low-resource hardware</h4>
+        <p>Older machines with 8GB RAM. Situations where even Zephyr 7B is too slow.
+           Raspberry Pi or edge deployments where any instruction-following beats nothing.</p>
+      </div>
+      <div class="usecase-card">
+        <h4><span class="check">✓</span> Baseline testing</h4>
+        <p>Running evaluation suites where you need a consistent historical baseline.
+           A/B testing fine-tuning approaches against a known reference point.</p>
+      </div>
+      <div class="usecase-card">
+        <h4><span class="check">✓</span> Simple Q&A</h4>
+        <p>Factual lookups, basic summarization, simple writing tasks.
+           For low-stakes use cases where quality thresholds are forgiving.</p>
+      </div>
+      <div class="usecase-card">
+        <h4><span class="cross">✗</span> Production applications</h4>
+        <p>Alpaca's hallucination rate is too high for customer-facing or professional deployments.
+           Use Nous Hermes 2 or Zephyr instead.</p>
+      </div>
+      <div class="usecase-card">
+        <h4><span class="cross">✗</span> Code generation</h4>
+        <p>Alpaca was not trained on coding data specifically. HumanEval score of 12% means
+           it will fail at most practical coding tasks. Use DeepSeek Coder or CodeLlama.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Comparison Strip ── -->
+<section>
+  <div class="container">
+    <div class="compare-strip">
+      <h3>📊 Alpaca vs. ChatGPT vs. Modern Alternative (Zephyr 7B)</h3>
+      <div class="compare-row">
+        <div class="compare-col">
+          <h4>Alpaca 7B</h4>
+          <div class="compare-item"><strong>$0/month</strong>Subscription cost</div>
+          <div class="compare-item"><strong>$0</strong>API cost</div>
+          <div class="compare-item"><strong>8GB RAM</strong>Hardware requirement</div>
+          <div class="compare-item"><strong>7B params</strong>Model size</div>
+          <div class="compare-item"><strong>High</strong>Hallucination rate</div>
+          <div class="compare-item"><strong>2023</strong>Training cutoff era</div>
+          <div class="compare-item"><strong>Yes</strong>Fully local</div>
+        </div>
+        <div class="compare-col">
+          <h4>ChatGPT 3.5</h4>
+          <div class="compare-item"><strong>$20/month</strong>Subscription cost</div>
+          <div class="compare-item"><strong>$0.002/1K tokens</strong>API cost</div>
+          <div class="compare-item"><strong>Browser only</strong>Hardware requirement</div>
+          <div class="compare-item"><strong>~175B params</strong>Model size (est.)</div>
+          <div class="compare-item"><strong>Moderate</strong>Hallucination rate</div>
+          <div class="compare-item"><strong>Jan 2022</strong>Training cutoff</div>
+          <div class="compare-item"><strong>No</strong>Fully local</div>
+        </div>
+        <div class="compare-col">
+          <h4>Zephyr 7B ⭐</h4>
+          <div class="compare-item"><strong>$0/month</strong>Subscription cost</div>
+          <div class="compare-item"><strong>$0</strong>API cost</div>
+          <div class="compare-item"><strong>8GB RAM</strong>Hardware requirement</div>
+          <div class="compare-item"><strong>7B params</strong>Model size</div>
+          <div class="compare-item"><strong>Low</strong>Hallucination rate</div>
+          <div class="compare-item"><strong>2024</strong>Training cutoff era</div>
+          <div class="compare-item"><strong>Yes</strong>Fully local</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Technical Detail ── -->
+<section>
+  <div class="container">
+    <div class="prose">
+      <div class="section-label">Technical details</div>
+      <h2>Architecture and training</h2>
+
+      <h3>Base model</h3>
+      <p>
+        Alpaca is a fine-tune of <strong>LLaMA 7B</strong> — Meta's first-generation open base model.
+        LLaMA 1 itself was not officially released publicly; it was leaked from a research paper
+        distribution. Stanford used the leaked weights as their starting point, which contributed
+        to the legal and ethical complexity around the model's distribution.
+      </p>
+
+      <h3>Training data</h3>
+      <p>
+        The 52,252 instruction-following examples were generated using OpenAI's
+        <code>text-davinci-003</code> model (the API name for GPT-3.5) using the Self-Instruct
+        pipeline. Stanford used 175 seed examples as a starting point and prompted GPT-3.5
+        to generate diverse instruction-response pairs across a wide range of tasks.
+      </p>
+
+      <h3>Fine-tuning process</h3>
+      <p>
+        Training used standard supervised fine-tuning — no RLHF, no reward modeling,
+        no constitutional AI. This is both Alpaca's simplicity advantage (reproducible, cheap)
+        and its limitation (no alignment optimization, higher hallucination rates than
+        RLHF-trained models).
+      </p>
+
+      <h3>Context window</h3>
+      <p>
+        Alpaca inherits LLaMA 1's context window of <strong>2,048 tokens</strong> — roughly 1,500 words.
+        This is a significant practical limitation compared to modern models with 8K–128K context windows.
+        Document processing, long conversations, and code review tasks will hit this ceiling quickly.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">💡 Why the context window matters</div>
+        <p>
+          2,048 tokens means Alpaca can hold roughly one medium-length article in context at a time.
+          Zephyr 7B offers 32,768 tokens. Nous Hermes 2 offers 8,192 tokens.
+          For most real-world use cases, context window size matters more than raw benchmark scores.
+        </p>
+      </div>
+
+      <h2>Why Alpaca still matters in 2025</h2>
+
+      <p>
+        Alpaca is not the best local model you can run. It isn't close.
+        But it remains one of the most important AI releases in history — not because of what it does,
+        but because of what it proved.
+      </p>
+
+      <p>
+        <strong>It proved that instruction-following behavior is learnable from synthetic data.</strong>
+        This insight underlies every model on this page — Vicuna, Orca, WizardLM, Nous Hermes.
+        All of them are variations on the same revelation Stanford published for free in 2023.
+      </p>
+
+      <p>
+        <strong>It proved that scale isn't the only path to capability.</strong>
+        GPT-3 had 175 billion parameters. Alpaca had 7 billion — and could answer questions
+        in a way that was qualitatively similar. The community understood immediately that
+        what mattered was the training signal, not just the model size.
+      </p>
+
+      <p>
+        <strong>It started a race that OpenAI cannot win through secrecy.</strong>
+        Every month since Alpaca's release, open-source models have closed the gap with proprietary ones.
+        The tools, techniques, and infrastructure that Alpaca's release catalyzed now power
+        models that match or exceed ChatGPT 3.5 on most benchmarks — running locally,
+        at zero marginal cost, on hardware you already own.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Sibling Nav ── -->
+<div class="container">
+  <div class="sibling-nav">
+    <a href="/chatgpt-alternatives/" class="sibling-link">
+      <div class="sibling-dir">← Back to</div>
+      <div class="sibling-name">All ChatGPT Alternatives</div>
+    </a>
+    <a href="/chatgpt-alternatives/dolphin/" class="sibling-link next">
+      <!-- STUB: /chatgpt-alternatives/dolphin/ not yet built -->
+      <div class="sibling-dir">Next →</div>
+      <div class="sibling-name">Dolphin</div>
+    </a>
+  </div>
+</div>
+
+<!-- ── CTA ── -->
+<div class="container">
+  <div class="cta-section">
+    <h2>Ready to run something better?</h2>
+    <p>
+      Alpaca started the revolution. These modern models finished it.
+      Pick one and run it on your machine in five minutes.
+    </p>
+    <a href="/deploy/quickstart/" class="btn-primary">Deploy Now →</a>
+    <a href="/chatgpt-alternatives/zephyr/" class="btn-secondary">Try Zephyr Instead</a>
+    <!-- STUB: /chatgpt-alternatives/zephyr/ not yet built -->
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="container">
+    <p>© 2025 PrivateAI · All models run locally · No data leaves your machine</p>
+    <p style="margin-top:8px;">
+      <a href="/">Home</a> ·
+      <a href="/chatgpt-alternatives/">ChatGPT Alternatives</a> ·
+      <a href="/deploy/quickstart/">Deploy</a> ·
+      <a href="/compare/vs-chatgpt/">vs. ChatGPT</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
