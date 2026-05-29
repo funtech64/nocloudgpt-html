@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Start: Deploy a Private AI in 15 Minutes | NoCloudGPT</title>
+<meta name="description" content="Run Llama 3.3 or Mistral Large locally in 15 minutes. No cloud, no data leaks, no API keys. Step-by-step guide for Mac, Linux, and Windows.">
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0a0f; color: #e2e8f0; line-height: 1.7; }
+
+/* ========== LAYOUT ========== */
+.container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+/* ========== NAV ========== */
+nav { background: rgba(10,10,15,0.95); border-bottom: 1px solid #1e293b; padding: 16px 0; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); }
+nav .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.nav-brand { font-size: 1.2rem; font-weight: 700; color: #f8fafc; text-decoration: none; letter-spacing: -0.02em; }
+.nav-brand span { color: #6366f1; }
+.nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+.nav-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: #f8fafc; }
+
+/* ========== HERO ========== */
+.hero { padding: 64px 0 48px; border-bottom: 1px solid #1e293b; }
+.hero-badge { display: inline-block; background: #1e293b; border: 1px solid #334155; color: #6366f1; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.03em; color: #f8fafc; margin-bottom: 16px; }
+.hero h1 span { color: #6366f1; }
+.hero-sub { font-size: 1.1rem; color: #94a3b8; max-width: 600px; margin-bottom: 32px; }
+
+/* ========== STEP FLOW ========== */
+.steps { padding: 48px 0; }
+.step { display: flex; gap: 24px; margin-bottom: 40px; }
+.step-number { flex-shrink: 0; width: 40px; height: 40px; background: #6366f1; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; color: #fff; margin-top: 4px; }
+.step-content h3 { font-size: 1.15rem; font-weight: 700; color: #f8fafc; margin-bottom: 8px; }
+.step-content p { color: #94a3b8; margin-bottom: 12px; }
+
+/* ========== CODE BLOCKS ========== */
+.code-block { background: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 20px 24px; font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.88rem; overflow-x: auto; margin: 12px 0; position: relative; }
+.code-block .comment { color: #475569; }
+.code-block .cmd { color: #a5f3fc; }
+.code-block .output { color: #86efac; }
+.code-label { font-size: 0.75rem; font-weight: 600; color: #475569; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+
+/* ========== TABS ========== */
+.tab-group { margin: 12px 0; }
+.tab-buttons { display: flex; gap: 4px; margin-bottom: 0; }
+.tab-btn { background: #1e293b; border: 1px solid #334155; border-bottom: none; color: #94a3b8; font-size: 0.8rem; font-weight: 600; padding: 6px 16px; border-radius: 6px 6px 0 0; cursor: pointer; transition: all 0.2s; }
+.tab-btn.active { background: #0f172a; color: #f8fafc; border-color: #1e293b; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ========== CALLOUTS ========== */
+.callout { border-radius: 8px; padding: 16px 20px; margin: 20px 0; border-left: 4px solid; }
+.callout-info { background: #0f1f3d; border-color: #3b82f6; }
+.callout-info .callout-title { color: #60a5fa; font-weight: 700; margin-bottom: 4px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.callout-warning { background: #1c1100; border-color: #f59e0b; }
+.callout-warning .callout-title { color: #fbbf24; font-weight: 700; margin-bottom: 4px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.callout-success { background: #0a1f0a; border-color: #22c55e; }
+.callout-success .callout-title { color: #4ade80; font-weight: 700; margin-bottom: 4px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ========== MODEL PICKER ========== */
+.model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+.model-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 10px; padding: 20px; transition: border-color 0.2s; }
+.model-card:hover { border-color: #6366f1; }
+.model-card h4 { color: #f8fafc; font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+.model-card p { color: #64748b; font-size: 0.85rem; margin-bottom: 10px; }
+.model-card .pull-cmd { font-family: monospace; font-size: 0.82rem; color: #a5f3fc; background: #0a0a0f; padding: 6px 10px; border-radius: 4px; display: block; }
+.badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-bottom: 8px; }
+.badge-green { background: #14532d; color: #4ade80; }
+.badge-blue { background: #1e3a5f; color: #60a5fa; }
+.badge-purple { background: #2e1065; color: #c084fc; }
+
+/* ========== WHAT'S NEXT ========== */
+.next-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+.next-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 10px; padding: 20px; text-decoration: none; transition: border-color 0.2s; display: block; }
+.next-card:hover { border-color: #6366f1; }
+.next-card .next-label { font-size: 0.75rem; color: #475569; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+.next-card h4 { color: #f8fafc; font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+.next-card p { color: #64748b; font-size: 0.82rem; }
+
+/* ========== FOOTER ========== */
+footer { border-top: 1px solid #1e293b; padding: 40px 0; margin-top: 80px; }
+footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-brand { font-size: 1rem; font-weight: 700; color: #f8fafc; }
+.footer-brand span { color: #6366f1; }
+.footer-links { display: flex; gap: 20px; list-style: none; }
+.footer-links a { color: #475569; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+.footer-links a:hover { color: #94a3b8; }
+.footer-copy { color: #334155; font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="nav-brand">No<span>Cloud</span>GPT</a>
+    <ul class="nav-links">
+      <li><a href="/models/">Models</a></li>
+      <li><a href="/deploy/quickstart/" class="active">Deploy</a></li>
+      <li><a href="/compare/vs-chatgpt/">vs ChatGPT</a></li>
+      <li><a href="/compare/vs-claude/">vs Claude</a></li> <!-- STUB: /compare/vs-claude/ -->
+      <li><a href="/compare/vs-copilot/">vs Copilot</a></li> <!-- STUB: /compare/vs-copilot/ -->
+      <li><a href="/solutions/">Solutions</a></li> <!-- STUB: /solutions/ -->
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Quick Start Guide</div>
+      <h1>Private AI Running in <span>15 Minutes</span></h1>
+      <p class="hero-sub">Install Ollama, pull a model, start chatting. No cloud account, no API key, no data leaving your machine.</p>
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="container">
+
+      <!-- STEP 0: PICK YOUR MODEL -->
+      <div class="step">
+        <div class="step-number">0</div>
+        <div class="step-content">
+          <h3>Pick Your Model</h3>
+          <p>Choose based on your hardware. If you are unsure, start with <strong>Mistral 7B</strong> — it runs on any modern laptop with 8GB RAM.</p>
+          <div class="model-grid">
+            <div class="model-card">
+              <span class="badge badge-green">8GB RAM</span>
+              <h4>Mistral 7B</h4>
+              <p>Fast, capable, runs on any modern laptop. Best starting point.</p>
+              <code class="pull-cmd">ollama pull mistral</code>
+            </div>
+            <div class="model-card">
+              <span class="badge badge-blue">16GB RAM</span>
+              <h4>Llama 3.1 8B</h4>
+              <p>Meta's latest small model. Strong reasoning, instruction following.</p>
+              <code class="pull-cmd">ollama pull llama3.1</code>
+            </div>
+            <div class="model-card">
+              <span class="badge badge-purple">64GB+ RAM</span>
+              <h4>Llama 3.3 70B</h4>
+              <p>Production-grade. Matches GPT-4 class on most benchmarks.</p>
+              <code class="pull-cmd">ollama pull llama3.3</code>
+            </div>
+          </div>
+          <div class="callout callout-info">
+            <div class="callout-title">Not sure what RAM you have?</div>
+            Mac: Apple menu → About This Mac → Memory. Linux: <code>free -h</code>. Windows: Task Manager → Performance → Memory.
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 1: INSTALL OLLAMA -->
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Install Ollama</h3>
+          <p>Ollama is a one-command runtime that manages models, handles GPU acceleration, and exposes a local API. Free and open source.</p>
+
+          <div class="tab-group">
+            <div class="tab-buttons">
+              <button class="tab-btn active" onclick="switchTab(event,'mac')">macOS</button>
+              <button class="tab-btn" onclick="switchTab(event,'linux')">Linux</button>
+              <button class="tab-btn" onclick="switchTab(event,'win')">Windows</button>
+            </div>
+
+            <div class="tab-content active" id="tab-mac">
+              <div class="code-block">
+                <div class="code-label">Terminal</div>
+                <span class="comment"># Option A — Homebrew (recommended)</span><br>
+                <span class="cmd">brew install ollama</span><br><br>
+                <span class="comment"># Option B — Direct installer</span><br>
+                <span class="cmd">curl -fsSL https://ollama.com/install.sh | sh</span>
+              </div>
+              <div class="callout callout-info">
+                <div class="callout-title">Apple Silicon</div>
+                Ollama automatically uses the Neural Engine on M1/M2/M3/M4 chips. No extra configuration needed. Expect 30–60 tok/s on M3 Pro with Mistral 7B.
+              </div>
+            </div>
+
+            <div class="tab-content" id="tab-linux">
+              <div class="code-block">
+                <div class="code-label">Terminal</div>
+                <span class="cmd">curl -fsSL https://ollama.com/install.sh | sh</span><br><br>
+                <span class="comment"># Ollama installs as a systemd service and starts automatically</span><br>
+                <span class="comment"># Verify it is running:</span><br>
+                <span class="cmd">systemctl status ollama</span><br>
+                <span class="output">● ollama.service - Ollama Service</span><br>
+                <span class="output">     Active: active (running)</span>
+              </div>
+              <div class="callout callout-info">
+                <div class="callout-title">NVIDIA GPU</div>
+                If you have an NVIDIA GPU with CUDA 11.3+, Ollama detects it automatically. Run <code>nvidia-smi</code> to confirm your driver version before installing.
+              </div>
+            </div>
+
+            <div class="tab-content" id="tab-win">
+              <div class="code-block">
+                <div class="code-label">PowerShell (run as Administrator)</div>
+                <span class="comment"># Download the Windows installer</span><br>
+                <span class="cmd">winget install Ollama.Ollama</span><br><br>
+                <span class="comment"># Or download manually from:</span><br>
+                <span class="comment"># https://ollama.com/download/windows</span>
+              </div>
+              <div class="callout callout-warning">
+                <div class="callout-title">Windows Note</div>
+                WSL2 is recommended for production use. Native Windows support is stable but GPU passthrough performs better under WSL2 with the CUDA toolkit installed.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: PULL MODEL -->
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Pull Your Model</h3>
+          <p>Models download once and are stored locally. Mistral 7B is 4.1GB. Llama 3.3 70B is 43GB. Downloads are resumable.</p>
+          <div class="code-block">
+            <div class="code-label">Terminal</div>
+            <span class="comment"># Replace 'mistral' with your chosen model from Step 0</span><br>
+            <span class="cmd">ollama pull mistral</span><br><br>
+            <span class="output">pulling manifest</span><br>
+            <span class="output">pulling 8034d0d4f706... 100% ▕████████████████▏ 4.1 GB</span><br>
+            <span class="output">verifying sha256 digest</span><br>
+            <span class="output">writing manifest</span><br>
+            <span class="output">success</span>
+          </div>
+          <div class="callout callout-success">
+            <div class="callout-title">Model is stored locally</div>
+            After this step, the model never contacts the internet again. All inference is 100% local.
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: RUN -->
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Start Chatting</h3>
+          <p>Run the model interactively in your terminal, or start the API server for integration with other tools.</p>
+
+          <div class="tab-group">
+            <div class="tab-buttons">
+              <button class="tab-btn active" onclick="switchTab(event,'cli')">Terminal Chat</button>
+              <button class="tab-btn" onclick="switchTab(event,'api')">API Server</button>
+              <button class="tab-btn" onclick="switchTab(event,'ui')">Web UI</button>
+            </div>
+
+            <div class="tab-content active" id="tab-cli">
+              <div class="code-block">
+                <div class="code-label">Terminal</div>
+                <span class="cmd">ollama run mistral</span><br><br>
+                <span class="output">&gt;&gt;&gt; Send a message (/? for help)</span><br><br>
+                <span class="comment"># Type your prompt and press Enter</span><br>
+                <span class="cmd">&gt;&gt;&gt; Summarise this NDA in three bullet points: [paste text]</span><br><br>
+                <span class="output">• Party A agrees not to disclose...</span><br>
+                <span class="output">• Confidentiality period: 3 years...</span><br>
+                <span class="output">• Governing law: Delaware...</span>
+              </div>
+            </div>
+
+            <div class="tab-content" id="tab-api">
+              <div class="code-block">
+                <div class="code-label">Terminal — start server (runs automatically after install)</div>
+                <span class="cmd">ollama serve</span><br><br>
+                <span class="comment"># In a second terminal, call the API:</span><br>
+                <span class="cmd">curl http://localhost:11434/api/generate \</span><br>
+                <span class="cmd">  -d '{"model":"mistral","prompt":"Summarise this contract...","stream":false}'</span><br><br>
+                <span class="output">{"response":"The contract establishes...","done":true}</span>
+              </div>
+              <div class="callout callout-info">
+                <div class="callout-title">OpenAI-compatible endpoint</div>
+                Ollama also exposes <code>http://localhost:11434/v1/chat/completions</code> — drop-in compatible with any OpenAI SDK. Change the base URL, keep your existing code.
+              </div>
+            </div>
+
+            <div class="tab-content" id="tab-ui">
+              <div class="code-block">
+                <div class="code-label">Terminal — Open WebUI (ChatGPT-style interface)</div>
+                <span class="cmd">docker run -d \</span><br>
+                <span class="cmd">  -p 3000:8080 \</span><br>
+                <span class="cmd">  --add-host=host.docker.internal:host-gateway \</span><br>
+                <span class="cmd">  -v open-webui:/app/backend/data \</span><br>
+                <span class="cmd">  ghcr.io/open-webui/open-webui:main</span><br><br>
+                <span class="output"># Then open: http://localhost:3000</span>
+              </div>
+              <div class="callout callout-info">
+                <div class="callout-title">No Docker?</div>
+                Install Docker Desktop from <a href="https://docker.com" target="_blank" rel="noopener">docker.com</a> — free for personal and small business use. Takes 2 minutes.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4: VERIFY PRIVATE -->
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Verify Nothing Left Your Machine</h3>
+          <p>Confirm there is no outbound traffic during inference.</p>
+          <div class="tab-group">
+            <div class="tab-buttons">
+              <button class="tab-btn active" onclick="switchTab(event,'v-mac')">macOS</button>
+              <button class="tab-btn" onclick="switchTab(event,'v-linux')">Linux</button>
+            </div>
+            <div class="tab-content active" id="tab-v-mac">
+              <div class="code-block">
+                <div class="code-label">Terminal — monitor network while running a prompt</div>
+                <span class="cmd">sudo lsof -i -n -P | grep ollama</span><br><br>
+                <span class="output">ollama  1234  user  TCP 127.0.0.1:11434 (LISTEN)</span><br><br>
+                <span class="comment"># 127.0.0.1 = loopback only. No external connections.</span>
+              </div>
+            </div>
+            <div class="tab-content" id="tab-v-linux">
+              <div class="code-block">
+                <div class="code-label">Terminal</div>
+                <span class="cmd">ss -tulpn | grep ollama</span><br><br>
+                <span class="output">tcp LISTEN 0 128 127.0.0.1:11434 users:(("ollama",pid=...))</span><br><br>
+                <span class="comment"># Bound to loopback. Zero external traffic.</span>
+              </div>
+            </div>
+          </div>
+          <div class="callout callout-success">
+            <div class="callout-title">You are fully private</div>
+            Ollama only listens on localhost by default. Your prompts, documents, and responses never leave the machine.
+          </div>
+        </div>
+      </div>
+
+      <!-- WHAT'S NEXT -->
+      <h2 style="font-size:1.4rem; font-weight:700; color:#f8fafc; margin: 48px 0 8px;">What's Next</h2>
+      <p style="color:#64748b; margin-bottom:24px;">You have a working private AI. Here is where to go from here.</p>
+      <div class="next-grid">
+        <a href="/mistral-large/" class="next-card">
+          <div class="next-label">Model Guide</div>
+          <h4>Mistral Large 2</h4>
+          <p>Best-in-class for legal and finance work. 128k context.</p>
+        </a>
+        <a href="/llama/" class="next-card"> <!-- STUB: /llama/ -->
+          <div class="next-label">Model Guide</div>
+          <h4>Llama 3.3 70B</h4>
+          <p>Production-grade open model. GPT-4 class performance.</p>
+        </a>
+        <a href="/compare/vs-chatgpt/" class="next-card">
+          <div class="next-label">Comparison</div>
+          <h4>vs ChatGPT</h4>
+          <p>Why local beats cloud for sensitive work.</p>
+        </a>
+        <a href="#" class="next-card"> <!-- STUB: /solutions/ -->
+          <div class="next-label">Use Cases</div>
+          <h4>Solutions</h4>
+          <p>Legal, Finance, HR, Dev — right model for each team.</p>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span class="footer-brand">No<span>Cloud</span>GPT</span>
+    <ul class="footer-links">
+      <li><a href="/models/">Models</a></li>
+      <li><a href="/deploy/quickstart/">Deploy</a></li>
+      <li><a href="/compare/vs-chatgpt/">Compare</a></li>
+    </ul>
+    <span class="footer-copy">© 2025 NoCloudGPT. No data collected.</span>
+  </div>
+</footer>
+
+<script>
+function switchTab(e, id) {
+  const group = e.target.closest('.tab-group');
+  group.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  group.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  e.target.classList.add('active');
+  group.querySelector('#tab-' + id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
