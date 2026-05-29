@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run GLM-5 Privately | Next-Gen Tsinghua AI | NoCloudGPT</title>
+    <meta name="description" content="Deploy GLM-5 privately via Ollama. Tsinghua University's next-generation Chinese-English AI with advanced reasoning, multimodal capability, and extended context. Self-hosted on your infrastructure with complete data sovereignty.">
+    <meta name="keywords" content="GLM-5 private deployment, GLM-5 Ollama, GLM5 self-hosted, Tsinghua GLM-5 on-premise, GLM-5 local AI, Chinese AI GLM-5">
+    <link rel="canonical" href="https://nocloudgpt.com/glm5/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0a; color: #e8e8e8; line-height: 1.7; }
+        header { background: linear-gradient(135deg, #0a0f1a 0%, #0d1a2e 50%, #0a1f3a 100%); padding: 60px 20px; text-align: center; border-bottom: 2px solid #06d6a0; }
+        .badge { display: inline-block; background: #06d6a0; color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase; }
+        .badge-alt { display: inline-block; background: #1a3040; color: #06d6a0; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase; margin-left: 8px; border: 1px solid #06d6a0; }
+        h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; }
+        h1 span { color: #06d6a0; }
+        .subtitle { font-size: 1.15rem; color: #a0b4c8; max-width: 700px; margin: 0 auto 30px; }
+        .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: #06d6a0; color: #000; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; }
+        .btn-secondary { background: transparent; color: #06d6a0; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; border: 2px solid #06d6a0; }
+        nav { background: #111; padding: 12px 20px; text-align: center; border-bottom: 1px solid #222; }
+        nav a { color: #06d6a0; text-decoration: none; margin: 0 16px; font-size: 0.9rem; }
+        .container { max-width: 960px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 1.9rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; }
+        h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; color: #06d6a0; }
+        p { margin-bottom: 18px; color: #c8d4e0; }
+        .highlight-box { background: #091a14; border-left: 4px solid #06d6a0; padding: 24px 28px; border-radius: 0 8px 8px 0; margin: 32px 0; }
+        .highlight-box p { margin-bottom: 0; }
+        .warning-box { background: #1a1200; border-left: 4px solid #f4a261; padding: 24px 28px; border-radius: 0 8px 8px 0; margin: 32px 0; }
+        .warning-box h3 { color: #f4a261; }
+        .warning-box p { margin-bottom: 0; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin: 32px 0; }
+        .stat-card { background: #111; border: 1px solid #0a2520; border-radius: 10px; padding: 24px; text-align: center; }
+        .stat-card .number { font-size: 2rem; font-weight: 800; color: #06d6a0; display: block; }
+        .stat-card .label { font-size: 0.85rem; color: #8a9aaa; margin-top: 4px; }
+        .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
+        .model-card { background: #0d1117; border: 1px solid #1a2d3e; border-radius: 10px; padding: 24px; }
+        .model-card h3 { color: #06d6a0; margin-bottom: 8px; }
+        .model-card .tag { display: inline-block; background: #091a14; color: #06d6a0; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; margin-bottom: 12px; }
+        .model-card .tag-pending { display: inline-block; background: #1a1200; color: #f4a261; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; margin-bottom: 12px; }
+        .model-card p { font-size: 0.88rem; margin-bottom: 8px; }
+        .model-card .spec { font-family: monospace; color: #06d6a0; font-size: 0.85rem; display: block; margin-top: 8px; }
+        .model-card .spec-pending { font-family: monospace; color: #f4a261; font-size: 0.85rem; display: block; margin-top: 8px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 32px 0; }
+        .feature-card { background: #091a14; border: 1px solid #1a3040; border-radius: 8px; padding: 20px; }
+        .feature-card .icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+        .feature-card h3 { font-size: 1rem; margin-bottom: 8px; color: #06d6a0; }
+        .feature-card p { font-size: 0.85rem; margin-bottom: 0; }
+        .use-case-list { list-style: none; margin: 16px 0 24px; }
+        .use-case-list li { padding: 10px 0; border-bottom: 1px solid #1a1a1a; color: #c8d4e0; padding-left: 20px; position: relative; font-size: 0.95rem; }
+        .use-case-list li::before { content: "→"; color: #06d6a0; position: absolute; left: 0; }
+        .code-block { background: #0d1117; border: 1px solid #1a2d3e; border-radius: 8px; padding: 20px 24px; margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.88rem; color: #06d6a0; overflow-x: auto; }
+        .code-block .comment { color: #6e7681; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .comparison-table th { background: #111; color: #06d6a0; padding: 12px 16px; text-align: left; border-bottom: 2px solid #06d6a0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; }
+        .comparison-table tr:hover td { background: #0d1117; }
+        .check { color: #06d6a0; font-weight: 700; }
+        .pending { color: #f4a261; font-weight: 700; }
+        .strong { color: #06d6a0; font-weight: 600; }
+        .info-box { background: #091a14; border: 1px solid #1a3040; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+        .info-box h3 { color: #06d6a0; margin-bottom: 8px; }
+        .info-box p { font-size: 0.9rem; margin-bottom: 0; }
+        .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
+        .hardware-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .hardware-table th { background: #111; color: #06d6a0; padding: 12px 16px; text-align: left; border-bottom: 2px solid #1a3040; font-size: 0.85rem; }
+        .hardware-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; font-family: monospace; }
+        .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
+        .tier-card { background: #0d1117; border: 1px solid #222; border-radius: 10px; padding: 24px; }
+        .tier-card.recommended { border-color: #06d6a0; }
+        .tier-card h3 { margin-bottom: 8px; color: #ffffff; }
+        .tier-card .price-label { color: #8a9aaa; font-size: 0.85rem; margin-bottom: 12px; display: block; }
+        .tier-card p { font-size: 0.88rem; margin-bottom: 0; }
+        .rec-badge { background: #06d6a0; color: #000; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; margin-left: 8px; }
+        .roadmap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 32px 0; }
+        .roadmap-card { background: #0d1117; border: 1px solid #1a2d3e; border-radius: 10px; padding: 24px; }
+        .roadmap-card .status-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+        .dot-done { background: #06d6a0; }
+        .dot-soon { background: #f4a261; }
+        .dot-future { background: #555; }
+        .roadmap-card h3 { font-size: 1rem; color: #ffffff; margin-bottom: 8px; }
+        .roadmap-card p { font-size: 0.85rem; margin-bottom: 0; }
+        .generation-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .generation-table th { background: #111; color: #06d6a0; padding: 12px 16px; text-align: left; border-bottom: 2px solid #06d6a0; font-size: 0.85rem; }
+        .generation-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; }
+        .generation-table .highlight-row td { background: #091a14; color: #06d6a0; font-weight: 600; }
+        footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
+        footer a { color: #06d6a0; text-decoration: none; margin: 0 12px; }
+        @media (max-width: 600px) { h1 { font-size: 1.9rem; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="badge">Next Generation</div>
+    <div class="badge-alt">Ollama Support Pending</div>
+    <h1>Deploy <span>GLM-5</span> Privately When It Arrives</h1>
+    <p class="subtitle">Tsinghua University and Zhipu AI's next-generation language model series. GLM-5 advances the GLM lineage with deeper reasoning, stronger multimodal integration, and extended context. Plan your private deployment today — hardware guidance, architecture overview, and upgrade path from GLM-4.</p>
+    <div class="cta-group">
+        <a href="/quote" class="btn-primary">Plan My Deployment</a>
+        <a href="/glm/" class="btn-secondary">Deploy GLM-4 Now</a>
+    </div>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/glm/">GLM-4</a>
+    <a href="/chatglm/">ChatGLM</a>
+    <a href="/qwen/">Qwen</a>
+    <a href="/llama/">Llama</a>
+    <a href="/deploy/">Deploy</a>
+</nav>
+
+<div class="container">
+
+    <div class="warning-box">
+        <h3>⚠ Advance Planning Page</h3>
+        <p>GLM-5 has been announced by Zhipu AI but full open-weight Ollama-compatible releases are not yet available at time of publication. This page documents what is known about the architecture, projected hardware requirements based on the GLM generation pattern, and how to plan your infrastructure now so deployment is immediate when models become available. We update this page as releases land.</p>
+    </div>
+
+    <h2>The GLM Generation Pattern</h2>
+
+    <p>To understand what GLM-5 represents, it helps to see the trajectory Tsinghua and Zhipu AI have established across successive GLM generations. Each release has followed a consistent pattern: significantly expanded parameter count in flagship variants, new capability dimensions added at each generation, and open-weight releases that lag the API releases by weeks to months.</p>
+
+    <p>GLM-1 through GLM-3 established the bilingual foundation. GLM-4 — currently the deployment-ready generation — introduced 128K context windows, the GLM-Z1 reasoning variant, GLM-4V vision capability, and meaningful benchmark improvements over the ChatGLM3 lineage. GLM-4-9B remains the strongest open-weight Chinese-first model available for self-hosted deployment at sub-10B scale.</p>
+
+    <p>GLM-5 continues this trajectory. Based on Zhipu AI's roadmap communications, developer previews, and the architectural patterns established in GLM-4, the next generation focuses on three dimensions: reasoning depth, multimodal coherence, and agentic capability. Understanding these priorities shapes hardware planning decisions today.</p>
+
+    <div class="stat-grid">
+        <div class="stat-card">
+            <span class="number">~9–72B</span>
+            <div class="label">Expected Parameter Range</div>
+        </div>
+        <div class="stat-card">
+            <span class="number">256K+</span>
+            <div class="label">Projected Context Window</div>
+        </div>
+        <div class="stat-card">
+            <span class="number">2025</span>
+            <div class="label">Open-Weight Target</div>
+        </div>
+        <div class="stat-card">
+            <span class="number">GLM-4</span>
+            <div class="label">Deploy Now (Available)</div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>GLM Generation Comparison</h2>
+
+    <table class="generation-table">
+        <thead>
+            <tr>
+                <th>Generation</th>
+                <th>Open Weights</th>
+                <th>Context</th>
+                <th>Key Capability Added</th>
+                <th>Ollama</th>
+                <th>Recommended</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ChatGLM-6B</td>
+                <td class="check">✓</td>
+                <td>2K</td>
+                <td>Bilingual baseline</td>
+                <td class="check">✓</td>
+                <td>Legacy only</td>
+            </tr>
+            <tr>
+                <td>ChatGLM2-6B</td>
+                <td class="check">✓</td>
+                <td>32K</td>
+                <td>FlashAttention, speed</td>
+                <td class="check">✓</td>
+                <td>Legacy only</td>
+            </tr>
+            <tr>
+                <td>ChatGLM3-6B</td>
+                <td class="check">✓</td>
+                <td>32K</td>
+                <td>Function calling, agents</td>
+                <td class="check">✓</td>
+                <td>Budget hardware</td>
+            </tr>
+            <tr>
+                <td>GLM-4-9B</td>
+                <td class="check">✓</td>
+                <td>128K</td>
+                <td>Reasoning, vision, long ctx</td>
+                <td class="check">✓</td>
+                <td class="strong">Current best</td>
+            </tr>
+            <tr class="highlight-row">
+                <td>GLM-5 (projected)</td>
+                <td class="pending">Pending</td>
+                <td>256K+</td>
+                <td>Deep reasoning, multimodal</td>
+                <td class="pending">Pending</td>
+                <td class="pending">Coming 2025</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr class="section-divider">
+
+    <h2>What GLM-5 Is Expected to Deliver</h2>
+
+    <p>Zhipu AI has published roadmap information and developer previews that outline the capability dimensions GLM-5 targets. The following represents what is publicly known combined with reasonable inference from the GLM-4 architecture and the general trajectory of competitive frontier models.</p>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <span class="icon">🧠</span>
+            <h3>Extended Reasoning</h3>
+            <p>GLM-4 introduced GLM-Z1 as a separate reasoning-focused variant. GLM-5 is expected to integrate extended thinking capability directly into the base model, similar to how DeepSeek-R1 approaches chain-of-thought reasoning. Longer internal reasoning chains before output generation.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">👁</span>
+            <h3>Native Multimodal</h3>
+            <p>GLM-4V added vision as a separate model variant. GLM-5 targets unified multimodal capability — text, images, and potentially video understanding within a single model architecture rather than separate vision-language model branches.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">📄</span>
+            <h3>256K+ Context</h3>
+            <p>Projected to double or quadruple the GLM-4 context window from 128K tokens to 256K or beyond. Critical for processing full Chinese legal codices, multi-volume research documents, and complete codebases in a single inference pass.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🤖</span>
+            <h3>Agentic Architecture</h3>
+            <p>Enhanced tool use, multi-step planning, and autonomous task execution. GLM-5 positions Zhipu AI's models for agentic workflows where the model orchestrates multi-turn interactions with external systems rather than responding to single prompts.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🌐</span>
+            <h3>Stronger English Parity</h3>
+            <p>Each GLM generation has closed the gap between Chinese and English performance. GLM-5 is expected to approach true bilingual parity — matching strong English-first models while retaining the Chinese language advantages the GLM lineage is known for.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">⚡</span>
+            <h3>Efficiency Improvements</h3>
+            <p>Architectural refinements expected to improve inference efficiency relative to parameter count. The GLM-4-9B already achieves competitive benchmarks at 9B parameters. GLM-5 aims to extend this — doing more with fewer parameters at the open-weight tier.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Expected Model Variants</h2>
+
+    <p>Based on the GLM-4 release pattern, GLM-5 is expected to launch in multiple variants addressing different deployment scenarios. Zhipu AI has consistently released both capability-focused and efficiency-focused variants within each generation.</p>
+
+    <div class="model-grid">
+        <div class="model-card">
+            <h3>GLM-5-9B</h3>
+            <span class="tag-pending">Expected — Unconfirmed</span>
+            <p>The open-weight flagship for self-hosted deployment. If GLM-5 follows GLM-4's pattern, a 9B parameter open-weight model will anchor the accessible tier. Strong bilingual capability on single-GPU hardware.</p>
+            <span class="spec-pending">Est. VRAM: ~10–12GB (Q4)</span>
+            <span class="spec-pending">Est. Context: 128–256K tokens</span>
+        </div>
+        <div class="model-card">
+            <h3>GLM-5-Z1 (Reasoning)</h3>
+            <span class="tag-pending">Expected — Unconfirmed</span>
+            <p>GLM-4 introduced GLM-Z1 as a thinking-focused variant. GLM-5-Z1 or equivalent is expected to extend this with longer reasoning chains, better mathematical performance, and improved complex problem solving.</p>
+            <span class="spec-pending">Est. VRAM: ~12–16GB (Q4)</span>
+            <span class="spec-pending">Est. Context: 256K+ tokens</span>
+        </div>
+        <div class="model-card">
+            <h3>GLM-5V (Vision)</h3>
+            <span class="tag-pending">Expected — Unconfirmed</span>
+            <p>Vision-language variant continuing the GLM-4V lineage. Expected to process images, charts, documents, and potentially video frames alongside text. Integrated rather than bolt-on multimodal architecture.</p>
+            <span class="spec-pending">Est. VRAM: ~14–20GB (Q4)</span>
+            <span class="spec-pending">Est. Context: 128K+ tokens</span>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <p><strong>Deployment-ready now:</strong> While waiting for GLM-5 open-weight releases, <a href="/glm/" style="color: #06d6a0;">GLM-4-9B</a> is the correct production choice. The infrastructure you build for GLM-4 will carry forward to GLM-5 with a model swap — context window handling, API integration, system prompt architecture, and network configuration all remain valid across GLM generations.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Hardware Planning for GLM-5</h2>
+
+    <p>Even before GLM-5 open-weight models are confirmed, hardware planning is worth doing now. The GLM generation pattern is consistent: each generation increases parameter count modestly (GLM-3 was 6B, GLM-4 is 9B, GLM-5 likely 9–12B for the accessible tier) while expanding context requirements significantly. Context is the primary driver of VRAM requirements beyond the base model weight.</p>
+
+    <table class="hardware-table">
+        <thead>
+            <tr>
+                <th>Scenario</th>
+                <th>Hardware</th>
+                <th>VRAM</th>
+                <th>GLM-4 Today</th>
+                <th>GLM-5 Readiness</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Budget / Developer</td>
+                <td>RTX 3060 12GB</td>
+                <td>12GB</td>
+                <td>GLM-4-9B Q4</td>
+                <td>Likely sufficient for base tier</td>
+            </tr>
+            <tr>
+                <td>Small Team</td>
+                <td>RTX 4080 / 3090</td>
+                <td>16–24GB</td>
+                <td>GLM-4-9B FP16</td>
+                <td>Strong readiness, all variants</td>
+            </tr>
+            <tr>
+                <td>Professional</td>
+                <td>RTX 4090 × 1</td>
+                <td>24GB</td>
+                <td>GLM-4-9B + Z1</td>
+                <td>Excellent single-GPU coverage</td>
+            </tr>
+            <tr>
+                <td>Enterprise Small</td>
+                <td>A6000 / L40S</td>
+                <td>48GB</td>
+                <td>GLM-4-9B all variants</td>
+                <td>Future-proof for 256K context</td>
+            </tr>
+            <tr>
+                <td>Enterprise Full</td>
+                <td>H100 80GB × 1–2</td>
+                <td>80–160GB</td>
+                <td>Any GLM-4 variant</td>
+                <td>Ready for any GLM-5 tier</td>
+            </tr>
+            <tr>
+                <td>Apple Silicon</td>
+                <td>M3 Max / M4 Max</td>
+                <td>48–128GB unified</td>
+                <td>GLM-4-9B all variants</td>
+                <td>Strong readiness</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="info-box">
+        <h3>The Context Window Hardware Trap</h3>
+        <p>A 9B model at 4-bit quantization uses roughly 5–6GB for weights. A 256K context window can add 8–20GB of KV cache on top of that depending on implementation. If you plan to use GLM-5's extended context capability, size your VRAM for the cache, not just the model weights. The RTX 4090 24GB is the minimum sensible single-GPU for long-context workloads.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>The Private Deployment Case for GLM-5</h2>
+
+    <p>The privacy arguments that apply to GLM-4 become more compelling with GLM-5, not less. As the capability ceiling rises — longer context, stronger reasoning, multimodal analysis — the sensitivity of the documents organizations will want to process increases proportionally.</p>
+
+    <p>A model that can process a 256K token context is a model capable of reading an entire legal case file, a full financial audit trail, or a complete engineering specification. The value of keeping those documents out of cloud infrastructure grows in direct proportion to the model's ability to extract meaning from them. More capability means more sensitive documents flow through the pipeline. More sensitive documents mean the private deployment case is stronger, not weaker.</p>
+
+    <p>This is the trajectory we see across all frontier model families. As models become more capable of processing genuinely sensitive material — not just answering general questions but reasoning through confidential business intelligence, legal strategy, or proprietary technical design — the organizations deploying them responsibly are the ones running private infrastructure. GLM-5, when available, will be no different.</p>
+
+    <hr class="section-divider">
+
+    <h2>Sector Applications at GLM-5 Capability Level</h2>
+
+    <ul class="use-case-list">
+        <li><strong>Full contract corpus analysis:</strong> A 256K context window allows processing of entire Chinese contract portfolios — hundreds of pages of agreements — in a single inference call rather than chunked summarization. Legal teams can ask questions across a full body of contracts simultaneously.</li>
+        <li><strong>Multi-volume regulatory compliance:</strong> Chinese financial regulatory frameworks span thousands of pages. GLM-5's projected context depth allows compliance teams to load complete regulatory texts and reason over them without pre-chunking or retrieval pipelines.</li>
+        <li><strong>Engineering specification review:</strong> Manufacturing and engineering teams reviewing Chinese-language technical specifications, supplier documentation, and quality standards can process complete document sets in single sessions.</li>
+        <li><strong>Academic research synthesis:</strong> Research teams at Chinese universities and research institutes can process entire paper collections, cross-reference findings, and generate literature reviews from full-text documents rather than abstracts.</li>
+        <li><strong>Multimodal document intelligence:</strong> With GLM-5V's expected unified vision capability, documents containing text, charts, diagrams, and tables can be analyzed as integrated units rather than requiring separate text extraction pipelines.</li>
+        <li><strong>Autonomous research agents:</strong> GLM-5's agentic capability architecture enables multi-step research tasks where the model plans, executes, reflects, and iterates — going beyond single-turn question answering to autonomous investigation.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <h2>Deployment Preparation Commands</h2>
+
+    <p>While GLM-5 is not yet in Ollama's model library, you can prepare your infrastructure today. The following setup works identically for GLM-4 now and will require only a model name change when GLM-5 arrives.</p>
+
+    <div class="code-block">
+        <span class="comment"># Install Ollama and deploy GLM-4 today</span><br>
+        curl -fsSL https://ollama.ai/install.sh | sh<br><br>
+        <span class="comment"># GLM-4 — production-ready now</span><br>
+        ollama pull glm4<br><br>
+        <span class="comment"># When GLM-5 releases (anticipated command)</span><br>
+        <span class="comment"># ollama pull glm5</span><br>
+        <span class="comment"># ollama pull glm5:9b</span><br>
+        <span class="comment"># ollama pull glm5:z1</span><br><br>
+        <span class="comment"># Infrastructure that carries forward to GLM-5</span><br>
+        docker compose up -d<br><br>
+        <span class="comment"># docker-compose.yml (works for GLM-4 and GLM-5)</span><br>
+        <span class="comment"># version: '3.8'</span><br>
+        <span class="comment"># services:</span><br>
+        <span class="comment">#   ollama:</span><br>
+        <span class="comment">#     image: ollama/ollama</span><br>
+        <span class="comment">#     volumes:</span><br>
+        <span class="comment">#       - ollama:/root/.ollama</span><br>
+        <span class="comment">#     deploy:</span><br>
+        <span class="comment">#       resources:</span><br>
+        <span class="comment">#         reservations:</span><br>
+        <span class="comment">#           devices:</span><br>
+        <span class="comment">#             - driver: nvidia</span><br>
+        <span class="comment">#               count: 1</span><br>
+        <span class="comment">#               capabilities: [gpu]</span><br>
+        <span class="comment">#   webui:</span><br>
+        <span class="comment">#     image: ghcr.io/open-webui/open-webui</span><br>
+        <span class="comment">#     environment:</span><br>
+        <span class="comment">#       - OLLAMA_BASE_URL=http://ollama:11434</span><br>
+        <span class="comment">#       - DEFAULT_LOCALE=zh-CN</span><br>
+        <span class="comment">#     ports:</span><br>
+        <span class="comment">#       - "3000:8080"</span><br><br>
+        <span class="comment"># Monitor Ollama library for GLM-5 release</span><br>
+        curl https://ollama.com/api/tags | grep glm
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Roadmap Tracking</h2>
+
+    <div class="roadmap-grid">
+        <div class="roadmap-card">
+            <h3><span class="status-dot dot-done"></span>GLM-4-9B on Ollama</h3>
+            <p>Available now. Full deployment guides, system prompts, and hardware recommendations on the <a href="/glm/" style="color: #06d6a0;">GLM-4 page</a>. Deploy today.</p>
+        </div>
+        <div class="roadmap-card">
+            <h3><span class="status-dot dot-done"></span>GLM-Z1 Reasoning</h3>
+            <p>GLM-4 generation reasoning variant available now. Extended thinking chains for complex analysis and multi-step reasoning tasks.</p>
+        </div>
+        <div class="roadmap-card">
+            <h3><span class="status-dot dot-done"></span>GLM-4V Vision</h3>
+            <p>GLM-4 vision-language model available. Image understanding, chart analysis, and document OCR capability in private deployment.</p>
+        </div>
+        <div class="roadmap-card">
+            <h3><span class="status-dot dot-soon"></span>GLM-5 API Preview</h3>
+            <p>Zhipu AI API access to GLM-5 capabilities in limited preview. Not self-hostable at this stage — cloud access only.</p>
+        </div>
+        <div class="roadmap-card">
+            <h3><span class="status-dot dot-future"></span>GLM-5 Open Weights</h3>
+            <p>Open-weight release for self-hosted deployment. Expected to follow the API release by weeks to months, consistent with the GLM-4 release pattern.</p>
+        </div>
+        <div class="roadmap-card">
+            <h3><span class="status-dot dot-future"></span>GLM-5 Ollama Support</h3>
+            <p>Ollama model library integration. We will update this page and deployment documentation immediately upon availability.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Service Options</h2>
+
+    <div class="tier-grid">
+        <div class="tier-card recommended">
+            <h3>Deploy GLM-4 Now <span class="rec-badge">Ready Today</span></h3>
+            <span class="price-label">Current generation</span>
+            <p>GLM-4-9B is production-ready with 128K context, reasoning variants, and vision capability. We configure your infrastructure so it is GLM-5 ready — model swap only when the time comes. No rebuild required.</p>
+        </div>
+        <div class="tier-card">
+            <h3>GLM-5 Pre-Planning</h3>
+            <span class="price-label">Forward planning engagement</span>
+            <p>Hardware specification, network architecture, and API integration design for GLM-5 requirements. Includes context window sizing, VRAM planning for extended context, and agentic workflow architecture review.</p>
+        </div>
+        <div class="tier-card">
+            <h3>GLM-5 Launch Day Deployment</h3>
+            <span class="price-label">On availability</span>
+            <p>When GLM-5 open-weight Ollama models land, we deploy immediately. Pre-clients get priority scheduling. Your infrastructure is ready — we configure the new model and validate performance within 48 hours of release.</p>
+        </div>
+    </div>
+
+    <a href="/quote" class="btn-primary" style="display:inline-block; margin-top: 8px;">Start GLM-4 Now, GLM-5 Ready</a>
+
+    <hr class="section-divider">
+
+    <div class="info-box">
+        <h3>Related Pages</h3>
+        <p>Deploy the current generation now: <a href="/glm/" style="color: #06d6a0;">GLM-4-9B</a> with 128K context and reasoning variants. For lighter hardware requirements: <a href="/chatglm/" style="color: #06d6a0;">ChatGLM3-6B</a> on 6GB VRAM. For strongest bilingual coverage at the 7B scale: <a href="/qwen/" style="color: #06d6a0;">Qwen 2.5</a>.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>
+        <a href="/">NoCloudGPT Home</a>
+        <a href="/glm/">GLM-4</a>
+        <a href="/chatglm/">ChatGLM</a>
+        <a href="/glm5/">GLM-5</a>
+        <a href="/qwen/">Qwen</a>
+        <a href="/llama/">Llama</a>
+        <a href="/deploy/">Deployment Guide</a>
+        <a href="/quote/">Get Quote</a>
+    </p>
+    <p style="margin-top: 16px;">© 2025 NoCloudGPT. Private AI deployment specialists. Not affiliated with Tsinghua University or Zhipu AI. GLM-5 specifications are projected based on available roadmap information and subject to change.</p>
+</footer>
+
+</body>
+</html>
