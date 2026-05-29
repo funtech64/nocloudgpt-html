@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local AI vs Claude: Privacy, Cost & Control Comparison | NoCloudGPT</title>
+<meta name="description" content="Claude sends every prompt to Anthropic's servers. Compare data privacy, compliance risk, and total cost against running Llama 3.3 or Mistral locally.">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0a0f; color: #e2e8f0; line-height: 1.7; }
+
+.container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+nav { background: rgba(10,10,15,0.95); border-bottom: 1px solid #1e293b; padding: 16px 0; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); }
+nav .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.nav-brand { font-size: 1.2rem; font-weight: 700; color: #f8fafc; text-decoration: none; letter-spacing: -0.02em; }
+.nav-brand span { color: #6366f1; }
+.nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+.nav-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: #f8fafc; }
+
+.hero { padding: 64px 0 48px; border-bottom: 1px solid #1e293b; }
+.hero-badge { display: inline-block; background: #1e293b; border: 1px solid #334155; color: #6366f1; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.03em; color: #f8fafc; margin-bottom: 16px; }
+.hero h1 .vs { color: #6366f1; }
+.hero-sub { font-size: 1.1rem; color: #94a3b8; max-width: 640px; margin-bottom: 32px; }
+
+.verdict-bar { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 0; }
+.verdict-pill { display: flex; align-items: center; gap: 8px; background: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 10px 16px; font-size: 0.85rem; }
+.verdict-pill .icon { font-size: 1.1rem; }
+.verdict-pill strong { color: #f8fafc; }
+.verdict-pill span { color: #64748b; }
+
+/* COMPARISON TABLE */
+.compare-section { padding: 56px 0; }
+.compare-section h2 { font-size: 1.5rem; font-weight: 700; color: #f8fafc; margin-bottom: 8px; }
+.compare-section .section-sub { color: #64748b; margin-bottom: 32px; font-size: 0.95rem; }
+
+.compare-table { width: 100%; border-collapse: collapse; margin-bottom: 48px; }
+.compare-table thead tr { border-bottom: 2px solid #1e293b; }
+.compare-table th { padding: 14px 16px; text-align: left; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #475569; }
+.compare-table th.col-local { color: #6366f1; }
+.compare-table th.col-claude { color: #d97706; }
+.compare-table td { padding: 16px; border-bottom: 1px solid #1e293b; font-size: 0.9rem; vertical-align: top; }
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table td:first-child { color: #94a3b8; font-weight: 600; width: 22%; }
+.compare-table td.win { color: #4ade80; }
+.compare-table td.loss { color: #f87171; }
+.compare-table td.neutral { color: #94a3b8; }
+.compare-table tr:hover td { background: #0f172a; }
+
+.win-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 7px; border-radius: 10px; background: #14532d; color: #4ade80; margin-left: 6px; vertical-align: middle; }
+.loss-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 7px; border-radius: 10px; background: #450a0a; color: #f87171; margin-left: 6px; vertical-align: middle; }
+
+/* DEEP DIVE CARDS */
+.risk-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
+.risk-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 24px; }
+.risk-card .risk-icon { font-size: 1.8rem; margin-bottom: 12px; }
+.risk-card h3 { font-size: 1rem; font-weight: 700; color: #f8fafc; margin-bottom: 8px; }
+.risk-card p { font-size: 0.88rem; color: #64748b; margin-bottom: 12px; }
+.risk-card .risk-detail { font-size: 0.82rem; color: #475569; border-top: 1px solid #1e293b; padding-top: 10px; margin-top: 10px; }
+.risk-card .risk-detail strong { color: #94a3b8; }
+
+/* POLICY CALLOUTS */
+.callout { border-radius: 8px; padding: 16px 20px; margin: 20px 0; border-left: 4px solid; }
+.callout-warning { background: #1c1100; border-color: #f59e0b; }
+.callout-warning .callout-title { color: #fbbf24; font-weight: 700; margin-bottom: 6px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.callout-info { background: #0f1f3d; border-color: #3b82f6; }
+.callout-info .callout-title { color: #60a5fa; font-weight: 700; margin-bottom: 6px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.callout-success { background: #0a1f0a; border-color: #22c55e; }
+.callout-success .callout-title { color: #4ade80; font-weight: 700; margin-bottom: 6px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.callout p, .callout li { font-size: 0.88rem; color: #94a3b8; }
+.callout ul { margin: 8px 0 0 16px; }
+.callout li { margin-bottom: 4px; }
+
+/* COST SECTION */
+.cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0; }
+@media (max-width: 600px) { .cost-grid { grid-template-columns: 1fr; } }
+.cost-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 24px; }
+.cost-card.highlight { border-color: #6366f1; }
+.cost-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+.cost-card h3.local { color: #6366f1; }
+.cost-card h3.claude { color: #d97706; }
+.cost-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #1e293b; font-size: 0.88rem; }
+.cost-row:last-child { border-bottom: none; font-weight: 700; }
+.cost-row .label { color: #64748b; }
+.cost-row .amount { color: #f8fafc; }
+.cost-row .amount.green { color: #4ade80; }
+.cost-row .amount.red { color: #f87171; }
+
+/* USE CASE SECTION */
+.usecase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 32px 0; }
+.usecase-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 22px; }
+.usecase-card h3 { font-size: 0.95rem; font-weight: 700; color: #f8fafc; margin-bottom: 10px; }
+.usecase-row { display: flex; gap: 10px; margin-bottom: 8px; font-size: 0.85rem; }
+.usecase-row .tag { flex-shrink: 0; font-size: 0.7rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; margin-top: 2px; }
+.tag-local { background: #1e3a5f; color: #60a5fa; }
+.tag-claude { background: #2c1800; color: #d97706; }
+.usecase-row p { color: #64748b; }
+
+/* RECOMMENDATION */
+.rec-section { background: #0f172a; border: 1px solid #1e293b; border-radius: 16px; padding: 40px; margin: 48px 0; }
+.rec-section h2 { font-size: 1.4rem; font-weight: 700; color: #f8fafc; margin-bottom: 16px; }
+.rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+@media (max-width: 600px) { .rec-grid { grid-template-columns: 1fr; } }
+.rec-col h3 { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+.rec-col.local h3 { color: #6366f1; }
+.rec-col.claude h3 { color: #d97706; }
+.rec-col ul { list-style: none; }
+.rec-col ul li { padding: 6px 0; border-bottom: 1px solid #1e293b; font-size: 0.88rem; color: #94a3b8; display: flex; gap: 8px; align-items: flex-start; }
+.rec-col ul li::before { flex-shrink: 0; margin-top: 2px; }
+.rec-col.local ul li::before { content: "✓"; color: #4ade80; }
+.rec-col.claude ul li::before { content: "✓"; color: #d97706; }
+
+/* CTA */
+.cta-section { text-align: center; padding: 64px 0; }
+.cta-section h2 { font-size: 1.6rem; font-weight: 700; color: #f8fafc; margin-bottom: 12px; }
+.cta-section p { color: #64748b; margin-bottom: 32px; }
+.btn-primary { display: inline-block; background: #6366f1; color: #fff; font-weight: 700; font-size: 0.95rem; padding: 14px 28px; border-radius: 8px; text-decoration: none; transition: background 0.2s; }
+.btn-primary:hover { background: #4f46e5; }
+.btn-ghost { display: inline-block; background: transparent; color: #94a3b8; font-weight: 600; font-size: 0.95rem; padding: 14px 28px; border-radius: 8px; text-decoration: none; border: 1px solid #334155; margin-left: 12px; transition: all 0.2s; }
+.btn-ghost:hover { border-color: #6366f1; color: #f8fafc; }
+
+footer { border-top: 1px solid #1e293b; padding: 40px 0; margin-top: 40px; }
+footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-brand { font-size: 1rem; font-weight: 700; color: #f8fafc; }
+.footer-brand span { color: #6366f1; }
+.footer-links { display: flex; gap: 20px; list-style: none; }
+.footer-links a { color: #475569; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+.footer-links a:hover { color: #94a3b8; }
+.footer-copy { color: #334155; font-size: 0.8rem; }
+
+h2.section-title { font-size: 1.5rem; font-weight: 700; color: #f8fafc; margin-bottom: 8px; }
+.section-sub { color: #64748b; margin-bottom: 32px; font-size: 0.95rem; }
+section { padding: 56px 0; border-bottom: 1px solid #1e293b; }
+section:last-of-type { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="nav-brand">No<span>Cloud</span>GPT</a>
+    <ul class="nav-links">
+      <li><a href="/models/">Models</a></li>
+      <li><a href="/deploy/quickstart/">Deploy</a></li>
+      <li><a href="/compare/vs-chatgpt/">vs ChatGPT</a></li>
+      <li><a href="/compare/vs-claude/" class="active">vs Claude</a></li>
+      <li><a href="/compare/vs-copilot/">vs Copilot</a></li> <!-- STUB: /compare/vs-copilot/ -->
+      <li><a href="#" >Solutions</a></li> <!-- STUB: /solutions/ -->
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" style="border-bottom:1px solid #1e293b; padding-bottom:48px;">
+    <div class="container">
+      <div class="hero-badge">Privacy Comparison</div>
+      <h1>Local AI <span class="vs">vs</span> Claude</h1>
+      <p class="hero-sub">Claude is technically impressive. But every prompt you send — contracts, patient data, source code, strategy memos — transits Anthropic's infrastructure. Here is what that means in practice.</p>
+      <div class="verdict-bar">
+        <div class="verdict-pill"><span class="icon">🔒</span><strong>Privacy</strong><span>&nbsp;Local wins — zero data egress</span></div>
+        <div class="verdict-pill"><span class="icon">💰</span><strong>Cost</strong><span>&nbsp;Local wins at volume</span></div>
+        <div class="verdict-pill"><span class="icon">🧠</span><strong>Quality</strong><span>&nbsp;Comparable at 70B scale</span></div>
+        <div class="verdict-pill"><span class="icon">⚡</span><strong>Speed</strong><span>&nbsp;Claude faster on weak hardware</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MASTER COMPARISON TABLE -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Head-to-Head Comparison</h2>
+      <p class="section-sub">Every dimension that matters for professional and regulated use.</p>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th class="col-local">Local AI (Ollama + Llama / Mistral)</th>
+            <th class="col-claude">Claude (Anthropic API / Claude.ai)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data residency</td>
+            <td class="win">Stays on your hardware. No network egress. <span class="win-badge">WIN</span></td>
+            <td class="loss">Transits Anthropic US servers regardless of user location.</td>
+          </tr>
+          <tr>
+            <td>Prompt retention</td>
+            <td class="win">Never stored anywhere outside your machine. <span class="win-badge">WIN</span></td>
+            <td class="loss">Claude.ai retains conversations. API has 30-day abuse monitoring window per Anthropic policy.</td>
+          </tr>
+          <tr>
+            <td>Training opt-out</td>
+            <td class="win">Not applicable — model is static, local. <span class="win-badge">WIN</span></td>
+            <td class="neutral">API users can opt out. Claude.ai free tier opted in by default.</td>
+          </tr>
+          <tr>
+            <td>GDPR compliance</td>
+            <td class="win">No cross-border transfer. No DPA required. <span class="win-badge">WIN</span></td>
+            <td class="loss">EU data processed in US. Requires SCCs. Anthropic is a US company subject to CLOUD Act.</td>
+          </tr>
+          <tr>
+            <td>HIPAA suitability</td>
+            <td class="win">PHI never leaves your environment. <span class="win-badge">WIN</span></td>
+            <td class="loss">No BAA available as of mid-2025. Claude.ai not covered for PHI under HIPAA.</td>
+          </tr>
+          <tr>
+            <td>Attorney-client privilege</td>
+            <td class="win">No third-party disclosure. Privilege intact. <span class="win-badge">WIN</span></td>
+            <td class="loss">Sending privileged communications to Anthropic may constitute waiver in some jurisdictions.</td>
+          </tr>
+          <tr>
+            <td>Air-gap deployment</td>
+            <td class="win">Runs fully offline after model download. <span class="win-badge">WIN</span></td>
+            <td class="loss">Requires active internet. No offline mode.</td>
+          </tr>
+          <tr>
+            <td>Model quality (writing)</td>
+            <td class="neutral">Excellent at 70B. Slightly below Claude 3.5 Sonnet on long-form prose.</td>
+            <td class="win">Claude 3.5 Sonnet is best-in-class for writing and summarisation. <span class="win-badge">WIN</span></td>
+          </tr>
+          <tr>
+            <td>Context window</td>
+            <td class="neutral">Mistral Large 2: 128k. Llama 3.3 70B: 128k. Comparable.</td>
+            <td class="win">Claude 3.5: 200k tokens. Claude 3 Opus: 200k. <span class="win-badge">WIN</span></td>
+          </tr>
+          <tr>
+            <td>Reasoning / coding</td>
+            <td class="neutral">Llama 3.3 70B competitive on HumanEval and MATH benchmarks.</td>
+            <td class="win">Claude 3.5 Sonnet leads most coding benchmarks. <span class="win-badge">WIN</span></td>
+          </tr>
+          <tr>
+            <td>Cost — 1M tokens/month</td>
+            <td class="win">~$0 marginal (hardware already owned). <span class="win-badge">WIN</span></td>
+            <td class="loss">Claude 3.5 Sonnet: ~$18 input + $90 output = ~$108/M tokens.</td>
+          </tr>
+          <tr>
+            <td>Cost — 100M tokens/month</td>
+            <td class="win">Hardware amortised. Near zero marginal cost. <span class="win-badge">WIN</span></td>
+            <td class="loss">~$10,800/month at Sonnet rates. Opus 3x higher.</td>
+          </tr>
+          <tr>
+            <td>Rate limits</td>
+            <td class="win">None. Your hardware, your throughput. <span class="win-badge">WIN</span></td>
+            <td class="loss">Tier-based limits. Free/Pro tiers hit limits quickly on heavy workloads.</td>
+          </tr>
+          <tr>
+            <td>Customisation / fine-tuning</td>
+            <td class="win">Full access to weights. LoRA fine-tuning supported. <span class="win-badge">WIN</span></td>
+            <td class="loss">No fine-tuning available on Claude as of mid-2025.</td>
+          </tr>
+          <tr>
+            <td>Vendor lock-in</td>
+            <td class="win">Open weights. Switch models freely. <span class="win-badge">WIN</span></td>
+            <td class="loss">Proprietary. API breaking changes and deprecations at Anthropic's discretion.</td>
+          </tr>
+          <tr>
+            <td>Uptime dependency</td>
+            <td class="win">No external dependency. Works during outages. <span class="win-badge">WIN</span></td>
+            <td class="loss">Dependent on Anthropic infrastructure availability.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ANTHROPIC POLICY DEEP DIVE -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">What Anthropic's Policies Actually Say</h2>
+      <p class="section-sub">Sourced from Anthropic's published usage policy and privacy notice. Current as of mid-2025.</p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Claude.ai Free and Pro — Conversation Storage</div>
+        <p>Anthropic's privacy policy states that Claude.ai conversations may be reviewed by staff for safety and quality purposes. Conversations are retained and may be used to improve models unless you explicitly opt out in settings. The opt-out is not retroactive.</p>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">API — 30-Day Abuse Monitoring</div>
+        <p>Even on the paid API with training opted out, Anthropic retains prompts for up to 30 days for trust and safety review. This window applies to all API tiers including enterprise. A single prompt containing MNPI, PHI, or privileged legal content exists on Anthropic's servers during this window.</p>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">CLOUD Act Exposure</div>
+        <p>Anthropic is a US-incorporated company. Under the CLOUD Act (2018), US law enforcement can compel disclosure of data held by US companies regardless of where that data physically resides. EU Standard Contractual Clauses do not override this obligation.</p>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Claude for Enterprise (claude.ai/enterprise)</div>
+        <p>Anthropic's enterprise tier offers zero data retention and a BAA for HIPAA-eligible customers. This addresses some but not all concerns — data still transits US infrastructure, CLOUD Act still applies, and attorney-client privilege waiver arguments still apply in some jurisdictions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTOR RISK CARDS -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Sector-by-Sector Risk Analysis</h2>
+      <p class="section-sub">What Claude's data handling means for your specific industry.</p>
+
+      <div class="risk-grid">
+        <div class="risk-card">
+          <div class="risk-icon">⚖️</div>
+          <h3>Legal</h3>
+          <p>Sending client communications, contract drafts, or case strategy to Claude may waive attorney-client privilege under the voluntary disclosure doctrine.</p>
+          <div class="risk-detail">
+            <strong>Risk:</strong> Courts in the US and UK have found that disclosure to third-party AI systems can constitute waiver. No published ruling specifically addresses Claude, but the legal theory is well-established.<br><br>
+            <strong>Local alternative:</strong> <a href="/mistral-large/" style="color:#6366f1;">Mistral Large 2</a> — 128k context, strong legal drafting, zero egress.
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-icon">📈</div>
+          <h3>Finance</h3>
+          <p>Analysts using Claude to process earnings data, M&A details, or portfolio strategies before public disclosure face material MNPI and insider trading exposure.</p>
+          <div class="risk-detail">
+            <strong>Risk:</strong> MNPI transmitted to any third-party system — including AI providers — creates a chain of custody problem for compliance teams. SEC guidance on AI tools is evolving rapidly.<br><br>
+            <strong>Local alternative:</strong> <a href="/mistral-large/" style="color:#6366f1;">Mistral Large 2</a> or Llama 3.3 70B on an isolated finance VLAN.
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-icon">🏥</div>
+          <h3>Healthcare</h3>
+          <p>Claude has no BAA available on standard plans. Sending any PHI — patient names, diagnoses, treatment notes — violates HIPAA regardless of Anthropic's internal safeguards.</p>
+          <div class="risk-detail">
+            <strong>Risk:</strong> HIPAA penalties range from $100 to $50,000 per violation with annual caps of $1.9M per violation category. "Accidental" disclosure is not a defence once the system is known to lack a BAA.<br><br>
+            <strong>Local alternative:</strong> Llama 3.3 70B or Mistral Large 2 on-premises.
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-icon">💻</div>
+          <h3>Engineering</h3>
+          <p>Pasting proprietary source code, internal APIs, or unreleased product specs into Claude creates IP disclosure risk and may violate NDAs with clients or partners.</p>
+          <div class="risk-detail">
+            <strong>Risk:</strong> Even with training opt-out, code sits on Anthropic's infrastructure during the 30-day monitoring window. Employees who paste trade secrets may personally violate employment agreements.<br><br>
+            <strong>Local alternative:</strong> <a href="/deploy/quickstart/" style="color:#6366f1;">Ollama + Llama 3.3</a> running in your dev environment.
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-icon">👥</div>
+          <h3>HR</h3>
+          <p>Performance reviews, disciplinary records, salary data, and job applications contain personal data under GDPR. Sending them to Claude triggers cross-border transfer obligations.</p>
+          <div class="risk-detail">
+            <strong>Risk:</strong> Under GDPR Article 46, transfers to the US require SCCs or binding corporate rules. Data subjects have the right to object to automated processing — difficult to honour when data is already at Anthropic.<br><br>
+            <strong>Local alternative:</strong> Mistral 7B or Llama 3.1 8B for lightweight HR tasks on standard hardware.
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-icon">🏛️</div>
+          <h3>Government / Defence</h3>
+          <p>ITAR-controlled technical data, CUI, and classified-adjacent information cannot legally transit commercial AI infrastructure regardless of encryption in transit.</p>
+          <div class="risk-detail">
+            <strong>Risk:</strong> ITAR violations carry criminal penalties up to 20 years imprisonment and $1M per violation. "I used an AI assistant" is explicitly not a defence under State Department enforcement guidance.<br><br>
+            <strong>Local alternative:</strong> Air-gapped deployment — Llama 3.3 70B on local GPU hardware with no network interface active.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COST COMPARISON -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Total Cost of Ownership</h2>
+      <p class="section-sub">Based on a 10-person team generating ~5M tokens/month each. Claude pricing as published mid-2025.</p>
+
+      <div class="cost-grid">
+        <div class="cost-card highlight">
+          <h3 class="local">Local AI Stack</h3>
+          <div style="margin: 16px 0; color: #64748b; font-size:0.82rem;">Ollama + Llama 3.3 70B on 2× A100 80GB</div>
+          <div class="cost-row"><span class="label">Hardware (amortised 3yr)</span><span class="amount">$833/mo</span></div>
+          <div class="cost-row"><span class="label">Power (est. 800W avg)</span><span class="amount">$80/mo</span></div>
+          <div class="cost-row"><span class="label">Ops overhead (est.)</span><span class="amount">$200/mo</span></div>
+          <div class="cost-row"><span class="label">Per-token API cost</span><span class="amount green">$0</span></div>
+          <div class="cost-row"><span class="label">Total / month</span><span class="amount green">~$1,113</span></div>
+        </div>
+        <div class="cost-card">
+          <h3 class="claude">Claude 3.5 Sonnet API</h3>
+          <div style="margin: 16px 0; color: #64748b; font-size:0.82rem;">10 users × 5M tokens/mo = 50M tokens/mo</div>
+          <div class="cost-row"><span class="label">Input (50M × $3/M)</span><span class="amount">$150/mo</span></div>
+          <div class="cost-row"><span class="label">Output (50M × $15/M)</span><span class="amount red">$750/mo</span></div>
+          <div class="cost-row"><span class="label">Enterprise plan base</span><span class="amount red">$600/mo</span></div>
+          <div class="cost-row"><span class="label">Hardware / ops</span><span class="amount green">$0</span></div>
+          <div class="cost-row"><span class="label">Total / month</span><span class="amount red">~$1,500+</span></div>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Break-even point</div>
+        <p>At 50M tokens/month, local infrastructure pays for itself within the first year even accounting for hardware cost. At 200M+ tokens/month — typical for a 50-person technical team — local AI is 5–10× cheaper than Claude API pricing. Costs above exclude compliance, legal review, and DPA management overhead required for Claude in regulated environments.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN TO USE EACH -->
+  <section>
+    <div class="container">
+      <div class="rec-section">
+        <h2>When to Use Each</h2>
+        <p style="color:#64748b; font-size:0.9rem;">This is not a binary choice. Many teams run local AI for sensitive work and Claude for non-sensitive tasks.</p>
+        <div class="rec-grid">
+          <div class="rec-col local">
+            <h3>Use Local AI When</h3>
+            <ul>
+              <li>Working with client data, PHI, or financial records</li>
+              <li>Drafting privileged legal documents</li>
+              <li>Pasting proprietary source code or internal APIs</li>
+              <li>Operating under GDPR, HIPAA, or ITAR</li>
+              <li>Processing HR records or personal data</li>
+              <li>You need guaranteed uptime without vendor dependency</li>
+              <li>Token volume makes API costs prohibitive</li>
+              <li>You need fine-tuning on domain-specific data</li>
+            </ul>
+          </div>
+          <div class="rec-col claude">
+            <h3>Claude Remains Useful For</h3>
+            <ul>
+              <li>Long-form writing and editing of non-sensitive content</li>
+              <li>Tasks needing 200k+ context window</li>
+              <li>Teams without GPU hardware budget</li>
+              <li>Exploratory research on public information</li>
+              <li>When Claude 3.5 Sonnet's writing quality is a hard requirement</li>
+              <li>Quick prototyping before committing to local infrastructure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" style="border-bottom:none;">
+    <div class="container">
+      <h2>Ready to Run Private AI?</h2>
+      <p>Get a local model running in 15 minutes. No cloud account. No data leaks.</p>
+      <a href="/deploy/quickstart/" class="btn-primary">Quick Start Guide →</a>
+      <a href="/compare/vs-chatgpt/" class="btn-ghost">vs ChatGPT</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <span class="footer-brand">No<span>Cloud</span>GPT</span>
+    <ul class="footer-links">
+      <li><a href="/models/">Models</a></li>
+      <li><a href="/deploy/quickstart/">Deploy</a></li>
+      <li><a href="/compare/vs-chatgpt/">Compare</a></li>
+    </ul>
+    <span class="footer-copy">© 2025 NoCloudGPT. No data collected.</span>
+  </div>
+</footer>
+
+</body>
+</html>
