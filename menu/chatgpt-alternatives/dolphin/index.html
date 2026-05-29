@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run Dolphin Locally | Uncensored AI Without the Guardrails | NoCloudGPT</title>
+    <meta name="description" content="Dolphin is an uncensored fine-tune of Mistral and Llama models. Run it privately via Ollama with no RLHF refusals, no API keys, and no data leaving your machine.">
+    <meta name="keywords" content="Dolphin AI local, uncensored LLM Ollama, Dolphin Mistral self-hosted, no censorship AI private, Eric Hartford Dolphin model">
+    <link rel="canonical" href="https://nocloudgpt.com/chatgpt-alternatives/dolphin/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0a; color: #e8e8e8; line-height: 1.7; }
+        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 60px 20px; text-align: center; border-bottom: 2px solid #76b900; }
+        .badge { display: inline-block; background: #76b900; color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase; }
+        h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; }
+        h1 span { color: #76b900; }
+        .subtitle { font-size: 1.15rem; color: #a0b4c8; max-width: 680px; margin: 0 auto 30px; }
+        .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: #76b900; color: #000; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; }
+        .btn-secondary { background: transparent; color: #76b900; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; border: 2px solid #76b900; }
+        nav { background: #111; padding: 12px 20px; text-align: center; border-bottom: 1px solid #222; }
+        nav a { color: #76b900; text-decoration: none; margin: 0 16px; font-size: 0.9rem; }
+        .container { max-width: 960px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 1.9rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; }
+        h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; color: #76b900; }
+        p { margin-bottom: 18px; color: #c8d4e0; }
+        .highlight-box { background: #111827; border-left: 4px solid #76b900; padding: 24px 28px; border-radius: 0 8px 8px 0; margin: 32px 0; }
+        .highlight-box p { margin-bottom: 0; }
+        .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 32px 0; }
+        .model-card { background: #111; border: 1px solid #222; border-radius: 10px; padding: 24px; transition: border-color 0.2s; }
+        .model-card:hover { border-color: #76b900; }
+        .model-card h3 { margin-bottom: 8px; }
+        .model-card .size-badge { background: #1a2a0a; color: #76b900; padding: 3px 10px; border-radius: 12px; font-size: 0.78rem; font-weight: 600; display: inline-block; margin-bottom: 12px; }
+        .model-card p { font-size: 0.9rem; margin-bottom: 0; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 32px 0; }
+        .use-case-card { background: #0d1117; border: 1px solid #1e2d1e; border-radius: 10px; padding: 22px; }
+        .use-case-card h3 { color: #a8d878; margin-bottom: 10px; }
+        .use-case-card p { font-size: 0.88rem; margin-bottom: 0; }
+        .hardware-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .hardware-table th { background: #111; color: #76b900; padding: 12px 16px; text-align: left; border-bottom: 2px solid #76b900; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .hardware-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; }
+        .hardware-table tr:hover td { background: #111; }
+        .code-block { background: #0d1117; border: 1px solid #1e2d3e; border-radius: 8px; padding: 20px 24px; margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.88rem; color: #79c0ff; overflow-x: auto; }
+        .code-block .comment { color: #6e7681; }
+        .warning-box { background: #1a1200; border: 1px solid #5a4200; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+        .warning-box h3 { color: #f0a500; margin-bottom: 8px; }
+        .warning-box p { font-size: 0.9rem; margin-bottom: 0; }
+        .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
+        .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+        .tag { background: #1a2a0a; color: #76b900; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
+        footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
+        footer a { color: #76b900; text-decoration: none; margin: 0 12px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="badge">Uncensored Fine-Tune</div>
+    <h1>Run <span>Dolphin</span> Without the Refusals</h1>
+    <p class="subtitle">Dolphin is an instruction-following model with no RLHF guardrail layer. It runs locally via Ollama — no API key, no account, no data leaving your machine, and no model telling you it can't help with that.</p>
+    <div class="cta-group">
+        <a href="/deploy/quickstart/" class="btn-primary">Quickstart Guide</a>
+        <a href="/chatgpt-alternatives/benchmarks/" class="btn-secondary">See Benchmarks</a>
+    </div>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/chatgpt-alternatives/">Alternatives</a>
+    <a href="/chatgpt-alternatives/benchmarks/">Benchmarks</a>
+    <a href="/compare/vs-chatgpt/">vs ChatGPT</a>
+    <a href="/deploy/quickstart/">Quickstart</a>
+    <a href="/quote/">Get Quote</a>
+</nav>
+
+<div class="container">
+
+    <h2>What Is Dolphin?</h2>
+
+    <p>Dolphin is a series of fine-tuned language models created by Eric Hartford under the Cognitive Computations project. The models are built on top of base weights from Mistral, Mixtral, and Llama, with the current flagship being <strong>Dolphin 2.9 on Mistral 7B</strong>. Dolphin is available on Ollama and Hugging Face under Apache 2.0 licensing.</p>
+
+    <p>What separates Dolphin from most models in the same parameter range is straightforward: the RLHF alignment layer has been deliberately removed. Most consumer-facing AI models — ChatGPT, Claude, Gemini — go through a post-training process where human raters reward certain outputs and penalize others, producing a model that refuses requests, adds unsolicited disclaimers, and declines to engage with content the company considers liability-adjacent. Dolphin skips that process. The model tries to do what you ask.</p>
+
+    <p>This is not the same as a model trained to cause harm. It is a capable instruction-following model with no corporate refusal layer sitting on top of it. The distinction matters, and it is worth understanding before deploying.</p>
+
+    <div class="highlight-box">
+        <p><strong>Want the full picture?</strong> Uncensored models are a legitimate and frequently misunderstood category. We cover what they actually are, who uses them, and where the real risks sit — without the sensationalism. → <a href="/chatgpt-alternatives/dolphin/uncensored-models/" style="color: #76b900;">What Are Uncensored AI Models?</a> <!-- STUB --></p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>The Dolphin Model Family</h2>
+
+    <div class="model-grid">
+        <div class="model-card">
+            <h3>Dolphin 2.9 Mistral 7B</h3>
+            <span class="size-badge">7B Parameters</span>
+            <p>The practical starting point. Runs on 8GB RAM with no GPU required. Strong instruction following, 32K context window, and fast enough for interactive use on modest hardware. The right choice for most individual deployments.</p>
+        </div>
+        <div class="model-card">
+            <h3>Dolphin 2.9 Mixtral 8x7B</h3>
+            <span class="size-badge">8x7B MoE</span>
+            <p>Mixture-of-Experts architecture with significantly stronger reasoning than the 7B variant. Requires 48GB RAM or 24GB+ VRAM. Better for complex multi-step tasks, long document analysis, and use cases where the 7B hits its reasoning ceiling.</p>
+        </div>
+        <div class="model-card">
+            <h3>Dolphin 2.9 Llama 3</h3>
+            <span class="size-badge">8B Parameters</span>
+            <p>Dolphin fine-tune on Meta's Llama 3 base. Benefits from Llama 3's improved tokenizer and training data while retaining Dolphin's uncensored instruction-following behavior. A strong alternative to the Mistral base for general use.</p>
+        </div>
+        <div class="model-card">
+            <h3>Dolphin Phi-3</h3>
+            <span class="size-badge">3.8B Parameters</span>
+            <p>Dolphin applied to Microsoft's Phi-3 Mini base. Exceptionally lightweight — runs comfortably on 4GB RAM. Reduced reasoning capability compared to 7B variants, but viable for edge deployments and low-resource environments.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Benchmark Comparison: Dolphin 2.9 vs GPT-4o</h2>
+
+    <table class="hardware-table">
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>GPT-4o</th>
+                <th>Dolphin 2.9 Mistral 7B</th>
+                <th>Dolphin 2.9 Mixtral 8x7B</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MMLU (general knowledge)</td>
+                <td>88.7%</td>
+                <td>61–63%</td>
+                <td>~70%</td>
+            </tr>
+            <tr>
+                <td>HumanEval (coding)</td>
+                <td>90.2%</td>
+                <td>~55%</td>
+                <td>~62%</td>
+            </tr>
+            <tr>
+                <td>Context window</td>
+                <td>128K tokens</td>
+                <td>32K tokens</td>
+                <td>32K tokens</td>
+            </tr>
+            <tr>
+                <td>Instruction following</td>
+                <td>Strong</td>
+                <td>Very strong</td>
+                <td>Very strong</td>
+            </tr>
+            <tr>
+                <td>Refusal rate</td>
+                <td>High</td>
+                <td>Near zero</td>
+                <td>Near zero</td>
+            </tr>
+            <tr>
+                <td>Cost per query</td>
+                <td>$0.01–0.05</td>
+                <td>$0.00</td>
+                <td>$0.00</td>
+            </tr>
+            <tr>
+                <td>Data leaves your machine</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>RLHF guardrails</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>No</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>GPT-4o leads on raw benchmark scores — that is not in dispute. For complex reasoning chains, multi-step coding problems, and tasks that require broad world knowledge, it outperforms Dolphin 2.9 at any parameter size currently available via Ollama.</p>
+
+    <p>Where Dolphin wins is compliance — not regulatory compliance, but task compliance. It does what you ask. For many production workflows, a model that executes instructions without negotiating is more useful than a smarter model that stops to question whether you should be doing this. That trade-off is real and worth making deliberately.</p>
+
+    <div class="tag-list">
+        <span class="tag">vs GPT-4o</span>
+        <span class="tag">vs Mistral 7B</span>
+        <span class="tag">vs Llama 3.1 8B</span>
+        <span class="tag">vs Zephyr 7B</span>
+    </div>
+
+    <p>→ Full model comparison including Zephyr, Llama, and Alpaca: <a href="/chatgpt-alternatives/benchmarks/" style="color: #76b900;">Honest Benchmark Table</a></p>
+
+    <hr class="section-divider">
+
+    <h2>Who Uses Dolphin</h2>
+
+    <div class="use-case-grid">
+        <div class="use-case-card">
+            <h3>Fiction Writers</h3>
+            <p>Dark themes, morally complex characters, villain dialogue, and mature content that consumer AI models refuse to engage with. Dolphin treats creative writing as creative writing.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>Security Researchers</h3>
+            <p>Red-teaming, vulnerability research, and AI safety testing that requires a model willing to engage with adversarial prompts without deflecting. Useful for evaluating guardrail robustness in other systems.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>Developers and Tooling</h3>
+            <p>Internal automation pipelines where refusals create workflow failures. A model that reliably executes instructions is easier to build on than one that introduces unpredictable refusal behavior.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>Researchers and Academics</h3>
+            <p>Historical atrocities, extremist ideologies, sensitive social topics, and other subjects where understanding requires engaging with uncomfortable material directly.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>Privacy-First Users</h3>
+            <p>People who want both zero data exfiltration and zero behavioral guardrails. Local deployment via Ollama satisfies both requirements simultaneously.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>Enterprise Internal Tooling</h3>
+            <p>Organizations running internal knowledge bases, document processing, or support tooling where content filter false positives disrupt operations and cannot be individually overridden.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Hardware Requirements</h2>
+
+    <table class="hardware-table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>RAM Required</th>
+                <th>VRAM (GPU)</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Dolphin Phi-3 3.8B</td>
+                <td>4GB</td>
+                <td>3GB</td>
+                <td>Edge and low-resource deployments</td>
+            </tr>
+            <tr>
+                <td>Dolphin 2.9 Mistral 7B</td>
+                <td>8GB</td>
+                <td>6GB</td>
+                <td>Recommended starting point</td>
+            </tr>
+            <tr>
+                <td>Dolphin 2.9 Llama 3 8B</td>
+                <td>8GB</td>
+                <td>6GB</td>
+                <td>Alternative to Mistral base</td>
+            </tr>
+            <tr>
+                <td>Dolphin 2.9 Mixtral 8x7B</td>
+                <td>48GB</td>
+                <td>24GB+</td>
+                <td>Multi-GPU or high-RAM server required</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr class="section-divider">
+
+    <h2>Deploying Dolphin via Ollama</h2>
+
+    <div class="code-block">
+        <span class="comment"># Pull Dolphin 2.9 on Mistral 7B — recommended starting point</span><br>
+        ollama pull dolphin-mistral<br><br>
+        <span class="comment"># Pull Dolphin on Llama 3</span><br>
+        ollama pull dolphin-llama3<br><br>
+        <span class="comment"># Run interactively</span><br>
+        ollama run dolphin-mistral<br><br>
+        <span class="comment"># Serve with OpenWebUI for a full chat interface</span><br>
+        docker run -d -p 3000:8080 \<br>
+        &nbsp;&nbsp;-e OLLAMA_BASE_URL=http://localhost:11434 \<br>
+        &nbsp;&nbsp;ghcr.io/open-webui/open-webui:main
+    </div>
+
+    <p>New to Ollama? The <a href="/deploy/quickstart/" style="color: #76b900;">Quickstart Guide</a> covers full installation on macOS, Linux, and Windows including hardware verification and first-run testing.</p>
+
+    <hr class="section-divider">
+
+    <h2>The Responsible Use Note</h2>
+
+    <p>Dolphin runs locally. No one is watching. The model will not refuse most requests.</p>
+
+    <p>That means you are the guardrail. The RLHF layer that consumer AI companies install is not a moral authority — it is a liability management tool. Removing it transfers responsibility back to the person running the model. Most people using Dolphin are writers, developers, and researchers with entirely ordinary needs. The use cases above are representative of the actual user base, not the edge cases that get attention in press coverage.</p>
+
+    <p>Use it for things that make sense. That is the whole note.</p>
+
+    <div class="warning-box">
+        <h3>Deployment Context Matters</h3>
+        <p>If you are deploying Dolphin as a shared service — an internal chatbot, a customer-facing tool, or any multi-user environment — you are responsible for implementing appropriate access controls and use policies. An uncensored model exposed to untrusted users without additional guardrails is a different risk profile than a single-user local deployment. Build accordingly.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Deployment Options We Offer</h2>
+
+    <p>NoCloudGPT provides managed Dolphin deployment for organizations that need private instruction-following AI without the setup overhead.</p>
+
+    <h3>Single-User Local Setup</h3>
+    <p>Guided installation of Ollama and Dolphin on your existing hardware. macOS, Linux, or Windows. Includes OpenWebUI configuration and optional model switching between Dolphin variants. Flat one-time fee.</p>
+
+    <h3>Team Deployment on Lightsail</h3>
+    <p>Dolphin served via Ollama on a dedicated AWS Lightsail instance with OpenWebUI, user authentication, and private networking. Suitable for teams of 5–30 users who need shared access without exposing queries to any external AI provider.</p>
+
+    <h3>Enterprise Internal Tooling Integration</h3>
+    <p>Custom deployment integrating Dolphin into existing workflows via Ollama's OpenAI-compatible API. Drop-in replacement for ChatGPT API calls in internal applications, with all inference staying inside your network boundary.</p>
+
+    <a href="/quote/" class="btn-primary" style="display:inline-block; margin-top: 16px;">Request Deployment Quote</a>
+
+</div>
+
+<footer>
+    <p>
+        <a href="/">NoCloudGPT Home</a>
+        <a href="/chatgpt-alternatives/">ChatGPT Alternatives</a>
+        <a href="/chatgpt-alternatives/dolphin/">Dolphin</a>
+        <a href="/chatgpt-alternatives/dolphin/uncensored-models/">Uncensored Models</a>
+        <a href="/chatgpt-alternatives/benchmarks/">Benchmarks</a>
+        <a href="/compare/vs-chatgpt/">vs ChatGPT</a>
+        <a href="/deploy/quickstart/">Quickstart</a>
+        <a href="/quote/">Get Quote</a>
+    </p>
+    <p style="margin-top: 16px;">© 2025 NoCloudGPT. Private AI deployment specialists. Not affiliated with Eric Hartford or Cognitive Computations.</p>
+</footer>
+
+</body>
+</html>
