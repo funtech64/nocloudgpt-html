@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Run Pixtral Locally with Ollama | Multimodal Vision AI | NoCloudGPT</title>
+  <meta name="description" content="Deploy Pixtral 12B vision model privately with Ollama. Analyze images, documents, and charts locally — zero data exposure for sensitive visual content." />
+  <link rel="canonical" href="https://nocloudgpt.com/pixtral/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Run Pixtral Locally with Ollama",
+    "description": "Deploy Pixtral 12B vision model privately with Ollama for local image and document analysis.",
+    "url": "https://nocloudgpt.com/pixtral/",
+    "author": { "@type": "Organization", "name": "NoCloudGPT" },
+    "publisher": { "@type": "Organization", "name": "NoCloudGPT" }
+  }
+  </script>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem; color: #1a1a1a; line-height: 1.7; }
+    h1 { font-size: 2.2rem; color: #0f172a; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.5rem; color: #1e3a5f; margin-top: 2.5rem; }
+    h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 1.5rem; }
+    .subtitle { font-size: 1.1rem; color: #475569; margin-bottom: 2rem; }
+    .badge { display: inline-block; background: #dbeafe; color: #1e40af; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; margin: 0.2rem; }
+    .card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .card h3 { margin-top: 0; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; overflow-x: auto; font-size: 0.9rem; }
+    code { font-family: 'Courier New', monospace; }
+    table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; }
+    th { background: #1e3a5f; color: white; padding: 0.6rem 1rem; text-align: left; }
+    td { padding: 0.6rem 1rem; border-bottom: 1px solid #e2e8f0; }
+    tr:nth-child(even) td { background: #f8fafc; }
+    .cta { background: #1e3a5f; color: white; padding: 1.75rem; border-radius: 10px; margin-top: 2.5rem; text-align: center; }
+    .cta a { color: #93c5fd; }
+    .tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 0.9rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.25rem 0; }
+    .warning { background: #fefce8; border-left: 4px solid #eab308; padding: 0.9rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.25rem 0; }
+    nav { font-size: 0.9rem; color: #64748b; margin-bottom: 2rem; }
+    nav a { color: #1e3a5f; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav><a href="/">NoCloudGPT</a> › <a href="/mistral/">Mistral Models</a> › Pixtral 12B</nav>
+
+<h1>Run Pixtral 12B Locally with Ollama</h1>
+<p class="subtitle">Mistral's multimodal vision model — analyze images, documents, and charts without sending visual data to the cloud.</p>
+
+<div>
+  <span class="badge">12B Parameters</span>
+  <span class="badge">128K Context</span>
+  <span class="badge">Vision + Text</span>
+  <span class="badge">Multi-Image</span>
+  <span class="badge">Variable Resolution</span>
+  <span class="badge">Apache 2.0</span>
+</div>
+
+<p>Most enterprise AI use cases eventually hit a wall: the data that matters most — contracts with signatures, financial charts, engineering schematics, medical imaging reports, ID documents — exists as images or PDFs, not clean text. Cloud vision APIs can process these files, but doing so means transmitting sensitive visual content to external servers. Pixtral 12B, run locally with Ollama, eliminates that exposure entirely.</p>
+
+<p>Released by Mistral AI in September 2024, Pixtral 12B is the first truly capable open-source multimodal model at this parameter count. It combines a 400M-parameter vision encoder with Mistral Nemo's 12B language backbone, supports variable image resolutions up to high-definition, and can process multiple images in a single context window. For organizations handling confidential visual content, the ability to run Pixtral on local hardware is not a nice-to-have — it is a compliance requirement.</p>
+
+<h2>Why Vision Privacy Matters More Than Text Privacy</h2>
+
+<p>When professionals think about AI data privacy, they typically focus on the text they type into chat interfaces. But visual data carries far greater risk of sensitive information exposure. Consider what passes through a typical enterprise vision workflow:</p>
+
+<p>A law firm processing discovery materials uploads scanned exhibits — witness signatures, handwritten annotations, physical document metadata — to a cloud vision API. A hospital's radiology department runs AI-assisted report drafting on DICOM-exported images. A financial analyst feeds earnings presentation slides into a vision model to extract chart data before public release. An HR team processes uploaded ID documents for onboarding verification.</p>
+
+<p>In each case, the visual content carries identification, privilege, or confidentiality implications that text summaries alone cannot capture. Cloud vision APIs are technically processing this content on external infrastructure, regardless of contractual protections. Pixtral 12B deployed locally processes every image on your hardware, with no network transmission of visual content.</p>
+
+<div class="card">
+  <h3>🔒 What "Local Vision Processing" Actually Means</h3>
+  <p>When you send an image to GPT-4o Vision or Gemini Pro Vision, the image bytes travel across the internet to OpenAI or Google's inference servers. The image is decoded, processed by the model, and the response is transmitted back. Even with data processing agreements in place, the image existed outside your infrastructure. With Pixtral running via Ollama, the image is read from your local filesystem or memory, processed entirely on your GPU, and the response is generated locally. The image never leaves your machine.</p>
+</div>
+
+<h2>Technical Specifications</h2>
+
+<table>
+  <tr><th>Specification</th><th>Value</th></tr>
+  <tr><td>Language model backbone</td><td>Mistral Nemo 12B</td></tr>
+  <tr><td>Vision encoder</td><td>400M parameters, custom architecture</td></tr>
+  <tr><td>Total parameters</td><td>~12.4B</td></tr>
+  <tr><td>Context window</td><td>128,000 tokens</td></tr>
+  <tr><td>Image resolution</td><td>Variable — up to 1024×1024 per patch</td></tr>
+  <tr><td>Multi-image support</td><td>Yes — multiple images per context</td></tr>
+  <tr><td>Image formats</td><td>JPEG, PNG, WebP, GIF (static)</td></tr>
+  <tr><td>License</td><td>Apache 2.0</td></tr>
+  <tr><td>Languages</td><td>English + 10 European and Asian languages</td></tr>
+  <tr><td>Ollama tag</td><td><code>pixtral</code></td></tr>
+</table>
+
+<h2>Hardware Requirements</h2>
+
+<table>
+  <tr><th>Setup</th><th>Hardware</th><th>VRAM</th><th>Speed</th><th>Use Case</th></tr>
+  <tr><td>Minimum</td><td>RTX 3090</td><td>24 GB</td><td>~12 tok/s</td><td>Development, occasional use</td></tr>
+  <tr><td>Recommended</td><td>RTX 4090</td><td>24 GB</td><td>~22 tok/s</td><td>Production single-user</td></tr>
+  <tr><td>Server grade</td><td>A10G / L4</td><td>24 GB</td><td>~18 tok/s</td><td>Cloud-isolated deployment</td></tr>
+  <tr><td>High throughput</td><td>A100 40GB</td><td>40 GB</td><td>~45 tok/s</td><td>Multi-user, batch document processing</td></tr>
+  <tr><td>Maximum quality</td><td>A100 80GB</td><td>80 GB</td><td>~55 tok/s</td><td>Full precision, research</td></tr>
+</table>
+
+<div class="warning">
+  <strong>⚠️ VRAM requirement:</strong> Pixtral 12B at Q4_K_M quantization requires approximately 9–10 GB VRAM for the language model alone. Image processing adds overhead proportional to image resolution. A minimum of 16 GB VRAM is recommended for comfortable production use; 24 GB is the practical standard.
+</div>
+
+<h2>Quickstart with Ollama</h2>
+
+<h3>Pull and Run</h3>
+<pre><code># Pull Pixtral 12B
+ollama pull pixtral
+
+# Interactive session with image
+ollama run pixtral "Describe what you see in this chart" --image ./q3_revenue.png
+
+# CLI with local image path
+ollama run pixtral "Extract all text visible in this document" \
+  --image /path/to/scanned_contract.jpg</code></pre>
+
+<h3>REST API with Image</h3>
+<pre><code>import ollama
+import base64
+
+# Load and encode image locally
+with open("financial_chart.png", "rb") as f:
+    image_data = base64.b64encode(f.read()).decode("utf-8")
+
+response = ollama.chat(
+    model="pixtral",
+    messages=[
+        {
+            "role": "user",
+            "content": "Analyze this financial chart. Extract: "
+                       "1) The time period shown "
+                       "2) Key data series and their values "
+                       "3) The overall trend "
+                       "4) Any anomalies or notable data points",
+            "images": [image_data]
+        }
+    ]
+)
+
+print(response['message']['content'])</code></pre>
+
+<h3>Multi-Image Analysis</h3>
+<pre><code">import ollama
+import base64
+
+def encode_image(path):
+    with open(path, "rb") as f:
+        return base64.b64encode(f.read()).decode("utf-8")
+
+# Compare multiple documents or images in one pass
+response = ollama.chat(
+    model="pixtral",
+    messages=[
+        {
+            "role": "user",
+            "content": """Compare these two contract pages and identify:
+            1) Any differences in key terms
+            2) Clauses present in one but not the other
+            3) Any redline changes or annotations""",
+            "images": [
+                encode_image("contract_v1_page3.jpg"),
+                encode_image("contract_v2_page3.jpg")
+            ]
+        }
+    ]
+)
+
+print(response['message']['content'])</code></pre>
+
+<div class="tip">
+  <strong>💡 Multiple images, single context:</strong> Pixtral can process several images simultaneously within its 128K context window. This enables document comparison, before/after analysis, and multi-page document workflows without multiple API round-trips.
+</div>
+
+<h2>Document Processing Pipeline</h2>
+
+<p>One of Pixtral's highest-value enterprise applications is processing scanned documents — contracts, invoices, forms, and reports that exist only as images. Unlike OCR-only solutions, Pixtral understands document structure, layout, and context, enabling extraction that goes beyond raw text.</p>
+
+<h3>Invoice and Receipt Processing</h3>
+<pre><code>import ollama, json, base64
+
+def process_invoice(image_path: str) -> dict:
+    with open(image_path, "rb") as f:
+        image_data = base64.b64encode(f.read()).decode("utf-8")
+
+    response = ollama.chat(
+        model="pixtral",
+        messages=[
+            {
+                "role": "system",
+                "content": "Extract structured data from documents. Return only valid JSON."
+            },
+            {
+                "role": "user",
+                "content": """Extract all invoice data from this image as JSON with fields:
+                {
+                  "vendor_name": string,
+                  "invoice_number": string,
+                  "invoice_date": "YYYY-MM-DD",
+                  "due_date": "YYYY-MM-DD",
+                  "line_items": [{"description": string, "qty": number, "unit_price": number, "total": number}],
+                  "subtotal": number,
+                  "tax": number,
+                  "total_due": number,
+                  "currency": string,
+                  "payment_terms": string
+                }""",
+                "images": [image_data]
+            }
+        ],
+        format="json"
+    )
+
+    return json.loads(response['message']['content'])
+
+# Process locally — invoice image never leaves your server
+invoice_data = process_invoice("invoices/acme_inv_2024_0847.jpg")
+print(invoice_data)</code></pre>
+
+<h3>Contract Clause Extraction</h3>
+<pre><code>import ollama, base64
+
+def extract_contract_clauses(scanned_pdf_images: list) -> str:
+    """Process multi-page scanned contract."""
+    encoded_pages = []
+    for path in scanned_pdf_images:
+        with open(path, "rb") as f:
+            encoded_pages.append(base64.b64encode(f.read()).decode("utf-8"))
+
+    response = ollama.chat(
+        model="pixtral",
+        messages=[
+            {
+                "role": "user",
+                "content": """Review these contract pages and extract:
+                1. Parties involved (names, roles)
+                2. Effective date and term
+                3. Key obligations of each party
+                4. Payment terms and amounts
+                5. Termination conditions
+                6. Governing law and jurisdiction
+                7. Any unusual or non-standard clauses
+                
+                Flag any clauses that appear to be handwritten additions 
+                or differ from standard formatting.""",
+                "images": encoded_pages
+            }
+        ]
+    )
+
+    return response['message']['content']</code></pre>
+
+<h2>Use Cases by Sector</h2>
+
+<div class="card">
+  <h3>⚖️ Legal Document Review</h3>
+  <p>Discovery processing involves scanned exhibits, handwritten notes, annotated documents, and physical correspondence that must be analyzed for relevance and privilege. Uploading these to cloud vision APIs risks exposing privileged attorney-client communications, witness information, and case strategy. Pixtral running on local infrastructure processes every scanned page, handwritten annotation, and signature block on your hardware. The 128K context window handles lengthy multi-page exhibits in a single pass. Extracted text and summaries remain on your servers.</p>
+</div>
+
+<div class="card">
+  <h3>🏦 Financial Document Intelligence</h3>
+  <p>Banks, asset managers, and accounting firms process financial statements, audit reports, and regulatory filings that contain material non-public information. Processing pre-release earnings slides or M&A term sheets through external APIs could constitute a compliance violation. Pixtral deployed on bank infrastructure extracts financial data from scanned statements, reads chart values from investor presentations, and processes loan application documents — all without any financial data leaving the institution's controlled environment.</p>
+</div>
+
+<div class="card">
+  <h3>🏥 Healthcare and Clinical Documentation</h3>
+  <p>Clinical workflows generate substantial image-based documentation: printed lab reports, imaging summaries, handwritten physician notes, insurance EOB forms. HIPAA requires that PHI processing occur within covered entity infrastructure or under valid BAA arrangements. Running Pixtral on hospital hardware provides an architectural guarantee that clinical images and documents containing PHI never transit external networks. This is categorically stronger than relying on cloud provider BAAs, which still involve external processing of PHI.</p>
+</div>
+
+<div class="card">
+  <h3>🏭 Manufacturing and Engineering</h3>
+  <p>Engineering teams work with schematics, technical drawings, quality control images, and equipment inspection photos that may constitute trade secrets. Sending proprietary CAD exports or production line defect images to cloud vision APIs risks IP exposure. Pixtral running on factory or R&D infrastructure analyzes equipment inspection images, reads technical drawings, identifies defects in QC photos, and processes safety documentation without proprietary visual IP leaving the facility network.</p>
+</div>
+
+<div class="card">
+  <h3>🏛️ Government and Defense</h3>
+  <p>Government agencies processing sensitive documents, infrastructure imagery, or classified materials face strict data handling requirements that cloud APIs cannot satisfy. Air-gapped Pixtral deployments on government hardware enable AI-assisted document processing, form extraction, and visual intelligence workflows that comply with FISMA, IL4/IL5, and similar frameworks. The Apache 2.0 license permits government use without vendor licensing restrictions.</p>
+</div>
+
+<h2>Batch Document Processing</h2>
+
+<pre><code>import ollama, base64, json
+from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
+import time
+
+def process_single_document(doc_path: Path) -> dict:
+    """Process one document image through Pixtral locally."""
+    with open(doc_path, "rb") as f:
+        image_data = base64.b64encode(f.read()).decode("utf-8")
+
+    response = ollama.chat(
+        model="pixtral",
+        messages=[{
+            "role": "user",
+            "content": "Classify this document type, extract key metadata, "
+                       "and summarize main content in 2-3 sentences.",
+            "images": [image_data]
+        }]
+    )
+
+    return {
+        "file": doc_path.name,
+        "analysis": response['message']['content'],
+        "processed_at": time.time()
+    }
+
+def batch_process_documents(folder: str, workers: int = 2) -> list:
+    """
+    Process folder of document images in parallel.
+    workers=2 is conservative for single GPU — increase for multi-GPU setups.
+    """
+    doc_paths = list(Path(folder).glob("*.{jpg,jpeg,png,webp}"))
+    results = []
+
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {executor.submit(process_single_document, p): p 
+                   for p in doc_paths}
+        for future in futures:
+            try:
+                results.append(future.result(timeout=120))
+            except Exception as e:
+                results.append({"file": str(futures[future]), "error": str(e)})
+
+    return results
+
+# Process entire folder of scanned documents — nothing leaves your server
+results = batch_process_documents("/data/incoming_contracts/")
+with open("processing_results.json", "w") as f:
+    json.dump(results, f, indent=2)</code></pre>
+
+<h2>Pixtral vs. Alternative Vision Models</h2>
+
+<table>
+  <tr><th>Model</th><th>Params</th><th>VRAM (Q4)</th><th>Multi-Image</th><th>Context</th><th>License</th></tr>
+  <tr><td><strong>Pixtral 12B</strong></td><td>12.4B</td><td>~10 GB</td><td>✅ Yes</td><td>128K</td><td>Apache 2.0</td></tr>
+  <tr><td>LLaVA 1.6 13B</td><td>13B</td><td>~10 GB</td><td>❌ No</td><td>4K</td><td>Apache 2.0</td></tr>
+  <tr><td>Llama 3.2 Vision 11B</td><td>11B</td><td>~8 GB</td><td>❌ No</td><td>128K</td><td>Llama 3.2</td></tr>
+  <tr><td>Llama 3.2 Vision 90B</td><td>90B</td><td>~55 GB</td><td>❌ No</td><td>128K</td><td>Llama 3.2</td></tr>
+  <tr><td>Gemma 3 Vision 12B</td><td>12B</td><td>~10 GB</td><td>✅ Yes</td><td>128K</td><td>Gemma ToS</td></tr>
+  <tr><td>moondream2</td><td>1.8B</td><td>~1.5 GB</td><td>❌ No</td><td>2K</td><td>Apache 2.0</td></tr>
+</table>
+
+<p>Pixtral's key differentiator is multi-image support combined with a 128K context window under an Apache 2.0 license. Llama 3.2 Vision, while competitive on single-image tasks, processes only one image per request. Pixtral's ability to compare, cross-reference, and analyze multiple images in a single context window is essential for document comparison, multi-page processing, and before/after analysis workflows.</p>
+
+<h2>Optimizing for Document Workloads</h2>
+
+<pre><code"># Modelfile optimized for document processing
+FROM pixtral
+
+PARAMETER temperature 0.1      # Low temperature for factual extraction
+PARAMETER top_p 0.9
+PARAMETER num_ctx 32768        # 32K is sufficient for most documents
+PARAMETER repeat_penalty 1.05
+
+SYSTEM """
+You are a precise document analysis assistant. Your role is to:
+- Extract information accurately and completely
+- Preserve exact numbers, dates, names, and amounts as written
+- Note any text that is unclear, handwritten, or potentially misread
+- Flag document sections that appear incomplete, altered, or unusual
+- Return structured data when requested as valid JSON
+
+Never infer or guess information that is not clearly visible in the document.
+If text is illegible, indicate [ILLEGIBLE] rather than guessing.
+"""</code></pre>
+
+<pre><code># Build document-optimized model
+ollama create doc-analyzer -f Modelfile.docanalyzer
+ollama run doc-analyzer</code></pre>
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="card">
+  <h3>What image resolution does Pixtral support?</h3>
+  <p>Pixtral uses a variable-resolution architecture that processes images as patches, supporting resolutions up to 1024×1024 per patch. For most document scanning use cases (300 DPI scans of letter-size pages), Pixtral handles the resolution effectively. Very high-resolution technical drawings may need downsampling to fit within VRAM constraints. Standard document scans at 150–300 DPI work well without modification.</p>
+</div>
+
+<div class="card">
+  <h3>Can Pixtral read handwriting?</h3>
+  <p>Yes, with limitations. Pixtral performs reasonably well on clear, consistent handwriting — printed block letters, neat cursive — but struggles with highly stylized or ambiguous handwriting. For critical handwritten content extraction, validate Pixtral's output against the original. In production workflows, flag all handwriting-derived extractions for human review rather than treating them as ground truth.</p>
+</div>
+
+<div class="card">
+  <h3>How does Pixtral handle PDF documents?</h3>
+  <p>Ollama processes images, not PDFs directly. For PDF workflows, convert each page to an image first using a library like <code>pdf2image</code> (Python) or <code>pdftoppm</code> (CLI). Then pass the page images to Pixtral. This conversion happens entirely locally, maintaining your privacy posture. For multi-page PDFs, you can pass multiple page images in a single Pixtral request up to the context window limit.</p>
+</div>
+
+<div class="card">
+  <h3>Is Pixtral suitable for medical imaging (X-rays, MRIs)?</h3>
+  <p>Pixtral is a general-purpose vision model, not a medical imaging specialist. It can describe and extract text from radiology reports, clinical photos, and administrative medical documents effectively. For diagnostic interpretation of DICOM images (X-rays, MRIs, CT scans), purpose-built medical AI models with clinical validation are more appropriate. Pixtral's strongest healthcare use case is administrative document processing, not diagnostic imaging.</p>
+</div>
+
+<div class="cta">
+  <h2>Process Visual Content Without Cloud Exposure</h2>
+  <p>Documents, charts, forms, and images — analyzed on your hardware, never transmitted externally.</p>
+  <p>
+    <a href="/deploy/quickstart/">→ Deployment Guide</a> &nbsp;|&nbsp;
+    <a href="/mistral/">← All Mistral Models</a> &nbsp;|&nbsp;
+    <a href="/mistral-large/">Mistral Large 123B →</a>
+  </p>
+</div>
+
+</body>
+</html>
