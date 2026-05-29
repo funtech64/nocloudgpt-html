@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IBM Granite on Ollama | Private Enterprise AI | NoCloudGPT</title>
+  <meta name="description" content="Run IBM Granite models privately with Ollama. Enterprise-grade AI with Apache 2.0 licensing, IBM transparency documentation, and full data sovereignty for legal, finance, and compliance teams." />
+  <meta name="keywords" content="IBM Granite Ollama, Granite private deployment, enterprise AI self-hosted, Granite 3B 8B 20B, IBM AI compliance, private LLM enterprise" />
+  <link rel="canonical" href="https://nocloudgpt.com/models/granite/" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans">
+
+  <!-- Nav -->
+  <nav class="border-b border-gray-800 px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold text-blue-400">NoCloudGPT</a>
+    <div class="flex gap-6 text-sm text-gray-400">
+      <a href="/models/" class="hover:text-white">Models</a>
+      <a href="/deploy/" class="hover:text-white">Deploy</a>
+      <a href="/pricing/" class="hover:text-white">Pricing</a>
+      <a href="/contact/" class="hover:text-white">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="bg-blue-900 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">IBM Research</span>
+      <span class="bg-green-900 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">Apache 2.0</span>
+      <span class="bg-purple-900 text-purple-300 text-xs font-semibold px-3 py-1 rounded-full">Enterprise Grade</span>
+    </div>
+    <h1 class="text-4xl font-bold mb-4">IBM Granite: Enterprise AI You Can Actually Trust</h1>
+    <p class="text-xl text-gray-400 mb-8">
+      IBM Granite brings Fortune 500-grade AI to your private infrastructure. With published transparency documentation, Apache 2.0 licensing, and IBM's indemnification backing, Granite is the only open-weight model family where an enterprise vendor stands behind what's in the training data.
+    </p>
+    <div class="flex gap-4 flex-wrap">
+      <a href="/deploy/" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold">Deploy Granite Now</a>
+      <a href="/models/granite-code/" class="border border-gray-600 hover:border-gray-400 text-gray-300 px-6 py-3 rounded-lg font-semibold">Granite Code →</a>
+    </div>
+  </section>
+
+  <!-- Why Granite for Enterprise -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Why Enterprise Teams Choose Granite Over Other Open Models</h2>
+    <p class="text-gray-300 mb-6">
+      The open-weight AI landscape is crowded. Llama, Mistral, Qwen, Gemma — all are strong models with permissive licenses. So why does Granite occupy a distinct position for enterprise buyers? The answer comes down to one word: accountability.
+    </p>
+    <p class="text-gray-300 mb-6">
+      IBM published detailed model cards for every Granite variant, specifying which datasets were used in training, what filtering was applied, and what benchmarks were run. IBM also provides indemnification coverage for enterprise customers using Granite through its WatsonX platform — meaning IBM accepts legal liability if Granite output infringes third-party intellectual property. No other model family in the open-weight space makes that commitment.
+    </p>
+    <p class="text-gray-300 mb-6">
+      For legal departments, financial services compliance teams, and government contractors, that accountability layer changes the conversation. You are not just deploying an AI model — you are deploying an AI model backed by a 100-year-old enterprise technology company that has staked its reputation on the model's provenance.
+    </p>
+    <p class="text-gray-300">
+      When running Granite privately through Ollama on NoCloudGPT infrastructure, you combine IBM's enterprise backing with complete data sovereignty. Your documents never leave your environment. Your client data stays behind your firewall. You get the trust guarantees of IBM without the cloud data-sharing agreements of WatsonX SaaS.
+    </p>
+  </section>
+
+  <!-- Model Family -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">The Granite Model Family</h2>
+    <p class="text-gray-300 mb-8">
+      IBM has released multiple Granite generations targeting different hardware tiers and use cases. The core family covers general enterprise tasks — document summarization, classification, question answering, and workflow automation. Granite Code (covered separately) extends this into software development.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-lg font-bold">Granite 3.0 2B</h3>
+          <span class="bg-green-900 text-green-300 text-xs px-2 py-1 rounded">Edge Ready</span>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">Ultra-compact for embedded enterprise applications, document triage, and classification workflows. Runs on CPU-only hardware.</p>
+        <div class="text-xs text-gray-500 space-y-1">
+          <div>Parameters: 2B</div>
+          <div>VRAM: 2GB (GPU) / CPU capable</div>
+          <div>Context: 4K tokens</div>
+          <div>License: Apache 2.0</div>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-lg font-bold">Granite 3.0 8B</h3>
+          <span class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded">Sweet Spot</span>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">The primary enterprise workhorse. Handles document analysis, structured data extraction, policy review, and multi-step reasoning on modest hardware.</p>
+        <div class="text-xs text-gray-500 space-y-1">
+          <div>Parameters: 8B</div>
+          <div>VRAM: 8GB (RTX 3070/4060 Ti)</div>
+          <div>Context: 4K tokens</div>
+          <div>License: Apache 2.0</div>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-lg font-bold">Granite 3.1 8B</h3>
+          <span class="bg-purple-900 text-purple-300 text-xs px-2 py-1 rounded">Long Context</span>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">Updated generation with extended 128K context window. Processes full contracts, annual reports, and multi-document research in a single pass.</p>
+        <div class="text-xs text-gray-500 space-y-1">
+          <div>Parameters: 8B</div>
+          <div>VRAM: 8–12GB</div>
+          <div>Context: 128K tokens</div>
+          <div>License: Apache 2.0</div>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-lg font-bold">Granite 3.1 2B</h3>
+          <span class="bg-yellow-900 text-yellow-300 text-xs px-2 py-1 rounded">Instruction Tuned</span>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">Compact instruction-following variant for agentic workflows and automated document processing pipelines where latency matters.</p>
+        <div class="text-xs text-gray-500 space-y-1">
+          <div>Parameters: 2B</div>
+          <div>VRAM: 2–4GB</div>
+          <div>Context: 128K tokens</div>
+          <div>License: Apache 2.0</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bg-blue-950 border border-blue-800 rounded-xl p-6">
+      <h3 class="font-bold text-blue-300 mb-2">Granite Code Family</h3>
+      <p class="text-gray-300 text-sm">
+        IBM also releases Granite Code variants (3B, 8B, 20B, 34B) optimized for software development. These are covered in detail on the <a href="/models/granite-code/" class="text-blue-400 hover:underline">Granite Code page</a>, including support for 116 programming languages and fill-in-the-middle completion.
+      </p>
+    </div>
+  </section>
+
+  <!-- Enterprise Use Cases -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Enterprise Use Cases for Private Granite Deployment</h2>
+
+    <div class="space-y-8">
+      <div>
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">Legal: Contract Review and Due Diligence</h3>
+        <p class="text-gray-300">
+          Legal teams process thousands of pages of contracts, filings, and discovery documents under strict confidentiality obligations. Running Granite 3.1 8B on private infrastructure means those documents never leave the firm's network. Granite's instruction-following accuracy on structured extraction tasks — identifying parties, dates, obligations, and risk clauses — makes it well-suited for M&A due diligence workflows. With 128K context, the model can process a full 200-page contract in a single API call rather than requiring chunking that loses document-level context.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-green-400 mb-3">Financial Services: Regulatory Document Analysis</h3>
+        <p class="text-gray-300">
+          Banks, asset managers, and insurance firms operate under data residency regulations that prohibit sending client data to third-party cloud AI services. Granite's Apache 2.0 license combined with IBM's transparency documentation satisfies vendor risk management requirements that procurement teams encounter with open-source AI. Teams can use Granite to analyze earnings transcripts, SEC filings, regulatory updates, and internal audit reports without creating data governance exceptions.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">Healthcare: Clinical Documentation Support</h3>
+        <p class="text-gray-300">
+          HIPAA-covered entities cannot route patient data through commercial AI APIs without Business Associate Agreements and careful vendor assessment. A privately deployed Granite instance on secure on-premise or dedicated cloud infrastructure sidesteps this problem entirely — there is no third-party processor in the data flow. Healthcare organizations have used Granite for clinical note summarization, ICD code suggestion assistance, and prior authorization document analysis.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-yellow-400 mb-3">Government: Sensitive Document Processing</h3>
+        <p class="text-gray-300">
+          Government agencies and contractors handling controlled unclassified information (CUI) or working toward FedRAMP authorization need AI tools with clear data handling boundaries. Granite deployed on air-gapped or network-isolated infrastructure satisfies these requirements in a way that commercial AI APIs cannot. IBM's existing government relationships and WatsonX's FedRAMP roadmap provide an institutional accountability layer that procurement officers recognize.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hardware Requirements -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Hardware Requirements for Private Granite Deployment</h2>
+    <p class="text-gray-300 mb-6">
+      Granite's efficiency focus means enterprise teams can run production-quality AI on existing server hardware without specialized GPU clusters.
+    </p>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left border-b border-gray-700">
+            <th class="pb-3 text-gray-400">Model</th>
+            <th class="pb-3 text-gray-400">Min VRAM</th>
+            <th class="pb-3 text-gray-400">Recommended GPU</th>
+            <th class="pb-3 text-gray-400">CPU Option</th>
+            <th class="pb-3 text-gray-400">Context</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800">
+          <tr class="py-3">
+            <td class="py-3 font-medium">Granite 3.0 2B</td>
+            <td class="py-3 text-gray-400">2GB</td>
+            <td class="py-3 text-gray-400">GTX 1660 / Any modern GPU</td>
+            <td class="py-3 text-green-400">Yes</td>
+            <td class="py-3 text-gray-400">4K</td>
+          </tr>
+          <tr>
+            <td class="py-3 font-medium">Granite 3.1 2B</td>
+            <td class="py-3 text-gray-400">3GB</td>
+            <td class="py-3 text-gray-400">RTX 3060 / RTX 4060</td>
+            <td class="py-3 text-green-400">Yes (slow)</td>
+            <td class="py-3 text-gray-400">128K</td>
+          </tr>
+          <tr>
+            <td class="py-3 font-medium">Granite 3.0 8B</td>
+            <td class="py-3 text-gray-400">8GB</td>
+            <td class="py-3 text-gray-400">RTX 3070 / RTX 4060 Ti</td>
+            <td class="py-3 text-yellow-400">Slow</td>
+            <td class="py-3 text-gray-400">4K</td>
+          </tr>
+          <tr>
+            <td class="py-3 font-medium">Granite 3.1 8B</td>
+            <td class="py-3 text-gray-400">10GB</td>
+            <td class="py-3 text-gray-400">RTX 3080 / RTX 4070</td>
+            <td class="py-3 text-red-400">Not recommended</td>
+            <td class="py-3 text-gray-400">128K</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-6 bg-gray-900 rounded-xl p-5 border border-gray-700">
+      <h3 class="font-semibold mb-2">Quantization Options</h3>
+      <p class="text-gray-400 text-sm">
+        Ollama serves Granite in Q4_K_M quantization by default, reducing VRAM requirements by approximately 40% versus full precision with minimal quality loss on enterprise document tasks. For compliance-sensitive deployments requiring maximum accuracy, Q8_0 quantization is available with approximately 15% higher VRAM usage.
+      </p>
+    </div>
+  </section>
+
+  <!-- IBM Transparency -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">IBM's Transparency Commitment: What It Means for Your Risk Team</h2>
+    <p class="text-gray-300 mb-6">
+      Most open-weight models publish a model card describing benchmark performance. IBM goes further with Granite by publishing structured documentation covering training data sources, filtering methodology, evaluation datasets, and known limitations. This documentation is designed to satisfy enterprise risk assessments and vendor due diligence questionnaires.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div class="bg-gray-900 rounded-lg p-5 border border-gray-700 text-center">
+        <div class="text-3xl mb-2">📋</div>
+        <h3 class="font-semibold mb-2">Training Data Disclosure</h3>
+        <p class="text-gray-400 text-xs">IBM discloses which datasets were used and what content filtering was applied — critical for IP risk assessment.</p>
+      </div>
+      <div class="bg-gray-900 rounded-lg p-5 border border-gray-700 text-center">
+        <div class="text-3xl mb-2">🛡️</div>
+        <h3 class="font-semibold mb-2">Indemnification (WatsonX)</h3>
+        <p class="text-gray-400 text-xs">Enterprise WatsonX customers receive IP indemnification — IBM accepts liability for copyright claims arising from Granite output.</p>
+      </div>
+      <div class="bg-gray-900 rounded-lg p-5 border border-gray-700 text-center">
+        <div class="text-3xl mb-2">✅</div>
+        <h3 class="font-semibold mb-2">Apache 2.0 License</h3>
+        <p class="text-gray-400 text-xs">Commercial use permitted without royalties. Legal can approve without custom licensing negotiations.</p>
+      </div>
+    </div>
+
+    <p class="text-gray-300">
+      When deploying Granite privately through NoCloudGPT, you retain the Apache 2.0 licensing benefits while adding an additional layer of data protection: your documents are processed entirely within your infrastructure, eliminating the cloud data processing agreements that IBM's SaaS offerings require.
+    </p>
+  </section>
+
+  <!-- Quick Start -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Quick Start: Running Granite with Ollama</h2>
+    <p class="text-gray-300 mb-6">
+      Granite is available directly through the Ollama model library. Deployment takes minutes on properly provisioned hardware.
+    </p>
+
+    <div class="space-y-4">
+      <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
+        <p class="text-xs text-gray-500 mb-2">Pull the Granite 3.1 8B model</p>
+        <code class="text-green-400 text-sm">ollama pull granite3.1-dense:8b</code>
+      </div>
+      <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
+        <p class="text-xs text-gray-500 mb-2">Run an interactive session</p>
+        <code class="text-green-400 text-sm">ollama run granite3.1-dense:8b</code>
+      </div>
+      <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
+        <p class="text-xs text-gray-500 mb-2">API call for document analysis</p>
+        <code class="text-green-400 text-sm">curl http://localhost:11434/api/generate -d '&#123;"model": "granite3.1-dense:8b", "prompt": "Summarize the key obligations in this contract: [CONTRACT_TEXT]"&#125;'</code>
+      </div>
+      <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
+        <p class="text-xs text-gray-500 mb-2">Pull the compact 2B variant</p>
+        <code class="text-green-400 text-sm">ollama pull granite3.1-dense:2b</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Models -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Related Models and Next Steps</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="/models/granite-code/" class="bg-gray-900 rounded-xl p-5 border border-gray-700 hover:border-blue-500 transition-colors">
+        <h3 class="font-bold mb-2">Granite Code</h3>
+        <p class="text-gray-400 text-sm">116-language code generation with fill-in-the-middle. 3B to 34B variants for engineering teams.</p>
+        <span class="text-blue-400 text-sm mt-3 block">Explore →</span>
+      </a>
+      <a href="/models/granite4/" class="bg-gray-900 rounded-xl p-5 border border-gray-700 hover:border-blue-500 transition-colors">
+        <h3 class="font-bold mb-2">Granite 4 (Upcoming)</h3>
+        <p class="text-gray-400 text-sm">Next-generation IBM Granite with projected multimodal capabilities and extended context.</p>
+        <span class="text-blue-400 text-sm mt-3 block">Preview →</span>
+      </a>
+      <a href="/models/llama/" class="bg-gray-900 rounded-xl p-5 border border-gray-700 hover:border-blue-500 transition-colors">
+        <h3 class="font-bold mb-2">Compare: Llama 3.3</h3>
+        <p class="text-gray-400 text-sm">Meta's flagship open model. Broader benchmark performance but without IBM's enterprise accountability layer.</p>
+        <span class="text-blue-400 text-sm mt-3 block">Compare →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-4xl mx-auto px-6 py-16 text-center border-t border-gray-800">
+    <h2 class="text-3xl font-bold mb-4">Deploy IBM Granite on Private Infrastructure</h2>
+    <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+      Enterprise AI with IBM's accountability backing, Apache 2.0 licensing, and complete data sovereignty. Your documents stay on your infrastructure — always.
+    </p>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href="/deploy/" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg">Start Private Deployment</a>
+      <a href="/contact/" class="border border-gray-600 hover:border-gray-400 text-gray-300 px-8 py-4 rounded-lg font-semibold text-lg">Talk to Enterprise Sales</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800 px-6 py-8 text-center text-gray-500 text-sm">
+    <p>© 2025 NoCloudGPT. Private AI infrastructure for enterprise teams.</p>
+    <div class="flex justify-center gap-6 mt-3">
+      <a href="/privacy/" class="hover:text-gray-300">Privacy Policy</a>
+      <a href="/terms/" class="hover:text-gray-300">Terms</a>
+      <a href="/models/" class="hover:text-gray-300">All Models</a>
+    </div>
+  </footer>
+
+</body>
+</html>
