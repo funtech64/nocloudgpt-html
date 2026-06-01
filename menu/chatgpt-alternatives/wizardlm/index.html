@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WizardLM: Complex Instruction Following for Local AI | PrivateAI.guide</title>
+  <meta name="description" content="WizardLM uses Evol-Instruct to automatically generate increasingly complex training instructions — producing models that handle multi-step reasoning and technical tasks better than standard fine-tunes. Run it locally with Ollama." />
+  <link rel="canonical" href="https://privateai.guide/chatgpt-alternatives/wizardlm/" />
+
+  <meta property="og:title" content="WizardLM: Complex Instruction Following for Local AI" />
+  <meta property="og:description" content="Microsoft's WizardLM uses Evol-Instruct methodology to train models that excel at complex, multi-step instructions. Run locally with Ollama — no cloud, no API fees." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://privateai.guide/chatgpt-alternatives/wizardlm/" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0f1117;
+      --surface:      #1a1d27;
+      --surface-2:    #22263a;
+      --border:       #2e3350;
+      --accent:       #6c8cff;
+      --accent-2:     #a78bfa;
+      --accent-3:     #34d399;
+      --warn:         #f59e0b;
+      --danger:       #ef4444;
+      --wizard:       #818cf8;
+      --wizard-dk:    #4f46e5;
+      --wizard-lt:    #c7d2fe;
+      --text:         #e2e8f0;
+      --muted:        #8892b0;
+      --heading:      #ffffff;
+      --radius:       12px;
+      --radius-sm:    6px;
+      --shadow:       0 4px 24px rgba(0,0,0,0.4);
+      --font:         'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-mono:    'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      --max-w:        860px;
+      --transition:   0.2s ease;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0 1rem 4rem;
+    }
+
+    .page-wrap { max-width: var(--max-w); margin: 0 auto; }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      align-items: center; padding: 1.25rem 0;
+      font-size: 0.82rem; color: var(--muted);
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #0f1020 0%, #0f1117 55%, #1a1d27 100%);
+      border: 1px solid rgba(129,140,248,0.3);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem 2rem;
+      margin-bottom: 2rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(129,140,248,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(129,140,248,0.1);
+      border: 1px solid rgba(129,140,248,0.3);
+      color: var(--wizard-lt);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.3rem 0.75rem; border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      font-weight: 800; color: var(--heading);
+      line-height: 1.2; margin-bottom: 0.75rem;
+    }
+    .hero h1 span { color: var(--wizard-lt); }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 640px; margin-bottom: 1.5rem;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap;
+      gap: 1rem; font-size: 0.82rem; color: var(--muted);
+    }
+    .hero-meta-item { display: flex; align-items: center; gap: 0.35rem; }
+    .hero-meta-item strong { color: var(--text); }
+
+    /* ── Stat Grid ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem; text-align: center;
+    }
+    .stat-val {
+      font-size: 1.7rem; font-weight: 800;
+      color: var(--wizard-lt); line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-lbl {
+      font-size: 0.76rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    /* ── Headings ── */
+    h2 {
+      font-size: 1.45rem; font-weight: 700;
+      color: var(--heading); margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 { font-size: 1.1rem; font-weight: 600; color: var(--heading); margin: 1.5rem 0 0.6rem; }
+    h4 { font-size: 0.95rem; font-weight: 600; color: var(--heading); margin: 1.25rem 0 0.5rem; }
+
+    p { margin-bottom: 1rem; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; color: var(--text); }
+    code {
+      font-family: var(--font-mono); font-size: 0.85em;
+      background: var(--surface-2); border: 1px solid var(--border);
+      padding: 0.1em 0.4em; border-radius: var(--radius-sm);
+      color: var(--wizard-lt);
+    }
+
+    /* ── Callouts ── */
+    .callout {
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid;
+      display: flex; gap: 0.75rem;
+    }
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-body { flex: 1; }
+    .callout-body p { margin-bottom: 0.4rem; }
+    .callout-body strong { display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
+
+    .callout-info    { background: rgba(108,140,255,0.08); border-color: var(--accent); }
+    .callout-info    .callout-icon, .callout-info    strong { color: var(--accent); }
+    .callout-warn    { background: rgba(245,158,11,0.08);  border-color: var(--warn); }
+    .callout-warn    .callout-icon, .callout-warn    strong { color: var(--warn); }
+    .callout-success { background: rgba(52,211,153,0.08);  border-color: var(--accent-3); }
+    .callout-success .callout-icon, .callout-success strong { color: var(--accent-3); }
+    .callout-wizard  { background: rgba(129,140,248,0.08); border-color: var(--wizard); }
+    .callout-wizard  .callout-icon, .callout-wizard  strong { color: var(--wizard-lt); }
+
+    /* ── Tables ── */
+    .bench-wrap { overflow-x: auto; margin: 1.5rem 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    thead th {
+      background: var(--surface-2); color: var(--muted);
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 0.75rem 1rem; text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background var(--transition); }
+    tbody tr:hover { background: rgba(129,140,248,0.03); }
+    tbody td { padding: 0.75rem 1rem; color: var(--text); }
+    tbody td:first-child { font-weight: 600; }
+
+    .val-green  { color: var(--accent-3); font-weight: 700; }
+    .val-yellow { color: var(--warn);     font-weight: 700; }
+    .val-red    { color: var(--danger);   font-weight: 700; }
+    .val-blue   { color: var(--accent);   font-weight: 700; }
+    .val-wizard { color: var(--wizard-lt);font-weight: 700; }
+    .val-muted  { color: var(--muted);    font-style: italic; }
+    .row-hl td  { background: rgba(129,140,248,0.04); }
+
+    /* ── Evol Pipeline ── */
+    .evol-pipeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0; margin: 1.5rem 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .evol-step {
+      padding: 1.25rem 1rem;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .evol-step:last-child { border-right: none; }
+    .evol-step-num {
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--wizard-lt); margin-bottom: 0.4rem;
+    }
+    .evol-step-title {
+      font-size: 0.9rem; font-weight: 700;
+      color: var(--heading); margin-bottom: 0.4rem;
+    }
+    .evol-step-desc { font-size: 0.78rem; color: var(--muted); }
+    @media (max-width: 640px) {
+      .evol-pipeline { grid-template-columns: 1fr; }
+      .evol-step { border-right: none; border-bottom: 1px solid var(--border); }
+      .evol-step:last-child { border-bottom: none; }
+    }
+
+    /* ── Version Timeline ── */
+    .timeline { position: relative; padding-left: 1.5rem; margin: 1.5rem 0; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 0; top: 0.5rem; bottom: 0.5rem;
+      width: 2px; background: var(--border);
+    }
+    .timeline-item { position: relative; margin-bottom: 1.75rem; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute; left: -1.75rem; top: 0.4rem;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--wizard); border: 2px solid var(--bg);
+    }
+    .timeline-dot.current { background: var(--wizard-lt); width: 12px; height: 12px; left: -1.85rem; }
+    .timeline-date { font-size: 0.75rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+    .timeline-title { font-size: 1rem; font-weight: 700; color: var(--heading); margin-bottom: 0.35rem; }
+    .timeline-body { font-size: 0.86rem; color: var(--muted); }
+
+    /* ── Use Case Cards ── */
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .use-case-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .use-case-card.strong { border-color: rgba(129,140,248,0.35); }
+    .use-case-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .use-case-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--heading); margin-bottom: 0.4rem; }
+    .use-case-card p { font-size: 0.84rem; color: var(--muted); margin: 0; }
+
+    /* ── Code Blocks ── */
+    .code-block { background: #0d0f17; border: 1px solid var(--border); border-radius: var(--radius); margin: 1.25rem 0; overflow: hidden; }
+    .code-block.wizard-border { border-color: rgba(129,140,248,0.3); }
+    .code-header { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; background: var(--surface-2); border-bottom: 1px solid var(--border); font-size: 0.78rem; color: var(--muted); }
+    .code-header .lang { font-weight: 600; color: var(--wizard-lt); }
+    pre { padding: 1.25rem; overflow-x: auto; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.6; color: #c9d1e0; }
+    .c-comment { color: #546e7a; }
+    .c-str     { color: #a3be8c; }
+    .c-kw      { color: #a78bfa; }
+    .c-num     { color: #f59e0b; }
+    .c-fn      { color: #4da3e8; }
+    .c-var     { color: var(--wizard-lt); }
+
+    /* ── Versus ── */
+    .versus-box { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    @media (max-width: 540px) { .versus-box { grid-template-columns: 1fr; } }
+    .versus-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+    .versus-panel h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+    .versus-panel.pro h4 { color: var(--accent-3); }
+    .versus-panel.con h4 { color: var(--danger); }
+    .versus-panel ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+    .versus-panel li { font-size: 0.88rem; color: var(--text); display: flex; align-items: flex-start; gap: 0.5rem; }
+    .versus-panel.pro li::before { content: '✓'; color: var(--accent-3); flex-shrink: 0; }
+    .versus-panel.con li::before { content: '✗'; color: var(--danger); flex-shrink: 0; }
+
+    /* ── Comparison matrix ── */
+    .matrix-note { font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; font-style: italic; }
+
+    /* ── Decision Box ── */
+    .decision-box {
+      background: linear-gradient(135deg, rgba(129,140,248,0.06) 0%, rgba(79,70,229,0.04) 100%);
+      border: 1px solid rgba(129,140,248,0.3);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .decision-box h3 { color: var(--wizard-lt); margin-top: 0; margin-bottom: 1rem; font-size: 1rem; }
+    .decision-row { display: flex; gap: 0.75rem; margin-bottom: 0.6rem; align-items: flex-start; }
+    .decision-row:last-child { margin-bottom: 0; }
+    .decision-if { font-size: 0.82rem; color: var(--muted); min-width: 120px; flex-shrink: 0; padding-top: 0.1rem; }
+    .decision-then { font-size: 0.88rem; color: var(--text); font-weight: 600; }
+    .decision-then a { color: var(--wizard-lt); }
+
+    /* ── Page Nav ── */
+    .page-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .page-nav a { display: flex; align-items: center; gap: 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 600; color: var(--text); text-decoration: none; transition: border-color var(--transition), color var(--transition); flex: 1; min-width: 160px; }
+    .page-nav a:hover { border-color: var(--wizard-lt); color: var(--wizard-lt); }
+    .page-nav a.next { justify-content: flex-end; text-align: right; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 1.75rem 1.25rem 1.5rem; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "WizardLM: Complex Instruction Following for Local AI",
+    "description": "WizardLM uses Evol-Instruct to automatically generate increasingly complex training instructions, producing models that handle multi-step reasoning and technical tasks better than standard fine-tunes.",
+    "author": { "@type": "Organization", "name": "PrivateAI.guide" },
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-07-14"
+  }
+  </script>
+</head>
+
+<body>
+<div class="page-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/chatgpt-alternatives/">ChatGPT Alternatives</a>
+    <span>›</span>
+    <span>WizardLM</span>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="hero">
+    <div class="hero-badge">🧙 Microsoft Research · May 2023</div>
+    <h1>WizardLM: <span>Evol-Instruct and the<br>Complexity Problem</span></h1>
+    <p class="hero-sub">
+      Most instruction-tuned models are trained on human-written 
+      prompts — which cluster around simple, common requests. 
+      WizardLM asked a different question: what if you used an LLM 
+      to automatically rewrite those instructions into progressively 
+      more complex variants, then trained on the harder versions? 
+      The result was a model that outperformed ChatGPT on complex 
+      instruction-following tasks despite being a fraction of 
+      the size. Run it locally — no cloud, no API fees, 
+      no data leaving your machine.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">🏢 <strong>Creator:</strong> Microsoft Research</div>
+      <div class="hero-meta-item">📅 <strong>Released:</strong> May 2023 (v1); Dec 2023 (v2)</div>
+      <div class="hero-meta-item">⚖️ <strong>Licence:</strong> Llama 2 Community (non-commercial)</div>
+      <div class="hero-meta-item">🧠 <strong>Base:</strong> Llama 2 (WizardLM-2 uses Mistral/Mixtral)</div>
+      <div class="hero-meta-item">📏 <strong>Context:</strong> 4K (v1) · 32K (WizardLM-2)</div>
+      <div class="hero-meta-item">💾 <strong>Min RAM:</strong> 8GB (7B) · 48GB (70B)</div>
+    </div>
+  </header>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <strong>Licence: non-commercial only</strong>
+      <p>
+        WizardLM versions based on Llama 2 inherit the 
+        <a href="https://ai.meta.com/llama/license/" rel="noopener noreferrer" target="_blank">Llama 2 Community Licence</a>, 
+        which prohibits commercial use without Meta's authorisation 
+        (required for services with over 700 million monthly active users). 
+        For most individual researchers, hobbyists, and small businesses 
+        this is not a practical restriction — but if you are building 
+        a product, use 
+        <a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> 
+        (Apache 2.0) or 
+        <a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a> 
+        (Apache 2.0) instead.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Stats ── -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-val">8.01</div>
+      <div class="stat-lbl">MT-Bench (WizardLM-2 7B)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">7B–70B</div>
+      <div class="stat-lbl">Available sizes</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">250K</div>
+      <div class="stat-lbl">Evol-Instruct training pairs</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">32K</div>
+      <div class="stat-lbl">Context window (WizardLM-2)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">5</div>
+      <div class="stat-lbl">Evolution depth rounds</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">88.3%</div>
+      <div class="stat-lbl">Win rate vs ChatGPT (complex tasks)</div>
+    </div>
+  </div>
+
+  <!-- ── Evol-Instruct ── -->
+  <h2>Evol-Instruct: The Core Innovation</h2>
+
+  <p>
+    The central insight behind WizardLM is that the complexity 
+    distribution of human-written instructions is heavily skewed 
+    toward simple tasks. When you train only on those, you get a 
+    model that handles easy requests well but struggles with 
+    multi-step, technically demanding prompts. 
+    <strong>Evol-Instruct</strong> solves this by using an LLM 
+    (GPT-4 in the original research) to automatically transform 
+    simple instructions into harder variants through a defined 
+    evolution process.
+  </p>
+
+  <div class="evol-pipeline">
+    <div class="evol-step">
+      <div class="evol-step-num">Step 1</div>
+      <div class="evol-step-title">Seed Instructions</div>
+      <div class="evol-step-desc">Start with a set of relatively simple human-written instructions — similar to the Alpaca 52K dataset.</div>
+    </div>
+    <div class="evol-step">
+      <div class="evol-step-num">Step 2</div>
+      <div class="evol-step-title">In-Depth Evolution</div>
+      <div class="evol-step-desc">Rewrite each instruction to be more complex: add constraints, increase reasoning steps, require domain expertise, or deepen specificity.</div>
+    </div>
+    <div class="evol-step">
+      <div class="evol-step-num">Step 3</div>
+      <div class="evol-step-title">In-Breadth Evolution</div>
+      <div class="evol-step-desc">Generate entirely new instructions that cover different topics — expanding coverage rather than deepening existing ones.</div>
+    </div>
+    <div class="evol-step">
+      <div class="evol-step-num">Step 4</div>
+      <div class="evol-step-title">Filter &amp; Score</div>
+      <div class="evol-step-desc">Remove evolutions that are too similar to the seed, too short, or that the LLM refuses to answer. Keep only substantive improvements.</div>
+    </div>
+    <div class="evol-step">
+      <div class="evol-step-num">Step 5</div>
+      <div class="evol-step-title">Repeat (5 rounds)</div>
+      <div class="evol-step-desc">Apply evolution repeatedly. After 5 rounds, the 52K seed becomes ~250K instruction pairs spanning a wide complexity range.</div>
+    </div>
+  </div>
+
+  <p>
+    The key result: models trained on the Evol-Instruct dataset 
+    outperform models trained on the original simple instructions 
+    on complex tasks, even when total training data volume is similar. 
+    The <em>difficulty distribution</em> of training data matters as 
+    much as its volume.
+  </p>
+
+  <div class="callout callout-wizard">
+    <div class="callout-icon">🧙</div>
+    <div class="callout-body">
+      <strong>Why this matters for local use</strong>
+      <p>
+        If you are running a 7B model locally and need it to handle 
+        genuinely complex tasks — multi-step code generation, 
+        structured analysis, technical writing with specific constraints 
+        — WizardLM's training approach gives it an edge over 
+        comparably-sized models trained on simpler instruction sets. 
+        You get more reasoning capability per parameter than 
+        a naive fine-tune.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Version History ── -->
+  <h2>Version History</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">May 2023</div>
+      <div class="timeline-title">WizardLM 7B v1.0</div>
+      <div class="timeline-body">
+        First release. Fine-tuned Llama 1 (7B) on 250K Evol-Instruct pairs. 
+        Demonstrated that evolved instructions produce better 
+        complex-task performance than simple instruction sets. 
+        Showed 88.3% win rate over ChatGPT on complex instructions 
+        in human evaluation.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">June 2023</div>
+      <div class="timeline-title">WizardLM 13B v1.1 + 30B</div>
+      <div class="timeline-body">
+        Extended to larger Llama 1 bases. 30B variant competitive 
+        with early GPT-4 on structured task benchmarks. 
+        Evol-Instruct refined to include more code-focused evolutions.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">August 2023</div>
+      <div class="timeline-title">WizardLM 70B v1.0 (Llama 2)</div>
+      <div class="timeline-body">
+        Rebased on Llama 2. 70B variant achieves strong scores 
+        on TruthfulQA, MMLU, and HumanEval. 
+        The 70B is the last version to use Llama 2 for the 
+        largest size. Context window: 4K.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">October 2023</div>
+      <div class="timeline-title">WizardCoder Python 34B</div>
+      <div class="timeline-body">
+        Specialised code variant using Code Llama 34B as base. 
+        Achieves 73.2% on HumanEval — briefly the best-performing 
+        open-source code model at that size. 
+        This is a separate model family from chat-focused WizardLM.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot current"></div>
+      <div class="timeline-date">April 2024</div>
+      <div class="timeline-title">WizardLM-2 (8x22B, 70B, 7B) ★ Current</div>
+      <div class="timeline-body">
+        Major architecture shift. Uses Mistral 7B (7B variant) 
+        and Mixtral 8x22B (largest variant) as bases instead of Llama. 
+        Context extended to 32K. Competitive with GPT-4 on several 
+        benchmarks. The 7B variant scores 8.01 on MT-Bench. 
+        <strong>Note:</strong> Microsoft briefly withdrew WizardLM-2 
+        from release for safety review before reposting. 
+        Mistral-based variants have more permissive licensing.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Model Comparison ── -->
+  <h2>Model Comparison</h2>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Base</th>
+          <th>Size</th>
+          <th>MT-Bench</th>
+          <th>Context</th>
+          <th>RAM (INT4)</th>
+          <th>Licence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>WizardLM 7B v1</td>
+          <td>Llama 1</td>
+          <td>7B</td>
+          <td class="val-muted">N/A</td>
+          <td>2K</td>
+          <td class="val-green">5–6 GB</td>
+          <td class="val-red">Non-commercial</td>
+        </tr>
+        <tr>
+          <td>WizardLM 13B v1.2</td>
+          <td>Llama 2</td>
+          <td>13B</td>
+          <td class="val-yellow">7.20</td>
+          <td>4K</td>
+          <td class="val-yellow">9–10 GB</td>
+          <td class="val-red">Non-commercial</td>
+        </tr>
+        <tr>
+          <td>WizardLM 70B v1</td>
+          <td>Llama 2</td>
+          <td>70B</td>
+          <td class="val-green">7.71</td>
+          <td>4K</td>
+          <td class="val-red">40–48 GB</td>
+          <td class="val-red">Non-commercial</td>
+        </tr>
+        <tr class="row-hl">
+          <td><strong>WizardLM-2 7B ★</strong></td>
+          <td>Mistral 7B</td>
+          <td>7B</td>
+          <td class="val-wizard">8.01</td>
+          <td>32K</td>
+          <td class="val-green">5–6 GB</td>
+          <td class="val-yellow">Apache 2.0*</td>
+        </tr>
+        <tr>
+          <td>WizardLM-2 70B</td>
+          <td>Llama 2</td>
+          <td>70B</td>
+          <td class="val-green">~8.7</td>
+          <td>32K</td>
+          <td class="val-red">40–48 GB</td>
+          <td class="val-red">Non-commercial</td>
+        </tr>
+        <tr>
+          <td>WizardLM-2 8x22B</td>
+          <td>Mixtral</td>
+          <td>141B MoE</td>
+          <td class="val-green">~9.0</td>
+          <td>64K</td>
+          <td class="val-red">~80 GB</td>
+          <td class="val-yellow">Apache 2.0*</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="matrix-note">* WizardLM-2 Mistral/Mixtral-based variants use Apache 2.0. Llama 2-based variants use the non-commercial Llama 2 Community Licence. MT-Bench scores from LMSYS leaderboard.</p>
+  </div>
+
+  <!-- ── vs Competitors ── -->
+  <h2>WizardLM vs Comparable Models</h2>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>MT-Bench</th>
+          <th>Complex Tasks</th>
+          <th>Context</th>
+          <th>Licence</th>
+          <th>Best Fit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>WizardLM-2 7B</td>
+          <td class="val-wizard">8.01</td>
+          <td class="val-green">Strong</td>
+          <td class="val-wizard">32K</td>
+          <td class="val-green">Apache 2.0</td>
+          <td>Multi-step reasoning, technical tasks</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a></td>
+          <td class="val-green">7.81</td>
+          <td class="val-yellow">Good</td>
+          <td class="val-yellow">8K</td>
+          <td class="val-green">Apache 2.0</td>
+          <td>Fast, conversational, commercial use</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/starling/">Starling 7B</a></td>
+          <td class="val-green">8.09</td>
+          <td class="val-yellow">Good</td>
+          <td class="val-yellow">8K</td>
+          <td class="val-green">Apache 2.0</td>
+          <td>Helpfulness, conversational quality</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a></td>
+          <td class="val-yellow">7.54</td>
+          <td class="val-green">Strong</td>
+          <td class="val-yellow">4K</td>
+          <td class="val-green">Apache 2.0</td>
+          <td>Commercial use, structured output</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/vicuna/">Vicuna 1.5</a></td>
+          <td class="val-yellow">7.92</td>
+          <td class="val-yellow">Moderate</td>
+          <td class="val-yellow">4K</td>
+          <td class="val-red">Non-commercial</td>
+          <td>Conversational, well-rounded</td>
+        </tr>
+        <tr>
+          <td>Llama 3.1 8B Instruct</td>
+          <td class="val-green">8.22</td>
+          <td class="val-green">Strong</td>
+          <td class="val-green">128K</td>
+          <td class="val-green">Llama 3.1 (broadly usable)</td>
+          <td>Long-context, modern baseline</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">ℹ️</div>
+    <div class="callout-body">
+      <strong>WizardLM-2 7B vs Llama 3.1 8B in 2025</strong>
+      <p>
+        WizardLM-2 7B was released in April 2024 and scores 8.01 
+        on MT-Bench — impressive for its size. However, Llama 3.1 8B 
+        Instruct (July 2024) scores 8.22 and offers a 128K context 
+        window, broader language support, and a more permissive licence. 
+        For most new deployments in 2025, Llama 3.1 8B is the stronger 
+        default. WizardLM-2 7B remains relevant if you specifically 
+        want the Evol-Instruct training methodology's characteristics 
+        on complex instruction tasks, or if you are already using 
+        Mistral-family models and want consistency.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Use Cases ── -->
+  <h2>Where WizardLM Excels</h2>
+
+  <div class="use-case-grid">
+    <div class="use-case-card strong">
+      <div class="use-case-icon">🔢</div>
+      <h4>Multi-step reasoning</h4>
+      <p>Tasks requiring sequential reasoning steps: "Given X, derive Y, then use Y to evaluate Z under constraints A and B." The Evol-Instruct training specifically targets this pattern.</p>
+    </div>
+    <div class="use-case-card strong">
+      <div class="use-case-icon">📐</div>
+      <h4>Constrained instruction following</h4>
+      <p>Instructions with multiple simultaneous constraints: format requirements, content restrictions, length limits, and specific terminology — all honoured together.</p>
+    </div>
+    <div class="use-case-card strong">
+      <div class="use-case-icon">💻</div>
+      <h4>Technical writing with requirements</h4>
+      <p>Documentation, specifications, and technical content where you provide detailed requirements and expect them to be fully addressed — not just partially.</p>
+    </div>
+    <div class="use-case-card">
+      <div class="use-case-icon">🧩</div>
+      <h4>Structured data tasks</h4>
+      <p>Generating JSON, YAML, or other structured output that must conform to a schema. WizardLM handles format constraints well due to diversity of evolved training examples.</p>
+    </div>
+    <div class="use-case-card">
+      <div class="use-case-icon">📊</div>
+      <h4>Analysis tasks</h4>
+      <p>Breaking down a complex problem, examining it from multiple angles, and providing a structured conclusion. The model was specifically trained on this instruction pattern.</p>
+    </div>
+    <div class="use-case-card">
+      <div class="use-case-icon">🔬</div>
+      <h4>Research assistance</h4>
+      <p>Summarising literature, identifying gaps in arguments, comparing multiple sources against a set of criteria. Benefits from the model's exposure to expert-level instruction patterns.</p>
+    </div>
+  </div>
+
+  <!-- ── Installation ── -->
+  <h2>Running WizardLM Locally</h2>
+
+  <h3>Via Ollama (recommended)</h3>
+
+  <div class="code-block wizard-border">
+    <div class="code-header">
+      <span class="lang">bash — Ollama</span>
+    </div>
+    <pre><span class="c-comment"># Install Ollama first: https://ollama.com</span>
+
+<span class="c-comment"># WizardLM-2 7B — recommended starting point</span>
+ollama pull wizardlm2:7b
+
+<span class="c-comment"># WizardLM-2 8x22B — requires ~80GB RAM (MoE architecture)</span>
+ollama pull wizardlm2:8x22b
+
+<span class="c-comment"># Start a chat session</span>
+ollama run wizardlm2:7b</pre>
+  </div>
+
+  <h3>Python API via Ollama</h3>
+
+  <div class="code-block wizard-border">
+    <div class="code-header">
+      <span class="lang">python — Ollama Python client</span>
+    </div>
+    <pre><span class="c-kw">import</span> ollama
+
+<span class="c-comment"># WizardLM-2 handles complex, multi-part instructions well</span>
+response = ollama.<span class="c-fn">chat</span>(
+    model=<span class="c-str">'wizardlm2:7b'</span>,
+    messages=[{
+        <span class="c-str">'role'</span>: <span class="c-str">'user'</span>,
+        <span class="c-str">'content'</span>: <span class="c-str">"""Analyse the following business scenario and provide:
+1. A SWOT analysis in a 2x2 grid (use ASCII art)
+2. Three strategic recommendations, each with:
+   - The recommendation (max 20 words)
+   - Rationale (2-3 sentences)
+   - Key risk and mitigation
+   - Success metric
+3. A prioritisation matrix ranking the recommendations by 
+   impact vs implementation difficulty
+
+Scenario: A regional law firm with 50 lawyers is considering 
+launching an AI-assisted contract review service for SMEs."""</span>
+    }]
+)
+
+<span class="c-fn">print</span>(response[<span class="c-str">'message'</span>][<span class="c-str">'content'</span>])</pre>
+  </div>
+
+  <h3>OpenAI-compatible API</h3>
+
+  <div class="code-block wizard-border">
+    <div class="code-header">
+      <span class="lang">python — OpenAI-compatible (Ollama serves on port 11434)</span>
+    </div>
+    <pre><span class="c-kw">from</span> openai <span class="c-kw">import</span> OpenAI
+
+client = <span class="c-fn">OpenAI</span>(
+    base_url=<span class="c-str">"http://localhost:11434/v1"</span>,
+    api_key=<span class="c-str">"ollama"</span>
+)
+
+<span class="c-comment"># System prompt tuning for WizardLM-2</span>
+response = client.chat.completions.<span class="c-fn">create</span>(
+    model=<span class="c-str">"wizardlm2:7b"</span>,
+    messages=[
+        {
+            <span class="c-str">"role"</span>: <span class="c-str">"system"</span>,
+            <span class="c-str">"content"</span>: <span class="c-str">"You are a precise technical assistant. Follow all instructions exactly. When given a numbered list of requirements, address each one explicitly and in order."</span>
+        },
+        {
+            <span class="c-str">"role"</span>: <span class="c-str">"user"</span>,
+            <span class="c-str">"content"</span>: <span class="c-str">"Your instruction here..."</span>
+        }
+    ],
+    temperature=<span class="c-num">0.7</span>
+)
+
+<span class="c-fn">print</span>(response.choices[<span class="c-num">0</span>].message.content)</pre>
+  </div>
+
+  <!-- ── Prompting Tips ── -->
+  <h2>Getting the Best from WizardLM-2</h2>
+
+  <h3>Use numbered requirements</h3>
+  <p>
+    WizardLM-2 was trained on instructions with explicit numbered 
+    constraints. When you have multiple requirements, list them 
+    explicitly rather than embedding them in prose. The model is 
+    more likely to address each requirement in turn.
+  </p>
+
+  <div class="code-block wizard-border">
+    <div class="code-header">
+      <span class="lang">prompt — numbered requirements pattern</span>
+    </div>
+    <pre><span class="c-comment"># Less effective:</span>
+<span class="c-str">"Write a short product description for a standing desk 
+that mentions the height range and is suitable for LinkedIn."</span>
+
+<span class="c-comment"># More effective (mirrors Evol-Instruct patterns):</span>
+<span class="c-str">"Write a product description for an adjustable standing desk. 
+Requirements:
+1. Length: exactly 80–100 words
+2. Must include: height range (65–130 cm), 
+   electric motor speed, and warranty period (5 years)
+3. Tone: professional but approachable; suitable for LinkedIn
+4. End with a single call-to-action sentence
+5. Do not use the words 'innovative' or 'revolutionary'"</span></pre>
+  </div>
+
+  <h3>Specify output structure explicitly</h3>
+
+  <div class="code-block wizard-border">
+    <div class="code-header">
+      <span class="lang">prompt — structured output</span>
+    </div>
+    <pre><span class="c-str">"Evaluate the following argument for logical consistency. 
+Return your response as valid JSON with this exact structure:
+{
+  'verdict': 'valid' | 'invalid' | 'partially_valid',
+  'premises': [{'claim': str, 'sound': bool, 'note': str}],
+  'logical_gaps': [str],
+  'overall_score': int (1-10),
+  'one_line_summary': str
+}
+
+Argument: [paste argument here]"</span></pre>
+  </div>
+
+  <!-- ── Honest Assessment ── -->
+  <h2>Honest Assessment</h2>
+
+  <div class="versus-box">
+    <div class="versus-panel pro">
+      <h4>✓ Genuine Strengths</h4>
+      <ul>
+        <li>Evol-Instruct training genuinely improves complex instruction handling vs naive fine-tunes</li>
+        <li>WizardLM-2 7B scores 8.01 MT-Bench — strong for its size class</li>
+        <li>32K context in WizardLM-2 (up from 4K in v1)</li>
+        <li>Mistral-based WizardLM-2 variants under Apache 2.0</li>
+        <li>Handles simultaneous constraints better than many comparable models</li>
+        <li>WizardCoder variants strong for code tasks</li>
+        <li>Available via Ollama — simple local deployment</li>
+        <li>Active research lineage — Evol-Instruct concepts adopted widely</li>
+      </ul>
+    </div>
+    <div class="versus-panel con">
+      <h4>✗ Real Limitations</h4>
+      <ul>
+        <li>Llama 2-based variants (most sizes) are non-commercial</li>
+        <li>Superseded in overall benchmarks by Llama 3.1 8B for most use cases</li>
+        <li>WizardLM-2 was briefly withdrawn for safety review — history worth noting</li>
+        <li>4K context in older versions is very limiting</li>
+        <li>70B and 8x22B variants require substantial hardware (40–80GB RAM)</li>
+        <li>Less active development compared to Llama 3 or Mistral families in 2025</li>
+        <li>Evol-Instruct data generated by GPT-4 — inherits any biases or errors from that process</li>
+        <li>Not designed for multilingual use; primarily English</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Decision helper ── -->
+  <div class="decision-box">
+    <h3>🧙 When to choose WizardLM vs alternatives</h3>
+    <div class="decision-row">
+      <div class="decision-if">You need complex multi-step instruction following on a 7B model</div>
+      <div class="decision-then">→ Try <strong>WizardLM-2 7B</strong> and compare to Llama 3.1 8B on your specific task</div>
+    </div>
+    <div class="decision-row">
+      <div class="decision-if">Commercial use required</div>
+      <div class="decision-then">→ <a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> (Apache 2.0) or <a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a> (Apache 2.0)</div>
+    </div>
+    <div class="decision-row">
+      <div class="decision-if">Long-context tasks (&gt;8K tokens)</div>
+      <div class="decision-then">→ Llama 3.1 8B (128K context) beats WizardLM-2's 32K for most long-doc tasks</div>
+    </div>
+    <div class="decision-row">
+      <div class="decision-if">Code generation specifically</div>
+      <div class="decision-then">→ <strong>WizardCoder 34B</strong> or consider <a href="/chatgpt-alternatives/openchat/">OpenChat with DeepSeek Coder</a></div>
+    </div>
+    <div class="decision-row">
+      <div class="decision-if">Best 7B conversation quality</div>
+      <div class="decision-then">→ <a href="/chatgpt-alternatives/starling/">Starling 7B</a> (8.09 MT-Bench, Apache 2.0) or OpenChat 3.5</div>
+    </div>
+    <div class="decision-row">
+      <div class="decision-if">Researching training methodology</div>
+      <div class="decision-then">→ Read the <a href="https://arxiv.org/abs/2304.12244" rel="noopener noreferrer" target="_blank">original WizardLM paper</a>; Evol-Instruct concepts are widely cited</div>
+    </div>
+  </div>
+
+  <!-- ── Page Nav ── -->
+  <nav class="page-nav" aria-label="Page navigation">
+    <a href="/chatgpt-alternatives/whisper/">← Whisper</a>
+    <a href="/chatgpt-alternatives/zephyr/" class="next">Zephyr →</a>
+  </nav>
+
+</div>
+</body>
+</html>
