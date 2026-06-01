@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whisper: Local Speech-to-Text Without Sending Audio to the Cloud | PrivateAI.guide</title>
+  <meta name="description" content="OpenAI's Whisper is an open-source speech recognition model you can run entirely offline. Transcribe meetings, voice memos, and sensitive audio locally — no API key, no data retention, no cost per minute." />
+  <link rel="canonical" href="https://privateai.guide/chatgpt-alternatives/whisper/" />
+
+  <meta property="og:title" content="Whisper: Local Speech-to-Text Without Sending Audio to the Cloud" />
+  <meta property="og:description" content="Run OpenAI's Whisper entirely offline. Transcribe meetings, voice memos, and sensitive audio with no API key, no data retention, and no cost per minute." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://privateai.guide/chatgpt-alternatives/whisper/" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0f1117;
+      --surface:      #1a1d27;
+      --surface-2:    #22263a;
+      --border:       #2e3350;
+      --accent:       #6c8cff;
+      --accent-2:     #a78bfa;
+      --accent-3:     #34d399;
+      --warn:         #f59e0b;
+      --danger:       #ef4444;
+      --whisper:      #e879f9;
+      --whisper-dk:   #c026d3;
+      --whisper-lt:   #f5d0fe;
+      --text:         #e2e8f0;
+      --muted:        #8892b0;
+      --heading:      #ffffff;
+      --radius:       12px;
+      --radius-sm:    6px;
+      --shadow:       0 4px 24px rgba(0,0,0,0.4);
+      --font:         'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-mono:    'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      --max-w:        860px;
+      --transition:   0.2s ease;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0 1rem 4rem;
+    }
+
+    .page-wrap { max-width: var(--max-w); margin: 0 auto; }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      align-items: center; padding: 1.25rem 0;
+      font-size: 0.82rem; color: var(--muted);
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #1a0a1e 0%, #0f1117 55%, #1a1d27 100%);
+      border: 1px solid rgba(232,121,249,0.3);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem 2rem;
+      margin-bottom: 2rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(232,121,249,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(232,121,249,0.1);
+      border: 1px solid rgba(232,121,249,0.3);
+      color: var(--whisper-lt);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.3rem 0.75rem; border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      font-weight: 800; color: var(--heading);
+      line-height: 1.2; margin-bottom: 0.75rem;
+    }
+    .hero h1 span { color: var(--whisper-lt); }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 640px; margin-bottom: 1.5rem;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap;
+      gap: 1rem; font-size: 0.82rem; color: var(--muted);
+    }
+    .hero-meta-item { display: flex; align-items: center; gap: 0.35rem; }
+    .hero-meta-item strong { color: var(--text); }
+
+    /* ── Stat Grid ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem; text-align: center;
+    }
+    .stat-val {
+      font-size: 1.7rem; font-weight: 800;
+      color: var(--whisper-lt); line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-lbl {
+      font-size: 0.76rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    /* ── Headings ── */
+    h2 {
+      font-size: 1.45rem; font-weight: 700;
+      color: var(--heading); margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 { font-size: 1.1rem; font-weight: 600; color: var(--heading); margin: 1.5rem 0 0.6rem; }
+
+    p { margin-bottom: 1rem; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; color: var(--text); }
+    code {
+      font-family: var(--font-mono); font-size: 0.85em;
+      background: var(--surface-2); border: 1px solid var(--border);
+      padding: 0.1em 0.4em; border-radius: var(--radius-sm);
+      color: var(--whisper-lt);
+    }
+
+    /* ── Callouts ── */
+    .callout {
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid;
+      display: flex; gap: 0.75rem;
+    }
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-body { flex: 1; }
+    .callout-body p { margin-bottom: 0.4rem; }
+    .callout-body strong { display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
+
+    .callout-info    { background: rgba(108,140,255,0.08); border-color: var(--accent); }
+    .callout-info    .callout-icon, .callout-info strong { color: var(--accent); }
+    .callout-warn    { background: rgba(245,158,11,0.08);  border-color: var(--warn); }
+    .callout-warn    .callout-icon, .callout-warn strong { color: var(--warn); }
+    .callout-success { background: rgba(52,211,153,0.08);  border-color: var(--accent-3); }
+    .callout-success .callout-icon, .callout-success strong { color: var(--accent-3); }
+    .callout-whisper { background: rgba(232,121,249,0.08); border-color: var(--whisper); }
+    .callout-whisper .callout-icon, .callout-whisper strong { color: var(--whisper-lt); }
+
+    /* ── Model Size Table ── */
+    .bench-wrap { overflow-x: auto; margin: 1.5rem 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    thead th {
+      background: var(--surface-2); color: var(--muted);
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 0.75rem 1rem; text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background var(--transition); }
+    tbody tr:hover { background: rgba(232,121,249,0.03); }
+    tbody td { padding: 0.75rem 1rem; color: var(--text); }
+    tbody td:first-child { font-weight: 600; }
+
+    .val-green   { color: var(--accent-3);   font-weight: 700; }
+    .val-yellow  { color: var(--warn);       font-weight: 700; }
+    .val-red     { color: var(--danger);     font-weight: 700; }
+    .val-blue    { color: var(--accent);     font-weight: 700; }
+    .val-whisper { color: var(--whisper-lt); font-weight: 700; }
+    .val-muted   { color: var(--muted);      font-style: italic; }
+    .row-hl td   { background: rgba(232,121,249,0.04); }
+
+    /* ── Use Case Cards ── */
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .use-case-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .use-case-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .use-case-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--heading); margin-bottom: 0.4rem; }
+    .use-case-card p { font-size: 0.84rem; color: var(--muted); margin: 0; }
+    .use-case-card.privacy { border-color: rgba(232,121,249,0.3); }
+
+    /* ── Implementation Grid ── */
+    .impl-tabs { display: flex; gap: 0.5rem; margin-bottom: -1px; flex-wrap: wrap; }
+    .impl-tab {
+      padding: 0.5rem 1rem; border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+      font-size: 0.82rem; font-weight: 600; cursor: pointer;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--muted); border-bottom: none;
+    }
+    .impl-tab.active { background: #0d0f17; color: var(--whisper-lt); border-color: var(--whisper-dk); }
+
+    /* ── Code Blocks ── */
+    .code-block { background: #0d0f17; border: 1px solid var(--border); border-radius: var(--radius); margin: 1.25rem 0; overflow: hidden; }
+    .code-block.whisper-border { border-color: rgba(232,121,249,0.3); }
+    .code-header { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; background: var(--surface-2); border-bottom: 1px solid var(--border); font-size: 0.78rem; color: var(--muted); }
+    .code-header .lang { font-weight: 600; color: var(--whisper-lt); }
+    pre { padding: 1.25rem; overflow-x: auto; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.6; color: #c9d1e0; }
+    .c-comment { color: #546e7a; }
+    .c-str     { color: #a3be8c; }
+    .c-kw      { color: #a78bfa; }
+    .c-num     { color: #f59e0b; }
+    .c-fn      { color: #4da3e8; }
+    .c-var     { color: var(--whisper-lt); }
+
+    /* ── Language Grid ── */
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.5rem; margin: 1rem 0;
+    }
+    .lang-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.4rem 0.7rem;
+      font-size: 0.8rem; color: var(--text);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .lang-chip .flag { font-size: 1rem; }
+    .lang-chip.strong { border-color: rgba(52,211,153,0.3); color: var(--accent-3); }
+    .lang-chip.good   { border-color: rgba(245,158,11,0.3); color: var(--warn); }
+    .lang-chip.fair   { border-color: rgba(239,68,68,0.25); color: var(--muted); }
+
+    /* ── Versus Box ── */
+    .versus-box { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    @media (max-width: 540px) { .versus-box { grid-template-columns: 1fr; } }
+    .versus-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+    .versus-panel h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+    .versus-panel.pro h4 { color: var(--accent-3); }
+    .versus-panel.con h4 { color: var(--danger); }
+    .versus-panel ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+    .versus-panel li { font-size: 0.88rem; color: var(--text); display: flex; align-items: flex-start; gap: 0.5rem; }
+    .versus-panel.pro li::before { content: '✓'; color: var(--accent-3); flex-shrink: 0; }
+    .versus-panel.con li::before { content: '✗'; color: var(--danger); flex-shrink: 0; }
+
+    /* ── Tool Cards ── */
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+    .tool-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--heading); margin-bottom: 0.3rem; }
+    .tool-card .tool-meta { font-size: 0.76rem; color: var(--whisper-lt); font-weight: 600; margin-bottom: 0.5rem; }
+    .tool-card p { font-size: 0.83rem; color: var(--muted); margin: 0; }
+
+    /* ── Privacy Comparison ── */
+    .privacy-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    @media (max-width: 560px) { .privacy-compare { grid-template-columns: 1fr; } }
+    .privacy-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+    .privacy-panel.cloud { border-color: rgba(239,68,68,0.25); }
+    .privacy-panel.local { border-color: rgba(52,211,153,0.25); }
+    .privacy-panel h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .privacy-panel.cloud h4 { color: var(--danger); }
+    .privacy-panel.local h4 { color: var(--accent-3); }
+    .privacy-panel ul { list-style: none; padding: 0; }
+    .privacy-panel li { font-size: 0.83rem; color: var(--muted); margin-bottom: 0.4rem; display: flex; gap: 0.4rem; }
+    .privacy-panel.cloud li::before { content: '✗'; color: var(--danger); flex-shrink: 0; }
+    .privacy-panel.local li::before { content: '✓'; color: var(--accent-3); flex-shrink: 0; }
+
+    /* ── Page Nav ── */
+    .page-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .page-nav a { display: flex; align-items: center; gap: 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 600; color: var(--text); text-decoration: none; transition: border-color var(--transition), color var(--transition); flex: 1; min-width: 160px; }
+    .page-nav a:hover { border-color: var(--whisper-lt); color: var(--whisper-lt); }
+    .page-nav a.next { justify-content: flex-end; text-align: right; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 1.75rem 1.25rem 1.5rem; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Whisper: Local Speech-to-Text Without Sending Audio to the Cloud",
+    "description": "OpenAI's Whisper model runs entirely offline for private transcription of meetings, voice memos, and sensitive audio. No API key, no data retention, no cost per minute.",
+    "author": { "@type": "Organization", "name": "PrivateAI.guide" },
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-07-14"
+  }
+  </script>
+</head>
+
+<body>
+<div class="page-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/chatgpt-alternatives/">ChatGPT Alternatives</a>
+    <span>›</span>
+    <span>Whisper</span>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="hero">
+    <div class="hero-badge">🎙️ OpenAI Open Source · September 2022</div>
+    <h1>Whisper: <span>Local Speech-to-Text<br>Without the Cloud</span></h1>
+    <p class="hero-sub">
+      Your meeting recordings, medical dictation, interview audio, 
+      and voice memos contain some of the most sensitive information 
+      you produce. Every time you upload them to a cloud transcription 
+      service — Otter.ai, Rev, even the OpenAI Whisper API — you are 
+      sending that audio to servers you do not control, under retention 
+      policies you may not have read. OpenAI released Whisper's weights 
+      openly in September 2022. You can run it on your own machine, 
+      process audio that never leaves your device, and pay nothing 
+      per minute. This page shows you how.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">🏢 <strong>Creator:</strong> OpenAI (open weights)</div>
+      <div class="hero-meta-item">📅 <strong>Released:</strong> September 2022</div>
+      <div class="hero-meta-item">⚖️ <strong>License:</strong> MIT (fully open)</div>
+      <div class="hero-meta-item">🌍 <strong>Languages:</strong> 99+ languages</div>
+      <div class="hero-meta-item">🎯 <strong>Task:</strong> Speech-to-text (not a chat model)</div>
+      <div class="hero-meta-item">💾 <strong>Min RAM:</strong> 1GB (tiny) – 10GB (large-v3)</div>
+    </div>
+  </header>
+
+  <div class="callout callout-whisper">
+    <div class="callout-icon">🎙️</div>
+    <div class="callout-body">
+      <strong>Different capability category</strong>
+      <p>
+        Whisper is a speech recognition model, not a language model. 
+        It converts audio to text — it does not answer questions, 
+        summarise documents, or generate responses. It belongs in 
+        this guide because it solves a genuine privacy problem 
+        (cloud transcription) using the same local-first approach 
+        as the chat models covered elsewhere. After transcription, 
+        pipe the output into <a href="/chatgpt-alternatives/openchat/">OpenChat</a>, 
+        <a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a>, 
+        or any other local model to summarise or analyse the text 
+        without either component touching the cloud.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Stats ── -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-val">99+</div>
+      <div class="stat-lbl">Languages supported</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">680K hrs</div>
+      <div class="stat-lbl">Training audio data</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">MIT</div>
+      <div class="stat-lbl">Licence — fully commercial</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">5 sizes</div>
+      <div class="stat-lbl">Tiny → Large-v3</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">$0</div>
+      <div class="stat-lbl">Per minute (local)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">~2.7%</div>
+      <div class="stat-lbl">Word error rate (large-v3, English)</div>
+    </div>
+  </div>
+
+  <!-- ── Why This Matters ── -->
+  <h2>The Privacy Case for Local Transcription</h2>
+
+  <p>
+    Audio transcription is one of the most privacy-sensitive tasks 
+    you can outsource to a cloud service. Consider what your audio 
+    typically contains:
+  </p>
+
+  <div class="use-case-grid">
+    <div class="use-case-card privacy">
+      <div class="use-case-icon">🏥</div>
+      <h4>Medical conversations</h4>
+      <p>Patient consultations, therapy sessions, clinical notes dictated by doctors — all regulated by HIPAA in the US, GDPR in Europe. Cloud transcription services may not meet compliance requirements.</p>
+    </div>
+    <div class="use-case-card privacy">
+      <div class="use-case-icon">⚖️</div>
+      <h4>Legal and professional</h4>
+      <p>Client consultations, depositions, internal strategy discussions. Attorney-client privilege may be compromised by sending recordings to third-party cloud providers.</p>
+    </div>
+    <div class="use-case-card privacy">
+      <div class="use-case-icon">🏢</div>
+      <h4>Business meetings</h4>
+      <p>Board meetings, product roadmaps, M&A discussions, personnel reviews. Many organisations prohibit uploading internal meeting recordings to external services.</p>
+    </div>
+    <div class="use-case-card privacy">
+      <div class="use-case-icon">📰</div>
+      <h4>Journalism and research</h4>
+      <p>Source interviews, investigative recordings. Uploading source audio to a cloud service creates a record that could be subpoenaed or accessed by the service provider.</p>
+    </div>
+    <div class="use-case-card privacy">
+      <div class="use-case-icon">🎓</div>
+      <h4>Academic and personal</h4>
+      <p>Research interviews, personal journals, therapy session notes. Even non-regulated data deserves protection from commercial data harvesting.</p>
+    </div>
+    <div class="use-case-card privacy">
+      <div class="use-case-icon">💰</div>
+      <h4>High-volume transcription</h4>
+      <p>At $0.006/minute (OpenAI API), 100 hours of audio costs $36 per month. Local Whisper is free after setup, making it cost-effective for heavy users.</p>
+    </div>
+  </div>
+
+  <div class="privacy-compare">
+    <div class="privacy-panel cloud">
+      <h4>☁️ Cloud transcription (Otter, Rev, Whisper API)</h4>
+      <ul>
+        <li>Audio transmitted to external servers</li>
+        <li>Provider retains audio per their terms</li>
+        <li>Cost accumulates per minute</li>
+        <li>Internet connection required</li>
+        <li>May not meet HIPAA / GDPR requirements</li>
+        <li>Provider can be subpoenaed</li>
+        <li>Data may train future models</li>
+      </ul>
+    </div>
+    <div class="privacy-panel local">
+      <h4>🖥️ Local Whisper (this guide)</h4>
+      <ul>
+        <li>Audio never leaves your machine</li>
+        <li>No retention policy to worry about</li>
+        <li>Free after initial setup</li>
+        <li>Works fully offline</li>
+        <li>You control all compliance decisions</li>
+        <li>Nothing to subpoena at the provider</li>
+        <li>Your data cannot train any external model</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Model Sizes ── -->
+  <h2>Choosing a Model Size</h2>
+
+  <p>
+    Whisper comes in five sizes. The right choice depends on your 
+    hardware, your accuracy requirements, and how fast you need results. 
+    For most users on modern laptops, <strong>medium</strong> provides 
+    the best accuracy-to-speed tradeoff. On Apple Silicon Macs or 
+    machines with discrete GPUs, <strong>large-v3</strong> is practical.
+  </p>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Parameters</th>
+          <th>VRAM / RAM</th>
+          <th>Rel. Speed</th>
+          <th>English WER</th>
+          <th>Best for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>tiny</td>
+          <td>39M</td>
+          <td class="val-green">~1 GB</td>
+          <td class="val-green">~32×</td>
+          <td class="val-yellow">~6–8%</td>
+          <td>Quick drafts, live captions, Raspberry Pi</td>
+        </tr>
+        <tr>
+          <td>base</td>
+          <td>74M</td>
+          <td class="val-green">~1 GB</td>
+          <td class="val-green">~16×</td>
+          <td class="val-yellow">~5–6%</td>
+          <td>Podcasts, clear audio on weak hardware</td>
+        </tr>
+        <tr>
+          <td>small</td>
+          <td>244M</td>
+          <td class="val-green">~2 GB</td>
+          <td class="val-yellow">~6×</td>
+          <td class="val-yellow">~4–5%</td>
+          <td>Good balance for most laptops</td>
+        </tr>
+        <tr class="row-hl">
+          <td><strong>medium ★</strong></td>
+          <td>769M</td>
+          <td class="val-yellow">~5 GB</td>
+          <td class="val-yellow">~2×</td>
+          <td class="val-green">~3–4%</td>
+          <td><strong>Recommended default</strong> — meetings, accents</td>
+        </tr>
+        <tr>
+          <td>large-v2</td>
+          <td>1550M</td>
+          <td class="val-yellow">~10 GB</td>
+          <td>~1×</td>
+          <td class="val-green">~2.9%</td>
+          <td>High accuracy, GPU recommended</td>
+        </tr>
+        <tr>
+          <td>large-v3</td>
+          <td>1550M</td>
+          <td class="val-yellow">~10 GB</td>
+          <td>~1×</td>
+          <td class="val-green">~2.7%</td>
+          <td>Best accuracy; Apple Silicon / CUDA GPU</td>
+        </tr>
+        <tr>
+          <td>large-v3-turbo</td>
+          <td>809M</td>
+          <td class="val-yellow">~6 GB</td>
+          <td class="val-green">~8×</td>
+          <td class="val-green">~3.0%</td>
+          <td>Large-v3 quality at medium speed</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">ℹ️</div>
+    <div class="callout-body">
+      <strong>large-v3-turbo: the new recommended default for capable hardware</strong>
+      <p>
+        Released in October 2024, large-v3-turbo uses a decoder 
+        with only 4 layers instead of 32, making it roughly 8× 
+        faster than large-v3 while maintaining nearly identical 
+        accuracy. If your machine has 6GB+ of available RAM and 
+        you have a modern CPU or any discrete GPU, 
+        <code>large-v3-turbo</code> is now the best single choice. 
+        Use <code>medium</code> on older or memory-constrained hardware.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Language Support ── -->
+  <h2>Language Support</h2>
+
+  <p>
+    Whisper was trained on 680,000 hours of multilingual audio. 
+    English performance is best, but many other languages reach 
+    production-quality accuracy on the large models. WER varies 
+    significantly by language depending on training data volume.
+  </p>
+
+  <h3>Strong support (WER &lt; 10% on large-v3)</h3>
+  <div class="lang-grid">
+    <div class="lang-chip strong"><span class="flag">🇬🇧</span>English</div>
+    <div class="lang-chip strong"><span class="flag">🇪🇸</span>Spanish</div>
+    <div class="lang-chip strong"><span class="flag">🇫🇷</span>French</div>
+    <div class="lang-chip strong"><span class="flag">🇩🇪</span>German</div>
+    <div class="lang-chip strong"><span class="flag">🇮🇹</span>Italian</div>
+    <div class="lang-chip strong"><span class="flag">🇵🇹</span>Portuguese</div>
+    <div class="lang-chip strong"><span class="flag">🇳🇱</span>Dutch</div>
+    <div class="lang-chip strong"><span class="flag">🇯🇵</span>Japanese</div>
+    <div class="lang-chip strong"><span class="flag">🇨🇳</span>Chinese</div>
+    <div class="lang-chip strong"><span class="flag">🇰🇷</span>Korean</div>
+    <div class="lang-chip strong"><span class="flag">🇷🇺</span>Russian</div>
+    <div class="lang-chip strong"><span class="flag">🇵🇱</span>Polish</div>
+  </div>
+
+  <h3>Good support (WER 10–20%)</h3>
+  <div class="lang-grid">
+    <div class="lang-chip good"><span class="flag">🇸🇦</span>Arabic</div>
+    <div class="lang-chip good"><span class="flag">🇹🇷</span>Turkish</div>
+    <div class="lang-chip good"><span class="flag">🇸🇪</span>Swedish</div>
+    <div class="lang-chip good"><span class="flag">🇺🇦</span>Ukrainian</div>
+    <div class="lang-chip good"><span class="flag">🇮🇩</span>Indonesian</div>
+    <div class="lang-chip good"><span class="flag">🇨🇿</span>Czech</div>
+    <div class="lang-chip good"><span class="flag">🇷🇴</span>Romanian</div>
+    <div class="lang-chip good"><span class="flag">🇭🇺</span>Hungarian</div>
+    <div class="lang-chip good"><span class="flag">🇬🇷</span>Greek</div>
+    <div class="lang-chip good"><span class="flag">🇮🇳</span>Hindi</div>
+  </div>
+
+  <p>
+    For a full list of all 99 languages and per-language WER scores, 
+    see the 
+    <a href="https://github.com/openai/whisper#available-models-and-languages" rel="noopener noreferrer" target="_blank">official Whisper model card</a>.
+  </p>
+
+  <!-- ── Installation ── -->
+  <h2>Installation and Quick Start</h2>
+
+  <h3>Option 1: Python CLI (fastest to get started)</h3>
+
+  <div class="code-block whisper-border">
+    <div class="code-header">
+      <span class="lang">bash — Install</span>
+    </div>
+    <pre><span class="c-comment"># Requires Python 3.8+ and ffmpeg</span>
+
+<span class="c-comment"># macOS</span>
+brew install ffmpeg
+pip install openai-whisper
+
+<span class="c-comment"># Linux (Ubuntu/Debian)</span>
+sudo apt install ffmpeg
+pip install openai-whisper
+
+<span class="c-comment"># Windows (with chocolatey)</span>
+choco install ffmpeg
+pip install openai-whisper</pre>
+  </div>
+
+  <div class="code-block whisper-border">
+    <div class="code-header">
+      <span class="lang">bash — Transcribe</span>
+    </div>
+    <pre><span class="c-comment"># Transcribe a file (model downloads automatically on first run)</span>
+whisper meeting.mp3 --model medium
+
+<span class="c-comment"># Specify output formats</span>
+whisper interview.m4a --model medium --output_format txt
+
+<span class="c-comment"># Generate subtitles (SRT format)</span>
+whisper lecture.mp4 --model medium --output_format srt
+
+<span class="c-comment"># Non-English audio — specify language for better accuracy</span>
+whisper paris-meeting.mp3 --model medium --language French
+
+<span class="c-comment"># Translate to English while transcribing</span>
+whisper german-call.mp3 --model large-v3 --task translate
+
+<span class="c-comment"># Best accuracy on capable hardware</span>
+whisper important-meeting.mp3 --model large-v3-turbo</pre>
+  </div>
+
+  <h3>Option 2: faster-whisper (recommended for production)</h3>
+
+  <p>
+    <code>faster-whisper</code> is a reimplementation using 
+    CTranslate2 that runs 2–4× faster than the original 
+    with the same accuracy. It also uses significantly less memory, 
+    allowing large-v3 to run on machines with 6GB RAM.
+  </p>
+
+  <div class="code-block whisper-border">
+    <div class="code-header">
+      <span class="lang">bash — faster-whisper install</span>
+    </div>
+    <pre>pip install faster-whisper</pre>
+  </div>
+
+  <div class="code-block whisper-border">
+    <div class="code-header">
+      <span class="lang">python — faster-whisper basic usage</span>
+    </div>
+    <pre><span class="c-kw">from</span> faster_whisper <span class="c-kw">import</span> WhisperModel
+
+<span class="c-comment"># Use "cuda" if you have an NVIDIA GPU, "cpu" otherwise</span>
+<span class="c-comment"># "auto" selects automatically</span>
+model = <span class="c-fn">WhisperModel</span>(
+    <span class="c-str">"large-v3-turbo"</span>,
+    device=<span class="c-str">"auto"</span>,
+    compute_type=<span class="c-str">"int8"</span>       <span class="c-comment"># int8 = fastest, lowest RAM</span>
+)
+
+segments, info = model.<span class="c-fn">transcribe</span>(
+    <span class="c-str">"meeting.mp3"</span>,
+    beam_size=<span class="c-num">5</span>
+)
+
+<span class="c-fn">print</span>(<span class="c-str">f"Detected language: {info.language} (probability: {info.language_probability:.2f})"</span>)
+
+<span class="c-kw">for</span> segment <span class="c-kw">in</span> segments:
+    <span class="c-fn">print</span>(<span class="c-str">f"[{segment.start:.1f}s → {segment.end:.1f}s] {segment.text}"</span>)</pre>
+  </div>
+
+  <h3>Option 3: whisper.cpp (runs on CPU with no Python)</h3>
+
+  <p>
+    <code>whisper.cpp</code> is a C++ port that runs efficiently on 
+    CPU with no Python, no CUDA, and no GPU required. It also 
+    supports Apple Silicon acceleration (Core ML) and is the 
+    basis for many desktop GUI applications.
+  </p>
+
+  <div class="code-block whisper-border">
+    <div class="code-header">
+      <span class="lang">bash — whisper.cpp</span>
+    </div>
+    <pre><span class="c-comment"># Build from source</span>
+git clone https://github.com/ggerganov/whisper.cpp
+cd whisper.cpp
+make
+
+<span class="c-comment"># Download a model (GGML format)</span>
+bash models/download-ggml-model.sh medium
+
+<span class="c-comment"># Convert audio to 16kHz WAV (required format)</span>
+ffmpeg -i meeting.mp3 -ar 16000 -ac 1 -c:a pcm_s16le meeting.wav
+
+<span class="c-comment"># Transcribe (pure CPU, no Python)</span>
+./main -m models/ggml-medium.bin -f meeting.wav
+
+<span class="c-comment"># Apple Silicon: enable Core ML acceleration</span>
+make -j WHISPER_COREML=1
+./main -m models/ggml-large-v3-turbo.bin -f meeting.wav</pre>
+  </div>
+
+  <!-- ── Practical Workflows ── -->
+  <h2>Practical Privacy Workflows</h2>
+
+  <h3>Meeting transcription pipeline</h3>
+
+  <div class="code-block whisper-border">
+    <div class="code-header">
+      <span class="lang">python — full meeting pipeline with local summarisation</span>
+    </div>
+    <pre><span class="c-kw">from</span> faster_whisper <span class="c-kw">import</span> WhisperModel
+<span class="c-kw">import</span> ollama
+<span class="c-kw">import</span> sys
+
+<span class="c-comment"># ── Step 1: Transcribe locally with Whisper ──────────────────</span>
+<span class="c-fn">print</span>(<span class="c-str">"🎙️  Transcribing... (audio never leaves this machine)"</span>)
+
+whisper_model = <span class="c-fn">WhisperModel</span>(<span class="c-str">"large-v3-turbo"</span>, device=<span class="c-str">"auto"</span>, compute_type=<span class="c-str">"int8"</span>)
+audio_file = sys.argv[<span class="c-num">1</span>]  <span class="c-comment"># e.g. python pipeline.py meeting.mp3</span>
+
+segments, info = whisper_model.<span class="c-fn">transcribe</span>(audio_file, beam_size=<span class="c-num">5</span>)
+
+transcript = <span class="c-str">""</span>
+<span class="c-kw">for</span> segment <span class="c-kw">in</span> segments:
+    transcript += <span class="c-str">f"[{segment.start:.0f}s] {segment.text.strip()}\n"</span>
+
+<span class="c-fn">print</span>(<span class="c-str">f"\n✅ Transcribed {info.language} audio ({len(transcript)} chars)\n"</span>)
+
+<span class="c-comment"># ── Step 2: Summarise locally with Ollama ───────────────────</span>
+<span class="c-fn">print</span>(<span class="c-str">"🧠  Summarising with local LLM..."</span>)
+
+response = ollama.<span class="c-fn">chat</span>(
+    model=<span class="c-str">"nous-hermes-2"</span>,   <span class="c-comment"># or openchat, llama3, etc.</span>
+    messages=[{
+        <span class="c-str">'role'</span>: <span class="c-str">'user'</span>,
+        <span class="c-str">'content'</span>: <span class="c-str">f"""Summarise this meeting transcript. 
+Extract: (1) key decisions, (2) action items with owners, 
+(3) open questions.
+
+TRANSCRIPT:
+{transcript}"""</span>
+    }]
+)
+
+<span class="c-fn">print</span>(<span class="c-str">"\n📋 Meeting Summary:"</span>)
+<span class="c-fn">print</span>(response[<span class="c-str">'message'</span>][<span class="c-str">'content'</span>])
+
+<span class="c-comment"># Both steps ran entirely locally.</span>
+<span class="c-comment"># No audio and no text left this machine.</span></pre>
+  </div>
+
+  <h3>Batch transcription of existing archives</h3>
+
+  <div class="code-block whisper-border">
+    <div class="code-header">
+      <span class="lang">bash — batch transcribe a folder</span>
+    </div>
+    <pre><span class="c-comment"># Transcribe every audio/video file in a directory</span>
+<span class="c-kw">for</span> f <span class="c-kw">in</span> ~/recordings/*.{mp3,mp4,m4a,wav,ogg}; <span class="c-kw">do</span>
+    <span class="c-fn">echo</span> <span class="c-str">"Processing: $f"</span>
+    whisper <span class="c-str">"$f"</span> --model medium --output_dir ~/transcripts/
+<span class="c-kw">done</span></pre>
+  </div>
+
+  <!-- ── GUI Applications ── -->
+  <h2>GUI Applications (No Terminal Required)</h2>
+
+  <p>
+    For users who prefer a graphical interface, several 
+    open-source applications wrap Whisper in a desktop UI:
+  </p>
+
+  <div class="tool-grid">
+    <div class="tool-card">
+      <h4>Whisper Desktop</h4>
+      <div class="tool-meta">Windows · GPU accelerated</div>
+      <p>Native Windows GUI for whisper.cpp. Drag-and-drop audio files, choose model size, get transcripts. No Python required.</p>
+    </div>
+    <div class="tool-card">
+      <h4>MacWhisper</h4>
+      <div class="tool-meta">macOS · Apple Silicon optimised</div>
+      <p>Native macOS app with Core ML acceleration. Supports all Whisper sizes, subtitle export, and microphone input. Free tier available.</p>
+    </div>
+    <div class="tool-card">
+      <h4>Whisper Transcription</h4>
+      <div class="tool-meta">macOS / iOS</div>
+      <p>Simple app store application for transcribing audio files and recordings with Whisper locally.</p>
+    </div>
+    <div class="tool-card">
+      <h4>Buzz</h4>
+      <div class="tool-meta">macOS / Linux / Windows</div>
+      <p>Cross-platform open-source GUI. Real-time transcription from microphone or file input. Supports all Whisper model sizes.</p>
+    </div>
+    <div class="tool-card">
+      <h4>Subtitle Edit</h4>
+      <div class="tool-meta">Windows · Subtitle workflows</div>
+      <p>Professional subtitle editor with Whisper integration. Ideal for generating and editing SRT/VTT files for video content.</p>
+    </div>
+    <div class="tool-card">
+      <h4>OpenAI Whisper Web</h4>
+      <div class="tool-meta">Browser · WebGPU</div>
+      <p>Runs Whisper entirely in the browser using WebGPU — no installation, no server, no data transmission. Experimental but functional on Chrome.</p>
+    </div>
+  </div>
+
+  <!-- ── Honest Assessment ── -->
+  <h2>Honest Assessment</h2>
+
+  <div class="versus-box">
+    <div class="versus-panel pro">
+      <h4>✓ Genuine Strengths</h4>
+      <ul>
+        <li>MIT licence — fully commercial, no restrictions</li>
+        <li>99+ language support with strong multilingual accuracy</li>
+        <li>Completely offline — audio never leaves your machine</li>
+        <li>Free to run; no per-minute API cost</li>
+        <li>Multiple size tiers for any hardware configuration</li>
+        <li>Handles accents, background noise, and poor audio reasonably well</li>
+        <li>Outputs timestamped segments — useful for navigation and subtitles</li>
+        <li>Translates non-English audio directly to English</li>
+        <li>whisper.cpp runs on CPU with no Python or GPU required</li>
+        <li>Active ecosystem: faster-whisper, whisper.cpp, GUI apps</li>
+      </ul>
+    </div>
+    <div class="versus-panel con">
+      <h4>✗ Real Limitations</h4>
+      <ul>
+        <li>Not real-time — processes recorded audio, not live streams (without extra tooling)</li>
+        <li>No native speaker diarisation (who said what) — requires pyannote.audio add-on</li>
+        <li>large-v3 needs 10GB RAM — medium is the practical limit on most laptops</li>
+        <li>Occasionally hallucinates words in silent or very noisy segments</li>
+        <li>Punctuation inconsistent across languages</li>
+        <li>Technical jargon, proper nouns, and uncommon names may transcribe incorrectly</li>
+        <li>Non-speech audio (music, sound effects) can confuse the model</li>
+        <li>ffmpeg dependency adds a setup step for Python CLI</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <strong>Hallucination in silence</strong>
+      <p>
+        A known Whisper behaviour: when processing silent or 
+        near-silent audio segments, the model sometimes generates 
+        plausible-sounding but entirely fabricated text. Always 
+        review transcripts for sections where the original audio 
+        has long pauses or background noise only. The 
+        <code>no_speech_threshold</code> parameter in 
+        faster-whisper can help suppress this.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Speaker Diarisation ── -->
+  <h2>Adding Speaker Diarisation</h2>
+
+  <p>
+    Whisper alone cannot identify <em>who</em> is speaking. 
+    For meeting transcripts that need speaker labels 
+    ("Speaker A: ...", "Speaker B: ..."), combine Whisper 
+    with pyannote.audio, a speaker diarisation library that 
+    also runs locally.
+  </p>
+
+  <div class="code-block whisper-border">
+    <div class="code-header">
+      <span class="lang">bash — install diarisation dependencies</span>
+    </div>
+    <pre>pip install faster-whisper pyannote.audio
+
+<span class="c-comment"># pyannote requires accepting terms at hf.co/pyannote/speaker-diarization-3.1</span>
+<span class="c-comment"># then use your HuggingFace token:</span>
+<span class="c-comment"># export HF_TOKEN="hf_..."</span></pre>
+  </div>
+
+  <div class="code-block whisper-border">
+    <div class="code-header">
+      <span class="lang">python — Whisper + speaker diarisation</span>
+    </div>
+    <pre><span class="c-kw">from</span> faster_whisper <span class="c-kw">import</span> WhisperModel
+<span class="c-kw">from</span> pyannote.audio <span class="c-kw">import</span> Pipeline
+<span class="c-kw">import</span> os
+
+audio_file = <span class="c-str">"meeting.wav"</span>  <span class="c-comment"># must be 16kHz mono WAV</span>
+
+<span class="c-comment"># ── Speaker diarisation ────────────────────────────────────</span>
+diarize = Pipeline.<span class="c-fn">from_pretrained</span>(
+    <span class="c-str">"pyannote/speaker-diarization-3.1"</span>,
+    use_auth_token=os.<span class="c-fn">getenv</span>(<span class="c-str">"HF_TOKEN"</span>)
+)
+diarization = <span class="c-fn">diarize</span>(audio_file)
+
+<span class="c-comment"># ── Transcription ──────────────────────────────────────────</span>
+whisper = <span class="c-fn">WhisperModel</span>(<span class="c-str">"medium"</span>, device=<span class="c-str">"auto"</span>, compute_type=<span class="c-str">"int8"</span>)
+segments, _ = whisper.<span class="c-fn">transcribe</span>(audio_file, beam_size=<span class="c-num">5</span>)
+segments = <span class="c-fn">list</span>(segments)
+
+<span class="c-comment"># ── Align segments with speakers ──────────────────────────</span>
+<span class="c-kw">for</span> segment <span class="c-kw">in</span> segments:
+    mid = (segment.start + segment.end) / <span class="c-num">2</span>
+    speaker = <span class="c-str">"Unknown"</span>
+    <span class="c-kw">for</span> turn, _, spk <span class="c-kw">in</span> diarization.<span class="c-fn">itertracks</span>(yield_label=<span class="c-kw">True</span>):
+        <span class="c-kw">if</span> turn.start &lt;= mid &lt;= turn.end:
+            speaker = spk
+            <span class="c-kw">break</span>
+    <span class="c-fn">print</span>(<span class="c-str">f"[{speaker}] {segment.text.strip()}"</span>)</pre>
+  </div>
+
+  <!-- ── Page Nav ── -->
+  <nav class="page-nav" aria-label="Page navigation">
+    <a href="/chatgpt-alternatives/vicuna/">← Vicuna</a>
+    <a href="/chatgpt-alternatives/wizardlm/" class="next">WizardLM →</a>
+  </nav>
+
+</div>
+</body>
+</html>
