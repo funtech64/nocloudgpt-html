@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neural Chat 7B: Intel's CPU-Optimized Local AI | PrivateAI.guide</title>
+  <meta name="description" content="Neural Chat 7B is Intel's fine-tuned Mistral model — optimized for x86 CPUs via Intel Extension for Transformers. Run a full 7B assistant without a GPU." />
+  <link rel="canonical" href="https://privateai.guide/chatgpt-alternatives/neural-chat/" />
+
+  <meta property="og:title" content="Neural Chat 7B: Intel's CPU-Optimized Local AI" />
+  <meta property="og:description" content="The only major 7B model explicitly designed for x86 CPU inference. No GPU required — and Intel's toolchain makes it faster than you'd expect." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://privateai.guide/chatgpt-alternatives/neural-chat/" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #0f1117;
+      --surface:     #1a1d27;
+      --surface-2:   #22263a;
+      --border:      #2e3350;
+      --accent:      #6c8cff;
+      --accent-2:    #a78bfa;
+      --accent-3:    #34d399;
+      --warn:        #f59e0b;
+      --danger:      #ef4444;
+      --intel:       #0071c5;
+      --intel-light: #4da3e8;
+      --text:        #e2e8f0;
+      --muted:       #8892b0;
+      --heading:     #ffffff;
+      --radius:      12px;
+      --radius-sm:   6px;
+      --shadow:      0 4px 24px rgba(0,0,0,0.4);
+      --font:        'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-mono:   'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      --max-w:       860px;
+      --transition:  0.2s ease;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0 1rem 4rem;
+    }
+
+    .page-wrap { max-width: var(--max-w); margin: 0 auto; }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      align-items: center; padding: 1.25rem 0;
+      font-size: 0.82rem; color: var(--muted);
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0d1829 0%, #0f1117 50%, #1a1d27 100%);
+      border: 1px solid rgba(0,113,197,0.35);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(0,113,197,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(0,113,197,0.15);
+      border: 1px solid rgba(0,113,197,0.4);
+      color: var(--intel-light);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.3rem 0.75rem; border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      font-weight: 800; color: var(--heading);
+      line-height: 1.2; margin-bottom: 0.75rem;
+    }
+    .hero h1 span { color: var(--intel-light); }
+
+    .hero-sub {
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 640px; margin-bottom: 1.5rem;
+    }
+
+    .hero-meta {
+      display: flex; flex-wrap: wrap;
+      gap: 1rem; font-size: 0.82rem; color: var(--muted);
+    }
+    .hero-meta-item { display: flex; align-items: center; gap: 0.35rem; }
+    .hero-meta-item strong { color: var(--text); }
+
+    /* Stat Grid */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem; text-align: center;
+    }
+    .stat-card .stat-val {
+      font-size: 1.7rem; font-weight: 800;
+      color: var(--intel-light); line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-card .stat-lbl {
+      font-size: 0.76rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    /* Headings */
+    h2 {
+      font-size: 1.45rem; font-weight: 700;
+      color: var(--heading); margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--heading); margin: 1.5rem 0 0.6rem;
+    }
+
+    p { margin-bottom: 1rem; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; color: var(--text); }
+
+    /* Callouts */
+    .callout {
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid;
+      display: flex; gap: 0.75rem;
+    }
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-body { flex: 1; }
+    .callout-body p { margin-bottom: 0.4rem; }
+    .callout-body strong { display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
+
+    .callout-info    { background: rgba(108,140,255,0.08); border-color: var(--accent); }
+    .callout-warn    { background: rgba(245,158,11,0.08);  border-color: var(--warn); }
+    .callout-warn    .callout-icon, .callout-warn strong    { color: var(--warn); }
+    .callout-danger  { background: rgba(239,68,68,0.08);   border-color: var(--danger); }
+    .callout-danger  .callout-icon, .callout-danger strong  { color: var(--danger); }
+    .callout-success { background: rgba(52,211,153,0.08);  border-color: var(--accent-3); }
+    .callout-success .callout-icon, .callout-success strong { color: var(--accent-3); }
+    .callout-intel   { background: rgba(0,113,197,0.08);   border-color: var(--intel); }
+    .callout-intel   .callout-icon, .callout-intel strong   { color: var(--intel-light); }
+    .callout-purple  { background: rgba(167,139,250,0.08); border-color: var(--accent-2); }
+    .callout-purple  .callout-icon, .callout-purple strong  { color: var(--accent-2); }
+
+    /* Intel Stack Diagram */
+    .stack-diagram {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 1.5rem 0;
+    }
+    .stack-diagram .stack-title {
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.25rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .stack-layer {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition);
+    }
+    .stack-layer:last-child { border-bottom: none; }
+    .stack-layer:hover { background: rgba(0,113,197,0.04); }
+    .stack-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-blue   { background: var(--intel-light); }
+    .dot-green  { background: var(--accent-3); }
+    .dot-purple { background: var(--accent-2); }
+    .dot-yellow { background: var(--warn); }
+    .dot-accent { background: var(--accent); }
+    .stack-layer-name {
+      font-weight: 600;
+      color: var(--heading);
+      font-size: 0.9rem;
+      min-width: 180px;
+    }
+    .stack-layer-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Benchmark Table */
+    .bench-wrap { overflow-x: auto; margin: 1.5rem 0; }
+    table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    thead th {
+      background: var(--surface-2);
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background var(--transition); }
+    tbody tr:hover { background: rgba(108,140,255,0.04); }
+    tbody td { padding: 0.75rem 1rem; color: var(--text); }
+    tbody td:first-child { font-weight: 600; }
+
+    .val-green  { color: var(--accent-3);    font-weight: 700; }
+    .val-yellow { color: var(--warn);        font-weight: 700; }
+    .val-red    { color: var(--danger);      font-weight: 700; }
+    .val-blue   { color: var(--accent);      font-weight: 700; }
+    .val-intel  { color: var(--intel-light); font-weight: 700; }
+    .val-muted  { color: var(--muted);       font-style: italic; }
+    .row-highlight td { background: rgba(0,113,197,0.07); }
+
+    /* Speed comparison */
+    .speed-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .speed-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .speed-card .cpu-name {
+      font-size: 0.82rem; font-weight: 700;
+      color: var(--muted); text-transform: uppercase;
+      letter-spacing: 0.05em; margin-bottom: 0.4rem;
+    }
+    .speed-card .tok-rate {
+      font-size: 1.6rem; font-weight: 800;
+      color: var(--intel-light); line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+    .speed-card .tok-unit {
+      font-size: 0.78rem; color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .speed-card .speed-note {
+      font-size: 0.8rem; color: var(--muted);
+    }
+
+    /* Perf Bars */
+    .perf-row {
+      display: flex; align-items: center;
+      gap: 1rem; margin-bottom: 0.6rem;
+    }
+    .perf-label { font-size: 0.82rem; color: var(--muted); width: 160px; flex-shrink: 0; }
+    .perf-bar-wrap {
+      flex: 1; background: var(--surface-2);
+      border-radius: 99px; height: 8px; overflow: hidden;
+    }
+    .perf-bar { height: 100%; border-radius: 99px; }
+    .perf-val { font-size: 0.82rem; font-weight: 700; color: var(--text); width: 55px; text-align: right; flex-shrink: 0; }
+
+    /* Code Blocks */
+    .code-block {
+      background: #0d0f17;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin: 1.25rem 0;
+      overflow: hidden;
+    }
+    .code-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.6rem 1rem;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.78rem; color: var(--muted);
+    }
+    .code-header .lang { font-weight: 600; color: var(--intel-light); }
+    pre {
+      padding: 1.25rem; overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 0.85rem; line-height: 1.6;
+      color: #c9d1e0;
+    }
+    .c-comment { color: #546e7a; }
+    .c-cmd     { color: #4da3e8; }
+    .c-str     { color: #a3be8c; }
+    .c-kw      { color: #a78bfa; }
+    .c-num     { color: #f59e0b; }
+    .c-flag    { color: #34d399; }
+    .c-intel   { color: #4da3e8; }
+
+    /* Versus panels */
+    .versus-box {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    @media (max-width: 540px) { .versus-box { grid-template-columns: 1fr; } }
+    .versus-panel {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+    }
+    .versus-panel h4 {
+      font-size: 0.85rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 0.75rem;
+    }
+    .versus-panel.pro h4 { color: var(--accent-3); }
+    .versus-panel.con h4 { color: var(--danger); }
+    .versus-panel ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+    .versus-panel li { font-size: 0.88rem; color: var(--text); display: flex; align-items: flex-start; gap: 0.5rem; }
+    .versus-panel.pro li::before { content: '✓'; color: var(--accent-3); flex-shrink: 0; }
+    .versus-panel.con li::before { content: '✗'; color: var(--danger); flex-shrink: 0; }
+
+    /* Use case cards */
+    .use-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .use-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+    }
+    .use-card .use-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .use-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--heading); margin-bottom: 0.4rem; }
+    .use-card p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+    /* Quantization comparison */
+    .quant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .quant-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem;
+      text-align: center;
+      transition: border-color var(--transition);
+    }
+    .quant-card:hover { border-color: var(--intel-light); }
+    .quant-card.recommended { border-color: var(--accent-3); background: rgba(52,211,153,0.04); }
+    .quant-card .q-label {
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--intel-light); margin-bottom: 0.2rem;
+    }
+    .quant-card .q-name {
+      font-size: 0.8rem; color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+    .quant-card .q-ram {
+      font-size: 0.9rem; font-weight: 700;
+      color: var(--text); margin-bottom: 0.2rem;
+    }
+    .quant-card .q-quality {
+      font-size: 0.78rem; color: var(--muted);
+    }
+
+    /* badge */
+    .badge {
+      display: inline-block; font-size: 0.65rem;
+      font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; padding: 0.15rem 0.5rem;
+      border-radius: 99px; margin-bottom: 0.4rem;
+    }
+    .badge-green  { background: rgba(52,211,153,0.15);  color: var(--accent-3);    border: 1px solid rgba(52,211,153,0.3); }
+    .badge-blue   { background: rgba(77,163,232,0.15);  color: var(--intel-light); border: 1px solid rgba(77,163,232,0.3); }
+
+    /* Page Nav */
+    .page-nav {
+      display: flex; justify-content: space-between;
+      gap: 1rem; margin-top: 3rem; padding-top: 2rem;
+      border-top: 1px solid var(--border); flex-wrap: wrap;
+    }
+    .page-nav a {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 0.75rem 1.25rem;
+      font-size: 0.88rem; font-weight: 600; color: var(--text);
+      text-decoration: none;
+      transition: border-color var(--transition), color var(--transition);
+      flex: 1; min-width: 160px;
+    }
+    .page-nav a:hover { border-color: var(--intel-light); color: var(--intel-light); }
+    .page-nav a.next { justify-content: flex-end; text-align: right; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 1.75rem 1.25rem 1.5rem; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Neural Chat 7B: Intel's CPU-Optimized Local AI",
+    "description": "Complete guide to Intel's Neural Chat 7B — a Mistral-based model optimized for x86 CPU inference via Intel Extension for Transformers. Covers benchmarks, quantization, and deployment on CPU-only hardware.",
+    "author": { "@type": "Organization", "name": "PrivateAI.guide" },
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-07-14"
+  }
+  </script>
+</head>
+
+<body>
+<div class="page-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/chatgpt-alternatives/">ChatGPT Alternatives</a>
+    <span>›</span>
+    <span>Neural Chat 7B</span>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-badge">🔵 Intel Optimized</div>
+    <h1>Neural Chat 7B: <span>Local AI Built for Your CPU</span></h1>
+    <p class="hero-sub">
+      Intel fine-tuned Mistral 7B and built a dedicated inference stack around 
+      it — INT4 quantization, AVX-512 kernels, and OpenVINO integration. The result 
+      is the most CPU-friendly 7B model available. No GPU required, no cloud 
+      dependency, no data leaving your machine.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">🏢 <strong>Creator:</strong> Intel Labs</div>
+      <div class="hero-meta-item">🧱 <strong>Base Model:</strong> Mistral 7B v0.1</div>
+      <div class="hero-meta-item">📅 <strong>Released:</strong> November 2023</div>
+      <div class="hero-meta-item">⚖️ <strong>License:</strong> Apache 2.0</div>
+      <div class="hero-meta-item">💾 <strong>Min RAM (INT4):</strong> 6GB</div>
+      <div class="hero-meta-item">🪟 <strong>Context:</strong> 32K tokens</div>
+    </div>
+  </header>
+
+  <!-- Stats -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-val">7B</div>
+      <div class="stat-lbl">Parameters</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">32K</div>
+      <div class="stat-lbl">Context Window</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">~63%</div>
+      <div class="stat-lbl">MMLU Score</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">INT4</div>
+      <div class="stat-lbl">Quantization</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">Apache 2</div>
+      <div class="stat-lbl">License</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">6GB</div>
+      <div class="stat-lbl">Min RAM (INT4)</div>
+    </div>
+  </div>
+
+  <!-- What is Neural Chat -->
+  <h2>What Is Neural Chat 7B?</h2>
+  <p>
+    Neural Chat 7B is Intel's answer to a question most AI labs weren't asking:
+    <em>what if we built a 7B model specifically to run fast on the CPUs 
+    that 95% of the world already owns?</em>
+  </p>
+  <p>
+    The model itself is Mistral 7B v0.1 fine-tuned on a curated instruction dataset 
+    using Intel's preferred alignment pipeline. The fine-tune is competent but 
+    not exceptional — Mistral 7B Instruct and 
+    <a href="/chatgpt-alternatives/zephyr/">Zephyr 7B</a> both score slightly higher 
+    on standard benchmarks. What distinguishes Neural Chat is the 
+    <strong>inference stack Intel built around it</strong>.
+  </p>
+  <p>
+    Through <strong>Intel Extension for Transformers (ITREX)</strong>, Neural Chat 
+    supports INT4 weight-only quantization with neural architecture-aware 
+    compensation, AVX-512 VNNI vectorization on modern Intel CPUs, and first-class 
+    OpenVINO integration for optimized deployment. On a 13th-gen Core i7 or 
+    Xeon server, the speed difference vs. a generic Mistral 7B CPU run is 
+    substantial — typically 2–4× faster at the same quality level.
+  </p>
+
+  <div class="callout callout-intel">
+    <div class="callout-icon">🔵</div>
+    <div class="callout-body">
+      <strong>The key insight: Neural Chat is a system, not just a model</strong>
+      <p>
+        Downloading the weights from Hugging Face and running them with vanilla 
+        <code>transformers</code> gives you a decent Mistral fine-tune. Running them 
+        through Intel's toolchain — ITREX, BigDL-LLM, or OpenVINO — gives you 
+        something meaningfully faster on x86 hardware. The model and the runtime 
+        were co-designed. Use both.
+      </p>
+    </div>
+  </div>
+
+  <!-- Intel Stack -->
+  <h2>The Intel Inference Stack</h2>
+  <p>
+    Intel has three overlapping inference paths for Neural Chat. Understanding 
+    which one to use saves significant setup time.
+  </p>
+
+  <div class="stack-diagram">
+    <div class="stack-title">Intel Neural Chat — Inference Runtime Options</div>
+    <div class="stack-layer">
+      <div class="stack-dot dot-blue"></div>
+      <div class="stack-layer-name">Ollama (Simplest)</div>
+      <div class="stack-layer-desc">
+        Pull <code>neural-chat</code> from the Ollama library. Uses llama.cpp under the hood 
+        with GGUF quantization. Not Intel-specific but extremely easy. Best starting point.
+      </div>
+    </div>
+    <div class="stack-layer">
+      <div class="stack-dot dot-green"></div>
+      <div class="stack-layer-name">BigDL-LLM / IPEX-LLM</div>
+      <div class="stack-layer-desc">
+        Intel's Python library for LLM inference. Supports INT4/INT8 with 
+        VNNI-optimized kernels. Best performance on Intel Core 12th gen+ and Xeon. 
+        Moderate setup complexity.
+      </div>
+    </div>
+    <div class="stack-layer">
+      <div class="stack-dot dot-purple"></div>
+      <div class="stack-layer-name">Intel Extension for Transformers (ITREX)</div>
+      <div class="stack-layer-desc">
+        Full quantization-aware toolkit. Supports SmoothQuant INT8 and GPTQ INT4. 
+        Most control over precision/speed tradeoffs. Recommended for production 
+        CPU deployments.
+      </div>
+    </div>
+    <div class="stack-layer">
+      <div class="stack-dot dot-yellow"></div>
+      <div class="stack-layer-name">OpenVINO</div>
+      <div class="stack-layer-desc">
+        Intel's edge inference framework. Export the model to OpenVINO IR format 
+        for maximum throughput on Intel hardware. Best for server or embedded 
+        deployments with stable, repeated inference workloads.
+      </div>
+    </div>
+    <div class="stack-layer">
+      <div class="stack-dot dot-accent"></div>
+      <div class="stack-layer-name">Vanilla Transformers (Baseline)</div>
+      <div class="stack-layer-desc">
+        Standard Hugging Face pipeline. Works on any hardware. No Intel-specific 
+        optimizations. Use this as a baseline comparison only — not for production.
+      </div>
+    </div>
+  </div>
+
+  <!-- Quantization -->
+  <h2>Quantization Options and RAM Requirements</h2>
+  <p>
+    Neural Chat 7B is explicitly designed for low-bit quantization. The quality 
+    degradation at INT4 is smaller than typical because Intel trained the model 
+    with quantization in mind and applies compensation techniques at inference time.
+  </p>
+
+  <div class="quant-grid">
+    <div class="quant-card">
+      <div class="q-label">FP16</div>
+      <div class="q-name">Full precision half</div>
+      <div class="q-ram">14GB RAM</div>
+      <div class="q-quality">Reference quality — needs 16GB+ system</div>
+    </div>
+    <div class="quant-card">
+      <div class="q-label">INT8</div>
+      <div class="q-name">SmoothQuant 8-bit</div>
+      <div class="q-ram">~9GB RAM</div>
+      <div class="q-quality">~1% quality loss vs FP16. Good balance.</div>
+    </div>
+    <div class="quant-card recommended">
+      <div class="badge badge-green">Recommended</div>
+      <div class="q-label">INT4</div>
+      <div class="q-name">GPTQ / GGUF Q4_K_M</div>
+      <div class="q-ram">~5–6GB RAM</div>
+      <div class="q-quality">~2–3% quality loss. Best for most systems.</div>
+    </div>
+    <div class="quant-card">
+      <div class="q-label">INT3</div>
+      <div class="q-name">Experimental</div>
+      <div class="q-ram">~4GB RAM</div>
+      <div class="q-quality">Noticeable quality drop. Edge use only.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-success">
+    <div class="callout-icon">✅</div>
+    <div class="callout-body">
+      <strong>INT4 is the right default for Neural Chat</strong>
+      <p>
+        Unlike models trained without quantization in mind, Neural Chat 7B was 
+        evaluated on INT4 throughout its development. The ~2–3% benchmark degradation 
+        is real but small. On 8–16GB RAM systems — the overwhelming majority of 
+        business laptops — INT4 is the only practical option and it performs well.
+      </p>
+    </div>
+  </div>
+
+  <!-- CPU Speed Comparison -->
+  <h2>Inference Speed on CPU Hardware</h2>
+  <p>
+    All figures below use Neural Chat 7B INT4 (Q4_K_M GGUF via Ollama or 
+    IPEX-LLM). CPU-only inference, no GPU assist. Results vary based on 
+    memory bandwidth and AVX-512 support.
+  </p>
+
+  <div class="speed-grid">
+    <div class="speed-card">
+      <div class="cpu-name">Intel Core i9-13900K</div>
+      <div class="tok-rate">12–16</div>
+      <div class="tok-unit">tokens / second</div>
+      <div class="speed-note">AVX-512 VNNI, 128GB/s memory BW. Usable real-time speed.</div>
+    </div>
+    <div class="speed-card">
+      <div class="cpu-name">Intel Core i7-1265U (laptop)</div>
+      <div class="tok-rate">6–9</div>
+      <div class="tok-unit">tokens / second</div>
+      <div class="speed-note">12th gen laptop CPU. Readable output speed for most tasks.</div>
+    </div>
+    <div class="speed-card">
+      <div class="cpu-name">Intel Xeon Platinum 8380</div>
+      <div class="tok-rate">18–24</div>
+      <div class="tok-unit">tokens / second</div>
+      <div class="speed-note">AVX-512 + high-bandwidth server RAM. Near-comfortable chat speed.</div>
+    </div>
+    <div class="speed-card">
+      <div class="cpu-name">AMD Ryzen 9 7950X</div>
+      <div class="tok-rate">8–11</div>
+      <div class="tok-unit">tokens / second</div>
+      <div class="speed-note">No AVX-512 VNNI — misses Intel-specific optimizations. Still functional.</div>
+    </div>
+    <div class="speed-card">
+      <div class="cpu-name">Apple M2 Pro</div>
+      <div class="tok-rate">20–28</div>
+      <div class="tok-unit">tokens / second</div>
+      <div class="speed-note">Metal GPU offload via llama.cpp. Fastest CPU-class option — though not Intel-optimized path.</div>
+    </div>
+    <div class="speed-card">
+      <div class="cpu-name">RTX 3080 (GPU reference)</div>
+      <div class="tok-rate">55–70</div>
+      <div class="tok-unit">tokens / second</div>
+      <div class="speed-note">GPU baseline for comparison. 4–5× faster than Intel CPU path.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <strong>Apple Silicon note</strong>
+      <p>
+        Apple M1/M2/M3 chips run Mistral-family models via Metal GPU offloading 
+        through llama.cpp — they bypass the Intel optimization path entirely and 
+        perform better than Intel CPUs on a raw tokens/second basis. If you're 
+        on Apple Silicon, 
+        <a href="/chatgpt-alternatives/zephyr/">Zephyr 7B</a> or 
+        <a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> are 
+        equally good choices with better benchmark scores. Neural Chat's 
+        advantages are most pronounced on <strong>Intel x86 hardware</strong>.
+      </p>
+    </div>
+  </div>
+
+  <!-- Benchmarks -->
+  <h2>Benchmark Comparison</h2>
+  <p>
+    Neural Chat 7B is a competent instruction-tuned model. It is not the 
+    top performer at 7B scale — that distinction goes to Llama 3.1 8B and 
+    Mistral 7B Instruct v0.3. Its edge is runtime performance on Intel hardware, 
+    not raw benchmark score.
+  </p>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>MMLU</th>
+          <th>MT-Bench</th>
+          <th>Context</th>
+          <th>License</th>
+          <th>Best Runtime</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GPT-4o</td>
+          <td class="val-green">88.7%</td>
+          <td class="val-green">9.1/10</td>
+          <td>128K</td>
+          <td class="val-muted">Proprietary</td>
+          <td>Cloud only</td>
+        </tr>
+        <tr>
+          <td>Llama 3.1 8B Instruct</td>
+          <td class="val-green">73.0%</td>
+          <td class="val-green">8.2/10</td>
+          <td>128K</td>
+          <td class="val-green">Llama 3.1</td>
+          <td>Ollama / GPU</td>
+        </tr>
+        <tr>
+          <td>Mistral 7B Instruct v0.3</td>
+          <td class="val-yellow">64.2%</td>
+          <td class="val-yellow">7.6/10</td>
+          <td>32K</td>
+          <td class="val-green">Apache 2.0</td>
+          <td>Ollama / GPU</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/zephyr/">Zephyr 7B β</a></td>
+          <td class="val-yellow">61.4%</td>
+          <td class="val-yellow">7.3/10</td>
+          <td>32K</td>
+          <td class="val-green">MIT</td>
+          <td>Ollama / GPU</td>
+        </tr>
+        <tr class="row-highlight">
+          <td><strong>Neural Chat 7B v3.3</strong></td>
+          <td class="val-intel">63.2%</td>
+          <td class="val-intel">7.4/10</td>
+          <td>32K</td>
+          <td class="val-green">Apache 2.0</td>
+          <td><strong>IPEX-LLM / ITREX</strong></td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a></td>
+          <td class="val-yellow">64.3%</td>
+          <td class="val-yellow">7.8/10</td>
+          <td>8K</td>
+          <td class="val-green">Apache 2.0</td>
+          <td>Ollama / GPU</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a></td>
+          <td class="val-yellow">63.8%</td>
+          <td class="val-yellow">7.5/10</td>
+          <td>32K</td>
+          <td class="val-green">Apache 2.0</td>
+          <td>Ollama / GPU</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Neural Chat 7B v3.3 sits comfortably in the middle of the 7B pack — 
+    ahead of Zephyr β on MMLU, behind OpenChat 3.5 slightly on MT-Bench. 
+    On CPU hardware with Intel's toolchain, it consistently outperforms 
+    every other 7B model in this table on <em>tokens per second</em>, 
+    which is what actually matters for day-to-day usability.
+  </p>
+
+  <!-- Performance profile -->
+  <h3>Capability Profile</h3>
+
+  <div class="perf-row">
+    <div class="perf-label">General Q&amp;A</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:78%; background:var(--accent-3);"></div></div>
+    <div class="perf-val">Strong</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Instruction following</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:74%; background:var(--accent-3);"></div></div>
+    <div class="perf-val">Good</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Code generation</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:58%; background:var(--warn);"></div></div>
+    <div class="perf-val">Moderate</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Long-form writing</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:70%; background:var(--accent-3);"></div></div>
+    <div class="perf-val">Good</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">CPU inference speed</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:92%; background:var(--intel-light);"></div></div>
+    <div class="perf-val">Best-in-class</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Multi-turn memory</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:68%; background:var(--accent);"></div></div>
+    <div class="perf-val">Good (32K)</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Math / reasoning</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:52%; background:var(--warn);"></div></div>
+    <div class="perf-val">Average</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Safety / refusals</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:65%; background:var(--accent);"></div></div>
+    <div class="perf-val">Moderate</div>
+  </div>
+
+  <!-- Pros / Cons -->
+  <h2>Honest Strengths and Weaknesses</h2>
+  <div class="versus-box">
+    <div class="versus-panel pro">
+      <h4>✓ Real Strengths</h4>
+      <ul>
+        <li>Fastest 7B model on Intel x86 CPUs — by a significant margin</li>
+        <li>INT4 quality is among the best preserved of any 7B model</li>
+        <li>Apache 2.0 license — full commercial use permitted</li>
+        <li>32K context window handles long documents and conversations</li>
+        <li>Works on GPU-free laptops and workstations from 2019 onward</li>
+        <li>First-class OpenVINO support for production server deployment</li>
+        <li>Multiple inference paths — from dead-simple Ollama to optimized ITREX</li>
+        <li>Intel's enterprise support and long-term maintenance commitment</li>
+      </ul>
+    </div>
+    <div class="versus-panel con">
+      <h4>✗ Real Limitations</h4>
+      <ul>
+        <li>Benchmark scores trail Llama 3.1 8B and even some 7B peers</li>
+        <li>Intel-specific optimizations don't help AMD or Apple users</li>
+        <li>IPEX-LLM and ITREX have steeper setup curves than Ollama</li>
+        <li>Coding tasks are average — use a code-specific model for dev work</li>
+        <li>Less community fine-tuning and fewer derivative models than Mistral base</li>
+        <li>Intel's AI software stack is fragmented (BigDL vs ITREX vs OpenVINO)</li>
+        <li>Not the best choice if you have a GPU available</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Who Should Use It -->
+  <h2>Who Should Use Neural Chat 7B</h2>
+
+  <div class="use-grid">
+    <div class="use-card">
+      <div class="use-icon">💼</div>
+      <h4>Business Laptop Users (No GPU)</h4>
+      <p>
+        Corporate laptops rarely have discrete GPUs. If you're running local AI 
+        on a ThinkPad, Dell Latitude, or HP EliteBook with a 12th/13th gen Intel 
+        Core, Neural Chat with IPEX-LLM is your best option for a fully 
+        functional chat assistant.
+      </p>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🏢</div>
+      <h4>Enterprise On-Premise Deployments</h4>
+      <p>
+        Organizations running AI on Intel Xeon servers — to keep data on-premise 
+        for compliance — get disproportionate benefit from the Xeon-optimized 
+        inference path. Neural Chat + OpenVINO on a Xeon rack is a viable 
+        production stack.
+      </p>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🔒</div>
+      <h4>Air-Gapped Environments</h4>
+      <p>
+        Government, defense, and regulated industry deployments that cannot 
+        connect to cloud services. Neural Chat's CPU-only operation and 
+        Apache 2.0 license make it compatible with strict procurement and 
+        security requirements.
+      </p>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🧑‍💻</div>
+      <h4>Developers Targeting Intel Hardware</h4>
+      <p>
+        If you're building an application that will run on Intel-based edge 
+        devices, NUCs, or server clusters, Neural Chat is the model to 
+        develop and test against. The optimization path your end users 
+        will benefit from starts here.
+      </p>
+    </div>
+  </div>
+
+  <!-- Setup -->
+  <h2>Getting Started: Three Paths</h2>
+
+  <h3>Path 1 — Ollama (5 Minutes, Any Platform)</h3>
+  <p>
+    The easiest entry point. Uses GGUF quantization via llama.cpp. 
+    You won't get Intel-specific VNNI optimizations, but you'll have 
+    a working Neural Chat in minutes. See our 
+    <a href="/deploy/quickstart/">Quickstart guide</a> to install Ollama first.
+  </p>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">bash — Ollama</span>
+    </div>
+    <pre><span class="c-comment"># Pull and run Neural Chat 7B (Q4_K_M quantization, ~5GB)</span>
+ollama run neural-chat
+
+<span class="c-comment"># Specify quantization level explicitly</span>
+ollama run neural-chat:7b-v3.3-q4_K_M
+
+<span class="c-comment"># Run as API server for OpenAI-compatible endpoints</span>
+ollama serve
+<span class="c-comment"># Then POST to http://localhost:11434/api/chat</span></pre>
+  </div>
+
+  <h3>Path 2 — IPEX-LLM (Intel-Optimized, Recommended for Intel CPUs)</h3>
+  <p>
+    Intel's Python library delivers the actual CPU performance gains. 
+    Requires Python 3.9+ and a pip install. Works on any Intel Core 
+    12th gen+ or Xeon processor.
+  </p>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">bash — Install IPEX-LLM</span>
+    </div>
+    <pre><span class="c-comment"># Create environment</span>
+conda create -n neural-chat python=3.11
+conda activate neural-chat
+
+<span class="c-comment"># Install IPEX-LLM for CPU</span>
+pip install --pre --upgrade ipex-llm[all]
+
+<span class="c-comment"># Or for CPU-only without conda:</span>
+pip install ipex-llm</pre>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">python — Neural Chat via IPEX-LLM</span>
+      <span>chat.py</span>
+    </div>
+    <pre><span class="c-kw">from</span> ipex_llm.transformers <span class="c-kw">import</span> AutoModelForCausalLM
+<span class="c-kw">from</span> transformers <span class="c-kw">import</span> AutoTokenizer
+
+model_id = <span class="c-str">"Intel/neural-chat-7b-v3-3"</span>
+
+<span class="c-comment"># Load with INT4 quantization — Intel-optimized kernels activate automatically</span>
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    load_in_4bit=<span class="c-kw">True</span>,    <span class="c-comment"># INT4 weight-only quantization</span>
+    optimize_model=<span class="c-kw">True</span>,  <span class="c-comment"># Enable IPEX graph optimization</span>
+    use_cache=<span class="c-kw">True</span>,
+)
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+
+<span class="c-comment"># Neural Chat uses a specific chat template</span>
+system_prompt = <span class="c-str">"### System:\nYou are a helpful AI assistant.\n"</span>
+user_message  = <span class="c-str">"Summarize the key differences between TCP and UDP."</span>
+
+prompt = (
+    system_prompt
+    + <span class="c-str">f"### User:\n{user_message}\n"</span>
+    + <span class="c-str">"### Assistant:\n"</span>
+)
+
+inputs = tokenizer(prompt, return_tensors=<span class="c-str">"pt"</span>)
+
+<span class="c-kw">with</span> model.trace():  <span class="c-comment"># Activates graph-level optimization pass</span>
+    output = model.generate(
+        **inputs,
+        max_new_tokens=<span class="c-num">512</span>,
+        temperature=<span class="c-num">0.7</span>,
+        do_sample=<span class="c-kw">True</span>,
+        pad_token_id=tokenizer.eos_token_id,
+    )
+
+response = tokenizer.decode(
+    output[<span class="c-num">0</span>][inputs.input_ids.shape[<span class="c-num">1</span>]:],
+    skip_special_tokens=<span class="c-kw">True</span>
+)
+<span class="c-kw">print</span>(response)</pre>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <strong>Neural Chat requires the correct prompt template</strong>
+      <p>
+        Unlike models that accept free-form conversation, Neural Chat v3.x 
+        expects the <code>### System:</code> / <code>### User:</code> / 
+        <code>### Assistant:</code> format. Using the wrong template produces 
+        degraded, repetitive, or confused outputs. Always use the template 
+        shown above or configure it in your Ollama Modelfile.
+      </p>
+    </div>
+  </div>
+
+  <h3>Path 3 — OpenVINO (Production Server Deployment)</h3>
+  <p>
+    For server deployments on Intel Xeon where you need maximum throughput 
+    with stable, repeatable performance. OpenVINO exports the model to a 
+    compiled IR format that avoids Python overhead entirely.
+  </p>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">bash — OpenVINO Export and Serve</span>
+    </div>
+    <pre><span class="c-comment"># Install OpenVINO and Optimum integration</span>
+pip install optimum[openvino,nncf] openvino-genai
+
+<span class="c-comment"># Export Neural Chat to OpenVINO INT4 format</span>
+optimum-cli export openvino \
+  --model Intel/neural-chat-7b-v3-3 \
+  --weight-format int4 \
+  --output ./neural-chat-ov
+
+<span class="c-comment"># Run inference with openvino-genai (C++ speed, Python API)</span>
+python3 - &lt;&lt;'EOF'
+<span class="c-kw">import</span> openvino_genai <span class="c-kw">as</span> ov_genai
+
+pipe = ov_genai.LLMPipeline(<span class="c-str">"./neural-chat-ov"</span>, <span class="c-str">"CPU"</span>)
+config = ov_genai.GenerationConfig(max_new_tokens=<span class="c-num">512</span>, temperature=<span class="c-num">0.7</span>)
+
+result = pipe.generate(
+    <span class="c-str">"### System:\nYou are a helpful assistant.\n### User:\nWhat is GDPR?\n### Assistant:\n"</span>,
+    config
+)
+<span class="c-kw">print</span>(result)
+EOF</pre>
+  </div>
+
+  <div class="callout callout-success">
+    <div class="callout-icon">✅</div>
+    <div class="callout-body">
+      <strong>OpenVINO throughput advantage on Xeon</strong>
+      <p>
+        On Intel Xeon Platinum 8380 (40 cores), OpenVINO INT4 inference 
+        typically achieves <strong>20–30 tokens/second</strong> for Neural Chat 7B — 
+        roughly 30–40% faster than IPEX-LLM on the same hardware, at the cost 
+        of a one-time ~10 minute export/compilation step. Worth it for 
+        production deployments serving multiple users.
+      </p>
+    </div>
+  </div>
+
+  <!-- Privacy framing -->
+  <h2>Privacy and Compliance Positioning</h2>
+  <p>
+    Neural Chat's CPU-first design has a specific compliance advantage that 
+    is worth stating explicitly: <strong>it eliminates GPU procurement as a 
+    blocker for private AI deployment</strong>.
+  </p>
+  <p>
+    Many organizations that need on-premise AI for data privacy reasons — 
+    healthcare, legal, finance, government — run standard x86 server infrastructure. 
+    They do not have GPU clusters. Procuring and managing GPU servers introduces 
+    cost, complexity, vendor lock-in, and in some cases security surface area 
+    (GPU drivers, CUDA, cloud-adjacent tooling).
+  </p>
+  <p>
+    Neural Chat + OpenVINO on existing Intel Xeon infrastructure requires 
+    zero new hardware, runs entirely on-premise, and produces Apache 2.0 licensed 
+    outputs with no usage restrictions. For a HIPAA-adjacent deployment or 
+    a legal firm handling client documents, that stack is meaningfully 
+    simpler to procure and audit than any GPU-based alternative.
+  </p>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">🔗</div>
+    <div class="callout-body">
+      <strong>Relevant cross-references</strong>
+      <p>
+        See our <a href="/compare/vs-chatgpt/">vs ChatGPT comparison</a> for 
+        a full breakdown of what local models give up vs. cloud AI. 
+        The <a href="/deploy/quickstart/">Quickstart guide</a> covers 
+        Ollama installation for all platforms if you want the simplest 
+        path to running Neural Chat today.
+      </p>
+    </div>
+  </div>
+
+  <!-- Alternatives -->
+  <h2>When To Choose Something Else</h2>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Your Situation</th>
+          <th>Better Choice</th>
+          <th>Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>You have a GPU (any VRAM ≥ 8GB)</td>
+          <td><a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> or Llama 3.1 8B</td>
+          <td>GPU inference 4–5× faster; Neural Chat's CPU advantage disappears</td>
+        </tr>
+        <tr>
+          <td>You need best-in-class reasoning</td>
+          <td><a href="/chatgpt-alternatives/orca-2/">Orca 2</a></td>
+          <td>Significantly better on multi-step reasoning tasks</td>
+        </tr>
+        <tr>
+          <td>You need coding assistance</td>
+          <td><!-- STUB: /chatgpt-alternatives/wizardlm/ --><a href="#">WizardLM</a> or a Code-specific model</td>
+          <td>Neural Chat's HumanEval scores are average</td>
+        </tr>
+        <tr>
+          <td>You're on Apple Silicon</td>
+          <td><a href="/chatgpt-alternatives/zephyr/">Zephyr 7B</a></td>
+          <td>Metal GPU offload makes any 7B model fast on M-series chips</td>
+        </tr>
+        <tr>
+          <td>You want the simplest possible setup</td>
+          <td><a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a> via Ollama</td>
+          <td>Better MT-Bench score, one-command install, less toolchain complexity</td>
+        </tr>
+        <tr>
+          <td>You're on AMD CPU (no GPU)</td>
+          <td><a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> via Ollama</td>
+          <td>Neural Chat's VNNI optimizations are Intel-specific; AMD gets no benefit</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer Nav -->
+  <nav class="page-nav" aria-label="Page navigation">
+    <a href="/chatgpt-alternatives/gpt-2/">← GPT-2</a>
+    <a href="/chatgpt-alternatives/nous-hermes/" class="next">Nous Hermes →</a>
+  </nav>
+
+</div>
+</body>
+</html>
