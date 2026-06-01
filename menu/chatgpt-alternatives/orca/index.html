@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orca: How Microsoft Taught a 13B Model to Reason Like GPT-4 | PrivateAI.guide</title>
+  <meta name="description" content="Orca uses explanation tuning — training on GPT-4's reasoning traces, not just its answers. The result: a 13B model that outperforms conventional 65B fine-tunes on complex reasoning tasks." />
+  <link rel="canonical" href="https://privateai.guide/chatgpt-alternatives/orca/" />
+
+  <meta property="og:title" content="Orca: How Microsoft Taught a 13B Model to Reason Like GPT-4" />
+  <meta property="og:description" content="Explanation tuning changes what a student model learns: not the answer, but the reasoning process behind it. Here's what that means in practice." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://privateai.guide/chatgpt-alternatives/orca/" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f1117;
+      --surface:   #1a1d27;
+      --surface-2: #22263a;
+      --border:    #2e3350;
+      --accent:    #6c8cff;
+      --accent-2:  #a78bfa;
+      --accent-3:  #34d399;
+      --warn:      #f59e0b;
+      --danger:    #ef4444;
+      --orca:      #f97316;
+      --orca-light:#fdba74;
+      --text:      #e2e8f0;
+      --muted:     #8892b0;
+      --heading:   #ffffff;
+      --radius:    12px;
+      --radius-sm: 6px;
+      --shadow:    0 4px 24px rgba(0,0,0,0.4);
+      --font:      'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      --max-w:     860px;
+      --transition: 0.2s ease;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0 1rem 4rem;
+    }
+
+    .page-wrap { max-width: var(--max-w); margin: 0 auto; }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      align-items: center; padding: 1.25rem 0;
+      font-size: 0.82rem; color: var(--muted);
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #1a0e00 0%, #0f1117 55%, #1a1d27 100%);
+      border: 1px solid rgba(249,115,22,0.35);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem 2rem;
+      margin-bottom: 2rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(249,115,22,0.12);
+      border: 1px solid rgba(249,115,22,0.35);
+      color: var(--orca-light);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.3rem 0.75rem; border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      font-weight: 800; color: var(--heading);
+      line-height: 1.2; margin-bottom: 0.75rem;
+    }
+    .hero h1 span { color: var(--orca-light); }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 640px; margin-bottom: 1.5rem;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap;
+      gap: 1rem; font-size: 0.82rem; color: var(--muted);
+    }
+    .hero-meta-item { display: flex; align-items: center; gap: 0.35rem; }
+    .hero-meta-item strong { color: var(--text); }
+
+    /* ── Stat Grid ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem; text-align: center;
+    }
+    .stat-val {
+      font-size: 1.7rem; font-weight: 800;
+      color: var(--orca-light); line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-lbl {
+      font-size: 0.76rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    /* ── Headings ── */
+    h2 {
+      font-size: 1.45rem; font-weight: 700;
+      color: var(--heading); margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 { font-size: 1.1rem; font-weight: 600; color: var(--heading); margin: 1.5rem 0 0.6rem; }
+
+    p { margin-bottom: 1rem; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; color: var(--text); }
+    code {
+      font-family: var(--font-mono); font-size: 0.85em;
+      background: var(--surface-2); border: 1px solid var(--border);
+      padding: 0.1em 0.4em; border-radius: var(--radius-sm);
+      color: var(--orca-light);
+    }
+
+    /* ── Callouts ── */
+    .callout {
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid;
+      display: flex; gap: 0.75rem;
+    }
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-body { flex: 1; }
+    .callout-body p { margin-bottom: 0.4rem; }
+    .callout-body strong { display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
+
+    .callout-info    { background: rgba(108,140,255,0.08); border-color: var(--accent); }
+    .callout-info    .callout-icon, .callout-info strong { color: var(--accent); }
+    .callout-warn    { background: rgba(245,158,11,0.08);  border-color: var(--warn); }
+    .callout-warn    .callout-icon, .callout-warn strong { color: var(--warn); }
+    .callout-danger  { background: rgba(239,68,68,0.08);   border-color: var(--danger); }
+    .callout-danger  .callout-icon, .callout-danger strong { color: var(--danger); }
+    .callout-success { background: rgba(52,211,153,0.08);  border-color: var(--accent-3); }
+    .callout-success .callout-icon, .callout-success strong { color: var(--accent-3); }
+    .callout-orca    { background: rgba(249,115,22,0.08);  border-color: var(--orca); }
+    .callout-orca    .callout-icon, .callout-orca strong { color: var(--orca-light); }
+
+    /* ── Comparison: imitation vs explanation ── */
+    .method-compare {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      margin: 1.5rem 0;
+    }
+    .method-panel { background: var(--surface); padding: 1.5rem; }
+    .method-panel h4 {
+      font-size: 0.82rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 1rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .method-panel.old h4 { color: var(--muted); }
+    .method-panel.new h4 { color: var(--orca-light); }
+    .method-item {
+      display: flex; gap: 0.6rem; margin-bottom: 0.75rem;
+      font-size: 0.88rem;
+    }
+    .method-item-icon { flex-shrink: 0; margin-top: 0.1rem; }
+    .method-item-text { color: var(--text); line-height: 1.5; }
+    .method-item-text strong { color: var(--heading); display: block; }
+    @media (max-width: 520px) { .method-compare { grid-template-columns: 1fr; } }
+
+    /* ── Training pipeline visual ── */
+    .pipeline {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem; margin: 1.5rem 0;
+    }
+    .pipeline h3 { margin-top: 0; color: var(--orca-light); font-size: 1rem; margin-bottom: 1.25rem; }
+    .pipeline-steps { display: flex; flex-direction: column; gap: 0; }
+    .pipeline-step {
+      display: flex; gap: 1rem; align-items: flex-start;
+      position: relative;
+    }
+    .pipeline-step:not(:last-child)::after {
+      content: '';
+      position: absolute; left: 15px; top: 34px;
+      width: 2px; height: calc(100% - 8px);
+      background: linear-gradient(to bottom, rgba(249,115,22,0.4), rgba(249,115,22,0.1));
+    }
+    .pipeline-num {
+      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(249,115,22,0.15);
+      border: 2px solid rgba(249,115,22,0.4);
+      color: var(--orca-light); font-weight: 800; font-size: 0.82rem;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .pipeline-body { flex: 1; padding-bottom: 1.5rem; }
+    .pipeline-body strong { color: var(--heading); display: block; margin-bottom: 0.2rem; }
+    .pipeline-body p { font-size: 0.87rem; color: var(--muted); margin: 0; }
+    .pipeline-body .pill {
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      padding: 0.15rem 0.5rem; border-radius: 99px; margin-top: 0.4rem;
+      background: rgba(249,115,22,0.12); color: var(--orca-light);
+      border: 1px solid rgba(249,115,22,0.25);
+    }
+
+    /* ── Benchmark Table ── */
+    .bench-wrap { overflow-x: auto; margin: 1.5rem 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    thead th {
+      background: var(--surface-2); color: var(--muted);
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 0.75rem 1rem; text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background var(--transition); }
+    tbody tr:hover { background: rgba(249,115,22,0.04); }
+    tbody td { padding: 0.75rem 1rem; color: var(--text); }
+    tbody td:first-child { font-weight: 600; }
+
+    .val-green  { color: var(--accent-3); font-weight: 700; }
+    .val-yellow { color: var(--warn);     font-weight: 700; }
+    .val-red    { color: var(--danger);   font-weight: 700; }
+    .val-blue   { color: var(--accent);   font-weight: 700; }
+    .val-orca   { color: var(--orca-light); font-weight: 700; }
+    .val-muted  { color: var(--muted);    font-style: italic; }
+    .row-hl td  { background: rgba(249,115,22,0.06); }
+
+    /* ── Example comparison ── */
+    .example-pair {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      margin: 1.5rem 0;
+    }
+    .example-panel { background: var(--surface); padding: 1.25rem; }
+    .example-panel h4 {
+      font-size: 0.78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      margin-bottom: 0.75rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .example-panel.conventional h4 { color: var(--muted); }
+    .example-panel.explanation h4 { color: var(--orca-light); }
+    .example-panel p { font-size: 0.85rem; color: var(--text); margin-bottom: 0.5rem; }
+    .example-panel .prompt-q { font-style: italic; color: var(--muted); font-size: 0.82rem; }
+    .example-panel .answer { color: var(--text); font-size: 0.85rem; }
+    .example-panel .reasoning { color: var(--orca-light); font-size: 0.82rem; border-left: 3px solid rgba(249,115,22,0.3); padding-left: 0.75rem; margin-top: 0.5rem; }
+    @media (max-width: 540px) { .example-pair { grid-template-columns: 1fr; } }
+
+    /* ── Perf Bars ── */
+    .perf-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.6rem; }
+    .perf-label { font-size: 0.82rem; color: var(--muted); width: 200px; flex-shrink: 0; }
+    .perf-bar-wrap { flex: 1; background: var(--surface-2); border-radius: 99px; height: 8px; overflow: hidden; }
+    .perf-bar { height: 100%; border-radius: 99px; }
+    .perf-val { font-size: 0.82rem; font-weight: 700; color: var(--text); width: 55px; text-align: right; flex-shrink: 0; }
+
+    /* ── Versus Box ── */
+    .versus-box { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    @media (max-width: 540px) { .versus-box { grid-template-columns: 1fr; } }
+    .versus-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+    .versus-panel h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+    .versus-panel.pro h4 { color: var(--accent-3); }
+    .versus-panel.con h4 { color: var(--danger); }
+    .versus-panel ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+    .versus-panel li { font-size: 0.88rem; color: var(--text); display: flex; align-items: flex-start; gap: 0.5rem; }
+    .versus-panel.pro li::before { content: '✓'; color: var(--accent-3); flex-shrink: 0; }
+    .versus-panel.con li::before { content: '✗'; color: var(--danger); flex-shrink: 0; }
+
+    /* ── Code Blocks ── */
+    .code-block { background: #0d0f17; border: 1px solid var(--border); border-radius: var(--radius); margin: 1.25rem 0; overflow: hidden; }
+    .code-header { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; background: var(--surface-2); border-bottom: 1px solid var(--border); font-size: 0.78rem; color: var(--muted); }
+    .code-header .lang { font-weight: 600; color: var(--orca-light); }
+    pre { padding: 1.25rem; overflow-x: auto; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.6; color: #c9d1e0; }
+    .c-comment { color: #546e7a; }
+    .c-str     { color: #a3be8c; }
+    .c-kw      { color: #a78bfa; }
+    .c-num     { color: #f59e0b; }
+    .c-fn      { color: #4da3e8; }
+    .c-var     { color: var(--orca-light); }
+
+    /* ── Use Case Grid ── */
+    .use-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .use-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+    .use-card .use-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .use-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--heading); margin-bottom: 0.4rem; }
+    .use-card p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+    /* ── Page Nav ── */
+    .page-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .page-nav a { display: flex; align-items: center; gap: 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 600; color: var(--text); text-decoration: none; transition: border-color var(--transition), color var(--transition); flex: 1; min-width: 160px; }
+    .page-nav a:hover { border-color: var(--orca-light); color: var(--orca-light); }
+    .page-nav a.next { justify-content: flex-end; text-align: right; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 1.75rem 1.25rem 1.5rem; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Orca: How Microsoft Taught a 13B Model to Reason Like GPT-4",
+    "description": "Explanation tuning trains small models on GPT-4's reasoning process — not just its outputs. Orca achieves 13B-scale reasoning that rivals conventional 65B fine-tunes.",
+    "author": { "@type": "Organization", "name": "PrivateAI.guide" },
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-07-14"
+  }
+  </script>
+</head>
+
+<body>
+<div class="page-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/chatgpt-alternatives/">ChatGPT Alternatives</a>
+    <span>›</span>
+    <span>Orca</span>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="hero">
+    <div class="hero-badge">🔬 Microsoft Research</div>
+    <h1>Orca: Teaching Small Models<br><span>to Reason, Not Just Answer</span></h1>
+    <p class="hero-sub">
+      Most fine-tuning teaches a model what GPT-4 says. Orca taught a 
+      model <em>how</em> GPT-4 thinks. By training on explanation traces — 
+      step-by-step reasoning behind each answer — Microsoft's 13B model 
+      matched or exceeded conventional 65B fine-tunes on complex 
+      reasoning benchmarks.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">🏢 <strong>Creator:</strong> Microsoft Research</div>
+      <div class="hero-meta-item">🧱 <strong>Base:</strong> LLaMA 13B</div>
+      <div class="hero-meta-item">📅 <strong>Released:</strong> June 2023</div>
+      <div class="hero-meta-item">⚖️ <strong>License:</strong> Research only (non-commercial)</div>
+      <div class="hero-meta-item">🪟 <strong>Context:</strong> 4K tokens</div>
+      <div class="hero-meta-item">💾 <strong>Min RAM (INT4):</strong> 8–10GB</div>
+    </div>
+  </header>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <strong>Research license — not for production use</strong>
+      <p>
+        The original Orca model (LLaMA-based) inherits LLaMA 1's 
+        non-commercial research license. You cannot deploy it in 
+        a commercial product. For a commercially licensed successor 
+        with the same reasoning focus, see 
+        <a href="/chatgpt-alternatives/orca-2/">Orca 2</a> 
+        (Llama 2 base, Microsoft Research License) or 
+        <a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> 
+        (Apache 2.0, trained on similar explanation data).
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Stats ── -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-val">13B</div>
+      <div class="stat-lbl">Parameters</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">5M</div>
+      <div class="stat-lbl">Training Examples</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">GPT-4</div>
+      <div class="stat-lbl">Teacher Model</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">BigBench</div>
+      <div class="stat-lbl">Reasoning Focus</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">4K</div>
+      <div class="stat-lbl">Context Window</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">FLAN</div>
+      <div class="stat-lbl">Source Tasks</div>
+    </div>
+  </div>
+
+  <!-- ── The Core Insight ── -->
+  <h2>The Core Insight: Imitation vs. Explanation</h2>
+  <p>
+    The standard recipe for fine-tuning a small model on a large one — 
+    called <strong>imitation learning</strong> — works like this: collect 
+    prompt-response pairs from GPT-4, train your small model to reproduce 
+    those responses. The result is a model that sounds like GPT-4 on 
+    familiar inputs but fails badly on anything that requires genuine 
+    reasoning — because it learned the surface pattern of the output, 
+    not the underlying cognitive process.
+  </p>
+  <p>
+    The Microsoft Research team, led by Subhabrata Mukherjee, identified 
+    this as the central flaw in models like Alpaca and Vicuna. Their paper, 
+    <em>"Orca: Progressive Learning from Complex Explanation Traces of GPT-4"</em> 
+    (June 2023), proposed a different training signal: instead of just 
+    the answer, train on the <strong>explanation trace</strong> — GPT-4's 
+    step-by-step reasoning that leads to the answer.
+  </p>
+
+  <div class="method-compare">
+    <div class="method-panel old">
+      <h4>❌ Conventional Imitation Learning</h4>
+      <div class="method-item">
+        <span class="method-item-icon">📥</span>
+        <div class="method-item-text">
+          <strong>What gets collected</strong>
+          Question → GPT-4 answer. Nothing else.
+        </div>
+      </div>
+      <div class="method-item">
+        <span class="method-item-icon">🎓</span>
+        <div class="method-item-text">
+          <strong>What the student model learns</strong>
+          "When I see inputs like this, output text like this."
+        </div>
+      </div>
+      <div class="method-item">
+        <span class="method-item-icon">⚡</span>
+        <div class="method-item-text">
+          <strong>Works well for</strong>
+          Stylistic mimicry, common question types, surface-level helpfulness
+        </div>
+      </div>
+      <div class="method-item">
+        <span class="method-item-icon">💥</span>
+        <div class="method-item-text">
+          <strong>Breaks on</strong>
+          Novel problem types, multi-step reasoning, unfamiliar domains
+        </div>
+      </div>
+    </div>
+    <div class="method-panel new">
+      <h4>✓ Orca Explanation Tuning</h4>
+      <div class="method-item">
+        <span class="method-item-icon">📥</span>
+        <div class="method-item-text">
+          <strong>What gets collected</strong>
+          Question → GPT-4 reasoning trace → GPT-4 answer. The full chain.
+        </div>
+      </div>
+      <div class="method-item">
+        <span class="method-item-icon">🎓</span>
+        <div class="method-item-text">
+          <strong>What the student model learns</strong>
+          "When I see inputs like this, here is how to reason about them."
+        </div>
+      </div>
+      <div class="method-item">
+        <span class="method-item-icon">⚡</span>
+        <div class="method-item-text">
+          <strong>Works well for</strong>
+          Step-by-step reasoning, novel problem types, structured analysis
+        </div>
+      </div>
+      <div class="method-item">
+        <span class="method-item-icon">✅</span>
+        <div class="method-item-text">
+          <strong>Generalises better to</strong>
+          Unseen tasks because the reasoning <em>process</em> transfers, not just outputs
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Training Pipeline ── -->
+  <h2>How Orca Was Built</h2>
+
+  <div class="pipeline">
+    <h3>🏗️ The Orca Training Pipeline</h3>
+    <div class="pipeline-steps">
+
+      <div class="pipeline-step">
+        <div class="pipeline-num">1</div>
+        <div class="pipeline-body">
+          <strong>Source: FLAN-v2 task collection</strong>
+          <p>Orca starts with FLAN-v2 — a collection of ~1,800 NLP tasks 
+          spanning classification, summarisation, translation, reasoning, 
+          and more. This provides a rich, diverse set of instruction types.</p>
+          <span class="pill">~1,800 task templates</span>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="pipeline-num">2</div>
+        <div class="pipeline-body">
+          <strong>System prompt injection</strong>
+          <p>Each task is paired with a system prompt that explicitly 
+          instructs GPT-4 to explain its reasoning: "Think step by step", 
+          "Explain your reasoning before giving the answer", 
+          "Break this down into sub-problems". 16 different system prompts 
+          are used to elicit diverse reasoning styles.</p>
+          <span class="pill">16 reasoning system prompts</span>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="pipeline-num">3</div>
+        <div class="pipeline-body">
+          <strong>GPT-4 generates explanation traces</strong>
+          <p>GPT-4 (not GPT-3.5) produces the training data. Each example 
+          includes the full chain-of-thought reasoning before the final answer. 
+          This is the expensive step — GPT-4 API calls for 5 million examples 
+          at scale cost hundreds of thousands of dollars in API credits.</p>
+          <span class="pill">GPT-4 teacher</span>
+          <span class="pill" style="background:rgba(239,68,68,0.1); color:#fca5a5; border-color:rgba(239,68,68,0.25);">~$500K estimated API cost</span>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="pipeline-num">4</div>
+        <div class="pipeline-body">
+          <strong>Progressive learning schedule</strong>
+          <p>Training isn't flat — examples are ordered by complexity. 
+          The model first learns simpler reasoning patterns, then 
+          progressively harder multi-step problems. This prevents the 
+          model from being overwhelmed by complex traces early in training 
+          and improves final benchmark performance.</p>
+          <span class="pill">Curriculum learning</span>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="pipeline-num">5</div>
+        <div class="pipeline-body">
+          <strong>Fine-tune LLaMA 13B on the full dataset</strong>
+          <p>Standard supervised fine-tuning on the 5M explanation-trace 
+          examples. The model learns to generate reasoning chains, not 
+          just answers — and this reasoning process generalises to 
+          novel inputs not seen in training.</p>
+          <span class="pill">5M training examples</span>
+          <span class="pill">LLaMA 13B base</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── What Explanation Traces Look Like ── -->
+  <h2>What Explanation Traces Look Like in Practice</h2>
+  <p>
+    The difference between imitation learning and explanation tuning 
+    is most visible when you look at what the training data actually 
+    contains. Here's a simplified example of both approaches on the 
+    same question:
+  </p>
+
+  <div class="example-pair">
+    <div class="example-panel conventional">
+      <h4>Conventional Fine-Tune Training Example</h4>
+      <p class="prompt-q">Q: A train travels 120 miles in 2 hours. A car travels the same 
+      distance in 90 minutes. How much faster is the car's average speed?</p>
+      <p class="answer"><strong>Training target:</strong><br>
+      The car is 20 mph faster than the train.</p>
+      <p style="font-size:0.78rem; color:var(--muted); margin-top:0.75rem;">
+        ↑ The model learns: "questions like this → answers like this." 
+        No reasoning process captured.
+      </p>
+    </div>
+    <div class="example-panel explanation">
+      <h4>Orca Explanation Trace Training Example</h4>
+      <p class="prompt-q">Q: A train travels 120 miles in 2 hours. A car travels the same 
+      distance in 90 minutes. How much faster is the car's average speed?</p>
+      <div class="reasoning">
+        <strong>GPT-4 reasoning trace (training target):</strong><br>
+        Step 1: Calculate train speed. 120 miles ÷ 2 hours = 60 mph.<br>
+        Step 2: Convert car time. 90 minutes = 1.5 hours.<br>
+        Step 3: Calculate car speed. 120 ÷ 1.5 = 80 mph.<br>
+        Step 4: Find the difference. 80 − 60 = 20 mph.<br>
+        <strong>Answer: The car is 20 mph faster.</strong>
+      </div>
+      <p style="font-size:0.78rem; color:var(--muted); margin-top:0.75rem;">
+        ↑ The model learns the reasoning process itself. Generalises 
+        to novel problem structures.
+      </p>
+    </div>
+  </div>
+
+  <div class="callout callout-orca">
+    <div class="callout-icon">🔬</div>
+    <div class="callout-body">
+      <strong>Why this produces better generalisation</strong>
+      <p>
+        When a model trained on explanation traces encounters a problem 
+        it hasn't seen before, it has a template for <em>how to approach</em> 
+        it — decompose into steps, check units, verify sub-results. A model 
+        trained only on answers has no such scaffold. This is directly 
+        analogous to the difference between a student who memorised exam 
+        answers and one who understood the underlying method.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Benchmarks ── -->
+  <h2>Benchmark Results</h2>
+  <p>
+    Orca's headline result from the original paper: on BigBench Hard 
+    and AGIEval benchmarks, Orca-13B matched or exceeded Vicuna-13B 
+    and WizardLM-13B — models trained on far more diverse data — 
+    and performed competitively with conventional 65B fine-tunes.
+  </p>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Params</th>
+          <th>BigBench Hard</th>
+          <th>AGIEval</th>
+          <th>MT-Bench</th>
+          <th>License</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GPT-4</td>
+          <td class="val-muted">Unknown</td>
+          <td class="val-green">~89%</td>
+          <td class="val-green">~87%</td>
+          <td class="val-green">9.1/10</td>
+          <td class="val-muted">Proprietary</td>
+        </tr>
+        <tr>
+          <td>ChatGPT (GPT-3.5)</td>
+          <td class="val-muted">Unknown</td>
+          <td class="val-yellow">~70%</td>
+          <td class="val-yellow">~61%</td>
+          <td class="val-yellow">7.94/10</td>
+          <td class="val-muted">Proprietary</td>
+        </tr>
+        <tr class="row-hl">
+          <td><strong>Orca 13B</strong></td>
+          <td>13B</td>
+          <td class="val-orca">~63%</td>
+          <td class="val-orca">~54%</td>
+          <td class="val-muted">N/A*</td>
+          <td class="val-red">Research only</td>
+        </tr>
+        <tr>
+          <td>Vicuna 13B</td>
+          <td>13B</td>
+          <td class="val-yellow">~37%</td>
+          <td class="val-yellow">~38%</td>
+          <td class="val-yellow">6.57/10</td>
+          <td class="val-red">Non-commercial</td>
+        </tr>
+        <tr>
+          <td>WizardLM 13B</td>
+          <td>13B</td>
+          <td class="val-yellow">~40%</td>
+          <td class="val-yellow">~37%</td>
+          <td class="val-yellow">6.35/10</td>
+          <td class="val-red">Non-commercial</td>
+        </tr>
+        <tr>
+          <td>Conventional FT 65B</td>
+          <td>65B</td>
+          <td class="val-yellow">~60%</td>
+          <td class="val-yellow">~52%</td>
+          <td class="val-muted">Varies</td>
+          <td class="val-muted">Varies</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/orca-2/">Orca 2 (13B)</a></td>
+          <td>13B</td>
+          <td class="val-green">~71%</td>
+          <td class="val-green">~65%</td>
+          <td class="val-yellow">7.2/10</td>
+          <td class="val-yellow">MS Research</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.8rem; color:var(--muted);">
+    * MT-Bench wasn't applied to the original Orca at release; BigBench Hard 
+    and AGIEval were the primary evaluation benchmarks in the paper. 
+    Figures are approximations from the published paper and subsequent 
+    community reproductions.
+  </p>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <strong>The 65B comparison requires context</strong>
+      <p>
+        The paper's claim that Orca-13B outperforms "conventional 65B 
+        fine-tunes" specifically refers to models fine-tuned with 
+        standard imitation learning on GPT-3.5 outputs — Vicuna-65B, 
+        WizardLM-65B. It does not claim to beat all 65B models or 
+        65B models fine-tuned with better methods. The comparison is 
+        fair but specific: explanation tuning beats imitation learning 
+        even at a 5× parameter disadvantage.
+      </p>
+    </div>
+  </div>
+
+  <h3>Where Orca Genuinely Excels</h3>
+
+  <div class="perf-row">
+    <div class="perf-label">Step-by-step reasoning</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:88%; background:var(--accent-3);"></div></div>
+    <div class="perf-val">Excellent</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Structured problem solving</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:84%; background:var(--accent-3);"></div></div>
+    <div class="perf-val">Excellent</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Novel task generalisation</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:80%; background:var(--orca-light);"></div></div>
+    <div class="perf-val">Very good</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Math word problems</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:72%; background:var(--accent);"></div></div>
+    <div class="perf-val">Good</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">General conversation</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:60%; background:var(--warn);"></div></div>
+    <div class="perf-val">Average</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Creative writing</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:48%; background:var(--warn);"></div></div>
+    <div class="perf-val">Below avg.</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Long document (4K limit)</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:35%; background:var(--danger);"></div></div>
+    <div class="perf-val">Limited</div>
+  </div>
+
+  <!-- ── Why Orca Matters Even if You Don't Use It ── -->
+  <h2>Why Orca Matters Even if You Don't Use It</h2>
+  <p>
+    The original Orca has a non-commercial license and a 4K context window 
+    that feels cramped in 2025. Practically speaking, most users should 
+    reach for <a href="/chatgpt-alternatives/orca-2/">Orca 2</a> or 
+    <a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> instead. 
+    So why does Orca matter?
+  </p>
+
+  <p>
+    Because Orca established a research result with broad implications: 
+    <strong>the training signal matters more than the parameter count.</strong> 
+    A 13B model trained on reasoning traces beats a 65B model trained 
+    on answer-only imitation. This finding has influenced nearly every 
+    high-quality fine-tune released since mid-2023:
+  </p>
+
+  <ul>
+    <li><strong>Nous Hermes 2</strong> uses the same Orca-style explanation data (via the OpenHermes dataset)</li>
+    <li><strong>Orca 2</strong> extends the methodology with "cautious reasoning" — teaching the model <em>when</em> to use which reasoning strategy</li>
+    <li><strong>OpenChat's C-RLFT</strong> is in part inspired by the insight that conditioning on data quality beats naive imitation</li>
+    <li><strong>Zephyr's RAFT</strong> similarly focuses on curating which examples the model learns from</li>
+  </ul>
+
+  <div class="callout callout-orca">
+    <div class="callout-icon">🔬</div>
+    <div class="callout-body">
+      <strong>The Orca paper's lasting contribution</strong>
+      <p>
+        The Orca paper is genuinely worth reading if you work with 
+        fine-tuned models. Its systematic analysis of why imitation 
+        learning fails — what they call "the imitation gap" — provides 
+        a conceptual framework for evaluating any fine-tuned model: 
+        not just "what data was it trained on" but "what did the training 
+        signal teach the model to optimise for."
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Deployment ── -->
+  <h2>Using Orca Locally</h2>
+
+  <div class="callout callout-danger">
+    <div class="callout-icon">🚫</div>
+    <div class="callout-body">
+      <strong>License check before deployment</strong>
+      <p>
+        Orca (LLaMA 1 base) is <strong>research use only</strong>. 
+        Do not deploy in commercial products, internal business tooling 
+        with any revenue connection, or customer-facing applications. 
+        For those use cases: <a href="/chatgpt-alternatives/orca-2/">Orca 2</a> 
+        has a Microsoft Research License that permits broader use, 
+        or use <a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> 
+        (Apache 2.0, trained on Orca-style data).
+      </p>
+    </div>
+  </div>
+
+  <p>
+    If you're using Orca for research or personal experimentation, 
+    GGUF quantised versions are available via community sources. 
+    Note that Ollama's default <code>orca-mini</code> model is a 
+    different, smaller model — not the full Microsoft Orca 13B.
+  </p>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">bash — llama.cpp (direct)</span>
+    </div>
+    <pre><span class="c-comment"># Download GGUF from Hugging Face (research use only)</span>
+<span class="c-comment"># Model: TheBloke/orca_mini_13b-GGUF or similar community upload</span>
+
+<span class="c-comment"># Run with llama.cpp</span>
+./llama-cli \
+  -m orca-mini-13b.Q4_K_M.gguf \
+  -n 512 \
+  --ctx-size 4096 \
+  -p <span class="c-str">"### System:\nYou are Orca, a helpful AI assistant. Think step by step.\n\n### User:\nExplain the difference between supervised and unsupervised learning.\n\n### Response:\n"</span></pre>
+  </div>
+
+  <h3>Orca Prompt Format</h3>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">text — Orca prompt template</span>
+    </div>
+    <pre><span class="c-comment">### System:</span>
+You are Orca, an AI language model created by Microsoft. 
+You are a cautious assistant. You carefully follow instructions.
+You are helpful and harmless and you follow ethical guidelines
+and promote positive behavior.
+
+<span class="c-comment">### User:</span>
+{user_message}
+
+<span class="c-comment">### Response:</span></pre>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">💡</div>
+    <div class="callout-body">
+      <strong>Eliciting step-by-step reasoning explicitly</strong>
+      <p>
+        Orca was trained with system prompts that request explicit reasoning. 
+        You'll get better results by including reasoning instructions in your 
+        system prompt: <em>"Think through this step by step before giving 
+        your final answer"</em> or <em>"Break this problem into sub-steps 
+        and solve each one."</em> These aren't just prompting tricks — they 
+        activate the specific reasoning patterns the model was trained on.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Best Use Cases ── -->
+  <h2>Best Use Cases for Orca</h2>
+
+  <div class="use-grid">
+    <div class="use-card">
+      <div class="use-icon">🔬</div>
+      <h4>Research into Explanation Tuning</h4>
+      <p>
+        If you're studying how training methodology affects reasoning 
+        capability, Orca is the canonical baseline. The paper, dataset, 
+        and model provide a complete experimental scaffold.
+      </p>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🧮</div>
+      <h4>Multi-Step Problem Solving</h4>
+      <p>
+        For tasks that genuinely require decomposition — logic puzzles, 
+        word problems, structured analysis — Orca's reasoning traces 
+        make it noticeably better than same-size imitation-tuned models.
+      </p>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">📚</div>
+      <h4>Educational Demonstrations</h4>
+      <p>
+        Orca naturally generates explanations alongside answers — 
+        making it useful for tutoring applications where showing 
+        the reasoning process is as important as the answer itself.
+      </p>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🏗️</div>
+      <h4>Fine-Tuning Starting Point</h4>
+      <p>
+        The reasoning capabilities baked into Orca via explanation 
+        tuning make it a stronger starting point for domain-specific 
+        fine-tunes than a raw instruction-tuned base model.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Pros / Cons ── -->
+  <h2>Honest Assessment</h2>
+  <div class="versus-box">
+    <div class="versus-panel pro">
+      <h4>✓ Real Strengths</h4>
+      <ul>
+        <li>Genuinely novel training methodology with reproducible research results</li>
+        <li>Best-in-class step-by-step reasoning at the 13B scale</li>
+        <li>Strong generalisation to novel task types</li>
+        <li>Naturally produces explanations alongside answers</li>
+        <li>Outperforms 65B imitation-tuned models on reasoning benchmarks</li>
+        <li>Paper is well-written and the methodology is clearly documented</li>
+      </ul>
+    </div>
+    <div class="versus-panel con">
+      <h4>✗ Real Limitations</h4>
+      <ul>
+        <li>Non-commercial license — blocks most production use cases</li>
+        <li>4K context window is significantly limiting</li>
+        <li>Superseded by Orca 2, which improves the methodology</li>
+        <li>Average conversational quality compared to OpenChat or Nous Hermes</li>
+        <li>LLaMA 1 base is dated compared to Mistral or LLaMA 3.x</li>
+        <li>Not available directly via Ollama (orca-mini ≠ Orca 13B)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Decision Table ── -->
+  <h2>Orca vs. Its Successors</h2>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>If you want…</th>
+          <th>Use instead</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Commercial deployment</td>
+          <td><a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a></td>
+          <td>Apache 2.0, trained on OpenHermes (Orca-style data)</td>
+        </tr>
+        <tr>
+          <td>Best reasoning at 13B scale</td>
+          <td><a href="/chatgpt-alternatives/orca-2/">Orca 2</a></td>
+          <td>Improved methodology, better benchmarks, Llama 2 base</td>
+        </tr>
+        <tr>
+          <td>Best overall 7–8B model</td>
+          <td>Llama 3.1 8B Instruct</td>
+          <td>Newer base, much larger context, better benchmarks</td>
+        </tr>
+        <tr>
+          <td>Ollama one-liner setup</td>
+          <td><a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a></td>
+          <td><code>ollama run openchat</code> — works immediately</td>
+        </tr>
+        <tr>
+          <td>Reproduce the Orca research</td>
+          <td>Orca (this model)</td>
+          <td>It's the canonical reference implementation</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Page Nav ── -->
+  <nav class="page-nav" aria-label="Page navigation">
+    <a href="/chatgpt-alternatives/openchat/">← OpenChat 3.5</a>
+    <a href="/chatgpt-alternatives/orca-2/" class="next">Orca 2 →</a>
+  </nav>
+
+</div>
+</body>
+</html>
