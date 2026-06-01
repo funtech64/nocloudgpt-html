@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orca 2: Cautious Reasoning for Small Language Models | PrivateAI.guide</title>
+  <meta name="description" content="Orca 2 teaches small models to select the right reasoning strategy for each task — step-by-step, direct answer, or recall from memory. A 13B model that matches or beats much larger models on reasoning benchmarks." />
+  <link rel="canonical" href="https://privateai.guide/chatgpt-alternatives/orca-2/" />
+
+  <meta property="og:title" content="Orca 2: Cautious Reasoning for Small Language Models" />
+  <meta property="og:description" content="Where Orca 1 taught models to reason, Orca 2 teaches them when to use which reasoning strategy — and when not to overthink." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://privateai.guide/chatgpt-alternatives/orca-2/" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f1117;
+      --surface:   #1a1d27;
+      --surface-2: #22263a;
+      --border:    #2e3350;
+      --accent:    #6c8cff;
+      --accent-2:  #a78bfa;
+      --accent-3:  #34d399;
+      --warn:      #f59e0b;
+      --danger:    #ef4444;
+      --orca1:     #f97316;
+      --orca2:     #e879f9;
+      --orca2-light: #f0abfc;
+      --text:      #e2e8f0;
+      --muted:     #8892b0;
+      --heading:   #ffffff;
+      --radius:    12px;
+      --radius-sm: 6px;
+      --shadow:    0 4px 24px rgba(0,0,0,0.4);
+      --font:      'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      --max-w:     860px;
+      --transition: 0.2s ease;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0 1rem 4rem;
+    }
+
+    .page-wrap { max-width: var(--max-w); margin: 0 auto; }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      align-items: center; padding: 1.25rem 0;
+      font-size: 0.82rem; color: var(--muted);
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #1a001f 0%, #0f1117 55%, #1a1d27 100%);
+      border: 1px solid rgba(232,121,249,0.35);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem 2rem;
+      margin-bottom: 2rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(232,121,249,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(232,121,249,0.12);
+      border: 1px solid rgba(232,121,249,0.35);
+      color: var(--orca2-light);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.3rem 0.75rem; border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      font-weight: 800; color: var(--heading);
+      line-height: 1.2; margin-bottom: 0.75rem;
+    }
+    .hero h1 span { color: var(--orca2-light); }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 640px; margin-bottom: 1.5rem;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap;
+      gap: 1rem; font-size: 0.82rem; color: var(--muted);
+    }
+    .hero-meta-item { display: flex; align-items: center; gap: 0.35rem; }
+    .hero-meta-item strong { color: var(--text); }
+
+    /* ── Stat Grid ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem; text-align: center;
+    }
+    .stat-val {
+      font-size: 1.7rem; font-weight: 800;
+      color: var(--orca2-light); line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-lbl {
+      font-size: 0.76rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    /* ── Headings ── */
+    h2 {
+      font-size: 1.45rem; font-weight: 700;
+      color: var(--heading); margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 { font-size: 1.1rem; font-weight: 600; color: var(--heading); margin: 1.5rem 0 0.6rem; }
+
+    p { margin-bottom: 1rem; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; color: var(--text); }
+    code {
+      font-family: var(--font-mono); font-size: 0.85em;
+      background: var(--surface-2); border: 1px solid var(--border);
+      padding: 0.1em 0.4em; border-radius: var(--radius-sm);
+      color: var(--orca2-light);
+    }
+
+    /* ── Callouts ── */
+    .callout {
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid;
+      display: flex; gap: 0.75rem;
+    }
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-body { flex: 1; }
+    .callout-body p { margin-bottom: 0.4rem; }
+    .callout-body strong { display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
+
+    .callout-info    { background: rgba(108,140,255,0.08); border-color: var(--accent); }
+    .callout-info    .callout-icon, .callout-info strong { color: var(--accent); }
+    .callout-warn    { background: rgba(245,158,11,0.08);  border-color: var(--warn); }
+    .callout-warn    .callout-icon, .callout-warn strong { color: var(--warn); }
+    .callout-danger  { background: rgba(239,68,68,0.08);   border-color: var(--danger); }
+    .callout-danger  .callout-icon, .callout-danger strong { color: var(--danger); }
+    .callout-success { background: rgba(52,211,153,0.08);  border-color: var(--accent-3); }
+    .callout-success .callout-icon, .callout-success strong { color: var(--accent-3); }
+    .callout-orca2   { background: rgba(232,121,249,0.08); border-color: var(--orca2); }
+    .callout-orca2   .callout-icon, .callout-orca2 strong { color: var(--orca2-light); }
+
+    /* ── Strategy Cards ── */
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .strategy-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      position: relative; overflow: hidden;
+    }
+    .strategy-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .strategy-card.direct::before  { background: var(--accent-3); }
+    .strategy-card.recall::before  { background: var(--accent); }
+    .strategy-card.chain::before   { background: var(--orca2-light); }
+    .strategy-card.delegate::before { background: var(--warn); }
+    .strategy-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .strategy-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--heading); margin-bottom: 0.4rem; }
+    .strategy-card p { font-size: 0.83rem; color: var(--muted); margin-bottom: 0.5rem; }
+    .strategy-example {
+      font-size: 0.78rem; color: var(--text);
+      background: var(--surface-2); border-radius: var(--radius-sm);
+      padding: 0.5rem 0.75rem; border-left: 3px solid var(--border);
+      font-style: italic;
+    }
+
+    /* ── Orca 1 vs 2 comparison ── */
+    .evolution-table { overflow-x: auto; margin: 1.5rem 0; }
+    .evolution-table table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .evolution-table thead th {
+      background: var(--surface-2); color: var(--muted);
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 0.75rem 1rem; text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .evolution-table tbody tr { border-bottom: 1px solid var(--border); }
+    .evolution-table tbody tr:hover { background: rgba(232,121,249,0.03); }
+    .evolution-table tbody td { padding: 0.75rem 1rem; color: var(--text); vertical-align: top; }
+    .evolution-table tbody td:first-child { color: var(--muted); font-size: 0.82rem; font-weight: 600; width: 160px; }
+
+    /* ── Benchmark Table ── */
+    .bench-wrap { overflow-x: auto; margin: 1.5rem 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    thead th {
+      background: var(--surface-2); color: var(--muted);
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 0.75rem 1rem; text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background var(--transition); }
+    tbody tr:hover { background: rgba(232,121,249,0.03); }
+    tbody td { padding: 0.75rem 1rem; color: var(--text); }
+    tbody td:first-child { font-weight: 600; }
+
+    .val-green  { color: var(--accent-3); font-weight: 700; }
+    .val-yellow { color: var(--warn);     font-weight: 700; }
+    .val-red    { color: var(--danger);   font-weight: 700; }
+    .val-blue   { color: var(--accent);   font-weight: 700; }
+    .val-orca2  { color: var(--orca2-light); font-weight: 700; }
+    .val-muted  { color: var(--muted);    font-style: italic; }
+    .row-hl td  { background: rgba(232,121,249,0.05); }
+
+    /* ── Task routing visual ── */
+    .router {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem; margin: 1.5rem 0;
+      overflow: hidden;
+    }
+    .router h3 { margin-top: 0; color: var(--orca2-light); font-size: 1rem; margin-bottom: 1.25rem; }
+    .router-row {
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center; gap: 0.75rem; margin-bottom: 1rem;
+      font-size: 0.85rem;
+    }
+    .router-input {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 0.6rem 0.9rem;
+      color: var(--muted); font-style: italic;
+    }
+    .router-arrow { color: var(--orca2-light); font-weight: 700; font-size: 1rem; text-align: center; }
+    .router-strategy {
+      padding: 0.5rem 0.9rem; border-radius: var(--radius-sm);
+      font-weight: 600; font-size: 0.82rem; text-align: center;
+    }
+    .rs-direct   { background: rgba(52,211,153,0.1);   color: var(--accent-3);    border: 1px solid rgba(52,211,153,0.25); }
+    .rs-recall   { background: rgba(108,140,255,0.1);  color: var(--accent);      border: 1px solid rgba(108,140,255,0.25); }
+    .rs-chain    { background: rgba(232,121,249,0.1);  color: var(--orca2-light); border: 1px solid rgba(232,121,249,0.25); }
+    .rs-delegate { background: rgba(245,158,11,0.1);   color: var(--warn);        border: 1px solid rgba(245,158,11,0.25); }
+
+    /* ── Perf Bars ── */
+    .perf-section { margin: 1.25rem 0; }
+    .perf-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.6rem; }
+    .perf-label { font-size: 0.82rem; color: var(--muted); width: 210px; flex-shrink: 0; }
+    .perf-bar-wrap { flex: 1; background: var(--surface-2); border-radius: 99px; height: 8px; overflow: hidden; }
+    .perf-bar { height: 100%; border-radius: 99px; }
+    .perf-val { font-size: 0.82rem; font-weight: 700; color: var(--text); width: 55px; text-align: right; flex-shrink: 0; }
+
+    /* ── Versus Box ── */
+    .versus-box { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    @media (max-width: 540px) { .versus-box { grid-template-columns: 1fr; } }
+    .versus-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+    .versus-panel h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+    .versus-panel.pro h4 { color: var(--accent-3); }
+    .versus-panel.con h4 { color: var(--danger); }
+    .versus-panel ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+    .versus-panel li { font-size: 0.88rem; color: var(--text); display: flex; align-items: flex-start; gap: 0.5rem; }
+    .versus-panel.pro li::before { content: '✓'; color: var(--accent-3); flex-shrink: 0; }
+    .versus-panel.con li::before { content: '✗'; color: var(--danger); flex-shrink: 0; }
+
+    /* ── Code Blocks ── */
+    .code-block { background: #0d0f17; border: 1px solid var(--border); border-radius: var(--radius); margin: 1.25rem 0; overflow: hidden; }
+    .code-header { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; background: var(--surface-2); border-bottom: 1px solid var(--border); font-size: 0.78rem; color: var(--muted); }
+    .code-header .lang { font-weight: 600; color: var(--orca2-light); }
+    pre { padding: 1.25rem; overflow-x: auto; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.6; color: #c9d1e0; }
+    .c-comment { color: #546e7a; }
+    .c-str     { color: #a3be8c; }
+    .c-kw      { color: #a78bfa; }
+    .c-num     { color: #f59e0b; }
+    .c-fn      { color: #4da3e8; }
+    .c-var     { color: var(--orca2-light); }
+
+    /* ── Variant Cards ── */
+    .variant-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .variant-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+    }
+    .variant-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--heading); margin-bottom: 0.5rem; }
+    .variant-badge {
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      padding: 0.15rem 0.5rem; border-radius: 99px; margin-bottom: 0.5rem;
+      background: rgba(232,121,249,0.12); color: var(--orca2-light);
+      border: 1px solid rgba(232,121,249,0.25);
+    }
+    .variant-card p { font-size: 0.83rem; color: var(--muted); margin: 0; }
+    .variant-rec {
+      margin-top: 0.75rem; font-size: 0.78rem; color: var(--accent-3);
+      display: flex; align-items: center; gap: 0.3rem;
+    }
+
+    /* ── Page Nav ── */
+    .page-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .page-nav a { display: flex; align-items: center; gap: 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 600; color: var(--text); text-decoration: none; transition: border-color var(--transition), color var(--transition); flex: 1; min-width: 160px; }
+    .page-nav a:hover { border-color: var(--orca2-light); color: var(--orca2-light); }
+    .page-nav a.next { justify-content: flex-end; text-align: right; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 1.75rem 1.25rem 1.5rem; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+      .router-row { grid-template-columns: 1fr; }
+      .router-arrow { transform: rotate(90deg); }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Orca 2: Cautious Reasoning for Small Language Models",
+    "description": "Orca 2 extends explanation tuning with cautious reasoning — teaching models to select the optimal reasoning strategy per task type, not just chain-of-thought by default.",
+    "author": { "@type": "Organization", "name": "PrivateAI.guide" },
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-07-14"
+  }
+  </script>
+</head>
+
+<body>
+<div class="page-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/chatgpt-alternatives/">ChatGPT Alternatives</a>
+    <span>›</span>
+    <span>Orca 2</span>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="hero">
+    <div class="hero-badge">🔬 Microsoft Research · November 2023</div>
+    <h1>Orca 2: Teaching Models<br><span>When to Use Which Reasoning</span></h1>
+    <p class="hero-sub">
+      Orca 1 taught small models to reason step-by-step. Orca 2 asks a 
+      harder question: what if chain-of-thought isn't always the right 
+      strategy? <strong>Cautious reasoning</strong> teaches the model to 
+      select the optimal approach per task — direct answer, step-by-step, 
+      recall from memory, or delegation — matching or beating models 
+      5× its size on reasoning benchmarks.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">🏢 <strong>Creator:</strong> Microsoft Research</div>
+      <div class="hero-meta-item">🧱 <strong>Base:</strong> Llama 2 (7B & 13B)</div>
+      <div class="hero-meta-item">📅 <strong>Released:</strong> November 2023</div>
+      <div class="hero-meta-item">⚖️ <strong>License:</strong> Microsoft Research License</div>
+      <div class="hero-meta-item">🪟 <strong>Context:</strong> 4K tokens</div>
+      <div class="hero-meta-item">💾 <strong>Min RAM (INT4):</strong> 5GB (7B) / 8GB (13B)</div>
+    </div>
+  </header>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚖️</div>
+    <div class="callout-body">
+      <strong>Microsoft Research License — read carefully</strong>
+      <p>
+        Orca 2 is released under the Microsoft Research License, which 
+        permits research and evaluation but restricts commercial use. 
+        Unlike Apache 2.0 models, you cannot deploy Orca 2 in a 
+        revenue-generating product or customer-facing service without 
+        separate licensing. For commercial deployments that want 
+        Orca-style reasoning, use 
+        <a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> 
+        (Apache 2.0) instead.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Stats ── -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-val">7B & 13B</div>
+      <div class="stat-lbl">Model Sizes</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">4</div>
+      <div class="stat-lbl">Reasoning Strategies</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">Llama 2</div>
+      <div class="stat-lbl">Base Model</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">AGIEval</div>
+      <div class="stat-lbl">Primary Benchmark</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">4K</div>
+      <div class="stat-lbl">Context Window</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">Nov '23</div>
+      <div class="stat-lbl">Release Date</div>
+    </div>
+  </div>
+
+  <!-- ── The Orca 1 → 2 Evolution ── -->
+  <h2>From Explanation Tuning to Cautious Reasoning</h2>
+
+  <p>
+    <a href="/chatgpt-alternatives/orca/">Orca 1</a> established that 
+    training on GPT-4's <em>reasoning traces</em> — not just its answers — 
+    produces significantly better generalisation at small model sizes. 
+    The finding was clean: explanation tuning beats imitation learning, 
+    even at a 5× parameter disadvantage.
+  </p>
+
+  <p>
+    Orca 2 starts from a different observation: GPT-4 doesn't use 
+    chain-of-thought reasoning on every task. When you ask it what 
+    the capital of France is, it doesn't laboriously reason through 
+    the problem — it just answers. When you ask it to solve a complex 
+    math proof, it does reason step-by-step. The reasoning strategy 
+    is <strong>task-dependent</strong>.
+  </p>
+
+  <p>
+    Small models trained with standard explanation tuning tend to 
+    over-apply chain-of-thought — producing verbose reasoning traces 
+    even for tasks where a direct answer would be better. This wastes 
+    tokens, slows inference, and can actually <em>reduce</em> accuracy 
+    on recall tasks where the model second-guesses itself mid-trace. 
+    Orca 2's solution: teach the model to select the right strategy first.
+  </p>
+
+  <div class="evolution-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Orca 1</th>
+          <th>Orca 2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Core innovation</td>
+          <td>Train on reasoning traces, not just answers</td>
+          <td>Train the model to select which reasoning strategy to use</td>
+        </tr>
+        <tr>
+          <td>Teacher model</td>
+          <td>GPT-4 only</td>
+          <td>GPT-4 (with strategy-selection augmentation)</td>
+        </tr>
+        <tr>
+          <td>Base model</td>
+          <td>LLaMA 1 (13B)</td>
+          <td>Llama 2 (7B and 13B)</td>
+        </tr>
+        <tr>
+          <td>Training approach</td>
+          <td>Single reasoning style (chain-of-thought)</td>
+          <td>Multiple strategies: direct, CoT, recall, delegation</td>
+        </tr>
+        <tr>
+          <td>Efficiency</td>
+          <td>Always verbose reasoning traces</td>
+          <td>Strategy-appropriate verbosity — concise when possible</td>
+        </tr>
+        <tr>
+          <td>License</td>
+          <td>LLaMA 1 non-commercial</td>
+          <td>Microsoft Research License (broader, still non-commercial)</td>
+        </tr>
+        <tr>
+          <td>Ollama availability</td>
+          <td>Unofficial/community only</td>
+          <td><code>ollama run orca2</code> — official support</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── The Four Strategies ── -->
+  <h2>The Four Reasoning Strategies</h2>
+  <p>
+    Orca 2 is trained to recognise which of four reasoning strategies 
+    is appropriate for a given input, and to apply that strategy 
+    rather than defaulting to chain-of-thought for everything.
+  </p>
+
+  <div class="strategy-grid">
+    <div class="strategy-card direct">
+      <div class="strategy-icon">⚡</div>
+      <h4>Direct Answer</h4>
+      <p>For tasks where the answer is unambiguous and reasoning adds no value. Used when overthinking would introduce errors.</p>
+      <div class="strategy-example">"What is 7 × 8?" → "56" — not five paragraphs about multiplication.</div>
+    </div>
+
+    <div class="strategy-card recall">
+      <div class="strategy-icon">🧠</div>
+      <h4>Recall from Memory</h4>
+      <p>For factual lookups where the answer exists in training data as a stored fact. No derivation needed.</p>
+      <div class="strategy-example">"Who wrote Hamlet?" → "William Shakespeare" — retrieve, don't derive.</div>
+    </div>
+
+    <div class="strategy-card chain">
+      <div class="strategy-icon">🔗</div>
+      <h4>Chain-of-Thought</h4>
+      <p>For genuinely complex multi-step problems where intermediate reasoning steps are necessary for correctness.</p>
+      <div class="strategy-example">"If a train leaves Chicago at 9am travelling at 60mph and another leaves at 10am at 80mph, when do they meet?"</div>
+    </div>
+
+    <div class="strategy-card delegate">
+      <div class="strategy-icon">🤝</div>
+      <h4>Delegation</h4>
+      <p>For tasks outside the model's reliable competence — acknowledge the limit, suggest alternatives or request clarification.</p>
+      <div class="strategy-example">"Translate this medical report into clinical Japanese" → acknowledge specialisation limits rather than hallucinate.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-orca2">
+    <div class="callout-icon">🔬</div>
+    <div class="callout-body">
+      <strong>Why strategy selection matters for accuracy</strong>
+      <p>
+        Counter-intuitively, chain-of-thought can <em>reduce</em> accuracy 
+        on recall tasks. If a model knows that Paris is the capital of France, 
+        but it's been trained to always produce reasoning traces, it might 
+        generate intermediate reasoning steps like "France is a European 
+        country, its government is located in..." that introduce 
+        opportunities for error. Direct retrieval is more reliable for 
+        high-confidence factual recall. Orca 2's cautious reasoning 
+        framework explicitly addresses this failure mode.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Task Routing Visual ── -->
+  <div class="router">
+    <h3>🗺️ How Orca 2 Routes Tasks to Strategies</h3>
+
+    <div class="router-row">
+      <div class="router-input">"What year did World War II end?"</div>
+      <div class="router-arrow">→</div>
+      <div class="router-strategy rs-recall">Recall from Memory</div>
+    </div>
+
+    <div class="router-row">
+      <div class="router-input">"Is 2,847 divisible by 7?"</div>
+      <div class="router-arrow">→</div>
+      <div class="router-strategy rs-direct">Direct Answer</div>
+    </div>
+
+    <div class="router-row">
+      <div class="router-input">"A factory produces 240 units/hour. After a 15% efficiency gain, how long to produce 3,500 units?"</div>
+      <div class="router-arrow">→</div>
+      <div class="router-strategy rs-chain">Chain-of-Thought</div>
+    </div>
+
+    <div class="router-row">
+      <div class="router-input">"Summarise this 50-page legal contract and identify all liability clauses under EU GDPR"</div>
+      <div class="router-arrow">→</div>
+      <div class="router-strategy rs-delegate">Delegation / Clarification</div>
+    </div>
+
+    <div class="router-row">
+      <div class="router-input">"Analyse the systemic causes of the 2008 financial crisis"</div>
+      <div class="router-arrow">→</div>
+      <div class="router-strategy rs-chain">Chain-of-Thought</div>
+    </div>
+
+    <div class="router-row">
+      <div class="router-input">"What's the boiling point of water at sea level?"</div>
+      <div class="router-arrow">→</div>
+      <div class="router-strategy rs-recall">Recall from Memory</div>
+    </div>
+
+    <p style="font-size:0.78rem; color:var(--muted); margin-top:1rem; margin-bottom:0;">
+      ↑ This routing happens implicitly — the model learns to recognise task type 
+      from the training signal, not through an explicit classification step at inference time.
+    </p>
+  </div>
+
+  <!-- ── Benchmarks ── -->
+  <h2>Benchmark Results</h2>
+  <p>
+    Orca 2's paper benchmarks it primarily against AGIEval (reasoning 
+    and problem solving), BigBench Hard (complex reasoning), and several 
+    academic task suites. The 13B variant is the flagship, though the 
+    7B shows surprisingly strong results for its size.
+  </p>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Params</th>
+          <th>AGIEval</th>
+          <th>BigBench Hard</th>
+          <th>MT-Bench</th>
+          <th>MMLU</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GPT-4</td>
+          <td class="val-muted">Unknown</td>
+          <td class="val-green">~87%</td>
+          <td class="val-green">~89%</td>
+          <td class="val-green">9.1/10</td>
+          <td class="val-green">86.4%</td>
+        </tr>
+        <tr>
+          <td>ChatGPT (GPT-3.5)</td>
+          <td class="val-muted">Unknown</td>
+          <td class="val-yellow">~61%</td>
+          <td class="val-yellow">~70%</td>
+          <td class="val-yellow">7.94/10</td>
+          <td class="val-yellow">70.0%</td>
+        </tr>
+        <tr class="row-hl">
+          <td><strong>Orca 2 13B</strong></td>
+          <td>13B</td>
+          <td class="val-orca2">~65%</td>
+          <td class="val-orca2">~71%</td>
+          <td class="val-orca2">7.2/10</td>
+          <td class="val-orca2">60.4%</td>
+        </tr>
+        <tr class="row-hl">
+          <td><strong>Orca 2 7B</strong></td>
+          <td>7B</td>
+          <td class="val-orca2">~54%</td>
+          <td class="val-orca2">~63%</td>
+          <td class="val-yellow">6.2/10</td>
+          <td class="val-yellow">56.0%</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/orca/">Orca 1 13B</a></td>
+          <td>13B</td>
+          <td class="val-yellow">~54%</td>
+          <td class="val-yellow">~63%</td>
+          <td class="val-muted">N/A</td>
+          <td class="val-muted">N/A</td>
+        </tr>
+        <tr>
+          <td>Llama 2 Chat 13B</td>
+          <td>13B</td>
+          <td class="val-yellow">~45%</td>
+          <td class="val-yellow">~41%</td>
+          <td class="val-yellow">6.27/10</td>
+          <td class="val-yellow">53.9%</td>
+        </tr>
+        <tr>
+          <td>Llama 2 Chat 70B</td>
+          <td>70B</td>
+          <td class="val-yellow">~54%</td>
+          <td class="val-yellow">~51%</td>
+          <td class="val-yellow">6.27/10</td>
+          <td class="val-yellow">63.0%</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2 13B</a></td>
+          <td>13B</td>
+          <td class="val-yellow">~58%</td>
+          <td class="val-muted">N/A</td>
+          <td class="val-yellow">7.0/10</td>
+          <td class="val-yellow">59.1%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">📊</div>
+    <div class="callout-body">
+      <strong>The 70B comparison result</strong>
+      <p>
+        Orca 2 13B matches or exceeds Llama 2 Chat 70B on AGIEval and 
+        BigBench Hard — models with more than 5× the parameters. This 
+        is the paper's headline claim, and it holds up on the specific 
+        benchmarks tested. It does <em>not</em> hold universally: 
+        Llama 2 70B outperforms Orca 2 13B on general conversation 
+        quality (MT-Bench) and creative tasks. The advantage is specific 
+        to structured reasoning.
+      </p>
+    </div>
+  </div>
+
+  <h3>Capability Profile</h3>
+  <div class="perf-section">
+    <div class="perf-row">
+      <div class="perf-label">Structured reasoning</div>
+      <div class="perf-bar-wrap"><div class="perf-bar" style="width:88%; background:var(--accent-3);"></div></div>
+      <div class="perf-val">Excellent</div>
+    </div>
+    <div class="perf-row">
+      <div class="perf-label">Math word problems</div>
+      <div class="perf-bar-wrap"><div class="perf-bar" style="width:82%; background:var(--accent-3);"></div></div>
+      <div class="perf-val">Very good</div>
+    </div>
+    <div class="perf-row">
+      <div class="perf-label">Factual Q&A</div>
+      <div class="perf-bar-wrap"><div class="perf-bar" style="width:76%; background:var(--orca2-light);"></div></div>
+      <div class="perf-val">Very good</div>
+    </div>
+    <div class="perf-row">
+      <div class="perf-label">Task routing accuracy</div>
+      <div class="perf-bar-wrap"><div class="perf-bar" style="width:78%; background:var(--orca2-light);"></div></div>
+      <div class="perf-val">Very good</div>
+    </div>
+    <div class="perf-row">
+      <div class="perf-label">General conversation</div>
+      <div class="perf-bar-wrap"><div class="perf-bar" style="width:62%; background:var(--warn);"></div></div>
+      <div class="perf-val">Average</div>
+    </div>
+    <div class="perf-row">
+      <div class="perf-label">Code generation</div>
+      <div class="perf-bar-wrap"><div class="perf-bar" style="width:54%; background:var(--warn);"></div></div>
+      <div class="perf-val">Average</div>
+    </div>
+    <div class="perf-row">
+      <div class="perf-label">Long document (4K limit)</div>
+      <div class="perf-bar-wrap"><div class="perf-bar" style="width:30%; background:var(--danger);"></div></div>
+      <div class="perf-val">Limited</div>
+    </div>
+  </div>
+
+  <!-- ── Model Variants ── -->
+  <h2>Available Variants</h2>
+
+  <div class="variant-grid">
+    <div class="variant-card">
+      <h4>Orca 2 7B</h4>
+      <span class="variant-badge">microsoft/Orca-2-7b</span>
+      <p>
+        Surprisingly capable for its size. Reasonable reasoning benchmark 
+        scores, fits comfortably on consumer hardware with INT4 
+        quantisation (5–6GB RAM). Best choice when VRAM is the constraint.
+      </p>
+      <div class="variant-rec">⚡ Good for: RAM-constrained devices, fast inference</div>
+    </div>
+    <div class="variant-card">
+      <h4>Orca 2 13B</h4>
+      <span class="variant-badge">microsoft/Orca-2-13b</span>
+      <p>
+        The flagship variant. Matches Llama 2 Chat 70B on reasoning 
+        benchmarks. Requires 8–10GB RAM with INT4 quantisation. 
+        This is what most evaluations refer to when citing Orca 2 results.
+      </p>
+      <div class="variant-rec">⭐ Best: Reasoning tasks with adequate hardware</div>
+    </div>
+  </div>
+
+  <!-- ── Deployment ── -->
+  <h2>Running Orca 2 Locally</h2>
+
+  <h3>Ollama (Recommended)</h3>
+  <p>
+    Orca 2 has official Ollama support, making it the easiest Orca 
+    variant to run locally for research and experimentation.
+  </p>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">bash — Ollama</span>
+    </div>
+    <pre><span class="c-comment"># Pull and run Orca 2 (13B by default)</span>
+ollama run orca2
+
+<span class="c-comment"># Explicitly select 7B for lower RAM usage</span>
+ollama run orca2:7b
+
+<span class="c-comment"># 13B variant explicitly</span>
+ollama run orca2:13b</pre>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">💡</div>
+    <div class="callout-body">
+      <strong>Hardware requirements via Ollama</strong>
+      <p>
+        <strong>Orca 2 7B:</strong> 5–6GB RAM recommended (INT4). 
+        Runs on most modern laptops with 8GB unified memory.<br />
+        <strong>Orca 2 13B:</strong> 8–10GB RAM recommended. 
+        Comfortable on 16GB systems; possible on 8GB with swap 
+        at reduced speed. See the 
+        <a href="/deploy/quickstart/">deployment quickstart</a> 
+        for platform-specific setup.
+      </p>
+    </div>
+  </div>
+
+  <h3>Prompt Format</h3>
+  <p>
+    Orca 2 uses the standard ChatML format, making it straightforward 
+    to integrate with any OpenAI-compatible library.
+  </p>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">text — Orca 2 prompt format (ChatML)</span>
+    </div>
+    <pre><span class="c-comment">&lt;|im_start|&gt;</span>system
+You are Orca, an AI language model created by Microsoft.
+You are a helpful assistant.
+<span class="c-comment">&lt;|im_end|&gt;</span>
+<span class="c-comment">&lt;|im_start|&gt;</span>user
+{user_message}
+<span class="c-comment">&lt;|im_end|&gt;</span>
+<span class="c-comment">&lt;|im_start|&gt;</span>assistant</pre>
+  </div>
+
+  <h3>Eliciting Cautious Reasoning Explicitly</h3>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">text — System prompts for different strategy modes</span>
+    </div>
+    <pre><span class="c-comment"># For reasoning tasks — encourage explicit strategy selection</span>
+You are Orca, a helpful AI assistant. Before answering, 
+identify whether this question requires step-by-step reasoning, 
+direct recall, or a simpler approach. Use the appropriate 
+strategy rather than always showing your work.
+
+<span class="c-comment"># For structured analysis tasks</span>
+You are Orca, a helpful AI assistant. For complex problems,
+break them into clear sub-steps and verify each before proceeding.
+For simple factual questions, answer directly without unnecessary elaboration.
+
+<span class="c-comment"># For educational use — always show reasoning</span>
+You are Orca, a helpful AI assistant working as a tutor.
+Always explain your reasoning step-by-step, even for simple problems,
+so the student can understand the method.</pre>
+  </div>
+
+  <div class="callout callout-orca2">
+    <div class="callout-icon">🔬</div>
+    <div class="callout-body">
+      <strong>Strategy selection is implicit, not a separate call</strong>
+      <p>
+        Unlike an agent framework where you'd explicitly route to 
+        different reasoning modules, Orca 2's strategy selection is 
+        baked into the model weights during training. The model 
+        implicitly classifies the task type and generates output 
+        appropriate to that type — you don't need to build routing 
+        logic yourself. The system prompt can nudge this behaviour 
+        but doesn't control it absolutely.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Python API Example ── -->
+  <h3>Using with Ollama's Python API</h3>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">python — ollama library</span>
+    </div>
+    <pre><span class="c-kw">import</span> ollama
+
+<span class="c-comment"># Simple reasoning query</span>
+response = ollama.<span class="c-fn">chat</span>(
+    model=<span class="c-str">'orca2:13b'</span>,
+    messages=[
+        {
+            <span class="c-str">'role'</span>: <span class="c-str">'system'</span>,
+            <span class="c-str">'content'</span>: <span class="c-str">'You are Orca, a helpful AI assistant. Select the appropriate reasoning strategy for each task.'</span>
+        },
+        {
+            <span class="c-str">'role'</span>: <span class="c-str">'user'</span>,
+            <span class="c-str">'content'</span>: <span class="c-str">'A company has 480 employees. After a merger, the workforce grows by 35% then shrinks by 20%. What is the final headcount?'</span>
+        }
+    ]
+)
+
+<span class="c-fn">print</span>(response[<span class="c-str">'message'</span>][<span class="c-str">'content'</span>])</pre>
+  </div>
+
+  <!-- ── Pros / Cons ── -->
+  <h2>Honest Assessment</h2>
+
+  <div class="versus-box">
+    <div class="versus-panel pro">
+      <h4>✓ Real Strengths</h4>
+      <ul>
+        <li>Best reasoning benchmarks at the 7B–13B scale as of its release</li>
+        <li>Strategy selection avoids over-verbose reasoning on simple tasks</li>
+        <li>Official Ollama support — trivial to run locally</li>
+        <li>Llama 2 base is more permissive than LLaMA 1</li>
+        <li>7B variant competitive with much larger models on reasoning</li>
+        <li>Clear improvement over both Orca 1 and Llama 2 Chat on benchmarks</li>
+        <li>ChatML format — integrates cleanly with standard tooling</li>
+      </ul>
+    </div>
+    <div class="versus-panel con">
+      <h4>✗ Real Limitations</h4>
+      <ul>
+        <li>Non-commercial license blocks production deployment</li>
+        <li>4K context window — severely limiting for document tasks</li>
+        <li>Llama 2 base is dated; Llama 3.x models show significantly better results</li>
+        <li>Average general conversation quality; reasoning-optimised only</li>
+        <li>Strategy routing isn't perfect — occasionally overthinks simple questions</li>
+        <li>No code-specialised variant</li>
+        <li>Not updated since November 2023</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Decision Table ── -->
+  <h2>Who Should Use Orca 2</h2>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Use case</th>
+          <th>Recommendation</th>
+          <th>Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Research into reasoning strategies</td>
+          <td class="val-orca2">Orca 2 ✓</td>
+          <td>Canonical reference for cautious reasoning methodology</td>
+        </tr>
+        <tr>
+          <td>Structured analysis, math, logic</td>
+          <td class="val-orca2">Orca 2 ✓</td>
+          <td>Purpose-built for this; best 13B results on these tasks</td>
+        </tr>
+        <tr>
+          <td>Commercial deployment</td>
+          <td><a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a></td>
+          <td>Apache 2.0; similar reasoning quality; fully commercial</td>
+        </tr>
+        <tr>
+          <td>General conversation / chatbot</td>
+          <td><a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a></td>
+          <td>Better MT-Bench scores; more naturally conversational</td>
+        </tr>
+        <tr>
+          <td>Long document processing</td>
+          <td>Llama 3.1 8B Instruct</td>
+          <td>128K context vs 4K — no comparison for document tasks</td>
+        </tr>
+        <tr>
+          <td>Best current reasoning model</td>
+          <td><a href="/chatgpt-alternatives/wizardlm/">WizardLM 2</a></td>
+          <td>More recent, larger context, stronger overall benchmarks</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Page Nav ── -->
+  <nav class="page-nav" aria-label="Page navigation">
+    <a href="/chatgpt-alternatives/orca/">← Orca</a>
+    <a href="/chatgpt-alternatives/starling/" class="next">Starling →</a>
+  </nav>
+
+</div>
+</body>
+</html>
