@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nous Hermes 2: The Community's Favorite Local AI | PrivateAI.guide</title>
+  <meta name="description" content="Nous Hermes 2 combines strong benchmark performance with a well-calibrated alignment approach — less restrictive than ChatGPT, more reliable than fully uncensored models. Available in 7B, 13B, and 34B." />
+  <link rel="canonical" href="https://privateai.guide/chatgpt-alternatives/nous-hermes/" />
+
+  <meta property="og:title" content="Nous Hermes 2: The Community's Favorite Local AI" />
+  <meta property="og:description" content="Nous Research's fine-tuned models hit a sweet spot: competitive benchmark scores, helpful without excessive refusals, Apache 2.0 licensed. Here's everything you need to know." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://privateai.guide/chatgpt-alternatives/nous-hermes/" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f1117;
+      --surface:   #1a1d27;
+      --surface-2: #22263a;
+      --border:    #2e3350;
+      --accent:    #6c8cff;
+      --accent-2:  #a78bfa;
+      --accent-3:  #34d399;
+      --warn:      #f59e0b;
+      --danger:    #ef4444;
+      --nous:      #7c3aed;
+      --nous-light:#c4b5fd;
+      --text:      #e2e8f0;
+      --muted:     #8892b0;
+      --heading:   #ffffff;
+      --radius:    12px;
+      --radius-sm: 6px;
+      --shadow:    0 4px 24px rgba(0,0,0,0.4);
+      --font:      'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      --max-w:     860px;
+      --transition: 0.2s ease;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0 1rem 4rem;
+    }
+
+    .page-wrap { max-width: var(--max-w); margin: 0 auto; }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      align-items: center; padding: 1.25rem 0;
+      font-size: 0.82rem; color: var(--muted);
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #12102a 0%, #0f1117 55%, #1a1d27 100%);
+      border: 1px solid rgba(124,58,237,0.35);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem 2rem;
+      margin-bottom: 2rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(124,58,237,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(124,58,237,0.15);
+      border: 1px solid rgba(124,58,237,0.4);
+      color: var(--nous-light);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.3rem 0.75rem; border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      font-weight: 800; color: var(--heading);
+      line-height: 1.2; margin-bottom: 0.75rem;
+    }
+    .hero h1 span { color: var(--nous-light); }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 640px; margin-bottom: 1.5rem;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap;
+      gap: 1rem; font-size: 0.82rem; color: var(--muted);
+    }
+    .hero-meta-item { display: flex; align-items: center; gap: 0.35rem; }
+    .hero-meta-item strong { color: var(--text); }
+
+    /* ── Stat Grid ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem; text-align: center;
+    }
+    .stat-val {
+      font-size: 1.7rem; font-weight: 800;
+      color: var(--nous-light); line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-lbl {
+      font-size: 0.76rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    /* ── Headings ── */
+    h2 {
+      font-size: 1.45rem; font-weight: 700;
+      color: var(--heading); margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--heading); margin: 1.5rem 0 0.6rem;
+    }
+
+    p { margin-bottom: 1rem; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; color: var(--text); }
+
+    /* ── Callouts ── */
+    .callout {
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid;
+      display: flex; gap: 0.75rem;
+    }
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-body { flex: 1; }
+    .callout-body p { margin-bottom: 0.4rem; }
+    .callout-body strong { display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
+
+    .callout-info    { background: rgba(108,140,255,0.08); border-color: var(--accent); }
+    .callout-warn    { background: rgba(245,158,11,0.08);  border-color: var(--warn); }
+    .callout-warn    .callout-icon,
+    .callout-warn    strong { color: var(--warn); }
+    .callout-danger  { background: rgba(239,68,68,0.08);   border-color: var(--danger); }
+    .callout-danger  .callout-icon,
+    .callout-danger  strong { color: var(--danger); }
+    .callout-success { background: rgba(52,211,153,0.08);  border-color: var(--accent-3); }
+    .callout-success .callout-icon,
+    .callout-success strong { color: var(--accent-3); }
+    .callout-nous    { background: rgba(124,58,237,0.08);  border-color: var(--nous); }
+    .callout-nous    .callout-icon,
+    .callout-nous    strong { color: var(--nous-light); }
+
+    /* ── Model Variant Cards ── */
+    .variant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .variant-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      transition: border-color var(--transition);
+      position: relative;
+    }
+    .variant-card:hover { border-color: var(--nous-light); }
+    .variant-card.recommended { border-color: var(--accent-3); background: rgba(52,211,153,0.03); }
+    .variant-card .badge {
+      display: inline-block;
+      font-size: 0.65rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 0.15rem 0.5rem; border-radius: 99px;
+      margin-bottom: 0.6rem;
+    }
+    .badge-green  { background: rgba(52,211,153,0.15);  color: var(--accent-3);    border: 1px solid rgba(52,211,153,0.3); }
+    .badge-purple { background: rgba(196,181,253,0.15); color: var(--nous-light);  border: 1px solid rgba(196,181,253,0.3); }
+    .badge-blue   { background: rgba(108,140,255,0.15); color: var(--accent);      border: 1px solid rgba(108,140,255,0.3); }
+    .badge-yellow { background: rgba(245,158,11,0.15);  color: var(--warn);        border: 1px solid rgba(245,158,11,0.3); }
+
+    .variant-card h4 {
+      font-size: 1rem; font-weight: 700;
+      color: var(--heading); margin-bottom: 0.4rem;
+    }
+    .variant-card .v-meta {
+      font-size: 0.8rem; color: var(--muted);
+      margin-bottom: 0.6rem; line-height: 1.5;
+    }
+    .variant-card .v-meta strong { color: var(--text); font-size: 0.82rem; display: inline; }
+    .variant-card p {
+      font-size: 0.85rem; color: var(--muted); margin: 0;
+    }
+
+    /* ── Benchmark Table ── */
+    .bench-wrap { overflow-x: auto; margin: 1.5rem 0; }
+    table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    thead th {
+      background: var(--surface-2);
+      color: var(--muted);
+      font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.75rem 1rem; text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition);
+    }
+    tbody tr:hover { background: rgba(108,140,255,0.04); }
+    tbody td { padding: 0.75rem 1rem; color: var(--text); }
+    tbody td:first-child { font-weight: 600; }
+
+    .val-green  { color: var(--accent-3); font-weight: 700; }
+    .val-yellow { color: var(--warn);     font-weight: 700; }
+    .val-red    { color: var(--danger);   font-weight: 700; }
+    .val-blue   { color: var(--accent);   font-weight: 700; }
+    .val-nous   { color: var(--nous-light); font-weight: 700; }
+    .val-muted  { color: var(--muted); font-style: italic; }
+    .row-highlight td { background: rgba(124,58,237,0.07); }
+
+    /* ── Perf Bars ── */
+    .perf-row {
+      display: flex; align-items: center;
+      gap: 1rem; margin-bottom: 0.6rem;
+    }
+    .perf-label {
+      font-size: 0.82rem; color: var(--muted);
+      width: 160px; flex-shrink: 0;
+    }
+    .perf-bar-wrap {
+      flex: 1; background: var(--surface-2);
+      border-radius: 99px; height: 8px; overflow: hidden;
+    }
+    .perf-bar { height: 100%; border-radius: 99px; }
+    .perf-val {
+      font-size: 0.82rem; font-weight: 700;
+      color: var(--text); width: 55px;
+      text-align: right; flex-shrink: 0;
+    }
+
+    /* ── Alignment Spectrum ── */
+    .spectrum-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .spectrum-title {
+      font-size: 0.82rem; font-weight: 600;
+      color: var(--muted); text-transform: uppercase;
+      letter-spacing: 0.05em; margin-bottom: 1.25rem;
+    }
+    .spectrum-track {
+      position: relative;
+      height: 8px;
+      background: linear-gradient(to right, var(--danger) 0%, var(--warn) 40%, var(--accent-3) 100%);
+      border-radius: 99px;
+      margin-bottom: 2rem;
+    }
+    .spectrum-markers {
+      display: flex; justify-content: space-between;
+      margin-top: 0.5rem;
+      font-size: 0.75rem; color: var(--muted);
+    }
+    .spectrum-pin {
+      position: absolute;
+      top: -4px;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .spectrum-pin .pin-dot {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      margin-bottom: 0.3rem;
+    }
+    .spectrum-pin .pin-label {
+      font-size: 0.7rem; font-weight: 700;
+      white-space: nowrap;
+      color: var(--heading);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 0.15rem 0.4rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ── Code Blocks ── */
+    .code-block {
+      background: #0d0f17;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin: 1.25rem 0; overflow: hidden;
+    }
+    .code-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.6rem 1rem;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.78rem; color: var(--muted);
+    }
+    .code-header .lang { font-weight: 600; color: var(--nous-light); }
+    pre {
+      padding: 1.25rem; overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 0.85rem; line-height: 1.6;
+      color: #c9d1e0;
+    }
+    .c-comment { color: #546e7a; }
+    .c-str     { color: #a3be8c; }
+    .c-kw      { color: #a78bfa; }
+    .c-num     { color: #f59e0b; }
+    .c-fn      { color: #4da3e8; }
+    .c-var     { color: #c4b5fd; }
+
+    /* ── Versus Box ── */
+    .versus-box {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    @media (max-width: 540px) { .versus-box { grid-template-columns: 1fr; } }
+    .versus-panel {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+    }
+    .versus-panel h4 {
+      font-size: 0.85rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 0.75rem;
+    }
+    .versus-panel.pro h4 { color: var(--accent-3); }
+    .versus-panel.con h4 { color: var(--danger); }
+    .versus-panel ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+    .versus-panel li {
+      font-size: 0.88rem; color: var(--text);
+      display: flex; align-items: flex-start; gap: 0.5rem;
+    }
+    .versus-panel.pro li::before { content: '✓'; color: var(--accent-3); flex-shrink: 0; }
+    .versus-panel.con li::before { content: '✗'; color: var(--danger); flex-shrink: 0; }
+
+    /* ── Use Case Grid ── */
+    .use-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .use-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+    }
+    .use-card .use-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .use-card h4 {
+      font-size: 0.95rem; font-weight: 600;
+      color: var(--heading); margin-bottom: 0.4rem;
+    }
+    .use-card p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+    /* ── System Prompt Box ── */
+    .prompt-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--nous);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .prompt-box .prompt-label {
+      font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--nous-light); margin-bottom: 0.6rem;
+    }
+    .prompt-box pre {
+      padding: 0; background: none;
+      font-size: 0.85rem; color: var(--text);
+      white-space: pre-wrap; word-break: break-word;
+    }
+
+    /* ── Page Nav ── */
+    .page-nav {
+      display: flex; justify-content: space-between;
+      gap: 1rem; margin-top: 3rem; padding-top: 2rem;
+      border-top: 1px solid var(--border); flex-wrap: wrap;
+    }
+    .page-nav a {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 0.75rem 1.25rem;
+      font-size: 0.88rem; font-weight: 600; color: var(--text);
+      text-decoration: none;
+      transition: border-color var(--transition), color var(--transition);
+      flex: 1; min-width: 160px;
+    }
+    .page-nav a:hover { border-color: var(--nous-light); color: var(--nous-light); }
+    .page-nav a.next { justify-content: flex-end; text-align: right; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 1.75rem 1.25rem 1.5rem; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Nous Hermes 2: The Community's Favorite Local AI",
+    "description": "Complete guide to Nous Hermes 2 — covering all model variants, benchmark performance, alignment philosophy, and deployment via Ollama.",
+    "author": { "@type": "Organization", "name": "PrivateAI.guide" },
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-07-14"
+  }
+  </script>
+</head>
+
+<body>
+<div class="page-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/chatgpt-alternatives/">ChatGPT Alternatives</a>
+    <span>›</span>
+    <span>Nous Hermes 2</span>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="hero">
+    <div class="hero-badge">🟣 Nous Research</div>
+    <h1>Nous Hermes 2: <span>The Community Sweet Spot</span></h1>
+    <p class="hero-sub">
+      Nous Research found the middle ground most labs miss: a model that follows 
+      instructions reliably, refuses fewer legitimate requests than ChatGPT, and 
+      still scores competitively on hard benchmarks. Available in 7B, 13B, and 
+      34B — all Apache 2.0, all local-first.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">🏢 <strong>Creator:</strong> Nous Research</div>
+      <div class="hero-meta-item">🧱 <strong>Base Models:</strong> Mistral 7B, Llama 2 13B/34B</div>
+      <div class="hero-meta-item">📅 <strong>Released:</strong> Late 2023 (v2 series)</div>
+      <div class="hero-meta-item">⚖️ <strong>License:</strong> Apache 2.0</div>
+      <div class="hero-meta-item">🪟 <strong>Context:</strong> 4K–32K tokens (varies by variant)</div>
+      <div class="hero-meta-item">💾 <strong>Min RAM (7B INT4):</strong> 6GB</div>
+    </div>
+  </header>
+
+  <!-- ── Stats ── -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-val">3</div>
+      <div class="stat-lbl">Size Variants</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">~64%</div>
+      <div class="stat-lbl">MMLU (7B)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">7.7</div>
+      <div class="stat-lbl">MT-Bench (7B)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">Apache 2</div>
+      <div class="stat-lbl">License</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">300K+</div>
+      <div class="stat-lbl">Training Samples</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">ChatML</div>
+      <div class="stat-lbl">Prompt Format</div>
+    </div>
+  </div>
+
+  <!-- ── What Is Nous Hermes ── -->
+  <h2>What Is Nous Hermes 2?</h2>
+  <p>
+    Nous Research is a small, community-oriented AI lab that built its 
+    reputation by asking a deceptively simple question: <em>can we fine-tune 
+    open-weight base models better than the base model labs themselves?</em> 
+    For the Hermes series, the answer has consistently been yes.
+  </p>
+  <p>
+    Nous Hermes 2 is a family of instruction-tuned models fine-tuned on 
+    a large, carefully curated dataset that Nous Research assembled from 
+    synthetic and human sources. The training data — often referred to 
+    informally as the "Nous dataset" — emphasizes reasoning depth, 
+    instruction diversity, and what the team calls "thoughtful alignment": 
+    safety behaviors that reflect actual harm potential rather than 
+    blanket topic refusals.
+  </p>
+  <p>
+    The practical result is a model that feels more like a knowledgeable 
+    colleague than a corporate chatbot. It will discuss topics that trigger 
+    ChatGPT's refusal filters, provided the context is reasonable. It also 
+    scores notably well on MT-Bench's multi-turn coherence tests, where 
+    maintaining conversational context across a long exchange matters more 
+    than raw knowledge recall.
+  </p>
+
+  <div class="callout callout-nous">
+    <div class="callout-icon">🟣</div>
+    <div class="callout-body">
+      <strong>Why the community converged on Nous Hermes</strong>
+      <p>
+        Between 2023 and 2024, several local AI leaderboards showed Nous Hermes 2 
+        outperforming the official Llama 2 Chat and Mistral Instruct fine-tunes 
+        on MT-Bench — despite using the same base weights. The difference was 
+        entirely in the fine-tuning dataset and training approach. This made 
+        Nous Research the go-to source for "better than official" model variants 
+        and drove significant community adoption.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Model Variants ── -->
+  <h2>Model Variants: Which One to Use</h2>
+  <p>
+    Nous Hermes 2 is not a single model — it's a family of fine-tunes 
+    across different base models and sizes. Choose based on your 
+    available hardware and use case.
+  </p>
+
+  <div class="variant-grid">
+    <div class="variant-card recommended">
+      <span class="badge badge-green">Most Popular</span>
+      <h4>Nous Hermes 2 Mistral 7B DPO</h4>
+      <div class="v-meta">
+        <strong>Base:</strong> Mistral 7B v0.1 &nbsp;|&nbsp;
+        <strong>Context:</strong> 32K<br>
+        <strong>RAM (INT4):</strong> ~5–6GB &nbsp;|&nbsp;
+        <strong>Ollama tag:</strong> <code>nous-hermes2</code>
+      </div>
+      <p>
+        The default choice for most users. Mistral's strong base + Nous 
+        fine-tuning + DPO alignment. Best balance of quality, speed, and 
+        hardware requirements. Runs comfortably on 8GB RAM machines.
+      </p>
+    </div>
+
+    <div class="variant-card">
+      <span class="badge badge-purple">Step Up</span>
+      <h4>Nous Hermes 2 Llama 2 13B</h4>
+      <div class="v-meta">
+        <strong>Base:</strong> Llama 2 13B &nbsp;|&nbsp;
+        <strong>Context:</strong> 4K<br>
+        <strong>RAM (INT4):</strong> ~9–10GB &nbsp;|&nbsp;
+        <strong>Ollama tag:</strong> <code>nous-hermes2:13b</code>
+      </div>
+      <p>
+        Noticeably better reasoning and writing quality than the 7B. 
+        The 4K context window is a real limitation for long documents. 
+        Best for users with 16GB RAM who want improved quality without 
+        going to 34B.
+      </p>
+    </div>
+
+    <div class="variant-card">
+      <span class="badge badge-blue">Power User</span>
+      <h4>Nous Hermes 2 Yi 34B</h4>
+      <div class="v-meta">
+        <strong>Base:</strong> Yi 34B &nbsp;|&nbsp;
+        <strong>Context:</strong> 200K<br>
+        <strong>RAM (INT4):</strong> ~22–24GB &nbsp;|&nbsp;
+        <strong>Ollama tag:</strong> <code>nous-hermes2-yi-34b</code>
+      </div>
+      <p>
+        The flagship. Yi 34B's enormous context window combined with Nous 
+        fine-tuning makes this exceptional for long-document analysis. 
+        Requires significant RAM — 32GB+ recommended. Approaches GPT-3.5 
+        territory on reasoning benchmarks.
+      </p>
+    </div>
+
+    <div class="variant-card">
+      <span class="badge badge-yellow">Specialized</span>
+      <h4>Nous Hermes 2 Mixtral 8×7B</h4>
+      <div class="v-meta">
+        <strong>Base:</strong> Mixtral MoE &nbsp;|&nbsp;
+        <strong>Context:</strong> 32K<br>
+        <strong>RAM (INT4):</strong> ~28–30GB &nbsp;|&nbsp;
+        <strong>Ollama tag:</strong> <code>nous-hermes2-mixtral</code>
+      </div>
+      <p>
+        Mixture-of-Experts architecture — inference activates only 2 of 
+        8 expert layers per token, giving near-13B inference cost with 
+        near-70B quality on some tasks. Needs 32GB RAM. Worth it for 
+        users who have the hardware.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Alignment Spectrum ── -->
+  <h2>Understanding the Alignment Approach</h2>
+  <p>
+    One of the most common questions about Nous Hermes 2 is where it sits 
+    on the spectrum between "refuses everything" and "no guardrails at all." 
+    The answer matters for legitimate professional use cases.
+  </p>
+
+  <div class="spectrum-wrap">
+    <div class="spectrum-title">Alignment Spectrum — Local Models vs. Cloud</div>
+    <div class="spectrum-track">
+      <!-- GPT-4 -->
+      <div class="spectrum-pin" style="left: 88%;">
+        <div class="pin-dot" style="background: var(--danger);"></div>
+        <div class="pin-label">GPT-4o</div>
+      </div>
+      <!-- ChatGPT 3.5 -->
+      <div class="spectrum-pin" style="left: 78%;">
+        <div class="pin-dot" style="background: var(--warn);"></div>
+        <div class="pin-label">GPT-3.5</div>
+      </div>
+      <!-- Nous Hermes -->
+      <div class="spectrum-pin" style="left: 55%;">
+        <div class="pin-dot" style="background: var(--nous-light);"></div>
+        <div class="pin-label">Nous Hermes 2</div>
+      </div>
+      <!-- Zephyr -->
+      <div class="spectrum-pin" style="left: 44%;">
+        <div class="pin-dot" style="background: var(--accent);"></div>
+        <div class="pin-label">Zephyr 7B</div>
+      </div>
+      <!-- Dolphin -->
+      <div class="spectrum-pin" style="left: 15%;">
+        <div class="pin-dot" style="background: var(--accent-3);"></div>
+        <div class="pin-label">Dolphin</div>
+      </div>
+    </div>
+    <div class="spectrum-markers">
+      <span>← Fewer refusals / uncensored</span>
+      <span>More refusals / restricted →</span>
+    </div>
+  </div>
+
+  <p>
+    Nous Hermes 2 lands in a deliberate middle zone. It will discuss 
+    security topics, legal gray areas, mature content in appropriate 
+    contexts, and competitive intelligence without the reflexive 
+    hedging ChatGPT applies. It will not assist with clearly harmful 
+    requests. The Nous team describes this as "not treating users like 
+    children while still having a conscience."
+  </p>
+  <p>
+    For most professional use cases — writing, research, analysis, coding, 
+    summarization — the alignment difference from ChatGPT is invisible. 
+    You only notice it when you're doing work that triggers ChatGPT's 
+    overly cautious filters: security research, competitive analysis, 
+    medical professional queries, fiction with mature themes, or 
+    frank discussion of controversial topics.
+  </p>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <strong>Not a replacement for Dolphin or fully uncensored models</strong>
+      <p>
+        If your use case specifically requires a model with all RLHF constraints 
+        removed, Nous Hermes 2 is not that model. It has alignment — it's just 
+        more calibrated than ChatGPT's. For genuinely unconstrained inference, 
+        see the <a href="/chatgpt-alternatives/dolphin/">Dolphin page</a>. 
+        For most users, Nous Hermes 2's balance is actually preferable: 
+        useful without requiring constant jailbreaking, reliable without 
+        excessive refusals.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Benchmarks ── -->
+  <h2>Benchmark Performance</h2>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>MMLU</th>
+          <th>MT-Bench</th>
+          <th>HumanEval</th>
+          <th>Context</th>
+          <th>License</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GPT-4o</td>
+          <td class="val-green">88.7%</td>
+          <td class="val-green">9.1/10</td>
+          <td class="val-green">90.2%</td>
+          <td>128K</td>
+          <td class="val-muted">Proprietary</td>
+        </tr>
+        <tr>
+          <td>GPT-3.5 Turbo</td>
+          <td class="val-green">70.0%</td>
+          <td class="val-yellow">7.9/10</td>
+          <td class="val-yellow">72.5%</td>
+          <td>16K</td>
+          <td class="val-muted">Proprietary</td>
+        </tr>
+        <tr>
+          <td>Llama 3.1 8B Instruct</td>
+          <td class="val-green">73.0%</td>
+          <td class="val-green">8.2/10</td>
+          <td class="val-yellow">62.0%</td>
+          <td>128K</td>
+          <td>Llama 3.1</td>
+        </tr>
+        <tr class="row-highlight">
+          <td><strong>Nous Hermes 2 Mistral 7B</strong></td>
+          <td class="val-nous">63.8%</td>
+          <td class="val-nous">7.7/10</td>
+          <td class="val-yellow">47.0%</td>
+          <td>32K</td>
+          <td class="val-green">Apache 2.0</td>
+        </tr>
+        <tr class="row-highlight">
+          <td><strong>Nous Hermes 2 Yi 34B</strong></td>
+          <td class="val-nous">74.8%</td>
+          <td class="val-nous">8.4/10</td>
+          <td class="val-yellow">58.0%</td>
+          <td>200K</td>
+          <td class="val-green">Apache 2.0</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/zephyr/">Zephyr 7B β</a></td>
+          <td class="val-yellow">61.4%</td>
+          <td class="val-yellow">7.3/10</td>
+          <td class="val-yellow">42.0%</td>
+          <td>32K</td>
+          <td class="val-green">MIT</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a></td>
+          <td class="val-yellow">64.3%</td>
+          <td class="val-yellow">7.8/10</td>
+          <td class="val-yellow">55.0%</td>
+          <td>8K</td>
+          <td class="val-green">Apache 2.0</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/dolphin/">Dolphin 2.9 7B</a></td>
+          <td class="val-yellow">61.5%</td>
+          <td class="val-yellow">7.1/10</td>
+          <td class="val-yellow">44.0%</td>
+          <td>32K</td>
+          <td class="val-green">Apache 2.0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Two numbers stand out: the <strong>Nous Hermes 2 Yi 34B hits 74.8% MMLU</strong> — 
+    higher than GPT-3.5 Turbo and within striking distance of Llama 3.1 8B, on a 
+    fully local, Apache 2.0 model. The 7B variant's <strong>7.7 MT-Bench</strong> 
+    score is above Zephyr and Dolphin and competitive with OpenChat, despite 
+    using an older Mistral base. Nous's fine-tuning genuinely moves the needle.
+  </p>
+
+  <h3>Capability Profile (7B Variant)</h3>
+
+  <div class="perf-row">
+    <div class="perf-label">General Q&amp;A</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:80%; background:var(--accent-3);"></div></div>
+    <div class="perf-val">Strong</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Instruction following</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:82%; background:var(--accent-3);"></div></div>
+    <div class="perf-val">Strong</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Multi-turn coherence</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:79%; background:var(--accent-3);"></div></div>
+    <div class="perf-val">Strong</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Code generation</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:55%; background:var(--warn);"></div></div>
+    <div class="perf-val">Average</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Creative writing</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:76%; background:var(--accent-3);"></div></div>
+    <div class="perf-val">Good</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Reasoning / logic</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:66%; background:var(--accent);"></div></div>
+    <div class="perf-val">Good</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Long-doc analysis (34B)</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:88%; background:var(--accent-3);"></div></div>
+    <div class="perf-val">Excellent</div>
+  </div>
+  <div class="perf-row">
+    <div class="perf-label">Refusal calibration</div>
+    <div class="perf-bar-wrap"><div class="perf-bar" style="width:85%; background:var(--nous-light);"></div></div>
+    <div class="perf-val">Best-in-class</div>
+  </div>
+
+  <!-- ── Pros / Cons ── -->
+  <h2>Honest Strengths and Weaknesses</h2>
+  <div class="versus-box">
+    <div class="versus-panel pro">
+      <h4>✓ Real Strengths</h4>
+      <ul>
+        <li>MT-Bench scores consistently beat official Llama/Mistral fine-tunes at same size</li>
+        <li>Alignment calibrated for professional use — fewer false refusals</li>
+        <li>Apache 2.0 on all variants — full commercial use</li>
+        <li>ChatML prompt format is widely supported across tooling</li>
+        <li>34B Yi variant has 200K context — best-in-class for local models</li>
+        <li>Active community with regular new variants and improvements</li>
+        <li>Nous Research transparent about training data and methodology</li>
+        <li>Multi-turn coherence among the best at 7B scale</li>
+      </ul>
+    </div>
+    <div class="versus-panel con">
+      <h4>✗ Real Limitations</h4>
+      <ul>
+        <li>7B variant HumanEval (47%) is below OpenChat and Llama 3.1 for coding</li>
+        <li>13B uses Llama 2 base — 4K context is limiting for long documents</li>
+        <li>34B requires 24–32GB RAM — not accessible on most laptops</li>
+        <li>Mixtral variant needs 32GB+ and is complex to set up well</li>
+        <li>Less frequently updated than Meta or Mistral's official models</li>
+        <li>No official API — community support only</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Deployment ── -->
+  <h2>Deployment: Ollama Quickstart</h2>
+  <p>
+    The fastest path to running Nous Hermes 2 is via Ollama. All four 
+    major variants are available in the Ollama library. See our 
+    <a href="/deploy/quickstart/">Quickstart guide</a> for Ollama 
+    installation instructions.
+  </p>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">bash — Ollama</span>
+    </div>
+    <pre><span class="c-comment"># 7B — default, runs on 8GB RAM</span>
+ollama run nous-hermes2
+
+<span class="c-comment"># 13B — better quality, needs ~16GB RAM</span>
+ollama run nous-hermes2:13b
+
+<span class="c-comment"># 34B Yi — long context flagship, needs ~32GB RAM</span>
+ollama run nous-hermes2-yi-34b
+
+<span class="c-comment"># Mixtral MoE — needs ~32GB RAM, high quality</span>
+ollama run nous-hermes2-mixtral</pre>
+  </div>
+
+  <h3>ChatML Prompt Format</h3>
+  <p>
+    Nous Hermes 2 uses the <strong>ChatML</strong> format — the same format 
+    used by OpenAI's API. This is a significant practical advantage: 
+    any code written for the OpenAI API needs minimal changes to work 
+    with Nous Hermes 2 via an Ollama-backed OpenAI-compatible endpoint.
+  </p>
+
+  <div class="prompt-box">
+    <div class="prompt-label">ChatML Format — Nous Hermes 2</div>
+    <pre>&lt;|im_start|&gt;system
+You are a helpful AI assistant specialized in data privacy law.&lt;|im_end|&gt;
+&lt;|im_start|&gt;user
+What are the key differences between GDPR and CCPA?&lt;|im_end|&gt;
+&lt;|im_start|&gt;assistant</pre>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">python — Python with Ollama REST API</span>
+      <span>chat.py</span>
+    </div>
+    <pre><span class="c-kw">import</span> requests, json
+
+<span class="c-var">OLLAMA_URL</span> = <span class="c-str">"http://localhost:11434/api/chat"</span>
+
+<span class="c-kw">def</span> <span class="c-fn">chat</span>(messages: list, model: str = <span class="c-str">"nous-hermes2"</span>) -> str:
+    payload = {
+        <span class="c-str">"model"</span>: model,
+        <span class="c-str">"messages"</span>: messages,
+        <span class="c-str">"stream"</span>: <span class="c-kw">False</span>,
+        <span class="c-str">"options"</span>: {
+            <span class="c-str">"temperature"</span>: <span class="c-num">0.7</span>,
+            <span class="c-str">"num_ctx"</span>: <span class="c-num">8192</span>,
+        }
+    }
+    r = requests.post(<span class="c-var">OLLAMA_URL</span>, json=payload)
+    r.raise_for_status()
+    <span class="c-kw">return</span> r.json()[<span class="c-str">"message"</span>][<span class="c-str">"content"</span>]
+
+<span class="c-comment"># Example: privacy policy analysis</span>
+messages = [
+    {
+        <span class="c-str">"role"</span>: <span class="c-str">"system"</span>,
+        <span class="c-str">"content"</span>: <span class="c-str">"You are an expert in data privacy compliance."</span>
+    },
+    {
+        <span class="c-str">"role"</span>: <span class="c-str">"user"</span>,
+        <span class="c-str">"content"</span>: <span class="c-str">"Summarize the user rights under GDPR in plain English."</span>
+    }
+]
+
+response = <span class="c-fn">chat</span>(messages)
+<span class="c-kw">print</span>(response)</pre>
+  </div>
+
+  <div class="callout callout-success">
+    <div class="callout-icon">✅</div>
+    <div class="callout-body">
+      <strong>OpenAI-compatible endpoint via Ollama</strong>
+      <p>
+        Ollama exposes an OpenAI-compatible endpoint at 
+        <code>http://localhost:11434/v1/chat/completions</code>. 
+        Set your OpenAI client's <code>base_url</code> to that address 
+        and <code>model</code> to <code>nous-hermes2</code> — no other 
+        code changes needed. This makes Nous Hermes 2 a near-seamless 
+        drop-in for ChatGPT in existing applications.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Use Cases ── -->
+  <h2>Best Use Cases</h2>
+
+  <div class="use-grid">
+    <div class="use-card">
+      <div class="use-icon">⚖️</div>
+      <h4>Legal &amp; Compliance Research</h4>
+      <p>
+        Discuss contract language, regulatory requirements, and case 
+        precedents without ChatGPT's reflexive "consult a lawyer" 
+        deflections on every sentence. The 34B Yi variant with its 
+        200K context handles full contract documents.
+      </p>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🔬</div>
+      <h4>Medical &amp; Scientific Discussion</h4>
+      <p>
+        Healthcare professionals need frank clinical discussion. Nous 
+        Hermes 2 handles medical terminology, drug interactions, and 
+        diagnostic reasoning without excessive disclaimers that 
+        make the tool useless for professional context.
+      </p>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🛡️</div>
+      <h4>Security Research</h4>
+      <p>
+        Discuss vulnerability classes, attack patterns, and defensive 
+        tooling without constant refusals. Nous Hermes 2 understands 
+        the difference between offensive security education and 
+        operational attack assistance.
+      </p>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">✍️</div>
+      <h4>Creative &amp; Long-Form Writing</h4>
+      <p>
+        Fiction with moral complexity, competitive analysis, 
+        persuasive writing for both sides of an argument — Nous 
+        Hermes 2 engages with the actual task rather than refusing 
+        based on topic keywords.
+      </p>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">🏢</div>
+      <h4>Private Enterprise Deployments</h4>
+      <p>
+        ChatML format + Apache 2.0 + strong MT-Bench scores make 
+        this an excellent internal assistant model. Deploy behind 
+        your firewall on existing hardware with no per-token costs 
+        or data egress concerns.
+      </p>
+    </div>
+    <div class="use-card">
+      <div class="use-icon">📄</div>
+      <h4>Long Document Analysis (34B)</h4>
+      <p>
+        The Yi 34B variant's 200K context window is exceptional for 
+        analyzing full contracts, research papers, codebases, or 
+        lengthy reports in a single context — a capability that 
+        requires GPT-4 Turbo in the cloud.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── System Prompt Advice ── -->
+  <h2>Getting the Most Out of Nous Hermes 2</h2>
+  <p>
+    Nous Hermes 2 responds well to specific system prompts. Unlike 
+    ChatGPT, where system prompts are often overridden by safety 
+    layers, the system prompt in Nous Hermes 2 is genuinely authoritative 
+    — the model takes it seriously throughout the conversation.
+  </p>
+
+  <h3>Effective System Prompt Patterns</h3>
+
+  <div class="prompt-box">
+    <div class="prompt-label">For Professional / Domain Expert Use</div>
+    <pre>You are an expert [domain] professional assisting [role description].
+Provide direct, detailed responses. Assume the user has professional
+background in this field. Avoid excessive disclaimers.</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-label">For Document Analysis (34B)</div>
+    <pre>You are a careful document analyst. When given documents, extract
+key information accurately. Cite specific sections when making claims.
+If information is absent from the document, say so explicitly rather
+than inferring.</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-label">For Structured Output</div>
+    <pre>You are a structured data extraction assistant. Always respond with
+valid JSON matching the schema provided by the user. Do not include
+explanatory text outside the JSON object.</pre>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">💡</div>
+    <div class="callout-body">
+      <strong>Temperature guidance</strong>
+      <p>
+        For factual analysis and document work, use <code>temperature: 0.3–0.5</code>. 
+        For creative writing and brainstorming, <code>0.7–0.9</code> produces 
+        more varied and interesting outputs. Nous Hermes 2 is more sensitive 
+        to temperature settings than many other models — the difference 
+        between 0.3 and 0.8 is noticeable.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── When to choose something else ── -->
+  <h2>When to Choose Something Else</h2>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Your Situation</th>
+          <th>Better Choice</th>
+          <th>Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Primary use is coding</td>
+          <td><!-- STUB: /chatgpt-alternatives/wizardlm/ --><a href="#">WizardLM</a> or Llama 3.1 8B</td>
+          <td>HumanEval scores 10–15% higher; better at multi-file reasoning</td>
+        </tr>
+        <tr>
+          <td>Need maximum reasoning depth</td>
+          <td><a href="/chatgpt-alternatives/orca-2/">Orca 2</a></td>
+          <td>Microsoft's step-by-step reasoning training outperforms on logic tasks</td>
+        </tr>
+        <tr>
+          <td>Need fully unconstrained output</td>
+          <td><a href="/chatgpt-alternatives/dolphin/">Dolphin 2.9</a></td>
+          <td>Nous Hermes 2 still has calibrated alignment; Dolphin has none</td>
+        </tr>
+        <tr>
+          <td>4GB RAM machine</td>
+          <td><a href="/chatgpt-alternatives/neural-chat/">Neural Chat 7B INT4</a></td>
+          <td>Neural Chat runs on tighter hardware with Intel optimization</td>
+        </tr>
+        <tr>
+          <td>Want simplest possible setup</td>
+          <td><a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a></td>
+          <td>Comparable quality, one-command Ollama install, slightly better coding</td>
+        </tr>
+        <tr>
+          <td>Need voice transcription</td>
+          <td><a href="/chatgpt-alternatives/whisper/">Whisper</a></td>
+          <td>Different task entirely — Nous Hermes is text-in/text-out only</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Page Nav ── -->
+  <nav class="page-nav" aria-label="Page navigation">
+    <a href="/chatgpt-alternatives/neural-chat/">← Neural Chat</a>
+    <a href="/chatgpt-alternatives/openchat/" class="next">OpenChat →</a>
+  </nav>
+
+</div>
+</body>
+</html>
