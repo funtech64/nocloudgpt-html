@@ -1,1 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vicuna: The Model That Proved Fine-Tuning Works | PrivateAI.guide</title>
+  <meta name="description" content="Vicuna from LMSYS showed in March 2023 that fine-tuning Llama on 70K ShareGPT conversations produces a model that beats Alpaca and approaches GPT-3.5 quality. Learn its history, limitations, and when to use it today." />
+  <link rel="canonical" href="https://privateai.guide/chatgpt-alternatives/vicuna/" />
 
+  <meta property="og:title" content="Vicuna: The Model That Proved Fine-Tuning Works" />
+  <meta property="og:description" content="LMSYS fine-tuned Llama on 70K real ChatGPT conversations in March 2023 and changed what the open-source community believed was possible. The history, benchmarks, and honest assessment of Vicuna today." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://privateai.guide/chatgpt-alternatives/vicuna/" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0f1117;
+      --surface:      #1a1d27;
+      --surface-2:    #22263a;
+      --border:       #2e3350;
+      --accent:       #6c8cff;
+      --accent-2:     #a78bfa;
+      --accent-3:     #34d399;
+      --warn:         #f59e0b;
+      --danger:       #ef4444;
+      --vicuna:       #14b8a6;
+      --vicuna-dk:    #0d9488;
+      --vicuna-lt:    #99f6e4;
+      --text:         #e2e8f0;
+      --muted:        #8892b0;
+      --heading:      #ffffff;
+      --radius:       12px;
+      --radius-sm:    6px;
+      --shadow:       0 4px 24px rgba(0,0,0,0.4);
+      --font:         'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-mono:    'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      --max-w:        860px;
+      --transition:   0.2s ease;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0 1rem 4rem;
+    }
+
+    .page-wrap { max-width: var(--max-w); margin: 0 auto; }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      align-items: center; padding: 1.25rem 0;
+      font-size: 0.82rem; color: var(--muted);
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #001a18 0%, #0f1117 55%, #1a1d27 100%);
+      border: 1px solid rgba(20,184,166,0.35);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem 2rem;
+      margin-bottom: 2rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(20,184,166,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(20,184,166,0.12);
+      border: 1px solid rgba(20,184,166,0.35);
+      color: var(--vicuna-lt);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.3rem 0.75rem; border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      font-weight: 800; color: var(--heading);
+      line-height: 1.2; margin-bottom: 0.75rem;
+    }
+    .hero h1 span { color: var(--vicuna-lt); }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 640px; margin-bottom: 1.5rem;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap;
+      gap: 1rem; font-size: 0.82rem; color: var(--muted);
+    }
+    .hero-meta-item { display: flex; align-items: center; gap: 0.35rem; }
+    .hero-meta-item strong { color: var(--text); }
+
+    /* ── Stat Grid ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem; text-align: center;
+    }
+    .stat-val {
+      font-size: 1.7rem; font-weight: 800;
+      color: var(--vicuna-lt); line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-lbl {
+      font-size: 0.76rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    /* ── Headings ── */
+    h2 {
+      font-size: 1.45rem; font-weight: 700;
+      color: var(--heading); margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 { font-size: 1.1rem; font-weight: 600; color: var(--heading); margin: 1.5rem 0 0.6rem; }
+
+    p { margin-bottom: 1rem; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; color: var(--text); }
+    code {
+      font-family: var(--font-mono); font-size: 0.85em;
+      background: var(--surface-2); border: 1px solid var(--border);
+      padding: 0.1em 0.4em; border-radius: var(--radius-sm);
+      color: var(--vicuna-lt);
+    }
+
+    /* ── Callouts ── */
+    .callout {
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid;
+      display: flex; gap: 0.75rem;
+    }
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-body { flex: 1; }
+    .callout-body p { margin-bottom: 0.4rem; }
+    .callout-body strong { display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
+
+    .callout-info    { background: rgba(108,140,255,0.08); border-color: var(--accent); }
+    .callout-info    .callout-icon, .callout-info strong { color: var(--accent); }
+    .callout-warn    { background: rgba(245,158,11,0.08);  border-color: var(--warn); }
+    .callout-warn    .callout-icon, .callout-warn strong { color: var(--warn); }
+    .callout-danger  { background: rgba(239,68,68,0.08);   border-color: var(--danger); }
+    .callout-danger  .callout-icon, .callout-danger strong { color: var(--danger); }
+    .callout-success { background: rgba(52,211,153,0.08);  border-color: var(--accent-3); }
+    .callout-success .callout-icon, .callout-success strong { color: var(--accent-3); }
+    .callout-vicuna  { background: rgba(20,184,166,0.08);  border-color: var(--vicuna); }
+    .callout-vicuna  .callout-icon, .callout-vicuna strong { color: var(--vicuna-lt); }
+
+    /* ── Timeline ── */
+    .timeline { margin: 1.5rem 0; position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 18px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--vicuna), transparent);
+    }
+    .tl-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+    .tl-dot {
+      width: 38px; height: 38px;
+      background: rgba(20,184,166,0.15);
+      border: 2px solid var(--vicuna);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      z-index: 1; flex-shrink: 0;
+    }
+    .tl-body {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.9rem 1.1rem;
+    }
+    .tl-date {
+      font-size: 0.75rem; color: var(--vicuna-lt);
+      font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; margin-bottom: 0.25rem;
+    }
+    .tl-title { font-size: 0.95rem; font-weight: 700; color: var(--heading); margin-bottom: 0.3rem; }
+    .tl-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── Benchmark Table ── */
+    .bench-wrap { overflow-x: auto; margin: 1.5rem 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    thead th {
+      background: var(--surface-2); color: var(--muted);
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 0.75rem 1rem; text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background var(--transition); }
+    tbody tr:hover { background: rgba(20,184,166,0.03); }
+    tbody td { padding: 0.75rem 1rem; color: var(--text); }
+    tbody td:first-child { font-weight: 600; }
+
+    .val-green   { color: var(--accent-3);   font-weight: 700; }
+    .val-yellow  { color: var(--warn);       font-weight: 700; }
+    .val-red     { color: var(--danger);     font-weight: 700; }
+    .val-blue    { color: var(--accent);     font-weight: 700; }
+    .val-vicuna  { color: var(--vicuna-lt);  font-weight: 700; }
+    .val-muted   { color: var(--muted);      font-style: italic; }
+    .row-hl td   { background: rgba(20,184,166,0.05); }
+
+    /* ── Versus Box ── */
+    .versus-box { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    @media (max-width: 540px) { .versus-box { grid-template-columns: 1fr; } }
+    .versus-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+    .versus-panel h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+    .versus-panel.pro h4 { color: var(--accent-3); }
+    .versus-panel.con h4 { color: var(--danger); }
+    .versus-panel ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+    .versus-panel li { font-size: 0.88rem; color: var(--text); display: flex; align-items: flex-start; gap: 0.5rem; }
+    .versus-panel.pro li::before { content: '✓'; color: var(--accent-3); flex-shrink: 0; }
+    .versus-panel.con li::before { content: '✗'; color: var(--danger); flex-shrink: 0; }
+
+    /* ── Code Blocks ── */
+    .code-block { background: #0d0f17; border: 1px solid var(--border); border-radius: var(--radius); margin: 1.25rem 0; overflow: hidden; }
+    .code-header { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; background: var(--surface-2); border-bottom: 1px solid var(--border); font-size: 0.78rem; color: var(--muted); }
+    .code-header .lang { font-weight: 600; color: var(--vicuna-lt); }
+    pre { padding: 1.25rem; overflow-x: auto; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.6; color: #c9d1e0; }
+    .c-comment { color: #546e7a; }
+    .c-str     { color: #a3be8c; }
+    .c-kw      { color: #a78bfa; }
+    .c-num     { color: #f59e0b; }
+    .c-fn      { color: #4da3e8; }
+    .c-var     { color: var(--vicuna-lt); }
+
+    /* ── Version Comparison ── */
+    .version-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .version-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .version-card.recommended { border-color: rgba(20,184,166,0.4); }
+    .version-tag {
+      display: inline-block; font-size: 0.72rem; font-weight: 700;
+      padding: 0.2rem 0.55rem; border-radius: 99px;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      margin-bottom: 0.6rem;
+    }
+    .version-tag.hist  { background: rgba(108,140,255,0.12); color: var(--accent); border: 1px solid rgba(108,140,255,0.25); }
+    .version-tag.curr  { background: rgba(20,184,166,0.12);  color: var(--vicuna-lt); border: 1px solid rgba(20,184,166,0.25); }
+    .version-tag.avoid { background: rgba(239,68,68,0.12);   color: var(--danger); border: 1px solid rgba(239,68,68,0.25); }
+    .version-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--heading); margin-bottom: 0.4rem; }
+    .version-card ul { list-style: none; padding: 0; margin: 0; }
+    .version-card li { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.3rem; display: flex; gap: 0.4rem; }
+    .version-card li::before { content: '·'; flex-shrink: 0; }
+
+    /* ── Decision Table ── */
+    .decision-table { overflow-x: auto; margin: 1.5rem 0; }
+    .decision-table table { font-size: 0.86rem; }
+
+    /* ── License Warning ── */
+    .license-block {
+      background: rgba(239,68,68,0.06);
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: var(--radius);
+      padding: 1.5rem; margin: 1.5rem 0;
+    }
+    .license-block h3 { color: var(--danger); margin-top: 0; font-size: 1rem; margin-bottom: 0.75rem; }
+    .license-block p { font-size: 0.88rem; color: var(--text); margin-bottom: 0.6rem; }
+    .license-block p:last-child { margin-bottom: 0; }
+
+    /* ── Page Nav ── */
+    .page-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .page-nav a { display: flex; align-items: center; gap: 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 600; color: var(--text); text-decoration: none; transition: border-color var(--transition), color var(--transition); flex: 1; min-width: 160px; }
+    .page-nav a:hover { border-color: var(--vicuna-lt); color: var(--vicuna-lt); }
+    .page-nav a.next { justify-content: flex-end; text-align: right; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 1.75rem 1.25rem 1.5rem; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Vicuna: The Model That Proved Fine-Tuning Works",
+    "description": "Vicuna from LMSYS (March 2023) fine-tuned Llama on 70K ShareGPT conversations and demonstrated that open-source models could approach GPT-3.5 quality. Learn its history, license constraints, and when to use it today.",
+    "author": { "@type": "Organization", "name": "PrivateAI.guide" },
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-07-14"
+  }
+  </script>
+</head>
+
+<body>
+<div class="page-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/chatgpt-alternatives/">ChatGPT Alternatives</a>
+    <span>›</span>
+    <span>Vicuna</span>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="hero">
+    <div class="hero-badge">🦙 LMSYS · March 2023</div>
+    <h1>Vicuna: <span>The Model That Proved<br>Fine-Tuning Works</span></h1>
+    <p class="hero-sub">
+      In March 2023, the LMSYS team fine-tuned Llama 13B on 70,000 
+      real ChatGPT conversations scraped from ShareGPT — and produced 
+      a model that <em>human judges rated at 92% of ChatGPT quality</em>. 
+      For $300 in compute. Over a weekend. Vicuna didn't just produce a 
+      good model; it proved that the open-source community could close 
+      the gap fast. Almost every subsequent model in this guide 
+      is a direct or indirect descendant of that insight.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">🏫 <strong>Creator:</strong> LMSYS (UC Berkeley / CMU / UCSD)</div>
+      <div class="hero-meta-item">🧱 <strong>Base:</strong> Llama 1 (13B) / Llama 2 (7B, 13B, 33B)</div>
+      <div class="hero-meta-item">📅 <strong>Released:</strong> March 2023</div>
+      <div class="hero-meta-item">⚖️ <strong>License:</strong> Non-commercial (CC BY NC 4.0)</div>
+      <div class="hero-meta-item">🪟 <strong>Context:</strong> 2K (v1) / 4K (v1.5)</div>
+      <div class="hero-meta-item">💾 <strong>Min RAM (INT4):</strong> 6–8GB (13B)</div>
+    </div>
+  </header>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <strong>Non-commercial licence — not for production use</strong>
+      <p>
+        Vicuna is released under CC BY NC 4.0. It cannot be used 
+        in commercial products, customer-facing services, or any 
+        revenue-generating application. For most production use cases, 
+        choose <a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a>, 
+        <a href="/chatgpt-alternatives/starling/">Starling 7B</a>, 
+        or <a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> 
+        — all Apache 2.0. This page covers Vicuna for research, 
+        personal, and educational use.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Stats ── -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-val">92%</div>
+      <div class="stat-lbl">Of ChatGPT quality (original human eval)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">70K</div>
+      <div class="stat-lbl">ShareGPT Conversations</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">$300</div>
+      <div class="stat-lbl">Training Cost (original run)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">March 2023</div>
+      <div class="stat-lbl">Released</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">MT-Bench</div>
+      <div class="stat-lbl">Benchmark LMSYS Created</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">Chatbot Arena</div>
+      <div class="stat-lbl">Platform LMSYS Created</div>
+    </div>
+  </div>
+
+  <!-- ── Historical Context ── -->
+  <h2>Why Vicuna Mattered: A Brief History</h2>
+
+  <p>
+    To understand Vicuna, you need to understand what people believed 
+    in early 2023. The prevailing assumption was that truly capable 
+    chat models required vast proprietary datasets, enormous compute 
+    budgets, and specialised RLHF pipelines that only OpenAI, 
+    Anthropic, and Google could afford. Then, in a single month, 
+    three teams shattered that assumption in sequence.
+  </p>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot">🦙</div>
+      <div class="tl-body">
+        <div class="tl-date">February 2023</div>
+        <div class="tl-title">Meta releases Llama 1</div>
+        <div class="tl-desc">
+          Llama 1 (7B, 13B, 33B, 65B) is released for research. 
+          Within days it leaks publicly. The open-source community 
+          suddenly has access to a high-quality base model. 
+          The only missing piece: instruction following. Base Llama 
+          responds to prompts but doesn't behave like a chat assistant.
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🌿</div>
+      <div class="tl-body">
+        <div class="tl-date">March 13, 2023</div>
+        <div class="tl-title">Stanford releases Alpaca</div>
+        <div class="tl-desc">
+          Stanford fine-tunes Llama 7B on 52,000 GPT-generated 
+          instruction-following examples for ~$600. Alpaca proves 
+          that instruction tuning is achievable at low cost. 
+          But quality is limited — Alpaca's training data consists 
+          of short, synthetic single-turn instructions, not real 
+          conversations. It shows the door; it doesn't walk through it.
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🏆</div>
+      <div class="tl-body">
+        <div class="tl-date">March 30, 2023</div>
+        <div class="tl-title">LMSYS releases Vicuna-13B</div>
+        <div class="tl-desc">
+          LMSYS fine-tunes Llama 13B on 70,000 <em>real ChatGPT 
+          conversations</em> from ShareGPT — actual multi-turn 
+          dialogues from real users. The key insight: real 
+          conversations are richer and more diverse than synthetic 
+          instructions. GPT-4-judged evaluation rates Vicuna-13B 
+          at 92% of ChatGPT quality. The community's mental model 
+          of what's possible shifts overnight.
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🏟️</div>
+      <div class="tl-body">
+        <div class="tl-date">April 2023</div>
+        <div class="tl-title">LMSYS launches Chatbot Arena</div>
+        <div class="tl-desc">
+          To evaluate Vicuna and subsequent models rigorously, 
+          LMSYS builds Chatbot Arena — a blind A/B testing platform 
+          where humans judge model pairs without knowing which 
+          is which. The resulting Elo rankings become the 
+          community's most trusted capability benchmark. 
+          MT-Bench (the scale used throughout this guide) 
+          is also created by LMSYS to complement Arena.
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">📈</div>
+      <div class="tl-body">
+        <div class="tl-date">July 2023</div>
+        <div class="tl-title">Vicuna-1.5 on Llama 2</div>
+        <div class="tl-desc">
+          When Meta releases Llama 2, LMSYS quickly produces 
+          Vicuna-1.5 — fine-tuned on Llama 2 7B and 13B. 
+          Context window expands from 2K to 4K. 
+          Performance improves. But by this point, a dozen 
+          other fine-tuning efforts have emerged using the 
+          same ShareGPT approach, many with improvements 
+          Vicuna's team hasn't incorporated.
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🌊</div>
+      <div class="tl-body">
+        <div class="tl-date">Late 2023 – 2024</div>
+        <div class="tl-title">Vicuna superseded — but its legacy continues</div>
+        <div class="tl-desc">
+          Mistral 7B (October 2023), OpenChat 3.5 (November 2023), 
+          and Llama 3 (April 2024) all significantly outperform 
+          Vicuna-1.5. Vicuna is no longer the best choice for 
+          any practical task, but the approach it pioneered — 
+          fine-tuning on real conversations — is now standard practice. 
+          Its ShareGPT data is embedded in the training sets of 
+          dozens of descendants.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout callout-vicuna">
+    <div class="callout-icon">📚</div>
+    <div class="callout-body">
+      <strong>Vicuna's lasting contribution: evaluation infrastructure</strong>
+      <p>
+        The most enduring part of LMSYS's work is not Vicuna itself 
+        but the infrastructure built around it. MT-Bench and Chatbot 
+        Arena are both LMSYS creations, and both remain the primary 
+        evaluation frameworks used throughout this guide and the 
+        broader open-source AI community. Every benchmark score 
+        on every page of this guide traces directly back to the 
+        methodology LMSYS developed to validate Vicuna's claims.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── How It Was Built ── -->
+  <h2>How Vicuna Was Built</h2>
+
+  <p>
+    Vicuna's training recipe was simple enough to fit in a blog post 
+    and reproduce on a weekend — which is exactly why it was 
+    so influential. The key innovations over Alpaca were in 
+    <em>data quality</em>, not training technique.
+  </p>
+
+  <h3>Training data: ShareGPT conversations</h3>
+
+  <p>
+    ShareGPT was a website where ChatGPT users publicly shared 
+    their conversations. The LMSYS team scraped approximately 
+    70,000 of these conversations. Unlike Alpaca's single-turn 
+    synthetic instructions, ShareGPT conversations are:
+  </p>
+
+  <ul>
+    <li><strong>Multi-turn</strong> — real back-and-forth dialogue spanning multiple exchanges</li>
+    <li><strong>User-initiated</strong> — prompts reflect what real users actually want, not what researchers think they want</li>
+    <li><strong>Diverse</strong> — covering coding, writing, Q&A, roleplay, summarisation, and everything in between</li>
+    <li><strong>Long-form</strong> — many conversations include detailed, structured responses that teach format as well as content</li>
+  </ul>
+
+  <h3>Training modifications</h3>
+
+  <p>
+    LMSYS made several technical improvements over the basic 
+    instruction-tuning approach used in Alpaca:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Gradient checkpointing</strong> — reduces memory usage 
+      during training, allowing longer sequences to fit in GPU memory
+    </li>
+    <li>
+      <strong>Loss computed only on model responses</strong> — the 
+      training loss is masked on user-turn tokens; the model only 
+      learns to predict the assistant's side of the conversation. 
+      This was a key fix over naive approaches that trained on 
+      all tokens equally
+    </li>
+    <li>
+      <strong>Sequence length expansion</strong> — ShareGPT conversations 
+      are often long; Vicuna's training pipeline handles sequences 
+      up to 2,048 tokens (later extended in v1.5)
+    </li>
+    <li>
+      <strong>SponsorBlock-style data cleaning</strong> — conversations 
+      with hallucinated context, heavily truncated content, or 
+      other quality issues were filtered
+    </li>
+  </ul>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">text — Vicuna conversation format (v1)</span>
+    </div>
+    <pre>A chat between a curious user and an artificial intelligence assistant.
+The assistant gives helpful, detailed, and polite answers to the user's questions.
+
+USER: {user_message}
+ASSISTANT: {assistant_response}&lt;/s&gt;
+USER: {next_user_message}
+ASSISTANT:</pre>
+  </div>
+
+  <!-- ── Versions ── -->
+  <h2>Vicuna Versions: Which to Use</h2>
+
+  <div class="version-grid">
+    <div class="version-card">
+      <span class="version-tag avoid">Avoid</span>
+      <h4>Vicuna-1.0 / v0</h4>
+      <ul>
+        <li>Llama 1 base (non-commercial)</li>
+        <li>2K context window</li>
+        <li>7B and 13B sizes</li>
+        <li>Historical reference only</li>
+        <li>Superseded in every dimension</li>
+      </ul>
+    </div>
+    <div class="version-card">
+      <span class="version-tag hist">Historical</span>
+      <h4>Vicuna-1.3</h4>
+      <ul>
+        <li>Llama 1 base</li>
+        <li>2K context window</li>
+        <li>7B, 13B, 33B sizes</li>
+        <li>Intermediate release</li>
+        <li>No practical advantage over 1.5</li>
+      </ul>
+    </div>
+    <div class="version-card recommended">
+      <span class="version-tag curr">Use This</span>
+      <h4>Vicuna-1.5</h4>
+      <ul>
+        <li>Llama 2 base (7B or 13B)</li>
+        <li>4K context window</li>
+        <li>Best Vicuna performance</li>
+        <li>Non-commercial (CC BY NC 4.0)</li>
+        <li>Still available on HuggingFace</li>
+      </ul>
+    </div>
+    <div class="version-card">
+      <span class="version-tag hist">Experimental</span>
+      <h4>Vicuna-33B (1.3)</h4>
+      <ul>
+        <li>Llama 1 33B base</li>
+        <li>Highest raw capability in family</li>
+        <li>Requires 24–32GB RAM</li>
+        <li>Non-commercial</li>
+        <li>Not worth the cost vs alternatives</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Benchmarks ── -->
+  <h2>Where Vicuna Stands Today</h2>
+
+  <p>
+    Vicuna-1.5 was competitive at release in July 2023. 
+    By late 2023, the field had moved significantly. The 
+    table below contextualises where Vicuna stands relative 
+    to its contemporaries and successors.
+  </p>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Params</th>
+          <th>MT-Bench</th>
+          <th>Context</th>
+          <th>License</th>
+          <th>Era</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GPT-3.5 Turbo</td>
+          <td class="val-muted">Unknown</td>
+          <td class="val-green">7.94</td>
+          <td>16K</td>
+          <td class="val-muted">Proprietary</td>
+          <td class="val-muted">—</td>
+        </tr>
+        <tr class="row-hl">
+          <td><strong>Vicuna-13B v1.5</strong></td>
+          <td>13B</td>
+          <td class="val-yellow">6.57</td>
+          <td>4K</td>
+          <td class="val-red">CC BY NC</td>
+          <td class="val-muted">Jul 2023</td>
+        </tr>
+        <tr class="row-hl">
+          <td><strong>Vicuna-7B v1.5</strong></td>
+          <td>7B</td>
+          <td class="val-yellow">6.17</td>
+          <td>4K</td>
+          <td class="val-red">CC BY NC</td>
+          <td class="val-muted">Jul 2023</td>
+        </tr>
+        <tr>
+          <td>Mistral 7B Instruct</td>
+          <td>7B</td>
+          <td class="val-yellow">6.84</td>
+          <td>8K</td>
+          <td class="val-green">Apache 2.0</td>
+          <td class="val-muted">Oct 2023</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/zephyr/">Zephyr 7B Beta</a></td>
+          <td>7B</td>
+          <td class="val-yellow">7.34</td>
+          <td>8K</td>
+          <td class="val-green">MIT</td>
+          <td class="val-muted">Oct 2023</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a></td>
+          <td>7B</td>
+          <td class="val-yellow">7.81</td>
+          <td>8K</td>
+          <td class="val-green">Apache 2.0</td>
+          <td class="val-muted">Nov 2023</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/starling/">Starling 7B Alpha</a></td>
+          <td>7B</td>
+          <td class="val-yellow">8.09</td>
+          <td>8K</td>
+          <td class="val-green">Apache 2.0</td>
+          <td class="val-muted">Nov 2023</td>
+        </tr>
+        <tr>
+          <td>Llama 3 8B Instruct</td>
+          <td>8B</td>
+          <td class="val-green">8.15</td>
+          <td>8K</td>
+          <td class="val-green">Llama 3</td>
+          <td class="val-muted">Apr 2024</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">ℹ️</div>
+    <div class="callout-body">
+      <strong>The gap is not a criticism of Vicuna</strong>
+      <p>
+        Vicuna-7B at 6.17 MT-Bench is not a bad model; it's a 
+        March 2023 model measured against November 2023 successors 
+        built on top of what Vicuna proved possible. Every model 
+        above it in this table owes its existence, at least in part, 
+        to Vicuna's demonstration that ShareGPT-style fine-tuning 
+        works. Vicuna didn't fail to keep up — it pioneered the 
+        race it's now falling behind in.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── License Section ── -->
+  <h2>The Licence Problem</h2>
+
+  <div class="license-block">
+    <h3>⚠️ Why Vicuna Cannot Be Used Commercially</h3>
+    <p>
+      Vicuna carries two non-commercial restrictions that 
+      stack on each other:
+    </p>
+    <p>
+      <strong>1. Llama 1 base (v1.0, v1.3):</strong> Meta's Llama 1 
+      licence prohibited commercial use entirely. Any Vicuna 
+      version based on Llama 1 inherits this restriction regardless 
+      of what LMSYS intended.
+    </p>
+    <p>
+      <strong>2. ShareGPT training data:</strong> OpenAI's Terms of 
+      Service prohibit using ChatGPT outputs to train competing 
+      models. The ShareGPT conversations used to train Vicuna 
+      are ChatGPT outputs. Vicuna-1.5 attempts to address the 
+      base model issue by switching to Llama 2, but the ShareGPT 
+      training data problem remains. LMSYS acknowledges this 
+      and released Vicuna under CC BY NC 4.0 explicitly because 
+      of it.
+    </p>
+    <p>
+      <strong>Practical guidance:</strong> For research, personal 
+      projects, and educational use — Vicuna is fine. For anything 
+      commercial, customer-facing, or deployed in a business context, 
+      use <a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a> or 
+      <a href="/chatgpt-alternatives/starling/">Starling 7B</a> instead. 
+      Both achieve superior MT-Bench scores under Apache 2.0 licences.
+    </p>
+  </div>
+
+  <!-- ── Running Vicuna ── -->
+  <h2>Running Vicuna Locally</h2>
+
+  <h3>Ollama</h3>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">bash — Ollama</span>
+    </div>
+    <pre><span class="c-comment"># Vicuna 7B v1.5 (fastest, lowest memory)</span>
+ollama run vicuna
+
+<span class="c-comment"># Vicuna 13B v1.5 (higher quality, needs 10GB+ RAM)</span>
+ollama run vicuna:13b
+
+<span class="c-comment"># Vicuna 33B (research; needs 24GB+ RAM)</span>
+ollama run vicuna:33b</pre>
+  </div>
+
+  <h3>Hardware requirements (v1.5)</h3>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>INT4 RAM</th>
+          <th>INT8 RAM</th>
+          <th>FP16 RAM</th>
+          <th>Rec. GPU</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>7B</td>
+          <td class="val-green">5–6GB</td>
+          <td>8–9GB</td>
+          <td>14–16GB</td>
+          <td>RTX 3060 / M1</td>
+        </tr>
+        <tr>
+          <td>13B</td>
+          <td class="val-yellow">8–10GB</td>
+          <td>14–16GB</td>
+          <td>26–28GB</td>
+          <td>RTX 3080 / M2 Pro</td>
+        </tr>
+        <tr>
+          <td>33B</td>
+          <td class="val-red">20–24GB</td>
+          <td>35–40GB</td>
+          <td>66GB+</td>
+          <td>A100 / Mac Studio M2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    See <a href="/deploy/quickstart/">deployment quickstart</a> for 
+    platform-specific Ollama installation on macOS, Linux, and Windows.
+  </p>
+
+  <h3>Python example</h3>
+
+  <div class="code-block">
+    <div class="code-header">
+      <span class="lang">python — ollama library</span>
+    </div>
+    <pre><span class="c-kw">import</span> ollama
+
+response = ollama.<span class="c-fn">chat</span>(
+    model=<span class="c-str">'vicuna:13b'</span>,
+    messages=[
+        {
+            <span class="c-str">'role'</span>: <span class="c-str">'user'</span>,
+            <span class="c-str">'content'</span>: <span class="c-str">'What are the main differences between REST and GraphQL APIs?'</span>
+        }
+    ]
+)
+
+<span class="c-fn">print</span>(response[<span class="c-str">'message'</span>][<span class="c-str">'content'</span>])
+
+<span class="c-comment"># For research/personal use only — CC BY NC 4.0 licence</span>
+<span class="c-comment"># For production: use openchat or starling-lm instead</span></pre>
+  </div>
+
+  <!-- ── Pros / Cons ── -->
+  <h2>Honest Assessment</h2>
+
+  <div class="versus-box">
+    <div class="versus-panel pro">
+      <h4>✓ Genuine Strengths</h4>
+      <ul>
+        <li>Historical significance — understand this model to understand the field</li>
+        <li>Well-documented training methodology; excellent for learning fine-tuning</li>
+        <li>LMSYS provenance — same team as MT-Bench and Chatbot Arena</li>
+        <li>Stable, widely tested; extensive community documentation</li>
+        <li>Conversational quality still adequate for personal research tasks</li>
+        <li>Multiple sizes available (7B, 13B, 33B) for different hardware</li>
+        <li>4K context in v1.5 — double the original 2K limit</li>
+      </ul>
+    </div>
+    <div class="versus-panel con">
+      <h4>✗ Real Limitations</h4>
+      <ul>
+        <li>Non-commercial licence — blocks most production use cases</li>
+        <li>ShareGPT data: OpenAI ToS violation technically embedded in weights</li>
+        <li>Outperformed by every major model released after October 2023</li>
+        <li>4K context is short by 2024 standards (vs 8K–128K alternatives)</li>
+        <li>No updates planned; LMSYS has moved on to Vicuna-based successors</li>
+        <li>Prone to verbosity and filler phrases inherited from ChatGPT data</li>
+        <li>Weaker on reasoning and code than purpose-built models</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Decision Table ── -->
+  <h2>When to Choose Vicuna</h2>
+
+  <div class="decision-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Use case</th>
+          <th>Recommendation</th>
+          <th>Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Study the history of open-source LLMs</td>
+          <td class="val-vicuna">Vicuna ✓</td>
+          <td>The foundational ShareGPT fine-tuning paper; essential reading</td>
+        </tr>
+        <tr>
+          <td>Learn fine-tuning methodology</td>
+          <td class="val-vicuna">Vicuna ✓</td>
+          <td>Training code and approach are well-documented by LMSYS</td>
+        </tr>
+        <tr>
+          <td>Personal research, non-commercial</td>
+          <td class="val-vicuna">Vicuna ✓</td>
+          <td>Adequate quality; licence permits this use</td>
+        </tr>
+        <tr>
+          <td>Any commercial use</td>
+          <td><a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a></td>
+          <td>Apache 2.0; better MT-Bench; no licence risk</td>
+        </tr>
+        <tr>
+          <td>Best conversational quality at 7B</td>
+          <td><a href="/chatgpt-alternatives/starling/">Starling 7B</a></td>
+          <td>8.09 vs 6.17 MT-Bench; Apache 2.0</td>
+        </tr>
+        <tr>
+          <td>Reasoning and structured tasks</td>
+          <td><a href="/chatgpt-alternatives/orca-2/">Orca 2 13B</a></td>
+          <td>Purpose-built for deliberate reasoning strategies</td>
+        </tr>
+        <tr>
+          <td>Long documents (&gt;4K tokens)</td>
+          <td>Llama 3.1 8B Instruct</td>
+          <td>128K context window; massively better for long-form tasks</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Page Nav ── -->
+  <nav class="page-nav" aria-label="Page navigation">
+    <a href="/chatgpt-alternatives/starling/">← Starling 7B</a>
+    <a href="/chatgpt-alternatives/whisper/" class="next">Whisper →</a>
+  </nav>
+
+</div>
+</body>
+</html>
