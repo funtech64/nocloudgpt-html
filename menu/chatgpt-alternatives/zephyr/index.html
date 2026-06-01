@@ -1,1 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zephyr: HuggingFace's dDPO-Trained Local AI Model | PrivateAI.guide</title>
+  <meta name="description" content="Zephyr 7B uses Direct Preference Optimisation (dDPO) to align a Mistral base without human labellers — achieving top-of-class instruction following for its size. Run it privately with Ollama." />
+  <link rel="canonical" href="https://privateai.guide/chatgpt-alternatives/zephyr/" />
 
+  <meta property="og:title" content="Zephyr: HuggingFace's dDPO-Trained Local AI Model" />
+  <meta property="og:description" content="Zephyr 7B β achieves 7.34 MT-Bench using synthetic AI feedback instead of human labellers — making alignment research reproducible. Run locally with Ollama." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://privateai.guide/chatgpt-alternatives/zephyr/" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0f1117;
+      --surface:      #1a1d27;
+      --surface-2:    #22263a;
+      --border:       #2e3350;
+      --accent:       #6c8cff;
+      --accent-2:     #a78bfa;
+      --accent-3:     #34d399;
+      --warn:         #f59e0b;
+      --danger:       #ef4444;
+      --zephyr:       #38bdf8;
+      --zephyr-dk:    #0284c7;
+      --zephyr-lt:    #bae6fd;
+      --text:         #e2e8f0;
+      --muted:        #8892b0;
+      --heading:      #ffffff;
+      --radius:       12px;
+      --radius-sm:    6px;
+      --shadow:       0 4px 24px rgba(0,0,0,0.4);
+      --font:         'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-mono:    'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      --max-w:        860px;
+      --transition:   0.2s ease;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0 1rem 4rem;
+    }
+
+    .page-wrap { max-width: var(--max-w); margin: 0 auto; }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      align-items: center; padding: 1.25rem 0;
+      font-size: 0.82rem; color: var(--muted);
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #071520 0%, #0f1117 55%, #1a1d27 100%);
+      border: 1px solid rgba(56,189,248,0.3);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem 2rem;
+      margin-bottom: 2rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(56,189,248,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(56,189,248,0.1);
+      border: 1px solid rgba(56,189,248,0.3);
+      color: var(--zephyr-lt);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.3rem 0.75rem; border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      font-weight: 800; color: var(--heading);
+      line-height: 1.2; margin-bottom: 0.75rem;
+    }
+    .hero h1 span { color: var(--zephyr-lt); }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 640px; margin-bottom: 1.5rem;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap;
+      gap: 1rem; font-size: 0.82rem; color: var(--muted);
+    }
+    .hero-meta-item { display: flex; align-items: center; gap: 0.35rem; }
+    .hero-meta-item strong { color: var(--text); }
+
+    /* ── Stat Grid ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem; text-align: center;
+    }
+    .stat-val {
+      font-size: 1.7rem; font-weight: 800;
+      color: var(--zephyr-lt); line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-lbl {
+      font-size: 0.76rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    /* ── Headings ── */
+    h2 {
+      font-size: 1.45rem; font-weight: 700;
+      color: var(--heading); margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 { font-size: 1.1rem; font-weight: 600; color: var(--heading); margin: 1.5rem 0 0.6rem; }
+    h4 { font-size: 0.95rem; font-weight: 600; color: var(--heading); margin: 1.25rem 0 0.5rem; }
+
+    p { margin-bottom: 1rem; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; color: var(--text); }
+    code {
+      font-family: var(--font-mono); font-size: 0.85em;
+      background: var(--surface-2); border: 1px solid var(--border);
+      padding: 0.1em 0.4em; border-radius: var(--radius-sm);
+      color: var(--zephyr-lt);
+    }
+
+    /* ── Callouts ── */
+    .callout {
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid;
+      display: flex; gap: 0.75rem;
+    }
+    .callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .callout-body { flex: 1; }
+    .callout-body p { margin-bottom: 0.4rem; }
+    .callout-body strong { display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
+
+    .callout-info    { background: rgba(108,140,255,0.08); border-color: var(--accent); }
+    .callout-info    .callout-icon, .callout-info    strong { color: var(--accent); }
+    .callout-warn    { background: rgba(245,158,11,0.08);  border-color: var(--warn); }
+    .callout-warn    .callout-icon, .callout-warn    strong { color: var(--warn); }
+    .callout-success { background: rgba(52,211,153,0.08);  border-color: var(--accent-3); }
+    .callout-success .callout-icon, .callout-success strong { color: var(--accent-3); }
+    .callout-zephyr  { background: rgba(56,189,248,0.08);  border-color: var(--zephyr); }
+    .callout-zephyr  .callout-icon, .callout-zephyr  strong { color: var(--zephyr-lt); }
+
+    /* ── Tables ── */
+    .bench-wrap { overflow-x: auto; margin: 1.5rem 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    thead th {
+      background: var(--surface-2); color: var(--muted);
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 0.75rem 1rem; text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background var(--transition); }
+    tbody tr:hover { background: rgba(56,189,248,0.03); }
+    tbody td { padding: 0.75rem 1rem; color: var(--text); }
+    tbody td:first-child { font-weight: 600; }
+
+    .val-green  { color: var(--accent-3); font-weight: 700; }
+    .val-yellow { color: var(--warn);     font-weight: 700; }
+    .val-red    { color: var(--danger);   font-weight: 700; }
+    .val-blue   { color: var(--accent);   font-weight: 700; }
+    .val-zephyr { color: var(--zephyr-lt);font-weight: 700; }
+    .val-muted  { color: var(--muted);    font-style: italic; }
+    .row-hl td  { background: rgba(56,189,248,0.04); }
+
+    /* ── dDPO Flow ── */
+    .ddpo-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 580px) { .ddpo-flow { grid-template-columns: 1fr; } }
+    .ddpo-step {
+      padding: 1.5rem 1.25rem;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .ddpo-step:last-child { border-right: none; }
+    @media (max-width: 580px) {
+      .ddpo-step { border-right: none; border-bottom: 1px solid var(--border); }
+      .ddpo-step:last-child { border-bottom: none; }
+    }
+    .ddpo-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(56,189,248,0.15);
+      border: 1px solid rgba(56,189,248,0.3);
+      color: var(--zephyr-lt);
+      font-size: 0.8rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+    .ddpo-title { font-size: 0.95rem; font-weight: 700; color: var(--heading); margin-bottom: 0.4rem; }
+    .ddpo-body  { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+    .ddpo-arrow {
+      position: absolute; right: -14px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--zephyr); font-size: 1.2rem;
+      z-index: 2;
+    }
+    @media (max-width: 580px) { .ddpo-arrow { display: none; } }
+
+    /* ── RLHF vs dDPO comparison ── */
+    .compare-split {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    @media (max-width: 560px) { .compare-split { grid-template-columns: 1fr; } }
+    .compare-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .compare-panel h4 {
+      font-size: 0.82rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      margin-bottom: 0.75rem;
+    }
+    .compare-panel.rlhf h4 { color: var(--warn); }
+    .compare-panel.ddpo h4 { color: var(--zephyr-lt); }
+    .compare-panel ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+    .compare-panel li { font-size: 0.84rem; color: var(--text); display: flex; gap: 0.5rem; }
+    .compare-panel li::before { flex-shrink: 0; }
+    .compare-panel.rlhf li::before { content: '⚙'; color: var(--warn); }
+    .compare-panel.ddpo li::before { content: '✓'; color: var(--zephyr-lt); }
+
+    /* ── Version cards ── */
+    .version-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .version-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .version-card.featured { border-color: rgba(56,189,248,0.35); }
+    .version-tag {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      padding: 0.2rem 0.55rem; border-radius: 99px;
+      margin-bottom: 0.6rem;
+    }
+    .tag-beta    { background: rgba(245,158,11,0.15); color: var(--warn); }
+    .tag-stable  { background: rgba(56,189,248,0.15); color: var(--zephyr-lt); }
+    .tag-gemma   { background: rgba(52,211,153,0.15); color: var(--accent-3); }
+    .version-card h4 { font-size: 1rem; font-weight: 700; color: var(--heading); margin-bottom: 0.5rem; margin-top: 0; }
+    .version-card p { font-size: 0.82rem; color: var(--muted); margin: 0; }
+    .version-card .version-stat {
+      margin-top: 0.75rem; padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 0.3rem;
+    }
+    .version-stat-row { display: flex; justify-content: space-between; font-size: 0.78rem; }
+    .version-stat-row span:first-child { color: var(--muted); }
+    .version-stat-row span:last-child  { color: var(--text); font-weight: 600; }
+
+    /* ── Code Blocks ── */
+    .code-block { background: #0a0e18; border: 1px solid var(--border); border-radius: var(--radius); margin: 1.25rem 0; overflow: hidden; }
+    .code-block.zephyr-border { border-color: rgba(56,189,248,0.3); }
+    .code-header { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; background: var(--surface-2); border-bottom: 1px solid var(--border); font-size: 0.78rem; color: var(--muted); }
+    .code-header .lang { font-weight: 600; color: var(--zephyr-lt); }
+    pre { padding: 1.25rem; overflow-x: auto; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.6; color: #c9d1e0; }
+    .c-comment { color: #546e7a; }
+    .c-str     { color: #a3be8c; }
+    .c-kw      { color: #a78bfa; }
+    .c-num     { color: #f59e0b; }
+    .c-fn      { color: #4da3e8; }
+    .c-var     { color: var(--zephyr-lt); }
+
+    /* ── Versus ── */
+    .versus-box { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    @media (max-width: 540px) { .versus-box { grid-template-columns: 1fr; } }
+    .versus-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+    .versus-panel h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+    .versus-panel.pro h4 { color: var(--accent-3); }
+    .versus-panel.con h4 { color: var(--danger); }
+    .versus-panel ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+    .versus-panel li { font-size: 0.88rem; color: var(--text); display: flex; align-items: flex-start; gap: 0.5rem; }
+    .versus-panel.pro li::before { content: '✓'; color: var(--accent-3); flex-shrink: 0; }
+    .versus-panel.con li::before { content: '✗'; color: var(--danger); flex-shrink: 0; }
+
+    /* ── Decision box ── */
+    .decision-box {
+      background: linear-gradient(135deg, rgba(56,189,248,0.05) 0%, rgba(2,132,199,0.03) 100%);
+      border: 1px solid rgba(56,189,248,0.25);
+      border-radius: var(--radius);
+      padding: 1.5rem; margin: 2rem 0;
+    }
+    .decision-box h3 { color: var(--zephyr-lt); margin-top: 0; margin-bottom: 1rem; font-size: 1rem; }
+    .decision-row { display: flex; gap: 0.75rem; margin-bottom: 0.6rem; align-items: flex-start; }
+    .decision-row:last-child { margin-bottom: 0; }
+    .decision-if { font-size: 0.82rem; color: var(--muted); min-width: 140px; flex-shrink: 0; padding-top: 0.1rem; }
+    .decision-then { font-size: 0.88rem; color: var(--text); font-weight: 600; }
+    .decision-then a { color: var(--zephyr-lt); }
+
+    /* ── Guide Complete Banner ── */
+    .complete-banner {
+      background: linear-gradient(135deg, rgba(52,211,153,0.08) 0%, rgba(56,189,248,0.06) 100%);
+      border: 1px solid rgba(52,211,153,0.3);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin: 2.5rem 0;
+      text-align: center;
+    }
+    .complete-banner .banner-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .complete-banner h3 { font-size: 1.25rem; color: var(--accent-3); margin-bottom: 0.5rem; }
+    .complete-banner p { font-size: 0.9rem; color: var(--muted); margin: 0 auto; max-width: 520px; }
+    .banner-links {
+      display: flex; flex-wrap: wrap;
+      justify-content: center; gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    .banner-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.5rem 1rem;
+      font-size: 0.84rem; font-weight: 600;
+      color: var(--text); text-decoration: none;
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .banner-link:hover { border-color: var(--accent-3); color: var(--accent-3); }
+
+    /* ── Matrix note ── */
+    .matrix-note { font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; font-style: italic; }
+
+    /* ── Page Nav ── */
+    .page-nav {
+      display: flex; justify-content: space-between;
+      gap: 1rem; margin-top: 3rem; padding-top: 2rem;
+      border-top: 1px solid var(--border); flex-wrap: wrap;
+    }
+    .page-nav a {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 0.75rem 1.25rem;
+      font-size: 0.88rem; font-weight: 600;
+      color: var(--text); text-decoration: none;
+      transition: border-color var(--transition), color var(--transition);
+      flex: 1; min-width: 160px;
+    }
+    .page-nav a:hover { border-color: var(--zephyr-lt); color: var(--zephyr-lt); }
+    .page-nav a.next { justify-content: flex-end; text-align: right; }
+    .page-nav-end {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: rgba(52,211,153,0.06);
+      border: 1px solid rgba(52,211,153,0.25);
+      border-radius: var(--radius); padding: 0.75rem 1.25rem;
+      font-size: 0.88rem; font-weight: 600;
+      color: var(--accent-3); flex: 1; min-width: 160px;
+      justify-content: flex-end; text-align: right;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 1.75rem 1.25rem 1.5rem; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Zephyr: HuggingFace's dDPO-Trained Local AI Model",
+    "description": "Zephyr 7B uses Direct Preference Optimisation with AI-generated feedback to align a Mistral 7B base without human labellers — achieving strong instruction following at the 7B scale.",
+    "author": { "@type": "Organization", "name": "PrivateAI.guide" },
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-07-14"
+  }
+  </script>
+</head>
+
+<body>
+<div class="page-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/chatgpt-alternatives/">ChatGPT Alternatives</a>
+    <span>›</span>
+    <span>Zephyr</span>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="hero">
+    <div class="hero-badge">💨 HuggingFace · October 2023</div>
+    <h1>Zephyr: <span>What dDPO teaches us<br>about alignment without labellers</span></h1>
+    <p class="hero-sub">
+      Getting a language model to follow instructions helpfully requires 
+      alignment — teaching it human preferences. The conventional method 
+      (RLHF) needs expensive human labellers. Zephyr 7B β showed that 
+      synthetic AI feedback, combined with Direct Preference Optimisation, 
+      could match or beat RLHF models at the same scale — at a fraction 
+      of the cost. The result is a clean, well-understood 7B model that 
+      runs locally, has an Apache 2.0 licence, and remains a useful 
+      teaching reference for how modern alignment works.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">🏢 <strong>Creator:</strong> HuggingFace</div>
+      <div class="hero-meta-item">📅 <strong>Released:</strong> October 2023 (β) · February 2024 (Gemma)</div>
+      <div class="hero-meta-item">⚖️ <strong>Licence:</strong> MIT (7B β) · Apache 2.0 (141B)</div>
+      <div class="hero-meta-item">🧠 <strong>Base:</strong> Mistral 7B (β) · Mixtral 8x7B (141B) · Gemma (2B/7B)</div>
+      <div class="hero-meta-item">📏 <strong>Context:</strong> 8K (7B) · 32K (141B)</div>
+      <div class="hero-meta-item">💾 <strong>Min RAM:</strong> 5 GB (7B INT4)</div>
+    </div>
+  </header>
+
+  <!-- ── Stats ── -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-val">7.34</div>
+      <div class="stat-lbl">MT-Bench (7B β)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">90.6%</div>
+      <div class="stat-lbl">AlpacaEval win rate (7B β)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">200K</div>
+      <div class="stat-lbl">UltraFeedback training pairs</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">0</div>
+      <div class="stat-lbl">Human labellers required</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">MIT</div>
+      <div class="stat-lbl">Licence (7B β)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">8K</div>
+      <div class="stat-lbl">Context window (7B)</div>
+    </div>
+  </div>
+
+  <!-- ── What is dDPO ── -->
+  <h2>The Alignment Problem Zephyr Solves</h2>
+
+  <p>
+    Training a language model on next-token prediction gives you a 
+    model that can generate text — but not necessarily text that is 
+    helpful, honest, or appropriately cautious. <em>Alignment</em> 
+    is the process of nudging the model's behaviour toward human 
+    preferences. The standard approach, 
+    <strong>Reinforcement Learning from Human Feedback (RLHF)</strong>, 
+    requires three expensive steps: collect human preference labels, 
+    train a reward model on those labels, then use RL to fine-tune 
+    the language model against the reward model. This is what 
+    InstructGPT (the basis of ChatGPT) uses, and it costs 
+    significant money and time.
+  </p>
+
+  <p>
+    Zephyr introduces two changes that make alignment cheaper 
+    and more reproducible:
+  </p>
+
+  <ul>
+    <li><strong>AI feedback instead of human feedback</strong> — 
+    the UltraFeedback dataset uses GPT-4 to score completions 
+    across four dimensions (instruction-following, truthfulness, 
+    honesty, helpfulness), generating 200K training pairs 
+    without a single human labeller.</li>
+    <li><strong>Direct DPO (dDPO) instead of RL</strong> — 
+    Direct Preference Optimisation reformulates the RL problem 
+    as a classification loss, eliminating the need for a 
+    separate reward model and the instability of RL training.</li>
+  </ul>
+
+  <!-- ── dDPO Pipeline ── -->
+  <h3>The dDPO Training Pipeline</h3>
+
+  <div class="ddpo-flow">
+    <div class="ddpo-step">
+      <div class="ddpo-num">1</div>
+      <div class="ddpo-title">SFT on UltraChat</div>
+      <div class="ddpo-body">
+        Supervised fine-tuning on UltraChat 200K — high-quality 
+        multi-turn conversations generated by GPT-3.5. 
+        Establishes the instruction-following scaffold 
+        before preference learning begins.
+      </div>
+      <div class="ddpo-arrow">→</div>
+    </div>
+    <div class="ddpo-step">
+      <div class="ddpo-num">2</div>
+      <div class="ddpo-title">UltraFeedback scoring</div>
+      <div class="ddpo-body">
+        GPT-4 scores four completions per prompt from different 
+        models across four dimensions. Best and worst completions 
+        are paired into 200K (chosen, rejected) preference pairs. 
+        No human in the loop.
+      </div>
+      <div class="ddpo-arrow">→</div>
+    </div>
+    <div class="ddpo-step">
+      <div class="ddpo-num">3</div>
+      <div class="ddpo-title">dDPO fine-tuning</div>
+      <div class="ddpo-body">
+        Direct Preference Optimisation trains the model to 
+        increase the likelihood of chosen responses relative 
+        to rejected ones — using a simple cross-entropy 
+        objective, no reward model required.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RLHF vs dDPO ── -->
+  <h3>RLHF vs dDPO: Why It Matters for Local AI</h3>
+
+  <div class="compare-split">
+    <div class="compare-panel rlhf">
+      <h4>⚙ Traditional RLHF</h4>
+      <ul>
+        <li>Requires paid human annotators for preference labels</li>
+        <li>Train a separate reward model on those labels</li>
+        <li>RL fine-tuning loop — computationally expensive and unstable</li>
+        <li>Difficult to reproduce without significant infrastructure</li>
+        <li>Proprietary data pipelines at companies like OpenAI</li>
+        <li>Not reproducible by the research community</li>
+      </ul>
+    </div>
+    <div class="compare-panel ddpo">
+      <h4>💨 dDPO (Zephyr approach)</h4>
+      <ul>
+        <li>AI-generated preference labels via GPT-4 scoring</li>
+        <li>No separate reward model needed</li>
+        <li>Simple classification loss — stable and fast to train</li>
+        <li>Fully reproducible: datasets and training code are public</li>
+        <li>UltraFeedback dataset released openly on HuggingFace</li>
+        <li>Enables community research into alignment techniques</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-zephyr">
+    <div class="callout-icon">💨</div>
+    <div class="callout-body">
+      <strong>Why Zephyr matters beyond its benchmark scores</strong>
+      <p>
+        Zephyr 7B β was not the highest-scoring 7B model when it 
+        released, and it is not in 2025. Its significance is 
+        methodological: it demonstrated that fully synthetic 
+        preference data plus DPO could produce competitive alignment 
+        results. This opened the door to a wave of open-source 
+        alignment research that did not depend on proprietary human 
+        annotation pipelines. Many of the models in this guide — 
+        including <a href="/chatgpt-alternatives/starling/">Starling 7B</a> 
+        (which uses RLAIF, a related approach) — build on the 
+        foundations Zephyr established.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Model Versions ── -->
+  <h2>Zephyr Versions</h2>
+
+  <div class="version-grid">
+    <div class="version-card featured">
+      <span class="version-tag tag-beta">β · Recommended</span>
+      <h4>Zephyr 7B β</h4>
+      <p>The original and most studied version. Mistral 7B base, MIT licence, 8K context. The standard reference for dDPO research. Best supported in Ollama.</p>
+      <div class="version-stat">
+        <div class="version-stat-row"><span>MT-Bench</span><span>7.34</span></div>
+        <div class="version-stat-row"><span>Context</span><span>8K</span></div>
+        <div class="version-stat-row"><span>RAM (INT4)</span><span>5–6 GB</span></div>
+        <div class="version-stat-row"><span>Licence</span><span>MIT</span></div>
+      </div>
+    </div>
+    <div class="version-card">
+      <span class="version-tag tag-stable">α · Earlier</span>
+      <h4>Zephyr 7B α</h4>
+      <p>First Zephyr release. Used only SFT without DPO — released as a baseline to measure the DPO contribution. Not recommended for use; reference only.</p>
+      <div class="version-stat">
+        <div class="version-stat-row"><span>MT-Bench</span><span>6.88</span></div>
+        <div class="version-stat-row"><span>Context</span><span>8K</span></div>
+        <div class="version-stat-row"><span>Purpose</span><span>Ablation baseline</span></div>
+        <div class="version-stat-row"><span>Licence</span><span>MIT</span></div>
+      </div>
+    </div>
+    <div class="version-card">
+      <span class="version-tag tag-stable">141B · Large</span>
+      <h4>Zephyr 141B (Mixtral)</h4>
+      <p>Mixtral 8x7B base with dDPO alignment. Strong across reasoning and knowledge tasks. Requires substantial hardware — ~50GB RAM for quantised inference.</p>
+      <div class="version-stat">
+        <div class="version-stat-row"><span>MT-Bench</span><span>~8.6</span></div>
+        <div class="version-stat-row"><span>Context</span><span>32K</span></div>
+        <div class="version-stat-row"><span>RAM (INT4)</span><span>~50 GB</span></div>
+        <div class="version-stat-row"><span>Licence</span><span>Apache 2.0</span></div>
+      </div>
+    </div>
+    <div class="version-card">
+      <span class="version-tag tag-gemma">Gemma · 2024</span>
+      <h4>Zephyr Gemma 7B</h4>
+      <p>Google's Gemma 7B base with dDPO. Released February 2024. Gemma licence (permissive for research/commercial, some restrictions). Good instruction following, lower benchmark scores than β.</p>
+      <div class="version-stat">
+        <div class="version-stat-row"><span>Context</span><span>8K</span></div>
+        <div class="version-stat-row"><span>RAM (INT4)</span><span>5–6 GB</span></div>
+        <div class="version-stat-row"><span>Licence</span><span>Gemma ToS</span></div>
+        <div class="version-stat-row"><span>Status</span><span>Experimental</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <strong>Zephyr 7B α vs β: always use β</strong>
+      <p>
+        The α release used supervised fine-tuning only, without the 
+        dDPO step. It scores 6.88 on MT-Bench versus 7.34 for β — 
+        a meaningful gap. The α exists in the literature as an 
+        ablation baseline to prove that dDPO adds value. 
+        If you see "Zephyr" without a version suffix in an 
+        older tutorial or repository, verify which version is 
+        referenced before using it.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Benchmarks ── -->
+  <h2>Benchmark Comparison</h2>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Size</th>
+          <th>MT-Bench</th>
+          <th>AlpacaEval</th>
+          <th>Context</th>
+          <th>Licence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row-hl">
+          <td>Zephyr 7B β ★</td>
+          <td>7B</td>
+          <td class="val-zephyr">7.34</td>
+          <td class="val-zephyr">90.6%</td>
+          <td>8K</td>
+          <td class="val-green">MIT</td>
+        </tr>
+        <tr>
+          <td>Zephyr 7B α</td>
+          <td>7B</td>
+          <td class="val-yellow">6.88</td>
+          <td class="val-yellow">~75%</td>
+          <td>8K</td>
+          <td class="val-green">MIT</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a></td>
+          <td>7B</td>
+          <td class="val-green">7.81</td>
+          <td class="val-green">~88%</td>
+          <td>8K</td>
+          <td class="val-green">Apache 2.0</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/starling/">Starling 7B</a></td>
+          <td>7B</td>
+          <td class="val-green">8.09</td>
+          <td class="val-green">~91%</td>
+          <td>8K</td>
+          <td class="val-green">Apache 2.0</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/wizardlm/">WizardLM-2 7B</a></td>
+          <td>7B</td>
+          <td class="val-green">8.01</td>
+          <td class="val-muted">N/A</td>
+          <td>32K</td>
+          <td class="val-green">Apache 2.0</td>
+        </tr>
+        <tr>
+          <td><a href="/chatgpt-alternatives/vicuna/">Vicuna 1.5 7B</a></td>
+          <td>7B</td>
+          <td class="val-yellow">7.92</td>
+          <td class="val-muted">N/A</td>
+          <td>4K</td>
+          <td class="val-red">Non-commercial</td>
+        </tr>
+        <tr>
+          <td>Mistral 7B Instruct v0.2</td>
+          <td>7B</td>
+          <td class="val-yellow">7.60</td>
+          <td class="val-muted">N/A</td>
+          <td>32K</td>
+          <td class="val-green">Apache 2.0</td>
+        </tr>
+        <tr>
+          <td>Llama 3.1 8B Instruct</td>
+          <td>8B</td>
+          <td class="val-green">8.22</td>
+          <td class="val-muted">N/A</td>
+          <td class="val-green">128K</td>
+          <td class="val-green">Llama 3.1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="matrix-note">MT-Bench scores from LMSYS Chatbot Arena leaderboard. AlpacaEval win rate vs text-davinci-003. Zephyr 7B β was competitive at release (Oct 2023); Llama 3.1 and later models now lead at similar sizes.</p>
+  </div>
+
+  <!-- ── Installation ── -->
+  <h2>Running Zephyr Locally</h2>
+
+  <h3>Via Ollama (recommended)</h3>
+
+  <div class="code-block zephyr-border">
+    <div class="code-header">
+      <span class="lang">bash — Ollama</span>
+    </div>
+    <pre><span class="c-comment"># Install Ollama first: https://ollama.com</span>
+
+<span class="c-comment"># Zephyr 7B β — the reference version</span>
+ollama pull zephyr
+
+<span class="c-comment"># Start interactive chat</span>
+ollama run zephyr
+
+<span class="c-comment"># One-shot query</span>
+ollama run zephyr <span class="c-str">"Explain the difference between precision and recall in three sentences."</span></pre>
+  </div>
+
+  <h3>Python via Ollama client</h3>
+
+  <div class="code-block zephyr-border">
+    <div class="code-header">
+      <span class="lang">python — Zephyr chat</span>
+    </div>
+    <pre><span class="c-kw">import</span> ollama
+
+response = ollama.<span class="c-fn">chat</span>(
+    model=<span class="c-str">'zephyr'</span>,
+    messages=[
+        {
+            <span class="c-str">'role'</span>: <span class="c-str">'system'</span>,
+            <span class="c-str">'content'</span>: <span class="c-str">'You are a concise technical assistant. Provide accurate, well-structured answers.'</span>
+        },
+        {
+            <span class="c-str">'role'</span>: <span class="c-str">'user'</span>,
+            <span class="c-str">'content'</span>: <span class="c-str">'What is Direct Preference Optimisation and how does it differ from RLHF?'</span>
+        }
+    ]
+)
+
+<span class="c-fn">print</span>(response[<span class="c-str">'message'</span>][<span class="c-str">'content'</span>])</pre>
+  </div>
+
+  <h3>Chat template: Zephyr uses a specific format</h3>
+
+  <div class="code-block zephyr-border">
+    <div class="code-header">
+      <span class="lang">text — Zephyr chat template (important for raw inference)</span>
+    </div>
+    <pre><span class="c-comment"># Zephyr uses the ChatML-adjacent format with special tokens.
+# Ollama handles this automatically. If calling the model directly
+# (e.g., via llama.cpp or Transformers), use this structure:</span>
+
+&lt;|system|&gt;
+You are a helpful assistant.&lt;/s&gt;
+&lt;|user|&gt;
+Your question here.&lt;/s&gt;
+&lt;|assistant|&gt;
+
+<span class="c-comment"># Note the &lt;/s&gt; end-of-sequence tokens after each turn.
+# Omitting these causes degraded output quality.</span></pre>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">ℹ️</div>
+    <div class="callout-body">
+      <strong>Chat template matters for raw inference</strong>
+      <p>
+        If you are calling Zephyr directly through 
+        <code>llama.cpp</code> or the Transformers library 
+        rather than through Ollama, the chat template is critical. 
+        Ollama applies it automatically. The HuggingFace 
+        <code>tokenizer.apply_chat_template()</code> method 
+        also handles it correctly when using the 
+        <code>HuggingFaceH4/zephyr-7b-beta</code> checkpoint. 
+        Using the wrong template produces garbled or unhelpful output.
+      </p>
+    </div>
+  </div>
+
+  <h3>HuggingFace Transformers (direct)</h3>
+
+  <div class="code-block zephyr-border">
+    <div class="code-header">
+      <span class="lang">python — HuggingFace Transformers pipeline</span>
+    </div>
+    <pre><span class="c-kw">from</span> transformers <span class="c-kw">import</span> pipeline
+<span class="c-kw">import</span> torch
+
+<span class="c-comment"># Requires ~14GB VRAM for BF16, ~5GB for 4-bit quantisation</span>
+pipe = <span class="c-fn">pipeline</span>(
+    <span class="c-str">"text-generation"</span>,
+    model=<span class="c-str">"HuggingFaceH4/zephyr-7b-beta"</span>,
+    torch_dtype=torch.bfloat16,
+    device_map=<span class="c-str">"auto"</span>
+)
+
+messages = [
+    {<span class="c-str">"role"</span>: <span class="c-str">"system"</span>,  <span class="c-str">"content"</span>: <span class="c-str">"You are a helpful assistant."</span>},
+    {<span class="c-str">"role"</span>: <span class="c-str">"user"</span>,    <span class="c-str">"content"</span>: <span class="c-str">"Summarise the key advantages of DPO over RLHF."</span>}
+]
+
+<span class="c-comment"># apply_chat_template handles the special tokens automatically</span>
+prompt = pipe.tokenizer.<span class="c-fn">apply_chat_template</span>(
+    messages,
+    tokenize=<span class="c-kw">False</span>,
+    add_generation_prompt=<span class="c-kw">True</span>
+)
+
+outputs = <span class="c-fn">pipe</span>(
+    prompt,
+    max_new_tokens=<span class="c-num">512</span>,
+    do_sample=<span class="c-kw">True</span>,
+    temperature=<span class="c-num">0.7</span>,
+    top_k=<span class="c-num">50</span>,
+    top_p=<span class="c-num">0.95</span>
+)
+
+<span class="c-fn">print</span>(outputs[<span class="c-num">0</span>][<span class="c-str">"generated_text"</span>])</pre>
+  </div>
+
+  <!-- ── Hardware ── -->
+  <h2>Hardware Requirements</h2>
+
+  <div class="bench-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Variant</th>
+          <th>Quantisation</th>
+          <th>RAM / VRAM</th>
+          <th>Speed (CPU)</th>
+          <th>Speed (GPU)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Zephyr 7B β</td>
+          <td>Q4_K_M (INT4)</td>
+          <td class="val-green">5–6 GB</td>
+          <td class="val-yellow">8–15 tok/s</td>
+          <td class="val-green">40–80 tok/s</td>
+        </tr>
+        <tr>
+          <td>Zephyr 7B β</td>
+          <td>Q8_0 (INT8)</td>
+          <td class="val-yellow">8–9 GB</td>
+          <td class="val-yellow">5–10 tok/s</td>
+          <td class="val-green">30–60 tok/s</td>
+        </tr>
+        <tr>
+          <td>Zephyr 7B β</td>
+          <td>BF16 (full)</td>
+          <td class="val-red">14–16 GB</td>
+          <td class="val-red">2–4 tok/s</td>
+          <td class="val-green">50–90 tok/s</td>
+        </tr>
+        <tr>
+          <td>Zephyr 141B (Mixtral)</td>
+          <td>Q4_K_M</td>
+          <td class="val-red">~50 GB</td>
+          <td class="val-red">1–3 tok/s</td>
+          <td class="val-yellow">10–25 tok/s</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="matrix-note">CPU speeds on modern 8-core systems with fast RAM. GPU speeds on RTX 4090 (24GB). Q4_K_M recommended for most local deployments — minimal quality loss at half the memory footprint of BF16.</p>
+  </div>
+
+  <div class="callout callout-success">
+    <div class="callout-icon">✓</div>
+    <div class="callout-body">
+      <strong>Runs on modest hardware</strong>
+      <p>
+        Zephyr 7B β quantised to INT4 fits in 5–6GB of RAM — 
+        meaning it runs on virtually any modern laptop built 
+        after 2020 that has 8GB of system memory. 
+        On Apple Silicon (M1/M2/M3 with unified memory), 
+        it uses the Neural Engine and achieves GPU-class speeds 
+        without a discrete GPU. See the 
+        <a href="/deploy/quickstart/">quickstart guide</a> 
+        for platform-specific setup.
+        <!-- STUB: /deploy/quickstart/ — cross-reference to hardware setup -->
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Honest Assessment ── -->
+  <h2>Honest Assessment</h2>
+
+  <div class="versus-box">
+    <div class="versus-panel pro">
+      <h4>✓ Genuine Strengths</h4>
+      <ul>
+        <li>MIT licence — cleanest, most permissive option in this guide</li>
+        <li>Well-documented training pipeline; reproducible by researchers</li>
+        <li>Excellent AlpacaEval score (90.6%) for a 7B model at release</li>
+        <li>dDPO training makes it a useful reference for alignment study</li>
+        <li>Runs on 5–6GB RAM — accessible hardware requirement</li>
+        <li>8K context window (double Llama 2-era models)</li>
+        <li>Strong HuggingFace ecosystem support; first-class Transformers integration</li>
+        <li>The α vs β comparison makes the DPO contribution quantifiable</li>
+      </ul>
+    </div>
+    <div class="versus-panel con">
+      <h4>✗ Real Limitations</h4>
+      <ul>
+        <li>MT-Bench 7.34 is below OpenChat (7.81), Starling (8.09), and WizardLM-2 (8.01)</li>
+        <li>Llama 3.1 8B (8.22 MT-Bench, 128K context) is now the stronger general choice</li>
+        <li>Preference data generated by GPT-4 — inherits GPT-4's biases and blindspots</li>
+        <li>4K effective context in some configurations (depends on quantisation method)</li>
+        <li>Development focus has shifted to newer HuggingFace alignment work (Zephyr Gemma, etc.)</li>
+        <li>Can be over-cautious on edge-case instructions — a known dDPO alignment artefact</li>
+        <li>Multilingual performance is limited; primarily English</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Decision box ── -->
+  <div class="decision-box">
+    <h3>💨 When to choose Zephyr vs alternatives</h3>
+    <div class="decision-row">
+      <div class="decision-if">You need the most permissive possible licence at 7B</div>
+      <div class="decision-then">→ <strong>Zephyr 7B β</strong> (MIT) is the cleanest option; no attribution requirements beyond the licence text</div>
+    </div>
+    <div class="decision-row">
+      <div class="decision-if">You are studying alignment techniques</div>
+      <div class="decision-then">→ Zephyr's published training pipeline and the α/β ablation make it the best teaching reference in this guide</div>
+    </div>
+    <div class="decision-row">
+      <div class="decision-if">Best benchmark scores at 7B for production use</div>
+      <div class="decision-then">→ <a href="/chatgpt-alternatives/starling/">Starling 7B</a> (8.09) or <a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a> (7.81), both Apache 2.0</div>
+    </div>
+    <div class="decision-row">
+      <div class="decision-if">Long-context tasks (&gt;8K tokens)</div>
+      <div class="decision-then">→ Llama 3.1 8B Instruct (128K) or <a href="/chatgpt-alternatives/wizardlm/">WizardLM-2 7B</a> (32K)</div>
+    </div>
+    <div class="decision-row">
+      <div class="decision-if">Running Mixtral-scale locally (large server)</div>
+      <div class="decision-then">→ <strong>Zephyr 141B</strong> (Apache 2.0) is a strong aligned option; compare to Mixtral 8x7B Instruct</div>
+    </div>
+    <div class="decision-row">
+      <div class="decision-if">First local model, just getting started</div>
+      <div class="decision-then">→ <code>ollama run zephyr</code> is one of the simplest entry points with good out-of-box quality</div>
+    </div>
+  </div>
+
+  <!-- ── Guide Complete ── -->
+  <div class="complete-banner">
+    <div class="banner-icon">🎉</div>
+    <h3>You've reached the end of the model guide</h3>
+    <p>
+      You've now read through every model in the ChatGPT Alternatives 
+      series — from Alpaca to Zephyr. Head back to the index for a 
+      side-by-side comparison table, or explore the deployment 
+      and privacy guides to put these models to work.
+    </p>
+    <div class="banner-links">
+      <a href="/chatgpt-alternatives/" class="banner-link">📋 Full model index</a>
+      <a href="/deploy/quickstart/" class="banner-link">🚀 Deploy with Ollama</a>
+      <a href="/compare/vs-chatgpt/" class="banner-link">⚖️ vs ChatGPT comparison</a>
+      <a href="/compare/vs-claude/" class="banner-link">⚖️ vs Claude comparison</a>
+    </div>
+  </div>
+
+  <!-- ── Page Nav ── -->
+  <nav class="page-nav" aria-label="Page navigation">
+    <a href="/chatgpt-alternatives/wizardlm/">← WizardLM</a>
+    <div class="page-nav-end">Series complete ✓</div>
+  </nav>
+
+</div>
+</body>
+</html>
