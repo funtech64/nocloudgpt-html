@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codestral — Private 22B Code AI for Engineering Teams | NoCloudGPT</title>
+  <meta name="description" content="Deploy Codestral privately on your own server. Mistral's 22B code model delivers production-grade code generation, FIM completion, and 32K context — without your source code leaving your infrastructure.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/codestral/">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="../index.html" class="text-sm font-semibold text-cyan-300">← Back to model menu</a>
+      <p class="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Codestral Family</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Codestral — The 22B Code Model Engineering Teams Deploy When Output Quality Actually Matters</h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">Mistral's dedicated code model delivers 32K context, fill-in-the-middle completion, and 80-language support. Runs privately on a single GPU instance or a beefy on-premise server — no API subscription, no code leaving your network, no per-token cost at scale.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="../quote.html" class="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="../deploy/gpu-guide.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">GPU instance setup guide</a>
+        <a href="../deploy/on-premise.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section class="grid gap-8 lg:grid-cols-[1.55fr_0.95fr]">
+      <article class="rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10">
+
+        <p class="text-slate-300">There is a meaningful quality gap between a 7B code model and a 22B one. The smaller model handles autocomplete well. It struggles when the task is complex: when the function spans 200 lines, when the codebase uses non-standard patterns, when the request requires understanding how five components interact rather than completing a single block.</p>
+        <p class="mt-4 text-slate-300">Codestral is Mistral's answer to that gap. It is a 22B model trained specifically on code — not a general-purpose model with coding ability bolted on. It ships with a 32K context window, native fill-in-the-middle support, and training coverage across 80 programming languages. It is the first model in the Mistral family built from the ground up for development work, and the benchmark results show it.</p>
+        <p class="mt-4 text-slate-300">The deployment question is real: 22B requires hardware that 7B does not. But for engineering teams where developer time is expensive and code quality directly affects product outcomes, the hardware cost is a rounding error against the value delivered.</p>
+
+        <h2 class="mt-10 text-3xl font-black">What Codestral Does That Smaller Code Models Cannot</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">32K context for whole-file and multi-file reasoning</h3>
+            <p class="mt-3 text-slate-400">A 7B model with an 8K context window sees a fragment of your codebase. Codestral's 32K window holds entire modules, complete test suites, and lengthy specification documents alongside the code it is generating. This is the difference between a model that completes lines and one that understands architecture.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Native fill-in-the-middle built for IDE integration</h3>
+            <p class="mt-3 text-slate-400">Codestral's FIM implementation is designed for real IDE workflows — it reads what is above the cursor and what is below it, then generates exactly what belongs between them. This is not a chat interface that generates code blocks. It integrates directly with Continue, Cursor, and other local-first IDE extensions via the Ollama API.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">80-language training coverage</h3>
+            <p class="mt-3 text-slate-400">Most code models are weighted toward Python, JavaScript, and Java. Codestral was trained on a curated dataset covering 80 languages — including Rust, Swift, Kotlin, Bash, SQL, and less common systems languages. Teams with polyglot codebases or non-mainstream stacks get useful output rather than pattern-matched guesses.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Test generation and debugging as primary tasks</h3>
+            <p class="mt-3 text-slate-400">Codestral handles test scaffolding, edge case generation, and debugging from stack traces as primary capabilities — not afterthoughts. Teams building CI/CD pipelines around AI-assisted testing find it significantly more reliable than smaller models for these structured, high-stakes generation tasks.</p>
+          </div>
+        </div>
+
+        <h2 class="mt-10 text-3xl font-black">Who Should Be Running Codestral</h2>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Engineering teams where developer time is the constraint</h3>
+        <p class="mt-3 text-slate-300">A senior engineer billing at $150/hour loses more value in one hour of friction from a low-quality coding assistant than the monthly cost of the GPU instance running Codestral. This is not about replacing engineers — it is about eliminating the small, repetitive, time-consuming tasks that accumulate across a team's week.</p>
+        <p class="mt-4 text-slate-300">Boilerplate generation, docstring writing, unit test scaffolding, migration scripting — these are tasks where a 22B model's output quality means the engineer reviews and ships rather than reviews and rewrites. The productivity delta between good enough and actually good is real and measurable in pull request velocity.</p>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Companies with non-trivial IP in their codebase</h3>
+        <p class="mt-3 text-slate-300">SaaS companies, fintech firms, defense contractors, and any organization where source code is a core competitive asset face a specific risk from cloud-based coding AI: the ToS. Most commercial coding assistants reserve the right to use customer inputs to improve the model. Your proprietary algorithms, your internal architecture, your unreleased features — these are training data for a competitor's product unless you host your own model.</p>
+        <p class="mt-4 text-slate-300">Codestral deployed privately on your infrastructure eliminates that exposure entirely. The weights are on your server. The queries never leave your network. There is no ToS governing your code because there is no third-party service involved.</p>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Regulated industries with strict data residency requirements</h3>
+        <p class="mt-3 text-slate-300">Healthcare organizations, financial institutions, and government contractors often cannot legally route source code through external services. SOC 2, HIPAA, FedRAMP, and similar compliance frameworks impose real restrictions on where data can go and who can access it. A privately deployed Codestral instance satisfies those requirements by design — there is no external data flow to audit, disclose, or restrict.</p>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Teams replacing expensive per-seat commercial licenses</h3>
+        <p class="mt-3 text-slate-300">GitHub Copilot Business runs $19/month per developer. JetBrains AI Assistant is similar. A 15-person engineering team pays $3,400 per year for those licenses — every year, with no ownership and no control over what the model does with their code. One Codestral deployment on a GPU instance costs a fraction of that annually, serves the entire team, and returns full ownership of both the infrastructure and the data.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Hardware and Deployment Reality for Codestral</h2>
+        <p class="mt-4 text-slate-300">Codestral is a 22B model. It requires more RAM than CodeGemma or smaller 7B models. The recommended deployment path uses a GPU-accelerated instance for best response latency, though CPU-only operation is possible for lower-concurrency use cases.</p>
+
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Deployment tier</th>
+                <th class="px-4 py-3">Hardware fit</th>
+                <th class="px-4 py-3">Best use</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Lightsail 16 GB (CPU)<br><span class="font-normal text-slate-400">Codestral 22B Q4</span></td>
+                <td class="px-4 py-3">Fits in RAM with Q4 quantization (~13 GB). Slower token generation — 3–8 tokens/sec. Suitable for async or batch tasks where latency is not critical.</td>
+                <td class="px-4 py-3">Low-concurrency or overnight batch tasks. Not recommended for interactive IDE completion due to response delay.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">AWS g4dn.xlarge (T4 GPU)<br><span class="font-normal text-slate-400">Codestral 22B Q4</span></td>
+                <td class="px-4 py-3">16 GB VRAM handles Q4 quantized 22B. GPU acceleration pushes token generation to 20–35 tokens/sec. Good interactive latency for 2–4 concurrent users.</td>
+                <td class="px-4 py-3">Small to mid-size teams needing interactive IDE completion. Best cost-per-quality entry point for GPU deployment.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">AWS g4dn.2xlarge or g5.xlarge<br><span class="font-normal text-slate-400">Codestral 22B full or Q8</span></td>
+                <td class="px-4 py-3">24 GB VRAM runs Q8 or near-full precision. Higher output quality. Handles 6–10 concurrent developers without memory pressure.</td>
+                <td class="px-4 py-3">Larger engineering teams. Shared instance for 10–20 developers with consistent interactive response times.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">On-premise workstation or server<br><span class="font-normal text-slate-400">RTX 3090 / 4090 or A-series</span></td>
+                <td class="px-4 py-3">24 GB VRAM consumer GPU runs Codestral Q8 well. Enterprise A100 (40 GB) runs full precision. Maximum throughput for high-concurrency teams.</td>
+                <td class="px-4 py-3">Air-gapped deployments, regulated environments, teams needing full hardware ownership with no cloud dependency.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="mt-10 text-3xl font-black">The Real Cost of Sending Your Code to a Cloud API</h2>
+        <p class="mt-5 text-slate-300">Cloud coding AI APIs feel inexpensive at the token level. The actual cost surfaces elsewhere:</p>
+        <ul class="mt-4 space-y-3 text-slate-300">
+          <li class="rounded-2xl border border-slate-800 bg-slate-950 p-4"><span class="font-semibold text-white">Terms of service risk.</span> Most commercial AI services include language permitting them to use inputs for model improvement. Your proprietary code becomes training data for models that your competitors also use. This is not a hypothetical — it is the default setting on most platforms.</li>
+          <li class="rounded-2xl border border-slate-800 bg-slate-950 p-4"><span class="font-semibold text-white">Compliance exposure.</span> If you operate under SOC 2, HIPAA, PCI-DSS, or government frameworks, you are likely required to document and control every system that touches sensitive data. Cloud APIs create third-party data processor relationships that require vendor assessments, BAAs, and ongoing audit evidence.</li>
+          <li class="rounded-2xl border border-slate-800 bg-slate-950 p-4"><span class="font-semibold text-white">Unpredictable cost at scale.</span> Per-token pricing sounds manageable until you have 15 developers making hundreds of queries per day. Usage-based billing creates budget volatility that a fixed-cost GPU instance eliminates entirely.</li>
+          <li class="rounded-2xl border border-slate-800 bg-slate-950 p-4"><span class="font-semibold text-white">Vendor lock-in and availability risk.</span> A cloud API can change pricing, deprecate model versions, or experience outages at any time. A private Codestral deployment runs on your schedule, with your weights, with no dependency on a third party's uptime or business decisions.</li>
+        </ul>
+
+        <h2 class="mt-10 text-3xl font-black">Deploy Codestral on Your Infrastructure</h2>
+        <p class="mt-5 text-slate-300">NoCloudGPT handles the full setup: GPU instance provisioning or on-premise server configuration, Ollama installation, Codestral model pull, and OpenWebUI deployment for browser-based access. We also configure the Ollama API endpoint so your team can connect Continue, Cursor, or any OpenAI-compatible IDE extension directly to the private instance.</p>
+        <p class="mt-4 text-slate-300">Pull the model locally to evaluate it before committing to a server deployment: <code class="rounded bg-slate-800 px-2 py-0.5 text-cyan-300 text-sm">ollama pull codestral</code> — the Q4 quantized version will be running on your machine within a few minutes of the download completing.</p>
+        <div class="mt-6 grid gap-3 md:grid-cols-3">
+          <a href="../quote.html" class="rounded-2xl bg-cyan-300 p-5 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+          <a href="../deploy/gpu-guide.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">GPU instance setup guide</a>
+          <a href="../deploy/on-premise.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Request on-premise installation</a>
+        </div>
+      </article>
+
+      <aside class="space-y-6">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-8">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">Codestral deployment</p>
+          <h2 class="mt-3 text-3xl font-black">22B. 32K context. 80 languages. Runs on one GPU.</h2>
+          <p class="mt-4 text-cyan-50">The step up from 7B that engineering teams actually notice in daily output quality. One private instance serves 10–20 developers.</p>
+          <a href="../quote.html" class="mt-6 inline-block rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build a Codestral quote</a>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li>Interactive IDE FIM completion</li>
+            <li>Complex multi-file code generation</li>
+            <li>Test suite scaffolding and edge case generation</li>
+            <li>80-language polyglot codebases</li>
+            <li>Regulated industry deployments</li>
+            <li>High-IP codebase environments</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Hardware requirements</h3>
+          <ul class="mt-4 space-y-3 text-slate-400 text-sm">
+            <li><span class="font-semibold text-white">CPU minimum</span> — 16 GB RAM, Q4 quantized, slow interactive use</li>
+            <li><span class="font-semibold text-white">T4 GPU (16 GB VRAM)</span> — recommended entry point, good interactive latency</li>
+            <li><span class="font-semibold text-white">A10G / RTX 4090 (24 GB)</span> — Q8 quality, 10–20 concurrent users</li>
+            <li><span class="font-semibold text-white">A100 (40 GB)</span> — full precision, maximum throughput</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">IDE integrations supported</h3>
+          <ul class="mt-4 space-y-3 text-slate-300 text-sm">
+            <li>Continue (VS Code / JetBrains)</li>
+            <li>Cursor (local model mode)</li>
+            <li>Any OpenAI-compatible client</li>
+            <li>OpenWebUI (browser interface)</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li><a class="text-cyan-300" href="../codegemma/index.html">CodeGemma — lightweight alternative</a></li>
+            <li><a class="text-cyan-300" href="../code-llama/index.html">Code Llama deployments</a></li>
+            <li><a class="text-cyan-300" href="../deepseek-coder/index.html">DeepSeek Coder deployments</a></li>
+            <li><a class="text-cyan-300" href="../deploy/gpu-guide.html">GPU instance setup guide</a></li>
+            <li><a class="text-cyan-300" href="../deploy/on-premise.html">On-premise Linux guide</a></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
