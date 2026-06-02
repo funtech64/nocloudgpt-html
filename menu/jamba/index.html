@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jamba — Private Hybrid SSM-Transformer AI for Long-Context Enterprise Workflows | NoCloudGPT</title>
+  <meta name="description" content="Deploy AI21 Labs' Jamba privately with NoCloudGPT. The first production hybrid SSM-Transformer model — combining Mamba state space efficiency with transformer attention for long-context enterprise workloads on your infrastructure.">
+  <link rel="canonical" href="https://nocloudgpt.com/menu/jamba/">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="../index.html" class="text-sm font-semibold text-cyan-300">← Back to model menu</a>
+      <p class="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Jamba</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Jamba — The Hybrid SSM-Transformer Built for Long-Context Work That Pure Attention Models Handle Poorly</h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">AI21 Labs' Jamba is the first production-grade hybrid model combining Mamba state space model layers with transformer attention — an architectural innovation that delivers genuinely different performance characteristics for long-context document work, sustained throughput, and memory efficiency compared to standard transformer models of equivalent size.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="../quote.html" class="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="../deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day Lightsail pilot</a>
+        <a href="../deploy/on-premise.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section class="grid gap-8 lg:grid-cols-[1.55fr_0.95fr]">
+      <article class="rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10">
+
+        <p class="text-slate-300">Every major open-weight language model available today is a transformer. Llama, Mistral, Mixtral, Falcon, Phi, Gemma, Command R — all of them are built on the same foundational architecture that Google introduced in 2017. The transformer's self-attention mechanism is genuinely powerful, but it carries a well-understood cost: computational complexity scales quadratically with context length. The longer the document or conversation you feed a transformer, the more memory and compute it requires to process it, and the slower it gets.</p>
+        <p class="mt-4 text-slate-300">Jamba is architecturally different. AI21 Labs built it as a hybrid of transformer attention layers and Mamba state space model layers — interleaving both types of processing to capture the strengths of each. Mamba processes sequences with linear rather than quadratic complexity, which means its memory and compute requirements grow proportionally with context length rather than explosively. By combining Mamba's efficiency with transformer attention's strength at selective focus and complex reasoning, Jamba delivers throughput and memory characteristics that pure transformer models cannot match for long-context workloads — while preserving the quality benchmarks that make transformers the current standard.</p>
+        <p class="mt-4 text-slate-300">This is not a theoretical distinction. For organizations deploying AI against long regulatory documents, extended contracts, multi-chapter research reports, or conversation logs that stretch over many thousands of tokens, the difference between a model that handles long context gracefully and one that degrades or runs out of memory is a production constraint, not a benchmark footnote. Jamba was built to solve this specific problem in a deployment context, and it does so on hardware that organizations can actually provision.</p>
+        <p class="mt-4 text-slate-300">AI21 Labs released Jamba under an open license for the base model, with the instruct-tuned Jamba-Instruct available for commercial use subject to their terms — making it a viable private deployment option for organizations that need its architectural advantages without routing sensitive documents through a cloud API.</p>
+
+        <h2 class="mt-10 text-3xl font-black">The Architecture — Why SSM-Transformer Hybrid Matters for Real Workloads</h2>
+        <p class="mt-5 text-slate-300">To understand why Jamba's architecture is practically significant, it helps to understand what state space models actually do differently from transformers. A transformer's attention mechanism computes a relationship between every token and every other token in its context window. At short context lengths — a few hundred tokens — this is cheap. At context lengths of tens of thousands of tokens, this quadratic relationship becomes the dominant factor in both memory usage and inference latency. This is why transformer models require increasingly large amounts of VRAM as context grows, and why many models impose hard context limits rather than letting them grow freely.</p>
+        <p class="mt-4 text-slate-300">Mamba, and state space models generally, process sequences differently. Rather than maintaining full pairwise attention across the entire context, they compress past information into a hidden state that is updated sequentially. The computational cost of processing each new token depends on the hidden state size, not on the total number of tokens seen so far. This linear scaling means Mamba layers can handle very long sequences with memory requirements that grow proportionally rather than quadratically.</p>
+        <p class="mt-4 text-slate-300">The limitation of pure SSMs is that sequential state compression loses the ability to perform precise, selective attention that transformers excel at. Complex multi-step reasoning, precise information retrieval from specific locations in a long document, and tasks that require comparing non-adjacent context elements are all harder for pure SSMs than for transformers. Jamba's hybrid approach places attention layers strategically within an otherwise Mamba-dominated architecture, combining linear-scaling efficiency with targeted transformer attention where it matters most.</p>
+        <p class="mt-4 text-slate-300">The practical result: Jamba at a 52B parameter MoE architecture (12B active per pass) fits in a single 80 GB GPU with enough headroom to process very long contexts comfortably — a configuration that a pure transformer of equivalent capability would struggle to achieve. Jamba also incorporates MoE routing, so its inference cost per token reflects the active parameter count rather than the total, extending the same efficiency principle that makes Mixtral viable to Jamba's novel hybrid architecture.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Where Jamba Consistently Delivers</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Very long document processing without degradation</h3>
+            <p class="mt-3 text-slate-400">Jamba maintains coherent comprehension across documents and conversation histories that would force pure transformer models to truncate, chunk, or degrade in quality. Entire regulatory filings, full contract sets, or multi-chapter technical documents can be processed in a single pass — with the model retaining accurate understanding of early material when reasoning about later sections.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">High-throughput sustained inference</h3>
+            <p class="mt-3 text-slate-400">For deployments serving multiple concurrent users or processing large document queues, Jamba's SSM architecture delivers higher sustained throughput than transformer equivalents because its memory footprint does not spike with context length. This translates to more requests handled per unit of hardware — a meaningful operational advantage for organizations with high-volume AI workloads.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Memory-efficient operation on a single high-VRAM GPU</h3>
+            <p class="mt-3 text-slate-400">Jamba's 52B MoE architecture (12B active) fits within 80 GB of VRAM for long-context inference — a configuration that makes single-GPU deployment viable for use cases that would require multi-GPU setups with a comparable dense transformer. For organizations making hardware decisions, this can translate to meaningful infrastructure cost reduction.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Instruction following and enterprise task execution</h3>
+            <p class="mt-3 text-slate-400">Jamba-Instruct maintains strong instruction following, structured output generation, and complex task execution alongside its architectural efficiency advantages. The model handles document summarization, extraction, classification, comparison, and analysis tasks with the quality expected of a production enterprise AI deployment, not just the throughput characteristics of a research prototype.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Extended conversation and session coherence</h3>
+            <p class="mt-3 text-slate-400">For applications that maintain long conversation histories — customer-facing AI assistants, internal knowledge tools, or research support interfaces where session context matters — Jamba's linear scaling means the model remains coherent and responsive deep into extended sessions where transformer models begin to slow, truncate, or lose early context.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Novel architecture differentiation for technology-forward organizations</h3>
+            <p class="mt-3 text-slate-400">Jamba represents the first successful production hybrid of two distinct neural architecture families. Organizations in research, financial services, or advanced technology that evaluate AI on architectural merit — not just benchmark position — will find Jamba's design genuinely distinctive and worth understanding as a signal of where model architecture is heading.</p>
+          </div>
+        </div>
+
+        <h2 class="mt-10 text-3xl font-black">Who Should Be Running Jamba</h2>
+
+        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Legal and compliance teams processing large document volumes</h3>
+        <p class="mt-3 text-slate-300">Legal document work is characterized by length, density, and the need for precise recall across long texts. Contract review, regulatory compliance analysis, litigation document review, and legal research all involve documents that regularly exceed the practical context limits of standard transformer models when those models must maintain coherent understanding rather than simply scanning for keywords.</p>
+        <p class="mt-4 text-slate-300">Jamba's ability to hold a full contract, regulatory filing, or multi-document set in context without degradation changes the quality ceiling for what AI assistance can actually deliver in legal work. A model that reads the entire document and reasons across all of it produces genuinely different — and more reliable — analysis than one that works from chunks that lose cross-reference awareness. For law firms, in-house legal teams, and compliance departments, this difference has direct professional consequences.</p>
+        <p class="mt-4 text-slate-300">Private deployment is essential for this use case. Legal documents carry privilege, confidentiality obligations, and client information that cannot be routed through a commercial cloud AI API without significant professional liability exposure. Jamba on your own infrastructure processes client documents entirely within your control — with no external API call and no third-party data access.</p>
+
+        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Financial services teams with regulatory and research document requirements</h3>
+        <p class="mt-3 text-slate-300">Financial analysts, risk teams, and research departments regularly work with multi-hundred-page documents — prospectuses, 10-K and 10-Q filings, credit agreements, Basel framework documents, and internal risk reports. The ability to reason coherently across an entire document rather than a sampled subset is the difference between AI-assisted analysis that a professional can rely on and a summary tool that might miss critical information embedded in section 47 of a 200-page filing.</p>
+        <p class="mt-4 text-slate-300">Financial services organizations also have among the strictest regulatory requirements around data handling. The assumption that financial analysis — which may involve non-public information, client data, or material non-public research — cannot be processed through commercial AI cloud APIs without triggering compliance review is not paranoia; it is a reasonable reading of existing regulatory frameworks. Jamba on internal infrastructure eliminates that concern at the category level.</p>
+
+        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Research institutions with large literature corpora</h3>
+        <p class="mt-3 text-slate-300">Academic and scientific research teams conducting systematic literature reviews, meta-analyses, or interdisciplinary synthesis work face the same long-context challenge in a different domain. A model that can read an entire research paper — not a truncated abstract or a chunked section — and reason about its methodology, findings, and relationship to other literature produces meaningfully better research support than one operating on fragments.</p>
+        <p class="mt-4 text-slate-300">For institutions with institutional repositories, preprint archives, or domain-specific literature collections, Jamba running on institutional infrastructure can serve as the reasoning core of a private research AI system — one that processes the institution's full literature collection without routing it through an external API that creates data governance complexity around publication timing, intellectual property, and research confidentiality.</p>
+
+        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Organizations running high-concurrency AI inference workloads</h3>
+        <p class="mt-3 text-slate-300">Enterprises deploying AI to serve many concurrent internal users — a company-wide knowledge assistant, a multi-department document analysis tool, or a customer-facing interface with many simultaneous sessions — need models that deliver consistent performance at scale, not just good single-request quality. Jamba's throughput efficiency means more concurrent users served on equivalent hardware compared to transformer models of similar capability, which translates to lower per-user infrastructure cost at scale.</p>
+        <p class="mt-4 text-slate-300">For organizations modeling the total cost of a private AI deployment against per-query commercial API pricing, Jamba's efficiency profile improves the economics of on-premise or dedicated cloud deployment, particularly as usage scales. The infrastructure cost per inference is lower, which moves the breakeven point relative to API pricing in favor of private deployment.</p>
+
+        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Healthcare organizations with clinical documentation requirements</h3>
+        <p class="mt-3 text-slate-300">Clinical notes, patient records, discharge summaries, and medical literature are all long-form documents where AI assistance has genuine value — and where the requirement for private, HIPAA-compliant processing is absolute. A patient's full clinical history, including notes spanning years of treatment, can constitute a very long document set. Jamba's ability to reason coherently across extended medical records without truncation is architecturally suited to the length requirements of serious clinical AI assistance.</p>
+        <p class="mt-4 text-slate-300">Healthcare organizations that want to experiment with AI-assisted clinical documentation, medical literature review, or care protocol analysis need a model that runs entirely on their infrastructure with no external data transfer. Jamba on a hospital's own servers or cloud tenancy meets that requirement while delivering the long-context performance that clinical documents demand.</p>
+
+        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Technology teams evaluating next-generation AI architectures</h3>
+        <p class="mt-3 text-slate-300">AI infrastructure and research teams at technology companies that are actively evaluating where model architecture is heading have specific reasons to deploy and benchmark Jamba beyond its immediate practical utility. SSM-Transformer hybrid architectures represent a significant direction in model design research — Jamba is the first production model that makes this architecture available for real-world evaluation at scale.</p>
+        <p class="mt-4 text-slate-300">Organizations that want to understand the practical performance characteristics of hybrid architectures before they become mainstream — to inform infrastructure planning, fine-tuning research, or architectural decisions for their own AI systems — benefit from hands-on deployment experience with Jamba now rather than waiting until the approach has been replicated across the broader model ecosystem.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Jamba vs. the Transformer Alternatives</h2>
+        <p class="mt-5 text-slate-300">Jamba is not competing primarily on benchmark leaderboard position. Its differentiation is architectural — the efficiency and long-context performance characteristics it delivers from its SSM-Transformer hybrid design. Understanding where it sits relative to the transformer alternatives helps clarify the deployment decision.</p>
+        <p class="mt-4 text-slate-300">Against Mixtral 8x22B: Both use MoE architecture, so both benefit from active-parameter efficiency. Mixtral has broader community fine-tuning support and more widely tested production deployments. Jamba adds SSM layers that improve long-context efficiency beyond what MoE alone provides, and fits in less total VRAM for equivalent-length context windows. For short-to-medium context work, Mixtral and Jamba are competitive; for long-context work, Jamba's architecture gives it a structural advantage.</p>
+        <p class="mt-4 text-slate-300">Against Llama 3 70B: Llama 3 70B is a dense transformer with strong general capability benchmarks and the largest fine-tuning ecosystem of any open model. For general-purpose enterprise AI at moderate context lengths, Llama 3 70B is an excellent choice. For long-context workloads where a single 80 GB GPU must serve extended documents efficiently, Jamba's MoE-SSM architecture delivers better throughput and memory efficiency at the cost of a somewhat smaller fine-tuning ecosystem.</p>
+        <p class="mt-4 text-slate-300">Against Command R Plus: Command R Plus is purpose-built for RAG and citation-grounded document retrieval — it has strong tool use and citation formatting that makes it excellent for knowledge base Q&A. Jamba has stronger raw long-context comprehension without the retrieval scaffolding that Command R Plus assumes. For workflows where you are feeding full documents directly to the model rather than retrieving chunks for RAG, Jamba's architecture is better suited.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Hardware and Deployment Configuration</h2>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Configuration</th>
+                <th class="px-4 py-3">Recommended hardware</th>
+                <th class="px-4 py-3">Best use</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Jamba 1.5 Mini (12B)</td>
+                <td class="px-4 py-3">16–24 GB GPU / high-RAM Lightsail</td>
+                <td class="px-4 py-3">Individual analyst, small team, long-context Q&A</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Jamba 1.5 Large (52B MoE)</td>
+                <td class="px-4 py-3">Single 80 GB GPU (A100/H100)</td>
+                <td class="px-4 py-3">Enterprise document processing, legal, financial analysis</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Jamba Large — multi-user</td>
+                <td class="px-4 py-3">Dual 80 GB GPU or on-premise GPU server</td>
+                <td class="px-4 py-3">High-concurrency inference, department-wide deployment</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Quantized (Q4/Q5)</td>
+                <td class="px-4 py-3">48–80 GB VRAM</td>
+                <td class="px-4 py-3">Cost-optimized long-context processing, research teams</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-5 text-slate-300">Jamba 1.5 Mini at 12B parameters is the accessible entry point — it runs on hardware more modest than the full 52B MoE Large model while delivering Jamba's architectural long-context efficiency at smaller scale. For individual analysts or small teams whose primary need is long-document coherence rather than maximum reasoning depth, Jamba Mini is a compelling option that does not require high-end GPU infrastructure.</p>
+        <p class="mt-4 text-slate-300">Jamba 1.5 Large in a single 80 GB GPU configuration is the target deployment for organizations with serious long-context enterprise requirements. The ability to serve this model on a single A100 or H100 rather than requiring a multi-GPU cluster is a direct consequence of the SSM-MoE architecture and translates to lower infrastructure cost compared to equivalent dense transformer alternatives.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Deploy Jamba on Your Infrastructure</h2>
+        <p class="mt-5 text-slate-300">NoCloudGPT configures Jamba deployments on GPU cloud instances or on-premise GPU servers, handling CUDA driver setup, Ollama or vLLM configuration, system prompt optimization for your document type, and multi-user access setup. Jamba requires GPU infrastructure — we recommend a hardware specification call before deployment planning to ensure your configuration matches your concurrency and context length requirements.</p>
+        <p class="mt-4 text-slate-300">For organizations evaluating Jamba against transformer alternatives for a specific long-context workload, we can run a structured benchmark comparison on representative samples of your actual documents before you commit to a deployment configuration. Contact us to discuss a scoped evaluation engagement.</p>
+        <div class="mt-6 grid gap-3 md:grid-cols-3">
+          <a href="../quote.html" class="rounded-2xl bg-cyan-300 p-5 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+          <a href="../deploy/lightsail-guide.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Start the 90-day Lightsail pilot</a>
+          <a href="../deploy/on-premise.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Request on-premise installation</a>
+        </div>
+      </article>
+
+      <aside class="space-y-6">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-8">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">Jamba deployment</p>
+          <h2 class="mt-3 text-3xl font-black">The only production hybrid SSM-Transformer. Built for documents transformers handle poorly.</h2>
+          <p class="mt-4 text-cyan-50">Jamba's Mamba-Transformer hybrid delivers linear-scaling long-context efficiency that pure attention models cannot match — on a single 80 GB GPU for the full 52B MoE model. Private deployment for legal, financial, and research document workflows.</p>
+          <a href="../quote.html" class="mt-6 inline-block rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build a Jamba quote</a>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li>Long regulatory and contract document analysis</li>
+            <li>Legal document review and compliance</li>
+            <li>Financial filing and research analysis</li>
+            <li>Clinical documentation and medical literature</li>
+            <li>Extended conversation and session AI</li>
+            <li>High-concurrency enterprise inference</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Key differentiators</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>First production SSM-Transformer hybrid</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>Linear-scaling long-context efficiency</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>52B MoE on single 80 GB GPU</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>Higher sustained throughput than transformer equivalents</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>AI21 Labs — established research organization</span></li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Hardware note</h3>
+          <p class="mt-3 text-slate-400">Jamba Mini (12B) runs on 16–24 GB GPU. Jamba Large (52B MoE) fits a single 80 GB A100 or H100. Multi-user deployments benefit from dual GPU. Contact us for hardware sizing before planning your deployment.</p>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li><a class="text-cyan-300" href="../mixtral/index.html">Mixtral — MoE transformer</a></li>
+            <li><a class="text-cyan-300" href="../command-r/index.html">Command R — RAG and citations</a></li>
+            <li><a class="text-cyan-300" href="../kimi/index.html">Kimi K2 — agentic frontier MoE</a></li>
+            <li><a class="text-cyan-300" href="../deploy/on-premise.html">On-premise Linux guide</a></li>
+            <li><a class="text-cyan-300" href="../quote.html">Get a deployment quote</a></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="mt-16 border-t border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-slate-500">
+      <p>© 2025 NoCloudGPT. Private AI deployment on Amazon Lightsail and on-premise Linux servers.</p>
+      <p class="mt-2">
+        <a href="../../index.html" class="text-cyan-400 hover:text-cyan-300">Home</a> ·
+        <a href="../index.html" class="text-cyan-400 hover:text-cyan-300">Model menu</a> ·
+        <a href="../quote.html" class="text-cyan-400 hover:text-cyan-300">Get a quote</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
