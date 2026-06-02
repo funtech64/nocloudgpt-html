@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mixtral Models — High-Capacity Private AI with Mixture-of-Experts Efficiency | NoCloudGPT</title>
+  <meta name="description" content="Deploy Mixtral privately with NoCloudGPT. Mistral's mixture-of-experts architecture delivers large-model quality at a fraction of the compute cost. Private, on-premise or small cloud.">
+  <link rel="canonical" href="https://nocloudgpt.com/menu/mixtral/">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="../index.html" class="text-sm font-semibold text-cyan-300">← Back to model menu</a>
+      <p class="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Mixtral Family</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Mixtral — The Efficiency Architecture That Changed What Private AI Can Do</h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">Mixtral's mixture-of-experts design delivers performance that competes with 70B dense models while consuming compute closer to a 7B. Private AI at high capability without high infrastructure cost.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="../quote.html" class="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="../deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day Lightsail pilot</a>
+        <a href="../deploy/on-premise.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section class="grid gap-8 lg:grid-cols-[1.55fr_0.95fr]">
+      <article class="rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10">
+        <p class="text-slate-300">Mixtral introduced mixture-of-experts (MoE) architecture to open-weight models and changed the economics of private AI deployment. Instead of activating all parameters for every token, Mixtral routes each query through only the most relevant subset of its network. The result is a model that performs like a much larger system while consuming compute resources closer to a smaller one.</p>
+        <p class="mt-4 text-slate-300">On NoCloudGPT, Mixtral makes it practical to run a high-capability private AI on mid-tier hardware. For organizations that need strong reasoning and broad knowledge without investing in premium GPU infrastructure, Mixtral is one of the most cost-effective paths available.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Where Mixtral Consistently Delivers</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Broad general knowledge and deep reasoning</h3>
+            <p class="mt-3 text-slate-400">Mixtral 8x7B carries knowledge and reasoning depth that typically requires a dense 70B model. Research assistance, strategic analysis, complex Q&A, and multi-step planning all benefit from this depth.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Long context handling</h3>
+            <p class="mt-3 text-slate-400">Mixtral supports extended context windows for tasks that require holding large documents in memory: contract review, technical documentation analysis, long-form research synthesis, and multi-turn conversations with full history.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Instruction following at scale</h3>
+            <p class="mt-3 text-slate-400">Mixtral Instruct follows complex, multi-part system prompts reliably. Teams building structured assistants with defined personas, restricted topics, and specific output formats will find it highly configurable.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Quantization works exceptionally well</h3>
+            <p class="mt-3 text-slate-400">Mixtral's MoE architecture means Q4 quantized versions retain most of the full model's quality while fitting in significantly less memory — a material advantage for practical private deployments.</p>
+          </div>
+        </div>
+
+        <h2 class="mt-10 text-3xl font-black">Who Should Be Running Mixtral</h2>
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Mid-market companies that have outgrown smaller models</h3>
+        <p class="mt-3 text-slate-300">Mixtral sits in the gap between 7B models that handle simple tasks and the large proprietary models that require cloud dependency. For organizations that need something closer to GPT-4 class performance without routing data through an external API, Mixtral is the answer.</p>
+        <p class="mt-4 text-slate-300">The 8x7B Q4 on an 8 GB Lightsail instance handles the majority of business writing, research, and analysis tasks at a monthly cost that is significantly below any enterprise SaaS AI subscription.</p>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Professional services handling sensitive client work</h3>
+        <p class="mt-3 text-slate-300">Legal, consulting, and accounting firms that handle sensitive client information need AI-assisted research and drafting without the liability of external data exposure. Mixtral's reasoning depth handles nuanced professional tasks that simpler models get wrong — and it runs entirely within your controlled environment.</p>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Internal knowledge management and RAG teams</h3>
+        <p class="mt-3 text-slate-300">Teams building retrieval-augmented generation systems over company documentation will find Mixtral's long context window and strong instruction following make it well suited as the inference engine behind a private knowledge base. It holds more document context than smaller models and reasons over it more reliably.</p>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Data-sensitive industries</h3>
+        <p class="mt-3 text-slate-300">Healthcare administration, financial services, and government contractors where client or patient data cannot leave a controlled environment under any circumstances. Mixtral running privately on your infrastructure means no network egress of sensitive data — not just policy compliance, but architectural enforcement.</p>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Advanced homelab users and application developers</h3>
+        <p class="mt-3 text-slate-300">With 16–32 GB of RAM or a mid-range GPU, Mixtral is a significant step up from 7B models in quality. Quantized versions make it accessible without enterprise hardware. Developers building production applications use Mixtral to prototype and test before deciding on final production sizing.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Hardware and Deployment Reality for Mixtral</h2>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Model</th>
+                <th class="px-4 py-3">Recommended instance</th>
+                <th class="px-4 py-3">Best use</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr><td class="px-4 py-3 font-semibold text-white">Mixtral 8x7B Q4</td><td class="px-4 py-3">8 GB Lightsail or entry GPU</td><td class="px-4 py-3">Recommended starting point for most teams</td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-white">Mixtral 8x7B Q5/Q6</td><td class="px-4 py-3">GPU instance (16 GB VRAM)</td><td class="px-4 py-3">Better quality, production multi-user use</td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-white">Mixtral 8x22B Q4</td><td class="px-4 py-3">Large GPU instance</td><td class="px-4 py-3">Near-frontier quality for demanding workflows</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="mt-10 text-3xl font-black">The MoE Advantage in Plain Terms</h2>
+        <p class="mt-5 text-slate-300">A standard 70B model uses all 70 billion parameters for every single token it generates. Mixtral 8x7B activates approximately 12–13 billion parameters per token, routing each query to whichever expert networks are most relevant. The compute per token is closer to a 12B model. The reasoning quality is closer to a 70B.</p>
+        <p class="mt-4 text-slate-300">For private deployment, this means the infrastructure cost to run near-frontier quality AI drops substantially. The 8x7B Q4 on an 8 GB instance represents one of the best capability-per-dollar configurations available in open-weight AI today.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Deploy Mixtral on Your Infrastructure</h2>
+        <p class="mt-5 text-slate-300">NoCloudGPT configures Mixtral Instruct or base variants on your Lightsail instance or on-premise server. Setup includes Ollama, OpenWebUI, and model-specific configuration for your primary use case.</p>
+        <div class="mt-6 grid gap-3 md:grid-cols-3">
+          <a href="../quote.html" class="rounded-2xl bg-cyan-300 p-5 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+          <a href="../deploy/lightsail-guide.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Start the 90-day Lightsail pilot</a>
+          <a href="../deploy/on-premise.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Request on-premise installation</a>
+        </div>
+      </article>
+
+      <aside class="space-y-6">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-8">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">Mixtral deployment</p>
+          <h2 class="mt-3 text-3xl font-black">Large-model quality at mid-tier cost</h2>
+          <p class="mt-4 text-cyan-50">Mixture-of-experts architecture means Mixtral delivers reasoning depth that usually requires a 70B dense model — on hardware that fits a practical private deployment budget.</p>
+          <a href="../quote.html" class="mt-6 inline-block rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build a Mixtral quote</a>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li>Complex research and strategic analysis</li>
+            <li>Long document review and synthesis</li>
+            <li>Professional services content drafting</li>
+            <li>Multi-user internal knowledge assistants</li>
+            <li>RAG inference engine for large document sets</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li><a class="text-cyan-300" href="../mistral-family/index.html">Mistral Large, Medium, Small</a></li>
+            <li><a class="text-cyan-300" href="../command-r/index.html">Command R — built for RAG</a></li>
+            <li><a class="text-cyan-300" href="../deploy/lightsail-guide.html">Lightsail setup guide</a></li>
+            <li><a class="text-cyan-300" href="../deploy/on-premise.html">On-premise Linux guide</a></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="mt-16 border-t border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-slate-500">
+      <p>© 2025 NoCloudGPT. Private AI deployment on Amazon Lightsail and on-premise Linux servers.</p>
+      <p class="mt-2"><a href="../../index.html" class="text-cyan-400 hover:text-cyan-300">Home</a> · <a href="../index.html" class="text-cyan-400 hover:text-cyan-300">Model menu</a> · <a href="../quote.html" class="text-cyan-400 hover:text-cyan-300">Get a quote</a></p>
+    </div>
+  </footer>
+</body>
+</html>
