@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run Nomic Embed Privately | 8K Context RAG Embeddings | NoCloudGPT</title>
+    <meta name="description" content="Deploy Nomic Embed Text and Nomic Embed v2 MOE privately via Ollama. Long-context, fully open-source embeddings with 8K token support and Matryoshka dimension flexibility for private RAG pipelines.">
+    <meta name="keywords" content="Nomic Embed private deployment, nomic-embed-text Ollama, Nomic Embed v2 MOE self-hosted, long context embeddings local RAG, open source embeddings on-premise, Nomic AI private vector search">
+    <link rel="canonical" href="https://nocloudgpt.com/nomic-embed/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0a; color: #e8e8e8; line-height: 1.7; }
+        header { background: linear-gradient(135deg, #0a0f1a 0%, #0d1a2e 50%, #0a1f3a 100%); padding: 60px 20px; text-align: center; border-bottom: 2px solid #06d6a0; }
+        .badge { display: inline-block; background: #06d6a0; color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase; }
+        h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; }
+        h1 span { color: #06d6a0; }
+        .subtitle { font-size: 1.15rem; color: #a0b4c8; max-width: 700px; margin: 0 auto 30px; }
+        .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: #06d6a0; color: #000; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; }
+        .btn-secondary { background: transparent; color: #06d6a0; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; border: 2px solid #06d6a0; }
+        nav { background: #111; padding: 12px 20px; text-align: center; border-bottom: 1px solid #222; }
+        nav a { color: #06d6a0; text-decoration: none; margin: 0 16px; font-size: 0.9rem; }
+        .container { max-width: 960px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 1.9rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; }
+        h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; color: #06d6a0; }
+        p { margin-bottom: 18px; color: #c8d4e0; }
+        .highlight-box { background: #091a14; border-left: 4px solid #06d6a0; padding: 24px 28px; border-radius: 0 8px 8px 0; margin: 32px 0; }
+        .highlight-box p { margin-bottom: 0; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin: 32px 0; }
+        .stat-card { background: #111; border: 1px solid #0a2520; border-radius: 10px; padding: 24px; text-align: center; }
+        .stat-card .number { font-size: 2rem; font-weight: 800; color: #06d6a0; display: block; }
+        .stat-card .label { font-size: 0.85rem; color: #8a9aaa; margin-top: 4px; }
+        .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
+        .model-card { background: #0d1117; border: 1px solid #1a2d3e; border-radius: 10px; padding: 24px; }
+        .model-card h3 { color: #06d6a0; margin-bottom: 8px; }
+        .model-card .tag { display: inline-block; background: #091a14; color: #06d6a0; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; margin-bottom: 12px; }
+        .model-card p { font-size: 0.88rem; margin-bottom: 8px; }
+        .model-card .spec { font-family: monospace; color: #06d6a0; font-size: 0.85rem; display: block; margin-top: 8px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 32px 0; }
+        .feature-card { background: #091a14; border: 1px solid #1a3040; border-radius: 8px; padding: 20px; }
+        .feature-card .icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+        .feature-card h3 { font-size: 1rem; margin-bottom: 8px; color: #06d6a0; }
+        .feature-card p { font-size: 0.85rem; margin-bottom: 0; }
+        .use-case-list { list-style: none; margin: 16px 0 24px; }
+        .use-case-list li { padding: 10px 0; border-bottom: 1px solid #1a1a1a; color: #c8d4e0; padding-left: 20px; position: relative; font-size: 0.95rem; }
+        .use-case-list li::before { content: "→"; color: #06d6a0; position: absolute; left: 0; }
+        .code-block { background: #0d1117; border: 1px solid #1a2d3e; border-radius: 8px; padding: 20px 24px; margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.88rem; color: #06d6a0; overflow-x: auto; }
+        .code-block .comment { color: #6e7681; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .comparison-table th { background: #111; color: #06d6a0; padding: 12px 16px; text-align: left; border-bottom: 2px solid #06d6a0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; }
+        .comparison-table tr:hover td { background: #0d1117; }
+        .check { color: #06d6a0; font-weight: 700; }
+        .strong { color: #06d6a0; font-weight: 600; }
+        .info-box { background: #091a14; border: 1px solid #1a3040; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+        .info-box h3 { color: #06d6a0; margin-bottom: 8px; }
+        .info-box p { font-size: 0.9rem; margin-bottom: 0; }
+        .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
+        .hardware-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .hardware-table th { background: #111; color: #06d6a0; padding: 12px 16px; text-align: left; border-bottom: 2px solid #1a3040; font-size: 0.85rem; }
+        .hardware-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; font-family: monospace; }
+        .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
+        .tier-card { background: #0d1117; border: 1px solid #222; border-radius: 10px; padding: 24px; }
+        .tier-card.recommended { border-color: #06d6a0; }
+        .tier-card h3 { margin-bottom: 8px; color: #ffffff; }
+        .tier-card .price-label { color: #8a9aaa; font-size: 0.85rem; margin-bottom: 12px; display: block; }
+        .tier-card p { font-size: 0.88rem; margin-bottom: 0; }
+        .rec-badge { background: #06d6a0; color: #000; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; margin-left: 8px; }
+        .prompt-examples { background: #0d1117; border: 1px solid #1a2d3e; border-radius: 10px; padding: 28px; margin: 32px 0; }
+        .prompt-row { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #1a1a1a; }
+        .prompt-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .prompt-label { font-size: 0.75rem; color: #8a9aaa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .prompt-text { font-family: monospace; font-size: 0.88rem; color: #06d6a0; background: #091a14; padding: 10px 14px; border-radius: 4px; }
+        footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
+        footer a { color: #06d6a0; text-decoration: none; margin: 0 12px; }
+        @media (max-width: 600px) { h1 { font-size: 1.9rem; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="badge">137M–475M Parameters · 8K Context · Fully Open Source</div>
+    <h1>Deploy <span>Nomic Embed</span> for Long-Context Private RAG</h1>
+    <p class="subtitle">Nomic AI's embedding models are among the few in the open-weight space that combine long document context (8,192 tokens), strong MTEB benchmark performance, Matryoshka flexible dimensions, and fully auditable training data — all available through Ollama with zero cloud dependency.</p>
+    <div class="cta-group">
+        <a href="/quote" class="btn-primary">Plan My Deployment</a>
+        <a href="/bge/" class="btn-secondary">See BGE-M3 (Multilingual)</a>
+    </div>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/nomic-embed/">Nomic Embed</a>
+    <a href="/bge/">BGE / BGE-M3</a>
+    <a href="/mxbai/">Mxbai</a>
+    <a href="/all-minilm/">All-MiniLM</a>
+    <a href="/deploy/">Deploy</a>
+</nav>
+
+<div class="container">
+
+    <h2>Why Nomic Embed Is the Long-Context Default</h2>
+
+    <p>Most embedding models in the Ollama catalog were designed for sentence or paragraph-level inputs. Their context windows top out at 256 to 512 tokens, which means any document longer than a short paragraph must be chunked before embedding — and the chunking strategy becomes a critical, difficult-to-tune variable in retrieval quality.</p>
+
+    <p>Nomic Embed Text was built to a different specification. Its 8,192-token context window means a full page of dense text, a multi-section technical article, or a complete short contract can be embedded as a single unit. The retrieval pipeline becomes simpler, context is preserved across boundaries that chunking would otherwise split, and the semantic representation of a document reflects its full meaning rather than fragment-level patterns.</p>
+
+    <p>Nomic Embed v2 MOE extends this further with a Mixture-of-Experts architecture that improves quality across both English and multilingual retrieval tasks while remaining efficient enough to run on CPU hardware. For organizations that have outgrown All-MiniLM's token limit or need more semantic depth than a small embedding model provides, Nomic Embed is consistently one of the first upgrades the RAG community reaches for.</p>
+
+    <div class="stat-grid">
+        <div class="stat-card">
+            <span class="number">8,192</span>
+            <div class="label">Max Token Context</div>
+        </div>
+        <div class="stat-card">
+            <span class="number">768</span>
+            <div class="label">Default Dimensions</div>
+        </div>
+        <div class="stat-card">
+            <span class="number">64→768</span>
+            <div class="label">Matryoshka Dim Range</div>
+        </div>
+        <div class="stat-card">
+            <span class="number">Apache 2.0</span>
+            <div class="label">License</div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Nomic Embed Model Family on Ollama</h2>
+
+    <div class="model-grid">
+        <div class="model-card">
+            <h3>Nomic Embed Text v1.5</h3>
+            <span class="tag">Recommended — Standard</span>
+            <p>137M parameters, 768 dimensions, 8192-token context. Matryoshka training allows truncation to 64, 128, 256, or 512 dimensions with graceful quality degradation. Strong MTEB score of 62.4. The established workhorse for long-document private RAG.</p>
+            <span class="spec">ollama pull nomic-embed-text</span>
+            <span class="spec">RAM: ~270MB · Dims: 768 (flexible)</span>
+        </div>
+        <div class="model-card">
+            <h3>Nomic Embed v2 MOE</h3>
+            <span class="tag">Recommended — Best Quality</span>
+            <p>475M parameters, Mixture-of-Experts architecture, 8192-token context, improved multilingual coverage. Stronger MTEB performance than v1.5 with better handling of non-English text. The upgrade path when v1.5 retrieval quality is the limiting factor.</p>
+            <span class="spec">ollama pull nomic-embed-text:v2</span>
+            <span class="spec">RAM: ~950MB · Dims: 768</span>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <p><strong>Start with Nomic Embed Text v1.5.</strong> It handles the overwhelming majority of long-document RAG use cases with a minimal footprint — under 300MB RAM means it coexists with any generation model without competition. Upgrade to v2 MOE when retrieval quality testing on your specific corpus reveals gaps, or when multilingual document coverage is a requirement.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>What Makes Nomic Embed Different</h2>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <span class="icon">📄</span>
+            <h3>8K Token Context Window</h3>
+            <p>Embed full pages, complete policy documents, and multi-section reports as single units. Eliminates the context fragmentation problem that plagues short-context embeddings on document-length inputs.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🎯</span>
+            <h3>Matryoshka Dimensions</h3>
+            <p>Nomic Embed is trained with Matryoshka Representation Learning, meaning the first N dimensions of any embedding are themselves a valid, high-quality embedding. Truncate to 256 dimensions for 3x storage savings with less than 5% quality loss.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🔓</span>
+            <h3>Fully Open Training</h3>
+            <p>Nomic AI published the complete training data, methodology, and codebase. Unlike many open-weight models with closed training pipelines, Nomic Embed's provenance is fully auditable — critical for organizations with AI governance requirements.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🧩</span>
+            <h3>MOE Architecture (v2)</h3>
+            <p>Nomic Embed v2 uses a Mixture-of-Experts design where different expert networks handle different input types. This gives v2 stronger performance on diverse document corpora where a single dense model underperforms on vocabulary outliers.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">⚡</span>
+            <h3>CPU-Efficient Inference</h3>
+            <p>Despite the 8K context capability, Nomic Embed v1.5 runs efficiently on CPU hardware. The 137M parameter count keeps RAM footprint under 300MB and inference latency acceptable for real-time RAG queries.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🔗</span>
+            <h3>Universal Framework Support</h3>
+            <p>Nomic Embed is a first-class citizen in LangChain, LlamaIndex, Haystack, and OpenWebUI's RAG pipeline. Pull it via Ollama and configure it as the embedding provider in minutes with no framework-specific adaptation.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Understanding Matryoshka Embeddings in Practice</h2>
+
+    <p>Matryoshka Representation Learning (MRL) is a training technique that optimizes embedding quality at multiple dimension sizes simultaneously. For Nomic Embed, this means the 768-dimensional vector it produces can be truncated to smaller sizes without retraining — and each truncated version is still a well-trained embedding at that dimension count.</p>
+
+    <p>The practical implications for RAG deployment are significant. A standard embedding pipeline stores 768-dimensional vectors. With Nomic Embed's Matryoshka property, you can choose to store 256-dimensional vectors instead — one-third the storage cost — and accept a retrieval quality trade-off that, for most use cases, is genuinely small. On typical enterprise document corpora, the quality difference between 256 and 768 dimensions with Nomic Embed is less than 3% on recall metrics.</p>
+
+    <p>For organizations with very large document corpora — millions of documents, petabyte-scale vector stores — the storage and index query cost reduction from Matryoshka truncation is a material operational saving. NoCloudGPT can help you measure the quality-versus-storage trade-off on your specific corpus before committing to a dimension size.</p>
+
+    <div class="prompt-examples">
+        <div class="prompt-row">
+            <div class="prompt-label">Matryoshka Dimension Selection Guide</div>
+            <div class="prompt-text"># Nomic Embed Text v1.5 — Matryoshka dimension options:
+# 768 dims → Full quality, standard storage (~3KB per vector)
+# 512 dims → ~2% quality loss, 33% storage reduction
+# 256 dims → ~3-4% quality loss, 67% storage reduction
+# 128 dims → ~6-8% quality loss, 83% storage reduction
+# 64 dims  → Significant quality loss, prototype/cache use only
+# Recommended for most deployments: 512 dims (best trade-off)</div>
+        </div>
+        <div class="prompt-row">
+            <div class="prompt-label">Truncating Embeddings in Python</div>
+            <div class="prompt-text">import numpy as np
+
+def truncate_embedding(embedding, target_dim):
+    # Nomic Embed MRL — truncate and re-normalize
+    truncated = np.array(embedding[:target_dim])
+    normalized = truncated / np.linalg.norm(truncated)
+    return normalized.tolist()
+
+# Use with cosine similarity search
+# Example: truncate 768-dim to 256-dim
+compact_vec = truncate_embedding(full_embedding, 256)</div>
+        </div>
+        <div class="prompt-row">
+            <div class="prompt-label">Long Document Chunking Strategy</div>
+            <div class="prompt-text"># With 8K context — use larger, semantically complete chunks
+# Recommended for Nomic Embed:
+chunk_size = 1500   # tokens — embed whole sections/pages
+chunk_overlap = 150  # 10% overlap at section boundaries
+# Prefer splitting at: paragraph breaks, section headers, list ends
+# Avoid splitting: mid-sentence, mid-table, mid-code-block
+# Result: fewer chunks, simpler index, better context preservation</div>
+        </div>
+        <div class="prompt-row">
+            <div class="prompt-label">OpenWebUI RAG Configuration</div>
+            <div class="prompt-text"># OpenWebUI Settings → Documents → Embedding Model
+# Set to: nomic-embed-text (via Ollama)
+# Chunk size: 1500 tokens
+# Chunk overlap: 150 tokens
+# Top K retrieval: 5 (higher quality than MiniLM needs)
+# Similarity threshold: 0.70
+# This config handles full-page PDFs without fragmentation</div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Hardware Requirements</h2>
+
+    <table class="hardware-table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Min RAM</th>
+                <th>Recommended Instance</th>
+                <th>CPU Throughput</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nomic Embed v1.5</td>
+                <td>2 GB</td>
+                <td>Lightsail 2–4GB</td>
+                <td>60–120 docs/s</td>
+                <td>Runs alongside generation model on 4GB+</td>
+            </tr>
+            <tr>
+                <td>Nomic Embed v2 MOE</td>
+                <td>4 GB</td>
+                <td>Lightsail 4–8GB</td>
+                <td>20–50 docs/s</td>
+                <td>Higher quality, more RAM — use dedicated instance at scale</td>
+            </tr>
+            <tr>
+                <td>v1.5 + LLM (same server)</td>
+                <td>6 GB</td>
+                <td>Lightsail 8GB</td>
+                <td>Unaffected by LLM</td>
+                <td>Full RAG stack — embed + generate on one instance</td>
+            </tr>
+            <tr>
+                <td>v2 MOE + LLM (same server)</td>
+                <td>10 GB</td>
+                <td>GPU instance / on-premise</td>
+                <td>Varies</td>
+                <td>Recommended to separate embedding and generation</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr class="section-divider">
+
+    <h2>Deployment with Ollama</h2>
+
+    <div class="code-block">
+        <span class="comment"># Pull Nomic Embed Text v1.5</span><br>
+        ollama pull nomic-embed-text<br><br>
+        <span class="comment"># Pull Nomic Embed v2 MOE</span><br>
+        ollama pull nomic-embed-text:v2<br><br>
+        <span class="comment"># Generate embedding via API</span><br>
+        curl http://localhost:11434/api/embed \<br>
+        &nbsp;&nbsp;-d '{<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"model": "nomic-embed-text",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"input": "search_document: Full page of enterprise documentation..."<br>
+        &nbsp;&nbsp;}'<br><br>
+        <span class="comment"># Note: Nomic Embed uses task prefixes for best results</span><br>
+        <span class="comment"># "search_document:" prefix for documents being indexed</span><br>
+        <span class="comment"># "search_query:" prefix for user queries at retrieval time</span><br><br>
+        <span class="comment"># LangChain integration</span><br>
+        from langchain_community.embeddings import OllamaEmbeddings<br>
+        embeddings = OllamaEmbeddings(<br>
+        &nbsp;&nbsp;model="nomic-embed-text",<br>
+        &nbsp;&nbsp;show_progress=True<br>
+        )<br><br>
+        <span class="comment"># LlamaIndex with Nomic Embed</span><br>
+        from llama_index.embeddings.ollama import OllamaEmbedding<br>
+        embed_model = OllamaEmbedding(<br>
+        &nbsp;&nbsp;model_name="nomic-embed-text",<br>
+        &nbsp;&nbsp;base_url="http://localhost:11434",<br>
+        &nbsp;&nbsp;embed_batch_size=10<br>
+        )<br><br>
+        <span class="comment"># Chroma with 768-dim vectors for Nomic Embed</span><br>
+        import chromadb<br>
+        client = chromadb.Client()<br>
+        collection = client.create_collection(<br>
+        &nbsp;&nbsp;name="long_docs",<br>
+        &nbsp;&nbsp;metadata={"hnsw:space": "cosine"}<br>
+        &nbsp;&nbsp;<span class="comment"># Nomic Embed vectors: 768 dimensions</span><br>
+        )
+    </div>
+
+    <div class="info-box">
+        <h3>Task Prefix Requirement</h3>
+        <p>Nomic Embed Text is trained with task-type prefixes that improve retrieval quality. When embedding documents for indexing, prepend <code style="color:#06d6a0;">search_document:</code> to the text. When embedding user queries at retrieval time, prepend <code style="color:#06d6a0;">search_query:</code>. Omitting these prefixes still works but reduces retrieval accuracy by approximately 3–5% on benchmark evaluations. LangChain and LlamaIndex integrations handle this automatically when configured correctly.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Use Cases Where Nomic Embed Excels</h2>
+
+    <ul class="use-case-list">
+        <li><strong>Policy and compliance document RAG:</strong> HR policies, regulatory filings, compliance manuals, and legal opinions are all document-length texts that benefit from whole-document embedding. Nomic Embed's 8K context handles these without chunking fragmentation.</li>
+        <li><strong>Technical documentation and runbooks:</strong> IT teams embedding long system documentation, API references, and runbooks. Sections stay together as coherent units rather than being split at arbitrary token boundaries.</li>
+        <li><strong>Research paper and report libraries:</strong> Academic and research organizations embedding full paper sections, white papers, and intelligence reports. Long-context embedding preserves the analytical structure of research documents.</li>
+        <li><strong>Contract and agreement repositories:</strong> Legal teams building private contract search tools. Full contract clauses and sections embed as units, making clause-level retrieval accurate without over-chunking.</li>
+        <li><strong>Knowledge base RAG with large article content:</strong> Organizations whose knowledge base articles are long-form — detailed troubleshooting guides, product documentation, training materials — where 256-token chunks lose critical context.</li>
+        <li><strong>Large corpus deployments with storage constraints:</strong> Organizations using Matryoshka truncation to reduce vector storage costs on millions of documents while maintaining acceptable retrieval quality.</li>
+        <li><strong>OpenWebUI RAG pipeline (simplest path):</strong> Nomic Embed Text is the most commonly recommended embedding model for OpenWebUI's built-in document RAG feature. If you are already running OpenWebUI on NoCloudGPT, adding Nomic Embed is a one-click configuration change.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <h2>Nomic Embed vs. Other Long-Context Options</h2>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Max Tokens</th>
+                <th>Dimensions</th>
+                <th>Matryoshka</th>
+                <th>Open Training</th>
+                <th>MTEB Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="strong">Nomic Embed v1.5</td>
+                <td class="strong">8,192</td>
+                <td>768</td>
+                <td class="check">✓ 64–768</td>
+                <td class="check">✓ Fully open</td>
+                <td>62.4</td>
+            </tr>
+            <tr>
+                <td class="strong">Nomic Embed v2 MOE</td>
+                <td class="strong">8,192</td>
+                <td>768</td>
+                <td class="check">✓</td>
+                <td class="check">✓ Fully open</td>
+                <td>~64.5</td>
+            </tr>
+            <tr>
+                <td>BGE-M3</td>
+                <td class="strong">8,192</td>
+                <td>1,024</td>
+                <td>✗</td>
+                <td>Partial</td>
+                <td>64.8</td>
+            </tr>
+            <tr>
+                <td>All-MiniLM-L6</td>
+                <td>256</td>
+                <td>384</td>
+                <td>✗</td>
+                <td>Partial</td>
+                <td>56.3</td>
+            </tr>
+            <tr>
+                <td>Mxbai-Embed-Large</td>
+                <td>512</td>
+                <td>1,024</td>
+                <td>✗</td>
+                <td>Partial</td>
+                <td>64.7</td>
+            </tr>
+            <tr>
+                <td>Snowflake Arctic Embed 2</td>
+                <td>8,192</td>
+                <td>1,024</td>
+                <td>✓</td>
+                <td>Partial</td>
+                <td>~65.0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="highlight-box">
+        <p><strong>Nomic Embed's unique position:</strong> It is the only model in this comparison that offers both 8K token context and fully open training data documentation. For organizations where AI governance requires auditable training provenance AND long-document retrieval capability, Nomic Embed v1.5 or v2 MOE is the only option that satisfies both simultaneously.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Deployment Service Options</h2>
+
+    <div class="tier-grid">
+        <div class="tier-card">
+            <h3>Nomic Embed + OpenWebUI</h3>
+            <span class="price-label">Simplest RAG deployment</span>
+            <p>Nomic Embed Text v1.5 configured as the embedding model inside OpenWebUI's document RAG feature. Upload documents through the browser interface, query them immediately. No pipeline code required. Ready in under an hour on a Lightsail 4GB instance.</p>
+        </div>
+        <div class="tier-card recommended">
+            <h3>Full Long-Document RAG Stack <span class="rec-badge">Most Common</span></h3>
+            <span class="price-label">Standard engagement</span>
+            <p>Nomic Embed v1.5 or v2 MOE with ChromaDB or Qdrant, LangChain or LlamaIndex pipeline, generation model (Llama 3, Mistral, or Qwen), and document ingestion automation. Matryoshka dimension selection included based on corpus analysis.</p>
+        </div>
+        <div class="tier-card">
+            <h3>Governance-Grade Deployment</h3>
+            <span class="price-label">Compliance-sensitive organizations</span>
+            <p>Nomic Embed with full training provenance documentation, AI governance package, and audit trail configuration. Includes written documentation of model training lineage suitable for regulatory disclosure and internal AI governance review.</p>
+        </div>
+    </div>
+
+    <a href="/quote" class="btn-primary" style="display:inline-block; margin-top: 8px;">Request Deployment Quote</a>
+
+    <hr class="section-divider">
+
+    <div class="info-box">
+        <h3>Related Embedding Models</h3>
+        <p>Need multilingual support with 8K context? <a href="/bge/" style="color: #06d6a0;">BGE-M3</a> covers 100 languages at similar context length. Need maximum English retrieval quality regardless of context? <a href="/mxbai/" style="color: #06d6a0;">Mxbai-Embed-Large</a> leads English MTEB. Need the lightest possible footprint? <a href="/all-minilm/" style="color: #06d6a0;">All-MiniLM</a> fits in 90MB of RAM.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>
+        <a href="/">NoCloudGPT Home</a>
+        <a href="/nomic-embed/">Nomic Embed</a>
+        <a href="/bge/">BGE / BGE-M3</a>
+        <a href="/mxbai/">Mxbai</a>
+        <a href="/all-minilm/">All-MiniLM</a>
+        <a href="/deploy/">Deployment Guide</a>
+        <a href="/quote/">Get Quote</a>
+    </p>
+    <p style="margin-top: 16px;">© 2025 NoCloudGPT. Private AI deployment specialists. Not affiliated with Nomic AI.</p>
+</footer>
+
+</body>
+</html>
