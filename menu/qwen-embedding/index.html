@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run Qwen 3 Embedding Privately | Alibaba's Top-Ranked RAG Model | NoCloudGPT</title>
+    <meta name="description" content="Deploy Qwen 3 Embedding privately via Ollama. Alibaba's MTEB-leading embedding model delivers 32K context, 100+ language support, and Matryoshka dimensions for enterprise private RAG on your own infrastructure.">
+    <meta name="keywords" content="Qwen3 Embedding private deployment, Qwen embedding Ollama, Alibaba embedding model self-hosted, qwen3-embedding local RAG, 32K context embedding on-premise, Qwen embedding private vector search">
+    <link rel="canonical" href="https://nocloudgpt.com/qwen-embedding/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0a; color: #e8e8e8; line-height: 1.7; }
+        header { background: linear-gradient(135deg, #0a0f1a 0%, #0d1a2e 50%, #0a1f3a 100%); padding: 60px 20px; text-align: center; border-bottom: 2px solid #06d6a0; }
+        .badge { display: inline-block; background: #06d6a0; color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase; }
+        h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; }
+        h1 span { color: #06d6a0; }
+        .subtitle { font-size: 1.15rem; color: #a0b4c8; max-width: 700px; margin: 0 auto 30px; }
+        .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: #06d6a0; color: #000; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; }
+        .btn-secondary { background: transparent; color: #06d6a0; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; border: 2px solid #06d6a0; }
+        nav { background: #111; padding: 12px 20px; text-align: center; border-bottom: 1px solid #222; }
+        nav a { color: #06d6a0; text-decoration: none; margin: 0 16px; font-size: 0.9rem; }
+        .container { max-width: 960px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 1.9rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; }
+        h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; color: #06d6a0; }
+        p { margin-bottom: 18px; color: #c8d4e0; }
+        .highlight-box { background: #091a14; border-left: 4px solid #06d6a0; padding: 24px 28px; border-radius: 0 8px 8px 0; margin: 32px 0; }
+        .highlight-box p { margin-bottom: 0; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin: 32px 0; }
+        .stat-card { background: #111; border: 1px solid #0a2520; border-radius: 10px; padding: 24px; text-align: center; }
+        .stat-card .number { font-size: 2rem; font-weight: 800; color: #06d6a0; display: block; }
+        .stat-card .label { font-size: 0.85rem; color: #8a9aaa; margin-top: 4px; }
+        .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
+        .model-card { background: #0d1117; border: 1px solid #1a2d3e; border-radius: 10px; padding: 24px; }
+        .model-card h3 { color: #06d6a0; margin-bottom: 8px; }
+        .model-card .tag { display: inline-block; background: #091a14; color: #06d6a0; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; margin-bottom: 12px; }
+        .model-card p { font-size: 0.88rem; margin-bottom: 8px; }
+        .model-card .spec { font-family: monospace; color: #06d6a0; font-size: 0.85rem; display: block; margin-top: 8px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 32px 0; }
+        .feature-card { background: #091a14; border: 1px solid #1a3040; border-radius: 8px; padding: 20px; }
+        .feature-card .icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+        .feature-card h3 { font-size: 1rem; margin-bottom: 8px; color: #06d6a0; }
+        .feature-card p { font-size: 0.85rem; margin-bottom: 0; }
+        .use-case-list { list-style: none; margin: 16px 0 24px; }
+        .use-case-list li { padding: 10px 0; border-bottom: 1px solid #1a1a1a; color: #c8d4e0; padding-left: 20px; position: relative; font-size: 0.95rem; }
+        .use-case-list li::before { content: "→"; color: #06d6a0; position: absolute; left: 0; }
+        .code-block { background: #0d1117; border: 1px solid #1a2d3e; border-radius: 8px; padding: 20px 24px; margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.88rem; color: #06d6a0; overflow-x: auto; }
+        .code-block .comment { color: #6e7681; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .comparison-table th { background: #111; color: #06d6a0; padding: 12px 16px; text-align: left; border-bottom: 2px solid #06d6a0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; }
+        .comparison-table tr:hover td { background: #0d1117; }
+        .check { color: #06d6a0; font-weight: 700; }
+        .strong { color: #06d6a0; font-weight: 600; }
+        .info-box { background: #091a14; border: 1px solid #1a3040; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+        .info-box h3 { color: #06d6a0; margin-bottom: 8px; }
+        .info-box p { font-size: 0.9rem; margin-bottom: 0; }
+        .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
+        .hardware-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .hardware-table th { background: #111; color: #06d6a0; padding: 12px 16px; text-align: left; border-bottom: 2px solid #1a3040; font-size: 0.85rem; }
+        .hardware-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; font-family: monospace; }
+        .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
+        .tier-card { background: #0d1117; border: 1px solid #222; border-radius: 10px; padding: 24px; }
+        .tier-card.recommended { border-color: #06d6a0; }
+        .tier-card h3 { margin-bottom: 8px; color: #ffffff; }
+        .tier-card .price-label { color: #8a9aaa; font-size: 0.85rem; margin-bottom: 12px; display: block; }
+        .tier-card p { font-size: 0.88rem; margin-bottom: 0; }
+        .rec-badge { background: #06d6a0; color: #000; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; margin-left: 8px; }
+        .prompt-examples { background: #0d1117; border: 1px solid #1a2d3e; border-radius: 10px; padding: 28px; margin: 32px 0; }
+        .prompt-row { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #1a1a1a; }
+        .prompt-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .prompt-label { font-size: 0.75rem; color: #8a9aaa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .prompt-text { font-family: monospace; font-size: 0.88rem; color: #06d6a0; background: #091a14; padding: 10px 14px; border-radius: 4px; }
+        footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
+        footer a { color: #06d6a0; text-decoration: none; margin: 0 12px; }
+        @media (max-width: 600px) { h1 { font-size: 1.9rem; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="badge">0.6B–8B Parameters · 32K Context · MTEB Leaderboard · 100+ Languages</div>
+    <h1>Deploy <span>Qwen 3 Embedding</span> for Enterprise-Grade Private RAG</h1>
+    <p class="subtitle">Alibaba's Qwen 3 Embedding currently ranks at the top of the MTEB multilingual leaderboard. With 32,768-token context, 100+ language support, Matryoshka flexible dimensions, and multiple size variants from 0.6B to 8B parameters, it is the most capable open-weight embedding model deployable via Ollama today — and it runs entirely on your own infrastructure.</p>
+    <div class="cta-group">
+        <a href="/quote" class="btn-primary">Plan My Deployment</a>
+        <a href="/qwen/" class="btn-secondary">See Qwen 2.5 (Generation)</a>
+    </div>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/qwen-embedding/">Qwen 3 Embedding</a>
+    <a href="/qwen/">Qwen Generation</a>
+    <a href="/bge/">BGE / BGE-M3</a>
+    <a href="/nomic-embed/">Nomic Embed</a>
+    <a href="/deploy/">Deploy</a>
+</nav>
+
+<div class="container">
+
+    <h2>The Current State of the Art in Private Embedding</h2>
+
+    <p>When Qwen 3 Embedding was released in mid-2025, it landed at the top of the MTEB (Massive Text Embedding Benchmark) leaderboard across multiple evaluation categories — including multilingual retrieval, where it surpassed BGE-M3 and previous Qwen embedding versions by a meaningful margin. This is not a narrow advantage on a curated test: MTEB is the most comprehensive public benchmark for embedding models, covering retrieval, classification, clustering, reranking, and semantic textual similarity across dozens of datasets and languages.</p>
+
+    <p>What makes Qwen 3 Embedding particularly significant for private deployment is that benchmark-leading performance arrives in a model that Ollama can serve on practical hardware. The 0.6B variant runs on a 2GB Lightsail instance. The 4B variant handles demanding enterprise workloads on an 8GB instance without GPU. The 8B variant, for organizations that need the absolute quality ceiling, runs on a modest GPU instance or on-premise hardware with 16GB of RAM.</p>
+
+    <p>For organizations building RAG systems where the embedding layer quality directly determines the system's usefulness — and where documents are too sensitive to route through any external API — Qwen 3 Embedding is the current answer to "what is the best embedding model I can run privately?"</p>
+
+    <div class="stat-grid">
+        <div class="stat-card">
+            <span class="number">32,768</span>
+            <div class="label">Max Token Context</div>
+        </div>
+        <div class="stat-card">
+            <span class="number">100+</span>
+            <div class="label">Languages Supported</div>
+        </div>
+        <div class="stat-card">
+            <span class="number">2,048</span>
+            <div class="label">Max Dimensions</div>
+        </div>
+        <div class="stat-card">
+            <span class="number">#1</span>
+            <div class="label">MTEB Multilingual Rank</div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Qwen 3 Embedding Size Variants on Ollama</h2>
+
+    <div class="model-grid">
+        <div class="model-card">
+            <h3>Qwen3-Embedding-0.6B</h3>
+            <span class="tag">Lightweight</span>
+            <p>0.6B parameters, 1024 dimensions, 32K context. Remarkably capable for its size — outperforms many larger embedding models from previous generations on MTEB. Best for cost-sensitive deployments that still need Qwen3 multilingual quality.</p>
+            <span class="spec">ollama pull qwen3-embedding:0.6b</span>
+            <span class="spec">RAM: ~1.2GB · Dims: 1024</span>
+        </div>
+        <div class="model-card">
+            <h3>Qwen3-Embedding-4B</h3>
+            <span class="tag">Recommended — Best Balance</span>
+            <p>4B parameters, 2048 dimensions, 32K context. The sweet spot in the Qwen3 Embedding family. Strong MTEB scores across all evaluation categories. Handles demanding enterprise corpora and all 100+ supported languages at high quality on CPU hardware.</p>
+            <span class="spec">ollama pull qwen3-embedding:4b</span>
+            <span class="spec">RAM: ~8GB · Dims: 2048</span>
+        </div>
+        <div class="model-card">
+            <h3>Qwen3-Embedding-8B</h3>
+            <span class="tag">Maximum Quality</span>
+            <p>8B parameters, 4096 dimensions, 32K context. The current quality ceiling for open-weight embedding in the Ollama catalog. Tops the MTEB multilingual leaderboard. Use when maximum retrieval quality justifies the compute investment.</p>
+            <span class="spec">ollama pull qwen3-embedding:8b</span>
+            <span class="spec">RAM: ~16GB · Dims: 4096</span>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <p><strong>Start with Qwen3-Embedding-4B for new production deployments.</strong> The 0.6B variant is a strong choice for budget-constrained scenarios where Qwen's training quality is more important than raw parameter count. The 8B variant is reserved for organizations where retrieval quality is the primary determinant of system value — high-stakes legal, medical, or financial retrieval where precision is non-negotiable.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>What Sets Qwen 3 Embedding Apart</h2>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <span class="icon">🏆</span>
+            <h3>MTEB Leaderboard Performance</h3>
+            <p>Tops the MTEB multilingual retrieval leaderboard among open-weight models. This is the most credible independent validation of embedding quality available. For procurement decisions that require benchmark evidence, Qwen 3 Embedding provides it.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">📄</span>
+            <h3>32K Token Context Window</h3>
+            <p>At 32,768 tokens, Qwen 3 Embedding handles full-length documents — long contracts, complete research papers, multi-chapter reports — as single embedding units. No chunking required for documents up to approximately 24,000 words.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🌐</span>
+            <h3>100+ Language Support</h3>
+            <p>Covers all major world languages with strong performance, reflecting Alibaba's investment in multilingual training across their global business operations. Chinese-English cross-lingual retrieval is particularly strong, outperforming BGE-M3 on Chinese-centric corpora.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🎯</span>
+            <h3>Matryoshka Dimension Flexibility</h3>
+            <p>Like Nomic Embed, Qwen 3 Embedding supports dimension truncation. The 4B model's 2048-dimensional vectors can be truncated to 1024, 512, or 256 dimensions for storage-cost trade-offs without full re-embedding of the corpus.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🔧</span>
+            <h3>Instruction-Aware Embedding</h3>
+            <p>Qwen 3 Embedding supports task instructions prepended to inputs, allowing the same model to optimize embeddings for different retrieval scenarios: symmetric search, asymmetric passage retrieval, classification, and clustering — all from one deployment.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🔗</span>
+            <h3>Qwen Ecosystem Coherence</h3>
+            <p>For teams already deploying Qwen 2.5 or Qwen 3 for generation, Qwen 3 Embedding creates full architectural coherence across the RAG stack. Alibaba's training philosophy is consistent across the model family, producing smooth embedding-to-generation handoffs.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Instruction-Aware Embedding in Practice</h2>
+
+    <p>Qwen 3 Embedding's instruction-aware design is a meaningful operational feature. Unlike embedding models that apply the same representation strategy to all inputs, Qwen 3 Embedding accepts a task description prefix that adjusts how it represents the input. This matters because retrieval tasks have different optimal representations depending on their nature.</p>
+
+    <div class="prompt-examples">
+        <div class="prompt-row">
+            <div class="prompt-label">Asymmetric Passage Retrieval (Standard RAG)</div>
+            <div class="prompt-text"># For documents being indexed:
+"Instruct: Represent this passage for retrieval\nQuery: " + document_text
+
+# For user queries at search time:
+"Instruct: Retrieve the most relevant passage for the query\nQuery: " + user_query
+
+# Asymmetric: query and document use different instructions
+# This is the standard RAG pattern — most common configuration</div>
+        </div>
+        <div class="prompt-row">
+            <div class="prompt-label">Symmetric Semantic Similarity</div>
+            <div class="prompt-text"># For duplicate detection, clustering, or similarity search
+# where both inputs are the same type:
+"Instruct: Retrieve semantically similar text\nQuery: " + text_a
+"Instruct: Retrieve semantically similar text\nQuery: " + text_b
+
+# Use for: deduplication, near-duplicate detection,
+# clustering similar support tickets, grouping similar products</div>
+        </div>
+        <div class="prompt-row">
+            <div class="prompt-label">Code Retrieval (Paired with Qwen Coder)</div>
+            <div class="prompt-text"># For indexing code documentation or code snippets:
+"Instruct: Represent this code for retrieval\nQuery: " + code_text
+
+# For natural language queries about code:
+"Instruct: Retrieve the most relevant code for the query\nQuery: " + nl_query
+
+# Enables semantic code search: "find examples of async database queries"
+# Returns relevant code snippets even with different syntax</div>
+        </div>
+        <div class="prompt-row">
+            <div class="prompt-label">32K Context — Full Document Embedding</div>
+            <div class="prompt-text"># No chunking needed for documents under ~24,000 words
+# Embed complete contracts, papers, reports as single vectors
+
+full_document = load_pdf("contract_2025.pdf")  # 15 pages
+embedding = embed(
+    "Instruct: Represent this document for retrieval\nQuery: " + full_document,
+    model="qwen3-embedding:4b"
+)
+# Single vector represents entire document
+# Query: "termination clause notice period" → finds this document</div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Hardware Requirements</h2>
+
+    <table class="hardware-table">
+        <thead>
+            <tr>
+                <th>Variant</th>
+                <th>Min RAM</th>
+                <th>Recommended Instance</th>
+                <th>CPU Throughput</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Qwen3-Embedding-0.6B</td>
+                <td>2 GB</td>
+                <td>Lightsail 2–4GB</td>
+                <td>50–100 docs/s</td>
+                <td>Best quality-per-dollar at low compute</td>
+            </tr>
+            <tr>
+                <td>Qwen3-Embedding-4B</td>
+                <td>8 GB</td>
+                <td>Lightsail 8GB dedicated</td>
+                <td>10–30 docs/s</td>
+                <td>Recommended — run as dedicated embedding service</td>
+            </tr>
+            <tr>
+                <td>Qwen3-Embedding-8B</td>
+                <td>16 GB</td>
+                <td>GPU instance / on-premise</td>
+                <td>5–15 docs/s CPU</td>
+                <td>GPU strongly recommended for throughput at this size</td>
+            </tr>
+            <tr>
+                <td>4B + Qwen 2.5 7B (same server)</td>
+                <td>20 GB</td>
+                <td>GPU instance / on-premise</td>
+                <td>Varies</td>
+                <td>Separate instances strongly recommended at this scale</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="info-box">
+        <h3>Architecture Recommendation for Qwen3-Embedding-4B</h3>
+        <p>At 4B parameters, Qwen3 Embedding is large enough that running it as a dedicated embedding microservice — separate from your generation model — is strongly recommended for production deployments. The embedding service handles document ingestion asynchronously while the generation model serves user queries without RAM contention. NoCloudGPT can configure this two-instance architecture with internal Lightsail networking at minimal additional cost.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Deployment with Ollama</h2>
+
+    <div class="code-block">
+        <span class="comment"># Pull Qwen3 Embedding variants</span><br>
+        ollama pull qwen3-embedding:0.6b<br>
+        ollama pull qwen3-embedding:4b<br>
+        ollama pull qwen3-embedding:8b<br><br>
+        <span class="comment"># Embed with instruction prefix (recommended)</span><br>
+        curl http://localhost:11434/api/embed \<br>
+        &nbsp;&nbsp;-d '{<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"model": "qwen3-embedding:4b",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"input": "Instruct: Represent this passage for retrieval\nQuery: Enterprise document content here"<br>
+        &nbsp;&nbsp;}'<br><br>
+        <span class="comment"># Python with LangChain — full Qwen RAG stack</span><br>
+        from langchain_community.embeddings import OllamaEmbeddings<br>
+        from langchain_community.llms import Ollama<br>
+        from langchain_community.vectorstores import Qdrant<br><br>
+        <span class="comment"># Embedding: Qwen3 Embedding 4B</span><br>
+        embeddings = OllamaEmbeddings(model="qwen3-embedding:4b")<br><br>
+        <span class="comment"># Generation: Qwen 2.5 7B (same family)</span><br>
+        llm = Ollama(model="qwen2.5:7b")<br><br>
+        <span class="comment"># Vector store: Qdrant with 2048-dim vectors</span><br>
+        vectorstore = Qdrant.from_documents(<br>
+        &nbsp;&nbsp;documents=docs,<br>
+        &nbsp;&nbsp;embedding=embeddings,<br>
+        &nbsp;&nbsp;location=":memory:",<br>
+        &nbsp;&nbsp;collection_name="enterprise_kb"<br>
+        )<br><br>
+        <span class="comment"># Matryoshka truncation — optional storage saving</span><br>
+        import numpy as np<br>
+        def truncate_qwen_embedding(vec, target_dim=1024):<br>
+        &nbsp;&nbsp;truncated = np.array(vec[:target_dim])<br>
+        &nbsp;&nbsp;return (truncated / np.linalg.norm(truncated)).tolist()
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Use Cases Where Qwen 3 Embedding Excels</h2>
+
+    <ul class="use-case-list">
+        <li><strong>Large enterprise knowledge bases requiring maximum retrieval quality:</strong> Organizations where RAG retrieval quality directly determines business outcomes — finding the right legal precedent, the correct compliance requirement, the relevant clinical guideline — and where settling for second-best embedding quality has real costs.</li>
+        <li><strong>Full-document embedding without chunking:</strong> The 32K context window means contracts, research papers, financial reports, and technical specifications can be embedded as complete documents. Retrieval precision on whole-document queries significantly outperforms chunked approaches for long documents.</li>
+        <li><strong>Chinese-English bilingual enterprise deployments:</strong> Organizations with China-adjacent operations, Chinese-language document libraries, or Chinese-speaking user bases. Qwen's training investment in Chinese is unmatched among open-weight embedding models.</li>
+        <li><strong>Multinational corporations with diverse language needs:</strong> Global enterprises needing strong retrieval quality across many languages simultaneously. Qwen 3 Embedding's top MTEB multilingual score reflects consistently strong performance across language groups, not just on high-resource languages.</li>
+        <li><strong>Code and documentation hybrid search:</strong> Development teams building internal knowledge bases that mix code, documentation, and explanatory text. Instruction-aware embedding allows the same model to handle code-to-natural-language and natural-language-to-code retrieval appropriately.</li>
+        <li><strong>Financial services document intelligence:</strong> Banks, asset managers, and insurance firms processing regulatory filings, contracts, analyst reports, and client correspondence in multiple languages. Long context and high multilingual quality both matter critically for this use case.</li>
+        <li><strong>Healthcare and clinical knowledge retrieval:</strong> Medical organizations embedding clinical guidelines, research literature, and patient documentation. The 8B variant's retrieval precision on dense medical terminology justifies its infrastructure requirement in high-stakes clinical contexts.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <h2>Qwen 3 Embedding vs. The Embedding Landscape</h2>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Max Tokens</th>
+                <th>Max Dims</th>
+                <th>Languages</th>
+                <th>Matryoshka</th>
+                <th>MTEB Multilingual</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="strong">Qwen3-Embedding-8B</td>
+                <td class="strong">32,768</td>
+                <td class="strong">4,096</td>
+                <td class="check">100+</td>
+                <td class="check">✓</td>
+                <td class="strong">#1 Open-Weight</td>
+            </tr>
+            <tr>
+                <td class="strong">Qwen3-Embedding-4B</td>
+                <td class="strong">32,768</td>
+                <td class="strong">2,048</td>
+                <td class="check">100+</td>
+                <td class="check">✓</td>
+                <td class="strong">Top 3</td>
+            </tr>
+            <tr>
+                <td>BGE-M3</td>
+                <td>8,192</td>
+                <td>1,024</td>
+                <td class="check">100+</td>
+                <td>✗</td>
+                <td>Strong</td>
+            </tr>
+            <tr>
+                <td>Nomic Embed v2 MOE</td>
+                <td>8,192</td>
+                <td>768</td>
+                <td>Moderate</td>
+                <td class="check">✓</td>
+                <td>Good</td>
+            </tr>
+            <tr>
+                <td>Mxbai-Embed-Large</td>
+                <td>512</td>
+                <td>1,024</td>
+                <td>Limited</td>
+                <td>✗</td>
+                <td>Limited</td>
+            </tr>
+            <tr>
+                <td>Paraphrase-ML MiniLM</td>
+                <td>512</td>
+                <td>384</td>
+                <td class="check">50+</td>
+                <td>✗</td>
+                <td>Adequate</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="highlight-box">
+        <p><strong>The honest positioning:</strong> Qwen 3 Embedding 4B and 8B are the highest-quality open-weight embedding models currently available for private deployment. They require more hardware than smaller alternatives. For organizations where retrieval quality is critical and hardware budget is not the primary constraint, they represent the current state of the art. For organizations where a 4GB Lightsail instance is the entire infrastructure budget, All-MiniLM or Nomic Embed remain the practical starting points with a clear upgrade path to Qwen 3 Embedding when the deployment scales.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Deployment Service Options</h2>
+
+    <div class="tier-grid">
+        <div class="tier-card">
+            <h3>Qwen3-Embedding-0.6B Stack</h3>
+            <span class="price-label">Quality on a budget</span>
+            <p>The 0.6B variant on a 4GB Lightsail instance delivers Qwen's training quality in the most cost-effective private embedding deployment available. Suitable for organizations that want best-in-class training without the compute cost of the 4B or 8B.</p>
+        </div>
+        <div class="tier-card recommended">
+            <h3>Full Qwen RAG Stack — 4B <span class="rec-badge">Most Common</span></h3>
+            <span class="price-label">Standard production engagement</span>
+            <p>Qwen3-Embedding-4B as dedicated embedding service plus Qwen 2.5 7B or 14B for generation, Qdrant vector store, LangChain or LlamaIndex pipeline, document ingestion automation with 32K context support, and OpenWebUI interface.</p>
+        </div>
+        <div class="tier-card">
+            <h3>Enterprise Maximum Quality — 8B</h3>
+            <span class="price-label">High-stakes retrieval deployments</span>
+            <p>Qwen3-Embedding-8B on dedicated GPU instance for maximum retrieval precision. Designed for legal, medical, and financial organizations where retrieval quality has direct business or compliance implications. Includes retrieval quality benchmarking on your corpus.</p>
+        </div>
+    </div>
+
+    <a href="/quote" class="btn-primary" style="display:inline-block; margin-top: 8px;">Request Deployment Quote</a>
+
+    <hr class="section-divider">
+
+    <div class="info-box">
+        <h3>Related Models</h3>
+        <p>Pair Qwen 3 Embedding with <a href="/qwen/" style="color: #06d6a0;">Qwen 2.5</a> or Qwen 3 for generation to build a fully Alibaba-family RAG stack. Need multilingual coverage at lower compute cost? <a href="/bge/" style="color: #06d6a0;">BGE-M3</a> is the mid-tier option. Need the lightest possible multilingual option? <a href="/paraphrase-multilingual/" style="color: #06d6a0;">Paraphrase-Multilingual</a> runs in 470MB of RAM.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>
+        <a href="/">NoCloudGPT Home</a>
+        <a href="/qwen-embedding/">Qwen 3 Embedding</a>
+        <a href="/qwen/">Qwen Generation</a>
+        <a href="/bge/">BGE / BGE-M3</a>
+        <a href="/nomic-embed/">Nomic Embed</a>
+        <a href="/deploy/">Deployment Guide</a>
+        <a href="/quote/">Get Quote</a>
+    </p>
+    <p style="margin-top: 16px;">© 2025 NoCloudGPT. Private AI deployment specialists. Not affiliated with Alibaba Cloud or Alibaba DAMO Academy.</p>
+</footer>
+
+</body>
+</html>
