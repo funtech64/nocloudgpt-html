@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BakLLaVA — Private Vision AI for Images & Documents | NoCloudGPT</title>
+  <meta name="description" content="Deploy BakLLaVA privately on your server. OCR, visual Q&A, image description, and document analysis without sending images to cloud APIs. NoCloudGPT vision deployments.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/bakllava/">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="../index.html" class="text-sm font-semibold text-cyan-300">← Back to model menu</a>
+      <p class="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">BakLLaVA Family</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">BakLLaVA — Private Vision AI That Sees Documents, Diagrams, and Photos Without Cloud Dependency</h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">Every screenshot, invoice scan, or product photo you upload to ChatGPT Vision, Claude, or Gemini crosses a third-party API. For teams handling proprietary designs, customer data, or sensitive imagery, BakLLaVA deployed privately gives you the same visual understanding with zero data leaving your infrastructure.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="../quote.html" class="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="../deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day Lightsail pilot</a>
+        <a href="../deploy/on-premise.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section class="grid gap-8 lg:grid-cols-[1.55fr_0.95fr]">
+      <article class="rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10">
+        <p class="text-slate-300">Vision models are data hogs. Every image uploaded to cloud APIs gets logged, potentially retained, and definitely transmitted across networks you don't control. For teams working with proprietary designs, customer photos, medical imagery, or internal documents, that exposure compounds quickly.</p>
+        <p class="mt-4 text-slate-300">BakLLaVA builds on the battle-tested LLaVA architecture with efficient backbones (like Phi-3 and Mistral) to deliver strong visual reasoning across documents, charts, photos, and diagrams. Deployed through NoCloudGPT on your infrastructure, it processes images entirely locally — no cloud handoff required.</p>
+
+        <h2 class="mt-10 text-3xl font-black">What Makes BakLLaVA Production-Ready for Vision Tasks</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Document OCR that understands layout</h3>
+            <p class="mt-3 text-slate-400">Not just text extraction — BakLLaVA recognizes tables, identifies form fields, and preserves document structure. Ask "What's the total on page 3?" or "Extract the vendor name from this invoice" and get structured answers.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Visual question answering on real-world images</h3>
+            <p class="mt-3 text-slate-400">"How many defects in this weld photo?" "What's happening in this security camera frame?" "Count the people wearing PPE." Practical VQA for manufacturing, security, and field operations.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Diagram and chart interpretation</h3>
+            <p class="mt-3 text-slate-400">Flowcharts, architectural plans, data visualizations. "Explain step 4 in this process diagram" or "What trend does this graph show?" — unlocks diagrams trapped in PDFs and screenshots.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Efficient multimodal chat</h3>
+            <p class="mt-3 text-slate-400">Image + text conversations that feel natural. Follow-up questions maintain visual context. Processes multiple images in a single session for comparative analysis.</p>
+          </div>
+        </div>
+
+        <h2 class="mt-10 text-3xl font-black">Who Should Deploy BakLLaVA Privately</h2>
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Small accounting and AP/AR teams</h3>
+        <p class="mt-3 text-slate-300">Invoice processing costs money in labor and delays. BakLLaVA extracts line items, totals, and vendor details from scanned PDFs and phone photos 10x faster than manual entry — without sending financial documents to the cloud.</p>
+        <p class="mt-4 text-slate-300">One 4 GB deployment serves the entire accounts payable team. Monthly cost beats per-scan cloud OCR pricing at moderate volume.</p>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">E-commerce and product teams</h3>
+        <p class="mt-3 text-slate-300">Visual product search, defect detection in photos, automated catalog tagging. Customer-uploaded images never leave your infrastructure. Supports returns processing ("Does this match the shipped item?") and quality control.</p>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Manufacturing and field service operations</h3>
+        <p class="mt-3 text-slate-300">Technicians upload equipment photos for troubleshooting. Inspectors capture defects for reporting. BakLLaVA identifies issues, counts components, and generates inspection summaries — all processed locally on edge devices.</p>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Content creators and accessibility teams</h3>
+        <p class="mt-3 text-slate-300">Auto-generate alt text for 1000s of images. Describe charts for reports. Build screen readers that work offline. Creators get visual analysis without subscription costs or data sharing.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Hardware Reality for BakLLaVA Deployments</h2>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Deployment tier</th>
+                <th class="px-4 py-3">Model fit</th>
+                <th class="px-4 py-3">Best workloads</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Lightsail 4 GB<br><span class="font-normal text-slate-400">BakLLaVA 1B / 7B Q4</span></td>
+                <td class="px-4 py-3">Fastest tier. 1B for edge devices, 7B for quality. Processes single images in seconds.</td>
+                <td class="px-4 py-3">Solo users, light teams, mobile/edge OCR, quick photo analysis.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Lightsail 8 GB<br><span class="font-normal text-slate-400">BakLLaVA 7B Q4 / Phi-3 Vision</span></td>
+                <td class="px-4 py-3">Sweet spot for teams. Handles multi-page docs, complex diagrams at interactive speeds.</td>
+                <td class="px-4 py-3">Document processing, invoice extraction, team-shared vision assistant.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">GPU instance<br><span class="font-normal text-slate-400">BakLLaVA 72B Q3 / full precision</span></td>
+                <td class="px-4 py-3">Production throughput. Batch-process 100s of images/hour. Best accuracy on medical/specialized imagery.</td>
+                <td class="px-4 py-3">High-volume scanning, manufacturing QA, enterprise document pipelines.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="mt-10 text-3xl font-black">Why Cloud Vision APIs Are a Trap for Teams</h2>
+        <p class="mt-5 text-slate-300">Cloud vision services charge per image, per page, per API call. Costs scale with volume. Every image gets stored (even if policy says otherwise), analyzed by models you can't audit, and potentially used for provider training.</p>
+        <p class="mt-4 text-slate-300">BakLLaVA on your server has zero per-image cost after deployment. Images never leave your network. One-time infrastructure investment serves unlimited usage. For teams processing 100+ docs/week, the math becomes compelling within months.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Deploy BakLLaVA Through NoCloudGPT</h2>
+        <p class="mt-5 text-slate-300">NoCloudGPT sets up Ollama with BakLLaVA and OpenWebUI on Lightsail, EC2, or your on-premise server. Upload images via drag-and-drop, ask questions in natural language, get structured JSON or natural language responses.</p>
+        <p class="mt-4 text-slate-300">Test locally first: <code class="rounded bg-slate-800 px-2 py-0.5 text-cyan-300 text-sm">ollama pull bakllava</code> then query with your own images.</p>
+        <div class="mt-6 grid gap-3 md:grid-cols-3">
+          <a href="../quote.html" class="rounded-2xl bg-cyan-300 p-5 font-bold text-slate-950 hover:bg-cyan-200">Build your BakLLaVA quote</a>
+          <a href="../deploy/lightsail-guide.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Start 90-day Lightsail pilot</a>
+          <a href="../deploy/on-premise.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Request on-premise setup</a>
+        </div>
+      </article>
+
+      <aside class="space-y-6">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-8">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">BakLLaVA deployment</p>
+          <h2 class="mt-3 text-3xl font-black">Private vision for documents & images</h2>
+          <p class="mt-4 text-cyan-50">4 GB for starters, 8 GB for teams, GPU for production. Processes images entirely locally.</p>
+          <a href="../quote.html" class="mt-6 inline-block rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build a BakLLaVA quote</a>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Core workloads</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li>Invoice & receipt OCR</li>
+            <li>Visual defect detection</li>
+            <li>Diagram & chart explanation</li>
+            <li>Product photo analysis</li>
+            <li>Accessibility alt-text generation</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Model variants</h3>
+          <ul class="mt-4 space-y-3 text-slate-400 text-sm">
+            <li><span class="font-semibold text-white">1B Q4</span> — 2–4 GB, edge devices</li>
+            <li><span class="font-semibold text-white">7B Q4</span> — 4–8 GB, recommended</li>
+            <li><span class="font-semibold text-white">72B Q3</span> — GPU, max accuracy</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Related vision models</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li><a class="text-cyan-300" href="../llava/index.html">LLaVA family</a></li>
+            <li><a class="text-cyan-300" href="../deepseek-ocr/index.html">DeepSeek OCR</a></li>
+            <li><a class="text-cyan-300" href="../paligemma/index.html">PaliGemma</a></li>
+            <li><a class="text-cyan-300" href="../deploy/lightsail-guide.html">Lightsail vision guide</a></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
