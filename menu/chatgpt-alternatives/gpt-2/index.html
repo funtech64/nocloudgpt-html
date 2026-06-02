@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPT-2 – Run Locally | NoCloudGPT</title>
+  <meta name="description" content="GPT-2 is OpenAI's open-source language model from 2019. Run it locally with no internet connection, no API key, and no data sharing.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nocloudgpt.com/menu/chatgpt-alternatives/gpt-2/">
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem; color: #1a1a1a; background: #fff; }
+    h1 { font-size: 2rem; margin-bottom: 0.25rem; }
+    .subtitle { color: #555; font-size: 1.1rem; margin-bottom: 2rem; }
+    .badge { display: inline-block; background: #f0f0f0; border-radius: 4px; padding: 0.2rem 0.6rem; font-size: 0.85rem; margin-right: 0.5rem; margin-bottom: 1rem; }
+    .badge.legacy { background: #fff3cd; color: #856404; }
+    .badge.open { background: #d1e7dd; color: #0a3622; }
+    h2 { font-size: 1.3rem; margin-top: 2rem; border-bottom: 1px solid #eee; padding-bottom: 0.4rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    td, th { padding: 0.6rem 0.8rem; border: 1px solid #ddd; text-align: left; }
+    th { background: #f8f8f8; font-weight: 600; }
+    .cmd { background: #1e1e1e; color: #d4d4d4; padding: 1rem 1.2rem; border-radius: 6px; font-family: monospace; font-size: 0.95rem; margin: 0.8rem 0; overflow-x: auto; }
+    .note { background: #f8f9fa; border-left: 4px solid #6c757d; padding: 0.8rem 1rem; margin: 1rem 0; font-size: 0.95rem; }
+    .cta { background: #0d6efd; color: white; display: inline-block; padding: 0.7rem 1.4rem; border-radius: 6px; text-decoration: none; margin-top: 1rem; }
+    .cta:hover { background: #0b5ed7; }
+    nav { font-size: 0.9rem; margin-bottom: 2rem; color: #666; }
+    nav a { color: #0d6efd; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.85rem; color: #888; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/">NoCloudGPT</a> →
+  <a href="/menu/">Models</a> →
+  <a href="/menu/chatgpt-alternatives/">ChatGPT Alternatives</a> →
+  GPT-2
+</nav>
+
+<h1>GPT-2</h1>
+<p class="subtitle">OpenAI's original open-source language model — run it entirely offline</p>
+
+<span class="badge legacy">Legacy Model</span>
+<span class="badge open">Open Weights</span>
+<span class="badge">1.5B Parameters</span>
+<span class="badge">~3GB RAM</span>
+
+<h2>What Is GPT-2?</h2>
+<p>
+  GPT-2 was released by OpenAI in February 2019 and was considered so capable at the time that 
+  OpenAI initially refused to release the full model, citing misuse concerns. That decision sparked 
+  a major public debate about AI safety and open research.
+</p>
+<p>
+  Today, GPT-2 is completely open, widely studied, and serves as a foundational reference point 
+  for understanding how large language models work. It cannot match modern models like Llama 3 or 
+  Mistral for practical tasks, but it runs on nearly any hardware and requires no cloud connection.
+</p>
+
+<div class="note">
+  <strong>Historical note:</strong> GPT-2 was the model that made the general public aware that 
+  AI could generate coherent long-form text. It predates ChatGPT by nearly four years.
+</div>
+
+<h2>Model Specs</h2>
+<table>
+  <tr><th>Property</th><th>Detail</th></tr>
+  <tr><td>Developer</td><td>OpenAI</td></tr>
+  <tr><td>Released</td><td>February 2019 (staged), November 2019 (full)</td></tr>
+  <tr><td>Parameters</td><td>117M / 345M / 762M / 1.5B (four sizes)</td></tr>
+  <tr><td>License</td><td>Modified MIT (open for research and commercial use)</td></tr>
+  <tr><td>Architecture</td><td>Transformer decoder (GPT architecture)</td></tr>
+  <tr><td>Context window</td><td>1,024 tokens</td></tr>
+  <tr><td>Training data cutoff</td><td>Early 2019</td></tr>
+  <tr><td>RAM required</td><td>~1GB (small) to ~3GB (XL)</td></tr>
+  <tr><td>Best for</td><td>Learning, research, text completion</td></tr>
+</table>
+
+<h2>Run GPT-2 Locally</h2>
+
+<p>GPT-2 is available via Hugging Face Transformers. The simplest approach:</p>
+
+<div class="cmd">pip install transformers torch</div>
+
+<div class="cmd">python3 -c "
+from transformers import pipeline
+generator = pipeline('text-generation', model='gpt2-xl')
+result = generator('The future of private AI is', max_length=80)
+print(result[0]['generated_text'])
+"</div>
+
+<p>For a full interactive session via Ollama (if a GPT-2 GGUF is available in your registry):</p>
+
+<div class="cmd">ollama run gpt2</div>
+
+<div class="note">
+  <strong>Tip:</strong> GPT-2 XL (1.5B parameters) gives the best output quality of the four 
+  sizes and still runs comfortably on a laptop with 4GB RAM.
+</div>
+
+<h2>What GPT-2 Is Good For</h2>
+<ul>
+  <li>Understanding how transformer-based language models work</li>
+  <li>Educational projects and university coursework</li>
+  <li>Text completion and creative writing experiments</li>
+  <li>Baseline benchmarking against modern models</li>
+  <li>Running AI on extremely limited hardware</li>
+</ul>
+
+<h2>What GPT-2 Is Not Good For</h2>
+<ul>
+  <li>Instruction following — it was not fine-tuned for chat</li>
+  <li>Factual question answering — it hallucinates heavily by modern standards</li>
+  <li>Code generation</li>
+  <li>Any task requiring knowledge after early 2019</li>
+</ul>
+
+<h2>How It Compares to Modern Models</h2>
+<p>
+  GPT-2 XL has 1.5 billion parameters. Llama 3.2 starts at 1B and already outperforms GPT-2 
+  significantly on every benchmark. For a detailed side-by-side look at how far local AI has 
+  come since 2019, see our comparison article.
+</p>
+<a href="/menu/compare/gpt2-vs-modern-llms/" class="cta">GPT-2 vs Modern Local LLMs →</a>
+
+<h2>Related Models</h2>
+<ul>
+  <li><a href="/menu/chatgpt-alternatives/alpaca/">Alpaca</a> — Early instruction-tuned model built on LLaMA</li>
+  <li><a href="/menu/chatgpt-alternatives/vicuna/">Vicuna</a> — Conversational fine-tune, significantly more capable</li>
+  <li><a href="/menu/llama/">Llama 3</a> — Modern open-weight model from Meta, the current standard</li>
+  <li><a href="/menu/chatgpt-alternatives/">← All ChatGPT Alternatives</a></li>
+</ul>
+
+<footer>
+  <p>NoCloudGPT.com — Private AI, running locally. No cloud. No tracking. No API keys.</p>
+</footer>
+
+</body>
+</html>
