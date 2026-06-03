@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DuckDB-NSQL: Private Text-to-SQL for Analytical Workloads | NoCloudGPT</title>
+  <meta name="description" content="Run DuckDB-NSQL on your own hardware. A 7B text-to-SQL model fine-tuned specifically for DuckDB's analytical SQL dialect. Deploy privately for local data analysis without schema exposure." />
+</head>
+<body>
+
+<article>
+
+  <h1>DuckDB-NSQL: Natural Language SQL for Analytical Workloads, Deployed Privately</h1>
+
+  <p>DuckDB has become the default engine for local analytical workloads — fast, embedded, requiring no server, and capable of querying Parquet files, CSVs, and in-memory datasets with full SQL expressiveness. The gap it has not closed on its own is natural language access: data analysts who can describe what they want in plain English still need to translate that description into DuckDB's specific SQL dialect, including its analytical extensions and syntax preferences that differ from standard SQL in meaningful ways.</p>
+
+  <p>DuckDB-NSQL fills that gap. A 7B model fine-tuned specifically on DuckDB SQL by Numbers Station, it translates natural language questions into accurate DuckDB-dialect queries against provided schemas. Available via <code>ollama run duckdb-nsql</code>, it runs on CPU-only hardware, requires no GPU, and keeps your data schemas and query history entirely on-premise — no cloud API, no schema transmission, no data governance exposure.</p>
+
+  <h2>What DuckDB-NSQL Does Well</h2>
+
+  <ul>
+    <li><strong>DuckDB-specific SQL generation:</strong> Fine-tuned on DuckDB's dialect rather than generic SQL — correctly uses DuckDB's analytical functions, syntax patterns, and extensions that general-purpose models frequently misapply</li>
+    <li><strong>Analytical query construction:</strong> Strong performance on the aggregation-heavy, window-function-rich queries that characterize analytical workloads — GROUP BY, PARTITION OVER, QUALIFY, and DuckDB's PIVOT syntax</li>
+    <li><strong>File-based schema awareness:</strong> Generates queries against Parquet files, CSV datasets, and in-memory tables when schema context is provided — matches the actual DuckDB use pattern rather than assuming a traditional database server</li>
+    <li><strong>Lightweight deployment:</strong> At 7B parameters and Q4 quantization, runs on 4–6GB RAM with no GPU requirement — fits on any analyst's laptop or a minimal cloud instance</li>
+    <li><strong>Query explanation:</strong> Translates existing DuckDB queries into plain language descriptions for documentation, onboarding, and cross-team communication</li>
+    <li><strong>Iterative query refinement:</strong> Supports follow-up prompts that modify a generated query — "now filter to only rows where X" — maintaining schema context across a multi-turn session</li>
+  </ul>
+
+  <h2>Who Should Deploy DuckDB-NSQL</h2>
+
+  <ul>
+    <li><strong>Data analysts using DuckDB for local analysis</strong> who want natural language query access without leaving their local environment or transmitting data schemas to a cloud service</li>
+    <li><strong>Data scientists and ML engineers</strong> who use DuckDB to query feature stores, training datasets, or evaluation results and want faster iteration without writing SQL by hand</li>
+    <li><strong>Analytics engineers</strong> building local-first data pipelines who want an embedded natural language layer for exploration and ad-hoc analysis</li>
+    <li><strong>Small data teams without dedicated SQL expertise</strong> where non-technical team members need to query analytical datasets without requiring SQL knowledge or analyst availability</li>
+    <li><strong>Organizations with sensitive analytical datasets</strong> — financial models, clinical research data, proprietary market data — where schema and query context cannot be transmitted outside the local environment under any circumstances</li>
+  </ul>
+
+  <h2>Deployment Requirements</h2>
+
+  <h3>Local Analyst Workstation — 7B Q4 (4–6GB RAM, CPU only)</h3>
+  <p>DuckDB-NSQL is a single-variant deployment — the 7B Q4 model is the standard release and is designed to run on analyst hardware without GPU requirements. On a laptop or workstation with 4–6GB of available RAM, it provides interactive natural language query generation with response times of 5–15 tokens per second on modern CPU hardware. This is fast enough for the iterative exploration pattern typical of analytical work — ask a question, review the generated query, execute it in DuckDB, refine and repeat. Pull with <code>ollama run duckdb-nsql</code>.</p>
+
+  <h3>Shared Team Instance — 7B Q4 (AWS Lightsail 4GB or CPU instance)</h3>
+  <p>For teams that want a shared natural language query endpoint, DuckDB-NSQL runs comfortably on an AWS Lightsail instance with 4GB RAM — the lowest-cost shared deployment option in this model catalog. Multiple analysts can submit queries to a single Ollama endpoint without requiring dedicated GPU infrastructure. Lightsail 4GB instances run approximately $20–40 USD per month, making this one of the most cost-effective private AI deployments available for analytical teams.</p>
+
+  <h2>The Real Cost of Analytical Schema Exposure</h2>
+
+  <p>Analytical datasets frequently contain the most sensitive data an organization holds: revenue figures, customer cohort breakdowns, clinical outcomes, research results, and competitive intelligence. The schemas that organize this data — table names, column names, metric definitions — describe your analytical framework in terms that are meaningful to competitors and regulators alike. Sending this schema context to a cloud API as part of every natural language query creates an exposure surface that most data governance frameworks have not explicitly addressed.</p>
+
+  <p>DuckDB-NSQL on-premise means your analytical schemas never leave your local environment. The questions your analysts ask, the dataset structures they query against, and the patterns in their query history stay within your infrastructure boundary. For organizations handling financial data under SOC 2, clinical data under HIPAA, or proprietary research data under internal classification policies, local deployment is the only deployment model that satisfies governance requirements.</p>
+
+  <h2>Integration and Workflow Compatibility</h2>
+
+  <ul>
+    <li><strong>DuckDB CLI and Python API</strong> — use DuckDB-NSQL to generate queries, then execute them directly against your local DuckDB instance in the same workflow</li>
+    <li><strong>Jupyter and notebook environments</strong> — embed natural language query generation into data science notebooks via the Ollama Python library</li>
+    <li><strong>OpenWebUI</strong> — provide a browser interface for non-technical analysts to submit natural language questions against shared DuckDB datasets</li>
+    <li><strong>Ollama API</strong> — integrate DuckDB-NSQL into internal analytics tools, dashboards, or data portals via the OpenAI-compatible endpoint</li>
+    <li><strong>LangChain</strong> — chain DuckDB-NSQL with DuckDB's Python connector for fully automated natural language to query execution pipelines</li>
+  </ul>
+
+  <p><strong>Your analytical data is your most sensitive asset. Deploy DuckDB-NSQL privately and give your team natural language access to local datasets without routing your schema or query context through a cloud API.</strong></p>
+
+</article>
+
+</body>
+</html>
