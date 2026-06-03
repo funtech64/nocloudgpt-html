@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TinyLlama – 1.1B Lightweight Model | NoCloudGPT</title>
+  <meta name="description" content="TinyLlama is a compact 1.1B parameter model using the Llama 2 architecture. Deploy it on edge hardware, low-cost servers, or embedded applications." />
+  <link rel="canonical" href="https://nocloudgpt.com/menu/tinyllama/" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; color: #1a1a1a; line-height: 1.7; }
+    h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+    h2 { font-size: 1.35rem; margin-top: 2.2rem; border-bottom: 2px solid #e2e2e2; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.4rem; color: #333; }
+    .tag { display: inline-block; background: #f0f4ff; color: #2244aa; border-radius: 4px; padding: 2px 8px; font-size: 0.82rem; margin-right: 5px; }
+    .cta-box { background: #f8f9ff; border-left: 4px solid #3355dd; padding: 1rem 1.4rem; margin: 2rem 0; border-radius: 4px; }
+    .cta-box a { color: #2244aa; font-weight: 600; }
+    a { color: #2244aa; }
+    nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<nav><a href="/menu/">← Model Menu</a> &nbsp;/&nbsp; TinyLlama</nav>
+
+<h1>TinyLlama: The 1.1B Llama-Architecture Model</h1>
+<p>
+  <span class="tag">1.1B</span>
+  <span class="tag">Edge</span>
+  <span class="tag">Llama Architecture</span>
+  <span class="tag">CPU Friendly</span>
+  <span class="tag">Open Weights</span>
+</p>
+
+<p>
+  TinyLlama is a 1.1B parameter model trained by the Singapore University of Technology and Design, using the same architecture as Llama 2. The goal was straightforward: train the smallest possible Llama-compatible model on as much data as feasible (3 trillion tokens) and see how capable it could become. The result outperforms similarly-sized predecessors on most benchmarks and benefits from the wide ecosystem of Llama-compatible tools — any software that runs Llama 2 will run TinyLlama without modification.
+</p>
+
+<h2>What TinyLlama Is Good At</h2>
+<ul>
+  <li><strong>Low-latency text generation on CPU</strong> — fast enough for real-time response even on modest hardware</li>
+  <li><strong>Tool and library compatibility</strong> — runs natively in llama.cpp, Ollama, LM Studio, and any Llama 2-compatible framework</li>
+  <li><strong>Text classification and basic Q&A</strong> — handles well-defined, narrow tasks reliably</li>
+  <li><strong>Rapid prototyping</strong> — spin up a local inference endpoint in minutes with minimal setup</li>
+  <li><strong>Embedded applications</strong> — small enough to bundle with a desktop or server application</li>
+  <li><strong>Fine-tuning experiments</strong> — low cost to fine-tune on a laptop GPU; popular base for custom small-model experiments</li>
+</ul>
+
+<h2>Who Should Care</h2>
+
+<h3>Business and Professional Use</h3>
+<p>
+  TinyLlama is most useful as a <strong>component in a larger system</strong> rather than a standalone AI assistant. Examples: a triage model that routes support tickets before escalating complex cases to a larger model, a classification layer in a document processing pipeline, or an always-on local assistant for structured form-filling tasks. Its Llama 2 compatibility means swapping in a larger Llama model later requires no code changes.
+</p>
+
+<h3>Personal and Homelab Use</h3>
+<p>
+  If you have a Raspberry Pi, an old laptop, or a NAS device and want to experiment with a real language model, TinyLlama is one of the most accessible starting points. It runs on 2GB of RAM, responds quickly, and exposes you to the full local LLM toolchain without requiring any special hardware.
+</p>
+
+<h2>NoCloudGPT Deployment Guidance</h2>
+
+<h3>Running TinyLlama Locally</h3>
+<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>ollama run tinyllama:chat</code></pre>
+<p>
+  Or with llama.cpp directly on a Pi or low-power machine:
+</p>
+<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>./llama-cli -m tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf \
+  -p "You are a helpful assistant." -i --temp 0.7</code></pre>
+
+<h3>Cloud Server</h3>
+<p>
+  TinyLlama on a cloud server is practical only when you need fast CPU-bound throughput at very low cost — think batch classification jobs, not interactive chat. A 2 vCPU Lightsail instance handles it fine.
+</p>
+
+<div class="cta-box">
+  <strong>Ready to move beyond TinyLlama?</strong><br />
+  TinyLlama is a great starting point. When you're ready for a capable private AI deployment,
+  <a href="/menu/quote.html">build a deployment quote</a> or explore the
+  <a href="/menu/deploy/">90-day pilot guide</a>.
+</div>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>TinyLlama vs. SmolLM2 — which should I use?</h3>
+<p>SmolLM2 1.7B outperforms TinyLlama on most benchmarks and is slightly larger. TinyLlama wins on ecosystem compatibility — it's a drop-in replacement anywhere Llama 2 is expected. Choose SmolLM2 for raw capability; TinyLlama for toolchain compatibility.</p>
+
+<h3>Can TinyLlama be fine-tuned?</h3>
+<p>Yes — and this is one of its most popular uses. Fine-tuning a 1.1B model on a single consumer GPU (even an RTX 3060) is entirely feasible and produces models specialized for narrow tasks at very low cost.</p>
+
+<h2>Related Pages</h2>
+<ul>
+  <li><a href="/menu/smollm/">SmolLM2 (HuggingFace's edge model)</a></li>
+  <li><a href="/menu/phi/">Phi-3 Mini (next capable step up)</a></li>
+  <li><a href="/menu/llama/">Llama family</a></li>
+</ul>
+
+</body>
+</html>
