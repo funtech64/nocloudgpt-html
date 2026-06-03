@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenCoder on Ollama | Private Code AI | NoCloudGPT.com</title>
+  <meta name="description" content="Run OpenCoder locally with Ollama. A fully open-weight code model with transparent training data — ideal for teams that need reproducibility, auditability, and zero data exposure." />
+</head>
+<body>
+
+<h1>OpenCoder: Fully Open, Fully Private Code Generation You Can Actually Audit</h1>
+
+<p>Most code AI models ship as black boxes — closed weights, undisclosed training data, and license terms that make enterprise legal teams nervous. <strong>OpenCoder</strong> breaks that pattern. Released with fully open weights <em>and</em> a published training corpus, it gives engineering teams something rare: a code model you can inspect, reproduce, and trust in regulated or security-sensitive environments.</p>
+
+<p>Deployed locally via <code>ollama run opencoder</code>, OpenCoder keeps every prompt, function signature, and proprietary algorithm off external servers — permanently.</p>
+
+---
+
+<h2>What OpenCoder Actually Does</h2>
+
+<p>OpenCoder is a code-specialized language model trained from scratch on a curated, openly documented dataset. Its design priorities are transparency and code quality — not just benchmark scores.</p>
+
+<ul>
+  <li><strong>Fully open training data</strong> — corpus composition is published, allowing reproducibility audits and compliance documentation</li>
+  <li><strong>Code completion and generation</strong> — supports single-file and multi-file generation across major languages</li>
+  <li><strong>Fill-In-The-Middle (FIM)</strong> — completes code based on surrounding context, not just what precedes the cursor</li>
+  <li><strong>Instruction-following variant</strong> — the <code>-instruct</code> variant handles conversational developer Q&A and task decomposition</li>
+  <li><strong>Strong Python and general-purpose coverage</strong> — performs well on standard coding benchmarks including HumanEval and MBPP</li>
+  <li><strong>No Terms of Service surprises</strong> — open weights mean your deployment is governed by your own policies, not a vendor's evolving usage rules</li>
+</ul>
+
+---
+
+<h2>Who Should Run OpenCoder On-Premise</h2>
+
+<p>OpenCoder's transparency-first design makes it the right fit for specific organizational contexts:</p>
+
+<ul>
+  <li><strong>Regulated industries</strong> — healthcare, defense, finance, and government teams that require documented AI training provenance for compliance or audit</li>
+  <li><strong>Open source projects</strong> — maintainers who want AI tooling with a matching philosophy: fully inspectable, no hidden dependencies</li>
+  <li><strong>Security-conscious engineering teams</strong> — shops where proprietary code, internal APIs, or client data must never leave the perimeter</li>
+  <li><strong>AI researchers and evaluators</strong> — teams benchmarking models who need reproducible baselines with known training data</li>
+  <li><strong>Smaller teams on CPU hardware</strong> — the 1.5B variant runs on minimal infrastructure, making it accessible without cloud GPU spend</li>
+</ul>
+
+---
+
+<h2>Deployment Tiers and Compute Requirements</h2>
+
+<h3>Tier 1 — Edge and Offline Use: OpenCoder 1.5B Q4</h3>
+<ul>
+  <li><strong>RAM required:</strong> 2–3GB</li>
+  <li><strong>Hardware:</strong> Any modern laptop, Raspberry Pi 5, or air-gapped workstation</li>
+  <li><strong>AWS equivalent:</strong> Lightsail 2GB instance (~$10/month) or local CPU only</li>
+  <li><strong>Speed:</strong> 8–15 tokens/sec on CPU</li>
+  <li><strong>Best for:</strong> Individual developers, offline environments, CI pipeline tooling, embedded edge devices</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run opencoder:1.5b</code></p>
+
+<h3>Tier 2 — Daily Driver: OpenCoder 8B Q4</h3>
+<ul>
+  <li><strong>RAM required:</strong> 6–8GB</li>
+  <li><strong>Hardware:</strong> Developer workstation, Mac with 8GB unified memory, or AWS Lightsail 8GB</li>
+  <li><strong>AWS equivalent:</strong> Lightsail 8GB (~$40/month) or entry-level GPU instance</li>
+  <li><strong>Speed:</strong> 10–20 tokens/sec on CPU; 30–50 tokens/sec on T4 GPU</li>
+  <li><strong>Best for:</strong> Small teams of 2–5 developers needing quality completions, FIM, and instruction-following in one model</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run opencoder:8b</code></p>
+
+<h3>Tier 3 — Team Deployment: OpenCoder 8B Q8 / Full Precision</h3>
+<ul>
+  <li><strong>RAM required:</strong> 10–16GB VRAM</li>
+  <li><strong>Hardware:</strong> AWS g4dn.xlarge (T4 16GB) or RTX 3080/4070 Ti workstation GPU</li>
+  <li><strong>AWS cost:</strong> ~$0.526/hour on-demand; ~$0.16/hour spot</li>
+  <li><strong>Speed:</strong> 40–70 tokens/sec</li>
+  <li><strong>Best for:</strong> Teams of 5–15 developers; higher precision for code quality-critical pipelines; compliance environments needing full-weight deployments</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run opencoder:8b-instruct-q8_0</code></p>
+
+---
+
+<h2>The Real Cost of Using Closed Code AI</h2>
+
+<p>GitHub Copilot, Amazon CodeWhisperer, and similar tools send your code to external inference infrastructure. That means:</p>
+
+<ul>
+  <li>Proprietary functions, internal library calls, and architecture decisions leave your network on every keystroke</li>
+  <li>Vendor Terms of Service can change — and have — affecting how submitted code is used for model training</li>
+  <li>Compliance teams cannot audit what the model was trained on, creating documentation gaps in regulated environments</li>
+  <li>At 10 developers on Copilot Business: ~$1,900/year. A local OpenCoder 8B deployment on AWS Lightsail costs ~$480/year — with full data control and an auditable training corpus</li>
+</ul>
+
+<p>OpenCoder's open training data isn't just a philosophical stance. In environments where you need to answer <em>"what was this model trained on?"</em> — it's the only honest answer available.</p>
+
+---
+
+<h2>Getting Started with OpenCoder on Ollama</h2>
+
+<p>Install Ollama, then pull and run the model that fits your hardware:</p>
+
+<pre><code># Lightweight edge deployment
+ollama run opencoder:1.5b
+
+# Standard developer workstation
+ollama run opencoder:8b
+
+# High-precision team server
+ollama run opencoder:8b-instruct-q8_0
+</code></pre>
+
+<p>Point your IDE's Ollama-compatible plugin at <code>http://localhost:11434</code> and completions route entirely through local infrastructure. No API keys. No usage caps. No data leaving your environment.</p>
+
+---
+
+<h2>Start Your 90-Day Private Code AI Pilot</h2>
+
+<p>NoCloudGPT.com provides deployment guides, hardware sizing consultations, and on-premise setup support for teams evaluating OpenCoder and the broader Ollama model library.</p>
+
+<p><strong>Contact us to scope your pilot deployment — before your next code review surfaces a data exposure question you can't answer.</strong></p>
+
+</body>
+</html>
