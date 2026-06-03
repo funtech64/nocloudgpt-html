@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PaliGemma Private Deployment | NoCloudGPT</title>
+  <meta name="description" content="Deploy Google's PaliGemma vision model privately with Ollama on AWS Lightsail. Specialized in image captioning, object detection, and visual QA — runs on 4GB RAM. No API keys required." />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans">
+
+  <!-- Nav -->
+  <nav class="border-b border-gray-800 px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold text-white tracking-tight">NoCloudGPT</a>
+    <div class="flex gap-6 text-sm text-gray-400">
+      <a href="/menu" class="hover:text-white transition">Models</a>
+      <a href="/pricing" class="hover:text-white transition">Pricing</a>
+      <a href="/docs" class="hover:text-white transition">Docs</a>
+      <a href="/contact" class="hover:text-white transition">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="max-w-4xl mx-auto px-6 pt-20 pb-12 text-center">
+    <span class="inline-block bg-blue-500/10 text-blue-400 text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">Vision · Multimodal · Google Open Model</span>
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-6">
+      PaliGemma: Google's Efficient Vision Model for Private Deployment
+    </h1>
+    <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+      PaliGemma is Google's open-weight vision-language model built for specialized tasks: image captioning, object detection, visual question answering, and scene understanding. It runs on just 4GB of RAM, making it one of the most cost-efficient vision models available for private infrastructure — no Google Cloud account required.
+    </p>
+    <a href="/contact" class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-8 py-3 rounded-lg transition">
+      Start Your 90-Day Pilot →
+    </a>
+  </section>
+
+  <!-- What Is PaliGemma -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">What Is PaliGemma</h2>
+    <p class="text-gray-400 mb-4">
+      PaliGemma combines Google's SigLIP vision encoder with a Gemma 2B language model. The design is deliberately task-focused: rather than trying to be a general-purpose conversational assistant, PaliGemma excels at <strong class="text-white">structured vision tasks</strong> — answering specific questions about images, generating accurate captions, detecting and localizing objects, and performing document understanding on visually rich inputs.
+    </p>
+    <p class="text-gray-400 mb-4">
+      This focused architecture means it performs at a level competitive with much larger models on captioning and detection benchmarks, while requiring a fraction of the compute. The 3B parameter model at Q4 quantization fits comfortably within 4GB of RAM — deployable on a Lightsail 4GB instance at roughly $16–20/month.
+    </p>
+    <p class="text-gray-400">
+      For organizations that don't need open-ended visual conversation but do need high-accuracy image understanding in a private, auditable environment, PaliGemma is often the most economical choice in the vision model tier.
+    </p>
+  </section>
+
+  <!-- Capability Clusters -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-8">Core Capabilities</h2>
+    <div class="grid sm:grid-cols-2 gap-6">
+
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <div class="text-blue-400 text-2xl mb-3">🏷️</div>
+        <h3 class="text-lg font-semibold text-white mb-2">Image Captioning</h3>
+        <p class="text-gray-400 text-sm">Generate accurate, natural-language descriptions of images at scale. PaliGemma's SigLIP encoder captures fine-grained visual details, and the Gemma language backbone produces fluent, well-structured captions. Use it to auto-generate alt text for accessibility compliance, metadata for media libraries, or descriptions for e-commerce product images without manual review queues.</p>
+      </div>
+
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <div class="text-blue-400 text-2xl mb-3">🔲</div>
+        <h3 class="text-lg font-semibold text-white mb-2">Object Detection & Localization</h3>
+        <p class="text-gray-400 text-sm">PaliGemma can identify and locate objects within images, outputting bounding box coordinates alongside class labels. This makes it useful for visual inspection workflows, inventory systems, safety compliance checks (e.g., PPE detection in facility photos), and content tagging pipelines that need spatial awareness, not just category labels.</p>
+      </div>
+
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <div class="text-blue-400 text-2xl mb-3">❓</div>
+        <h3 class="text-lg font-semibold text-white mb-2">Visual Question Answering</h3>
+        <p class="text-gray-400 text-sm">Ask PaliGemma specific, targeted questions about an image and receive concise, accurate answers. "What color is the roof?" "How many items are on the shelf?" "Is the circuit board visibly damaged?" This makes it highly practical for structured pipelines where discrete questions replace open-ended analysis — faster, cheaper, and easier to validate.</p>
+      </div>
+
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <div class="text-blue-400 text-2xl mb-3">📑</div>
+        <h3 class="text-lg font-semibold text-white mb-2">Document & Scene Understanding</h3>
+        <p class="text-gray-400 text-sm">Process images of documents, signage, charts, and mixed text-visual content. PaliGemma handles scene text recognition alongside semantic understanding — it can read visible text in an image and reason about the surrounding context, making it useful for retail shelf analysis, document classification, and visual content moderation workflows.</p>
+      </div>
+
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <div class="text-blue-400 text-2xl mb-3">🗂️</div>
+        <h3 class="text-lg font-semibold text-white mb-2">Automated Image Classification</h3>
+        <p class="text-gray-400 text-sm">Route images into categories, flag anomalies, or score content against defined criteria — all described in natural language prompts rather than trained classifiers. PaliGemma's zero-shot performance on classification tasks means you can deploy new categorization logic without retraining, just by updating your prompt definitions.</p>
+      </div>
+
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <div class="text-blue-400 text-2xl mb-3">♿</div>
+        <h3 class="text-lg font-semibold text-white mb-2">Accessibility & Compliance Pipelines</h3>
+        <p class="text-gray-400 text-sm">Generate WCAG-compliant alt text for image-heavy web properties, internal documentation systems, or content management platforms. PaliGemma can be integrated into publishing workflows to auto-tag images before they reach production — reducing manual accessibility review effort while keeping image content within your network.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Who Should Deploy PaliGemma -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">Who Should Deploy PaliGemma</h2>
+    <div class="space-y-4">
+      <div class="flex gap-4 items-start">
+        <span class="text-blue-400 mt-1">▸</span>
+        <p class="text-gray-400"><strong class="text-white">E-commerce and media teams</strong> managing large image libraries who need automated captioning, alt text generation, and product image tagging without sending catalog images to third-party APIs.</p>
+      </div>
+      <div class="flex gap-4 items-start">
+        <span class="text-blue-400 mt-1">▸</span>
+        <p class="text-gray-400"><strong class="text-white">Facilities and operations teams</strong> running visual inspection workflows — equipment photos, safety audits, inventory checks — who want a lightweight, private detection model that doesn't require GPU infrastructure.</p>
+      </div>
+      <div class="flex gap-4 items-start">
+        <span class="text-blue-400 mt-1">▸</span>
+        <p class="text-gray-400"><strong class="text-white">Content and accessibility teams</strong> at organizations with WCAG compliance obligations who need to process historical image archives or maintain ongoing alt text generation for new content.</p>
+      </div>
+      <div class="flex gap-4 items-start">
+        <span class="text-blue-400 mt-1">▸</span>
+        <p class="text-gray-400"><strong class="text-white">Developers building structured vision pipelines</strong> who need a reliable, fast model for discrete VQA tasks — where the answer is a word, a number, or a bounding box — rather than open-ended visual conversation.</p>
+      </div>
+      <div class="flex gap-4 items-start">
+        <span class="text-blue-400 mt-1">▸</span>
+        <p class="text-gray-400"><strong class="text-white">Budget-conscious teams</strong> who want production-grade vision capability without the cost of 8B+ model compute. PaliGemma on a 4GB Lightsail instance is among the lowest-cost private vision deployments available.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deployment -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">Deployment Configuration</h2>
+    <p class="text-gray-400 mb-6">
+      PaliGemma is available via Ollama. The 3B model at Q4 quantization requires approximately 3–4GB of RAM, fitting cleanly on a Lightsail 4GB instance. For higher throughput or concurrent users, the 4GB instance should be treated as single-user or low-frequency use; upgrade to 8GB for team-level deployments.
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-8">
+      <div class="bg-gray-900 border border-orange-500/40 rounded-xl p-5 text-center ring-1 ring-orange-500/30">
+        <div class="text-sm text-orange-400 mb-1">Minimum / Dev</div>
+        <div class="text-xl font-bold text-white">4GB RAM</div>
+        <div class="text-sm text-blue-400 mt-1">Lightsail 4GB</div>
+        <div class="text-xs text-gray-500 mt-2">~$16–20/mo · Single user</div>
+      </div>
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-5 text-center">
+        <div class="text-sm text-gray-500 mb-1">Recommended</div>
+        <div class="text-xl font-bold text-white">8GB RAM</div>
+        <div class="text-sm text-blue-400 mt-1">Lightsail 8GB</div>
+        <div class="text-xs text-gray-500 mt-2">Team deployments</div>
+      </div>
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-5 text-center">
+        <div class="text-sm text-gray-500 mb-1">GPU Option</div>
+        <div class="text-xl font-bold text-white">4GB+ VRAM</div>
+        <div class="text-sm text-blue-400 mt-1">On-Premise GPU</div>
+        <div class="text-xs text-gray-500 mt-2">Fast inference · High volume</div>
+      </div>
+    </div>
+
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+      <h3 class="text-white font-semibold mb-3">Quick Start with Ollama</h3>
+      <pre class="text-sm text-green-400 overflow-x-auto"><code># Install Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Pull PaliGemma (3B)
+ollama pull paligemma3b
+
+# Run inference
+ollama run paligemma3b</code></pre>
+      <p class="text-gray-500 text-xs mt-3">NoCloudGPT handles full server provisioning, Ollama installation, model configuration, and system monitoring as part of your pilot engagement.</p>
+    </div>
+  </section>
+
+  <!-- PaliGemma vs. Alternatives -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">PaliGemma vs. Other Vision Models</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left border border-gray-800 rounded-xl overflow-hidden">
+        <thead class="bg-gray-900 text-gray-400">
+          <tr>
+            <th class="px-4 py-3">Model</th>
+            <th class="px-4 py-3">RAM (Q4)</th>
+            <th class="px-4 py-3">Best For</th>
+            <th class="px-4 py-3">Conversational?</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800">
+          <tr class="bg-gray-950">
+            <td class="px-4 py-3 text-white font-medium">PaliGemma 3B</td>
+            <td class="px-4 py-3 text-blue-400">~3–4GB</td>
+            <td class="px-4 py-3 text-gray-300">Captioning, detection, VQA</td>
+            <td class="px-4 py-3 text-gray-400">Limited</td>
+          </tr>
+          <tr class="bg-gray-900">
+            <td class="px-4 py-3 text-white font-medium">Moondream 2B</td>
+            <td class="px-4 py-3 text-gray-400">~2GB</td>
+            <td class="px-4 py-3 text-gray-300">Edge / minimal hardware</td>
+            <td class="px-4 py-3 text-gray-400">Basic</td>
+          </tr>
+          <tr class="bg-gray-950">
+            <td class="px-4 py-3 text-white font-medium">LLaVA-Phi-3</td>
+            <td class="px-4 py-3 text-gray-400">~4GB</td>
+            <td class="px-4 py-3 text-gray-300">General visual QA</td>
+            <td class="px-4 py-3 text-gray-400">Moderate</td>
+          </tr>
+          <tr class="bg-gray-900">
+            <td class="px-4 py-3 text-white font-medium">BakLLaVA 7B</td>
+            <td class="px-4 py-3 text-gray-400">~6–7GB</td>
+            <td class="px-4 py-3 text-gray-300">Visual reasoning, documents</td>
+            <td class="px-4 py-3 text-gray-400">Strong</td>
+          </tr>
+          <tr class="bg-gray-950">
+            <td class="px-4 py-3 text-white font-medium">Qwen2-VL 7B</td>
+            <td class="px-4 py-3 text-gray-400">~6–8GB</td>
+            <td class="px-4 py-3 text-gray-300">Charts, multilingual docs</td>
+            <td class="px-4 py-3 text-gray-400">Strong</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-4xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-3xl font-bold text-white mb-4">Deploy PaliGemma for Under $20/Month</h2>
+    <p class="text-gray-400 mb-8 max-w-xl mx-auto">
+      NoCloudGPT sets up PaliGemma on a Lightsail 4GB instance — fully configured, privately accessible, with no data leaving your infrastructure. Start a 90-day pilot and build your vision pipeline with predictable, flat-rate compute costs.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contact" class="bg-blue-500 hover:bg-blue-400 text-white font-semibold px-8 py-3 rounded-lg transition">
+        Start 90-Day Pilot
+      </a>
+      <a href="/menu" class="border border-gray-700 hover:border-gray-500 text-gray-300 font-semibold px-8 py-3 rounded-lg transition">
+        Compare All Vision Models
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800 px-6 py-8 text-center text-sm text-gray-600">
+    <p>© 2025 NoCloudGPT. Private AI deployment via Ollama — your data never leaves your infrastructure.</p>
+  </footer>
+
+</body>
+</html>
