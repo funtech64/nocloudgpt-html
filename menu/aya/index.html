@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aya Model Family on NoCloudGPT: Deploy Multilingual Open AI Locally</title>
+    <meta name="description" content="Run Aya 8B/23B/35B (Cohere's top multilingual LLMs) on NoCloudGPT. 100+ languages, outperforms GPT-3.5 non-English. Lightsail pilots from $10/mo.">
+</head>
+<body>
+    <h1>Deploy Aya: Cohere's Open Multilingual Powerhouse Family</h1>
+    <p>Aya (Exponential Language Models) from Cohere are Apache 2.0 open-source LLMs excelling in 101+ languages. Aya 23 tops XTREME-R leaderboard for low-resource langs like Swahili/Yoruba, beating closed models in translation/Q&A. Perfect for global apps without API costs.</p>
+
+    <h2>What Aya Excels At</h2>
+    <ul>
+        <li><strong>Multilingual mastery:</strong> Non-English instruction, translation, cultural nuance.</li>
+        <li><strong>Chat/reasoning:</strong> Cross-lingual summarization, code in Hindi/Arabic.</li>
+        <li><strong>Efficiency:</strong> Matches Llama-3 8B in English while dominating global tasks.</li>
+    </ul>
+
+    <h2>Aya Model Recommendations</h2>
+    <table>
+        <tr><th>Variant</th><th>Params</th><th>VRAM (Q4)</th><th>Best For</th></tr>
+        <tr><td>Aya 8B</td><td>8B</td><td>6GB</td><td>Edge/low-cost cloud; quick multilingual chat.</td></tr>
+        <tr><td>Aya 23B</td><td>23B</td><td>16GB</td><td>Balanced production; top non-English benchmarks.</td></tr>
+        <tr><td>Aya 35B</td><td>35B</td><td>24GB</td><td>High-accuracy enterprise RAG/agents.</td></tr>
+    </table>
+    <p><strong>Pro Tip:</strong> Start with Aya 23B Instruct—80% of Llama 70B quality at 1/3 hardware cost.</p>
+
+    <h2>Who Should Deploy Aya</h2>
+    <p><strong>Business/Professional:</strong> E-commerce in LATAM/Africa, NGOs, support teams saving $5K+/yr on APIs.</p>
+    <p><strong>Personal/Homelab:</strong> Language hobbyists, indie devs localizing apps.</p>
+    <p><em>Real Example:</em> African startup uses Aya 8B for Swahili customer queries—95% accuracy, zero latency.</p>
+
+    <h2>NoCloudGPT Deployment Guide</h2>
+    <table>
+        <tr><th>Setup</th><th>Hardware</th><th>Perf (t/s)</th><th>Cost</th></tr>
+        <tr><td>Small Cloud</td><td>Lightsail t4g.medium (16GB RAM)</td><td>25-45 (8B/23B)</td><td>$20/mo</td></tr>
+        <tr><td>Local Linux</td><td>RTX 3060/4070 (24GB VRAM)</td><td>40-60</td><td>One-time</td></tr>
+        <tr><td>GPU On-Prem</td><td>A100 40GB</td><td>80+ (35B)</td><td>Scale</td></tr>
+    </table>
+    <p>Integrate via Ollama/vLLM. Fine-tune on your data with LoRA (1-2GB extra VRAM). <strong>Pros:</strong> Uncensored, fast. <strong>Cons:</strong> Weaker in ultra-niche dialects vs. closed APIs.</p>
+
+    <p><a href="/menu/quote.html">Build Custom Quote</a> | <a href="/menu/deploy/#lightsail">Start 90-Day Lightsail Pilot ($10/mo)</a> | <a href="/menu/deploy/#on-prem">Full On-Prem Guide</a></p>
+</body>
+</html>
