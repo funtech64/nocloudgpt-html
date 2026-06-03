@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InternLM Models – Private Deployment Guide | NoCloudGPT</title>
+  <meta name="description" content="InternLM is Shanghai AI Lab's open-weight model family with strong Chinese and English bilingual capabilities. Deploy InternLM 2 or InternLM 3 privately." />
+  <link rel="canonical" href="https://nocloudgpt.com/menu/internlm/" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; color: #1a1a1a; line-height: 1.7; }
+    h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+    h2 { font-size: 1.35rem; margin-top: 2.2rem; border-bottom: 2px solid #e2e2e2; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.4rem; color: #333; }
+    .tag { display: inline-block; background: #f0f4ff; color: #2244aa; border-radius: 4px; padding: 2px 8px; font-size: 0.82rem; margin-right: 5px; }
+    .cta-box { background: #f8f9ff; border-left: 4px solid #3355dd; padding: 1rem 1.4rem; margin: 2rem 0; border-radius: 4px; }
+    .cta-box a { color: #2244aa; font-weight: 600; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 0.6rem 0.9rem; text-align: left; }
+    th { background: #f3f3f3; }
+    a { color: #2244aa; }
+    nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<nav><a href="/menu/">← Model Menu</a> &nbsp;/&nbsp; InternLM</nav>
+
+<h1>InternLM: Shanghai AI Lab's Open Bilingual Models</h1>
+<p>
+  <span class="tag">Bilingual</span>
+  <span class="tag">Reasoning</span>
+  <span class="tag">Long Context</span>
+  <span class="tag">Agentic</span>
+  <span class="tag">Open Weights</span>
+</p>
+
+<p>
+  InternLM is an open-weight model family developed by <strong>Shanghai AI Lab</strong>. The series progresses from InternLM through InternLM2 and InternLM2.5 to the recent InternLM3, with each generation bringing improved reasoning, stronger math capabilities, and better instruction alignment. InternLM is designed as a genuine bilingual model — not an English model with Chinese patched on — and it includes strong tool-use and agentic capabilities in the later versions, making it suitable for more complex deployment scenarios than basic chat.
+</p>
+
+<h2>What InternLM Is Good At</h2>
+<ul>
+  <li><strong>Bilingual English and Chinese reasoning</strong> — trained from scratch on balanced Chinese/English data</li>
+  <li><strong>Math and science tasks</strong> — InternLM-Math variants are purpose-built for formal mathematical reasoning</li>
+  <li><strong>Long-context processing</strong> — InternLM2.5 supports up to 1 million token contexts in specialized configurations</li>
+  <li><strong>Agentic tool use</strong> — InternLM2+ includes built-in tool-calling patterns compatible with agent frameworks</li>
+  <li><strong>Code generation</strong> — competitive coding performance with InternCoder variants</li>
+  <li><strong>Document and academic summarization</strong> — well-suited to research and technical document workflows</li>
+</ul>
+
+<h2>Who Should Care</h2>
+
+<h3>Business and Professional Use</h3>
+<p>
+  InternLM is a strong fit for organizations with <strong>technical or scientific workflows in Chinese or bilingual environments</strong>. Research institutions, engineering teams, financial analysts, and academic labs working with Chinese technical literature will find InternLM's grounding in scientific and mathematical training data immediately useful.
+</p>
+<p>
+  The tool-use capabilities in InternLM2+ make it worth evaluating for <strong>agentic pipelines</strong> — automated workflows that call external APIs, query databases, or execute multi-step reasoning tasks. If you're building a private AI agent rather than just a chat interface, InternLM2.5 is worth benchmarking against Llama 3 for your specific workflow.
+</p>
+
+<h3>Personal and Homelab Use</h3>
+<p>
+  InternLM2.5 7B Chat is a practical homelab option for bilingual users who want better Chinese output than Western models provide. It runs on a single 12GB GPU and performs surprisingly well on technical questions.
+</p>
+
+<h2>Model Variants at a Glance</h2>
+<table>
+  <thead>
+    <tr><th>Model</th><th>Parameters</th><th>VRAM (4-bit)</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>InternLM2.5 1.8B Chat</td><td>1.8B</td><td>~1.5GB</td><td>Ultra-light; edge use</td></tr>
+    <tr><td>InternLM2.5 7B Chat</td><td>7B</td><td>~5GB</td><td>Best general-purpose InternLM for homelab</td></tr>
+    <tr><td>InternLM2.5 20B Chat</td><td>20B</td><td>~13GB</td><td>Stronger reasoning; single high-VRAM GPU</td></tr>
+    <tr><td>InternLM3 8B Instruct</td><td>8B</td><td>~5GB</td><td>Latest generation; improved alignment</td></tr>
+    <tr><td>InternLM2.5 7B 1M</td><td>7B</td><td>varies</td><td>1M context; document-processing focus</td></tr>
+  </tbody>
+</table>
+
+<h2>NoCloudGPT Deployment Guidance</h2>
+
+<h3>Small Cloud Server (Lightsail / EC2)</h3>
+<p>
+  InternLM2.5 7B Chat is a cost-effective Lightsail target. On a <code>g4dn.xlarge</code> (16GB), it runs in float16 with headroom. Ollama supports it via the InternLM community models:
+</p>
+<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code># Via llama.cpp with GGUF from Hugging Face
+./llama-server -m internlm2_5-7b-chat-q4_k_m.gguf \
+  --host 0.0.0.0 --port 8080 -ngl 40</code></pre>
+
+<h3>Local Linux Machine</h3>
+<p>
+  InternLM2.5 7B in Q4_K_M GGUF runs well on an RTX 3060 (12GB) or better. The 20B variant needs 24GB VRAM (RTX 3090/4090). CPU-only machines with 16GB RAM can run the 7B GGUF acceptably.
+</p>
+
+<h3>On-Premise / Office Server</h3>
+<p>
+  InternLM2.5 20B on a single A100 40GB is a capable production deployment for a bilingual technical team. Serve with LMDeploy (InternLM's own inference server, which is well-optimized for the model family) or vLLM:
+</p>
+<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code># Using LMDeploy (recommended for InternLM)
+lmdeploy serve api_server internlm/internlm2_5-20b-chat \
+  --server-port 23333</code></pre>
+
+<div class="cta-box">
+  <strong>Building a bilingual or technical AI pipeline?</strong><br />
+  <a href="/menu/quote.html">Build a deployment quote</a> or follow the
+  <a href="/menu/deploy/">90-day pilot setup guide</a> to get InternLM running on your server.
+</div>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>How does InternLM compare to Yi and Qwen for Chinese tasks?</h3>
+<p>All three are strong. InternLM tends to excel at technical and mathematical Chinese content. Yi performs well on conversational Chinese. Qwen has the broadest model lineup and strong general Chinese performance. Benchmark all three on your specific task type if quality is critical.</p>
+
+<h3>What is InternLM-Math?</h3>
+<p>A specialized fine-tune of InternLM focused on formal mathematical reasoning, proof-writing, and step-by-step problem solving. Useful for tutoring applications, engineering workloads, or research tools.</p>
+
+<h3>Does InternLM2.5 support tool calling?</h3>
+<p>Yes — InternLM2.5 has built-in support for Lagent and Hugging Face's Transformers Agents framework. It's one of the more naturally agentic open-weight models at the 7B scale.</p>
+
+<h2>Related Pages</h2>
+<ul>
+  <li><a href="/menu/yi/">Yi (01.AI bilingual models)</a></li>
+  <li><a href="/menu/qwen/">Qwen (Alibaba)</a></li>
+  <li><a href="/menu/deepseek/">DeepSeek</a></li>
+  <li><a href="/menu/compare/">Compare open models</a></li>
+</ul>
+
+</body>
+</html>
