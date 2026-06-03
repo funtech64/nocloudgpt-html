@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenHermes & Nous Hermes | NoCloudGPT Model Menu</title>
+  <meta name="description" content="OpenHermes and Nous Hermes: high-quality instruction-following models fine-tuned on curated synthetic datasets. Ideal for private AI assistants, agentic pipelines, and tool-use tasks. Runs on 4GB–8GB Lightsail instances." />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans">
+
+  <!-- Nav -->
+  <nav class="bg-gray-900 border-b border-gray-800 px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold text-indigo-400 tracking-tight">NoCloudGPT</a>
+    <div class="flex gap-6 text-sm text-gray-400">
+      <a href="/menu" class="hover:text-white transition">Model Menu</a>
+      <a href="/pricing" class="hover:text-white transition">Pricing</a>
+      <a href="/contact" class="hover:text-white transition">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-gray-900 via-gray-950 to-indigo-950 px-6 py-20 text-center">
+    <div class="max-w-3xl mx-auto">
+      <span class="inline-block bg-indigo-900 text-indigo-300 text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">Instruction · Agentic · Tool Use</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+        OpenHermes &amp; Nous Hermes
+      </h1>
+      <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+        High-fidelity instruction-following models fine-tuned by Nous Research on meticulously curated synthetic datasets. Renowned for sharp reasoning, reliable tool use, and agentic task execution — all without cloud exposure.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-xl transition">Request a Quote</a>
+        <a href="/pilots" class="border border-indigo-500 text-indigo-300 hover:bg-indigo-900 font-semibold px-6 py-3 rounded-xl transition">Start 90-Day Pilot</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold text-white mb-6">What Are OpenHermes &amp; Nous Hermes?</h2>
+    <p class="text-gray-300 leading-relaxed mb-4">
+      The Hermes family of models originates from <strong class="text-white">Nous Research</strong>, an open-source AI lab focused on building high-quality fine-tunes of foundational models. Rather than training from scratch, Nous Research applies rigorous dataset curation and supervised fine-tuning (SFT) techniques to base models — primarily Mistral and Llama variants — to produce assistants that dramatically outperform their base counterparts on instruction-following benchmarks.
+    </p>
+    <p class="text-gray-300 leading-relaxed mb-4">
+      <strong class="text-white">OpenHermes 2.5</strong> (fine-tuned on Mistral 7B) became a community landmark by demonstrating that a 7B-parameter model, when trained on a high-quality synthetic dataset of roughly one million samples, could match or exceed much larger models on coding, reasoning, and multi-turn conversation tasks. Its successor variants have continued this trajectory.
+    </p>
+    <p class="text-gray-300 leading-relaxed">
+      <strong class="text-white">Nous Hermes 2</strong> extended this approach to larger base models including Llama 2 13B and Mixtral 8x7B, offering enterprise-grade instruction quality at open-weight sizes. These models are especially well-suited for private deployments where you need reliable, nuanced assistant behavior without depending on external APIs or commercial model agreements.
+    </p>
+  </section>
+
+  <!-- Strengths -->
+  <section class="bg-gray-900 px-6 py-16">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-10">Core Strengths</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+          <div class="text-indigo-400 text-2xl mb-3">🧠</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Instruction Fidelity</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Trained on large-scale curated synthetic datasets, Hermes models follow complex, multi-step instructions with exceptional accuracy. They handle nuanced prompts, conditional logic, and structured output formats reliably across sessions.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+          <div class="text-indigo-400 text-2xl mb-3">🔧</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Tool Use &amp; Function Calling</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Nous Hermes 2 Pro variants include explicit function-calling support, enabling structured JSON output and tool invocation suitable for agentic pipelines, API orchestration, and autonomous workflows — all without cloud intermediaries.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+          <div class="text-indigo-400 text-2xl mb-3">💻</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Code Generation</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">OpenHermes 2.5 consistently ranks among the top 7B models for code generation tasks, producing functional Python, JavaScript, SQL, and shell scripts from natural language descriptions — critical for private developer tooling and internal automation.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+          <div class="text-indigo-400 text-2xl mb-3">🔒</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Privacy-First by Design</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Open weights mean full local deployment. No prompts, no completions, no fine-tuning data ever leaves your infrastructure. Ideal for legal, financial, healthcare, and government use cases with strict data residency requirements.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+          <div class="text-indigo-400 text-2xl mb-3">📐</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Reasoning &amp; Chain-of-Thought</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Hermes models exhibit strong chain-of-thought reasoning when prompted, enabling structured problem decomposition, step-by-step analysis, and logical inference tasks that benefit from transparent intermediate reasoning.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+          <div class="text-indigo-400 text-2xl mb-3">⚡</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Lightweight Hardware Fit</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">OpenHermes 7B runs comfortably on 4GB RAM via Q4 quantization — one of the most capable models available for minimal Lightsail instances. The 13B variant requires 8GB RAM, and Mixtral-based Hermes targets GPU deployments.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Should Use This -->
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold text-white mb-6">Who Should Deploy Hermes Models?</h2>
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Hermes models occupy a sweet spot between raw capability and deployment practicality. They are not the largest models available — but for a wide range of business tasks, they deliver results that rival much larger systems while fitting comfortably into modest private infrastructure.
+    </p>
+    <div class="space-y-4">
+
+      <div class="flex gap-4 items-start bg-gray-900 rounded-xl p-5 border border-gray-800">
+        <span class="text-indigo-400 text-xl mt-1">👨‍💻</span>
+        <div>
+          <h3 class="text-white font-semibold mb-1">Developer Teams</h3>
+          <p class="text-gray-400 text-sm">Teams building internal copilots, code review assistants, or automated documentation tools need a model that understands code context and follows structured prompts precisely. OpenHermes 2.5 delivers this at 7B-parameter efficiency.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4 items-start bg-gray-900 rounded-xl p-5 border border-gray-800">
+        <span class="text-indigo-400 text-xl mt-1">⚖️</span>
+        <div>
+          <h3 class="text-white font-semibold mb-1">Legal &amp; Compliance Teams</h3>
+          <p class="text-gray-400 text-sm">Summarizing contracts, extracting clauses, drafting responses — Hermes handles structured legal workflows with the instruction fidelity needed to act as a reliable first-pass analyst, entirely within your own network boundary.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4 items-start bg-gray-900 rounded-xl p-5 border border-gray-800">
+        <span class="text-indigo-400 text-xl mt-1">🏥</span>
+        <div>
+          <h3 class="text-white font-semibold mb-1">Healthcare &amp; Research Organizations</h3>
+          <p class="text-gray-400 text-sm">When handling PHI or proprietary research data, cloud models are not viable. Hermes runs on-premise with zero data egress, supporting clinical documentation, literature summarization, and structured data extraction.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4 items-start bg-gray-900 rounded-xl p-5 border border-gray-800">
+        <span class="text-indigo-400 text-xl mt-1">🤖</span>
+        <div>
+          <h3 class="text-white font-semibold mb-1">Agentic Pipeline Builders</h3>
+          <p class="text-gray-400 text-sm">The Pro variants with function-calling support are ready-made for LangChain, LlamaIndex, and custom agent frameworks. Deploy Hermes as the reasoning core of an autonomous agent that calls internal APIs without cloud dependency.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Hardware Table -->
+  <section class="bg-gray-900 px-6 py-16">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-4">Hardware Requirements</h2>
+      <p class="text-gray-400 mb-8 text-sm">All estimates assume Ollama-based deployment with GGUF quantization. Lightsail pricing is approximate monthly cost at time of publication.</p>
+      <div class="overflow-x-auto rounded-2xl border border-gray-700">
+        <table class="w-full text-sm text-left">
+          <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wider">
+            <tr>
+              <th class="px-6 py-4">Model Variant</th>
+              <th class="px-6 py-4">Parameters</th>
+              <th class="px-6 py-4">Quantization</th>
+              <th class="px-6 py-4">RAM Required</th>
+              <th class="px-6 py-4">Lightsail Tier</th>
+              <th class="px-6 py-4">Est. Cost/Mo</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr class="bg-gray-950 hover:bg-gray-900 transition">
+              <td class="px-6 py-4 text-white font-medium">OpenHermes 2.5</td>
+              <td class="px-6 py-4 text-gray-300">7B</td>
+              <td class="px-6 py-4 text-gray-300">Q4_K_M</td>
+              <td class="px-6 py-4 text-gray-300">4GB</td>
+              <td class="px-6 py-4 text-indigo-400">4GB Lightsail</td>
+              <td class="px-6 py-4 text-gray-300">~$20/mo</td>
+            </tr>
+            <tr class="bg-gray-900 hover:bg-gray-800 transition">
+              <td class="px-6 py-4 text-white font-medium">Nous Hermes 2 (Mistral)</td>
+              <td class="px-6 py-4 text-gray-300">7B</td>
+              <td class="px-6 py-4 text-gray-300">Q4_K_M</td>
+              <td class="px-6 py-4 text-gray-300">4GB</td>
+              <td class="px-6 py-4 text-indigo-400">4GB Lightsail</td>
+              <td class="px-6 py-4 text-gray-300">~$20/mo</td>
+            </tr>
+            <tr class="bg-gray-950 hover:bg-gray-900 transition">
+              <td class="px-6 py-4 text-white font-medium">Nous Hermes 2 (Llama 2)</td>
+              <td class="px-6 py-4 text-gray-300">13B</td>
+              <td class="px-6 py-4 text-gray-300">Q4_K_M</td>
+              <td class="px-6 py-4 text-gray-300">8GB</td>
+              <td class="px-6 py-4 text-indigo-400">8GB Lightsail</td>
+              <td class="px-6 py-4 text-gray-300">~$40/mo</td>
+            </tr>
+            <tr class="bg-gray-900 hover:bg-gray-800 transition">
+              <td class="px-6 py-4 text-white font-medium">Nous Hermes 2 Pro</td>
+              <td class="px-6 py-4 text-gray-300">7B</td>
+              <td class="px-6 py-4 text-gray-300">Q4_K_M</td>
+              <td class="px-6 py-4 text-gray-300">4GB</td>
+              <td class="px-6 py-4 text-indigo-400">4GB Lightsail</td>
+              <td class="px-6 py-4 text-gray-300">~$20/mo</td>
+            </tr>
+            <tr class="bg-gray-950 hover:bg-gray-900 transition">
+              <td class="px-6 py-4 text-white font-medium">Nous Hermes 2 (Mixtral)</td>
+              <td class="px-6 py-4 text-gray-300">8x7B MoE</td>
+              <td class="px-6 py-4 text-gray-300">Q4_K_M</td>
+              <td class="px-6 py-4 text-gray-300">24GB VRAM</td>
+              <td class="px-6 py-4 text-yellow-400">GPU Required</td>
+              <td class="px-6 py-4 text-gray-300">Contact Us</td>
+            </tr>
+            <tr class="bg-gray-900 hover:bg-gray-800 transition">
+              <td class="px-6 py-4 text-white font-medium">Hermes 3 (Llama 3.1)</td>
+              <td class="px-6 py-4 text-gray-300">8B / 70B</td>
+              <td class="px-6 py-4 text-gray-300">Q4_K_M</td>
+              <td class="px-6 py-4 text-gray-300">4GB / 40GB</td>
+              <td class="px-6 py-4 text-indigo-400">4GB / GPU</td>
+              <td class="px-6 py-4 text-gray-300">~$20 / Contact</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deployment -->
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold text-white mb-6">Deployment Paths</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+        <h3 class="text-white font-semibold mb-3">☁️ Lightsail Pilot</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">OpenHermes 2.5 and Hermes 2 Pro (7B) launch immediately on a 4GB AWS Lightsail instance via Ollama. We configure, deploy, and hand over your private endpoint in under 24 hours. Start your 90-day pilot for a flat monthly fee.</p>
+      </div>
+
+      <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+        <h3 class="text-white font-semibold mb-3">🖥️ On-Premise</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Deploy Hermes models on your own servers — bare metal, internal VM, or air-gapped environment. We provide installation, model configuration, and optional Llama.cpp or vLLM integration for maximum inference performance.</p>
+      </div>
+
+      <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+        <h3 class="text-white font-semibold mb-3">🔗 Agentic Integration</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Nous Hermes 2 Pro's function-calling capability integrates directly with LangChain, LlamaIndex, and custom API orchestration layers. We scope and deploy agentic pipelines for internal tools, document automation, and data workflows.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Comparison Note -->
+  <section class="bg-gray-900 px-6 py-16">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-6">Hermes vs. Base Models</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        A common question: why deploy a Hermes fine-tune rather than the underlying base model (Mistral 7B or Llama 3.1 8B)?
+      </p>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Base models are powerful but require careful prompting and often produce unpredictable behavior for instruction-following tasks. Hermes fine-tuning addresses this directly — the model has been trained on hundreds of thousands of high-quality instruction examples, dramatically improving response quality, formatting consistency, and task completion rates without any additional prompt engineering on your part.
+      </p>
+      <p class="text-gray-300 leading-relaxed">
+        For production assistant deployments — where reliability and consistency matter more than raw benchmark scores — a well-trained fine-tune like OpenHermes will outperform a larger, less-tuned base model in the majority of real-world use cases. This is the philosophy behind the Nous Research approach, and it has been validated by the community across thousands of real deployments.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gradient-to-br from-indigo-950 via-gray-950 to-gray-900 px-6 py-20 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold text-white mb-4">Deploy Hermes in Your Private Environment</h2>
+      <p class="text-gray-300 mb-8 leading-relaxed">OpenHermes 2.5 on a 4GB Lightsail instance. Nous Hermes 2 on your own servers. Hermes 3 with Llama 3.1 for maximum modern capability. We configure, deploy, and support every step.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-3 rounded-xl transition">Request a Quote</a>
+        <a href="/pilots" class="border border-indigo-500 text-indigo-300 hover:bg-indigo-900 font-semibold px-8 py-3 rounded-xl transition">Start 90-Day Pilot</a>
+        <a href="/contact" class="border border-gray-600 text-gray-300 hover:bg-gray-800 font-semibold px-8 py-3 rounded-xl transition">On-Premise Install</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-950 border-t border-gray-800 px-6 py-10 text-center text-sm text-gray-500">
+    <p class="mb-2"><a href="/menu" class="hover:text-white transition">← Back to Model Menu</a></p>
+    <p>© 2025 NoCloudGPT. All rights reserved. OpenHermes and Nous Hermes are open-weight models released by Nous Research under respective open-source licenses.</p>
+  </footer>
+
+</body>
+</html>
