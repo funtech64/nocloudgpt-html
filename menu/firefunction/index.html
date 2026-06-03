@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FireFunction on Ollama | Private Function Calling AI | NoCloudGPT.com</title>
+  <meta name="description" content="Run Fireworks AI's FireFunction locally with Ollama. A model purpose-built for structured function calling and tool use — ideal for agentic pipelines that cannot route data through external APIs." />
+</head>
+<body>
+
+<h1>FireFunction: Purpose-Built Function Calling AI That Runs On Your Infrastructure, Not Fireworks' Servers</h1>
+
+<p>Function calling is the backbone of modern agentic AI — it's how models interact with APIs, databases, and external tools in structured, predictable ways. Most teams rely on OpenAI's function calling API to do this, which means every tool invocation, every parameter payload, and every returned result passes through a third-party server.</p>
+
+<p><strong>FireFunction</strong>, developed by Fireworks AI, brings GPT-4-class function calling performance to an open-weight model you can run entirely on your own hardware. Deployed via <code>ollama run firefunction-v2</code>, it gives agentic pipelines the structured output reliability they need — without sending a single tool call off-premise.</p>
+
+---
+
+<h2>What FireFunction Actually Does</h2>
+
+<p>FireFunction is not a general-purpose chat model with function calling bolted on. It was fine-tuned specifically to produce reliable, schema-conformant structured outputs for tool use and agentic workflows.</p>
+
+<ul>
+  <li><strong>Structured function calling</strong> — generates well-formed JSON tool invocations that conform to defined schemas, reducing parsing failures in production pipelines</li>
+  <li><strong>Multi-tool selection</strong> — correctly identifies which tool to call from a provided set, including declining to call when no tool is appropriate</li>
+  <li><strong>Parallel function calls</strong> — can invoke multiple tools in a single pass where task decomposition requires it</li>
+  <li><strong>OpenAI-compatible API format</strong> — function schemas follow the same structure as OpenAI's tool calling spec, minimizing migration effort for existing pipelines</li>
+  <li><strong>Instruction-following backbone</strong> — built on a strong base model capable of reasoning through multi-step task execution before committing to a tool call</li>
+  <li><strong>Low hallucination rate on tool selection</strong> — fine-tuned to avoid fabricating tool names or parameters not present in the provided schema</li>
+</ul>
+
+---
+
+<h2>Who Should Run FireFunction On-Premise</h2>
+
+<ul>
+  <li><strong>Teams building agentic AI pipelines</strong> — any organization using LangChain, LlamaIndex, or custom orchestration frameworks that depend on reliable function calling</li>
+  <li><strong>API gateway and integration teams</strong> — engineers automating internal tool invocations where the parameter payloads contain sensitive business logic or credentials</li>
+  <li><strong>Financial services and insurance</strong> — firms running AI-assisted workflows against internal pricing engines, policy databases, or trading APIs that cannot touch external inference</li>
+  <li><strong>Healthcare and compliance environments</strong> — organizations where patient data or regulated records may appear in tool call parameters</li>
+  <li><strong>Enterprises replacing OpenAI function calling</strong> — teams looking to eliminate per-token API costs and vendor dependency for structured output generation at scale</li>
+</ul>
+
+---
+
+<h2>Deployment Tiers and Compute Requirements</h2>
+
+<h3>Tier 1 — Developer and Pipeline Testing: FireFunction 7B Q4</h3>
+<ul>
+  <li><strong>RAM required:</strong> 4–6GB</li>
+  <li><strong>Hardware:</strong> Developer laptop, AWS Lightsail 8GB, or any modern workstation</li>
+  <li><strong>AWS cost:</strong> Lightsail 8GB ~$40/month</li>
+  <li><strong>Speed:</strong> 10–20 tokens/sec on CPU</li>
+  <li><strong>Best for:</strong> Individual developers building and testing agentic pipelines, schema validation, and function call logic</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run firefunction-v2</code></p>
+
+<h3>Tier 2 — Production Pipeline: FireFunction 7B Q4 on GPU</h3>
+<ul>
+  <li><strong>VRAM required:</strong> 8GB</li>
+  <li><strong>Hardware:</strong> AWS g4dn.xlarge (T4 16GB), RTX 3070/4060 Ti, or equivalent</li>
+  <li><strong>AWS cost:</strong> ~$0.526/hour on-demand; ~$0.16/hour spot</li>
+  <li><strong>Speed:</strong> 40–70 tokens/sec</li>
+  <li><strong>Best for:</strong> Production agentic pipelines with 5–15 concurrent requests, low-latency tool invocation requirements, automated workflow orchestration</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run firefunction-v2</code></p>
+
+<h3>Tier 3 — High-Throughput Agentic Infrastructure: FireFunction on Multi-GPU</h3>
+<ul>
+  <li><strong>VRAM required:</strong> 16–24GB</li>
+  <li><strong>Hardware:</strong> AWS g5.xlarge (A10G 24GB) or RTX 4090 workstation</li>
+  <li><strong>AWS cost:</strong> g5.xlarge ~$1.006/hour on-demand</li>
+  <li><strong>Speed:</strong> 60–100 tokens/sec</li>
+  <li><strong>Best for:</strong> Enterprise agentic platforms with 15–40 concurrent pipeline executions, high-frequency tool call environments, internal automation hubs</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run firefunction-v2</code></p>
+
+---
+
+<h2>The Real Cost of Function Calling Through External APIs</h2>
+
+<p>Every function call routed through OpenAI or a similar provider sends structured data — tool names, parameter schemas, returned values — to external infrastructure. In agentic pipelines, this happens dozens to hundreds of times per workflow execution.</p>
+
+<ul>
+  <li>Tool call parameters frequently contain internal system identifiers, user data, or business-sensitive values that were never intended to leave your network</li>
+  <li>OpenAI API costs for function-heavy agentic workflows scale rapidly — a pipeline making 50 tool calls per session at GPT-4 pricing can cost $0.50–$2.00 per workflow run</li>
+  <li>At 500 workflow executions per day: $250–$1,000/day in API costs, with no cap and no data control</li>
+  <li>FireFunction on a g4dn.xlarge spot instance handles the same volume for approximately $1.28–$3.84/day</li>
+</ul>
+
+<p>For agentic pipelines, the function call is the payload. Running FireFunction locally means that payload never leaves your environment.</p>
+
+---
+
+<h2>Getting Started with FireFunction on Ollama</h2>
+
+<pre><code># Pull and run FireFunction
+ollama run firefunction-v2
+
+# Expose via local API for pipeline integration
+ollama serve
+# Endpoint: http://localhost:11434/api/chat
+</code></pre>
+
+<p>FireFunction's OpenAI-compatible function calling format means existing LangChain or LlamaIndex integrations can point to your local Ollama endpoint with minimal code changes.</p>
+
+---
+
+<h2>Start Your 90-Day Agentic AI Pilot</h2>
+
+<p>NoCloudGPT.com provides deployment guides, pipeline integration support, and hardware sizing consultations for teams replacing cloud function calling APIs with on-premise FireFunction deployments.</p>
+
+<p><strong>Contact us to scope your pilot — before your next agentic workflow sends a tool call payload your security team didn't sign off on.</strong></p>
+
+</body>
+</html>
