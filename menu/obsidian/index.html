@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obsidian on Ollama | Private Multimodal Vision AI | NoCloudGPT.com</title>
+  <meta name="description" content="Run Obsidian locally with Ollama. A compact multimodal instruction model for image understanding, document analysis, and visual QA — running entirely on your hardware with zero data egress." />
+</head>
+<body>
+
+<h1>Obsidian: Private Multimodal AI That Sees, Reads, and Responds — On Your Hardware</h1>
+
+<p>Obsidian is a compact multimodal instruction model designed to handle image understanding, document analysis, and visual question answering without sending a single pixel to an external server. Built for on-premise deployment, Obsidian gives enterprises a self-hosted vision-language capability that fits on modest hardware and integrates cleanly into existing workflows.</p>
+
+<p>If your team needs AI that can look at a chart, read a form, or describe a product image — and you cannot afford the data exposure of cloud vision APIs — Obsidian is worth a serious evaluation.</p>
+
+<p>It runs via <code>ollama run obsidian</code> — no API key, no image logging, no per-query billing.</p>
+
+---
+
+<h2>What Obsidian Actually Does</h2>
+
+<ul>
+  <li><strong>Visual question answering</strong> — ask natural language questions about any image and receive structured, contextual answers</li>
+  <li><strong>Document and form understanding</strong> — extract key fields, summarize content, and interpret scanned materials including mixed-layout documents</li>
+  <li><strong>Image captioning and description</strong> — generate accurate, detailed descriptions for product images, technical diagrams, and operational photography</li>
+  <li><strong>Instruction-following on visual inputs</strong> — handle complex multi-step prompts that combine image context with text instructions</li>
+  <li><strong>Lightweight deployment footprint</strong> — runs efficiently on CPU-only hardware, making it accessible without GPU investment for teams just getting started</li>
+</ul>
+
+---
+
+<h2>Who Should Run Obsidian On-Premise</h2>
+
+<ul>
+  <li><strong>Manufacturing and quality control teams</strong> — inspect product images, flag defects, and generate structured inspection reports on local hardware near the production line</li>
+  <li><strong>Healthcare and clinical operations</strong> — process medical images, intake forms, and scanned patient documents entirely on-premise, satisfying HIPAA requirements without cloud exposure</li>
+  <li><strong>Legal and compliance departments</strong> — extract and summarize content from scanned contracts, redlined documents, and evidence exhibits without routing materials through third-party APIs</li>
+  <li><strong>Retail and e-commerce operations</strong> — automate product image tagging, description generation, and catalog enrichment using local compute rather than paying per-image API fees</li>
+  <li><strong>Government and defense contractors</strong> — deploy multimodal AI in classified or restricted environments where internet-connected vision tools are not permitted</li>
+</ul>
+
+---
+
+<h2>Deployment Tiers and Compute Requirements</h2>
+
+<h3>Tier 1 — CPU Deployment: Obsidian Q4</h3>
+<ul>
+  <li><strong>RAM required:</strong> 4–8GB</li>
+  <li><strong>Hardware:</strong> Developer laptop, AWS Lightsail 4GB or 8GB instance</li>
+  <li><strong>AWS cost:</strong> Lightsail 8GB ~$40/month</li>
+  <li><strong>Speed:</strong> 3–8 tokens/sec on CPU</li>
+  <li><strong>Best for:</strong> Batch document processing, internal tooling, pilot evaluation workloads</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run obsidian</code></p>
+
+<h3>Tier 2 — GPU Deployment: Obsidian Q4 on 8GB VRAM</h3>
+<ul>
+  <li><strong>VRAM required:</strong> 8GB</li>
+  <li><strong>Hardware:</strong> AWS g4dn.xlarge (T4 16GB), RTX 3070, RTX 4060, or equivalent</li>
+  <li><strong>AWS cost:</strong> ~$0.526/hour on-demand; ~$0.16/hour spot</li>
+  <li><strong>Speed:</strong> 25–45 tokens/sec</li>
+  <li><strong>Best for:</strong> Interactive internal tools, concurrent user workloads, moderate image processing volumes</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run obsidian</code></p>
+
+<h3>Tier 3 — High-Throughput GPU: Obsidian Q8 on 16GB+ VRAM</h3>
+<ul>
+  <li><strong>VRAM required:</strong> 16GB+</li>
+  <li><strong>Hardware:</strong> AWS g4dn.2xlarge, RTX 4080, RTX 3090, or equivalent</li>
+  <li><strong>AWS cost:</strong> ~$0.752/hour on-demand; ~$0.23/hour spot</li>
+  <li><strong>Speed:</strong> 40–70 tokens/sec</li>
+  <li><strong>Best for:</strong> Production-scale document pipelines, high-volume image analysis, real-time visual QA applications</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run obsidian:q8_0</code></p>
+
+---
+
+<h2>The Real Cost of Cloud Vision APIs</h2>
+
+<ul>
+  <li>Every image submitted to a cloud vision API is logged, potentially stored, and subject to that provider's terms of service — creating real liability for organizations handling proprietary or regulated imagery</li>
+  <li>Google Vision API charges per image at scale; for a team processing 50,000 images per month, costs compound into a substantial ongoing line item</li>
+  <li>GPT-4V and similar APIs transmit your documents, diagrams, and photographs to infrastructure you do not control — proprietary product designs, patient records, and legal exhibits included</li>
+  <li>Obsidian eliminates both risks: your images never leave your infrastructure, and your cost is fixed at the hardware level regardless of volume</li>
+</ul>
+
+---
+
+<h2>Getting Started with Obsidian on Ollama</h2>
+
+<pre><code># Pull and run Obsidian
+ollama run obsidian
+
+# Serve via local API
+ollama serve
+# Endpoint: http://localhost:11434/api/chat
+</code></pre>
+
+---
+
+<h2>Start Your 90-Day Private Vision AI Pilot</h2>
+
+<p>NoCloudGPT.com provides deployment guides and hardware sizing recommendations for teams deploying Obsidian on-premise.</p>
+
+<p><strong>Contact us to scope your pilot — before your next document scan routes sensitive imagery through infrastructure your compliance team never approved.</strong></p>
+
+</body>
+</html>
