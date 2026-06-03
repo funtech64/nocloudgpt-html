@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Llama Guard 3 – Meta's Content Safety Classifier | NoCloudGPT</title>
+  <meta name="description" content="Deploy Meta's Llama Guard 3 privately via Ollama. MLCommons-aligned content safety classification for LLM inputs and outputs. Private, zero-egress, enterprise-ready." />
+  <meta name="keywords" content="Llama Guard 3, Meta AI safety, content moderation, LLM safety classifier, private AI deployment, Ollama, MLCommons safety taxonomy" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nocloudgpt.com/menu/llama-guard-3/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Llama Guard 3 – Meta Content Safety Classifier" />
+  <meta property="og:description" content="Private deployment of Meta's Llama Guard 3 for MLCommons-aligned content safety classification of AI inputs and outputs." />
+  <meta property="og:image" content="https://nocloudgpt.com/menu/llama-guard-3/images/hero.jpg" />
+  <meta property="og:url" content="https://nocloudgpt.com/menu/llama-guard-3/" />
+  <meta property="og:type" content="article" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Llama Guard 3 – Private Content Safety AI" />
+  <meta name="twitter:description" content="Meta's Llama Guard 3 deployed privately. MLCommons taxonomy, 8B parameters, bidirectional LLM safety classification." />
+  <meta name="twitter:image" content="https://nocloudgpt.com/menu/llama-guard-3/images/hero.jpg" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Llama Guard 3 – Meta Content Safety Classifier",
+        "description": "Deploy Meta's Llama Guard 3 privately via Ollama for MLCommons-aligned content safety classification of LLM inputs and outputs.",
+        "image": "https://nocloudgpt.com/menu/llama-guard-3/images/hero.jpg",
+        "author": { "@type": "Organization", "name": "NoCloudGPT" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "NoCloudGPT",
+          "logo": { "@type": "ImageObject", "url": "https://nocloudgpt.com/logo.png" }
+        },
+        "datePublished": "2025-01-01",
+        "dateModified": "2025-07-01",
+        "mainEntityOfPage": "https://nocloudgpt.com/menu/llama-guard-3/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nocloudgpt.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Model Menu", "item": "https://nocloudgpt.com/menu/" },
+          { "@type": "ListItem", "position": 3, "name": "Llama Guard 3", "item": "https://nocloudgpt.com/menu/llama-guard-3/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Llama Guard 3?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Llama Guard 3 is Meta's open-source content safety classifier trained on the MLCommons taxonomy. It evaluates both user inputs and LLM outputs for harmful content across 14 standardized safety categories."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What safety categories does Llama Guard 3 cover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Llama Guard 3 covers 14 MLCommons Hazard Categories including violent crimes, hate speech, sexual content, CBRN weapons, cybersecurity attacks, intellectual property violations, and privacy breaches."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What hardware is required for Llama Guard 3?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Llama Guard 3 (8B) requires approximately 6-8GB RAM for CPU inference via Ollama, or 8GB VRAM for GPU acceleration. It runs on AWS Lightsail 8GB instances or dedicated GPU servers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Llama Guard 3 be customized for specific use cases?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Llama Guard 3's taxonomy is configurable — operators can enable/disable specific hazard categories and set per-category thresholds to match organizational policy requirements."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #c85a1a;
+      --primary-dark: #8a3a0a;
+      --primary-light: #e07040;
+      --accent: #f09060;
+      --accent-warm: #f5b090;
+      --bg-dark: #1a0f0a;
+      --bg-card: #241810;
+      --bg-card-alt: #2a1e14;
+      --text-primary: #f5ede8;
+      --text-secondary: #c8a898;
+      --text-muted: #8a6858;
+      --border: #3a2518;
+      --success: #4a9a6a;
+      --warning: #c8a84a;
+      --danger: #c84a3a;
+      --orange: #e07040;
+      --orange-glow: rgba(224, 112, 64, 0.3);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    nav {
+      background: rgba(26, 15, 10, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand { font-size: 1.3rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .breadcrumb {
+      padding: 0.75rem 2rem;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.5rem; }
+
+    .hero {
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--bg-dark) 0%, #2a1508 50%, #1a0e06 100%);
+    }
+    .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.18; }
+    .hero-image-placeholder {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #2a1508 0%, #3a2010 40%, #2a1508 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; opacity: 0.15;
+    }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, rgba(26,15,10,0.6) 100%); }
+    .hero-content { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+
+    .model-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(224, 112, 64, 0.15);
+      border: 1px solid var(--orange);
+      color: var(--accent);
+      padding: 0.4rem 1rem; border-radius: 999px;
+      font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-subtitle { font-size: 1.15rem; color: var(--text-secondary); max-width: 620px; margin-bottom: 2rem; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .tag {
+      background: rgba(224, 112, 64, 0.15);
+      border: 1px solid rgba(224, 112, 64, 0.4);
+      color: var(--accent-warm);
+      padding: 0.35rem 0.85rem; border-radius: 6px;
+      font-size: 0.82rem; font-weight: 500;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    .content-grid { display: grid; grid-template-columns: 1fr 320px; gap: 2.5rem; padding: 3rem 0; }
+
+    section { margin-bottom: 3rem; }
+    h2 {
+      font-size: 1.6rem; font-weight: 700; color: var(--text-primary);
+      margin-bottom: 1rem; padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--orange);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    h3 { font-size: 1.15rem; font-weight: 600; color: var(--accent); margin-bottom: 0.75rem; }
+    p { color: var(--text-secondary); margin-bottom: 1rem; }
+
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; margin-bottom: 1.5rem; }
+
+    /* TAXONOMY GRID */
+    .taxonomy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem; margin-top: 1rem; }
+    .taxonomy-item {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .taxonomy-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .taxonomy-text { font-size: 0.85rem; color: var(--text-secondary); }
+    .taxonomy-code { font-size: 0.72rem; color: var(--text-muted); font-family: monospace; display: block; margin-bottom: 0.15rem; }
+
+    /* PIPELINE */
+    .pipeline { display: flex; flex-direction: column; gap: 0; margin-top: 1rem; }
+    .pipeline-step { display: flex; gap: 1.25rem; position: relative; }
+    .pipeline-step:not(:last-child)::after {
+      content: ''; position: absolute;
+      left: 1.1rem; top: 2.75rem; bottom: -0.5rem;
+      width: 2px;
+      background: linear-gradient(180deg, var(--orange) 0%, transparent 100%);
+    }
+    .step-number {
+      width: 2.2rem; height: 2.2rem; border-radius: 50%;
+      background: var(--orange); color: #fff;
+      font-weight: 700; font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 0.15rem;
+      box-shadow: 0 0 12px var(--orange-glow);
+    }
+    .step-content { padding-bottom: 1.75rem; }
+    .step-title { font-weight: 600; color: var(--text-primary); margin-bottom: 0.35rem; font-size: 0.95rem; }
+    .step-desc { font-size: 0.87rem; color: var(--text-secondary); }
+
+    /* IMAGE */
+    .image-block { margin: 1.5rem 0; }
+    .image-block img { width: 100%; border-radius: 10px; border: 1px solid var(--border); display: block; }
+    .image-placeholder {
+      width: 100%; border-radius: 10px; border: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--bg-card-alt) 0%, #321a0a 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: var(--text-muted); font-size: 0.85rem; gap: 0.5rem;
+    }
+    .image-placeholder.hero-ph { height: 220px; }
+    .image-placeholder.diagram-ph { height: 200px; }
+    .image-placeholder.usecase-ph { height: 180px; }
+    .image-caption { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic; }
+
+    /* CODE */
+    .code-block {
+      background: #0f0a06; border: 1px solid var(--border); border-radius: 8px;
+      padding: 1.25rem; font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 0.83rem; color: #f09060; overflow-x: auto; margin-top: 1rem;
+    }
+    .code-comment { color: #5a3a28; }
+    .code-key { color: #c8a84a; }
+    .code-val { color: #7ac88a; }
+    .code-str { color: #e08a6a; }
+    .code-safe { color: var(--success); font-weight: 700; }
+    .code-unsafe { color: var(--danger); font-weight: 700; }
+
+    /* HIGHLIGHT */
+    .highlight-box {
+      background: rgba(224, 112, 64, 0.08);
+      border: 1px solid rgba(224, 112, 64, 0.35);
+      border-left: 4px solid var(--orange);
+      border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.25rem 0;
+    }
+    .highlight-box p { color: var(--text-secondary); margin: 0; font-size: 0.92rem; }
+
+    /* COMPARISON TABLE */
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .compare-table th {
+      background: var(--bg-card-alt); color: var(--text-secondary);
+      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 0.65rem 1rem; text-align: left; border-bottom: 1px solid var(--border);
+    }
+    .compare-table td {
+      padding: 0.65rem 1rem; border-bottom: 1px solid rgba(58, 37, 24, 0.5);
+      font-size: 0.88rem; color: var(--text-secondary);
+    }
+    .compare-table tr:hover td { background: rgba(224, 112, 64, 0.05); }
+    .check { color: var(--success); font-weight: 700; }
+    .cross { color: var(--danger); }
+
+    /* FAQ */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.97rem; }
+    .faq-a { font-size: 0.9rem; color: var(--text-secondary); }
+
+    /* SIDEBAR */
+    .sidebar { position: sticky; top: 80px; height: fit-content; }
+    .sidebar-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .sidebar-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .tier { border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; background: var(--bg-card-alt); transition: border-color 0.2s; }
+    .tier:hover { border-color: var(--orange); }
+    .tier-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+    .tier-name { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); }
+    .tier-badge { font-size: 0.72rem; padding: 0.2rem 0.6rem; border-radius: 999px; font-weight: 600; }
+    .badge-green { background: rgba(74, 154, 106, 0.2); color: #4a9a6a; border: 1px solid rgba(74, 154, 106, 0.4); }
+    .badge-blue { background: rgba(240, 144, 96, 0.2); color: var(--accent); border: 1px solid rgba(240, 144, 96, 0.4); }
+    .badge-purple { background: rgba(200, 90, 26, 0.2); color: #e07040; border: 1px solid rgba(200, 90, 26, 0.4); }
+    .tier-spec { font-size: 0.8rem; color: var(--text-muted); }
+
+    .spec-list { list-style: none; }
+    .spec-list li { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid rgba(58, 37, 24, 0.4); font-size: 0.85rem; }
+    .spec-list li:last-child { border-bottom: none; }
+    .spec-key { color: var(--text-muted); }
+    .spec-val { color: var(--text-primary); font-weight: 500; text-align: right; }
+
+    .cta-primary {
+      display: block; width: 100%; text-align: center;
+      background: linear-gradient(135deg, var(--orange) 0%, var(--primary-dark) 100%);
+      color: #fff; padding: 0.85rem; border-radius: 8px; text-decoration: none;
+      font-weight: 600; font-size: 0.95rem; margin-bottom: 0.75rem;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .cta-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .cta-secondary {
+      display: block; width: 100%; text-align: center;
+      background: transparent; color: var(--accent); padding: 0.85rem; border-radius: 8px;
+      text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      border: 1px solid var(--orange); transition: background 0.2s;
+    }
+    .cta-secondary:hover { background: rgba(224, 112, 64, 0.1); }
+
+    footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 2.5rem 2rem; margin-top: 4rem; text-align: center; }
+    footer p { color: var(--text-muted); font-size: 0.85rem; margin: 0; }
+    footer a { color: var(--text-secondary); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .taxonomy-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/">NoCloudGPT</a>
+  <ul class="nav-links">
+    <li><a href="/menu/">Model Menu</a></li>
+    <li><a href="/menu/#safety">Safety Models</a></li>
+    <li><a href="/pricing/">Pricing</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="/">Home</a><span>›</span>
+  <a href="/menu/">Model Menu</a><span>›</span>
+  <a href="/menu/#safety">Safety & Compliance</a><span>›</span>
+  Llama Guard 3
+</div>
+
+<section class="hero">
+  <div class="hero-image-placeholder">🦙</div>
+  <img
+    class="hero-image"
+    src="/menu/llama-guard-3/images/hero.jpg"
+    alt="Llama Guard 3 content safety classification system"
+    onerror="this.style.display='none'"
+  />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="model-badge">🦙 Meta AI &nbsp;·&nbsp; Content Safety</div>
+    <h1>Llama Guard 3</h1>
+    <p class="hero-subtitle">
+      Meta's MLCommons-aligned content safety classifier — deployed privately via Ollama.
+      14 standardized hazard categories, bidirectional LLM screening,
+      and configurable thresholds. Your data stays on your infrastructure.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">MLCommons Taxonomy</span>
+      <span class="tag">14 Hazard Categories</span>
+      <span class="tag">Bidirectional Screening</span>
+      <span class="tag">Meta AI</span>
+      <span class="tag">Ollama Native</span>
+      <span class="tag">Configurable Policy</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="content-grid">
+    <main>
+
+      <section>
+        <h2>🦙 What Is Llama Guard 3?</h2>
+        <p>
+          Llama Guard 3 is Meta's third-generation content safety classifier, purpose-built for
+          evaluating both the inputs to and outputs from large language models. It is trained on
+          the <strong>MLCommons AI Safety Taxonomy</strong> — an industry-standardized framework
+          covering 14 hazard categories developed collaboratively by leading AI organizations.
+        </p>
+        <p>
+          Unlike traditional content filters, Llama Guard 3 is itself a fine-tuned language model
+          (8B parameters) that deeply understands context, nuance, and conversational intent.
+          It returns structured <strong>SAFE / UNSAFE</strong> verdicts with category labels,
+          enabling precise routing and escalation logic in production AI pipelines.
+        </p>
+
+        <div class="image-block">
+          <img
+            src="/menu/llama-guard-3/images/hero.jpg"
+            alt="Llama Guard 3 safety classification overview"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+          />
+          <div class="image-placeholder hero-ph" style="display:none;">
+            <span style="font-size:2.5rem;">🦙</span>
+            <span>Llama Guard 3 — Safety Classification Overview</span>
+            <span style="font-size:0.75rem;">/menu/llama-guard-3/images/hero.jpg · 1200×600px</span>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <p>
+            <strong>MLCommons Standard:</strong> Llama Guard 3 is one of the few safety models
+            trained directly against the MLCommons hazard taxonomy — the same standard used to
+            benchmark safety in Meta's public Llama deployments and referenced by the EU AI Act
+            technical standards working groups.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>📋 MLCommons Hazard Taxonomy</h2>
+        <p>
+          Llama Guard 3 classifies content against 14 standardized hazard categories. Each category
+          can be independently enabled, disabled, or threshold-tuned to match your organization's
+          specific policy requirements.
+        </p>
+
+        <div class="taxonomy-grid">
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">🔫</div>
+            <div>
+              <span class="taxonomy-code">S1</span>
+              <div class="taxonomy-text">Violent Crimes — murder, terrorism, mass violence facilitation</div>
+            </div>
+          </div>
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">🚨</div>
+            <div>
+              <span class="taxonomy-code">S2</span>
+              <div class="taxonomy-text">Non-Violent Crimes — fraud, theft, drug trafficking, trafficking</div>
+            </div>
+          </div>
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">👶</div>
+            <div>
+              <span class="taxonomy-code">S3</span>
+              <div class="taxonomy-text">Child Sexual Exploitation — CSAM and grooming facilitation</div>
+            </div>
+          </div>
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">💊</div>
+            <div>
+              <span class="taxonomy-code">S4</span>
+              <div class="taxonomy-text">CBRN Weapons — biological, chemical, nuclear, radiological</div>
+            </div>
+          </div>
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">💻</div>
+            <div>
+              <span class="taxonomy-code">S5</span>
+              <div class="taxonomy-text">Cybersecurity Attacks — malware, exploit code, attack facilitation</div>
+            </div>
+          </div>
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">🎯</div>
+            <div>
+              <span class="taxonomy-code">S6</span>
+              <div class="taxonomy-text">Hate Speech — protected characteristic targeting and slurs</div>
+            </div>
+          </div>
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">📸</div>
+            <div>
+              <span class="taxonomy-code">S7</span>
+              <div class="taxonomy-text">Sexual Content — explicit material outside permitted contexts</div>
+            </div>
+          </div>
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">💔</div>
+            <div>
+              <span class="taxonomy-code">S8</span>
+              <div class="taxonomy-text">Self-Harm — suicide, self-injury facilitation and promotion</div>
+            </div>
+          </div>
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">🗳️</div>
+            <div>
+              <span class="taxonomy-code">S9</span>
+              <div class="taxonomy-text">Elections — voter suppression, electoral interference content</div>
+            </div>
+          </div>
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">📰</div>
+            <div>
+              <span class="taxonomy-code">S10</span>
+              <div class="taxonomy-text">Disinformation — false narratives and coordinated manipulation</div>
+            </div>
+          </div>
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">©️</div>
+            <div>
+              <span class="taxonomy-code">S11</span>
+              <div class="taxonomy-text">Intellectual Property — unauthorized reproduction of protected works</div>
+            </div>
+          </div>
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">🔒</div>
+            <div>
+              <span class="taxonomy-code">S12</span>
+              <div class="taxonomy-text">Privacy — PII disclosure and unauthorized data sharing</div>
+            </div>
+          </div>
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">⚖️</div>
+            <div>
+              <span class="taxonomy-code">S13</span>
+              <div class="taxonomy-text">Professional Advice — unlicensed legal, medical, financial guidance</div>
+            </div>
+          </div>
+          <div class="taxonomy-item">
+            <div class="taxonomy-icon">🤖</div>
+            <div>
+              <span class="taxonomy-code">S14</span>
+              <div class="taxonomy-text">AI-Specific Risks — prompt injection, jailbreak facilitation</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>🔄 How Llama Guard 3 Works</h2>
+
+        <div class="image-block">
+          <img
+            src="/menu/llama-guard-3/images/diagram.jpg"
+            alt="Llama Guard 3 bidirectional content classification pipeline"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+          />
+          <div class="image-placeholder diagram-ph" style="display:none;">
+            <span style="font-size:2rem;">🔄</span>
+            <span>Bidirectional Content Safety Pipeline</span>
+            <span style="font-size:0.75rem;">/menu/llama-guard-3/images/diagram.jpg · 800×450px</span>
+          </div>
+        </div>
+        <p class="image-caption">Llama Guard 3 wrapping a primary LLM for bidirectional safety enforcement</p>
+
+        <div class="pipeline">
+          <div class="pipeline-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <div class="step-title">Prompt Submitted</div>
+              <div class="step-desc">User or application sends a prompt to your AI pipeline endpoint</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <div class="step-title">Input Classification (Guard)</div>
+              <div class="step-desc">Llama Guard 3 evaluates the prompt against all 14 active hazard categories. Returns SAFE or UNSAFE with category codes within ~80–200ms</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <div class="step-title">Policy Routing</div>
+              <div class="step-desc">SAFE → route to primary LLM · UNSAFE → block with refusal + log event to audit store · Category-specific routing for partial escalations</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <div class="step-title">LLM Response Generated</div>
+              <div class="step-desc">Primary model generates response for safe inputs</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <div class="step-title">Output Classification (Guard)</div>
+              <div class="step-desc">Generated response evaluated for harmful content, professional advice drift, and policy violations before delivery</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-number">6</div>
+            <div class="step-content">
+              <div class="step-title">Deliver or Intercept</div>
+              <div class="step-desc">Safe responses delivered · Unsafe responses replaced with policy refusals · All events logged with full category vectors</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-block">
+<span class="code-comment"># Llama Guard 3 classification response format</span>
+{
+  <span class="code-key">"role"</span>: <span class="code-str">"user"</span>,
+  <span class="code-key">"verdict"</span>: <span class="code-unsafe">"unsafe"</span>,
+  <span class="code-key">"categories"</span>: [<span class="code-str">"S5"</span>, <span class="code-str">"S14"</span>],
+  <span class="code-key">"category_labels"</span>: {
+    <span class="code-key">"S5"</span>: <span class="code-str">"Cybersecurity Attacks"</span>,
+    <span class="code-key">"S14"</span>: <span class="code-str">"AI-Specific Risks (Prompt Injection)"</span>
+  },
+  <span class="code-key">"latency_ms"</span>: <span class="code-val">143</span>,
+  <span class="code-key">"model"</span>: <span class="code-str">"llama-guard-3:8b"</span>
+}
+
+<span class="code-comment"># Safe example response</span>
+{
+  <span class="code-key">"role"</span>: <span class="code-str">"assistant"</span>,
+  <span class="code-key">"verdict"</span>: <span class="code-safe">"safe"</span>,
+  <span class="code-key">"categories"</span>: [],
+  <span class="code-key">"latency_ms"</span>: <span class="code-val">97</span>
+}
+        </div>
+      </section>
+
+      <section>
+        <h2>🏢 Enterprise Use Cases</h2>
+
+        <div class="image-block">
+          <img
+            src="/menu/llama-guard-3/images/use-case.jpg"
+            alt="Enterprise teams using Llama Guard 3 for content safety"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+          />
+          <div class="image-placeholder usecase-ph" style="display:none;">
+            <span style="font-size:2rem;">🏢</span>
+            <span>Enterprise Content Safety Deployment</span>
+            <span style="font-size:0.75rem;">/menu/llama-guard-3/images/use-case.jpg · 800×400px</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🎓 Education Platforms</h3>
+          <p>
+            EdTech companies deploy Llama Guard 3 to protect student interactions — filtering
+            age-inappropriate content (S7), self-harm content (S8), and election manipulation
+            attempts (S9) in AI tutoring systems. MLCommons alignment provides defensible
+            policy documentation for school district compliance requirements.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>🛍️ Consumer AI Products</h3>
+          <p>
+            Consumer-facing AI applications use Llama Guard 3 as their primary safety layer
+            to meet platform terms of service, app store content policies, and regional legal
+            requirements. Private Ollama deployment means content moderation decisions and
+            user data never reach third-party safety APIs.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>🏗️ AI Developer Platforms</h3>
+          <p>
+            Developers building on top of foundation models use Llama Guard 3 as infrastructure-level
+            safety — screening both the prompts their customers submit and the outputs their
+            models generate, enabling SLA-backed safety guarantees without external API dependencies.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>📞 Contact Center AI</h3>
+          <p>
+            Customer service AI deployments use Llama Guard 3 to detect when conversations drift
+            into professional advice territory (S13), political discussions (S9), or harassment (S6) —
+            routing those threads to human agents with full context and a logged safety classification event.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>⚖️ Llama Guard 3 vs. Alternatives</h2>
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Llama Guard 3</th>
+              <th>Granite Guardian</th>
+              <th>ShieldGemma</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Taxonomy standard</td>
+              <td>MLCommons (14 cats)</td>
+              <td>IBM Custom</td>
+              <td>Google Custom</td>
+            </tr>
+            <tr>
+              <td>Structured risk scores</td>
+              <td><span class="cross">✗ Binary</span></td>
+              <td><span class="check">✓ Continuous</span></td>
+              <td><span class="check">✓ Continuous</span></td>
+            </tr>
+            <tr>
+              <td>Category-level verdicts</td>
+              <td><span class="check">✓ Yes</span></td>
+              <td><span class="check">✓ Yes</span></td>
+              <td><span class="check">✓ Yes</span></td>
+            </tr>
+            <tr>
+              <td>Configurable categories</td>
+              <td><span class="check">✓ Per-deployment</span></td>
+              <td><span class="check">✓ Per-deployment</span></td>
+              <td><span class="cross">✗ Fixed</span></td>
+            </tr>
+            <tr>
+              <td>Ollama deployment</td>
+              <td><span class="check">✓ Native</span></td>
+              <td><span class="check">✓ Native</span></td>
+              <td><span class="check">✓ Native</span></td>
+            </tr>
+            <tr>
+              <td>Model size</td>
+              <td>8B</td>
+              <td>2B / 8B</td>
+              <td>2B / 9B / 27B</td>
+            </tr>
+            <tr>
+              <td>License</td>
+              <td>Llama 3 Community</td>
+              <td>Apache 2.0</td>
+              <td>Gemma ToS</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-q">What is Llama Guard 3?</div>
+          <div class="faq-a">Llama Guard 3 is Meta's open-source content safety classifier trained on the MLCommons taxonomy. It evaluates both user inputs and LLM outputs for harmful content across 14 standardized safety categories.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What safety categories does Llama Guard 3 cover?</div>
+          <div class="faq-a">Llama Guard 3 covers 14 MLCommons Hazard Categories including violent crimes, hate speech, sexual content, CBRN weapons, cybersecurity attacks, intellectual property violations, and privacy breaches.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What hardware is required for Llama Guard 3?</div>
+          <div class="faq-a">Llama Guard 3 (8B) requires approximately 6-8GB RAM for CPU inference via Ollama, or 8GB VRAM for GPU acceleration. It runs on AWS Lightsail 8GB instances or dedicated GPU servers.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can Llama Guard 3 be customized for specific use cases?</div>
+          <div class="faq-a">Yes. Llama Guard 3's taxonomy is configurable — operators can enable/disable specific hazard categories and set per-category thresholds to match organizational policy requirements.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Does NoCloudGPT support a trial of Llama Guard 3?</div>
+          <div class="faq-a">Yes. NoCloudGPT's 90-day pilot program includes Llama Guard 3 pre-configured with your enabled category set, threshold policies, and integration guides for your existing AI stack.</div>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="sidebar-card">
+        <h4>⚙️ Model Specs</h4>
+        <ul class="spec-list">
+          <li><span class="spec-key">Provider</span><span class="spec-val">Meta AI</span></li>
+          <li><span class="spec-key">Size</span><span class="spec-val">8B</span></li>
+          <li><span class="spec-key">Taxonomy</span><span class="spec-val">MLCommons</span></li>
+          <li><span class="spec-key">Categories</span><span class="spec-val">14 Hazard Types</span></li>
+          <li><span class="spec-key">License</span><span class="spec-val">Llama 3 Community</span></li>
+          <li><span class="spec-key">Serving</span><span class="spec-val">Ollama</span></li>
+          <li><span class="spec-key">Output</span><span class="spec-val">SAFE / UNSAFE + codes</span></li>
+          <li><span class="spec-key">Latency</span><span class="spec-val">80–200ms</span></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>🖥️ Deployment Tiers</h4>
+
+        <div class="tier">
+          <div class="tier-header">
+            <span class="tier-name">Lightsail 8GB</span>
+            <span class="tier-badge badge-green">Standard</span>
+          </div>
+          <div class="tier-spec">CPU inference · Input or output screening · Development and low-volume production</div>
+        </div>
+
+        <div class="tier">
+          <div class="tier-header">
+            <span class="tier-name">GPU Instance</span>
+            <span class="tier-badge badge-blue">Performance</span>
+          </div>
+          <div class="tier-spec">Bidirectional screening at scale · Sub-100ms latency · High-throughput pipelines</div>
+        </div>
+
+        <div class
