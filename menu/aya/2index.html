@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aya Models (Aya 23, Aya Expanse) – Multilingual AI | NoCloudGPT</title>
+  <meta name="description" content="Cohere's Aya models cover 23+ languages with strong multilingual instruction following. Deploy Aya Expanse privately for international AI workloads." />
+  <link rel="canonical" href="https://nocloudgpt.com/menu/aya/" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; color: #1a1a1a; line-height: 1.7; }
+    h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+    h2 { font-size: 1.35rem; margin-top: 2.2rem; border-bottom: 2px solid #e2e2e2; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.4rem; color: #333; }
+    .tag { display: inline-block; background: #f0f4ff; color: #2244aa; border-radius: 4px; padding: 2px 8px; font-size: 0.82rem; margin-right: 5px; }
+    .cta-box { background: #f8f9ff; border-left: 4px solid #3355dd; padding: 1rem 1.4rem; margin: 2rem 0; border-radius: 4px; }
+    .cta-box a { color: #2244aa; font-weight: 600; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 0.6rem 0.9rem; text-align: left; }
+    th { background: #f3f3f3; }
+    a { color: #2244aa; }
+    nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<nav><a href="/menu/">← Model Menu</a> &nbsp;/&nbsp; Aya</nav>
+
+<h1>Aya: Cohere's Massively Multilingual Instruction Models</h1>
+<p>
+  <span class="tag">Multilingual</span>
+  <span class="tag">23+ Languages</span>
+  <span class="tag">Instruction</span>
+  <span class="tag">Open Weights</span>
+</p>
+
+<p>
+  Aya is Cohere's open-weight model series focused on <strong>multilingual instruction following across 23 to 101 languages</strong>. Most open-weight models are trained predominantly on English data and handle other languages as an afterthought. Aya is designed from the ground up for multilingual use, drawing on the Aya Dataset — a community-built multilingual instruction dataset covering dozens of languages that lack strong representation in standard training corpora. Aya Expanse, the current flagship, delivers particularly strong multilingual performance at 8B and 32B scales.
+</p>
+
+<h2>What Aya Is Good At</h2>
+<ul>
+  <li><strong>Instruction following in 23+ languages</strong> — covers major world languages including Arabic, Turkish, Hindi, Swahili, Vietnamese, and many more</li>
+  <li><strong>Cross-lingual Q&A and summarization</strong> — ask questions in one language, get answers grounded in multilingual context</li>
+  <li><strong>Low-resource language support</strong> — languages underrepresented in most models get meaningful coverage here</li>
+  <li><strong>Translation assistance</strong> — useful for translation workflows, though dedicated translation models may still outperform it on narrow pairs</li>
+  <li><strong>Multilingual customer service and support</strong> — one model can serve users across many language markets</li>
+  <li><strong>International document processing</strong> — summarize and extract information from non-English documents reliably</li>
+</ul>
+
+<h2>Who Should Care</h2>
+
+<h3>Business and Professional Use</h3>
+<p>
+  Aya is the right choice for organizations operating internationally where serving users in their native language matters. A single Aya deployment can handle customer queries in Arabic on Monday, Turkish on Tuesday, and Hindi on Wednesday — without maintaining separate models or paying per-query fees for translation APIs. Useful for: international e-commerce support, multilingual content moderation, global HR tools, and NGOs operating in diverse language markets.
+</p>
+<p>
+  Organizations working in <strong>African or South Asian language contexts</strong> will find Aya covers territory that most other open-weight models simply don't support well.
+</p>
+
+<h3>Personal and Homelab Use</h3>
+<p>
+  Bilingual or multilingual homelab users who want a private assistant that actually performs well in their non-English language should evaluate Aya alongside Yi (Chinese), InternLM (Chinese), and DeepSeek before choosing.
+</p>
+
+<h2>Model Variants at a Glance</h2>
+<table>
+  <thead>
+    <tr><th>Model</th><th>Parameters</th><th>VRAM (4-bit)</th><th>Languages</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Aya 23 8B</td><td>8B</td><td>~5GB</td><td>23 languages</td></tr>
+    <tr><td>Aya 23 35B</td><td>35B</td><td>~20GB</td><td>23 languages; stronger reasoning</td></tr>
+    <tr><td>Aya Expanse 8B</td><td>8B</td><td>~5GB</td><td>101 languages; recommended over Aya 23</td></tr>
+    <tr><td>Aya Expanse 32B</td><td>32B</td><td>~20GB</td><td>101 languages; flagship multilingual model</td></tr>
+  </tbody>
+</table>
+
+<h2>NoCloudGPT Deployment Guidance</h2>
+
+<h3>Small Cloud Server (Lightsail)</h3>
+<p>
+  Aya Expanse 8B on a <code>g4dn.xlarge</code> (16GB VRAM) is a practical pilot for a multilingual team assistant. It handles the full 101-language range at a size that fits affordable cloud hardware:
+</p>
+<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code># Via Ollama (check for community GGUF in registry)
+ollama run aya-expanse:8b
+
+# Or directly with llama.cpp
+./llama-server -m aya-expanse-8b-q4_k_m.gguf \
+  --host 0.0.0.0 --port 8080 -ngl 40</code></pre>
+
+<h3>Local Linux Machine</h3>
+<p>
+  Aya Expanse 8B in Q4_K_M GGUF runs on a 12GB GPU with comfortable headroom. For CPU-only machines, 16–24GB RAM will handle it at 2–5 tokens/sec — usable for low-volume tasks.
+</p>
+
+<h3>On-Premise / Office Server</h3>
+<p>
+  Aya Expanse 32B on a single A100 40GB or two A10G GPUs is a strong production multilingual deployment. Serve with vLLM:
+</p>
+<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>vllm serve CohereForAI/aya-expanse-32b \
+  --tensor-parallel-size 2</code></pre>
+
+<div class="cta-box">
+  <strong>Serving users in multiple languages without per-query cloud fees?</strong><br />
+  Aya Expanse is one of the most practical options.
+  <a href="/menu/quote.html">Build a deployment quote</a> or start with the
+  <a href="/menu/deploy/">90-day Lightsail pilot guide</a>.
+</div>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is Aya better than using a translation API plus an English model?</h3>
+<p>For many real-world use cases, yes. Translation adds latency, cost, and a potential accuracy loss on nuanced content. Aya handles the full pipeline in one step and maintains better cultural and contextual understanding in non-English inputs.</p>
+
+<h3>Does Aya perform as well in all 101 languages?</h3>
+<p>No — coverage varies. Major world languages (Spanish, French, Arabic, Chinese, Hindi) are strongest. More obscure languages have fewer training examples and will produce less reliable output. Test your target language before production deployment.</p>
+
+<h3>What's Aya's license for commercial use?</h3>
+<p>Aya models use a research license (CC-BY-NC for some variants). Commercial deployment requires checking the specific model's Hugging Face license card — Cohere's terms have evolved across model versions.</p>
+
+<h2>Related Pages</h2>
+<ul>
+  <li><a href="/menu/command-r/">Command R (Cohere's RAG model)</a></li>
+  <li><a href="/menu/yi/">Yi (strong English/Chinese)</a></li>
+  <li><a href="/menu/qwen/">Qwen (strong multilingual coverage)</a></li>
+  <li><a href="/menu/compare/">Compare open models</a></li>
+</ul>
+
+</body>
+</html>
