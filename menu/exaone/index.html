@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exaone on Ollama | Private Bilingual Code AI | NoCloudGPT.com</title>
+  <meta name="description" content="Run LG AI Research's Exaone locally with Ollama. A bilingual English-Korean code and instruction model built for enterprise use — zero data exposure, full on-premise control." />
+</head>
+<body>
+
+<h1>Exaone: LG's Enterprise-Grade Bilingual AI Model, Running Entirely On Your Infrastructure</h1>
+
+<p>Most open-weight models treat language support as an afterthought — English first, everything else approximate. <strong>Exaone</strong>, developed by LG AI Research, was built differently. It is a bilingual English-Korean model trained with enterprise deployment in mind from the start, covering both code generation and general instruction-following with native fluency in both languages.</p>
+
+<p>For organizations operating across English and Korean-speaking teams — or serving Korean-market customers — Exaone offers something no general-purpose model reliably delivers: consistent quality in both languages, running on hardware you control, with no data leaving your network.</p>
+
+<p>Deploy it today with <code>ollama run exaone3.5</code>.</p>
+
+---
+
+<h2>What Exaone Actually Does</h2>
+
+<p>Exaone is a general-purpose instruction and code model with strong bilingual capability. It is not a narrow specialist — it handles the full range of developer and knowledge-worker tasks in both English and Korean.</p>
+
+<ul>
+  <li><strong>Native English-Korean bilingual output</strong> — not translation-layer bilingual; trained natively on both languages for consistent reasoning quality across both</li>
+  <li><strong>Code generation and debugging</strong> — supports Python, JavaScript, Java, C++, and other major languages with context-aware completions</li>
+  <li><strong>Instruction-following for knowledge work</strong> — document summarization, report drafting, structured data extraction, and multi-step task execution</li>
+  <li><strong>Long-context handling</strong> — supports extended context windows suitable for document-length inputs and multi-turn conversations</li>
+  <li><strong>Enterprise-oriented training</strong> — LG AI Research designed Exaone specifically for professional deployment, not consumer chat applications</li>
+  <li><strong>Multiple size variants</strong> — 2.4B for edge and CPU deployments; 7.8B for team servers; 32B for high-demand production environments</li>
+</ul>
+
+---
+
+<h2>Who Should Run Exaone On-Premise</h2>
+
+<p>Exaone's bilingual design and enterprise origins make it a strong fit for a specific set of organizations:</p>
+
+<ul>
+  <li><strong>Korean enterprises and multinationals</strong> — companies with Korean-language operations, documentation, or customer-facing workflows that cannot route sensitive data through US-based cloud AI providers</li>
+  <li><strong>Engineering teams with mixed-language codebases</strong> — organizations where code comments, documentation, and internal tools span both English and Korean</li>
+  <li><strong>Legal, compliance, and financial teams</strong> — professionals handling Korean-language contracts, regulatory filings, or client communications requiring air-gapped AI assistance</li>
+  <li><strong>LG ecosystem partners and integrators</strong> — vendors building on or alongside LG infrastructure who benefit from a shared AI lineage</li>
+  <li><strong>Enterprises evaluating non-US AI supply chains</strong> — organizations seeking to diversify away from OpenAI, Anthropic, and Google for geopolitical or vendor-concentration risk reasons</li>
+</ul>
+
+---
+
+<h2>Deployment Tiers and Compute Requirements</h2>
+
+<h3>Tier 1 — Edge and Solo Use: Exaone 2.4B Q4</h3>
+<ul>
+  <li><strong>RAM required:</strong> 2–4GB</li>
+  <li><strong>Hardware:</strong> Developer laptop, Mac Mini, or AWS Lightsail 4GB instance</li>
+  <li><strong>AWS cost:</strong> Lightsail 4GB ~$20/month</li>
+  <li><strong>Speed:</strong> 10–20 tokens/sec on CPU</li>
+  <li><strong>Best for:</strong> Individual developers, offline document drafting, bilingual chat tools, lightweight CI assistants</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run exaone3.5:2.4b</code></p>
+
+<h3>Tier 2 — Team Workstation: Exaone 7.8B Q4</h3>
+<ul>
+  <li><strong>RAM required:</strong> 6–8GB</li>
+  <li><strong>Hardware:</strong> Developer workstation, Mac with 8GB unified memory, AWS Lightsail 8GB, or entry GPU</li>
+  <li><strong>AWS cost:</strong> Lightsail 8GB ~$40/month; g4dn.xlarge ~$0.526/hour on-demand</li>
+  <li><strong>Speed:</strong> 12–25 tokens/sec on CPU; 35–55 tokens/sec on T4 GPU</li>
+  <li><strong>Best for:</strong> Small teams of 3–8 users, bilingual document workflows, code review assistance, Korean-language customer support tooling</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run exaone3.5:7.8b</code></p>
+
+<h3>Tier 3 — Production Server: Exaone 32B Q4</h3>
+<ul>
+  <li><strong>RAM required:</strong> 20–24GB VRAM</li>
+  <li><strong>Hardware:</strong> AWS g5.xlarge (A10G 24GB), RTX 4090, or dual-GPU workstation</li>
+  <li><strong>AWS cost:</strong> g5.xlarge ~$1.006/hour on-demand; ~$0.30/hour spot</li>
+  <li><strong>Speed:</strong> 20–40 tokens/sec on A10G</li>
+  <li><strong>Best for:</strong> 10–25 concurrent users, enterprise knowledge management platforms, high-quality bilingual document generation at scale</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run exaone3.5:32b</code></p>
+
+---
+
+<h2>The Real Cost of Routing Korean-Language Data Through US Cloud AI</h2>
+
+<p>When Korean-language documents, contracts, or code are submitted to OpenAI, Anthropic, or Google APIs, they cross borders — legally and physically. That creates compounding risk:</p>
+
+<ul>
+  <li>Korean personal data regulations (PIPA) impose strict requirements on cross-border data transfers that cloud AI API usage may violate</li>
+  <li>Proprietary Korean-language business documents processed through US infrastructure are subject to US legal jurisdiction and potential disclosure requirements</li>
+  <li>General-purpose models trained primarily on English data produce lower-quality Korean outputs — errors that may go undetected by non-native reviewers</li>
+  <li>At 10 users on GPT-4 API for mixed English-Korean document workflows: $3,000–$6,000/year in API costs, with zero data control. Exaone 7.8B on AWS Lightsail: ~$480/year, fully on-premise</li>
+</ul>
+
+<p>Exaone was built by a Korean enterprise for enterprise use. Running it locally is not just a cost decision — it is a compliance and quality decision.</p>
+
+---
+
+<h2>Getting Started with Exaone on Ollama</h2>
+
+<p>Install Ollama, then pull the variant that fits your hardware and team size:</p>
+
+<pre><code># Lightweight edge or solo deployment
+ollama run exaone3.5:2.4b
+
+# Team workstation or small server
+ollama run exaone3.5:7.8b
+
+# Production-grade bilingual deployment
+ollama run exaone3.5:32b
+</code></pre>
+
+<p>Exaone integrates with any Ollama-compatible interface. Point your application at <code>http://localhost:11434</code> and all inference — in English, Korean, or both — runs entirely on your infrastructure.</p>
+
+---
+
+<h2>Start Your 90-Day Bilingual AI Pilot</h2>
+
+<p>NoCloudGPT.com provides deployment guides, hardware sizing support, and on-premise setup consulting for teams evaluating Exaone and the broader Ollama model library.</p>
+
+<p><strong>Contact us to scope your pilot — before your next Korean-language document workflow creates a cross-border data transfer your legal team didn't approve.</strong></p>
+
+</body>
+</html>
