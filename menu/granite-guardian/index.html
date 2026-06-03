@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Granite Guardian – IBM Risk Detection & Policy Enforcement | NoCloudGPT</title>
+  <meta name="description" content="Deploy IBM's Granite Guardian privately via Ollama. Risk scoring, prompt injection detection, and policy enforcement for enterprise AI pipelines. Zero-egress compliance." />
+  <meta name="keywords" content="Granite Guardian, IBM AI safety, risk detection, prompt injection, private AI compliance, Ollama deployment, enterprise AI policy" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nocloudgpt.com/menu/granite-guardian/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Granite Guardian – IBM Risk Detection & Policy Enforcement" />
+  <meta property="og:description" content="Private deployment of IBM's Granite Guardian for structured risk scoring, prompt injection defense, and enterprise AI compliance." />
+  <meta property="og:image" content="https://nocloudgpt.com/menu/granite-guardian/images/hero.jpg" />
+  <meta property="og:url" content="https://nocloudgpt.com/menu/granite-guardian/" />
+  <meta property="og:type" content="article" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Granite Guardian – Private Risk Detection AI" />
+  <meta name="twitter:description" content="IBM's Granite Guardian deployed privately via Ollama. Structured risk scoring, prompt injection detection, zero-egress compliance." />
+  <meta name="twitter:image" content="https://nocloudgpt.com/menu/granite-guardian/images/hero.jpg" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Granite Guardian – IBM Risk Detection & Policy Enforcement",
+        "description": "Deploy IBM's Granite Guardian privately via Ollama for structured risk scoring, prompt injection detection, and enterprise AI policy compliance.",
+        "image": "https://nocloudgpt.com/menu/granite-guardian/images/hero.jpg",
+        "author": { "@type": "Organization", "name": "NoCloudGPT" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "NoCloudGPT",
+          "logo": { "@type": "ImageObject", "url": "https://nocloudgpt.com/logo.png" }
+        },
+        "datePublished": "2025-01-01",
+        "dateModified": "2025-07-01",
+        "mainEntityOfPage": "https://nocloudgpt.com/menu/granite-guardian/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nocloudgpt.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Model Menu", "item": "https://nocloudgpt.com/menu/" },
+          { "@type": "ListItem", "position": 3, "name": "Granite Guardian", "item": "https://nocloudgpt.com/menu/granite-guardian/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Granite Guardian?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Granite Guardian is IBM's open-source risk detection model family designed to identify harmful, biased, or policy-violating content in both prompts and AI-generated responses. It provides structured risk scores across multiple harm categories."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Granite Guardian differ from other safety models?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Granite Guardian outputs structured risk scores with category labels (violence, hate, PII exposure, prompt injection, etc.) rather than simple pass/fail verdicts, enabling fine-grained policy enforcement and audit logging."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What hardware does Granite Guardian require?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 2B variant runs on AWS Lightsail 4GB RAM instances. The 8B variant performs optimally on 8GB RAM or entry-level GPU. Both are deployable via Ollama with zero cloud egress."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Granite Guardian run inline in an AI pipeline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Granite Guardian is designed for bidirectional pipeline integration — screening inputs before they reach your primary LLM and evaluating outputs before delivery, adding minimal latency while maintaining compliance audit trails."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #4a6274;
+      --primary-dark: #2e3f4f;
+      --primary-light: #6a8298;
+      --accent: #7eb3cc;
+      --accent-warm: #a8c8db;
+      --bg-dark: #0f1923;
+      --bg-card: #1a2733;
+      --bg-card-alt: #1f2f3d;
+      --text-primary: #e8f0f5;
+      --text-secondary: #9db8c8;
+      --text-muted: #6a8898;
+      --border: #2a3f52;
+      --success: #4a9a6a;
+      --warning: #c8a84a;
+      --danger: #c85a4a;
+      --slate: #4a6274;
+      --slate-glow: rgba(74, 98, 116, 0.3);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      background: rgba(15, 25, 35, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand { font-size: 1.3rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 0.75rem 2rem;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.5rem; }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--bg-dark) 0%, #1a2a38 50%, #0f1e2e 100%);
+    }
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.18;
+    }
+    .hero-image-placeholder {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #1a2a38 0%, #2a3f52 40%, #1a2a38 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      opacity: 0.15;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(15,25,35,0.6) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .model-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(74, 98, 116, 0.25);
+      border: 1px solid var(--slate);
+      color: var(--accent);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin-bottom: 2rem;
+    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .tag {
+      background: rgba(74, 98, 116, 0.2);
+      border: 1px solid rgba(74, 98, 116, 0.5);
+      color: var(--accent-warm);
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    /* MAIN LAYOUT */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2.5rem;
+      padding: 3rem 0;
+    }
+
+    /* SECTIONS */
+    section { margin-bottom: 3rem; }
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--slate);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    h3 { font-size: 1.15rem; font-weight: 600; color: var(--accent); margin-bottom: 0.75rem; }
+    p { color: var(--text-secondary); margin-bottom: 1rem; }
+
+    /* CARDS */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .card-alt { background: var(--bg-card-alt); }
+
+    /* RISK SCORE GRID */
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .risk-item {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .risk-item::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .risk-item.danger::before { background: var(--danger); }
+    .risk-item.warning::before { background: var(--warning); }
+    .risk-item.info::before { background: var(--accent); }
+    .risk-item.success::before { background: var(--success); }
+    .risk-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+    .risk-name { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); }
+    .risk-desc { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem; }
+
+    /* PIPELINE STEPS */
+    .pipeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 1rem;
+    }
+    .pipeline-step {
+      display: flex;
+      gap: 1.25rem;
+      position: relative;
+    }
+    .pipeline-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 1.1rem;
+      top: 2.75rem;
+      bottom: -0.5rem;
+      width: 2px;
+      background: linear-gradient(180deg, var(--slate) 0%, transparent 100%);
+    }
+    .step-number {
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      background: var(--slate);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      box-shadow: 0 0 12px var(--slate-glow);
+    }
+    .step-content { padding-bottom: 1.75rem; }
+    .step-title { font-weight: 600; color: var(--text-primary); margin-bottom: 0.35rem; font-size: 0.95rem; }
+    .step-desc { font-size: 0.87rem; color: var(--text-secondary); }
+
+    /* IMAGE BLOCK */
+    .image-block { margin: 1.5rem 0; }
+    .image-block img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+    .image-placeholder {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--bg-card-alt) 0%, #243444 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      gap: 0.5rem;
+    }
+    .image-placeholder.hero-ph { height: 220px; }
+    .image-placeholder.diagram-ph { height: 200px; }
+    .image-placeholder.usecase-ph { height: 180px; }
+    .image-caption { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic; }
+
+    /* COMPLIANCE TABLE */
+    .compliance-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .compliance-table th {
+      background: var(--bg-card-alt);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.65rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .compliance-table td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid rgba(42, 63, 82, 0.5);
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+    .compliance-table tr:hover td { background: rgba(74, 98, 116, 0.07); }
+    .check { color: var(--success); font-weight: 700; }
+    .partial { color: var(--warning); font-weight: 700; }
+
+    /* SIDEBAR */
+    .sidebar { position: sticky; top: 80px; height: fit-content; }
+    .sidebar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .sidebar-card h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* DEPLOYMENT TIERS */
+    .tier {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      background: var(--bg-card-alt);
+      transition: border-color 0.2s;
+    }
+    .tier:hover { border-color: var(--slate); }
+    .tier-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+    .tier-name { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); }
+    .tier-badge {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .badge-green { background: rgba(74, 154, 106, 0.2); color: #4a9a6a; border: 1px solid rgba(74, 154, 106, 0.4); }
+    .badge-blue { background: rgba(126, 179, 204, 0.2); color: var(--accent); border: 1px solid rgba(126, 179, 204, 0.4); }
+    .badge-purple { background: rgba(140, 100, 180, 0.2); color: #b08ad0; border: 1px solid rgba(140, 100, 180, 0.4); }
+    .tier-spec { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* SPEC LIST */
+    .spec-list { list-style: none; }
+    .spec-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(42, 63, 82, 0.4);
+      font-size: 0.85rem;
+    }
+    .spec-list li:last-child { border-bottom: none; }
+    .spec-key { color: var(--text-muted); }
+    .spec-val { color: var(--text-primary); font-weight: 500; text-align: right; }
+
+    /* CTA */
+    .cta-primary {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(135deg, var(--slate) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      padding: 0.85rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .cta-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .cta-secondary {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: transparent;
+      color: var(--accent);
+      padding: 0.85rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--slate);
+      transition: background 0.2s;
+    }
+    .cta-secondary:hover { background: rgba(74, 98, 116, 0.15); }
+
+    /* FAQ */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.97rem; }
+    .faq-a { font-size: 0.9rem; color: var(--text-secondary); }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: rgba(74, 98, 116, 0.12);
+      border: 1px solid rgba(74, 98, 116, 0.4);
+      border-left: 4px solid var(--slate);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .highlight-box p { color: var(--text-secondary); margin: 0; font-size: 0.92rem; }
+
+    /* CODE BLOCK */
+    .code-block {
+      background: #0a1520;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 0.83rem;
+      color: #8fc9e0;
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+    .code-comment { color: #4a6a7a; }
+    .code-key { color: #c8a84a; }
+    .code-val { color: #7ac88a; }
+    .code-str { color: #e08a6a; }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      margin-top: 4rem;
+      text-align: center;
+    }
+    footer p { color: var(--text-muted); font-size: 0.85rem; margin: 0; }
+    footer a { color: var(--text-secondary); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .risk-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="/">NoCloudGPT</a>
+  <ul class="nav-links">
+    <li><a href="/menu/">Model Menu</a></li>
+    <li><a href="/menu/#safety">Safety Models</a></li>
+    <li><a href="/pricing/">Pricing</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="/">Home</a><span>›</span>
+  <a href="/menu/">Model Menu</a><span>›</span>
+  <a href="/menu/#safety">Safety & Compliance</a><span>›</span>
+  Granite Guardian
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-image-placeholder">🛡️</div>
+  <img
+    class="hero-image"
+    src="/menu/granite-guardian/images/hero.jpg"
+    alt="Granite Guardian IBM AI risk detection dashboard"
+    onerror="this.style.display='none'"
+  />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="model-badge">🛡️ IBM Safety &nbsp;·&nbsp; Risk Detection</div>
+    <h1>Granite Guardian</h1>
+    <p class="hero-subtitle">
+      IBM's structured risk scoring model — deployed privately via Ollama. Detect prompt injections,
+      harmful content, PII exposure, and policy violations with category-level precision.
+      Zero cloud egress, full audit trails.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">Risk Scoring</span>
+      <span class="tag">Prompt Injection Defense</span>
+      <span class="tag">Policy Enforcement</span>
+      <span class="tag">IBM Research</span>
+      <span class="tag">Ollama Native</span>
+      <span class="tag">EU AI Act</span>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="content-grid">
+
+    <!-- LEFT COLUMN -->
+    <main>
+
+      <!-- WHAT IS IT -->
+      <section>
+        <h2>🔍 What Is Granite Guardian?</h2>
+        <p>
+          Granite Guardian is IBM Research's dedicated AI risk detection model family, purpose-built to
+          evaluate both the inputs and outputs of large language models for harmful, biased, or
+          policy-violating content. Unlike simple content filters, Granite Guardian produces
+          <strong>structured risk scores</strong> across named harm categories — giving compliance
+          teams, platform engineers, and AI operators the granularity they need for defensible policy enforcement.
+        </p>
+        <p>
+          The model family spans 2B and 8B parameter sizes, enabling deployment across resource-constrained
+          cloud instances and dedicated GPU servers. NoCloudGPT deploys Granite Guardian via
+          <strong>Ollama on private infrastructure</strong> — your prompts and responses never leave
+          your network.
+        </p>
+
+        <div class="image-block">
+          <img
+            src="/menu/granite-guardian/images/hero.jpg"
+            alt="Granite Guardian risk detection interface overview"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+          />
+          <div class="image-placeholder hero-ph" style="display:none;">
+            <span style="font-size:2.5rem;">🛡️</span>
+            <span>Granite Guardian — Risk Detection Overview</span>
+            <span style="font-size:0.75rem;">/menu/granite-guardian/images/hero.jpg · 1200×600px</span>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <p>
+            <strong>IBM Differentiator:</strong> Granite Guardian was trained on IBM's curated harm taxonomy,
+            providing consistent category labels that map directly to regulatory requirements under the
+            EU AI Act, NIST AI RMF, and enterprise AI governance frameworks.
+          </p>
+        </div>
+      </section>
+
+      <!-- RISK CATEGORIES -->
+      <section>
+        <h2>⚠️ Risk Categories Detected</h2>
+        <p>
+          Granite Guardian evaluates content across a structured harm taxonomy. Each inference returns
+          a risk score per category, enabling threshold-based routing, blocking, or escalation logic
+          in your pipeline.
+        </p>
+
+        <div class="risk-grid">
+          <div class="risk-item danger">
+            <div class="risk-label">Input Risk</div>
+            <div class="risk-name">Prompt Injection</div>
+            <div class="risk-desc">Detects attempts to override system instructions or extract model internals</div>
+          </div>
+          <div class="risk-item danger">
+            <div class="risk-label">Content Risk</div>
+            <div class="risk-name">Violence & Harm</div>
+            <div class="risk-desc">Physical threats, graphic content, and harmful instructions</div>
+          </div>
+          <div class="risk-item warning">
+            <div class="risk-label">Privacy Risk</div>
+            <div class="risk-name">PII / PHI Exposure</div>
+            <div class="risk-desc">Personal identifiers, health data, and financial information leakage</div>
+          </div>
+          <div class="risk-item warning">
+            <div class="risk-label">Fairness Risk</div>
+            <div class="risk-name">Bias & Discrimination</div>
+            <div class="risk-desc">Protected characteristic targeting and disparate treatment patterns</div>
+          </div>
+          <div class="risk-item info">
+            <div class="risk-label">Output Risk</div>
+            <div class="risk-name">Hallucination Signals</div>
+            <div class="risk-desc">Factual inconsistency markers and unverified claim flags</div>
+          </div>
+          <div class="risk-item info">
+            <div class="risk-label">Policy Risk</div>
+            <div class="risk-name">Custom Policy Breach</div>
+            <div class="risk-desc">Configurable enterprise-defined topic and tone restrictions</div>
+          </div>
+          <div class="risk-item success">
+            <div class="risk-label">Compliance</div>
+            <div class="risk-name">Regulatory Sensitivity</div>
+            <div class="risk-desc">Legal, financial, and medical content requiring human review</div>
+          </div>
+          <div class="risk-item warning">
+            <div class="risk-label">Content Risk</div>
+            <div class="risk-name">Profanity & Toxicity</div>
+            <div class="risk-desc">Hostile, offensive, or brand-inappropriate language detection</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PIPELINE INTEGRATION -->
+      <section>
+        <h2>🔄 Pipeline Integration</h2>
+        <p>
+          Granite Guardian is designed for inline bidirectional deployment — screening both the prompt
+          entering your LLM and the response it generates before delivery to end users.
+        </p>
+
+        <div class="image-block">
+          <img
+            src="/menu/granite-guardian/images/diagram.jpg"
+            alt="Granite Guardian pipeline integration diagram"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+          />
+          <div class="image-placeholder diagram-ph" style="display:none;">
+            <span style="font-size:2rem;">🔄</span>
+            <span>Pipeline Integration Diagram</span>
+            <span style="font-size:0.75rem;">/menu/granite-guardian/images/diagram.jpg · 800×450px</span>
+          </div>
+        </div>
+        <p class="image-caption">Bidirectional risk evaluation wrapping your primary LLM deployment</p>
+
+        <div class="pipeline">
+          <div class="pipeline-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <div class="step-title">User Input Received</div>
+              <div class="step-desc">Raw user prompt arrives at your API gateway or application layer</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <div class="step-title">Input Screening (Guardian)</div>
+              <div class="step-desc">Granite Guardian evaluates the prompt for injection attempts, policy violations, and PII. Risk scores returned per category within ~50–150ms</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <div class="step-title">Threshold Decision</div>
+              <div class="step-desc">Your orchestration layer routes: PASS → primary LLM, FLAG → human review queue, BLOCK → policy refusal with logged audit event</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <div class="step-title">Primary LLM Inference</div>
+              <div class="step-desc">Clean prompts proceed to your primary model (any Ollama-served LLM or external endpoint)</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <div class="step-title">Output Evaluation (Guardian)</div>
+              <div class="step-desc">Generated response is scored for hallucination signals, harmful content, regulatory sensitivity, and custom policy adherence</div>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-number">6</div>
+            <div class="step-content">
+              <div class="step-title">Structured Audit Log Written</div>
+              <div class="step-desc">Full risk score vector, timestamps, model versions, and disposition logged to your SIEM or compliance store</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-block">
+<span class="code-comment"># Example Granite Guardian risk score response</span>
+{
+  <span class="code-key">"input_risk"</span>: {
+    <span class="code-key">"prompt_injection"</span>: <span class="code-val">0.03</span>,
+    <span class="code-key">"pii_detected"</span>: <span class="code-val">false</span>,
+    <span class="code-key">"policy_violation"</span>: <span class="code-val">0.01</span>
+  },
+  <span class="code-key">"output_risk"</span>: {
+    <span class="code-key">"violence"</span>: <span class="code-val">0.02</span>,
+    <span class="code-key">"hallucination_signal"</span>: <span class="code-val">0.18</span>,
+    <span class="code-key">"regulatory_sensitivity"</span>: <span class="code-val">0.44</span>,
+    <span class="code-key">"bias"</span>: <span class="code-val">0.05</span>
+  },
+  <span class="code-key">"disposition"</span>: <span class="code-str">"FLAG"</span>,
+  <span class="code-key">"flag_reason"</span>: <span class="code-str">"regulatory_sensitivity exceeds 0.40 threshold"</span>,
+  <span class="code-key">"latency_ms"</span>: <span class="code-val">112</span>
+}
+        </div>
+      </section>
+
+      <!-- USE CASES -->
+      <section>
+        <h2>🏢 Who Deploys Granite Guardian?</h2>
+
+        <div class="image-block">
+          <img
+            src="/menu/granite-guardian/images/use-case.jpg"
+            alt="Enterprise teams using Granite Guardian for AI policy enforcement"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+          />
+          <div class="image-placeholder usecase-ph" style="display:none;">
+            <span style="font-size:2rem;">🏢</span>
+            <span>Enterprise AI Policy Enforcement</span>
+            <span style="font-size:0.75rem;">/menu/granite-guardian/images/use-case.jpg · 800×400px</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🏦 Financial Services</h3>
+          <p>
+            Banks and investment firms use Granite Guardian to enforce FINRA communication standards,
+            detect market-sensitive content in AI-generated research summaries, and prevent PII leakage
+            in customer-facing chatbots. Structured audit logs provide the evidence trail required
+            for regulatory examination.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>🏥 Healthcare & Life Sciences</h3>
+          <p>
+            HIPAA-covered entities deploy Granite Guardian to screen AI interactions for PHI exposure,
+            flag medical advice requiring clinician review, and enforce scope-of-practice policies
+            in patient engagement tools. On-premise deployment ensures no protected health information
+            transits external networks.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>⚖️ Legal & Professional Services</h3>
+          <p>
+            Law firms and compliance consultancies use Granite Guardian to detect privilege-sensitive
+            content, enforce jurisdictional restrictions, and ensure AI-generated legal summaries
+            are flagged for attorney review when regulatory sensitivity scores exceed defined thresholds.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>🏛️ Government & Defense</h3>
+          <p>
+            Public sector organizations leverage Granite Guardian for classification-aware content
+            screening, prompt injection defense against adversarial users, and audit trail generation
+            for AI Act Article 9 risk management documentation requirements.
+          </p>
+        </div>
+      </section>
+
+      <!-- COMPLIANCE -->
+      <section>
+        <h2>📋 Compliance Mapping</h2>
+        <p>
+          Granite Guardian's structured output maps directly to requirements across major AI governance
+          frameworks. NoCloudGPT provides pre-built log formatters for each standard.
+        </p>
+        <table class="compliance-table">
+          <thead>
+            <tr>
+              <th>Framework</th>
+              <th>Requirement Covered</th>
+              <th>Guardian Capability</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EU AI Act Art. 9</td>
+              <td>Risk management system</td>
+              <td>Per-inference risk scoring & audit log</td>
+              <td><span class="check">✓ Full</span></td>
+            </tr>
+            <tr>
+              <td>NIST AI RMF</td>
+              <td>GOVERN &amp; MANAGE functions</td>
+              <td>Policy enforcement + structured reporting</td>
+              <td><span class="check">✓ Full</span></td>
+            </tr>
+            <tr>
+              <td>HIPAA</td>
+              <td>PHI non-disclosure</td>
+              <td>PII/PHI detection + on-premise deployment</td>
+              <td><span class="check">✓ Full</span></td>
+            </tr>
+            <tr>
+              <td>FINRA</td>
+              <td>Communication standards</td>
+              <td>Content category scoring + disposition logs</td>
+              <td><span class="check">✓ Full</span></td>
+            </tr>
+            <tr>
+              <td>SOC 2 Type II</td>
+              <td>Availability &amp; integrity</td>
+              <td>Consistent policy enforcement evidence</td>
+              <td><span class="partial">~ Partial</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- FAQ -->
+      <section>
+        <h2>❓ Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <div class="faq-q">What is Granite Guardian?</div>
+          <div class="faq-a">Granite Guardian is IBM's open-source risk detection model family designed to identify harmful, biased, or policy-violating content in both prompts and AI-generated responses. It provides structured risk scores across multiple harm categories.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How does Granite Guardian differ from other safety models?</div>
+          <div class="faq-a">Granite Guardian outputs structured risk scores with category labels (violence, hate, PII exposure, prompt injection, etc.) rather than simple pass/fail verdicts, enabling fine-grained policy enforcement and audit logging.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What hardware does Granite Guardian require?</div>
+          <div class="faq-a">The 2B variant runs on AWS Lightsail 4GB RAM instances. The 8B variant performs optimally on 8GB RAM or entry-level GPU. Both are deployable via Ollama with zero cloud egress.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can Granite Guardian run inline in an AI pipeline?</div>
+          <div class="faq-a">Yes. Granite Guardian is designed for bidirectional pipeline integration — screening inputs before they reach your primary LLM and evaluating outputs before delivery, adding minimal latency while maintaining compliance audit trails.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Does NoCloudGPT offer a trial deployment?</div>
+          <div class="faq-a">Yes. NoCloudGPT's 90-day pilot program includes Granite Guardian pre-configured with threshold policies, audit log routing, and integration documentation for your existing AI stack.</div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-card">
+        <h4>⚙️ Model Specs</h4>
+        <ul class="spec-list">
+          <li><span class="spec-key">Provider</span><span class="spec-val">IBM Research</span></li>
+          <li><span class="spec-key">Sizes</span><span class="spec-val">2B · 8B</span></li>
+          <li><span class="spec-key">License</span><span class="spec-val">Apache 2.0</span></li>
+          <li><span class="spec-key">Serving</span><span class="spec-val">Ollama</span></li>
+          <li><span class="spec-key">Output</span><span class="spec-val">Structured JSON</span></li>
+          <li><span class="spec-key">Latency (2B)</span><span class="spec-val">50–150ms</span></li>
+          <li><span class="spec-key">Latency (8B)</span><span class="spec-val">100–300ms</span></li>
+          <li><span class="spec-key">Languages</span><span class="spec-val">EN + multilingual</span></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>🖥️ Deployment Tiers</h4>
+
+        <div class="tier">
+          <div class="tier-header">
+            <span class="tier-name">Lightsail 4GB</span>
+            <span class="tier-badge badge-green">Starter</span>
+          </div>
+          <div class="tier-spec">Granite Guardian 2B · Input screening only · Ideal for low-volume pipelines</div>
+        </div>
+
+        <div class="tier">
+          <div class="tier-header">
+            <span class="tier-name">Lightsail 8GB</span>
+            <span class="tier-badge badge-blue">Standard</span>
+          </div>
+          <div class="tier-spec">Granite Guardian 8B · Full bidirectional · Production-ready throughput</div>
+        </div>
+
+        <div class="tier">
+          <div class="tier-header">
+            <span class="tier-name">GPU Instance</span>
+            <span class="tier-badge badge-purple">Enterprise</span>
+          </div>
+          <div class="tier-spec">Granite Guardian 8B + primary LLM co-deployment · Sub-50ms screening latency</div>
+        </div>
+
+        <div class="tier">
+          <div class="tier-header">
+            <span class="tier-name">On-Premise</span>
+            <span class="tier-badge badge-green">Sovereign</span>
+          </div>
+          <div class="tier-spec">Air-gapped deployment · Your hardware · Zero external dependencies</div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>🚀 Start Deployment</h4>
+        <a class="cta-primary" href="/contact/">Start 90-Day Pilot</a>
+        <a class="cta-secondary" href="/menu/">View All Models</a>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>🔗 Related Models</h4>
+        <ul class="spec-list">
+          <li><span class="spec-key"><a href="/menu/llama-guard-3/" style="color:var(--text-secondary);text-decoration:none;">Llama Guard 3</a></span><span class="spec-val" style="color:var(--text-muted);">Meta</span></li>
+          <li><span class="spec-key"><a href="/menu/shieldgemma/" style="color:var(--text-secondary);text-decoration:none;">ShieldGemma</a></span><span class="spec-val" style="color:var(--text-muted);">Google</span></li>
+          <li><span class="spec-key"><a href="/menu/gpt-oss-safeguard/" style="color:var(--text-secondary);text-decoration:none;">GPT-OSS Safeguard</a></span><span class="spec-val" style="color:var(--text-muted);">Proxy</span></li>
+          <li><span class="spec-key"><a href="/menu/bespoke-minicheck/" style="color:var(--text-secondary);text-decoration:none;">Bespoke-Minicheck</a></span><span class="spec-val" style="color:var(--text-muted);">NLI</span></li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    © 2025 NoCloudGPT &nbsp;·&nbsp;
+    <a href="/privacy/">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="/terms/">Terms of Service</a> &nbsp;·&nbsp;
+    <a href="/menu/">Model Menu</a> &nbsp;·&nbsp;
+    <a href="/contact/">Contact</a>
+  </p>
+  <p style="margin-top:0.5rem;">Private AI deployment via Ollama — zero cloud egress, full data sovereignty.</p>
+</footer>
+
+</body>
+</html>
