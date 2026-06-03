@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiniMax Models – Private Cloud Deployment | NoCloudGPT</title>
+  <meta name="description" content="Deploy MiniMax M1 and MiniMax Text on your own infrastructure. Long-context reasoning, multimodal capability, and enterprise-grade performance without API dependency." />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans">
+
+  <!-- Nav -->
+  <nav class="bg-slate-800 border-b border-slate-700 px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-cyan-400 font-bold text-xl tracking-tight">NoCloudGPT</a>
+    <div class="flex gap-6 text-sm text-slate-300">
+      <a href="/menu/" class="hover:text-cyan-400 transition">Models</a>
+      <a href="/menu/deploy/" class="hover:text-cyan-400 transition">Deploy</a>
+      <a href="/menu/pricing.html" class="hover:text-cyan-400 transition">Pricing</a>
+      <a href="/menu/quote.html" class="hover:text-cyan-400 transition">Get a Quote</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-slate-800 to-slate-900 border-b border-slate-700 px-6 py-16 text-center">
+    <div class="max-w-3xl mx-auto">
+      <div class="inline-block bg-cyan-900 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">Long-Context · Multimodal · Agentic</div>
+      <h1 class="text-4xl font-extrabold text-white mb-4">MiniMax Models</h1>
+      <p class="text-lg text-slate-300 mb-8">MiniMax builds frontier-scale models with exceptionally long context windows and strong multimodal capabilities. Deploy MiniMax M1 on your own infrastructure for document reasoning, agentic workflows, and enterprise search — with no data leaving your environment.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/menu/quote.html" class="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold px-6 py-3 rounded-lg transition">Get a Deployment Quote</a>
+        <a href="/menu/deploy/" class="border border-cyan-500 text-cyan-400 hover:bg-cyan-900 font-semibold px-6 py-3 rounded-lg transition">View Deployment Options</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="max-w-5xl mx-auto px-6 py-14 space-y-14">
+
+    <!-- Overview -->
+    <section>
+      <h2 class="text-2xl font-bold text-cyan-400 mb-4">What Is MiniMax?</h2>
+      <p class="text-slate-300 leading-relaxed mb-4">MiniMax is a Shanghai-based AI company that has released a series of high-capability foundation models competitive with leading international labs. Their models are notable for combining very long context windows — up to 1 million tokens in the M1 series — with strong instruction-following, tool use, and multimodal understanding.</p>
+      <p class="text-slate-300 leading-relaxed mb-4">The flagship <strong class="text-white">MiniMax M1</strong> is a mixture-of-experts model with 456 billion total parameters and 45.9 billion active parameters per forward pass. It was released in mid-2025 and benchmarks favourably against GPT-4o and Claude 3.5 Sonnet on long-document tasks, multi-step reasoning, and agentic tool-calling scenarios. The model uses a hybrid attention architecture that combines softmax attention for precision with lightning attention for linear-scaling throughput at extreme context lengths.</p>
+      <p class="text-slate-300 leading-relaxed">For organisations handling contracts, research corpora, clinical records, or large codebases, MiniMax M1 offers the ability to reason across an entire document set in a single context window — a capability that eliminates the need for chunking pipelines or external retrieval systems in many use cases.</p>
+    </section>
+
+    <!-- Strengths -->
+    <section>
+      <h2 class="text-2xl font-bold text-cyan-400 mb-6">Model Strengths</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <h3 class="text-white font-semibold text-lg mb-2">1M Token Context Window</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">MiniMax M1 supports up to one million tokens of context — equivalent to roughly 750,000 words or several full-length books. This enables whole-document reasoning, cross-file code analysis, and long-form synthesis without retrieval middleware.</p>
+        </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <h3 class="text-white font-semibold text-lg mb-2">Agentic Tool Use</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">M1 is trained for multi-step agentic workflows. It can plan, call tools, evaluate results, and iterate — making it suitable for autonomous research agents, coding assistants, and process automation systems that require sustained reasoning chains.</p>
+        </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <h3 class="text-white font-semibold text-lg mb-2">Mixture-of-Experts Efficiency</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">With 456B total parameters but only ~46B active per token, M1 delivers frontier-level output quality at a fraction of the compute cost of equivalent dense models. This makes large-scale private deployment more economically viable.</p>
+        </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <h3 class="text-white font-semibold text-lg mb-2">Multimodal Input</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">MiniMax models support image and document inputs alongside text, enabling workflows that mix visual and textual data — including chart analysis, scanned document processing, and mixed-media report generation.</p>
+        </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <h3 class="text-white font-semibold text-lg mb-2">Strong Multilingual Performance</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Trained on diverse multilingual corpora with particular strength in Chinese and English, MiniMax models are well-suited for organisations operating across Asian and Western markets or handling multilingual document sets.</p>
+        </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <h3 class="text-white font-semibold text-lg mb-2">Open Weights</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">MiniMax M1 weights are publicly available, enabling fully private on-premise deployment with no dependency on MiniMax's API infrastructure. Your data stays on your hardware, under your control.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section>
+      <h2 class="text-2xl font-bold text-cyan-400 mb-4">Who Should Deploy MiniMax?</h2>
+      <p class="text-slate-300 leading-relaxed mb-4">MiniMax M1 is best suited for organisations where context length is a limiting factor in current AI deployments. If your workflows involve large documents, multi-file codebases, or long conversation histories that exceed what GPT-4o or Claude can handle in a single pass, M1 removes that constraint entirely.</p>
+      <ul class="list-disc list-inside text-slate-300 space-y-2 leading-relaxed">
+        <li><strong class="text-white">Legal and compliance teams</strong> processing full contracts, case files, or regulatory submissions in a single context window</li>
+        <li><strong class="text-white">Financial analysts</strong> working across earnings transcripts, SEC filings, and research reports simultaneously</li>
+        <li><strong class="text-white">Healthcare and clinical research</strong> organisations analysing long patient records, trial protocols, or literature corpora</li>
+        <li><strong class="text-white">Software engineering teams</strong> that need whole-repository code understanding for refactoring, documentation, or security audits</li>
+        <li><strong class="text-white">Intelligence and research organisations</strong> synthesising large document corpora with complex cross-reference requirements</li>
+        <li><strong class="text-white">Enterprises with multilingual operations</strong> needing strong Chinese-English bilingual capability in a self-hosted environment</li>
+      </ul>
+    </section>
+
+    <!-- Hardware -->
+    <section>
+      <h2 class="text-2xl font-bold text-cyan-400 mb-6">Hardware Requirements</h2>
+      <p class="text-slate-300 mb-6 leading-relaxed">MiniMax M1 is a large MoE model that requires substantial GPU infrastructure for full-precision deployment. Quantised variants reduce memory requirements significantly while preserving most of the model's capability.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-slate-300 border border-slate-700 rounded-xl overflow-hidden">
+          <thead class="bg-slate-800 text-slate-400 uppercase text-xs">
+            <tr>
+              <th class="px-4 py-3 text-left">Configuration</th>
+              <th class="px-4 py-3 text-left">VRAM Required</th>
+              <th class="px-4 py-3 text-left">Recommended Hardware</th>
+              <th class="px-4 py-3 text-left">Best For</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-700">
+            <tr class="hover:bg-slate-800 transition">
+              <td class="px-4 py-3 font-medium text-white">M1 Q4 (quantised)</td>
+              <td class="px-4 py-3">~120GB</td>
+              <td class="px-4 py-3">2× H100 80GB or 4× A100 40GB</td>
+              <td class="px-4 py-3">Cost-effective private deployment</td>
+            </tr>
+            <tr class="hover:bg-slate-800 transition">
+              <td class="px-4 py-3 font-medium text-white">M1 Q8 (quantised)</td>
+              <td class="px-4 py-3">~200GB</td>
+              <td class="px-4 py-3">4× A100 80GB or 3× H100 80GB</td>
+              <td class="px-4 py-3">High-fidelity inference</td>
+            </tr>
+            <tr class="hover:bg-slate-800 transition">
+              <td class="px-4 py-3 font-medium text-white">M1 Full Precision</td>
+              <td class="px-4 py-3">~400GB+</td>
+              <td class="px-4 py-3">8× H100 80GB or H100 NVL cluster</td>
+              <td class="px-4 py-3">Maximum capability, fine-tuning</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-slate-400 text-sm mt-4">NoCloudGPT provisions and configures multi-GPU infrastructure for MiniMax M1 deployment. Contact us for a hardware sizing consultation tailored to your context length and throughput requirements.</p>
+    </section>
+
+    <!-- Deployment -->
+    <section>
+      <h2 class="text-2xl font-bold text-cyan-400 mb-4">Deployment Options</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <h3 class="text-white font-semibold mb-2">Managed GPU Cloud</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">NoCloudGPT deploys MiniMax M1 on dedicated multi-GPU instances with Ollama or vLLM serving. Includes monitoring, updates, and OpenAI-compatible API endpoint.</p>
+        </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <h3 class="text-white font-semibold mb-2">On-Premise Installation</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Full hardware provisioning, network configuration, and model deployment on your own servers. Suitable for air-gapped environments and maximum data sovereignty requirements.</p>
+        </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <h3 class="text-white font-semibold mb-2">Hybrid Architecture</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Combine MiniMax M1 with smaller edge models for tiered inference — routing simple queries to lightweight models and complex long-context tasks to M1 to optimise cost and latency.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-slate-800 border border-cyan-700 rounded-2xl p-10 text-center">
+      <h2 class="text-2xl font-bold text-white mb-3">Deploy MiniMax M1 Privately</h2>
+      <p class="text-slate-300 mb-6 max-w-xl mx-auto">One million token context. Full data sovereignty. No API dependency. Contact NoCloudGPT to scope your MiniMax M1 deployment.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/menu/quote.html" class="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold px-8 py-3 rounded-lg transition">Request a Quote</a>
+        <a href
