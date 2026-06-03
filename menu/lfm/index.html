@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LFM / LFM2 – Liquid Foundation Models | NoCloudGPT</title>
+  <meta name="description" content="Liquid AI's LFM and LFM2 models use a novel liquid neural network architecture for efficient, low-memory inference. Deploy LFM2 privately for edge and server workloads." />
+  <link rel="canonical" href="https://nocloudgpt.com/menu/lfm/" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; color: #1a1a1a; line-height: 1.7; }
+    h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+    h2 { font-size: 1.35rem; margin-top: 2.2rem; border-bottom: 2px solid #e2e2e2; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.4rem; color: #333; }
+    .tag { display: inline-block; background: #f0f4ff; color: #2244aa; border-radius: 4px; padding: 2px 8px; font-size: 0.82rem; margin-right: 5px; }
+    .cta-box { background: #f8f9ff; border-left: 4px solid #3355dd; padding: 1rem 1.4rem; margin: 2rem 0; border-radius: 4px; }
+    .cta-box a { color: #2244aa; font-weight: 600; }
+    .callout { background: #f0fff4; border-left: 4px solid #38a169; padding: 0.8rem 1.2rem; border-radius: 4px; margin: 1.5rem 0; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 0.6rem 0.9rem; text-align: left; }
+    th { background: #f3f3f3; }
+    a { color: #2244aa; }
+    nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<nav><a href="/menu/">← Model Menu</a> &nbsp;/&nbsp; LFM</nav>
+
+<h1>LFM / LFM2: Liquid Foundation Models</h1>
+<p>
+  <span class="tag">Novel Architecture</span>
+  <span class="tag">Memory Efficient</span>
+  <span class="tag">Edge Capable</span>
+  <span class="tag">Liquid AI</span>
+  <span class="tag">Open Weights</span>
+</p>
+
+<div class="callout">
+  <strong>Architecture note:</strong> LFM models are not Transformers. They use Liquid Neural Networks — a continuous-time recurrent architecture derived from computational neuroscience. This gives them a fundamentally different memory and compute profile compared to attention-based models.
+</div>
+
+<p>
+  LFM (Liquid Foundation Models) and their successor LFM2 are produced by <strong>Liquid AI</strong>, a MIT spinout working on non-Transformer architectures. The key claim: LFM models are more memory-efficient than Transformer models of comparable capability because they use a fixed-size state (like Mamba/SSM models) rather than a growing KV-cache. LFM2 brings this to open weights at 1.2B, 3.8B, and 8B scales — making it a genuinely different option from the mainstream Llama/Mistral/Gemma landscape.
+</p>
+
+<h2>What LFM / LFM2 Is Good At</h2>
+<ul>
+  <li><strong>Memory-efficient inference</strong> — fixed state size means memory usage doesn't grow with sequence length</li>
+  <li><strong>Long-context processing with low VRAM</strong> — handles long inputs without the KV-cache overhead of Transformer models</li>
+  <li><strong>Instruction following</strong> — LFM2 8B performs competitively with Llama 3 8B Instruct on standard benchmarks</li>
+  <li><strong>Edge and constrained deployment</strong> — useful where memory is the binding constraint rather than compute</li>
+  <li><strong>Streaming applications</strong> — the recurrent nature suits real-time streaming inference scenarios</li>
+</ul>
+
+<h2>Who Should Care</h2>
+
+<h3>Business and Professional Use</h3>
+<p>
+  LFM2 is worth evaluating for teams with a specific constraint: they need to run a capable AI model in an environment with limited memory (not limited compute). Think embedded servers, edge AI devices, high-concurrency deployments where KV-cache scaling is the bottleneck, or specialized inference hardware. If your deployment is memory-bound rather than compute-bound, LFM2's architecture is a genuine advantage.
+</p>
+
+<h3>Personal and Homelab Use</h3>
+<p>
+  LFM2 8B is interesting for homelab users experimenting with alternative architectures. It runs with noticeably lower peak memory than a Transformer 8B model. For a standard homelab assistant, Llama 3 or Gemma 2 are better-supported by tooling — but LFM2 is worth experimenting with if you're curious about what post-Transformer models feel like in practice.
+</p>
+
+<h2>Model Variants</h2>
+<table>
+  <thead>
+    <tr><th>Model</th><th>Parameters</th><th>VRAM Estimate</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>LFM2 1.2B</td><td>1.2B</td><td>~1GB</td><td>Ultra-light; edge deployment</td></tr>
+    <tr><td>LFM2 3.8B</td><td>3.8B</td><td>~3GB</td><td>Compact; CPU-friendly</td></tr>
+    <tr><td>LFM2 8B</td><td>8B</td><td>~5–6GB (lower than Transformer 8B)</td><td>Recommended; competitive quality</td></tr>
+  </tbody>
+</table>
+
+<h2>Deployment Notes</h2>
+<p>
+  LFM2 requires inference frameworks with non-Transformer architecture support. Ollama added LFM2 support in recent releases. For custom deployments, Liquid AI provides their own inference code:
+</p>
+<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>ollama run lfm2:8b
+
+# Or via Liquid AI's inference repo (check HuggingFace)
+# Note: standard llama.cpp GGUF may not support LFM2 architecture
+# Verify current framework support before production deployment</code></pre>
+
+<div class="cta-box">
+  <strong>Interested in memory-efficient private AI deployment?</strong><br />
+  LFM2 is a strong option when VRAM is the constraint.
+  <a href="/menu/quote.html">Build a deployment quote</a> or review the
+  <a href="/menu/deploy/">90-day pilot guide</a>.
+</div>
+
+<h2>Related Pages</h2>
+<ul>
+  <li><a href="/menu/jamba/">Jamba (another non-standard architecture)</a></li>
+  <li><a href="/menu/smollm/">SmolLM2 (edge models from HuggingFace)</a></li>
+  <li><a href="/menu/phi/">Phi-3 Mini (comparable size, Transformer-based)</a></li>
+</ul>
+
+</body>
+</html>
