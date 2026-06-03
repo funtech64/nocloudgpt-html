@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQLCoder: Private Self-Hosted Text-to-SQL Model for Data Teams | NoCloudGPT</title>
+  <meta name="description" content="Run SQLCoder on your own hardware. The leading open-source text-to-SQL model from Defog AI. Deploy 7B or 15B privately — query your databases with natural language without exposing schemas to cloud APIs." />
+</head>
+<body>
+
+<article>
+
+  <h1>SQLCoder: Natural Language to SQL Without Sending Your Schema to the Cloud</h1>
+
+  <p>Text-to-SQL is one of the highest-value AI use cases for data teams — and one of the highest-risk when routed through a cloud API. Translating a natural language question into a correct SQL query requires the model to understand your database schema: table names, column names, relationships, and data types. That schema is a precise map of your data architecture. Sending it to a third-party API on every query is a data governance problem that most organizations have not fully reckoned with.</p>
+
+  <p>SQLCoder, developed by Defog AI, is the leading open-source text-to-SQL model, purpose-trained to generate accurate SQL from natural language questions against real database schemas. Available in 7B and 15B variants via <code>ollama run sqlcoder</code>, it runs entirely on-premise — your schema stays on your network, your queries never leave your environment, and your data team gets natural language database access without the compliance exposure of cloud-routed alternatives.</p>
+
+  <h2>What SQLCoder Does Well</h2>
+
+  <ul>
+    <li><strong>Accurate text-to-SQL generation:</strong> Purpose-trained on SQL generation tasks rather than general code — produces syntactically correct, semantically accurate queries against provided schemas at a quality level general-purpose models cannot match</li>
+    <li><strong>Schema-aware query construction:</strong> Accepts table definitions, column descriptions, and relationship context in the prompt and uses them to generate queries that respect the actual structure of your database</li>
+    <li><strong>Complex query support:</strong> Handles multi-table JOINs, nested subqueries, window functions, aggregations, and conditional logic that simpler models flatten or incorrectly structure</li>
+    <li><strong>Multiple SQL dialects:</strong> Generates queries compatible with PostgreSQL, MySQL, SQLite, BigQuery, Snowflake, and other major dialects when dialect context is provided</li>
+    <li><strong>Query explanation:</strong> Given an existing SQL query, explains what it does in plain language — useful for onboarding, documentation, and cross-team communication</li>
+    <li><strong>Schema documentation:</strong> Generates human-readable descriptions of table structures and relationships from provided DDL statements</li>
+  </ul>
+
+  <p>On the widely cited SQL-Eval benchmark from Defog AI, SQLCoder 15B outperforms GPT-4 on SQL generation accuracy for real-world database schemas — a benchmark result directly relevant to production data team use rather than academic code generation tasks.</p>
+
+  <h2>Who Should Deploy SQLCoder</h2>
+
+  <ul>
+    <li><strong>Data analysts and business intelligence teams</strong> who need to query databases without writing SQL by hand — and whose database schemas contain sensitive business data that cannot be transmitted to external APIs</li>
+    <li><strong>Data engineering teams</strong> building internal natural language query interfaces, automated reporting tools, or self-serve analytics platforms for non-technical stakeholders</li>
+    <li><strong>Healthcare, financial services, and legal organizations</strong> where database schemas contain PHI, financial records, or privileged information that is subject to strict data handling requirements</li>
+    <li><strong>Platform teams</strong> embedding natural language query capability into internal data products, dashboards, or developer tools without creating cloud API dependencies</li>
+    <li><strong>Organizations with large, complex schemas</strong> where the table count, relationship depth, or naming conventions make general-purpose models unreliable and a purpose-trained SQL model is the practical solution</li>
+  </ul>
+
+  <h2>Deployment Tiers and Compute Requirements</h2>
+
+  <h3>Single Analyst — 7B Q4 (4–6GB RAM, CPU or entry GPU)</h3>
+  <p>The 7B variant handles a wide range of text-to-SQL tasks on CPU-only hardware with 4–6GB available RAM. For moderate schema complexity and standard query patterns — SELECT with WHERE, GROUP BY, and single-level JOINs — the 7B model provides reliable output at a hardware cost of zero beyond existing developer machines. Pull with <code>ollama run sqlcoder:7b</code>.</p>
+
+  <h3>Production Team — 15B Q4 (AWS g4dn.xlarge, T4 16GB VRAM)</h3>
+  <p>The 15B variant is the recommended deployment for production data team use and any schema of meaningful complexity. On an AWS <code>g4dn.xlarge</code> with a T4 GPU, the 15B Q4 model runs at 15–25 tokens per second — fast enough for interactive natural language querying across a team of analysts. The quality gap between 7B and 15B is most pronounced on complex multi-table schemas, nested query requirements, and dialect-specific syntax. For organizations embedding SQLCoder into an analytics product or internal data portal, the 15B model is the version that justifies the integration effort. Reserved instance cost runs approximately $200–280 USD per month. Pull with <code>ollama run sqlcoder:15b</code>.</p>
+
+  <h2>The Real Cost of Schema Exposure</h2>
+
+  <p>A database schema is not generic technical information. It encodes your business domain: what data you collect, how you organize it, what relationships matter, and what terminology your organization uses internally. For a healthcare organization, the schema reveals patient data structures. For a financial firm, it reveals transaction and account architectures. For any organization, it reveals the shape of proprietary business logic that competitors and regulators would find informative.</p>
+
+  <p>SQLCoder on-premise means schema context never leaves your network. Every natural language query your analysts submit, every table definition included for context, and every generated SQL statement stays within your infrastructure boundary. For organizations subject to HIPAA, SOC 2, PCI-DSS, or internal data classification policies, this is not a feature — it is the baseline requirement for deploying natural language database access at all.</p>
+
+  <h2>Integration and Workflow Compatibility</h2>
+
+  <ul>
+    <li><strong>OpenWebUI</strong> — provide analysts with a browser interface for natural language querying without requiring IDE setup or technical configuration</li>
+    <li><strong>Ollama API</strong> — embed SQLCoder into internal data portals, analytics dashboards, or reporting tools via the OpenAI-compatible API endpoint</li>
+    <li><strong>LangChain / LlamaIndex</strong> — chain SQLCoder with database connectors to build end-to-end natural language query pipelines that execute against live databases</li>
+    <li><strong>Custom internal tools</strong> — the straightforward API interface makes SQLCoder embeddable in any internal application that needs natural language database access</li>
+  </ul>
+
+  <p><strong>Your database schema is a map of your business. Deploy SQLCoder privately and give your data team natural language query capability without transmitting that map to a third-party API on every request.</strong></p>
+
+</article>
+
+</body>
+</html>
