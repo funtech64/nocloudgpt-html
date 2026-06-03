@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laguna on Ollama | Private Local AI Model | NoCloudGPT.com</title>
+  <meta name="description" content="Run Laguna locally with Ollama. A lightweight instruction-following model deployable on modest hardware — no API keys, no data egress, no cloud dependencies." />
+</head>
+<body>
+
+<h1>Laguna: Lightweight Instruction-Following AI — Running on Your Hardware, Not Someone Else's Cloud</h1>
+
+<p>Laguna is a compact instruction-following model available through the Ollama model library. With limited public documentation from its developers, it occupies the same practical space as other lightweight instruction models: low resource requirements, straightforward deployment, and a useful baseline for teams that need a local AI assistant without the overhead of larger model families.</p>
+
+<p>It runs via <code>ollama run laguna</code> — no API key, no external service dependency, no data leaving your machine.</p>
+
+---
+
+<h2>What Laguna Does</h2>
+
+<ul>
+  <li><strong>Instruction following</strong> — responds to natural language instructions across general tasks including summarization, drafting, Q&A, and basic reasoning</li>
+  <li><strong>Lightweight footprint</strong> — designed to run on modest hardware, making it accessible for edge deployments, low-budget infrastructure, and offline environments</li>
+  <li><strong>Ollama-native deployment</strong> — pulls and runs through the standard Ollama toolchain with no custom configuration required</li>
+  <li><strong>Local API compatibility</strong> — serves via the Ollama OpenAI-compatible endpoint for integration with existing tooling and lightweight applications</li>
+</ul>
+
+---
+
+<h2>Who Should Run Laguna On-Premise</h2>
+
+<ul>
+  <li><strong>Teams evaluating lightweight local models</strong> — organizations exploring on-premise AI who want a low-commitment starting point before deploying larger model families</li>
+  <li><strong>Edge and offline deployments</strong> — use cases where internet connectivity is unreliable or prohibited and a capable instruction model is needed on constrained hardware</li>
+  <li><strong>Internal tooling prototypes</strong> — developers building lightweight AI-powered internal tools who need a local model backend without infrastructure complexity</li>
+  <li><strong>Privacy-first general assistance</strong> — individuals or teams handling sensitive information who want local AI without any cloud exposure</li>
+</ul>
+
+---
+
+<h2>Deployment and Compute Requirements</h2>
+
+<h3>Standard Deployment: Laguna Q4</h3>
+<ul>
+  <li><strong>RAM required:</strong> 2–6GB depending on variant</li>
+  <li><strong>Hardware:</strong> Developer laptop, Raspberry Pi class hardware for smallest variants, AWS Lightsail 4–8GB</li>
+  <li><strong>AWS cost:</strong> Lightsail 4GB ~$20/month; Lightsail 8GB ~$40/month</li>
+  <li><strong>Speed:</strong> Varies by hardware; CPU-capable on modern consumer hardware</li>
+  <li><strong>Best for:</strong> Individual use, offline environments, lightweight application backends</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run laguna</code></p>
+
+---
+
+<h2>The Real Cost of Routing Simple Tasks Through Cloud APIs</h2>
+
+<p>Not every AI task requires GPT-4. Summarization, drafting, basic Q&A, and internal tooling workflows are well within the capability of lightweight local models — and routing them through cloud APIs generates per-token costs and data exposure for workloads that don't require it.</p>
+
+<ul>
+  <li>A team running 1,000 simple instruction tasks per day through GPT-3.5-Turbo API spends $2–$5/day on tasks a local model handles at infrastructure cost only</li>
+  <li>Every query — including internal documents, customer data, and business context — is transmitted to external servers</li>
+  <li>Laguna on a $20–$40/month Lightsail instance handles lightweight workloads with zero per-query cost and zero data egress</li>
+</ul>
+
+---
+
+<h2>Getting Started with Laguna on Ollama</h2>
+
+<pre><code># Pull and run Laguna
+ollama run laguna
+
+# Serve via local API
+ollama serve
+# Endpoint: http://localhost:11434/api/chat
+</code></pre>
+
+---
+
+<h2>Start Your 90-Day Local AI Pilot</h2>
+
+<p>NoCloudGPT.com provides deployment guides and hardware sizing recommendations for teams exploring on-premise AI with lightweight models including Laguna.</p>
+
+<p><strong>Contact us to scope your pilot — the right local model for your workload may be simpler and cheaper to deploy than you expect.</strong></p>
+
+</body>
+</html>
