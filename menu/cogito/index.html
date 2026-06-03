@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cogito Model Family on NoCloudGPT: Efficient Open Instruct LLMs</title>
+    <meta name="description" content="Deploy Cogito 7B/13B/70B on NoCloudGPT. Fast, uncensored chat agents rivaling Mistral. Edge-ready, from Lightsail to H100.">
+</head>
+<body>
+    <h1>Cogito: Next-Gen Open Instruct Models for Speed & Precision</h1>
+    <p>Cogito series (community-driven) delivers Mistral-level chat with lower overhead. Strong in roleplay, coding assists, and tool-use; fully open for customization.</p>
+
+    <h2>Cogito Strengths</h2>
+    <ul>
+        <li>Instruct precision: Low hallucination in creative/professional tasks.</li>
+        <li>Agentic: Native function calling, outperforms Phi-3 in speed.</li>
+        <li>Compact: Runs smooth on 2022 hardware.</li>
+    </ul>
+
+    <h2>Model Recommendations</h2>
+    <table>
+        <tr><th>Variant</th><th>Params</th><th>VRAM (Q4)</th><th>Use Case</th></tr>
+        <tr><td>Cogito 7B</td><td>7B</td><td>5GB</td><td>Laptop prototyping, fast chat.</td></tr>
+        <tr><td>Cogito 13B</td><td>13B</td><td>9GB</td><td>Balanced server/homelab daily driver.</td></tr>
+        <tr><td>Cogito 70B</td><td>70B</td><td>45GB</td><td>Production reasoning/tools.</td></tr>
+    </table>
+
+    <h2>Who Cares About Cogito</h2>
+    <p><strong>Business:</strong> Freelance devs automating workflows. <strong>Personal:</strong> Homelab tinkerers.</p>
+
+    <h2>Deployment Matrix</h2>
+    <table>
+        <tr><th>Setup</th><th>Hardware</th><th>Perf</th></tr>
+        <tr><td>Cloud</td><td>t4g.small</td><td>60+ t/s (7B)</td></tr>
+        <tr><td>Local</td><td>GTX 1660</td><td>50 t/s</td></tr>
+        <tr><td>On-Prem</td><td>RTX 4090</td><td>100+ t/s (13B)</td></tr>
+    </table>
+    <p>Fine-tune tip: Use Unsloth for 2x faster training. <strong>Vs. Mistral:</strong> Cogito edges in latency.</p>
+
+    <p><a href="/menu/quote.html">Build a Quote</a> | <a href="/menu/deploy/#lightsail">90-Day Pilot</a> | <a href="/menu/deploy/#on-prem">On-Prem Guide</a></p>
+</body>
+</html>
