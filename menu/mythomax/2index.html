@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MythoMax – Creative and Roleplay Model | NoCloudGPT</title>
+  <meta name="description" content="MythoMax is a community model merge optimized for creative writing, storytelling, and roleplay. Deploy it privately on your own hardware." />
+  <link rel="canonical" href="https://nocloudgpt.com/menu/mythomax/" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; color: #1a1a1a; line-height: 1.7; }
+    h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+    h2 { font-size: 1.35rem; margin-top: 2.2rem; border-bottom: 2px solid #e2e2e2; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.4rem; color: #333; }
+    .tag { display: inline-block; background: #f0f4ff; color: #2244aa; border-radius: 4px; padding: 2px 8px; font-size: 0.82rem; margin-right: 5px; }
+    .cta-box { background: #f8f9ff; border-left: 4px solid #3355dd; padding: 1rem 1.4rem; margin: 2rem 0; border-radius: 4px; }
+    .cta-box a { color: #2244aa; font-weight: 600; }
+    .callout { background: #f0fff4; border-left: 4px solid #38a169; padding: 0.8rem 1.2rem; border-radius: 4px; margin: 1.5rem 0; }
+    a { color: #2244aa; }
+    nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<nav><a href="/menu/">← Model Menu</a> &nbsp;/&nbsp; MythoMax</nav>
+
+<h1>MythoMax: Community Model Merge for Creative Work</h1>
+<p>
+  <span class="tag">Creative Writing</span>
+  <span class="tag">Roleplay</span>
+  <span class="tag">Storytelling</span>
+  <span class="tag">Community Merge</span>
+  <span class="tag">13B</span>
+</p>
+
+<p>
+  MythoMax is a 13B community model created by <strong>Gryphe</strong> using model merging techniques — combining the strengths of several Llama 2-based models (MythoLogic-L2, Huginn, and others) into a single model with strong creative output. It's not a product of a research lab — it emerged from the open-source model-merging community and became one of the most downloaded creative models on HuggingFace. Its primary strength is <strong>expressive, coherent creative writing and conversational roleplay</strong>, where it outperforms many instruction-focused models that prioritize factual accuracy over narrative quality.
+</p>
+
+<div class="callout">
+  <strong>Best use case:</strong> Writers, game designers, interactive fiction developers, and anyone building AI-assisted creative tools who wants a model that produces engaging, human-feeling text rather than sterile assistant-speak.
+</div>
+
+<h2>What MythoMax Is Good At</h2>
+<ul>
+  <li><strong>Creative writing and fiction</strong> — narrative coherence, character voice, and stylistic range above most instruction-tuned models</li>
+  <li><strong>Collaborative storytelling and roleplay</strong> — designed to maintain character and narrative context across long conversations</li>
+  <li><strong>Prose generation</strong> — marketing copy, game lore, dialogue, and descriptive writing all benefit from its style</li>
+  <li><strong>Conversational warmth</strong> — less corporate tone than standard instruction models; useful for companion or tutoring applications</li>
+  <li><strong>Unconstrained creative scenarios</strong> — fewer refusals on creative content compared to RLHF-heavy models</li>
+</ul>
+
+<h2>Who Should Care</h2>
+
+<h3>Business and Professional Use</h3>
+<p>
+  MythoMax is a niche fit for most businesses. The clear exceptions are teams building <strong>creative AI products</strong>: interactive fiction platforms, AI game masters, writing assistants, educational roleplay tools, or marketing copy generators that need natural-sounding prose. If your primary AI use case is document summarization or code help, a different model will serve you better.
+</p>
+
+<h3>Personal and Homelab Use</h3>
+<p>
+  This is where MythoMax shines. Writers, worldbuilders, tabletop RPG players, and interactive fiction enthusiasts have made MythoMax one of the most popular homelab models precisely because it makes a genuinely enjoyable creative companion. It runs on a single RTX 3080/3090 (13B Q4_K_M fits in ~9GB) and is available in many quantized GGUF formats.
+</p>
+
+<h2>Deployment</h2>
+<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>ollama run mythomax-l2:13b-q4_K_M
+# or download GGUF from TheBloke on HuggingFace
+./llama-cli -m mythomax-l2-13b.Q4_K_M.gguf \
+  --color -i --temp 0.85 --repeat-penalty 1.1</code></pre>
+<p>
+  Higher temperature (0.8–1.0) and a modest repeat penalty produce the most natural output for creative tasks.
+</p>
+
+<div class="cta-box">
+  <strong>Building a creative AI product or tool?</strong><br />
+  <a href="/menu/quote.html">Build a deployment quote</a> for a private creative AI stack,
+  or review the <a href="/menu/deploy/">90-day pilot guide</a> for setup options.
+</div>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is MythoMax still worth using with newer models available?</h3>
+<p>For creative writing specifically, yes — many users report it still outperforms newer instruction-focused models on pure narrative quality. For everything else, newer models are stronger. It's a specialized tool, not a general assistant.</p>
+
+<h3>What's the license?</h3>
+<p>MythoMax is based on Llama 2, so it carries the Llama 2 Community License — free for most uses under 700M monthly active users.</p>
+
+<h2>Related Pages</h2>
+<ul>
+  <li><a href="/menu/samantha/">Samantha (emotionally-aware conversational model)</a></li>
+  <li><a href="/menu/nous-hermes/">Nous Hermes</a></li>
+  <li><a href="/menu/dolphin/">Dolphin (uncensored creative model)</a></li>
+</ul>
+
+</body>
+</html>
