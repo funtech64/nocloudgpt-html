@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reflection Models – Self-Correcting AI | NoCloudGPT</title>
+  <meta name="description" content="Reflection 70B uses self-reflection tokens to detect and correct reasoning errors during generation. Deploy it privately for higher-accuracy analytical tasks." />
+  <link rel="canonical" href="https://nocloudgpt.com/menu/reflection/" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; color: #1a1a1a; line-height: 1.7; }
+    h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+    h2 { font-size: 1.35rem; margin-top: 2.2rem; border-bottom: 2px solid #e2e2e2; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.4rem; color: #333; }
+    .tag { display: inline-block; background: #f0f4ff; color: #2244aa; border-radius: 4px; padding: 2px 8px; font-size: 0.82rem; margin-right: 5px; }
+    .cta-box { background: #f8f9ff; border-left: 4px solid #3355dd; padding: 1rem 1.4rem; margin: 2rem 0; border-radius: 4px; }
+    .cta-box a { color: #2244aa; font-weight: 600; }
+    .notice { background: #fff0f0; border-left: 4px solid #e53e3e; padding: 0.8rem 1.2rem; border-radius: 4px; margin: 1.5rem 0; font-size: 0.95rem; }
+    a { color: #2244aa; }
+    nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<nav><a href="/menu/">← Model Menu</a> &nbsp;/&nbsp; Reflection</nav>
+
+<h1>Reflection 70B: Self-Correcting Reasoning Model</h1>
+<p>
+  <span class="tag">Self-Reflection</span>
+  <span class="tag">Reasoning</span>
+  <span class="tag">Error Correction</span>
+  <span class="tag">70B</span>
+</p>
+
+<div class="notice">
+  <strong>Historical context:</strong> Reflection 70B generated significant controversy on release in late 2024 — initial benchmarks were disputed, and independent testing showed mixed results. The underlying technique (reflection tokens for self-correction) is real and interesting, but evaluate it carefully against your specific use case rather than relying on benchmark claims. The model is available and the approach is worth knowing about.
+</div>
+
+<p>
+  Reflection 70B, released by Matt Shumer and HyperWrite, introduces a specific training technique: the model is fine-tuned to use special <strong>reflection tokens</strong> (<code>&lt;reflection&gt;</code>) during generation to pause, review its reasoning, identify errors, and correct itself before producing a final answer. The idea is to build self-error-detection into the generation process itself rather than requiring external verification. Built on Llama 3.1 70B, it targets tasks where reasoning accuracy matters more than generation speed.
+</p>
+
+<h2>What Reflection 70B Is Good At</h2>
+<ul>
+  <li><strong>Self-correcting multi-step reasoning</strong> — the reflection mechanism catches some classes of reasoning errors mid-generation</li>
+  <li><strong>Tasks with verifiable answers</strong> — math, logic, and code where the model can check its own work</li>
+  <li><strong>Reducing overconfident wrong answers</strong> — the reflection process encourages uncertainty acknowledgment</li>
+  <li><strong>Research and experimentation</strong> — interesting as a technique to study; the approach is being extended in newer models</li>
+</ul>
+
+<h2>Deployment</h2>
+<p>
+  Reflection 70B runs on the same hardware as Llama 3.1 70B — two A100 40GB GPUs or equivalent 80GB VRAM total at 4-bit quantization:
+</p>
+<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>ollama run reflection:70b-q4_K_M</code></pre>
+
+<div class="cta-box">
+  <strong>Exploring self-correcting reasoning models?</strong><br />
+  Consider also evaluating <a href="/menu/magistral/">Magistral</a> and
+  <a href="/menu/cogito/">Cogito</a> for production reasoning workloads.
+  <a href="/menu/quote.html">Build a deployment quote</a> for your setup.
+</div>
+
+<h2>Related Pages</h2>
+<ul>
+  <li><a href="/menu/magistral/">Magistral (Mistral's reasoning model)</a></li>
+  <li><a href="/menu/cogito/">Cogito (hybrid fast/thinking model)</a></li>
+  <li><a href="/menu/llama/">Llama 3.1 (base model)</a></li>
+</ul>
+
+</body>
+</html>
