@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiniCPM-V on Ollama | Private Edge Vision AI | NoCloudGPT.com</title>
+  <meta name="description" content="Run MiniCPM-V locally with Ollama. A compact multimodal vision-language model optimized for edge deployment — image understanding, OCR, and visual QA running entirely on your hardware with no data egress." />
+</head>
+<body>
+
+<h1>MiniCPM-V: High-Accuracy Vision AI Designed for Edge Hardware — Running Entirely On Your Infrastructure</h1>
+
+<p>Most vision-language models demand serious GPU hardware to deliver useful performance. MiniCPM-V was built with the opposite constraint in mind: maximum multimodal capability within the tightest possible compute budget. Developed by Tsinghua University and ModelBest, it delivers competitive image understanding, OCR, and visual reasoning on hardware that larger models simply cannot run on.</p>
+
+<p>If your deployment target is an edge server, a low-cost cloud instance, or an air-gapped workstation without a dedicated GPU — and you need real vision-language capability, not a toy — MiniCPM-V is the model to evaluate first.</p>
+
+<p>It runs via <code>ollama run minicpm-v</code> — no API key, no image logging, no per-query billing.</p>
+
+---
+
+<h2>What MiniCPM-V Actually Does</h2>
+
+<ul>
+  <li><strong>High-resolution image understanding</strong> — processes images at resolutions up to 1.8 megapixels, preserving detail that lower-resolution vision models lose during preprocessing</li>
+  <li><strong>OCR and document text extraction</strong> — accurately reads printed and handwritten text within images, including dense multi-column layouts and mixed-language documents</li>
+  <li><strong>Visual question answering</strong> — answers natural language questions about image content with accuracy competitive with models several times its size</li>
+  <li><strong>Multi-image reasoning</strong> — handles prompts referencing multiple images simultaneously, enabling comparison, sequencing, and cross-image analysis tasks</li>
+  <li><strong>Multilingual vision support</strong> — strong performance on Chinese and English visual content, with coverage of additional languages</li>
+  <li><strong>Trustworthy output behavior</strong> — designed with reduced hallucination tendency, producing responses that decline to speculate when image evidence is insufficient</li>
+  <li><strong>Edge-optimized footprint</strong> — the 2B variant runs on CPU-only hardware; the 8B variant delivers substantially stronger performance on modest GPU configurations</li>
+</ul>
+
+---
+
+<h2>Who Should Run MiniCPM-V On-Premise</h2>
+
+<ul>
+  <li><strong>Manufacturing and industrial operations</strong> — deploy vision AI directly on production-floor hardware for defect detection, parts identification, and inspection report generation without routing imagery off-site</li>
+  <li><strong>Retail and logistics teams</strong> — automate shelf audit photography analysis, barcode and label reading, and shipment documentation processing on local infrastructure</li>
+  <li><strong>Healthcare and clinical documentation teams</strong> — process patient intake forms, scanned records, and medical photography on-premise with no cloud exposure, satisfying HIPAA requirements by design</li>
+  <li><strong>Organizations with multilingual document workflows</strong> — teams processing Chinese, English, or mixed-language scanned documents who need accurate OCR and extraction without third-party API dependencies</li>
+  <li><strong>Edge and IoT deployments</strong> — engineering teams embedding vision-language capability directly into edge devices, kiosks, or field hardware where cloud connectivity is unreliable or prohibited</li>
+  <li><strong>Budget-constrained teams evaluating multimodal AI</strong> — organizations that need to prove multimodal ROI before committing to larger GPU infrastructure investments</li>
+</ul>
+
+---
+
+<h2>Deployment Tiers and Compute Requirements</h2>
+
+<h3>Tier 1 — Edge / CPU Deployment: MiniCPM-V 2B Q4</h3>
+<ul>
+  <li><strong>RAM required:</strong> 4–6GB</li>
+  <li><strong>Hardware:</strong> Developer laptop, AWS Lightsail 4GB, Raspberry Pi 5 with sufficient RAM, edge servers</li>
+  <li><strong>AWS cost:</strong> Lightsail 4GB ~$20/month</li>
+  <li><strong>Speed:</strong> 4–10 tokens/sec on CPU</li>
+  <li><strong>Best for:</strong> Edge deployments, offline kiosks, air-gapped workstations, pilot evaluation on minimal hardware</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run minicpm-v:2b</code></p>
+
+<h3>Tier 2 — Workstation / Light GPU: MiniCPM-V 8B Q4</h3>
+<ul>
+  <li><strong>VRAM required:</strong> 8GB</li>
+  <li><strong>Hardware:</strong> AWS g4dn.xlarge (T4 16GB), RTX 3070, RTX 4060, or equivalent</li>
+  <li><strong>AWS cost:</strong> ~$0.526/hour on-demand; ~$0.16/hour spot</li>
+  <li><strong>Speed:</strong> 30–55 tokens/sec</li>
+  <li><strong>Best for:</strong> Internal document processing tools, interactive visual QA applications, small team deployments</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run minicpm-v:8b</code></p>
+
+<h3>Tier 3 — Production GPU: MiniCPM-V 8B Q8</h3>
+<ul>
+  <li><strong>VRAM required:</strong> 12–16GB</li>
+  <li><strong>Hardware:</strong> AWS g4dn.2xlarge, RTX 4080, RTX 3090, or equivalent</li>
+  <li><strong>AWS cost:</strong> ~$0.752/hour on-demand; ~$0.23/hour spot</li>
+  <li><strong>Speed:</strong> 40–65 tokens/sec</li>
+  <li><strong>Best for:</strong> High-volume document pipelines, production OCR workflows, concurrent multi-user visual analysis</li>
+</ul>
+<p><strong>Run it:</strong> <code>ollama run minicpm-v:8b-q8_0</code></p>
+
+---
+
+<h2>The Real Cost of Cloud Vision APIs</h2>
+
+<ul>
+  <li>Every image submitted to Google Vision, GPT-4V, or Claude Vision is transmitted to infrastructure you do not control — product photographs, patient intake forms, and proprietary diagrams included</li>
+  <li>Cloud vision APIs log requests by default; your operational imagery becomes training signal or audit data under terms most enterprise legal teams have not reviewed carefully</li>
+  <li>At 10,000 image queries per month, cloud vision API costs range from $150 to $500+ depending on provider and image complexity — a cost that compounds every month indefinitely</li>
+  <li>MiniCPM-V on a g4dn.xlarge spot instance (~$0.16/hour) serving an entire team costs less per month than a single seat of most cloud vision API tiers — with zero data egress</li>
+</ul>
+
+---
+
+<h2>Getting Started with MiniCPM-V on Ollama</h2>
+
+<pre><code># Pull and run MiniCPM-V 2B (edge / CPU)
+ollama run minicpm-v:2b
+
+# Pull and run MiniCPM-V 8B (GPU recommended)
+ollama run minicpm-v:8b
+
+# Serve via local API
+ollama serve
+# Endpoint: http://localhost:11434/api/chat
+</code></pre>
+
+---
+
+<h2>Start Your 90-Day Private Vision AI Pilot</h2>
+
+<p>NoCloudGPT.com provides deployment guides and hardware sizing recommendations for teams deploying MiniCPM-V on-premise — from edge devices to production GPU servers.</p>
+
+<p><strong>Contact us to scope your pilot — before your next image analysis job sends operational photography through infrastructure your security team never vetted.</strong></p>
+
+</body>
+</html>
