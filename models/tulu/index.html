@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tulu Models (Tulu 2, Tulu 3) – Instruction Tuning Research | NoCloudGPT</title>
+  <meta name="description" content="Allen AI's Tulu series applies cutting-edge instruction tuning techniques to open base models. Deploy Tulu 3 privately for high-quality instruction following." />
+  <link rel="canonical" href="https://nocloudgpt.com/menu/tulu/" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; color: #1a1a1a; line-height: 1.7; }
+    h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+    h2 { font-size: 1.35rem; margin-top: 2.2rem; border-bottom: 2px solid #e2e2e2; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.4rem; color: #333; }
+    .tag { display: inline-block; background: #f0f4ff; color: #2244aa; border-radius: 4px; padding: 2px 8px; font-size: 0.82rem; margin-right: 5px; }
+    .cta-box { background: #f8f9ff; border-left: 4px solid #3355dd; padding: 1rem 1.4rem; margin: 2rem 0; border-radius: 4px; }
+    .cta-box a { color: #2244aa; font-weight: 600; }
+    .callout { background: #f0f4ff; border-left: 4px solid #3355dd; padding: 0.8rem 1.2rem; border-radius: 4px; margin: 1.5rem 0; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 0.6rem 0.9rem; text-align: left; }
+    th { background: #f3f3f3; }
+    a { color: #2244aa; }
+    nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<nav><a href="/menu/">← Model Menu</a> &nbsp;/&nbsp; Tulu</nav>
+
+<h1>Tulu: Allen AI's Instruction-Tuning Research Models</h1>
+<p>
+  <span class="tag">Instruction Tuning</span>
+  <span class="tag">Research</span>
+  <span class="tag">Allen AI</span>
+  <span class="tag">Open Weights</span>
+  <span class="tag">RLVR</span>
+</p>
+
+<div class="callout">
+  <strong>What makes Tulu different:</strong> Tulu is less a product than a research artifact — Allen AI publishes it to demonstrate the state of the art in open instruction tuning. That said, Tulu 3 is genuinely production-capable and worth serious evaluation.
+</div>
+
+<p>
+  Tulu is a series of instruction-tuned models from the <strong>Allen Institute for AI (Ai2)</strong>, published as part of ongoing research into how to get the most instruction-following capability from open base models. Each Tulu generation applies the latest techniques — supervised fine-tuning, preference optimization, and in Tulu 3, Reinforcement Learning from Verifiable Rewards (RLVR). The base models change across generations (Tulu 2 built on Llama 2; Tulu 3 builds on Llama 3.1). The result is typically one of the best publicly available instruction-following models at its release size.
+</p>
+
+<h2>What Tulu Is Good At</h2>
+<ul>
+  <li><strong>Complex instruction following</strong> — the primary design goal; Tulu consistently scores near the top of instruction-following benchmarks</li>
+  <li><strong>Multi-turn dialogue</strong> — maintains context and instruction compliance across long conversations</li>
+  <li><strong>Reasoning and problem solving</strong> — RLVR in Tulu 3 significantly improves on math and science reasoning tasks</li>
+  <li><strong>Honest, calibrated responses</strong> — Allen AI's research emphasis on safety and honesty shows in lower hallucination rates</li>
+  <li><strong>General-purpose assistant tasks</strong> — writing, Q&A, summarization, analysis; solid across the board</li>
+</ul>
+
+<h2>Who Should Care</h2>
+
+<h3>Business and Professional Use</h3>
+<p>
+  Tulu 3 70B is one of the strongest open-weight instruction models available at its size, period. Organizations building internal AI assistants that need reliable, well-aligned responses — legal, compliance, research, or consulting contexts where hallucinations are costly — should benchmark Tulu 3 alongside Llama 3.1 70B Instruct and Command R.
+</p>
+<p>
+  Tulu 3 8B offers much of this quality in a size that runs on modest hardware, making it practical for budget-conscious private deployments where quality of instruction following matters more than raw speed.
+</p>
+
+<h3>Personal and Homelab Use</h3>
+<p>
+  Tulu 3 8B on a single GPU is an excellent homelab assistant — arguably better-aligned than the standard Llama 3.1 8B Instruct for carefully structured prompts. If you care about reliable instruction following and are already running Llama-family models, Tulu 3 is worth a test.
+</p>
+
+<h2>Model Variants at a Glance</h2>
+<table>
+  <thead>
+    <tr><th>Model</th><th>Base</th><th>Parameters</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Tulu 2 7B</td><td>Llama 2</td><td>7B</td><td>Older; largely superseded</td></tr>
+    <tr><td>Tulu 2 70B DPO</td><td>Llama 2</td><td>70B</td><td>Strong; still relevant for Llama 2 stacks</td></tr>
+    <tr><td>Tulu 3 8B</td><td>Llama 3.1</td><td>8B</td><td>Recommended current small Tulu</td></tr>
+    <tr><td>Tulu 3 70B</td><td>Llama 3.1</td><td>70B</td><td>Flagship; near-frontier instruction following</td></tr>
+  </tbody>
+</table>
+
+<h2>NoCloudGPT Deployment Guidance</h2>
+
+<h3>Small Cloud Server</h3>
+<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>ollama run tulu3:8b
+# Tulu 3 70B needs g5.12xlarge or similar (4x A10G)</code></pre>
+
+<h3>On-Premise / Office Server</h3>
+<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>vllm serve allenai/Llama-3.1-Tulu-3-70B \
+  --tensor-parallel-size 4</code></pre>
+
+<div class="cta-box">
+  <strong>Want one of the best-aligned open instruction models?</strong><br />
+  <a href="/menu/quote.html">Build a deployment quote</a> for Tulu 3, or follow the
+  <a href="/menu/deploy/">90-day Lightsail pilot guide</a> to get started.
+</div>
+
+<h2>Related Pages</h2>
+<ul>
+  <li><a href="/menu/llama/">Llama 3.1 (Tulu's base model)</a></li>
+  <li><a href="/menu/olmo/">OLMo (another Allen AI model family)</a></li>
+  <li><a href="/menu/compare/">Compare open models</a></li>
+</ul>
+
+</body>
+</html>
