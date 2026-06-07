@@ -1,0 +1,247 @@
+**✅ Here is the complete, accurate directory tree** for `/menu` based on our full conversation.
+
+I have compiled **every family** we discussed (approximately 70+). This is the full scope.
+
+---
+
+### Complete `/menu` Directory Tree
+
+```bash
+menu/
+├── index.html                          # Main catalog / navigation hub
+├── pricing.html
+├── quote.html
+├── deploy/
+│   ├── index.html
+│   ├── lightsail-guide.html            # 90-day free pilot article
+│   ├── on-premise.html
+│   └── private-cloud.html
+├── data/
+│   └── highlights.json
+├── models-catalog.md
+│
+├── llama/
+│   └── index.html
+├── llama4/
+│   └── index.html
+├── llama3.3/
+│   └── index.html
+├── llama-3.2-vision/
+│   └── index.html
+│
+├── deepseek/
+│   └── index.html
+├── deepseek-r1/
+│   └── index.html
+├── deepseek-coder/
+│   └── index.html
+│
+├── qwen/
+│   └── index.html
+├── qwen3.5/
+│   └── index.html
+├── qwen-vl/
+│   └── index.html
+├── qwen2.5-coder/
+│   └── index.html
+│
+├── gemma/
+│   └── index.html
+├── gemma4/
+│   └── index.html
+├── gemma2/
+│   └── index.html
+│
+├── mistral/
+│   └── index.html
+├── ministral/
+│   └── index.html
+├── pixtral/
+│   └── index.html
+├── mistral-large/
+│   └── index.html
+├── mistral-small/
+│   └── index.html
+├── mixtral/
+│   └── index.html
+│
+├── phi/
+│   └── index.html
+├── phi4/
+│   └── index.html
+│
+├── granite/
+│   └── index.html
+├── granite4/
+│   └── index.html
+│
+├── nemotron/
+│   └── index.html
+├── nemotron4/
+│   └── index.html
+│
+├── command-r/
+│   └── index.html
+├── command-r-plus/
+│   └── index.html
+│
+├── olmo/
+│   └── index.html
+├── glm/
+│   └── index.html
+├── glm5/
+│   └── index.html
+├── chatglm/
+│   └── index.html
+│
+├── yi/
+│   └── index.html
+├── dbrx/
+│   └── index.html
+├── devstral/
+│   └── index.html
+├── arctic/
+│   └── index.html
+├── arctic-llm/
+│   └── index.html
+│
+├── baichuan/
+│   └── index.html
+├── internlm/
+│   └── index.html
+├── falcon/
+│   └── index.html
+├── nous/
+│   └── index.html
+├── aya/
+│   └── index.html
+├── stablelm/
+│   └── index.html
+├── solar/
+│   └── index.html
+├── codegemma/
+│   └── index.html
+├── zephyr/
+│   └── index.html
+├── gpt-oss/
+│   └── index.html
+├── kimi/
+│   └── index.html
+├── minimax/
+│   └── index.html
+├── llava/
+│   └── index.html
+├── grok/
+│   └── index.html
+├── mimo/
+│   └── index.html
+├── cogito/
+│   └── index.html
+├── openclaw/
+│   └── index.html
+├── tulu/
+│   └── index.html
+├── dolphin/
+│   └── index.html
+├── jamba/
+│   └── index.html
+├── openchat/
+│   └── index.html
+├── reflection/
+│   └── index.html
+├── snowball/
+│   └── index.html
+├── nomic/
+│   └── index.html
+├── math/
+│   └── index.html
+├── reka/
+│   └── index.html
+├── paligemma/
+│   └── index.html
+├── recurrentgemma/
+│   └── index.html
+├── seallm/
+│   └── index.html
+├── wizardlm/
+│   └── index.html
+├── codellama/
+│   └── index.html
+├── starcoder2/
+│   └── index.html
+├── lfm2/
+│   └── index.html
+├── exaone/
+│   └── index.html
+├── zamba/
+│   └── index.html
+├── mythomax/
+│   └── index.html
+├── llama-guard/
+│   └── index.html
+├── vicuna/
+│   └── index.html
+├── openhermes/
+│   └── index.html
+├── bagel/
+│   └── index.html
+├── aquila/
+│   └── index.html
+├── pangu/
+│   └── index.html
+├── tigerbot/
+│   └── index.html
+├── noroma/
+│   └── index.html
+├── airoboros/
+│   └── index.html
+└── samantha/
+    └── index.html
+```
+
+---
+
+### Additional Recommended Folders (Outside `/menu`)
+
+```bash
+nocloudgpt-html/
+├── deploy/                    # Already included above
+├── tiny/                      # Happy Nerds / small models for 2GB Lightsail
+│   └── index.html
+├── vision/                    # Extra vision grouping if needed
+├── coding/                    # Extra coding grouping if needed
+├── embeddings/
+├── safety/
+├── models-catalog.md
+└── README.md
+```
+
+---
+
+### Ready-to-Use Prompt for Claude / ChatGPT
+
+Copy and paste this:
+
+```
+I need you to generate a complete professional website section under /menu for my NoCloudGPT project.
+
+Here is the full folder structure I need:
+
+[paste the entire tree above]
+
+Requirements for every family index.html:
+- 600-900 words of high-quality sales copy
+- Company background and philosophy
+- 2026 benchmark comparisons vs Llama 4, Qwen 3.5, DeepSeek-R1, Claude, GPT-4o, etc.
+- Ideal use cases and fine-tuning potential
+- Hardware / VRAM recommendations mapped to these Compute Tiers: Nano AI (1GB), Starter AI (2GB), Standard AI (4GB), Professional AI (8GB), Heavy AI (16GB+)
+- Strong NoCloudGPT deployment messaging + single-script install pitch
+- Use Tailwind CSS
+- Include a highlighted box: "Fast, efficient pre-built private AI" with link to deployment guide
+
+For individual model pages (e.g. llama3.1-8b.html), keep them shorter but still sales-focused with clear deployment recommendations.
+
+Start by generating the main menu/index.html and the first 10 families. Then continue family by family.
+```
+
+Would you like me to also give you a **clean flat list** version of all 70+ families for easier prompting?

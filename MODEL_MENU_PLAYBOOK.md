@@ -1,134 +1,183 @@
-MODEL_MENU_PLAYBOOK.md — NoCloudGPT /menu/ Catalog Standard
+# MODEL_MENU_PLAYBOOK.md — NoCloudGPT /menu/ Catalog Standard
 
-Critical path rule
+## Critical Path Rule
 
-The catalog pages are under /menu/, not /models/.
+The model catalog lives under **`/menu/`**, **not** `/models/`.
 
-Use /menu/[folder]/ paths.
+Use paths like:
+- `/menu/llama/`
+- `/menu/deepseek/`
+- `/menu/qwen/`
+- `/menu/gemma/`
 
-Core rule
+Never create or reference `/models/` paths.
 
-Family pages persuade and route.
+---
 
-Size/detail pages specify and validate.
+## Core Rule
 
-A /menu/ page should answer:
+- **Family pages** persuade and route buyers.
+- **Size/detail pages** specify technical details and validate deployment fit.
+
+Every `/menu/` family page should clearly answer:
 
 1. What is this model family good at?
 2. Who developed it?
 3. Who should choose it?
-4. What size range makes sense?
+4. What size range makes sense for different workloads?
 5. What NoCloudGPT deployment tier is realistic?
 
-Standard page sections
+---
 
-Important /menu/ pages should include:
+## Standard Page Sections (Recommended Order)
 
-1. Hero
-2. What this model family is
-3. Who developed it
-4. Why teams choose it
-5. Best-fit workloads
-6. Which size should you choose?
-7. Hardware and deployment reality
-8. When to choose another model
-9. Deploy this model with NoCloudGPT
-10. Related pages
-11. Artwork checklist
+Strong `/menu/` family pages should generally include:
 
-Batch 1 — flagship pages
+1. **Hero** — Buyer-focused headline + primary CTA
+2. **What this model family is** — Plain-English explanation
+3. **Who developed it** — Company / research group background
+4. **Why teams choose it** — 3–5 sales cards linking capability to buyer outcome
+5. **Best-fit workloads** — Specific, concrete examples
+6. **Which size should you choose?** — Tiered size guidance with NoCloudGPT mapping
+7. **Hardware and deployment reality** — Practical hardware guidance using Compute Tiers
+8. **When to choose another model** — Honest routing to better alternatives
+9. **Deploy this model with NoCloudGPT** — Strong CTA to quote + deployment options
+10. **Related pages** — Links to related families or important size pages
+11. **Artwork checklist** — Hero, sidebar, and developer artwork placeholders
 
-Heavy rewrite if needed:
+---
 
-* /menu/llama/
-* /menu/deepseek/
-* /menu/qwen/
-* /menu/gemma/
-* /menu/mistral/
-* /menu/phi/
-* /menu/gpt-oss/
-* /menu/granite/
-* /menu/nous-hermes/
-* /menu/mixtral/
-* /menu/codellama/
-* /menu/qwen2.5-coder/
-* /menu/deepseek-coder/
-* /menu/llava/
-* /menu/nomic-embed/
-* /menu/bge/
+## NoCloudGPT Two-Tier Language (Use Consistently)
 
-Batch 2 — high-value specialty pages
+Always distinguish between:
 
-Medium-heavy rewrite:
+- **Platform Tier** (Pilot, Sunrise, Hybrid, Professional, Enterprise)
+- **Compute Tier** (Nano AI, Starter AI, Standard AI, Professional AI, Heavy AI, Enterprise AI)
 
-* /menu/llama/
-* /menu/gemma/
-* /menu/qwen/
-* /menu/qwen2.5-coder/
-* /menu/mistral-family/
-* /menu/mistral/
-* /menu/codestral/
-* /menu/starcoder/
-* /menu/codegemma/
-* /menu/granite-code/
-* /menu/granite-embedding/
-* /menu/qwen-embedding/
-* /menu/embedding-gemma/
-* /menu/snowflake-arctic-embed/
+Never expose raw AWS pricing, vCPU counts, or transfer quotas on family pages.
 
-Batch 3 — developer, reasoning, enterprise
+---
 
-Medium rewrite:
+## Batch Priorities
 
-* /menu/deepseek/
-* /menu/deepseek-coder/
-* /menu/phi/
-* /menu/granite/
-* /menu/granite4/
-* /menu/granite-code/
-* /menu/command-r/
-* /menu/nemotron/
-* /menu/nemotron4/
-* /menu/glm/
-* /menu/glm5/
-* /menu/kimi/
-* /menu/minimax/
-* /menu/cogito/
-* /menu/magistral/
+### Batch 1 — Flagship Pages (Highest Impact)
+These should be brought to full standard first:
 
-Batch 4 — lightweight, legacy, niche
+- `/menu/llama/`
+- `/menu/deepseek/`
+- `/menu/qwen/`
+- `/menu/gemma/`
+- `/menu/mistral/`
+- `/menu/phi/`
+- `/menu/granite/`
+- `/menu/mixtral/`
+- `/menu/command-r/`
+- `/menu/llava/`
+- `/menu/nomic/`
+- `/menu/codellama/`
+- `/menu/qwen2.5-coder/`
+- `/menu/deepseek-coder/`
 
-Light-to-medium rewrite:
+### Batch 2 — High-Value Specialty Pages
+Medium priority:
 
-* /menu/tinyllama/
-* /menu/smollm/
-* /menu/orca-mini/
-* /menu/dolphin/
-* /menu/zephyr/
-* /menu/yi/
-* /menu/falcon/
-* /menu/olmo/
-* /menu/moondream/
-* /menu/minicpm-v/
-* /menu/bge/
-* /menu/nomic-embed/
-* /menu/all-minilm/
+- `/menu/gemma4/`
+- `/menu/gemma2/`
+- `/menu/phi4/`
+- `/menu/mistral-large/`
+- `/menu/mistral-small/`
+- `/menu/ministral/`
+- `/menu/pixtral/`
+- `/menu/qwen-vl/`
+- `/menu/qwen3.5/`
+- `/menu/starcoder2/`
+- `/menu/devstral/`
+- `/menu/llama4/`
+- `/menu/llama3.3/`
 
-Cursor batch instruction
+### Batch 3 — Developer, Reasoning & Enterprise
+Medium rewrite priority:
 
-Read AGENT.md, COPYWRITING.md, and this file first.
+- `/menu/granite4/`
+- `/menu/nemotron/`
+- `/menu/nemotron4/`
+- `/menu/glm/`
+- `/menu/glm5/`
+- `/menu/kimi/`
+- `/menu/minimax/`
+- `/menu/cogito/`
+- `/menu/jamba/`
+- `/menu/tulu/`
+- `/menu/dolphin/`
 
-Then inspect /menu/.
+### Batch 4 — Lightweight, Legacy & Niche
+Light-to-medium rewrite (many are currently thin or stub pages):
 
-Do not assume pages exist just because they are listed here. Verify folders before editing.
+- `/menu/tiny/`
+- `/menu/smollm/`
+- `/menu/tinyllama/`
+- `/menu/zephyr/`
+- `/menu/yi/`
+- `/menu/falcon/`
+- `/menu/olmo/`
+- `/menu/aya/`
+- `/menu/solar/`
+- `/menu/wizardlm/`
+- `/menu/vicuna/`
+- `/menu/openhermes/`
+- `/menu/mythomax/`
+- `/menu/llama-guard/`
+- `/menu/nous/`
+- `/menu/baichuan/`
+- `/menu/internlm/`
+- `/menu/exaone/`
+- `/menu/zamba/`
+- `/menu/lfm2/`
+- `/menu/reka/`
+- `/menu/paligemma/`
+- `/menu/recurrentgemma/`
+- `/menu/seallm/`
+- `/menu/openclaw/`
+- `/menu/snowball/`
+- `/menu/noroma/`
+- `/menu/bagel/`
+- `/menu/aquila/`
+- `/menu/pangu/`
+- `/menu/tigerbot/`
+- `/menu/airoboros/`
+- `/menu/samantha/`
 
-For each edited page:
+---
 
-* preserve existing structure when possible
-* improve weak copy
-* add missing buyer guidance
-* add deployment caveats
-* preserve CTAs
-* mark uncertain facts with VERIFY:
-* do not invent benchmark numbers
-* do not invent partnerships
+## Cursor / Agent Workflow Instruction
+
+Before editing any page:
+
+1. Read `AGENT.md`, `COPYWRITING.md`, and this playbook.
+2. Inspect the actual folder under `/menu/`.
+3. Do **not** assume a page exists just because it is listed here.
+
+For every page you edit:
+
+- Preserve existing structure when possible (least invasive useful change).
+- Improve weak or missing sections.
+- Add buyer guidance and deployment caveats.
+- Preserve working CTAs and navigation.
+- Mark uncertain facts with `VERIFY:` comments.
+- **Do not invent benchmark numbers or partnerships.**
+- Use the voice defined in `COPYWRITING.md`.
+
+---
+
+## Definition of Done for a Family Page
+
+A `/menu/` family page is considered complete when it:
+
+- Clearly answers the five core questions above
+- Uses the standard section structure
+- Has correct `/menu/` paths and canonicals
+- Contains honest routing in the “When to choose another model” section
+- Has a strong NoCloudGPT deployment CTA
+- Uses the two-tier pricing language correctly
+- Has artwork placeholders where images are missing
+- Contains no invented benchmarks or claims

@@ -1,42 +1,67 @@
 # NoCloudGPT Website
 
-This repository contains the public HTML, CSS, and supporting files for the NoCloudGPT website.
+This repository contains the public website for **NoCloudGPT** — a private AI deployment platform that helps businesses and individuals run powerful open-source models on infrastructure they control.
 
-## Main pages
+## What is NoCloudGPT?
 
-- `index.html` — YC-GPT homepage
-- `index-nc.html` — NC-GPT page
-- `services.html` — technical services
-- `pricing.html` — pricing and deployment paths
-- `software.html` — software suite overview
-- `contact.html` — contact form
+NoCloudGPT makes private AI simple. It provides a **single-script deployment** experience using Ollama + OpenWebUI, so users can run ChatGPT-style interfaces privately without becoming Linux administrators or paying ongoing API fees.
 
-## Products featured
+The platform focuses on:
+- True data privacy (nothing leaves your server)
+- Simple one-command installation
+- Clear guidance on which models to use
+- Flexible deployment (on-premise or private cloud)
 
-### YC-GPT
-Your Cloud GPT.  
-A cloud-oriented AI deployment path designed for faster rollout, simpler packaging, and cloud-hosted product offerings.
+## Site Structure
 
-### NC-GPT
-No Cloud GPT.  
-A private, no-cloud deployment path for organizations that want AI on infrastructure they control directly.
+| Path                    | Purpose                                      |
+|-------------------------|----------------------------------------------|
+| `index.html`            | Main homepage                                |
+| `/menu/`                | Model family catalog (70+ families)          |
+| `/deploy/`              | Deployment guides (including 90-day pilot)   |
+| `pricing.html`          | Platform tiers + Compute tiers               |
+| `quote.html`            | Interactive quote builder                    |
+| `contact.html`          | Contact form                                 |
 
-## Technical notes
+## Current Focus
 
-This site currently uses:
+We are building a high-quality, **buyer-focused model catalog** under `/menu/`.
 
-- static HTML
-- shared `styles.css`
-- `sitemap.xml`
-- `robots.txt`
+Every model family page is designed to answer:
+1. What is this model family good at?
+2. Who should choose it?
+3. What NoCloudGPT deployment tier makes sense?
+
+The site emphasizes **simplicity and honesty**:
+- Clear hardware recommendations using intuitive labels (Nano AI, Starter AI, Standard AI, Professional AI, Heavy AI)
+- No raw AWS pricing or confusing infrastructure details on family pages
+- Strong focus on real-world use cases instead of technical hype
+
+## 90-Day Free Pilot
+
+Small business owners can launch a fully private AI instance on **AWS Lightsail** at no cost for the first 90 days using our guided deployment process.
+
+## Technology
+
+- Static HTML + Tailwind CSS
+- Mobile-friendly, clean design
 - Formspree for contact handling
+- SEO-optimized with proper metadata and canonical URLs
+
+## Important Documentation
+
+Before editing catalog pages, please read:
+
+- `AGENT.md` — Agent / Cursor editing instructions
+- `COPYWRITING.md` — Sales voice and preferred language
+- `MODEL_MENU_PLAYBOOK.md` — Page structure standards and batch priorities
+
+All model catalog work should be done under the `/menu/` directory.
 
 ## Domain
 
-The site is published at:
-
-`https://nocloudgpt.com`
+Live site: [https://nocloudgpt.com](https://nocloudgpt.com)
 
 ## Status
 
-Active website repository for NoCloudGPT product and services pages.
+Active development. The model catalog under `/menu/` is the current priority.
