@@ -30,7 +30,18 @@
       <span class="bg-green-900 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">Apache 2.0 Expected</span>
       <span class="bg-purple-900 text-purple-300 text-xs font-semibold px-3 py-1 rounded-full">Enterprise Roadmap</span>
     </div>
-    <h1 class="text-4xl font-bold mb-4">IBM Granite 4: The Next Generation of Private Enterprise AI</h1>
+    
+            <img
+        src="/models/granite4/hero.webp"
+        alt="IBM Granite 4 — next-generation enterprise AI with NoCloudGPT"
+        width="1200" height="600"
+        class="mt-8 mb-6 w-full max-w-xs rounded-2xl object-cover"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+      />
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
+        [Granite 4 hero artwork]
+      </div>
+      <h1 class="text-4xl font-bold mb-4">IBM Granite 4: The Next Generation of Private Enterprise AI</h1>
     <p class="text-xl text-gray-400 mb-8">
       IBM's Granite family has established itself as the most enterprise-credible open-weight AI series available today. Granite 4 will carry that foundation forward — deeper reasoning, extended context, enhanced compliance tooling, and the same commitment to transparency and Apache 2.0 licensing that makes Granite deployable in regulated industries where other models cannot go.
     </p>
@@ -500,6 +511,33 @@
       <a href="/models/" class="hover:text-gray-300">All Models</a>
     </div>
   </footer>
+
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
+      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="font-semibold text-slate-400">Hero image</p>
+          <p class="mt-1">AI-generated abstract artwork created for NoCloudGPT. Original work, no third-party license required.</p>
+          <!-- TODO: Replace with licensed photo when available -->
+          <!-- Unsplash reference: https://unsplash.com/s/photos/enterprise-technology -->
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Developer reference</p>
+          <p class="mt-1">Granite 4 is developed by <a href="https://www.ibm.com/granite" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">IBM Research</a>. NoCloudGPT is an independent deployment service not affiliated with IBM Research.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Model catalog reference</p>
+          <p class="mt-1">See the <a href="https://ollama.com/library/granite4" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Ollama library page for Granite 4</a> for current model tags.</p>
+          <!-- card.webp, sidebar.webp, og.webp: TODO — see models/artwork-sources.md -->
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>

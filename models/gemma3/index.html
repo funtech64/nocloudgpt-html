@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gemma 3 — Google DeepMind's Multilingual Reasoning Model | NoCloudGPT</title>
+  <meta name="description" content="Deploy Gemma 3 privately with NoCloudGPT. Strong multilingual reasoning and structured output in 1B–27B sizes — no data leaves your infrastructure.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/gemma3/">
+  <meta property="og:title" content="Gemma 3 — Private Multilingual AI | NoCloudGPT">
+  <meta property="og:description" content="Run Gemma 3 on your own server. Multilingual reasoning, improved instruction following, 1B to 27B sizes.">
+  <meta property="og:image" content="/models/gemma3/og.webp">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <img
+        src="/models/gemma3/hero.webp"
+        alt="Gemma 3 — multilingual reasoning AI privately deployed with NoCloudGPT"
+        width="1200" height="600"
+        class="mt-8 mb-6 w-full max-w-xs rounded-2xl object-cover"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+      />
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
+        [Gemma 3 hero artwork]
+      </div>
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Gemma 3</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+        Google's Third-Generation Open AI — Stronger Multilingual Reasoning, Same Private Control
+      </h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">
+        Gemma 3 improves on Gemma 2 with stronger multilingual performance, better instruction
+        following, and improved structured output — available at 1B, 4B, 12B, and 27B sizes.
+        Deploy any tier privately on your own server. No data leaves your infrastructure.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-400">
+        VERIFY: Confirm current Gemma 3 Ollama tags and hardware requirements before deployment.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+        <a href="/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <div class="grid gap-10 lg:grid-cols-[1.55fr_0.95fr]">
+      <div class="space-y-10">
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">What this model is</p>
+          <h2 class="mt-3 text-3xl font-black">Google's Recommended General-Purpose Gemma Generation</h2>
+          <p class="mt-5 text-slate-300">
+            Gemma 3 is Google DeepMind's third-generation open-weight model, refining the instruction
+            following, multilingual depth, and structured output that made Gemma 2 popular. Available
+            at 1B, 4B, 12B, and 27B parameter counts, it covers the full range from minimal pilot
+            hardware to GPU-assisted professional deployments.
+          </p>
+          <p class="mt-4 text-slate-300">
+            For most organizations evaluating a general-purpose private AI assistant, Gemma 3 at 9B–12B
+            on a Standard AI instance (4–8 GB) is the current recommended starting point in the Gemma family.
+          </p>
+        </section>
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
+          <h2 class="mt-3 text-3xl font-black">What to Use Gemma 3 For</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Business writing and communications</h3><p class="mt-3 text-sm text-slate-400">Document drafting, HR policy assistants, email generation, and summarization — private, on your server.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Multilingual document work</h3><p class="mt-3 text-sm text-slate-400">30+ language coverage for international organizations handling correspondence across multiple languages.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Internal Q&A and policy assistants</h3><p class="mt-3 text-sm text-slate-400">Staff knowledge base access, HR policy lookup, and compliance Q&A without routing queries externally.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Analysis and research support</h3><p class="mt-3 text-sm text-slate-400">Analytical reasoning on documents, research synthesis, and structured output for professional work.</p></div>
+          </div>
+        </section>
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Hardware and deployment</p>
+          <h2 class="mt-3 text-3xl font-black">Deployment Tiers</h2>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200"><tr><th class="px-4 py-3">Size</th><th class="px-4 py-3">Tier</th><th class="px-4 py-3">Best use</th></tr></thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3 font-semibold text-white">1B – 4B</td><td class="px-4 py-3">Starter AI (2–4 GB)</td><td class="px-4 py-3">Pilots, edge, simple tasks</td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">12B Q4</td><td class="px-4 py-3">Standard AI (8 GB)</td><td class="px-4 py-3">Everyday private AI — recommended</td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">27B Q4</td><td class="px-4 py-3">Professional AI (GPU)</td><td class="px-4 py-3">Stronger reasoning and analysis</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4 text-sm text-slate-400">VERIFY: Confirm exact Gemma 3 Ollama tags and RAM requirements before deployment planning.</p>
+        </section>
+        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
+          <h2 class="mt-3 text-3xl font-black">Start Your Private Gemma 3 Deployment</h2>
+          <p class="mt-5 text-slate-300">NoCloudGPT configures Gemma 3 on your Lightsail instance or on-premise server with Ollama and OpenWebUI. Most installations live within one business day.</p>
+          <div class="mt-6 grid gap-4 sm:grid-cols-3">
+            <a href="/quote.html" class="rounded-2xl bg-cyan-300 p-5 text-center font-bold text-slate-950 hover:bg-cyan-200">Build your quote</a>
+            <a href="/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">90-day pilot</a>
+            <a href="/deploy/on-premise.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">On-premise install</a>
+          </div>
+        </section>
+      </div>
+      <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-7">
+          <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Quick reference</p>
+          <h2 class="mt-3 text-2xl font-black">Gemma 3 deployment</h2>
+          <dl class="mt-5 space-y-3 text-sm">
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Developer</dt><dd class="font-semibold text-white">Google DeepMind</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Sizes</dt><dd class="font-semibold text-white">1B, 4B, 12B, 27B</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Starter tier</dt><dd class="font-semibold text-white">Starter AI (2 GB)</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">VERIFY: Gemma ToU</dd></div>
+            <div class="flex justify-between"><dt class="text-slate-400">Vision</dt><dd class="font-semibold text-white">Not in base</dd></div>
+          </dl>
+          <a href="/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build a Gemma 3 quote</a>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/gemma/">Gemma family overview</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/gemma2/">Gemma 2 — proven baseline</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/gemma4/">Gemma 4 — vision generation</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/phi4/">Phi-4 — alternative small model</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
+      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="font-semibold text-slate-400">Hero image</p>
+          <p class="mt-1">AI-generated abstract artwork created for NoCloudGPT. Original work, no third-party license required.</p>
+          <!-- TODO: Replace with licensed photo when available -->
+          <!-- Unsplash reference: https://unsplash.com/s/photos/multimodal-ai -->
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Developer reference</p>
+          <p class="mt-1">Gemma 3 is developed by <a href="https://deepmind.google/models/gemma/" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Google DeepMind</a>. NoCloudGPT is an independent deployment service not affiliated with Google DeepMind.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Model catalog reference</p>
+          <p class="mt-1">See the <a href="https://ollama.com/library/gemma3" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Ollama library page for Gemma 3</a> for current model tags.</p>
+          <!-- card.webp, sidebar.webp, og.webp: TODO — see models/artwork-sources.md -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT is an independent deployment service. Not affiliated with Google, Google DeepMind, or any model developer referenced on this page.</p>
+  </footer>
+</body>
+</html>
