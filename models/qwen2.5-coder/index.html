@@ -1,89 +1,339 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Qwen2.5-Coder: Private AI Code Assistant for Every Team Size | NoCloudGPT</title>
-  <meta name="description" content="Run Qwen2.5-Coder on your own hardware. Scales from a 1.5B laptop model to a 32B team GPU — one code model family for every deployment scenario, fully private." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qwen2.5 Coder — Private Coding AI for Software Teams | NoCloudGPT</title>
+  <meta name="description" content="Deploy Qwen2.5 Coder privately with NoCloudGPT. Alibaba's dedicated coding model delivers strong code generation, review, and debugging across 40+ languages — on your own infrastructure.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/qwen2.5-coder/">
+  <meta property="og:title" content="Qwen2.5 Coder — Private Coding AI | NoCloudGPT">
+  <meta property="og:description" content="Run Qwen2.5 Coder on your own server. Strong private coding assistant across Python, JavaScript, Go, SQL, and 40+ languages — from 1.5B to 72B sizes.">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100">
 
-<article>
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-  <h1>Qwen2.5-Coder: One Code Model Family That Scales From Laptop to Production</h1>
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
 
-  <p>Most organizations run into the same problem: the code model that fits a developer's laptop is too weak for team use, and the model that produces quality output requires expensive cloud API access. <strong>Qwen2.5-Coder eliminates that tradeoff.</strong> With sizes from 0.5B to 32B — all available through <code>ollama run qwen2.5-coder</code> — this is the only code model family you need to evaluate, deploy, and standardize on across your entire engineering organization.</p>
+      <!-- TODO: /assets/models/qwen2.5-coder/qwen-coder-hero.webp — 480×180 recommended -->
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+        [Qwen2.5 Coder hero artwork — 480×180]
+      </div>
 
-  <p>Every model in the family shares the same instruction-tuned architecture, 128K context window, and training coverage across Python, JavaScript, TypeScript, Java, C++, Go, Rust, and more than 80 additional languages. A developer testing on a laptop and a team sharing a GPU instance are running the same family, with the same prompt behavior, and the same output format. That consistency matters when you are building internal tooling, enforcing code review workflows, or integrating with IDE plugins across a team.</p>
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Qwen2.5 Coder Family</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+        Private Coding AI That Scales From Tiny Pilots to Production Teams
+      </h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">
+        Qwen2.5 Coder is Alibaba Cloud's dedicated coding model, built specifically for
+        code generation, debugging, explanation, and review. Available from 1.5B to 72B
+        parameters — the widest size range of any current coding family — all running
+        privately on infrastructure you own.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-400">
+        Your source code stays on your server. No data routed through cloud AI providers
+        by default. 40+ programming languages supported. No per-token billing.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+        <a href="/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </section>
 
-  <h2>What Qwen2.5-Coder Does Well</h2>
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <div class="grid gap-10 lg:grid-cols-[1.55fr_0.95fr]">
+      <div class="space-y-14">
 
-  <p>Qwen2.5-Coder is trained for the full range of coding tasks developers actually face, not just autocomplete:</p>
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">What this model family is</p>
+          <h2 class="mt-3 text-3xl font-black">Alibaba's Purpose-Built Coding Model — The Widest Private Coding Size Ladder Available</h2>
+          <p class="mt-5 text-slate-300">
+            Qwen2.5 Coder is a family of large language models from Alibaba Cloud trained
+            specifically on code. Built on the Qwen2.5 base and fine-tuned on a large corpus
+            of programming data across 40+ languages, the family delivers strong performance on
+            code generation, completion, debugging, and explanation tasks.
+          </p>
+          <p class="mt-4 text-slate-300">
+            What distinguishes Qwen2.5 Coder from other coding model families is its size range:
+            available at 1.5B, 3B, 7B, 14B, 32B, and 72B parameters, it gives organizations a
+            genuine upgrade path from a minimal pilot — running on a 2 GB instance — to a
+            production deployment on GPU hardware, without switching families, tooling, or prompts.
+          </p>
+          <p class="mt-4 text-slate-300">
+            VERIFY: Confirm current Qwen2.5 Coder Ollama tags and available sizes before
+            publishing, as the model family continues to be updated by Alibaba Cloud.
+          </p>
+        </section>
 
-  <ul>
-    <li><strong>Code generation:</strong> Write functions, classes, and modules from natural language descriptions with high accuracy across Python, JS/TS, and compiled languages</li>
-    <li><strong>Code repair:</strong> Paste a broken function, describe the error, and receive a corrected version with an explanation of what changed and why</li>
-    <li><strong>Code explanation:</strong> Turn unfamiliar codebases, legacy scripts, or third-party libraries into plain-English documentation your team can actually use</li>
-    <li><strong>Test generation:</strong> Generate unit tests, edge case coverage, and mock structures for existing functions without leaving your editor</li>
-    <li><strong>Fill-in-the-middle (FIM) completion:</strong> Inline completion that understands surrounding context, not just the line above the cursor</li>
-    <li><strong>128K context window:</strong> Load entire files, multiple modules, or a full API spec into a single prompt — available at every model size</li>
-  </ul>
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
+          <h2 class="mt-3 text-3xl font-black">Alibaba Cloud — Qwen Research Team</h2>
+          <!-- TODO: /assets/models/qwen2.5-coder/qwen-coder-developer.webp — 320×80 recommended -->
+          <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+            [Alibaba Cloud / Qwen — developer badge artwork]
+          </div>
+          <p class="mt-6 text-slate-300">
+            Qwen2.5 Coder is developed by the Qwen team at Alibaba Cloud, the cloud computing
+            and AI research division of Alibaba Group. The same team produces the Qwen general
+            language model family, Qwen VL for vision, and Qwen embedding models — making
+            Alibaba Cloud one of the most productive open-weight AI research organizations.
+          </p>
+          <p class="mt-4 text-slate-300">
+            VERIFY: Confirm current Qwen2.5 Coder license terms — earlier Qwen releases used
+            custom community licenses; terms have been updated across generations.
+            Confirm commercial use conditions before production deployment.
+          </p>
+          <p class="mt-4 text-slate-300">
+            NoCloudGPT is independent of Alibaba Cloud. We help organizations run Qwen2.5
+            Coder on their own infrastructure using Ollama.
+          </p>
+        </section>
 
-  <p>On standard coding benchmarks including HumanEval, MBPP, and MultiPL-E, the 7B and larger variants of Qwen2.5-Coder match or exceed models that were considered large-model territory twelve months ago. The 32B variant produces output quality that competes with frontier API models on structured generation, refactoring, and multi-file reasoning tasks.</p>
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Why teams choose it</p>
+          <h2 class="mt-3 text-3xl font-black">Four Reasons to Choose Qwen2.5 Coder for Private Deployment</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">1. The widest size range of any coding family</h3>
+              <p class="mt-3 text-slate-400">
+                From 1.5B for a minimal edge pilot to 72B for a production GPU deployment —
+                all in the same family with the same prompt format and tooling. Organizations
+                that start small and grow don't need to switch models or retrain their workflow.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">2. 40+ language coverage</h3>
+              <p class="mt-3 text-slate-400">
+                Python, JavaScript, TypeScript, Go, Rust, Java, SQL, C/C++, PHP, Bash, and
+                many more. Full-stack development teams or polyglot codebases don't need
+                different models per language.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">3. Source code stays private</h3>
+              <p class="mt-3 text-slate-400">
+                Developers using GitHub Copilot or Cursor route their code through external
+                inference. With Qwen2.5 Coder on your server, your codebase never leaves
+                your infrastructure — important for startups, agencies under NDAs, and
+                teams with competitive or client-sensitive code.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">4. Strong multilingual code performance</h3>
+              <p class="mt-3 text-slate-400">
+                Qwen2.5 Coder inherits strong multilingual capability from the Qwen base.
+                Documentation, comments, and code explanations in multiple natural languages
+                alongside code. Useful for international development teams.
+              </p>
+            </div>
+          </div>
+        </section>
 
-  <h2>Who Should Deploy Qwen2.5-Coder</h2>
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
+          <h2 class="mt-3 text-3xl font-black">What to Use Qwen2.5 Coder For</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Code generation and completion</h3>
+              <p class="mt-3 text-sm text-slate-400">Generate functions, classes, API integrations, and boilerplate across 40+ languages. Works well for both small code snippets and larger structured generation tasks.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Private code review</h3>
+              <p class="mt-3 text-sm text-slate-400">Review pull requests, find bugs, identify security issues, and suggest refactors — all within your infrastructure with no source code leaving the server.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Code explanation and documentation</h3>
+              <p class="mt-3 text-sm text-slate-400">Explain unfamiliar codebases, generate inline documentation, write README files, and produce technical specifications from existing code.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Debugging and test generation</h3>
+              <p class="mt-3 text-sm text-slate-400">Identify and fix bugs in existing code. Generate unit tests and integration tests for functions and classes. Useful for teams building CI/test coverage.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">SQL and data engineering</h3>
+              <p class="mt-3 text-sm text-slate-400">Write and optimize SQL queries, build data pipelines, and produce ETL logic. Strong SQL performance alongside application code support makes it useful for data teams.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Tiny-pilot coding deployments</h3>
+              <p class="mt-3 text-sm text-slate-400">The 1.5B and 3B variants let small teams or individual developers test private coding AI on a minimal instance before committing to larger infrastructure investment.</p>
+            </div>
+          </div>
+        </section>
 
-  <p>The size range makes this model family relevant to a wider set of organizations than any single-size code model:</p>
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Which size should you choose?</p>
+          <h2 class="mt-3 text-3xl font-black">Matching Qwen2.5 Coder Size to Your Development Team</h2>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <h3 class="text-lg font-bold text-white">1.5B – 3B — Nano/Starter AI</h3>
+                <span class="rounded-full bg-slate-700 px-3 py-1 text-xs font-bold text-slate-200">Pilot / Edge</span>
+              </div>
+              <p class="mt-3 text-slate-400">
+                Runs on a 2–4 GB instance. Fast and lightweight. Best for testing private coding
+                AI on minimal hardware, embedding in applications, or constrained environments.
+                Output quality is limited for complex tasks — good for simple completions and
+                focused single-language workflows.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <h3 class="text-lg font-bold text-white">7B – 14B — Standard AI</h3>
+                <span class="rounded-full bg-cyan-800 px-3 py-1 text-xs font-bold text-cyan-100">Practical default</span>
+              </div>
+              <p class="mt-3 text-slate-400">
+                The recommended starting point for most development teams. Runs on 8–16 GB
+                instances. Handles code generation, review, and explanation at production
+                quality for common languages. The 14B provides noticeably better quality
+                for complex, multi-file reasoning.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <h3 class="text-lg font-bold text-white">32B – 72B — Professional/Heavy AI</h3>
+                <span class="rounded-full bg-violet-800 px-3 py-1 text-xs font-bold text-violet-100">Production teams</span>
+              </div>
+              <p class="mt-3 text-slate-400">
+                Strong performance on complex architectural questions, large codebase analysis,
+                and demanding code generation tasks. Requires GPU hardware (20 GB+ VRAM at Q4
+                for 32B; 40 GB+ for 72B). Right for engineering teams that use coding AI
+                heavily and need the highest output quality.
+              </p>
+            </div>
+          </div>
+        </section>
 
-  <ul>
-    <li><strong>Individual developers and consultants</strong> who want a capable offline assistant that runs on existing hardware without a GPU</li>
-    <li><strong>Engineering teams of 5–20</strong> that need a shared inference endpoint, consistent output quality, and no per-seat API costs</li>
-    <li><strong>CTOs and engineering managers</strong> standardizing their toolchain across environments — laptop, CI server, and shared GPU — without managing multiple model families</li>
-    <li><strong>Organizations in regulated industries</strong> — finance, healthcare, defense contracting — where source code cannot leave the network perimeter under any circumstances</li>
-    <li><strong>Companies building internal developer tools</strong> that require a reliable, self-hosted inference backend with predictable latency and no rate limits</li>
-  </ul>
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Honest guidance</p>
+          <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model Instead</h2>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">You need strong general reasoning alongside coding</h3>
+              <p class="mt-2 text-sm text-slate-400">
+                If your team needs a model for both coding and general business work, the Qwen
+                general family may be a better single deployment than a coding-specialized model.
+                <a href="/models/qwen/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Qwen →</a>
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">You want to compare coding model options</h3>
+              <p class="mt-2 text-sm text-slate-400">
+                Code Llama, DeepSeek Coder, and Codestral are all strong alternatives.
+                NoCloudGPT can help you compare options for your specific language stack
+                and hardware budget before committing to an install.
+                <a href="/models/codellama/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Code Llama →</a>
+              </p>
+            </div>
+          </div>
+        </section>
 
-  <h2>Deployment Tiers and Compute Requirements</h2>
+        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
+          <h2 class="mt-3 text-3xl font-black">Start Your Private Qwen2.5 Coder Deployment</h2>
+          <p class="mt-5 text-slate-300">
+            NoCloudGPT installs Qwen2.5 Coder on your Lightsail instance or on-premise server,
+            configures Ollama and OpenWebUI, and selects the right size for your team's hardware
+            and development workflow. Most installations are live within one business day.
+          </p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <a href="/quote.html" class="rounded-2xl bg-cyan-300 p-5 text-center font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+            <a href="/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+            <a href="/deploy/on-premise.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+          </div>
+        </section>
 
-  <p>Every size below runs with <code>ollama run qwen2.5-coder</code> and the appropriate tag. Ollama handles quantization selection automatically when you pull by size tag.</p>
+      </div>
 
-  <h3>Edge and Offline — 1.5B or 3B Q4 (2–4GB RAM, CPU only)</h3>
-  <p>The 1.5B and 3B variants run on any modern laptop with 4GB of available RAM — no GPU required. Response quality is limited compared to larger sizes, but both models handle single-function generation, explanation tasks, and short completion prompts without cloud access. Ideal for air-gapped environments, field work, or developers who want a private assistant on hardware they already own. Pull with <code>ollama run qwen2.5-coder:1.5b</code> or <code>ollama run qwen2.5-coder:3b</code>.</p>
+      <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
 
-  <h3>Daily Driver — 7B Q4 (4–6GB RAM, CPU or entry GPU)</h3>
-  <p>The 7B variant is the recommended starting point for most individual developers. At Q4 quantization it requires 4–6GB of RAM and runs at usable speed on CPU, or significantly faster on any GPU with 6GB or more of VRAM. This size handles multi-function generation, code repair with explanation, and test generation at a quality level that replaces most paid API usage for day-to-day tasks. Pull with <code>ollama run qwen2.5-coder:7b</code>.</p>
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-7">
+          <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Quick reference</p>
+          <h2 class="mt-3 text-2xl font-black">Qwen2.5 Coder deployment</h2>
+          <p class="mt-3 text-sm text-cyan-50">Private coding AI from pilot to production. 1.5B to 72B — the widest size range of any coding family.</p>
+          <dl class="mt-5 space-y-3 text-sm">
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Developer</dt>
+              <dd class="font-semibold text-white">Alibaba Cloud</dd>
+            </div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Type</dt>
+              <dd class="font-semibold text-white">Code-specialized LLM</dd>
+            </div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Sizes</dt>
+              <dd class="font-semibold text-white">1.5B – 72B</dd>
+            </div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Languages</dt>
+              <dd class="font-semibold text-white">40+ supported</dd>
+            </div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">License</dt>
+              <dd class="font-semibold text-white">VERIFY: Qwen license</dd>
+            </div>
+            <div class="flex justify-between">
+              <dt class="text-slate-400">Starter tier</dt>
+              <dd class="font-semibold text-white">Nano AI (2–4 GB)</dd>
+            </div>
+          </dl>
+          <a href="/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build a Qwen Coder quote</a>
+        </div>
 
-  <h3>Team Shared — 14B Q4 (AWS g4dn.xlarge, T4 16GB VRAM)</h3>
-  <p>The 14B variant is the practical choice for teams of 5–10 sharing a single inference endpoint. On an AWS <code>g4dn.xlarge</code> instance running a T4 GPU with 16GB VRAM, expect 15–30 tokens per second at Q4 — fast enough for interactive IDE use across multiple concurrent users. This tier handles complex refactoring, multi-file context, and API integration tasks that push the limits of 7B models. Monthly cost on a reserved <code>g4dn.xlarge</code> runs approximately $200–280 USD, compared to $800–1,200 in API costs for a team of that size at equivalent usage volume. Pull with <code>ollama run qwen2.5-coder:14b</code>.</p>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-300">
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Code generation and completion</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Private code review</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Debugging and error analysis</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Documentation and test generation</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> SQL and data engineering</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> 40+ programming language support</li>
+          </ul>
+        </div>
 
-  <h3>Production Grade — 32B Q4 (A10G or RTX 4090, 24GB VRAM)</h3>
-  <p>The 32B variant delivers output quality that competes with frontier API models on the tasks that matter most: large-scale refactoring, architecture-level reasoning, documentation generation for complex codebases, and multi-step agentic workflows. It requires a GPU with 24GB of VRAM — an AWS <code>g5.xlarge</code> with an A10G, an on-premise RTX 4090, or equivalent. At Q4 quantization, expect 10–20 tokens per second in single-user mode and 5–10 tokens per second under moderate concurrent load. This is the tier for organizations that have outgrown 7B and 13B models and need production-grade output without cloud API dependency. Pull with <code>ollama run qwen2.5-coder:32b</code>.</p>
+        <!-- TODO: /assets/models/qwen2.5-coder/qwen-coder-card.webp — 300×128 recommended -->
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Model artwork</h3>
+          <div class="mt-4 flex h-32 w-full items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-950 text-xs text-slate-500 text-center px-4">
+            [Qwen2.5 Coder card artwork<br>300×128 recommended]
+          </div>
+        </div>
 
-  <h2>The Real Cost of Cloud Code APIs</h2>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/qwen/">Qwen — general multilingual AI</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/codellama/">Code Llama — Meta's coding model</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deepseek-coder/">DeepSeek Coder — strong coding performance</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/codestral/">Codestral — Mistral's code specialist</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/deploy/lightsail-guide.html">90-day Lightsail pilot guide</a></li>
+          </ul>
+        </div>
 
-  <p>Every line of code you send to a cloud API is a line of code that leaves your network. For most organizations, that means source code, internal function names, database schemas, proprietary algorithms, and business logic are being transmitted to and potentially stored by a third-party provider. Most enterprise API agreements do not provide the contractual protections that regulated industries, government contractors, or IP-sensitive companies require.</p>
+      </aside>
+    </div>
+  </main>
 
-  <p>Beyond compliance risk, the cost structure of cloud code APIs scales directly with usage. A team of ten developers using an AI assistant heavily will generate $800–1,500 per month in API costs — every month, indefinitely, with no asset being built. A self-hosted Qwen2.5-Coder deployment on a reserved GPU instance costs a fraction of that, builds internal infrastructure expertise, and gives your organization complete control over model version, data handling, and uptime.</p>
-
-  <h2>Integration and Workflow Compatibility</h2>
-
-  <p>Qwen2.5-Coder running through Ollama integrates with the same tools your team already uses:</p>
-
-  <ul>
-    <li><strong>Continue</strong> (VS Code / JetBrains extension) — point the backend URL at your Ollama instance and every developer on the team gets IDE-native code completion and chat</li>
-    <li><strong>Cursor</strong> — configure as a custom model endpoint for teams that have standardized on Cursor</li>
-    <li><strong>OpenWebUI</strong> — browser-based chat interface for developers who prefer a ChatGPT-style interaction without the IDE plugin</li>
-    <li><strong>LangChain / LlamaIndex</strong> — use Qwen2.5-Coder as the reasoning backbone for internal agentic workflows, code review bots, or documentation pipelines</li>
-    <li><strong>Ollama API</strong> — drop-in compatible with OpenAI's API format, meaning any tool built against the OpenAI SDK works against your private instance with a single endpoint change</li>
-  </ul>
-
-  <h2>Why Standardize on One Family</h2>
-
-  <p>Most organizations evaluating private code models end up running experiments across Code Llama, CodeGemma, Codestral, and others before settling on a deployment. That process has a hidden cost: every model family has different prompt behavior, different context handling, and different output formatting. Teams that standardize on Qwen2.5-Coder get a single model family that covers every hardware tier from a developer laptop to a shared production GPU, with consistent behavior at every size. There is no migration when hardware improves. There is no retraining of prompt templates when moving from the 7B to the 14B. You scale up the hardware and pull the next size tag.</p>
-
-  <p><strong>If you are evaluating private code model deployment and want to run one family across your entire organization, Qwen2.5-Coder is the most rational starting point available today.</strong></p>
-
-</article>
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Alibaba Cloud or any model developer referenced on this page.</p>
+  </footer>
 
 </body>
 </html>
