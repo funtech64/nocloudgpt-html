@@ -2,18 +2,20 @@ AGENT.md — NoCloudGPT Cursor Instructions
 
 You are editing the NoCloudGPT website.
 
-The model catalog lives under /menu/, not /models/.
+The model catalog lives under /models/, not /menu/.
+The /menu/ directory no longer exists — it was renamed to /models/ in June 2026.
 
 When referring to model-family pages, use paths like:
 
-* /menu/deepseek/
-* /menu/qwen/
-* /menu/llama/
-* /menu/gemma/
-* /menu/mistral/
-* /menu/phi/
+* /models/deepseek/
+* /models/qwen/
+* /models/llama/
+* /models/gemma/
+* /models/mistral/
+* /models/phi/
 
-Do not invent /models/ paths unless the repo actually contains them.
+Do not use /menu/ paths. Always use /models/ paths.
+Do not invent /menu/ paths that no longer exist.
 
 Mission
 

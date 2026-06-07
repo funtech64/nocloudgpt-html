@@ -3,136 +3,327 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Command R Models — Private AI Built Specifically for Business Workflows | NoCloudGPT</title>
-  <meta name="description" content="Deploy Cohere's Command R and Command R Plus privately with NoCloudGPT. The only open model family designed specifically for RAG, tool use, and enterprise workflow automation.">
-  <link rel="canonical" href="https://nocloudgpt.com/menu/command-r/">
+  <title>Command R Models — Private Enterprise RAG and Retrieval AI | NoCloudGPT</title>
+  <meta name="description" content="Deploy Cohere's Command R and Command R+ privately with NoCloudGPT. Enterprise-grade retrieval-augmented generation, tool use, and long-context document work on your own server.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/command-r/">
+  <meta property="og:title" content="Command R — Private Enterprise RAG AI | NoCloudGPT">
+  <meta property="og:description" content="Run Command R or Command R+ privately. RAG-optimized, tool-calling, 128K context — built for document retrieval and enterprise workflows on infrastructure you control.">
+  <meta property="og:type" content="website">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-950 text-slate-100">
+
   <header class="border-b border-slate-800 bg-slate-950">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="../index.html" class="text-sm font-semibold text-cyan-300">← Back to model menu</a>
-      <p class="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Command R Family</p>
-      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Command R — The Only Open Model Built From the Ground Up for Business</h1>
-      <p class="mt-6 max-w-3xl text-lg text-slate-300">Cohere designed Command R specifically for enterprise deployment: retrieval-augmented generation, tool use, multi-step agent workflows, and grounded response generation with citations — all running privately on your infrastructure.</p>
-      <div class="mt-8 flex flex-wrap gap-3">
-        <a href="../quote.html" class="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
-        <a href="../deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day Lightsail pilot</a>
-        <a href="../deploy/on-premise.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
-      </div>
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
+      </nav>
     </div>
   </header>
 
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+
+      <!-- TODO: /assets/models/command-r/command-r-hero.webp — 480×180 recommended -->
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+        [Command R model family hero artwork — 480×180]
+      </div>
+
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Command R Model Family</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+        Private Enterprise RAG — Document Retrieval and Tool Use on Your Own Server
+      </h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">
+        Command R and Command R+ are Cohere's open-weight models designed for enterprise
+        retrieval-augmented generation, tool calling, and long-context document analysis.
+        Optimized for the workflows that need answers grounded in your internal documents —
+        running privately on infrastructure you control.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-400">
+        128K context window. Built-in grounding and citation. Tool calling support.
+        No data routed through Cohere's cloud by default when deployed through NoCloudGPT.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+        <a href="/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </section>
+
   <main class="mx-auto max-w-6xl px-6 py-12">
-    <section class="grid gap-8 lg:grid-cols-[1.55fr_0.95fr]">
-      <article class="rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10">
-        <p class="text-slate-300">Most open models are general-purpose systems fine-tuned for instruction following. Command R is different. Cohere designed the Command R family specifically for enterprise deployment patterns: retrieval-augmented generation, tool use, multi-step agent workflows, and grounded response generation with citations. This is not a research model adapted for business. It is a business model, full stop.</p>
-        <p class="mt-4 text-slate-300">On NoCloudGPT, Command R and Command R Plus run privately on your infrastructure, giving you Cohere's enterprise-grade workflow capability without routing your documents, customer data, or business logic through any external API.</p>
+    <div class="grid gap-10 lg:grid-cols-[1.55fr_0.95fr]">
+      <div class="space-y-14">
 
-        <h2 class="mt-10 text-3xl font-black">Where Command R Consistently Delivers</h2>
-        <div class="mt-6 grid gap-4 md:grid-cols-2">
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <h3 class="text-xl font-bold text-cyan-200">Retrieval-augmented generation built in</h3>
-            <p class="mt-3 text-slate-400">Command R was purpose-built for RAG pipelines. It handles document grounding with better reliability and citation accuracy than models not designed for this pattern — answering from your documents, not from general training data.</p>
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">What this model family is</p>
+          <h2 class="mt-3 text-3xl font-black">An Enterprise AI Built for Retrieval, Grounding, and Tool-Calling Workflows</h2>
+          <p class="mt-5 text-slate-300">
+            Command R is a family of open-weight models from Cohere built specifically for
+            enterprise RAG workflows, retrieval-augmented generation, and agentic tool use.
+            Unlike general-purpose chat models, Command R is designed to ground its answers
+            in retrieved source documents, cite its sources explicitly, and make reliable
+            tool calls in structured pipelines.
+          </p>
+          <p class="mt-4 text-slate-300">
+            The family is available in two primary variants: Command R (35B) for efficient
+            production RAG workloads, and Command R+ (104B) for the highest-quality retrieval
+            and reasoning tasks. Both carry 128K context windows — enough to include large
+            document collections in a single context without chunking.
+          </p>
+          <p class="mt-4 text-slate-300">
+            VERIFY: Confirm current Command R Ollama tags, available sizes, and current
+            Cohere license terms (CC-BY-NC for some variants) before production deployment.
+            License terms affect commercial use eligibility and should be reviewed carefully.
+          </p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
+          <h2 class="mt-3 text-3xl font-black">Cohere</h2>
+          <!-- TODO: /assets/models/command-r/command-r-developer.webp — 320×80 recommended -->
+          <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+            [Cohere — developer badge artwork]
           </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <h3 class="text-xl font-bold text-cyan-200">Tool use and agentic workflows</h3>
-            <p class="mt-3 text-slate-400">Command R Plus supports structured tool calling, enabling it to act as the reasoning core of automated workflows — calling functions, processing results, and taking sequential actions for scheduling, data lookup, and process automation.</p>
+          <p class="mt-6 text-slate-300">
+            Command R is developed by Cohere, a Toronto-based AI company focused on enterprise
+            language AI. Cohere's research emphasis has been on retrieval, embeddings, and
+            grounded generation — the technical foundation that makes Command R particularly
+            strong for RAG workflows and structured document analysis.
+          </p>
+          <p class="mt-4 text-slate-300">
+            Cohere releases Command R weights publicly for research and non-commercial use.
+            VERIFY: Confirm current license terms for Command R and Command R+ — commercial
+            use conditions are subject to change and must be verified before production
+            deployment. Some variants carry CC-BY-NC restrictions.
+          </p>
+          <p class="mt-4 text-slate-300">
+            NoCloudGPT is an independent deployment service. We are not affiliated with,
+            endorsed by, or partnered with Cohere. We help organizations run Command R
+            on their own infrastructure using Ollama.
+          </p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Why teams choose it</p>
+          <h2 class="mt-3 text-3xl font-black">What Makes Command R Different for Enterprise Workflows</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Grounded, citable answers from your documents</h3>
+              <p class="mt-3 text-slate-400">
+                Command R is specifically trained to answer questions based on retrieved
+                source documents and to cite which passage each answer comes from. For
+                legal, compliance, and research teams that need auditable, source-linked
+                answers — not hallucinated summaries — this is a meaningful practical difference.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Tool calling and agentic pipelines</h3>
+              <p class="mt-3 text-slate-400">
+                Command R supports native tool calling — the ability to invoke database queries,
+                APIs, and search functions as part of a multi-step workflow. For organizations
+                building AI agents that retrieve, analyze, and act on internal data, Command R's
+                tool-calling reliability is a production advantage over general-purpose models.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">128K context for large document collections</h3>
+              <p class="mt-3 text-slate-400">
+                The long context window means you can include multiple retrieved documents,
+                conversation history, and system prompt in a single inference call — without
+                the chunking complexity that causes RAG pipelines to lose cross-document context.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Private internal knowledge base search</h3>
+              <p class="mt-3 text-slate-400">
+                Paired with a private embedding model and vector store, Command R becomes
+                the reasoning layer of a fully private enterprise knowledge base. Staff ask
+                natural-language questions; Command R retrieves and synthesizes answers
+                from your internal documents — nothing routed through external APIs.
+              </p>
+            </div>
           </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <h3 class="text-xl font-bold text-cyan-200">Grounded, citation-ready responses</h3>
-            <p class="mt-3 text-slate-400">Command R is trained to cite its sources when operating over retrieved documents. For compliance-sensitive industries where AI outputs must be auditable and traceable, this is a significant operational advantage.</p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
+          <h2 class="mt-3 text-3xl font-black">What to Use Command R For</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Private RAG and internal knowledge bases</h3>
+              <p class="mt-3 text-sm text-slate-400">The backbone model for enterprise RAG systems. Retrieves answers from internal document collections, policies, and knowledge bases with source citations and minimal hallucination drift.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Contract and legal document Q&A</h3>
+              <p class="mt-3 text-sm text-slate-400">Lawyers and compliance teams feed contract collections into Command R and ask structured questions — with cited answers that trace back to the specific clauses that support each response.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Tool-calling agents and automation</h3>
+              <p class="mt-3 text-sm text-slate-400">AI agents that orchestrate multi-step processes — querying databases, calling internal APIs, reading policy files, and synthesizing results — benefit from Command R's reliable tool-calling behavior.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Research and intelligence synthesis</h3>
+              <p class="mt-3 text-sm text-slate-400">Analysts who need to synthesize large collections of source documents into structured reports, with cited passages that support each analytical conclusion.</p>
+            </div>
           </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <h3 class="text-xl font-bold text-cyan-200">Long document understanding</h3>
-            <p class="mt-3 text-slate-400">Command R processes full contracts, research papers, technical specifications, and policy documents in a single pass — extracting relevant information accurately with clear attribution to source sections.</p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Which size should you choose?</p>
+          <h2 class="mt-3 text-3xl font-black">Command R vs Command R+</h2>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <h3 class="text-lg font-bold text-white">Command R (35B) — Professional AI</h3>
+                <span class="rounded-full bg-cyan-800 px-3 py-1 text-xs font-bold text-cyan-100">Practical default</span>
+              </div>
+              <p class="mt-3 text-slate-400">
+                The standard production RAG model. Handles most enterprise document Q&A,
+                tool-calling pipelines, and retrieval workflows on professional GPU hardware.
+                Requires approximately 20–24 GB VRAM at Q4. VERIFY: Confirm exact RAM requirements.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <h3 class="text-lg font-bold text-white">Command R+ (104B) — Enterprise AI</h3>
+                <span class="rounded-full bg-violet-800 px-3 py-1 text-xs font-bold text-violet-100">Maximum quality</span>
+              </div>
+              <p class="mt-3 text-slate-400">
+                The flagship. Significantly stronger reasoning on complex multi-step retrieval
+                tasks. Requires multi-GPU or on-premise hardware. Right for organizations where
+                retrieval accuracy is mission-critical and hardware investment is justified.
+                VERIFY: Confirm R+ Ollama availability and exact RAM requirements.
+              </p>
+            </div>
           </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Honest guidance</p>
+          <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model Instead</h2>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">Your use case is general chat, writing, or summarization</h3>
+              <p class="mt-2 text-sm text-slate-400">
+                Command R is optimized for RAG and retrieval. For general business writing,
+                Q&A, and daily assistant work, Llama or Qwen deliver better results at lower
+                hardware cost.
+                <a href="/models/llama/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Llama →</a>
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">You need only embeddings, not a generative RAG layer</h3>
+              <p class="mt-2 text-sm text-slate-400">
+                For private document search without a generative answer layer, a dedicated
+                embedding model is more efficient and easier to deploy.
+                <a href="/models/nomic-embed/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Nomic Embed →</a>
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">License terms are a barrier for your use case</h3>
+              <p class="mt-2 text-sm text-slate-400">
+                VERIFY Command R's current license before commercial deployment. If commercial
+                use is restricted, Llama 3.1 and Mistral Nemo offer strong RAG capability
+                under clearer permissive licensing.
+                <a href="/models/mistral/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Mistral →</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
+          <h2 class="mt-3 text-3xl font-black">Start Your Private Command R Deployment</h2>
+          <p class="mt-5 text-slate-300">
+            NoCloudGPT configures Command R on your GPU instance or on-premise server,
+            installs Ollama and OpenWebUI, and helps you design your RAG pipeline architecture.
+            We handle the infrastructure — your team focuses on the document collections and
+            workflows that make the system useful.
+          </p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <a href="/quote.html" class="rounded-2xl bg-cyan-300 p-5 text-center font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+            <a href="/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+            <a href="/deploy/on-premise.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
+
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-7">
+          <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Quick reference</p>
+          <h2 class="mt-3 text-2xl font-black">Command R deployment</h2>
+          <p class="mt-3 text-sm text-cyan-50">Enterprise RAG and retrieval AI. Grounded answers with citations. Tool calling. 128K context. Private deployment on your GPU or on-premise hardware.</p>
+          <dl class="mt-5 space-y-3 text-sm">
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Developer</dt>
+              <dd class="font-semibold text-white">Cohere</dd>
+            </div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Models</dt>
+              <dd class="font-semibold text-white">R (35B), R+ (104B)</dd>
+            </div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Context</dt>
+              <dd class="font-semibold text-white">128K tokens</dd>
+            </div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">License</dt>
+              <dd class="font-semibold text-white">VERIFY: Check Cohere ToU</dd>
+            </div>
+            <div class="flex justify-between">
+              <dt class="text-slate-400">Min. tier</dt>
+              <dd class="font-semibold text-white">Professional AI (GPU)</dd>
+            </div>
+          </dl>
+          <a href="/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build a Command R quote</a>
         </div>
 
-        <h2 class="mt-10 text-3xl font-black">Who Should Be Running Command R</h2>
-        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Companies building internal knowledge bases</h3>
-        <p class="mt-3 text-slate-300">Teams that need staff to ask questions and receive answers grounded in company documentation rather than general AI training data will find Command R's RAG capability makes this reliable and auditable. Staff get accurate answers drawn from current, company-approved sources — not hallucinated general knowledge.</p>
-        <p class="mt-4 text-slate-300">NoCloudGPT can configure Command R alongside a vector database such as ChromaDB or Qdrant as a complete private RAG stack. Contact us for a full architecture quote.</p>
-
-        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Operations and process automation teams</h3>
-        <p class="mt-3 text-slate-300">Teams that want to build multi-step AI agents without the complexity of chaining multiple models will find Command R Plus handles tool use natively, reducing integration overhead significantly. Calendar management, CRM updates, data extraction workflows, and form completion can all be driven by a single Command R Plus deployment.</p>
-
-        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Legal, compliance, and financial services</h3>
-        <p class="mt-3 text-slate-300">Teams that need AI-assisted document review with traceable source citations have a clear case for Command R. When a compliance officer asks why the model flagged a clause, Command R can point to the exact document section that triggered the finding. That auditability is not available from models that blend sources without attribution.</p>
-        <p class="mt-4 text-slate-300">Everything runs on infrastructure you control. Client documents never touch a third-party server under any circumstances.</p>
-
-        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Customer success and support teams</h3>
-        <p class="mt-3 text-slate-300">Building knowledge-grounded response tools on Command R ensures support staff and automated responses draw from current, company-approved documentation. When products change, update the document store — the AI answers update accordingly without retraining.</p>
-
-        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Management consultants and research analysts</h3>
-        <p class="mt-3 text-slate-300">Producing client deliverables under confidentiality agreements requires AI tools that demonstrably do not expose client information. Command R running on your infrastructure provides that assurance architecturally, not just by policy.</p>
-
-        <h2 class="mt-10 text-3xl font-black">Hardware and Deployment Reality for Command R</h2>
-        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
-          <table class="w-full text-left text-sm">
-            <thead class="bg-slate-950 text-cyan-200">
-              <tr>
-                <th class="px-4 py-3">Model</th>
-                <th class="px-4 py-3">Recommended instance</th>
-                <th class="px-4 py-3">Best use</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-900 text-slate-300">
-              <tr><td class="px-4 py-3 font-semibold text-white">Command R 35B Q4</td><td class="px-4 py-3">8 GB Lightsail or entry GPU</td><td class="px-4 py-3">Strong RAG performance, manageable cost</td></tr>
-              <tr><td class="px-4 py-3 font-semibold text-white">Command R Plus 104B Q4</td><td class="px-4 py-3">Large GPU instance</td><td class="px-4 py-3">Maximum capability for complex agentic workflows</td></tr>
-              <tr><td class="px-4 py-3 font-semibold text-white">Command R + vector DB</td><td class="px-4 py-3">Contact for architecture</td><td class="px-4 py-3">Full private RAG stack with ChromaDB or Qdrant</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h2 class="mt-10 text-3xl font-black">Why Going Larger Is Directly Justified Here</h2>
-        <p class="mt-5 text-slate-300">Command R is one of the few models where the case for Command R Plus over the base model is straightforward. Tool use and multi-step reasoning quality improve meaningfully at the 104B scale. For organizations building production agentic workflows where the model needs to reason through sequential steps and call external functions reliably, the larger model pays for itself in reduced error rates and fewer failed workflows.</p>
-        <p class="mt-4 text-slate-300">For straightforward RAG and document Q&A without agent functionality, the base Command R 35B at Q4 quantization handles most production workloads reliably at significantly lower infrastructure cost.</p>
-
-        <h2 class="mt-10 text-3xl font-black">Deploy Command R on Your Infrastructure</h2>
-        <p class="mt-5 text-slate-300">NoCloudGPT configures Command R or Command R Plus on your Lightsail instance or on-premise server. RAG stack deployments including vector database configuration are available — contact us for architecture guidance.</p>
-        <div class="mt-6 grid gap-3 md:grid-cols-3">
-          <a href="../quote.html" class="rounded-2xl bg-cyan-300 p-5 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
-          <a href="../deploy/lightsail-guide.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Start the 90-day Lightsail pilot</a>
-          <a href="../deploy/on-premise.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Request on-premise installation</a>
-        </div>
-      </article>
-
-      <aside class="space-y-6">
-        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-8">
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">Command R deployment</p>
-          <h2 class="mt-3 text-3xl font-black">Private AI designed for enterprise workflows</h2>
-          <p class="mt-4 text-cyan-50">Choose Command R for RAG and document grounding, or Command R Plus for full agentic tool use and complex multi-step workflow automation.</p>
-          <a href="../quote.html" class="mt-6 inline-block rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build a Command R quote</a>
-        </div>
-        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
-          <h3 class="text-xl font-bold">Best-fit workloads</h3>
-          <ul class="mt-4 space-y-3 text-slate-300">
-            <li>Internal knowledge base Q&A with citations</li>
-            <li>Contract and compliance document review</li>
-            <li>Multi-step agentic process automation</li>
-            <li>Customer support knowledge grounding</li>
-            <li>Private RAG stack over company documents</li>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-300">
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Private RAG and knowledge base Q&amp;A</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Document retrieval with citations</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Tool-calling agents and automation</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Contract and legal document Q&amp;A</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Research and intelligence synthesis</li>
           </ul>
         </div>
-        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
-          <h3 class="text-xl font-bold">Related pages</h3>
-          <ul class="mt-4 space-y-3 text-slate-300">
-            <li><a class="text-cyan-300" href="../mixtral/index.html">Mixtral — high-capacity private AI</a></li>
-            <li><a class="text-cyan-300" href="../mistral-family/index.html">Mistral Large, Medium, Small</a></li>
-            <li><a class="text-cyan-300" href="../deploy/lightsail-guide.html">Lightsail setup guide</a></li>
-            <li><a class="text-cyan-300" href="../deploy/on-premise.html">On-premise Linux guide</a></li>
+
+        <!-- TODO: /assets/models/command-r/command-r-card.webp — 300×128 recommended -->
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Model artwork</h3>
+          <div class="mt-4 flex h-32 w-full items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-950 text-xs text-slate-500 text-center px-4">
+            [Command R card artwork<br>300×128 recommended]
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/nomic-embed/">Nomic Embed — private embeddings for RAG</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/bge/">BGE — enterprise embedding models</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/llama/">Llama — general-purpose private AI</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/mistral/">Mistral — long-context document work</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/deploy/on-premise.html">On-premise GPU installation</a></li>
           </ul>
         </div>
+
       </aside>
-    </section>
+    </div>
   </main>
 
-  <footer class="mt-16 border-t border-slate-800 bg-slate-950">
-    <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-slate-500">
-      <p>© 2025 NoCloudGPT. Private AI deployment on Amazon Lightsail and on-premise Linux servers.</p>
-      <p class="mt-2"><a href="../../index.html" class="text-cyan-400 hover:text-cyan-300">Home</a> · <a href="../index.html" class="text-cyan-400 hover:text-cyan-300">Model menu</a> · <a href="../quote.html" class="text-cyan-400 hover:text-cyan-300">Get a quote</a></p>
-    </div>
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Cohere or any model developer referenced on this page.</p>
   </footer>
+
 </body>
 </html>

@@ -1,45 +1,267 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aya Model Family on NoCloudGPT: Deploy Multilingual Open AI Locally</title>
-    <meta name="description" content="Run Aya 8B/23B/35B (Cohere's top multilingual LLMs) on NoCloudGPT. 100+ languages, outperforms GPT-3.5 non-English. Lightsail pilots from $10/mo.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aya Models — Private Multilingual AI for Global Teams | NoCloudGPT</title>
+  <meta name="description" content="Deploy Cohere's Aya privately with NoCloudGPT. Open-weight multilingual AI covering 100+ languages — for international businesses, translation workflows, and global teams on your own infrastructure.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/aya/">
+  <meta property="og:title" content="Aya — Private Multilingual AI | NoCloudGPT">
+  <meta property="og:description" content="Run Aya on your own server. 100+ language coverage for international businesses and global teams — no data leaves your infrastructure.">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Deploy Aya: Cohere's Open Multilingual Powerhouse Family</h1>
-    <p>Aya (Exponential Language Models) from Cohere are Apache 2.0 open-source LLMs excelling in 101+ languages. Aya 23 tops XTREME-R leaderboard for low-resource langs like Swahili/Yoruba, beating closed models in translation/Q&A. Perfect for global apps without API costs.</p>
+<body class="bg-slate-950 text-slate-100">
 
-    <h2>What Aya Excels At</h2>
-    <ul>
-        <li><strong>Multilingual mastery:</strong> Non-English instruction, translation, cultural nuance.</li>
-        <li><strong>Chat/reasoning:</strong> Cross-lingual summarization, code in Hindi/Arabic.</li>
-        <li><strong>Efficiency:</strong> Matches Llama-3 8B in English while dominating global tasks.</li>
-    </ul>
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-    <h2>Aya Model Recommendations</h2>
-    <table>
-        <tr><th>Variant</th><th>Params</th><th>VRAM (Q4)</th><th>Best For</th></tr>
-        <tr><td>Aya 8B</td><td>8B</td><td>6GB</td><td>Edge/low-cost cloud; quick multilingual chat.</td></tr>
-        <tr><td>Aya 23B</td><td>23B</td><td>16GB</td><td>Balanced production; top non-English benchmarks.</td></tr>
-        <tr><td>Aya 35B</td><td>35B</td><td>24GB</td><td>High-accuracy enterprise RAG/agents.</td></tr>
-    </table>
-    <p><strong>Pro Tip:</strong> Start with Aya 23B Instruct—80% of Llama 70B quality at 1/3 hardware cost.</p>
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
 
-    <h2>Who Should Deploy Aya</h2>
-    <p><strong>Business/Professional:</strong> E-commerce in LATAM/Africa, NGOs, support teams saving $5K+/yr on APIs.</p>
-    <p><strong>Personal/Homelab:</strong> Language hobbyists, indie devs localizing apps.</p>
-    <p><em>Real Example:</em> African startup uses Aya 8B for Swahili customer queries—95% accuracy, zero latency.</p>
+      <!-- TODO: /assets/models/aya/aya-hero.webp — 480×180 recommended -->
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+        [Aya model family hero artwork — 480×180]
+      </div>
 
-    <h2>NoCloudGPT Deployment Guide</h2>
-    <table>
-        <tr><th>Setup</th><th>Hardware</th><th>Perf (t/s)</th><th>Cost</th></tr>
-        <tr><td>Small Cloud</td><td>Lightsail t4g.medium (16GB RAM)</td><td>25-45 (8B/23B)</td><td>$20/mo</td></tr>
-        <tr><td>Local Linux</td><td>RTX 3060/4070 (24GB VRAM)</td><td>40-60</td><td>One-time</td></tr>
-        <tr><td>GPU On-Prem</td><td>A100 40GB</td><td>80+ (35B)</td><td>Scale</td></tr>
-    </table>
-    <p>Integrate via Ollama/vLLM. Fine-tune on your data with LoRA (1-2GB extra VRAM). <strong>Pros:</strong> Uncensored, fast. <strong>Cons:</strong> Weaker in ultra-niche dialects vs. closed APIs.</p>
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Aya Model Family</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+        Multilingual Private AI Covering 100+ Languages — for Global Businesses and International Teams
+      </h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">
+        Aya is Cohere's open-weight multilingual model family, built to provide strong
+        language coverage for non-English languages that most AI models underserve.
+        With coverage spanning 100+ languages including many low-resource ones, Aya is
+        the private AI choice for organizations with genuinely global operations.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-400">
+        Runs privately on your own server via Ollama. No multilingual content routed
+        through external translation or AI APIs.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+        <a href="/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </section>
 
-    <p><a href="/menu/quote.html">Build Custom Quote</a> | <a href="/menu/deploy/#lightsail">Start 90-Day Lightsail Pilot ($10/mo)</a> | <a href="/menu/deploy/#on-prem">Full On-Prem Guide</a></p>
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <div class="grid gap-10 lg:grid-cols-[1.55fr_0.95fr]">
+      <div class="space-y-14">
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">What this model family is</p>
+          <h2 class="mt-3 text-3xl font-black">An Open-Weight Model Built for Genuinely Multilingual AI Work</h2>
+          <p class="mt-5 text-slate-300">
+            Aya is a family of open-weight multilingual language models developed by Cohere.
+            The Aya project started as a research initiative involving thousands of researchers
+            worldwide building multilingual instruction data for underrepresented languages —
+            languages that other AI models treat as afterthoughts. The resulting models cover
+            100+ languages with training data quality that reflects genuine multilingual depth,
+            not just English translated into other languages.
+          </p>
+          <p class="mt-4 text-slate-300">
+            For organizations with operations, customers, or content across multiple languages —
+            particularly in regions that major AI providers underserve — Aya provides better
+            output quality in those languages than general-purpose English-primary models.
+          </p>
+          <p class="mt-4 text-slate-300">
+            VERIFY: Confirm current Aya model versions (Aya Expanse, Aya 23, etc.), available
+            Ollama tags, license terms, and exact language coverage before publishing or deployment.
+          </p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
+          <h2 class="mt-3 text-3xl font-black">Cohere — Aya Initiative</h2>
+          <!-- TODO: /assets/models/aya/aya-developer.webp — 320×80 recommended -->
+          <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+            [Cohere / Aya — developer badge artwork]
+          </div>
+          <p class="mt-6 text-slate-300">
+            Aya was developed by Cohere For AI, Cohere's nonprofit research organization,
+            in collaboration with a large open research community. The Aya initiative aimed
+            to address the significant gap in multilingual AI quality for underrepresented
+            languages by building high-quality instruction datasets through community
+            contribution and then training models on that data.
+          </p>
+          <p class="mt-4 text-slate-300">
+            VERIFY: Confirm current Aya license terms — some Aya models are released under
+            CC-BY-NC (non-commercial) and others under different terms. License conditions
+            must be verified before commercial deployment.
+          </p>
+          <p class="mt-4 text-slate-300">
+            NoCloudGPT is independent of Cohere. We help organizations deploy Aya on their
+            own infrastructure using Ollama.
+          </p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Why teams choose it</p>
+          <h2 class="mt-3 text-3xl font-black">The Private Multilingual AI Argument</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Language coverage that actually reflects global operations</h3>
+              <p class="mt-3 text-slate-400">Organizations with teams or customers in regions where Swahili, Hindi, Arabic, Portuguese, or other non-Western languages are primary communication channels find Aya significantly more useful than English-first general models at those languages.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Private multilingual content without translation APIs</h3>
+              <p class="mt-3 text-slate-400">Teams that currently route multilingual content through Google Translate or DeepL before sending it to an AI model can consolidate into a single private Aya deployment — no external API calls for either translation or AI assistance.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Support for underrepresented languages</h3>
+              <p class="mt-3 text-slate-400">NGOs, international development organizations, education providers, and government bodies working in languages that commercial AI providers de-prioritize find Aya's coverage meaningful for their specific operational contexts.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Research-grade multilingual data provenance</h3>
+              <p class="mt-3 text-slate-400">The Aya dataset was built through a transparent community research process with documented multilingual contributors. For organizations that care about training data provenance for their multilingual AI, Aya has clearer documentation than most alternatives.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
+          <h2 class="mt-3 text-3xl font-black">What to Use Aya For</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Multilingual customer support</h3>
+              <p class="mt-3 text-sm text-slate-400">Respond to customer inquiries in their native language across a wide range of languages from a single private deployment — without cloud translation or AI API dependencies.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">International document translation assistance</h3>
+              <p class="mt-3 text-sm text-slate-400">Help international teams draft, translate, and summarize documents in multiple languages, particularly in languages where general-purpose models produce poor results.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Low-resource language workflows</h3>
+              <p class="mt-3 text-sm text-slate-400">Organizations working in Swahili, Yoruba, Amharic, or other languages commonly underserved by commercial AI find Aya significantly more capable than English-first alternatives at comparable sizes.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">NGO and international development work</h3>
+              <p class="mt-3 text-sm text-slate-400">Organizations working in global health, education, or development contexts often need AI tools that understand and produce text in dozens of local languages — Aya's coverage is the best match for this context.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Hardware and deployment reality</p>
+          <h2 class="mt-3 text-3xl font-black">Deployment Tiers for Aya</h2>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model variant</th>
+                  <th class="px-4 py-3">NoCloudGPT tier</th>
+                  <th class="px-4 py-3">Best use</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Aya 8B / 35B (VERIFY)</td>
+                  <td class="px-4 py-3">Standard/Professional AI</td>
+                  <td class="px-4 py-3">Everyday multilingual work, customer communication</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Larger variants</td>
+                  <td class="px-4 py-3">Heavy/Enterprise AI</td>
+                  <td class="px-4 py-3">Higher-quality multilingual reasoning and analysis</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4 text-sm text-slate-400">VERIFY: Confirm exact Aya model sizes, Ollama tags, and RAM requirements before deployment planning.</p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Honest guidance</p>
+          <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model Instead</h2>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">Your primary use case is English or major European languages</h3>
+              <p class="mt-2 text-sm text-slate-400">For English-primary work, Llama, Qwen, or Mistral offer stronger general capability and broader ecosystems. Aya's advantage is most pronounced in non-Western and low-resource languages. <a href="/models/qwen/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Qwen →</a></p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">License terms restrict your commercial use case</h3>
+              <p class="mt-2 text-sm text-slate-400">VERIFY Aya's current license terms before commercial deployment. Some variants carry non-commercial restrictions. For multilingual commercial use, Qwen also provides strong multilingual coverage under more permissive terms. <a href="/models/qwen/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Qwen →</a></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
+          <h2 class="mt-3 text-3xl font-black">Start Your Private Multilingual AI Deployment</h2>
+          <p class="mt-5 text-slate-300">NoCloudGPT installs Aya on your Lightsail instance or on-premise server, configures Ollama and OpenWebUI, and verifies current model availability and license terms before your pilot begins.</p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <a href="/quote.html" class="rounded-2xl bg-cyan-300 p-5 text-center font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+            <a href="/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+            <a href="/deploy/on-premise.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-7">
+          <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Quick reference</p>
+          <h2 class="mt-3 text-2xl font-black">Aya deployment</h2>
+          <p class="mt-3 text-sm text-cyan-50">Open-weight multilingual AI. 100+ language coverage for global businesses and international teams.</p>
+          <dl class="mt-5 space-y-3 text-sm">
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Developer</dt>
+              <dd class="font-semibold text-white">Cohere For AI</dd>
+            </div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Type</dt>
+              <dd class="font-semibold text-white">Multilingual LLM</dd>
+            </div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Languages</dt>
+              <dd class="font-semibold text-white">100+ (VERIFY)</dd>
+            </div>
+            <div class="flex justify-between">
+              <dt class="text-slate-400">License</dt>
+              <dd class="font-semibold text-white">VERIFY: Check Cohere ToU</dd>
+            </div>
+          </dl>
+          <a href="/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build an Aya quote</a>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-300">
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Multilingual customer support</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> International document translation</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Low-resource language workflows</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> NGO and international development</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Global team communication</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/qwen/">Qwen — multilingual and broad scale</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/mistral/">Mistral — European multilingual AI</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/falcon/">Falcon — Arabic and multilingual AI</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/deploy/lightsail-guide.html">Lightsail pilot guide</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Cohere, Cohere For AI, or any model developer referenced on this page.</p>
+  </footer>
+
 </body>
 </html>
