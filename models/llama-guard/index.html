@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Llama Guard — Private AI Content Moderation | NoCloudGPT</title>
+  <meta name="description" content="Deploy Llama Guard privately with NoCloudGPT. Meta's content safety classifier for AI pipelines — input and output moderation without routing content to external APIs.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/llama-guard/">
+  <meta property="og:title" content="Llama Guard — Private Safety AI | NoCloudGPT">
+  <meta property="og:description" content="Deploy Llama Guard privately with NoCloudGPT. Meta's content safety classifier for AI pipelines — input and output moderation without routing content to external APIs.">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+        <!-- TODO: /assets/models/llama-guard/llamaguard-hero.webp -->[Llama Guard — hero artwork 480×180]
+      </div>
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Llama Guard</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Private AI Safety and Content Moderation — Inline Guardrails Without External APIs</h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">Llama Guard is Meta's family of content safety classification models designed for inline use in AI pipelines. It screens inputs and outputs against safety taxonomies — flagging harmful content, policy violations, and unsafe AI responses — all running on your own infrastructure without routing sensitive content through external moderation APIs.</p>
+      <p class="mt-4 max-w-3xl text-slate-400">The current generation is Llama Guard 3. See the dedicated Llama Guard 3 page for full deployment guidance. VERIFY: Confirm current Ollama tags before deployment.</p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+        <a href="/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <div class="grid gap-10 lg:grid-cols-[1.55fr_0.95fr]">
+      <div class="space-y-14">
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
+          <h2 class="mt-3 text-3xl font-black">Meta AI Research</h2>
+          <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+            <!-- TODO: /assets/models/llama-guard/llamaguard-developer.webp -->[Meta AI Research — developer badge]
+          </div>
+          <p class="mt-6 text-slate-300">Llama Guard was released by Meta AI Research alongside the Llama 3 family as an open-source safety layer for AI deployments. The current Llama Guard 3 supports a broad taxonomy of safety categories and is designed to work alongside Llama and other generative models as an inline classification layer.</p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Why teams choose it</p>
+          <h2 class="mt-3 text-3xl font-black">Fast, Efficient Pre-Built Private AI</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6"><h3 class="text-lg font-bold text-cyan-200">No content leaves your infrastructure</h3><p class="mt-3 text-slate-400">Cloud content moderation services process every flagged input on external servers. Llama Guard running on your server means your users' inputs and your model's outputs are moderated privately.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6"><h3 class="text-lg font-bold text-cyan-200">Inline pipeline integration</h3><p class="mt-3 text-slate-400">Deploy as a pre-inference input filter and post-inference output filter alongside your primary generative model — the dual-layer architecture that robust AI governance requires.</p></div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
+          <h2 class="mt-3 text-3xl font-black">What to Use Llama Guard For</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Input safety screening</h3><p class="mt-3 text-sm text-slate-400">Screen user prompts before they reach your primary generative model.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Output moderation</h3><p class="mt-3 text-sm text-slate-400">Verify model responses before they are returned to users — catching policy violations the input filter alone cannot prevent.</p></div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Hardware and deployment reality</p>
+          <h2 class="mt-3 text-3xl font-black">Deployment Tiers</h2>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200"><tr><th class="px-4 py-3">Model</th><th class="px-4 py-3">Tier</th><th class="px-4 py-3">Use</th></tr></thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3 font-semibold text-white">Llama Guard 3 8B Q4</td><td class="px-4 py-3">Standard AI (4–8 GB)</td><td class="px-4 py-3">Input/output moderation — see Llama Guard 3 page</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Honest guidance</p>
+          <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model</h2>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">See the dedicated Llama Guard 3 page</h3><p class="mt-2 text-sm text-slate-400">Full deployment guidance, taxonomy details, and hardware requirements are on the Llama Guard 3 page. <a href="/models/llama-guard-3/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Llama Guard 3 →</a></p></div>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
+          <h2 class="mt-3 text-3xl font-black">Start Your Private Llama Guard Deployment</h2>
+          <p class="mt-5 text-slate-300">NoCloudGPT configures Llama Guard as an inline safety layer alongside your primary generative model deployment. See the Llama Guard 3 page for full details.</p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <a href="/quote.html" class="rounded-2xl bg-cyan-300 p-5 text-center font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+            <a href="/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+            <a href="/deploy/on-premise.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+          </div>
+        </section>
+      </div>
+
+      <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-7">
+          <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Quick reference</p>
+          <h2 class="mt-3 text-2xl font-black">Llama Guard deployment</h2>
+          <p class="mt-3 text-sm text-cyan-50">Meta's open-source content safety classifier. Inline guardrails for AI pipelines without routing content through external moderation APIs.</p>
+          <dl class="mt-5 space-y-3 text-sm">
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Developer</dt><dd class="font-semibold text-white">Meta AI Research</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Current gen</dt><dd class="font-semibold text-white">Llama Guard 3</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Type</dt><dd class="font-semibold text-white">Safety classifier</dd></div>
+            <div class="flex justify-between"><dt class="text-slate-400">See also</dt><dd class="font-semibold text-white">/models/llama-guard-3/</dd></div>
+          </dl>
+          <a href="/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build a Llama Guard quote</a>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-300">
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Input safety screening</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Output moderation</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Inline pipeline guardrails</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/llama-guard-3/">Llama Guard 3 — full guidance</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/shieldgemma/">ShieldGemma — Google safety model</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/granite-guardian/">Granite Guardian — IBM safety</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/gpt-oss/">GPT-OSS — content moderation</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT is an independent deployment service. Not affiliated with Meta AI or any model developer referenced on this page.</p>
+  </footer>
+</body>
+</html>
