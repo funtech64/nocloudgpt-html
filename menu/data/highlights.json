@@ -1,0 +1,132 @@
+{
+  "updated": "2026-05-28",
+  "catalog": "NoCloudGPT private AI model menu",
+  "deployment_paths": [
+    "90-day pilot",
+    "private cloud",
+    "on-premise"
+  ],
+  "featured_models": [
+    {
+      "slug": "llama",
+      "name": "Llama",
+      "use_case": "general Llama deployments",
+      "summary": "Meta-oriented open weight chat, reasoning, and assistant deployments for private teams."
+    },
+    {
+      "slug": "llama4",
+      "name": "Llama 4",
+      "use_case": "new-generation Llama planning",
+      "summary": "A planning page for teams evaluating next-generation Llama-family capacity and migration paths."
+    },
+    {
+      "slug": "llama3.3",
+      "name": "Llama 3.3",
+      "use_case": "efficient general assistants",
+      "summary": "Strong general-purpose chat, summarization, and internal knowledge workflows."
+    },
+    {
+      "slug": "llama-3.2-vision",
+      "name": "Llama 3.2 Vision",
+      "use_case": "private multimodal review",
+      "summary": "Vision-language workflows for image review, document screenshots, and visual QA."
+    },
+    {
+      "slug": "deepseek",
+      "name": "DeepSeek",
+      "use_case": "reasoning and coding options",
+      "summary": "Reasoning, agentic coding, and analysis-oriented deployments with private hosting controls."
+    },
+    {
+      "slug": "deepseek-r1",
+      "name": "DeepSeek R1",
+      "use_case": "step-by-step reasoning",
+      "summary": "Reasoning-heavy tasks, technical analysis, and structured problem solving."
+    },
+    {
+      "slug": "deepseek-coder",
+      "name": "DeepSeek Coder",
+      "use_case": "developer copilots",
+      "summary": "Code explanation, repository Q&A, refactoring support, and local developer assistants."
+    },
+    {
+      "slug": "qwen",
+      "name": "Qwen",
+      "use_case": "multilingual model stacks",
+      "summary": "General multilingual assistants, coding help, and enterprise retrieval workflows."
+    },
+    {
+      "slug": "qwen3.5",
+      "name": "Qwen 3.5",
+      "use_case": "future-ready Qwen planning",
+      "summary": "A catalog placeholder for Qwen 3.5 evaluations, sizing, and upgrade planning."
+    },
+    {
+      "slug": "qwen-vl",
+      "name": "Qwen VL",
+      "use_case": "vision-language workloads",
+      "summary": "Image-aware chat, document interpretation, and multimodal internal tools."
+    },
+    {
+      "slug": "qwen2.5-coder",
+      "name": "Qwen2.5 Coder",
+      "use_case": "software engineering support",
+      "summary": "Coding assistants for private repositories, debugging, and technical documentation."
+    },
+    {
+      "slug": "gemma",
+      "name": "Gemma",
+      "use_case": "compact private assistants",
+      "summary": "Lightweight assistants for help desks, search augmentation, and departmental workflows."
+    },
+    {
+      "slug": "gemma4",
+      "name": "Gemma 4",
+      "use_case": "future Gemma planning",
+      "summary": "A planning page for Gemma 4 readiness, migration notes, and private evaluation."
+    },
+    {
+      "slug": "gemma2",
+      "name": "Gemma 2",
+      "use_case": "efficient deployment options",
+      "summary": "Cost-aware chat and summarization workloads on modest cloud or on-premise instances."
+    },
+    {
+      "slug": "mistral",
+      "name": "Mistral",
+      "use_case": "fast European open model options",
+      "summary": "Fast assistants, multilingual workflows, and efficient private inference patterns."
+    },
+    {
+      "slug": "ministral",
+      "name": "Ministral",
+      "use_case": "small fast assistants",
+      "summary": "Low-latency support bots, triage assistants, and edge-friendly workloads."
+    },
+    {
+      "slug": "pixtral",
+      "name": "Pixtral",
+      "use_case": "multimodal Mistral options",
+      "summary": "Vision and text workflows for image review, captions, and visual knowledge bases."
+    },
+    {
+      "slug": "mistral-large",
+      "name": "Mistral Large",
+      "use_case": "premium reasoning and language tasks",
+      "summary": "Higher-capacity private assistants for complex writing, analysis, and synthesis."
+    },
+    {
+      "slug": "mistral-small",
+      "name": "Mistral Small",
+      "use_case": "cost-efficient production chat",
+      "summary": "Reliable everyday chat and retrieval-augmented generation with lower operating cost."
+    },
+    {
+      "slug": "mixtral",
+      "name": "Mixtral",
+      "use_case": "mixture-of-experts deployments",
+      "summary": "Throughput-oriented chat, coding, and routing workflows using MoE-style models."
+    }
+  ],
+  "quote_url": "https://nocloudgpt.com/menu/quote.html"
+}

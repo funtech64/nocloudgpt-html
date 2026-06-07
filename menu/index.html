@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Model Menu | NoCloudGPT Menu</title>
+  <meta name="description" content="Browse private AI model families, deployment options, pricing, and quote paths for NoCloudGPT." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="NoCloudGPT" />
+  <meta property="og:title" content="AI Model Menu | NoCloudGPT Menu" />
+  <meta property="og:description" content="Browse private AI model families, deployment options, pricing, and quote paths for NoCloudGPT." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nocloudgpt.com/menu/" />
+  <meta property="og:site_name" content="NoCloudGPT" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://nocloudgpt.com/menu/" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .menu-hero { text-align: left; padding-bottom: 24px; }
+    .eyebrow { display: inline-block; border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; color: var(--accent); background: #fff; font-size: 14px; font-weight: 700; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--border); background: #fff; font-weight: 700; }
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
+    .pill-list a, .tag { display: inline-block; padding: 8px 11px; border-radius: 999px; border: 1px solid var(--border); background: #fff; }
+    .notice { border-left: 4px solid var(--accent); }
+    .meta { color: var(--muted); font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--border); }
+    th, td { border-bottom: 1px solid var(--border); padding: 12px; text-align: left; vertical-align: top; }
+    th { color: var(--text); }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">NoCloudGPT</a>
+    <nav><a href="../menu/" aria-current="page">Catalog</a><a href="../menu/pricing.html">Pricing</a><a href="../menu/quote.html">Quote</a><a href="../menu/deploy/">Deploy</a><a href="../services.html">Services</a></nav>
+  </div>
+</header>
+<main>
+  <section class="page-hero menu-hero">
+    <div class="container">
+      <span class="eyebrow">Private AI catalog</span>
+      <h1>NoCloudGPT model and deployment menu</h1>
+      <p>Use this hub to compare open and private-deployable AI model families, choose a deployment route, review pricing, or request a quote for a managed pilot.</p>
+      <div class="button-row">
+        <a class="btn btn-primary" href="quote.html">Request a quote</a>
+        <a class="btn" href="deploy/">Explore deployment paths</a>
+        <a class="btn" href="models-catalog.md">Read the Markdown catalog</a>
+      </div>
+    </div>
+  </section>
+  <section class="card-section">
+    <div class="container">
+      <div class="cards">
+        <article class="card notice"><h3>Cloud pilot</h3><p>Start with a short evaluation server, confirm users and model fit, then scale to larger GPU or CPU-backed instances.</p><p><a href="deploy/lightsail-guide.html">Read the 90-day pilot guide</a></p></article>
+        <article class="card notice"><h3>Private cloud</h3><p>Deploy on customer-controlled VPCs, restricted network paths, and organization-owned accounts.</p><p><a href="deploy/private-cloud.html">Plan a private cloud rollout</a></p></article>
+        <article class="card notice"><h3>On-premise</h3><p>Bring NoCloudGPT patterns to a local server, workstation, lab, or air-gapped environment.</p><p><a href="deploy/on-premise.html">Review on-premise options</a></p></article>
+      </div>
+      <h2>Featured model families</h2>
+      <div class="catalog-grid">
+      <article class="card">
+        <h3><a href="llama/">Llama</a></h3>
+        <p>Meta-oriented open weight chat, reasoning, and assistant deployments for private teams.</p>
+        <p class="meta">Best for: general Llama deployments.</p>
+      </article>
+      <article class="card">
+        <h3><a href="llama4/">Llama 4</a></h3>
+        <p>A planning page for teams evaluating next-generation Llama-family capacity and migration paths.</p>
+        <p class="meta">Best for: new-generation Llama planning.</p>
+      </article>
+      <article class="card">
+        <h3><a href="llama3.3/">Llama 3.3</a></h3>
+        <p>Strong general-purpose chat, summarization, and internal knowledge workflows.</p>
+        <p class="meta">Best for: efficient general assistants.</p>
+      </article>
+      <article class="card">
+        <h3><a href="llama-3.2-vision/">Llama 3.2 Vision</a></h3>
+        <p>Vision-language workflows for image review, document screenshots, and visual QA.</p>
+        <p class="meta">Best for: private multimodal review.</p>
+      </article>
+      <article class="card">
+        <h3><a href="deepseek/">DeepSeek</a></h3>
+        <p>Reasoning, agentic coding, and analysis-oriented deployments with private hosting controls.</p>
+        <p class="meta">Best for: reasoning and coding options.</p>
+      </article>
+      <article class="card">
+        <h3><a href="deepseek-r1/">DeepSeek R1</a></h3>
+        <p>Reasoning-heavy tasks, technical analysis, and structured problem solving.</p>
+        <p class="meta">Best for: step-by-step reasoning.</p>
+      </article>
+      <article class="card">
+        <h3><a href="deepseek-coder/">DeepSeek Coder</a></h3>
+        <p>Code explanation, repository Q&amp;A, refactoring support, and local developer assistants.</p>
+        <p class="meta">Best for: developer copilots.</p>
+      </article>
+      <article class="card">
+        <h3><a href="qwen/">Qwen</a></h3>
+        <p>General multilingual assistants, coding help, and enterprise retrieval workflows.</p>
+        <p class="meta">Best for: multilingual model stacks.</p>
+      </article>
+      <article class="card">
+        <h3><a href="qwen3.5/">Qwen 3.5</a></h3>
+        <p>A catalog placeholder for Qwen 3.5 evaluations, sizing, and upgrade planning.</p>
+        <p class="meta">Best for: future-ready Qwen planning.</p>
+      </article>
+      <article class="card">
+        <h3><a href="qwen-vl/">Qwen VL</a></h3>
+        <p>Image-aware chat, document interpretation, and multimodal internal tools.</p>
+        <p class="meta">Best for: vision-language workloads.</p>
+      </article>
+      <article class="card">
+        <h3><a href="qwen2.5-coder/">Qwen2.5 Coder</a></h3>
+        <p>Coding assistants for private repositories, debugging, and technical documentation.</p>
+        <p class="meta">Best for: software engineering support.</p>
+      </article>
+      <article class="card">
+        <h3><a href="gemma/">Gemma</a></h3>
+        <p>Lightweight assistants for help desks, search augmentation, and departmental workflows.</p>
+        <p class="meta">Best for: compact private assistants.</p>
+      </article>
+      </div>
+      <h2>All model pages</h2>
+      <p>Each page includes practical fit notes, deployment considerations, and next steps. Availability, licensing, and hardware needs should be confirmed during quote review.</p>
+      <div class="pill-list">
+        <a href="llama/">Llama</a>
+        <a href="llama4/">Llama 4</a>
+        <a href="llama3.3/">Llama 3.3</a>
+        <a href="llama-3.2-vision/">Llama 3.2 Vision</a>
+        <a href="deepseek/">DeepSeek</a>
+        <a href="deepseek-r1/">DeepSeek R1</a>
+        <a href="deepseek-coder/">DeepSeek Coder</a>
+        <a href="qwen/">Qwen</a>
+        <a href="qwen3.5/">Qwen 3.5</a>
+        <a href="qwen-vl/">Qwen VL</a>
+        <a href="qwen2.5-coder/">Qwen2.5 Coder</a>
+        <a href="gemma/">Gemma</a>
+        <a href="gemma4/">Gemma 4</a>
+        <a href="gemma2/">Gemma 2</a>
+        <a href="mistral/">Mistral</a>
+        <a href="ministral/">Ministral</a>
+        <a href="pixtral/">Pixtral</a>
+        <a href="mistral-large/">Mistral Large</a>
+        <a href="mistral-small/">Mistral Small</a>
+        <a href="mixtral/">Mixtral</a>
+        <a href="phi/">Phi</a>
+        <a href="phi4/">Phi 4</a>
+        <a href="granite/">Granite</a>
+        <a href="granite4/">Granite 4</a>
+        <a href="nemotron/">Nemotron</a>
+        <a href="nemotron4/">Nemotron 4</a>
+        <a href="command-r/">Command R</a>
+        <a href="command-r-plus/">Command R+</a>
+        <a href="olmo/">OLMo</a>
+        <a href="glm/">GLM</a>
+        <a href="glm5/">GLM 5</a>
+        <a href="chatglm/">ChatGLM</a>
+        <a href="yi/">Yi</a>
+        <a href="dbrx/">DBRX</a>
+        <a href="devstral/">Devstral</a>
+        <a href="arctic/">Arctic</a>
+        <a href="arctic-llm/">Arctic LLM</a>
+        <a href="baichuan/">Baichuan</a>
+        <a href="internlm/">InternLM</a>
+        <a href="falcon/">Falcon</a>
+        <a href="nous/">Nous</a>
+        <a href="aya/">Aya</a>
+        <a href="stablelm/">StableLM</a>
+        <a href="solar/">SOLAR</a>
+        <a href="codegemma/">CodeGemma</a>
+        <a href="zephyr/">Zephyr</a>
+        <a href="gpt-oss/">GPT OSS</a>
+        <a href="kimi/">Kimi</a>
+        <a href="minimax/">MiniMax</a>
+        <a href="llava/">LLaVA</a>
+        <a href="grok/">Grok</a>
+        <a href="mimo/">MiMo</a>
+        <a href="cogito/">Cogito</a>
+        <a href="openclaw/">OpenCLAW</a>
+        <a href="tulu/">Tulu</a>
+        <a href="dolphin/">Dolphin</a>
+        <a href="jamba/">Jamba</a>
+        <a href="openchat/">OpenChat</a>
+        <a href="reflection/">Reflection</a>
+        <a href="snowball/">Snowball</a>
+        <a href="nomic/">Nomic</a>
+        <a href="math/">Math Models</a>
+        <a href="reka/">Reka</a>
+        <a href="paligemma/">PaliGemma</a>
+        <a href="recurrentgemma/">RecurrentGemma</a>
+        <a href="seallm/">SeaLLM</a>
+        <a href="wizardlm/">WizardLM</a>
+        <a href="codellama/">Code Llama</a>
+        <a href="starcoder2/">StarCoder2</a>
+        <a href="lfm2/">LFM2</a>
+        <a href="exaone/">EXAONE</a>
+        <a href="zamba/">Zamba</a>
+        <a href="mythomax/">MythoMax</a>
+        <a href="llama-guard/">Llama Guard</a>
+        <a href="vicuna/">Vicuna</a>
+        <a href="openhermes/">OpenHermes</a>
+        <a href="bagel/">BAGEL</a>
+        <a href="aquila/">Aquila</a>
+        <a href="pangu/">PanGu</a>
+        <a href="tigerbot/">TigerBot</a>
+        <a href="noroma/">Noroma</a>
+        <a href="airoboros/">Airoboros</a>
+        <a href="samantha/">Samantha</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container">Private AI model catalog and deployment menu for NoCloudGPT.</div>
+</footer>
+</body>
+</html>

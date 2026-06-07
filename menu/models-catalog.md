@@ -1,0 +1,95 @@
+# NoCloudGPT models catalog
+
+This Markdown catalog mirrors the `/menu/` HTML pages. It is intended as a planning index for private AI pilots; final model choice depends on licensing, hardware, data sensitivity, and operational requirements.
+
+## Deployment paths
+
+- [90-day pilot](deploy/lightsail-guide.html): validate workflows before production infrastructure.
+- [Private cloud](deploy/private-cloud.html): deploy inside an organization-controlled cloud environment.
+- [On-premise](deploy/on-premise.html): run on local hardware or restricted networks.
+
+## Model families
+
+- [Llama](llama/): Meta-oriented open weight chat, reasoning, and assistant deployments for private teams. Best for general Llama deployments.
+- [Llama 4](llama4/): A planning page for teams evaluating next-generation Llama-family capacity and migration paths. Best for new-generation Llama planning.
+- [Llama 3.3](llama3.3/): Strong general-purpose chat, summarization, and internal knowledge workflows. Best for efficient general assistants.
+- [Llama 3.2 Vision](llama-3.2-vision/): Vision-language workflows for image review, document screenshots, and visual QA. Best for private multimodal review.
+- [DeepSeek](deepseek/): Reasoning, agentic coding, and analysis-oriented deployments with private hosting controls. Best for reasoning and coding options.
+- [DeepSeek R1](deepseek-r1/): Reasoning-heavy tasks, technical analysis, and structured problem solving. Best for step-by-step reasoning.
+- [DeepSeek Coder](deepseek-coder/): Code explanation, repository Q&A, refactoring support, and local developer assistants. Best for developer copilots.
+- [Qwen](qwen/): General multilingual assistants, coding help, and enterprise retrieval workflows. Best for multilingual model stacks.
+- [Qwen 3.5](qwen3.5/): A catalog placeholder for Qwen 3.5 evaluations, sizing, and upgrade planning. Best for future-ready Qwen planning.
+- [Qwen VL](qwen-vl/): Image-aware chat, document interpretation, and multimodal internal tools. Best for vision-language workloads.
+- [Qwen2.5 Coder](qwen2.5-coder/): Coding assistants for private repositories, debugging, and technical documentation. Best for software engineering support.
+- [Gemma](gemma/): Lightweight assistants for help desks, search augmentation, and departmental workflows. Best for compact private assistants.
+- [Gemma 4](gemma4/): A planning page for Gemma 4 readiness, migration notes, and private evaluation. Best for future Gemma planning.
+- [Gemma 2](gemma2/): Cost-aware chat and summarization workloads on modest cloud or on-premise instances. Best for efficient deployment options.
+- [Mistral](mistral/): Fast assistants, multilingual workflows, and efficient private inference patterns. Best for fast European open model options.
+- [Ministral](ministral/): Low-latency support bots, triage assistants, and edge-friendly workloads. Best for small fast assistants.
+- [Pixtral](pixtral/): Vision and text workflows for image review, captions, and visual knowledge bases. Best for multimodal Mistral options.
+- [Mistral Large](mistral-large/): Higher-capacity private assistants for complex writing, analysis, and synthesis. Best for premium reasoning and language tasks.
+- [Mistral Small](mistral-small/): Reliable everyday chat and retrieval-augmented generation with lower operating cost. Best for cost-efficient production chat.
+- [Mixtral](mixtral/): Throughput-oriented chat, coding, and routing workflows using MoE-style models. Best for mixture-of-experts deployments.
+- [Phi](phi/): Compact assistants for constrained infrastructure and focused departmental use cases. Best for small language model deployments.
+- [Phi 4](phi4/): A catalog page for Phi 4 private deployment planning and pilot sizing. Best for compact reasoning planning.
+- [Granite](granite/): Business assistants, summarization, and private knowledge workflows for regulated teams. Best for enterprise-friendly model options.
+- [Granite 4](granite4/): A planning page for Granite 4 readiness, governance, and migration assessment. Best for future Granite evaluation.
+- [Nemotron](nemotron/): Reasoning and chat model options for GPU-backed private deployments. Best for NVIDIA-oriented AI stacks.
+- [Nemotron 4](nemotron4/): A catalog page for Nemotron 4 pilots, hardware sizing, and evaluation notes. Best for NVIDIA-generation planning.
+- [Command R](command-r/): RAG-focused assistants for internal documents, search, and grounded answers. Best for retrieval-centric assistants.
+- [Command R+](command-r-plus/): Higher-capacity retrieval, tool-use, and enterprise assistant use cases. Best for larger retrieval and agent workflows.
+- [OLMo](olmo/): Research-friendly deployments for teams that value open training details and auditability. Best for transparent open research models.
+- [GLM](glm/): Chat, reasoning, and multilingual workflows with private deployment control. Best for general multilingual assistants.
+- [GLM 5](glm5/): A planning page for GLM 5 evaluation, compatibility checks, and migration. Best for future GLM planning.
+- [ChatGLM](chatglm/): Private chat assistants and bilingual support workflows for business teams. Best for conversational GLM workloads.
+- [Yi](yi/): Knowledge assistant deployments for reading, summarization, and multilingual drafting. Best for long-context and multilingual options.
+- [DBRX](dbrx/): Enterprise analytics, chat, and data-team assistant use cases. Best for Databricks-style open model deployments.
+- [Devstral](devstral/): Developer-oriented private coding assistants and repository support workflows. Best for developer agent workflows.
+- [Arctic](arctic/): Business assistant and analytics-oriented private model deployments. Best for enterprise AI deployments.
+- [Arctic LLM](arctic-llm/): Private assistant pilots for teams evaluating Arctic-family LLMs. Best for Snowflake Arctic model planning.
+- [Baichuan](baichuan/): General-purpose chat and multilingual support deployments. Best for multilingual assistant options.
+- [InternLM](internlm/): Private evaluation pages for InternLM-family assistant deployments. Best for research and enterprise pilots.
+- [Falcon](falcon/): Chat, summarization, and knowledge assistant workloads on private infrastructure. Best for open model inference.
+- [Nous](nous/): Creative writing, chat, and open assistant deployments for teams that need flexibility. Best for community-tuned assistant models.
+- [Aya](aya/): Cross-language assistants, translation support, and globally oriented pilots. Best for multilingual inclusion workloads.
+- [StableLM](stablelm/): Private chat and drafting assistants with open-model operational controls. Best for stable open model deployments.
+- [SOLAR](solar/): Private assistants for writing, support, and grounded knowledge workflows. Best for efficient high-quality chat.
+- [CodeGemma](codegemma/): Developer support, code explanation, and smaller coding assistant deployments. Best for lightweight coding help.
+- [Zephyr](zephyr/): Lightweight chat, support, and internal assistant pilots. Best for instruction-tuned assistants.
+- [GPT OSS](gpt-oss/): Open-model assistant deployments with private data boundaries. Best for open GPT-style deployments.
+- [Kimi](kimi/): Reading, summarization, and large-document workflows with private controls. Best for long-context assistant planning.
+- [MiniMax](minimax/): Private chat, drafting, and agent workflow evaluations. Best for general assistant pilots.
+- [LLaVA](llava/): Image-aware chat, screenshot interpretation, and visual support workflows. Best for vision-language assistants.
+- [Grok](grok/): Private evaluation page for Grok-style assistant workflows where licensing allows. Best for conversational model planning.
+- [MiMo](mimo/): Focused departmental assistants and small-model experiments. Best for compact assistant planning.
+- [Cogito](cogito/): Structured analysis, planning, and reasoning-heavy assistant pilots. Best for reasoning model planning.
+- [OpenCLAW](openclaw/): Experimental assistant deployments with private infrastructure guardrails. Best for open assistant experiments.
+- [Tulu](tulu/): Private instruction-tuned assistants and evaluation workflows. Best for instruction-following chat.
+- [Dolphin](dolphin/): Private assistant pilots where behavior tuning and testing are priorities. Best for flexible assistant tuning.
+- [Jamba](jamba/): Long-context and efficient inference workflows for enterprise assistants. Best for hybrid architecture deployments.
+- [OpenChat](openchat/): General chat, support, and internal assistant pilots. Best for open conversation models.
+- [Reflection](reflection/): Evaluation page for reflection-style reasoning and answer review workflows. Best for self-checking assistant planning.
+- [Snowball](snowball/): Experimental planning page for iterative reasoning assistant deployments. Best for iterative reasoning workflows.
+- [Nomic](nomic/): Private embeddings, search, and assistant workflows for internal knowledge bases. Best for embedding and assistant options.
+- [Math Models](math/): Math, tutoring, analytics explanation, and technical problem-solving workloads. Best for quantitative reasoning assistants.
+- [Reka](reka/): Private pilots for multimodal and multilingual assistant workflows. Best for multimodal assistant planning.
+- [PaliGemma](paligemma/): Image captioning, visual question answering, and private multimodal review. Best for vision-language model deployments.
+- [RecurrentGemma](recurrentgemma/): Research and specialized assistant pilots for efficient recurrent architectures. Best for efficient sequence modeling.
+- [SeaLLM](seallm/): Multilingual assistants focused on Southeast Asian language coverage. Best for Southeast Asian language support.
+- [WizardLM](wizardlm/): General chat, drafting, and internal knowledge assistant pilots. Best for instruction-following assistants.
+- [Code Llama](codellama/): Repository Q&A, code completion support, and developer knowledge workflows. Best for private coding assistants.
+- [StarCoder2](starcoder2/): Developer copilots, code search, and software documentation assistants. Best for code generation deployments.
+- [LFM2](lfm2/): Efficient assistant pilots and model evaluation for LFM-family deployments. Best for Liquid model planning.
+- [EXAONE](exaone/): Private business assistant and multilingual document workflows. Best for enterprise multilingual assistants.
+- [Zamba](zamba/): Efficient long-context and assistant workloads for private pilots. Best for hybrid model deployments.
+- [MythoMax](mythomax/): Creative writing, persona testing, and narrative assistant workloads. Best for creative assistant pilots.
+- [Llama Guard](llama-guard/): Moderation, policy checking, and safety layer deployments around private assistants. Best for AI safety classifiers.
+- [Vicuna](vicuna/): Legacy-compatible open chat pilots and baseline assistant comparisons. Best for classic open chat models.
+- [OpenHermes](openhermes/): Private assistant pilots with instruction-following open models. Best for instruction-tuned open assistants.
+- [BAGEL](bagel/): Experimental multimodal assistant and content understanding workflows. Best for multimodal model planning.
+- [Aquila](aquila/): Private multilingual assistant and research evaluation deployments. Best for open multilingual assistants.
+- [PanGu](pangu/): Private evaluation and business assistant planning for PanGu-family models. Best for enterprise model planning.
+- [TigerBot](tigerbot/): Private chat and knowledge assistant pages for TigerBot-family deployments. Best for multilingual assistant pilots.
+- [Noroma](noroma/): Experimental private assistant deployments with controlled evaluation. Best for specialty assistant pilots.
+- [Airoboros](airoboros/): Open assistant experiments for chat, writing, and internal workflows. Best for instruction-tuned assistant pilots.
+- [Samantha](samantha/): Private conversation assistant experiments for supportive, structured interactions. Best for empathetic assistant pilots.
