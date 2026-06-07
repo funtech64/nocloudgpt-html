@@ -1,0 +1,380 @@
+Cursor / Codex Task — Add Artwork Source Reference Blocks to NoCloudGPT /menu/ Pages
+
+You are working inside the NoCloudGPT website repository.
+
+Critical directory rules
+
+The correct working section for this task is:
+
+/models/
+
+Do not create /assets/models/.
+
+Do not create local artwork folders.
+
+Download images for each model from https://www.ollama.com/search/ and https://ollama.com/library/.
+
+Use the following chart and ignore thr stale old directory /menu and instead place all artwork in target /models/<model family>/ directory. edit each file inside labelled index.html
+
+# NoCloudGPT `/menu/` Model Family Source-Photo Hyperlink Master List
+
+| Menu article | Family | Official / developer reference | Photo reference link | Brand / logo reference |
+|---|---|---|---|---|
+| `/menu/llama.html` | Llama | https://ai.meta.com/llama/ | https://unsplash.com/s/photos/private-ai-server | https://www.meta.com/brand/resources/ |
+| `/menu/deepseek.html` | DeepSeek | https://www.deepseek.com/ | https://unsplash.com/s/photos/programming-math | https://github.com/deepseek-ai/awesome-deepseek-integration/tree/main/docs/_logo%20svg |
+| `/menu/qwen.html` | Qwen | https://qwen.ai/ | https://unsplash.com/s/photos/global-network | https://github.com/QwenLM/Qwen/tree/main/assets |
+| `/menu/gemma.html` | Gemma | https://deepmind.google/models/gemma/ | https://unsplash.com/s/photos/ai-chip | https://deepmind.google/about/ |
+| `/menu/mistral.html` | Mistral | https://mistral.ai/ | https://unsplash.com/s/photos/data-center | https://mistral.ai/brand/ |
+| `/menu/phi.html` | Phi | https://azure.microsoft.com/en-us/products/phi/ | https://unsplash.com/s/photos/business-technology | https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks |
+| `/menu/gpt-oss.html` | GPT-OSS | https://openai.com/index/introducing-gpt-oss/ | https://unsplash.com/s/photos/artificial-intelligence | https://openai.com/brand/ |
+| `/menu/granite.html` | Granite | https://www.ibm.com/granite | https://unsplash.com/s/photos/enterprise-technology | https://www.ibm.com/design/language/ibm-logos/ |
+| `/menu/hermes.html` | Hermes | https://nousresearch.com/hermes3 | https://unsplash.com/s/photos/greek-statue-technology | https://huggingface.co/NousResearch |
+| `/menu/mixtral.html` | Mixtral | https://mistral.ai/news/mixtral-of-experts/ | https://unsplash.com/s/photos/network-nodes | https://mistral.ai/brand/ |
+| `/menu/codellama.html` | Code Llama | https://ai.meta.com/llama/ | https://unsplash.com/s/photos/software-development | https://www.meta.com/brand/resources/ |
+| `/menu/qwen-coder.html` | Qwen Coder | https://qwen.ai/ | https://unsplash.com/s/photos/code-screen | https://github.com/QwenLM/Qwen/tree/main/assets |
+| `/menu/deepseek-coder.html` | DeepSeek Coder | https://www.deepseek.com/ | https://unsplash.com/s/photos/coding-workstation | https://github.com/deepseek-ai/awesome-deepseek-integration/tree/main/docs/_logo%20svg |
+| `/menu/llava.html` | LLaVA | https://llava-vl.github.io/ | https://unsplash.com/s/photos/computer-vision | https://github.com/haotian-liu/LLaVA |
+| `/menu/embeddings.html` | Embeddings | https://ollama.com/library | https://unsplash.com/s/photos/document-search | https://huggingface.co/models?pipeline_tag=sentence-similarity |
+
+| `/menu/llama3-1.html` | Llama 3.1 | https://ai.meta.com/llama/ | https://unsplash.com/s/photos/long-document | https://www.meta.com/brand/resources/ |
+| `/menu/llama3-2.html` | Llama 3.2 | https://ai.meta.com/llama/ | https://unsplash.com/s/photos/edge-ai | https://www.meta.com/brand/resources/ |
+| `/menu/llama3-3.html` | Llama 3.3 | https://ai.meta.com/llama/ | https://unsplash.com/s/photos/multilingual | https://www.meta.com/brand/resources/ |
+| `/menu/llama4.html` | Llama 4 | https://ai.meta.com/llama/ | https://unsplash.com/s/photos/ai-infrastructure | https://www.meta.com/brand/resources/ |
+| `/menu/gemma2.html` | Gemma 2 | https://deepmind.google/models/gemma/ | https://unsplash.com/s/photos/local-ai | https://deepmind.google/about/ |
+| `/menu/gemma3.html` | Gemma 3 | https://deepmind.google/models/gemma/ | https://unsplash.com/s/photos/multimodal-ai | https://deepmind.google/about/ |
+| `/menu/gemma3n.html` | Gemma 3n | https://deepmind.google/models/gemma/ | https://unsplash.com/s/photos/mobile-ai | https://deepmind.google/about/ |
+| `/menu/qwen2-5.html` | Qwen 2.5 | https://qwen.ai/ | https://unsplash.com/s/photos/global-network | https://github.com/QwenLM/Qwen/tree/main/assets |
+| `/menu/qwen3.html` | Qwen 3 | https://qwen.ai/ | https://unsplash.com/s/photos/ai-agent | https://github.com/QwenLM/Qwen3 |
+| `/menu/qwen3-vl.html` | Qwen 3 VL | https://qwen.ai/ | https://unsplash.com/s/photos/computer-vision | https://github.com/QwenLM/Qwen-VL |
+| `/menu/mistral-nemo.html` | Mistral NeMo | https://mistral.ai/news/mistral-nemo/ | https://unsplash.com/s/photos/nvidia-server | https://mistral.ai/brand/ |
+| `/menu/mistral-small.html` | Mistral Small | https://mistral.ai/ | https://unsplash.com/s/photos/small-business-technology | https://mistral.ai/brand/ |
+| `/menu/mistral-large.html` | Mistral Large | https://mistral.ai/ | https://unsplash.com/s/photos/enterprise-ai | https://mistral.ai/brand/ |
+| `/menu/codestral.html` | Codestral | https://mistral.ai/news/codestral/ | https://unsplash.com/s/photos/programming | https://mistral.ai/brand/ |
+| `/menu/starcoder2.html` | StarCoder2 | https://www.bigcode-project.org/docs/about/models/ | https://unsplash.com/s/photos/open-source-code | https://huggingface.co/brand |
+
+| `/menu/deepseek-r1.html` | DeepSeek R1 | https://huggingface.co/deepseek-ai/DeepSeek-R1 | https://unsplash.com/s/photos/mathematics | https://github.com/deepseek-ai/awesome-deepseek-integration/tree/main/docs/_logo%20svg |
+| `/menu/deepseek-v3.html` | DeepSeek V3 | https://www.deepseek.com/ | https://unsplash.com/s/photos/data-science | https://github.com/deepseek-ai/awesome-deepseek-integration/tree/main/docs/_logo%20svg |
+| `/menu/deepseek-coder-v2.html` | DeepSeek Coder V2 | https://www.deepseek.com/ | https://unsplash.com/s/photos/software-engineer | https://github.com/deepseek-ai/awesome-deepseek-integration/tree/main/docs/_logo%20svg |
+| `/menu/phi3.html` | Phi 3 | https://azure.microsoft.com/en-us/products/phi/ | https://unsplash.com/s/photos/productivity | https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks |
+| `/menu/phi4.html` | Phi 4 | https://ai.azure.com/catalog/models/Phi-4 | https://unsplash.com/s/photos/reasoning | https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks |
+| `/menu/phi4-reasoning.html` | Phi 4 Reasoning | https://ai.azure.com/catalog/models/Phi-4 | https://unsplash.com/s/photos/math-board | https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks |
+| `/menu/granite-code.html` | Granite Code | https://www.ibm.com/granite | https://unsplash.com/s/photos/software-architecture | https://www.ibm.com/design/language/ibm-logos/ |
+| `/menu/granite4.html` | Granite 4 | https://www.ibm.com/granite | https://unsplash.com/s/photos/enterprise-technology | https://www.ibm.com/design/language/ibm-logos/ |
+| `/menu/command-r.html` | Command R | https://cohere.com/command | https://unsplash.com/s/photos/document-search | https://cohere.com/newsroom |
+| `/menu/nemotron.html` | Nemotron | https://developer.nvidia.com/nemotron | https://unsplash.com/s/photos/gpu-server | https://www.nvidia.com/en-us/about-nvidia/legal-info/logo-brand-usage/ |
+| `/menu/glm.html` | GLM | https://glm5.ai/ | https://unsplash.com/s/photos/ai-research | https://huggingface.co/THUDM |
+| `/menu/kimi.html` | Kimi | https://www.kimi.com/en | https://unsplash.com/s/photos/long-context | https://www.moonshot.ai/ |
+| `/menu/minimax.html` | MiniMax | https://www.minimax.io/ | https://unsplash.com/s/photos/ai-agent | https://github.com/MiniMax-AI |
+| `/menu/cogito.html` | Cogito | https://www.deepcogito.com/research/cogito-v2-1 | https://unsplash.com/s/photos/logic | https://github.com/DeepCogito/cogito-v2 |
+| `/menu/magistral.html` | Magistral | https://mistral.ai/news/magistral/ | https://unsplash.com/s/photos/reasoning | https://mistral.ai/brand/ |
+
+| `/menu/tinyllama.html` | TinyLlama | https://github.com/jzhang38/TinyLlama | https://unsplash.com/s/photos/tiny-computer | https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0 |
+| `/menu/smollm.html` | SmolLM | https://huggingface.co/blog/smollm | https://unsplash.com/s/photos/edge-computing | https://huggingface.co/brand |
+| `/menu/smollm2.html` | SmolLM2 | https://github.com/huggingface/smollm | https://unsplash.com/s/photos/small-server | https://huggingface.co/brand |
+| `/menu/orca-mini.html` | Orca Mini | https://huggingface.co/models?search=orca_mini | https://unsplash.com/s/photos/learning-ai | https://huggingface.co/psmathur |
+| `/menu/dolphin.html` | Dolphin | https://huggingface.co/cognitivecomputations | https://unsplash.com/s/photos/dolphin | https://erichartford.com/ |
+| `/menu/dolphin-llama3.html` | Dolphin Llama 3 | https://huggingface.co/cognitivecomputations | https://unsplash.com/s/photos/ai-assistant | https://erichartford.com/ |
+| `/menu/dolphin-mistral.html` | Dolphin Mistral | https://huggingface.co/cognitivecomputations | https://unsplash.com/s/photos/custom-ai | https://mistral.ai/brand/ |
+| `/menu/zephyr.html` | Zephyr | https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha | https://unsplash.com/s/photos/wind-technology | https://huggingface.co/brand |
+| `/menu/yi.html` | Yi | https://huggingface.co/01-ai/models | https://unsplash.com/s/photos/chinese-language | https://huggingface.co/01-ai |
+| `/menu/falcon.html` | Falcon | https://falconllm.tii.ae/ | https://unsplash.com/s/photos/falcon-technology | https://falconfoundation.ai/ |
+| `/menu/olmo.html` | OLMo | https://allenai.org/olmo | https://unsplash.com/s/photos/open-science | https://github.com/allenai/OLMo |
+| `/menu/moondream.html` | Moondream | https://moondream.ai/ | https://unsplash.com/s/photos/computer-vision | https://github.com/m87-labs/moondream |
+| `/menu/minicpm-v.html` | MiniCPM-V | https://github.com/OpenBMB/MiniCPM-V | https://unsplash.com/s/photos/vision-ai | https://www.openbmb.cn/en |
+| `/menu/bge-m3.html` | BGE-M3 | https://huggingface.co/BAAI/bge-m3 | https://unsplash.com/s/photos/search-data | https://bge-model.com/bge/bge_m3.html |
+| `/menu/nomic-embed-text.html` | Nomic Embed Text | https://www.nomic.ai/ | https://unsplash.com/s/photos/semantic-search | https://docs.nomic.ai/atlas/embeddings-and-retrieval/text-embedding |
+
+Do not restructure the site.
+
+This task is only about adding source-photo hyperlinks, official model/developer references, and brand/reference links to existing NoCloudGPT menu articles so that future artwork can be produced safely.
+
+Important page-location rule
+
+Before editing, inspect the folder directory:
+
+/models/<model family>/index.html
+/models/<model family>/index2.html
+
+consolidate the two articles while adhering to the specified writing standards from our earlier edit.
+
+Use the index.html file that actually exists.
+
+Preferred order:
+
+1. If /models/{slug}.html exists, edit that file.
+2. Else if /models/{slug}/index.html exists, edit that file.
+3. Else do not create a new page unless explicitly instructed below.
+4. If a page is missing, report it in the final summary under “Missing pages.”
+
+Do not convert nested pages into flat files.
+Do not convert flat files into nested pages.
+Do not create duplicate versions of the same article.
+
+Branch
+
+Create and work on a new branch:
+
+feature/menu-artwork-source-references
+
+Goal
+
+For each existing /menu/ model-family article listed in the master list below:
+
+1. Add an “Artwork and source references” block.
+2. Include the official model/developer reference link.
+3. Include the photo/reference-search link.
+4. Include the brand/logo/reference link where available.
+5. Keep the block visible enough for maintainers but not distracting for customers.
+6. Preserve existing layout, CTAs, nav, SEO metadata, and copy.
+7. Do not rewrite the article body unless a tiny adjustment is required to place the block cleanly.
+8. Add a Sources section to the bottom of the page and add sources ans the source ollama library page for refrence.
+9. Add local image paths.
+10. you may hotlink production images.
+11. Do not imply official partnership with any developer. Create a standard messahe that we are not affiliated with these sites.
+
+Placement rules
+
+If the page has a sidebar or aside, prefer a compact sidebar block.
+
+If the page has no sidebar, add a full-width block near the bottom of the article, before the final CTA or footer if possible.
+
+If the page already has an artwork placeholder, place the source-reference block near that placeholder or in the sidebar.
+
+If the page has a very old/simple template, add the block without redesigning the page.
+
+Preferred full-width block
+
+Use this pattern when the page has a main article layout:
+
+<section class="mt-10 rounded-3xl border border-slate-800 bg-slate-900 p-6">
+  <h2 class="text-2xl font-black">Artwork and source references</h2>
+  <p class="mt-3 text-slate-300">
+    These links are provided for future model-family artwork, brand verification,
+    and visual sourcing. Review license and brand rules before using any image in production.
+  </p>
+  <ul class="mt-4 space-y-2 text-slate-300">
+    <li>
+      <a class="text-cyan-300 hover:text-cyan-200" href="OFFICIAL_URL_HERE" target="_blank" rel="noopener">
+        Official model or developer reference
+      </a>
+    </li>
+    <li>
+      <a class="text-cyan-300 hover:text-cyan-200" href="PHOTO_REFERENCE_URL_HERE" target="_blank" rel="noopener">
+        Suggested photo reference
+      </a>
+    </li>
+    <li>
+      <a class="text-cyan-300 hover:text-cyan-200" href="BRAND_REFERENCE_URL_HERE" target="_blank" rel="noopener">
+        Brand or logo reference
+      </a>
+    </li>
+  </ul>
+</section>
+
+Preferred sidebar block
+
+Use this pattern when the page has an aside/sidebar:
+
+<div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+  <h3 class="text-xl font-bold">Artwork references</h3>
+  <p class="mt-3 text-sm text-slate-400">
+    Source links for future artwork, brand verification, and visual sourcing.
+    Review usage rights before publishing any image.
+  </p>
+  <ul class="mt-4 space-y-3 text-sm text-slate-300">
+    <li>
+      <a class="text-cyan-300 hover:text-cyan-200" href="OFFICIAL_URL_HERE" target="_blank" rel="noopener">
+        Official source
+      </a>
+    </li>
+    <li>
+      <a class="text-cyan-300 hover:text-cyan-200" href="PHOTO_REFERENCE_URL_HERE" target="_blank" rel="noopener">
+        Photo reference
+      </a>
+    </li>
+    <li>
+      <a class="text-cyan-300 hover:text-cyan-200" href="BRAND_REFERENCE_URL_HERE" target="_blank" rel="noopener">
+        Brand reference
+      </a>
+    </li>
+  </ul>
+</div>
+
+Plain-template fallback block
+
+If the page is a simple white-page article and does not use Tailwind classes, use this simpler HTML instead:
+
+<section class="artwork-references">
+  <h2>Artwork and source references</h2>
+  <p>
+    These links are provided for future model-family artwork, brand verification,
+    and visual sourcing. Review license and brand rules before using any image in production.
+  </p>
+  <ul>
+    <li><a href="OFFICIAL_URL_HERE" target="_blank" rel="noopener">Official model or developer reference</a></li>
+    <li><a href="PHOTO_REFERENCE_URL_HERE" target="_blank" rel="noopener">Suggested photo reference</a></li>
+    <li><a href="BRAND_REFERENCE_URL_HERE" target="_blank" rel="noopener">Brand or logo reference</a></li>
+  </ul>
+</section>
+
+If needed, add minimal CSS only for .artwork-references, but do not redesign the page.
+
+Link text rules
+
+Use consistent labels:
+
+* “Official model or developer reference”
+* “Suggested photo reference”
+* “Brand or logo reference”
+
+If the brand link is not really a brand/logo page, use:
+
+* “Developer reference”
+* “Repository reference”
+* “Hugging Face organization reference”
+
+Do not label a generic GitHub repository as an official brand kit.
+
+Fact and safety rules
+
+Do not invent official brand pages.
+
+Do not claim a page grants permission to use logos.
+
+Do not say “approved artwork.”
+
+Use cautious wording:
+
+“Review license and brand rules before using any image in production.”
+
+For Unsplash links, keep them as search/reference links only. Do not download or embed those images.
+
+For GitHub/Hugging Face references, treat them as source references, not production image licenses.
+
+Master list
+
+Use this list to add references only to pages that actually exist if needed:
+
+Slug	Family	Official / developer reference	Photo reference link	Brand / logo reference
+llama	Llama	https://ai.meta.com/llama/	https://unsplash.com/s/photos/private-ai-server	https://www.meta.com/brand/resources/
+deepseek	DeepSeek	https://www.deepseek.com/	https://unsplash.com/s/photos/programming-math	https://github.com/deepseek-ai/awesome-deepseek-integration/tree/main/docs/_logo%20svg
+qwen	Qwen	https://qwen.ai/	https://unsplash.com/s/photos/global-network	https://github.com/QwenLM/Qwen/tree/main/assets
+gemma	Gemma	https://deepmind.google/models/gemma/	https://unsplash.com/s/photos/ai-chip	https://deepmind.google/about/
+mistral	Mistral	https://mistral.ai/	https://unsplash.com/s/photos/data-center	https://mistral.ai/brand/
+phi	Phi	https://azure.microsoft.com/en-us/products/phi/	https://unsplash.com/s/photos/business-technology	https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks
+gpt-oss	GPT-OSS	https://openai.com/index/introducing-gpt-oss/	https://unsplash.com/s/photos/artificial-intelligence	https://openai.com/brand/
+granite	Granite	https://www.ibm.com/granite	https://unsplash.com/s/photos/enterprise-technology	https://www.ibm.com/design/language/ibm-logos/
+hermes	Hermes	https://nousresearch.com/hermes3	https://unsplash.com/s/photos/greek-statue-technology	https://huggingface.co/NousResearch
+nous-hermes	Nous Hermes	https://nousresearch.com/hermes3	https://unsplash.com/s/photos/greek-statue-technology	https://huggingface.co/NousResearch
+mixtral	Mixtral	https://mistral.ai/news/mixtral-of-experts/	https://unsplash.com/s/photos/network-nodes	https://mistral.ai/brand/
+codellama	Code Llama	https://ai.meta.com/llama/	https://unsplash.com/s/photos/software-development	https://www.meta.com/brand/resources/
+qwen-coder	Qwen Coder	https://qwen.ai/	https://unsplash.com/s/photos/code-screen	https://github.com/QwenLM/Qwen/tree/main/assets
+qwen2.5-coder	Qwen 2.5 Coder	https://qwen.ai/	https://unsplash.com/s/photos/code-screen	https://github.com/QwenLM/Qwen/tree/main/assets
+deepseek-coder	DeepSeek Coder	https://www.deepseek.com/	https://unsplash.com/s/photos/coding-workstation	https://github.com/deepseek-ai/awesome-deepseek-integration/tree/main/docs/_logo%20svg
+llava	LLaVA	https://llava-vl.github.io/	https://unsplash.com/s/photos/computer-vision	https://github.com/haotian-liu/LLaVA
+embeddings	Embeddings	https://ollama.com/library	https://unsplash.com/s/photos/document-search	https://huggingface.co/models?pipeline_tag=sentence-similarity
+llama3-1	Llama 3.1	https://ai.meta.com/llama/	https://unsplash.com/s/photos/long-document	https://www.meta.com/brand/resources/
+llama3-2	Llama 3.2	https://ai.meta.com/llama/	https://unsplash.com/s/photos/edge-ai	https://www.meta.com/brand/resources/
+llama3-3	Llama 3.3	https://ai.meta.com/llama/	https://unsplash.com/s/photos/multilingual	https://www.meta.com/brand/resources/
+llama4	Llama 4	https://ai.meta.com/llama/	https://unsplash.com/s/photos/ai-infrastructure	https://www.meta.com/brand/resources/
+gemma2	Gemma 2	https://deepmind.google/models/gemma/	https://unsplash.com/s/photos/local-ai	https://deepmind.google/about/
+gemma3	Gemma 3	https://deepmind.google/models/gemma/	https://unsplash.com/s/photos/multimodal-ai	https://deepmind.google/about/
+gemma3n	Gemma 3n	https://deepmind.google/models/gemma/	https://unsplash.com/s/photos/mobile-ai	https://deepmind.google/about/
+qwen2-5	Qwen 2.5	https://qwen.ai/	https://unsplash.com/s/photos/global-network	https://github.com/QwenLM/Qwen/tree/main/assets
+qwen3	Qwen 3	https://qwen.ai/	https://unsplash.com/s/photos/ai-agent	https://github.com/QwenLM/Qwen3
+qwen3-vl	Qwen 3 VL	https://qwen.ai/	https://unsplash.com/s/photos/computer-vision	https://github.com/QwenLM/Qwen-VL
+mistral-nemo	Mistral NeMo	https://mistral.ai/news/mistral-nemo/	https://unsplash.com/s/photos/nvidia-server	https://mistral.ai/brand/
+mistral-small	Mistral Small	https://mistral.ai/	https://unsplash.com/s/photos/small-business-technology	https://mistral.ai/brand/
+mistral-large	Mistral Large	https://mistral.ai/	https://unsplash.com/s/photos/enterprise-ai	https://mistral.ai/brand/
+codestral	Codestral	https://mistral.ai/news/codestral/	https://unsplash.com/s/photos/programming	https://mistral.ai/brand/
+starcoder2	StarCoder2	https://www.bigcode-project.org/docs/about/models/	https://unsplash.com/s/photos/open-source-code	https://huggingface.co/brand
+deepseek-r1	DeepSeek R1	https://huggingface.co/deepseek-ai/DeepSeek-R1	https://unsplash.com/s/photos/mathematics	https://github.com/deepseek-ai/awesome-deepseek-integration/tree/main/docs/_logo%20svg
+deepseek-v3	DeepSeek V3	https://www.deepseek.com/	https://unsplash.com/s/photos/data-science	https://github.com/deepseek-ai/awesome-deepseek-integration/tree/main/docs/_logo%20svg
+deepseek-coder-v2	DeepSeek Coder V2	https://www.deepseek.com/	https://unsplash.com/s/photos/software-engineer	https://github.com/deepseek-ai/awesome-deepseek-integration/tree/main/docs/_logo%20svg
+phi3	Phi 3	https://azure.microsoft.com/en-us/products/phi/	https://unsplash.com/s/photos/productivity	https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks
+phi4	Phi 4	https://ai.azure.com/catalog/models/Phi-4	https://unsplash.com/s/photos/reasoning	https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks
+phi4-reasoning	Phi 4 Reasoning	https://ai.azure.com/catalog/models/Phi-4	https://unsplash.com/s/photos/math-board	https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks
+granite-code	Granite Code	https://www.ibm.com/granite	https://unsplash.com/s/photos/software-architecture	https://www.ibm.com/design/language/ibm-logos/
+granite4	Granite 4	https://www.ibm.com/granite	https://unsplash.com/s/photos/enterprise-technology	https://www.ibm.com/design/language/ibm-logos/
+command-r	Command R	https://cohere.com/command	https://unsplash.com/s/photos/document-search	https://cohere.com/newsroom
+command-r-plus	Command R Plus	https://cohere.com/command	https://unsplash.com/s/photos/document-search	https://cohere.com/newsroom
+nemotron	Nemotron	https://developer.nvidia.com/nemotron	https://unsplash.com/s/photos/gpu-server	https://www.nvidia.com/en-us/about-nvidia/legal-info/logo-brand-usage/
+glm	GLM	https://glm5.ai/	https://unsplash.com/s/photos/ai-research	https://huggingface.co/THUDM
+glm5	GLM 5	https://glm5.ai/	https://unsplash.com/s/photos/ai-research	https://huggingface.co/THUDM
+kimi	Kimi	https://www.kimi.com/en	https://unsplash.com/s/photos/long-context	https://www.moonshot.ai/
+minimax	MiniMax	https://www.minimax.io/	https://unsplash.com/s/photos/ai-agent	https://github.com/MiniMax-AI
+cogito	Cogito	https://www.deepcogito.com/research/cogito-v2-1	https://unsplash.com/s/photos/logic	https://github.com/DeepCogito/cogito-v2
+magistral	Magistral	https://mistral.ai/news/magistral/	https://unsplash.com/s/photos/reasoning	https://mistral.ai/brand/
+tinyllama	TinyLlama	https://github.com/jzhang38/TinyLlama	https://unsplash.com/s/photos/tiny-computer	https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0
+smollm	SmolLM	https://huggingface.co/blog/smollm	https://unsplash.com/s/photos/edge-computing	https://huggingface.co/brand
+smollm2	SmolLM2	https://github.com/huggingface/smollm	https://unsplash.com/s/photos/small-server	https://huggingface.co/brand
+orca-mini	Orca Mini	https://huggingface.co/models?search=orca_mini	https://unsplash.com/s/photos/learning-ai	https://huggingface.co/psmathur
+dolphin	Dolphin	https://huggingface.co/cognitivecomputations	https://unsplash.com/s/photos/dolphin	https://erichartford.com/
+dolphin-llama3	Dolphin Llama 3	https://huggingface.co/cognitivecomputations	https://unsplash.com/s/photos/ai-assistant	https://erichartford.com/
+dolphin-mistral	Dolphin Mistral	https://huggingface.co/cognitivecomputations	https://unsplash.com/s/photos/custom-ai	https://mistral.ai/brand/
+zephyr	Zephyr	https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha	https://unsplash.com/s/photos/wind-technology	https://huggingface.co/brand
+yi	Yi	https://huggingface.co/01-ai/models	https://unsplash.com/s/photos/chinese-language	https://huggingface.co/01-ai
+falcon	Falcon	https://falconllm.tii.ae/	https://unsplash.com/s/photos/falcon-technology	https://falconfoundation.ai/
+olmo	OLMo	https://allenai.org/olmo	https://unsplash.com/s/photos/open-science	https://github.com/allenai/OLMo
+moondream	Moondream	https://moondream.ai/	https://unsplash.com/s/photos/computer-vision	https://github.com/m87-labs/moondream
+minicpm-v	MiniCPM-V	https://github.com/OpenBMB/MiniCPM-V	https://unsplash.com/s/photos/vision-ai	https://www.openbmb.cn/en
+bge-m3	BGE-M3	https://huggingface.co/BAAI/bge-m3	https://unsplash.com/s/photos/search-data	https://bge-model.com/bge/bge_m3.html
+bge	BGE	https://huggingface.co/BAAI/bge-m3	https://unsplash.com/s/photos/search-data	https://bge-model.com/bge/bge_m3.html
+nomic-embed-text	Nomic Embed Text	https://www.nomic.ai/	https://unsplash.com/s/photos/semantic-search	https://docs.nomic.ai/atlas/embeddings-and-retrieval/text-embedding
+nomic-embed	Nomic Embed	https://www.nomic.ai/	https://unsplash.com/s/photos/semantic-search	https://docs.nomic.ai/atlas/embeddings-and-retrieval/text-embedding
+mxbai	Mixedbread Embed	https://www.mixedbread.com/	https://unsplash.com/s/photos/semantic-search	https://huggingface.co/mixedbread-ai
+
+Additional scan
+
+After processing the master list, scan /menu/ for other existing model-family pages not in the list.
+
+For any obvious model-family page not listed, add a generic artwork reference block only if reliable references are easy to determine from the page itself.
+
+If references are not obvious, do not guess. Report the page under:
+
+“Needs manual artwork-reference research.”
+
+QA checks before commit
+
+Run checks for the artwork.
+
+Suggested commands:
+
+grep -R "/models/" menu || true
+grep -R "/assets/models/" menu || true
+find menu -type f \( -name "*.webp" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.svg" \)
+
+If existing /models/ links were already present before this task, do not fix them in this branch unless they were created by this task. Report them separately.
+
+Final report format
+
+After editing, report truthfully:
+
+## Batch complete: Artwork source references
+Branch:
+- feature/menu-artwork-source-references
+Changed files:
+- /menu/example.html
+- /menu/example/index.html
+Added:
+- Artwork/source-reference blocks
+- Official developer/model references
+- Suggested photo-reference links
+- Brand/logo/reference links
+Skipped because missing:
+- /menu/example.html
+Needs manual artwork-reference research:
+- /menu/example.html
+QA:
+- No images downloaded
+- No local asset folders created
+- No /models/ paths added
+- No /assets/models/ paths added
+- External links use target="_blank" and rel="noopener"
+Notes:
+- These are source-reference links only.
+- License and brand usage must be reviewed before publishing any final artwork.
+
+Commit the changes to:
+
+feature/menu-artwork-source-references
