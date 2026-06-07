@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grok — xAI's AI Models | NoCloudGPT</title>
+  <meta name="description" content="Information about xAI Grok models and private deployment options with NoCloudGPT. Note: most Grok models are closed-source — see deployment options and alternatives.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/grok/">
+  <meta property="og:title" content="Grok — xAI AI Models | NoCloudGPT">
+  <meta property="og:description" content="Information about xAI Grok models and private deployment options with NoCloudGPT. Note: most Grok models are closed-source — see deployment options and alternatives.">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+        <!-- TODO: /assets/models/grok/grok-hero.webp -->[Grok / xAI — hero artwork 480×180]
+      </div>
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Grok / xAI</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">xAI's Grok Models — What's Available for Private Deployment</h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">Grok is the AI model series developed by xAI, Elon Musk's AI company. Grok 1 (314B MoE) was released as open-weight in March 2024, but requires exceptional hardware. Grok 2 and later models are closed-source, API-only products. This page covers what is realistically deployable privately and when to consider alternatives.</p>
+      <p class="mt-4 max-w-3xl text-slate-400">IMPORTANT: Grok 1 (314B MoE) is the only truly open-weight Grok model. It requires enormous hardware to run. Grok 2+ are closed-source APIs only. For most private AI deployments, alternatives like DeepSeek, Llama 4, or Mixtral are the practical choice.</p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+        <a href="/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <div class="grid gap-10 lg:grid-cols-[1.55fr_0.95fr]">
+      <div class="space-y-14">
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
+          <h2 class="mt-3 text-3xl font-black">xAI</h2>
+          <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+            <!-- TODO: /assets/models/grok/grok-developer.webp -->[xAI — developer badge]
+          </div>
+          <p class="mt-6 text-slate-300">xAI is an AI company founded in 2023. Grok 1 was released as open-weight (Apache 2.0) in March 2024 — a 314B parameter MoE model. However, running Grok 1 privately requires multiple high-end GPUs and significant infrastructure investment. Grok 2 and Grok 3 are closed models accessible only through xAI's API, which is the opposite of private deployment.</p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Why teams choose it</p>
+          <h2 class="mt-3 text-3xl font-black">Fast, Efficient Pre-Built Private AI</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6"><h3 class="text-lg font-bold text-cyan-200">Grok 1: Apache 2.0 at 314B MoE (with caveats)</h3><p class="mt-3 text-slate-400">Grok 1's open weights under Apache 2.0 are theoretically deployable. In practice, the 314B parameter count requires approximately 4× A100 80GB cards or equivalent — most organizations cannot practically self-host it.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6"><h3 class="text-lg font-bold text-cyan-200">For most use cases, consider alternatives</h3><p class="mt-3 text-slate-400">Llama 4, Mixtral 8x22B, and DBRX provide comparable or better quality under more practical hardware requirements with clearer commercial licensing and active Ollama support.</p></div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
+          <h2 class="mt-3 text-3xl font-black">What to Use Grok / xAI For</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Evaluating xAI model options</h3><p class="mt-3 text-sm text-slate-400">Understanding what Grok models are available for self-hosting vs. API-only access.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Research and comparison</h3><p class="mt-3 text-sm text-slate-400">Teams researching the open-weight AI landscape who want to understand xAI's positioning.</p></div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Hardware and deployment reality</p>
+          <h2 class="mt-3 text-3xl font-black">Deployment Tiers</h2>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200"><tr><th class="px-4 py-3">Model</th><th class="px-4 py-3">Tier</th><th class="px-4 py-3">Use</th></tr></thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3 font-semibold text-white">Grok 1 (314B MoE) Q4</td><td class="px-4 py-3">Enterprise AI (160+ GB GPU)</td><td class="px-4 py-3">Theoretical — practically very difficult to deploy</td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Grok 2+ (closed)</td><td class="px-4 py-3">API only — not self-hostable</td><td class="px-4 py-3">Not available for private deployment</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Honest guidance</p>
+          <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model</h2>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">Grok 2+ cannot be privately deployed</h3><p class="mt-2 text-sm text-slate-400">Grok 2 and later versions are closed-source, API-only products. They cannot be deployed on your own infrastructure. For open-weight alternatives at comparable quality, see Llama 4 or Mixtral. <a href="/models/llama4/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Llama 4 →</a></p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">Grok 1 hardware requirements are prohibitive for most</h3><p class="mt-2 text-sm text-slate-400">Running Grok 1 privately requires hardware most organizations don't have. The practical alternatives with similar capability are Mixtral 8x22B or DBRX. <a href="/models/mixtral/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Mixtral →</a></p></div>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
+          <h2 class="mt-3 text-3xl font-black">Start Your Private Grok / xAI Deployment</h2>
+          <p class="mt-5 text-slate-300">If you are specifically committed to a Grok 1 private deployment, NoCloudGPT will help you understand the hardware requirements and infrastructure design. For most organizations, we will recommend evaluating more practically deployable alternatives first.</p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <a href="/quote.html" class="rounded-2xl bg-cyan-300 p-5 text-center font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+            <a href="/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+            <a href="/deploy/on-premise.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+          </div>
+        </section>
+      </div>
+
+      <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-7">
+          <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Quick reference</p>
+          <h2 class="mt-3 text-2xl font-black">Grok / xAI deployment</h2>
+          <p class="mt-3 text-sm text-cyan-50">xAI's Grok. Only Grok 1 (314B) is open-weight — very large hardware requirement. Grok 2+ are API-only, not self-hostable.</p>
+          <dl class="mt-5 space-y-3 text-sm">
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Developer</dt><dd class="font-semibold text-white">xAI</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Open-weight</dt><dd class="font-semibold text-white">Grok 1 only (314B)</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License (Grok 1)</dt><dd class="font-semibold text-white">Apache 2.0</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Grok 2+</dt><dd class="font-semibold text-white">Closed / API only</dd></div>
+            <div class="flex justify-between"><dt class="text-slate-400">Practical tier</dt><dd class="font-semibold text-white">Not recommended for most</dd></div>
+          </dl>
+          <a href="/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build a Grok / xAI quote</a>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-300">
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Research: understanding xAI model availability</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Grok 1 deployment (very large hardware only)</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/llama4/">Llama 4 — practical frontier alternative</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/mixtral/">Mixtral — Apache 2.0 high capability</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/dbrx/">DBRX — Databricks enterprise MoE</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deepseek/">DeepSeek — reasoning and technical AI</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT is an independent deployment service. Not affiliated with xAI or any model developer referenced on this page.</p>
+  </footer>
+</body>
+</html>
