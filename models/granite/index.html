@@ -24,6 +24,14 @@
 
   <!-- Hero -->
   <section class="max-w-4xl mx-auto px-6 py-16">
+    <!-- hero.webp — IBM Granite abstract enterprise AI artwork (generated for NoCloudGPT) -->
+    <img
+      src="/models/granite/hero.webp"
+      alt="IBM Granite model family — enterprise AI privately deployed with NoCloudGPT"
+      width="1200" height="600"
+      class="w-full rounded-2xl mb-8 object-cover max-h-64"
+      onerror="this.style.display='none';"
+    />
     <div class="flex items-center gap-3 mb-4">
       <span class="bg-blue-900 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">IBM Research</span>
       <span class="bg-green-900 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">Apache 2.0</span>
@@ -325,6 +333,33 @@
       <a href="/models/" class="hover:text-gray-300">All Models</a>
     </div>
   </footer>
+
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
+      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="font-semibold text-slate-400">Hero image</p>
+          <p class="mt-1">AI-generated abstract artwork created for NoCloudGPT. Original work, no third-party license required.</p>
+          <!-- TODO: Replace with licensed photo from Unsplash when available -->
+          <!-- Unsplash search reference: https://unsplash.com/s/photos/enterprise-technology -->
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Developer reference</p>
+          <p class="mt-1">Granite is developed by <a href="https://www.ibm.com/granite" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">IBM Research</a>. NoCloudGPT is an independent deployment service and is not affiliated with or endorsed by IBM Research.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Model catalog reference</p>
+          <p class="mt-1">See the <a href="https://ollama.com/library/granite" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Ollama library page for Granite</a> for current model tags, sizes, and release notes.</p>
+          <!-- card.webp, sidebar.webp, og.webp: TODO — see models/artwork-sources.md -->
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>

@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://nocloudgpt.com/models/qwen2.5-coder/">
   <meta property="og:title" content="Qwen2.5 Coder — Private Coding AI | NoCloudGPT">
   <meta property="og:description" content="Run Qwen2.5 Coder on your own server. Strong private coding assistant across Python, JavaScript, Go, SQL, and 40+ languages — from 1.5B to 72B sizes.">
+  <meta property="og:image" content="/models/qwen2.5-coder/og.webp">
   <meta property="og:type" content="website">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -29,10 +30,16 @@
   <section class="border-b border-slate-800 bg-slate-950">
     <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-
-      <!-- TODO: /assets/models/qwen2.5-coder/qwen-coder-hero.webp — 480×180 recommended -->
-      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
-        [Qwen2.5 Coder hero artwork — 480×180]
+      <img
+        src="/models/qwen2.5-coder/hero.webp"
+        alt="Qwen 2.5 Coder — private multilingual coding AI with NoCloudGPT"
+        width="1200"
+        height="600"
+        class="mt-8 mb-6 w-full max-w-xs rounded-2xl object-cover"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+      />
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
+        [Qwen 2.5 Coder hero artwork]
       </div>
 
       <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Qwen2.5 Coder Family</p>
@@ -334,6 +341,33 @@
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
     <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Alibaba Cloud or any model developer referenced on this page.</p>
   </footer>
+
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
+      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="font-semibold text-slate-400">Hero image</p>
+          <p class="mt-1">AI-generated abstract artwork created for NoCloudGPT. Original work, no third-party license required.</p>
+          <!-- TODO: Replace with licensed photo from Unsplash when available -->
+          <!-- Unsplash search reference: https://unsplash.com/s/photos/code-screen -->
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Developer reference</p>
+          <p class="mt-1">Qwen 2.5 Coder is developed by <a href="https://qwen.ai/" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Alibaba Cloud</a>. NoCloudGPT is an independent deployment service and is not affiliated with or endorsed by Alibaba Cloud.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Model catalog reference</p>
+          <p class="mt-1">See the <a href="https://ollama.com/library/qwen2.5-coder" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Ollama library page for Qwen 2.5 Coder</a> for current model tags, sizes, and release notes.</p>
+          <!-- card.webp, sidebar.webp, og.webp: TODO — see models/artwork-sources.md -->
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
