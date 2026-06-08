@@ -190,6 +190,52 @@
           </div>
         </section>
 
+
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying This Family</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Private visual Q&A for documents, screenshots, and photos</h3>
+              <p class="mt-2 text-sm text-slate-400">If you regularly screenshot things and want to ask questions about them — or process scanned documents with visual content — LLaVA opens up workflows that were previously cloud-only. Running on a modest GPU at home, it handles everyday image Q&A without sending your images to Google Vision or AWS Rekognition. Useful for anyone who works with visual documents regularly.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Visual document processing without cloud OCR services</h3>
+              <p class="mt-2 text-sm text-slate-400">Teams doing document processing that includes scanned PDFs, forms with embedded images, or charts alongside text can use LLaVA as the visual parsing layer before a text model handles the analysis. Private document OCR at batch scale without per-page cloud API pricing. Particularly useful for legal, medical, and financial teams with scanned document backlogs.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Visual AI application baseline with well-documented behavior</h3>
+              <p class="mt-2 text-sm text-slate-400">LLaVA's architecture (CLIP vision encoder + language model backbone) is straightforward to integrate and well-documented. Community behavior testing across document types is extensive. For teams building visual AI products, LLaVA provides a proven open baseline with wide Ollama support and predictable behavior — useful both as a deployed tool and as a comparison target for newer models.</p>
+              <p class="mt-2 text-xs text-slate-500 italic">Newer models (Pixtral 12B, Gemma 4, Qwen VL) show improvements on structured document understanding — compare them against LLaVA for your specific document type before committing.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Visual question answering benchmarks and visual-language research</h3>
+              <p class="mt-2 text-sm text-slate-400">LLaVA is one of the most benchmarked open vision-language models, with extensive published results on VQA, document understanding, and multimodal reasoning tasks. For teams working on visual-language research, LLaVA provides a well-understood open baseline with substantial existing literature to compare against.</p>
+              
+            </div>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
           <h2 class="mt-3 text-3xl font-black">What to Use LLaVA For</h2>
@@ -219,6 +265,34 @@
               <p class="mt-3 text-sm text-slate-400">Manufacturing and operations teams describe, classify, and flag visual content — product images, inspection photos, defect documentation — privately on-premise.</p>
             </div>
           </div>
+        </section>
+
+
+        <!-- SECTION: Licensing information (improved) -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">LLaVA's license depends on which language model backbone is used. The CLIP vision encoder component is under a separate license. Original LLaVA variants built on Llama 2 carry the Llama 2 community license. Newer variants may use Llama 3, Mistral, or other backbones — the license follows the backbone.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model / generation</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Verify</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3  font-semibold text-white">LLaVA 1.5 (Llama 2 backbone)</td><td class="px-4 py-3">Llama 2 Community License</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/liuhaotian/llava-v1.5-7b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">liuhaotian/llava-v1.5-7b →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">LLaVA 1.6 / LLaVA-NeXT (Llama 3)</td><td class="px-4 py-3">Llama 3 Community License</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/lmms-lab/llama3-llava-next-8b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">lmms-lab/llama3-llava-next-8b →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">LLaVA 1.6 (Mistral backbone)</td><td class="px-4 py-3">Apache 2.0 (backbone)</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/liuhaotian/llava-v1.6-mistral-7b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">liuhaotian/llava-v1.6-mistral-7b →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">CLIP vision encoder</td><td class="px-4 py-3">OpenAI Research License</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/openai/clip-vit-large-patch14-336" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">openai/clip-vit-large-patch14-336 →</a></td></tr>
+
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">Always check both the backbone LLM license and the CLIP encoder license for the specific LLaVA variant you are deploying. License information sourced from Hugging Face model cards. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
         </section>
 
         <section>
@@ -386,18 +460,6 @@
 
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
     <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by the LLaVA research team or any model developer referenced on this page.</p>
-  
-  <div class="mx-auto max-w-6xl px-6 py-4">
-    <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
-      <strong class="text-slate-400">License information:</strong>
-      License terms for open-weight models are sourced from Hugging Face model cards and official repositories.
-      Licenses may vary by model generation, quantization, and deployment scale.
-      Always verify the current license at
-      <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
-      or the official developer repository before commercial deployment.
-      NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
-    </p>
-  </div>
   </footer>
 
 

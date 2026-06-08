@@ -159,6 +159,52 @@
           </div>
         </section>
 
+
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying This Family</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Personal knowledge base with cited answers</h3>
+              <p class="mt-2 text-sm text-slate-400">Command R is primarily designed for organizational RAG deployments, but it works well for personal use if you maintain a large personal knowledge base — notes, research papers, saved articles — and want cited answers rather than hallucinated summaries. If you want the model to say 'I found this in your note from March' rather than paraphrasing vaguely, Command R is purpose-built for this.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Enterprise document search with audit trails</h3>
+              <p class="mt-2 text-sm text-slate-400">The specific value over general models: Command R consistently cites which passage in which document supports each claim. For compliance, legal, and finance teams that need AI-assisted document analysis with traceable sourcing — not just a summary that might be paraphrased from the wrong document — this citation behavior is a material operational advantage.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Production RAG applications and retrieval pipeline backends</h3>
+              <p class="mt-2 text-sm text-slate-400">Native tool calling and explicit RAG optimization make Command R straightforward to integrate into production retrieval systems. The model follows Cohere's grounding protocol, which produces structured source references that downstream systems can parse. For teams building knowledge base products, Command R's retrieval behavior is more predictable than a general model prompted for RAG.</p>
+              <p class="mt-2 text-xs text-slate-500 italic">Verify current Cohere license terms before commercial deployment — some variants carry CC-BY-NC restrictions.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Information retrieval research and grounded generation studies</h3>
+              <p class="mt-2 text-sm text-slate-400">Command R's grounded generation — where the model explicitly attributes each claim to a retrieved passage — is useful for systematic literature review and any research workflow requiring evidence traceability. The citation format is consistent enough to parse programmatically, which supports research into automated fact verification and claim attribution.</p>
+              
+            </div>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
           <h2 class="mt-3 text-3xl font-black">What to Use Command R For</h2>
@@ -245,7 +291,34 @@
           </div>
         </section>
 
-        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
+        <section 
+        <!-- SECTION: Licensing information (improved) -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">Command R licensing requires careful verification. Cohere's open-weight releases have included CC-BY-NC terms on some variants, which restricts commercial use. Verify the specific model generation you are deploying, as terms have changed across releases.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model / generation</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Verify</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3  font-semibold text-white">Command R (35B)</td><td class="px-4 py-3">CC-BY-NC 4.0 (VERIFY)</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/c4ai-command-r-v01" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r-v01 →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Command R+ (104B)</td><td class="px-4 py-3">CC-BY-NC 4.0 (VERIFY)</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/c4ai-command-r-plus" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r-plus →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Command R7B</td><td class="px-4 py-3">CC-BY-NC 4.0 (VERIFY)</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/c4ai-command-r7b-12-2024" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r7b-12-2024 →</a></td></tr>
+
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">CC-BY-NC 4.0 restricts commercial use. If you are deploying Command R in a commercial product or service, you need to verify whether your use case qualifies under these terms. Cohere may offer commercial licensing separately. License information sourced from Hugging Face model cards — always verify current terms.</p>
+        </section>
+
+class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
           <h2 class="mt-3 text-3xl font-black">Start Your Private Command R Deployment</h2>
           <p class="mt-5 text-slate-300">
@@ -330,18 +403,6 @@
 
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
     <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Cohere or any model developer referenced on this page.</p>
-  
-  <div class="mx-auto max-w-6xl px-6 py-4">
-    <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
-      <strong class="text-slate-400">License information:</strong>
-      License terms for open-weight models are sourced from Hugging Face model cards and official repositories.
-      Licenses may vary by model generation, quantization, and deployment scale.
-      Always verify the current license at
-      <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
-      or the official developer repository before commercial deployment.
-      NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
-    </p>
-  </div>
   </footer>
 
 

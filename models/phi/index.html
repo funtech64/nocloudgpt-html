@@ -230,6 +230,52 @@
           </div>
         </section>
 
+
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying This Family</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Students, researchers, and cost-sensitive private AI users</h3>
+              <p class="mt-2 text-sm text-slate-400">Phi-4 runs on a 4 GB instance or mid-range laptop — genuinely useful reasoning output at minimal infrastructure cost. Students who need a private AI tutor or writing assistant, researchers who want an offline working tool, and privacy-conscious individuals who refuse cloud AI subscriptions all find Phi provides serious capability at a price point that justifies trying.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Small businesses where infrastructure cost is the primary obstacle</h3>
+              <p class="mt-2 text-sm text-slate-400">For a small business that needs AI assistance primarily for writing, Q&A, and light analysis, Phi 4 at Standard AI tier delivers comparable output to general 7B models at a lower cost footprint. The MIT license removes legal review friction. This is often the lowest-friction way to prove private AI value internally before committing to larger infrastructure.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Commercial integrations that need small-footprint MIT-licensed AI</h3>
+              <p class="mt-2 text-sm text-slate-400">MIT licensing with no community license complexity is a significant practical advantage for teams building commercial tools. A 14B model that fits on modest server hardware is also easier to deploy alongside other services than a larger GPU-bound alternative. Phi's predictable reasoning behavior makes it suitable as a backend for structured decision-support tools.</p>
+              <p class="mt-2 text-xs text-slate-500 italic">Phi's context window is more limited than Mistral Nemo or Qwen — for long-document workflows, those families are better fits.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Data-quality research: studying what training data does to model capability</h3>
+              <p class="mt-2 text-sm text-slate-400">Microsoft Research's 'textbooks are all you need' hypothesis — train on high-quality curated data rather than raw scale — is a published research claim that Phi directly tests. The unusually high benchmark performance relative to parameter count makes Phi a useful data point for studying how data quality affects model capability. Technical reports are published and citable.</p>
+              
+            </div>
+          </div>
+        </section>
+
         <!-- SECTION 4: Best-fit workloads -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
@@ -349,6 +395,34 @@
             </div>
 
           </div>
+        </section>
+
+
+        <!-- SECTION: Licensing information (improved) -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">Phi models are released under the MIT License — one of the most permissive licenses available in the open-weight AI space. MIT permits unrestricted commercial use, modification, distribution, and derivative models. Licensing terms should be confirmed at the specific model card, as versions may differ.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model / generation</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Verify</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3  font-semibold text-white">Phi-3 Mini (3.8B)</td><td class="px-4 py-3">MIT License</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/microsoft/Phi-3-mini-4k-instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">microsoft/Phi-3-mini-4k-instruct →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Phi-3 Medium (14B)</td><td class="px-4 py-3">MIT License</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/microsoft/Phi-3-medium-4k-instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">microsoft/Phi-3-medium-4k-instruct →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Phi-4 (14B)</td><td class="px-4 py-3">MIT License</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/microsoft/phi-4" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">microsoft/phi-4 →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Phi-4 Reasoning</td><td class="px-4 py-3">MIT License (VERIFY)</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/microsoft/Phi-4-reasoning" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">microsoft/Phi-4-reasoning →</a></td></tr>
+
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">MIT is one of the cleanest commercial AI licenses available. There are no user thresholds, no redistribution restrictions, and no approval requirements. Confirm terms at the specific model card before deployment.</p>
         </section>
 
         <!-- SECTION 6: Hardware and deployment reality -->
@@ -587,18 +661,6 @@
   ============================================================ -->
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
     <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Microsoft, Microsoft Research, or any model developer referenced on this page.</p>
-  
-  <div class="mx-auto max-w-6xl px-6 py-4">
-    <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
-      <strong class="text-slate-400">License information:</strong>
-      License terms for open-weight models are sourced from Hugging Face model cards and official repositories.
-      Licenses may vary by model generation, quantization, and deployment scale.
-      Always verify the current license at
-      <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
-      or the official developer repository before commercial deployment.
-      NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
-    </p>
-  </div>
   </footer>
 
 

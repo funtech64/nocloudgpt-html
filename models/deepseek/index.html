@@ -224,6 +224,52 @@
           </div>
         </section>
 
+
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying This Family</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Reliable math, logic, and step-by-step problem solving</h3>
+              <p class="mt-2 text-sm text-slate-400">If you do any quantitative work — financial modeling, engineering calculations, logic puzzles, or structured reasoning — DeepSeek R1 handles multi-step problems more reliably than most 7B general models. The chain-of-thought output means you can follow the working, not just accept the answer. Useful for people who find standard assistants frustratingly close but wrong on numerical tasks.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Compliance, finance, and legal teams that need auditable AI reasoning</h3>
+              <p class="mt-2 text-sm text-slate-400">R1's chain-of-thought traces let compliance analysts and finance teams review the reasoning behind an AI-assisted conclusion, not just the conclusion itself. For teams under regulatory scrutiny or internal audit requirements, a model that shows its work is substantially more defensible than one that doesn't.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Analytical tools, structured data pipelines, and reasoning-heavy automation</h3>
+              <p class="mt-2 text-sm text-slate-400">R1's structured reasoning output is easier to parse and validate programmatically than a general model's response. The MIT license on R1 means minimal legal review friction for commercial tools. DeepSeek's coder variants are strong private alternatives to cloud coding assistants for proprietary codebases.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Quantitative research, data analysis automation, and ML experimentation</h3>
+              <p class="mt-2 text-sm text-slate-400">DeepSeek performs strongly on code-heavy experimentation workflows and automated data analysis tasks. R1's published reinforcement learning training methodology is itself a research artifact — teams studying reasoning improvement techniques have DeepSeek's technical reports as primary literature. The coder variants handle Python and ML framework code reliably.</p>
+              
+            </div>
+          </div>
+        </section>
+
         <!-- SECTION 4: Best-fit workloads -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
@@ -348,30 +394,36 @@
           </div>
         </section>
 
+        
 
+        <!-- SECTION: Licensing information (improved) -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
-          <h2 class="mt-3 text-3xl font-black">License Summary for DeepSeek</h2>
-          <p class="mt-5 text-slate-300">
-            DeepSeek model licenses vary by generation and variant. R1 is notably permissive (MIT),
-            which is unusual for a model of its capability. V3 licensing should be verified at time of deployment.
-          </p>
-          <div class="mt-4 overflow-hidden rounded-2xl border border-slate-800">
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">DeepSeek licensing varies significantly by model. R1 is notably permissive (MIT), which is unusual for a frontier-class reasoning model. V3 uses a separate DeepSeek license that has different commercial conditions. Distilled variants may inherit the license of the base model they were distilled from — verify each variant individually.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
             <table class="w-full text-left text-sm">
               <thead class="bg-slate-950 text-cyan-200">
-                <tr><th class="px-4 py-3">Model</th><th class="px-4 py-3">License</th><th class="px-4 py-3">Commercial use</th><th class="px-4 py-3">Source</th></tr>
+                <tr>
+                  <th class="px-4 py-3">Model / generation</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Verify</th>
+                </tr>
               </thead>
               <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-                <tr><td class="px-4 py-3 font-semibold text-white">DeepSeek R1</td><td class="px-4 py-3">MIT License</td><td class="px-4 py-3 text-green-400">Permitted (VERIFY)</td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Hugging Face →</a></td></tr>
-                <tr><td class="px-4 py-3 font-semibold text-white">DeepSeek R1 distilled</td><td class="px-4 py-3">MIT License (VERIFY per variant)</td><td class="px-4 py-3 text-green-400">Permitted (VERIFY)</td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Hugging Face →</a></td></tr>
-                <tr><td class="px-4 py-3 font-semibold text-white">DeepSeek V3</td><td class="px-4 py-3">DeepSeek License (VERIFY)</td><td class="px-4 py-3 text-amber-400">Verify current terms</td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-V3" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Hugging Face →</a></td></tr>
+                <tr><td class="px-4 py-3  font-semibold text-white">DeepSeek R1 (full 671B)</td><td class="px-4 py-3">MIT License</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">deepseek-ai/DeepSeek-R1 →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">R1 Distill Llama 8B</td><td class="px-4 py-3">MIT + Llama 3 license</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-8B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">deepseek-ai/DeepSeek-R1-Distill-Llama-8B →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">R1 Distill Qwen 14B</td><td class="px-4 py-3">MIT + Qwen license</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-14B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">deepseek-ai/DeepSeek-R1-Distill-Qwen-14B →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">DeepSeek V3</td><td class="px-4 py-3">DeepSeek License (custom)</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-V3" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">deepseek-ai/DeepSeek-V3 →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">DeepSeek Coder V2</td><td class="px-4 py-3">DeepSeek License (custom)</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">deepseek-ai/DeepSeek-Coder-V2-Instruct →</a></td></tr>
+
               </tbody>
             </table>
           </div>
-          <p class="mt-3 text-xs text-slate-500">License information sourced from Hugging Face. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+          <p class="mt-3 text-xs text-slate-500">Distilled R1 variants inherit restrictions from their base model (Llama or Qwen) in addition to the MIT terms — both licenses apply. License information sourced from Hugging Face model cards. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
         </section>
 
-        
         <!-- SECTION: Available model sizes (Phase 4 — quote links placeholder) -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
@@ -666,17 +718,6 @@
   <!-- ============================================================
        LICENSING DISCLAIMER
   ============================================================ -->
-  <div class="mx-auto max-w-6xl px-6 py-4">
-    <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
-      <strong class="text-slate-400">License information:</strong>
-      License terms for open-weight models are sourced from Hugging Face model cards and official repositories.
-      Licenses may vary by model generation, quantization, and deployment scale.
-      Always verify the current license at
-      <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
-      or the official developer repository before commercial deployment.
-      NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
-    </p>
-  </div>
   </footer>
 
 

@@ -243,6 +243,52 @@
           </div>
         </section>
 
+
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying This Family</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Long-document assistant for anyone who reads a lot</h3>
+              <p class="mt-2 text-sm text-slate-400">Mistral Nemo 12B's 128K context window handles full documents — entire contracts, full research papers, long meeting transcripts — without the chunking problems that limit smaller-context models. For individuals who regularly need to query, summarize, or analyze lengthy texts, this context capacity is practically significant, not just a spec on paper.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Professional services firms and European businesses</h3>
+              <p class="mt-2 text-sm text-slate-400">Mistral's combination of strong multilingual European language performance and EU-based development makes it a natural fit for European organizations. Nemo 12B covers most professional document work at Standard AI hardware cost. For legal, finance, and consulting teams, the Apache 2.0 license removes the license review burden that other families create.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Commercial integrations and agentic pipelines at any hardware tier</h3>
+              <p class="mt-2 text-sm text-slate-400">Apache 2.0 across the core Mistral family means no legal friction for commercial product integration. Function calling support in Nemo, Small, and Large enables reliable tool-calling agents. The consistent family structure — each tier in the same family with the same API patterns — lets developers build once and scale hardware independently.</p>
+              <p class="mt-2 text-xs text-slate-500 italic">Mistral Large uses a Research License, not Apache 2.0 — verify terms before commercial deployment of the flagship model.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Architecture research and efficient transformer studies</h3>
+              <p class="mt-2 text-sm text-slate-400">Mistral's sliding window attention, grouped query attention, and early MoE contributions (Mixtral) are well-documented innovations in transformer efficiency. For teams studying model architecture, Mistral's technical papers are specific, citable, and historically significant in the efficiency-quality literature.</p>
+              
+            </div>
+          </div>
+        </section>
+
         <!-- SECTION 4: Best-fit workloads -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
@@ -371,6 +417,36 @@
             </div>
 
           </div>
+        </section>
+
+
+        <!-- SECTION: Licensing information (improved) -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">The Mistral family has a split licensing structure. The standard-tier models (7B, Nemo, Small, Ministral, Pixtral) carry Apache 2.0 — highly permissive for commercial use. Mistral Large uses a separate Research License that restricts redistribution and third-party hosting. Mixtral models are Apache 2.0. Know which tier you are deploying before committing.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model / generation</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Verify</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3  font-semibold text-white">Mistral 7B v0.3</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mistral-7B-Instruct-v0.3 →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Mistral Nemo 12B</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mistral-Nemo-Instruct-2407 →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Mistral Small 22B</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/mistralai/Mistral-Small-Instruct-2409" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mistral-Small-Instruct-2409 →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Ministral 8B</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/mistralai/Ministral-8B-Instruct-2410" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Ministral-8B-Instruct-2410 →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Pixtral 12B</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/mistralai/Pixtral-12B-2409" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Pixtral-12B-2409 →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Mistral Large 2 (123B)</td><td class="px-4 py-3">Mistral Research License</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/mistralai/Mistral-Large-Instruct-2407" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mistral-Large-Instruct-2407 →</a></td></tr>
+
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">Mistral Research License permits internal use and research but restricts redistribution and hosting as a service for third parties. Apache 2.0 models in this family have no such restrictions. License information sourced from Hugging Face. Always verify before commercial deployment.</p>
         </section>
 
         <!-- SECTION 6: Hardware and deployment reality -->
@@ -614,18 +690,6 @@
   ============================================================ -->
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
     <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Mistral AI or any model developer referenced on this page.</p>
-  
-  <div class="mx-auto max-w-6xl px-6 py-4">
-    <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
-      <strong class="text-slate-400">License information:</strong>
-      License terms for open-weight models are sourced from Hugging Face model cards and official repositories.
-      Licenses may vary by model generation, quantization, and deployment scale.
-      Always verify the current license at
-      <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
-      or the official developer repository before commercial deployment.
-      NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
-    </p>
-  </div>
   </footer>
 
 
