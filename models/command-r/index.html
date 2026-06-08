@@ -291,32 +291,47 @@
           </div>
         </section>
 
-        <section 
-        <!-- SECTION: Licensing information (improved) -->
+
+        <!-- SECTION: Licensing information -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
-          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
-          <p class="mt-5 text-slate-300">Command R licensing requires careful verification. Cohere's open-weight releases have included CC-BY-NC terms on some variants, which restricts commercial use. Verify the specific model generation you are deploying, as terms have changed across releases.</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary for Command R</h2>
+          <p class="mt-5 text-slate-300">Command R licensing requires careful verification. Cohere's open-weight releases carry CC-BY-NC 4.0 terms on publicly released weights, which restricts commercial use. Contact Cohere directly if your use case requires a commercial license. Terms have evolved across releases — always check the specific model card you are deploying.</p>
           <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
             <table class="w-full text-left text-sm">
               <thead class="bg-slate-950 text-cyan-200">
-                <tr>
-                  <th class="px-4 py-3">Model / generation</th>
-                  <th class="px-4 py-3">License</th>
-                  <th class="px-4 py-3">Commercial use</th>
-                  <th class="px-4 py-3">Verify</th>
-                </tr>
+                <tr><th class="px-4 py-3">Model / generation</th><th class="px-4 py-3">License</th><th class="px-4 py-3">Commercial use</th><th class="px-4 py-3">Verify</th></tr>
               </thead>
               <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-                <tr><td class="px-4 py-3  font-semibold text-white">Command R (35B)</td><td class="px-4 py-3">CC-BY-NC 4.0 (VERIFY)</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/c4ai-command-r-v01" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r-v01 →</a></td></tr>
-<tr><td class="px-4 py-3  font-semibold text-white">Command R+ (104B)</td><td class="px-4 py-3">CC-BY-NC 4.0 (VERIFY)</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/c4ai-command-r-plus" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r-plus →</a></td></tr>
-<tr><td class="px-4 py-3  font-semibold text-white">Command R7B</td><td class="px-4 py-3">CC-BY-NC 4.0 (VERIFY)</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/c4ai-command-r7b-12-2024" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r7b-12-2024 →</a></td></tr>
-
+                <tr><td class="px-4 py-3 font-semibold text-white">Command R 35B (v01)</td><td class="px-4 py-3">CC-BY-NC 4.0</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/c4ai-command-r-v01" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r-v01 →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Command R 7B (2024)</td><td class="px-4 py-3">CC-BY-NC 4.0 (VERIFY)</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/c4ai-command-r7b-12-2024" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r7b-12-2024 →</a></td></tr>
               </tbody>
             </table>
           </div>
-          <p class="mt-3 text-xs text-slate-500">CC-BY-NC 4.0 restricts commercial use. If you are deploying Command R in a commercial product or service, you need to verify whether your use case qualifies under these terms. Cohere may offer commercial licensing separately. License information sourced from Hugging Face model cards — always verify current terms.</p>
+          <p class="mt-3 text-xs text-slate-500">License information sourced from Hugging Face model cards. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
         </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
+          <p class="mt-5 text-slate-300">Command R is available at 7B and 35B sizes. Command R+ at 104B is covered on its own page. Choose based on retrieval complexity and hardware tier.</p>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr><th class="px-4 py-3">Model</th><th class="px-4 py-3">Deployment tier</th><th class="px-4 py-3">Best for</th><th class="px-4 py-3"></th></tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3 font-semibold text-white">Command R 7B Q4</td><td class="px-4 py-3">Standard AI — 4–8 GB</td><td class="px-4 py-3">Lightweight RAG for smaller collections</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Command R 35B Q4</td><td class="px-4 py-3">Professional AI — 20–24 GB GPU</td><td class="px-4 py-3">Production enterprise RAG — recommended</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Command R+ 104B</td><td class="px-4 py-3">Enterprise AI — 50+ GB GPU</td><td class="px-4 py-3">Maximum citation quality — see R+ page</td><td class="px-4 py-3"><a href="command-r-plus/index.html" class="text-cyan-300 hover:text-cyan-200 text-xs">See R+ page →</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">VERIFY current Ollama tags. CC-BY-NC license restricts commercial use — verify terms before production deployment. <!-- TODO: Link to individual size pages --></p>
+        </section>
+
+        <section 
 
 class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>

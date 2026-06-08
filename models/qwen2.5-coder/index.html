@@ -153,6 +153,48 @@
           </div>
         </section>
 
+
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying This Family</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Private coding assistant at the smallest hardware cost available</h3>
+              <p class="mt-2 text-sm text-slate-400">Qwen 2.5 Coder 1.5B runs on a 2 GB Lightsail instance — one of the few genuinely capable coding models that requires no GPU and minimal cloud spend. For developers who want a private coding assistant on a laptop or cheap instance without sending source code to an external API, this is the most accessible entry point in any coding family.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Dev teams building commercial software products under NDA or IP constraints</h3>
+              <p class="mt-2 text-sm text-slate-400">Apache 2.0 licensing across most Qwen 2.5 Coder variants removes the license review burden for commercial integrations. Source code processed by the model stays on your infrastructure. For agencies, startups, and product teams that cannot route client code through cloud AI services, Qwen 2.5 Coder is the cleanest commercial option at this performance level.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Building private coding tools and AI-assisted development pipelines</h3>
+              <p class="mt-2 text-sm text-slate-400">The 40+ language coverage includes languages that most coding models ignore — COBOL, Fortran, R, Haskell, Bash, and domain-specific languages. The 1.5B–72B size range is the widest of any coding family, which matters for teams building multi-tier systems (a tiny embedded model for simple completions, a larger model for architectural review). Ollama availability is consistently maintained.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Code intelligence research, multilingual code benchmarking, and ablation studies</h3>
+              <p class="mt-2 text-sm text-slate-400">The widest size range of any open coding family makes Qwen 2.5 Coder well-suited for ablation studies on the relationship between model scale and code quality. Published benchmark results and technical reports are available. The 40+ language diversity is also useful for multilingual code intelligence research beyond the mainstream Python/JavaScript benchmarks.</p>
+            </div>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
           <h2 class="mt-3 text-3xl font-black">What to Use Qwen2.5 Coder For</h2>
@@ -251,6 +293,89 @@
           </div>
         </section>
 
+
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">Most Qwen 2.5 Coder variants are released under Apache 2.0, which permits unrestricted commercial use, modification, and redistribution. Verify the specific variant — a small number of Qwen 2.5 releases use custom Qwen license terms.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model / generation</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Verify</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3  font-semibold text-white">Qwen2.5-Coder 1.5B–7B Instruct</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-Coder-7B-Instruct →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Qwen2.5-Coder 14B Instruct</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-Coder-14B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-Coder-14B-Instruct →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Qwen2.5-Coder 32B Instruct</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-Coder-32B-Instruct →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Qwen2.5-Coder 72B Instruct</td><td class="px-4 py-3">Apache 2.0 (VERIFY)</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-Coder-72B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-Coder-72B-Instruct →</a></td></tr>
+
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">License information sourced from Hugging Face model cards. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+        </section>
+
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
+          <p class="mt-5 text-slate-300">Qwen 2.5 Coder has the widest size range of any open coding family — from a 1.5B that runs on 2 GB to a 72B that requires professional GPU hardware. Choose the smallest model that handles your actual task complexity.</p>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model</th>
+                  <th class="px-4 py-3">Deployment tier</th>
+                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 1.5B</td>
+                  <td class="px-4 py-3">Starter AI — 2–4 GB</td>
+                  <td class="px-4 py-3">Edge deployment, simple completions, embedded tools</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr><tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 3B</td>
+                  <td class="px-4 py-3">Standard AI — 2–4 GB</td>
+                  <td class="px-4 py-3">Lightweight private coding assistant</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr><tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 7B</td>
+                  <td class="px-4 py-3">Standard AI — 4–8 GB</td>
+                  <td class="px-4 py-3">Practical daily coding — recommended default</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr><tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 14B</td>
+                  <td class="px-4 py-3">Professional AI — GPU recommended</td>
+                  <td class="px-4 py-3">Better code quality, complex generation</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr><tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 32B</td>
+                  <td class="px-4 py-3">Professional AI — GPU required</td>
+                  <td class="px-4 py-3">Strong architecture reasoning and review</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr><tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 72B</td>
+                  <td class="px-4 py-3">Heavy AI — large GPU</td>
+                  <td class="px-4 py-3">Flagship quality, demanding multi-file tasks</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">VERIFY: Confirm current Ollama tags before planning. The 1.5B–3B models run on Standard AI CPU instances; 7B+ benefit from GPU hardware.</p>
+          <!-- TODO: Link each row to individual model-size pages when created -->
+        </section>
+
         <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
           <h2 class="mt-3 text-3xl font-black">Start Your Private Qwen2.5 Coder Deployment</h2>
@@ -339,20 +464,7 @@
   </main>
 
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Alibaba Cloud or any model developer referenced on this page.</p>
-  
-  <div class="mx-auto max-w-6xl px-6 py-4">
-    <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
-      <strong class="text-slate-400">License information:</strong>
-      License terms for open-weight models are sourced from Hugging Face model cards and official repositories.
-      Licenses may vary by model generation, quantization, and deployment scale.
-      Always verify the current license at
-      <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
-      or the official developer repository before commercial deployment.
-      NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
-    </p>
-  </div>
-  </footer>
+    <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Alibaba Cloud or any model developer referenced on this page.</p>  </footer>
 
 
   <!-- ============================================================

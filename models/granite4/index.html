@@ -214,7 +214,73 @@
   </section>
 
   <!-- Planning Guide -->
+  
+  <!-- WHO THIS IS FOR -->
   <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <p class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">Who this model family is for</p>
+    <h2 class="text-2xl font-bold mb-6">Four Perspectives on Planning for Granite 4</h2>
+    <div class="grid gap-5 md:grid-cols-2">
+      <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+        <div class="flex items-center gap-2 mb-3"><span class="text-lg">👤</span><span class="text-xs font-bold uppercase tracking-widest text-gray-500">Personal use</span></div>
+        <h3 class="font-semibold text-white mb-2">Not targeted at individual users — Llama or Gemma serve better</h3>
+        <p class="text-sm text-gray-400">Granite is designed for organizational deployments with compliance requirements. Individuals get better daily-use quality from Llama 3.1 8B or Gemma 9B at much lower hardware cost. If you're planning a future Granite 4 organizational deployment, start with Granite 3.1 today to establish operational patterns.</p>
+      </div>
+      <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+        <div class="flex items-center gap-2 mb-3"><span class="text-lg">🏢</span><span class="text-xs font-bold uppercase tracking-widest text-gray-500">Business &amp; team use</span></div>
+        <h3 class="font-semibold text-white mb-2">Regulated industries evaluating IBM's next-generation compliance AI</h3>
+        <p class="text-sm text-gray-400">The IBM value proposition — published training data documentation, IBM indemnification, government security clearances — is expected to carry forward and strengthen in Granite 4. For legal, finance, healthcare, and government organizations evaluating AI risk, the planning argument is to establish Granite 3.1 infrastructure now rather than wait for Granite 4 to ship.</p>
+      </div>
+      <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+        <div class="flex items-center gap-2 mb-3"><span class="text-lg">⚙️</span><span class="text-xs font-bold uppercase tracking-widest text-gray-500">Developer &amp; technical use</span></div>
+        <h3 class="font-semibold text-white mb-2">Enterprise development teams in the IBM ecosystem planning ahead</h3>
+        <p class="text-sm text-gray-400">Granite 4 is expected to continue IBM's Apache 2.0 licensing and Ollama compatibility. Teams building IBM-integrated enterprise software should plan infrastructure on Granite 3.1 now — the architectural decisions, system prompts, and integration patterns will transfer directly. IBM's backward compatibility across Granite generations has been strong.</p>
+        <p class="text-xs text-gray-500 italic mt-2">VERIFY: Granite 4 has not been released. Apache 2.0 and capability expectations are planning assumptions based on IBM Research trajectory.</p>
+      </div>
+      <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+        <div class="flex items-center gap-2 mb-3"><span class="text-lg">🔬</span><span class="text-xs font-bold uppercase tracking-widest text-gray-500">Data science &amp; research use</span></div>
+        <h3 class="font-semibold text-white mb-2">AI governance researchers studying enterprise AI accountability</h3>
+        <p class="text-sm text-gray-400">When Granite 4 ships, it will likely represent IBM's most thoroughly documented model yet — AI Factsheets, structured training data transparency, and compliance evaluation artifacts that are explicitly designed to be cited in governance research. For teams studying responsible AI deployment in enterprise contexts, Granite 4 will be a primary reference.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LICENSING INFORMATION -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <p class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">Licensing information</p>
+    <h2 class="text-2xl font-bold mb-4">License Summary</h2>
+    <p class="text-gray-400 mb-5">IBM Granite models are released under Apache 2.0 — the most permissive enterprise open-weight license available. Granite 4 is expected to maintain this. The current Granite 3.1 family is confirmed Apache 2.0. IBM's WatsonX indemnification applies separately and only to IBM platform deployments.</p>
+    <div class="overflow-hidden rounded-xl border border-gray-700">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-gray-900 text-blue-300"><tr><th class="px-4 py-3">Model</th><th class="px-4 py-3">License</th><th class="px-4 py-3">Commercial use</th><th class="px-4 py-3">Verify</th></tr></thead>
+        <tbody class="divide-y divide-gray-800 bg-gray-950 text-gray-300">
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite 3.1 8B Instruct</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3 text-green-400">✓ Permitted</td><td class="px-4 py-3"><a href="https://huggingface.co/ibm-granite/granite-3.1-8b-instruct" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300">HF model card →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite 3.1 2B Instruct</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3 text-green-400">✓ Permitted</td><td class="px-4 py-3"><a href="https://huggingface.co/ibm-granite/granite-3.1-2b-instruct" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300">HF model card →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite 4 (expected)</td><td class="px-4 py-3">Apache 2.0 expected</td><td class="px-4 py-3 text-amber-400">Verify at release</td><td class="px-4 py-3"><a href="https://huggingface.co/ibm-granite" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300">ibm-granite org →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-3 text-xs text-gray-600">License information sourced from Hugging Face. IBM's WatsonX indemnification is separate from the Apache 2.0 license and applies only to IBM platform deployments. NoCloudGPT is not a legal advisor.</p>
+  </section>
+
+  <!-- SECTION: Available model sizes -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <p class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">Available model sizes</p>
+    <h2 class="text-2xl font-bold mb-4">What You Can Deploy Today: Granite 3.1</h2>
+    <p class="text-gray-400 mb-5">Granite 4 has not been released. Start with Granite 3.1 to establish infrastructure and operational patterns that will transfer directly to Granite 4.</p>
+    <div class="overflow-hidden rounded-xl border border-gray-700">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-gray-900 text-blue-300"><tr><th class="px-4 py-3">Model</th><th class="px-4 py-3">Tier</th><th class="px-4 py-3">Best for</th><th class="px-4 py-3"></th></tr></thead>
+        <tbody class="divide-y divide-gray-800 bg-gray-950 text-gray-300">
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite 3.1 2B</td><td class="px-4 py-3">Standard AI — 2–4 GB</td><td class="px-4 py-3">Edge, classification, lightweight compliance tasks</td><td class="px-4 py-3"><a href="/quote.html" class="text-blue-400 hover:text-blue-300 text-xs">Get quote →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite 3.1 8B</td><td class="px-4 py-3">Standard AI — 4–8 GB</td><td class="px-4 py-3">Document analysis, compliance Q&amp;A, enterprise assistant</td><td class="px-4 py-3"><a href="/quote.html" class="text-blue-400 hover:text-blue-300 text-xs">Get quote →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite 3.1 MoE</td><td class="px-4 py-3">Standard AI — 4–5 GB active</td><td class="px-4 py-3">High-throughput classification at low inference cost</td><td class="px-4 py-3"><a href="/quote.html" class="text-blue-400 hover:text-blue-300 text-xs">Get quote →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite Code (3B–34B)</td><td class="px-4 py-3">Standard to Professional AI</td><td class="px-4 py-3">Enterprise software dev, 116 languages</td><td class="px-4 py-3"><a href="/quote.html" class="text-blue-400 hover:text-blue-300 text-xs">Get quote →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-3 text-xs text-gray-600">VERIFY current Ollama tags. This page will be updated when Granite 4 release details are confirmed. <!-- TODO: Link to individual size pages when created --></p>
+  </section>
+<section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
     <h2 class="text-2xl font-bold mb-6">Enterprise Planning Guide: Preparing for Granite 4</h2>
     <p class="text-gray-300 mb-8">
       Organizations that start their Granite deployment with the current 3.1 generation will be better positioned to adopt Granite 4 when it ships. Here is how to structure that preparation.
