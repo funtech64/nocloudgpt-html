@@ -234,6 +234,52 @@
           </div>
         </section>
 
+
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying This Family</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Privacy-conscious assistant for daily personal use</h3>
+              <p class="mt-2 text-sm text-slate-400">Gemma 2B or 9B on a home server or modest Lightsail instance covers most personal assistant use cases without requiring GPU hardware. The models are trained to be helpful and safe without requiring custom prompting to overcome unhelpful refusals. For students, writers, and privacy-conscious individuals, Gemma offers Google-quality AI without Google's data collection.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Small businesses moving off SaaS AI subscriptions</h3>
+              <p class="mt-2 text-sm text-slate-400">Gemma 9B at Standard AI tier handles structured document drafting, policy Q&A, email generation, and summarization at a quality competitive with entry-level commercial subscriptions — at a flat monthly infrastructure cost. For 5–30 person teams, the break-even against SaaS billing is typically reached quickly with moderate daily use.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Clean backbone for internal tools with specialized variant support</h3>
+              <p class="mt-2 text-sm text-slate-400">Gemma integrates cleanly with Ollama and maintains consistent system-prompt following, which matters for templated internal tools. The specialized variant family (CodeGemma for code, ShieldGemma for safety screening, MedGemma for medical workflows) lets teams swap in purpose-built alternatives on the same infrastructure without changing their deployment stack.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Research with documented model provenance and training transparency</h3>
+              <p class="mt-2 text-sm text-slate-400">Google DeepMind's Gemma model cards and technical reports are substantive — more detailed than most consumer AI documentation. For research teams that need to document training data composition, safety evaluations, and capability assessments in published work, Gemma provides citeable, official sources.</p>
+              <p class="mt-2 text-xs text-slate-500 italic">Not the strongest option for heavy mathematical reasoning or code-generation benchmarks — DeepSeek or Qwen Coder outperform it on those tasks.</p>
+            </div>
+          </div>
+        </section>
+
         <!-- SECTION 4: Best-fit workloads -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
@@ -363,6 +409,35 @@
             </div>
 
           </div>
+        </section>
+
+
+        <!-- SECTION: Licensing information (improved) -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">Gemma is released under Google's Gemma Terms of Use — a custom license that permits broad use but is not Apache 2.0. The terms allow most commercial and research use, but include conditions on distribution and derivative models. Terms have been updated across Gemma 2, Gemma 3, and Gemma 4 — verify the specific generation.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model / generation</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Verify</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3  font-semibold text-white">Gemma 2 (2B, 9B, 27B)</td><td class="px-4 py-3">Gemma Terms of Use</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/google/gemma-2-9b-it" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">google/gemma-2-9b-it →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Gemma 3 (1B–27B)</td><td class="px-4 py-3">Gemma Terms of Use</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/google/gemma-3-9b-it" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">google/gemma-3-9b-it →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Gemma 4 (multimodal)</td><td class="px-4 py-3">VERIFY: Gemma ToU (confirm at deployment)</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/google?search_models=gemma-4" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">google/gemma-4 (search) →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">CodeGemma</td><td class="px-4 py-3">Gemma Terms of Use</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/google/codegemma-7b-it" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">google/codegemma-7b-it →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">ShieldGemma</td><td class="px-4 py-3">Gemma Terms of Use</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/google/shieldgemma-9b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">google/shieldgemma-9b →</a></td></tr>
+
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">Gemma's Terms of Use permit commercial use for most applications but are not as permissive as Apache 2.0 or MIT. Read the full terms at ai.google.dev/gemma/terms before integrating into commercial products. License information sourced from Hugging Face model cards.</p>
         </section>
 
         <!-- SECTION 6: Hardware and deployment reality -->
@@ -604,18 +679,6 @@
   ============================================================ -->
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
     <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Google, Google DeepMind, or any model developer referenced on this page.</p>
-  
-  <div class="mx-auto max-w-6xl px-6 py-4">
-    <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
-      <strong class="text-slate-400">License information:</strong>
-      License terms for open-weight models are sourced from Hugging Face model cards and official repositories.
-      Licenses may vary by model generation, quantization, and deployment scale.
-      Always verify the current license at
-      <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
-      or the official developer repository before commercial deployment.
-      NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
-    </p>
-  </div>
   </footer>
 
 

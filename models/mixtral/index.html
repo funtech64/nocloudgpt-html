@@ -170,6 +170,52 @@
           </div>
         </section>
 
+
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying This Family</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Not recommended without dedicated GPU hardware</h3>
+              <p class="mt-2 text-sm text-slate-400">Mixtral's 24+ GB RAM requirement rules out most home setups. If you have a workstation with two high-end GPUs or access to a professional GPU cloud instance, Mixtral provides near-70B reasoning quality at lower active compute cost. Without the hardware, other families will serve better.</p>
+              <p class="mt-2 text-xs text-slate-500 italic">Gemma 27B or Mistral Small 22B on a Professional AI GPU instance are better fits for most personal and homelab use cases.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Organizations with existing GPU infrastructure that need more reasoning quality</h3>
+              <p class="mt-2 text-sm text-slate-400">For organizations that already run GPU hardware — engineering workstations, on-premise GPU servers, or professional cloud instances — Mixtral provides reasoning quality that would otherwise require a significantly larger and more expensive dense model. The Apache 2.0 license at this capability level is uncommon, which simplifies commercial deployment.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">High-capability commercial integrations under Apache 2.0</h3>
+              <p class="mt-2 text-sm text-slate-400">Mixtral 8x22B is one of the most capable open models available under Apache 2.0. For commercial products that need strong multi-domain reasoning without proprietary model licensing, this makes Mixtral a significant option. Function calling support is available. The MoE architecture also makes inference cost lower per token than an equivalent dense model.</p>
+              
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">MoE architecture research and efficiency-quality tradeoff studies</h3>
+              <p class="mt-2 text-sm text-slate-400">Mixtral was the model that made MoE architectures practical for open-weight deployment at scale. The research literature on expert routing, load balancing, and quality-per-compute tradeoffs is extensive and substantially built on Mixtral experiments. Teams studying efficient architectures have detailed primary literature to work with.</p>
+              
+            </div>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
           <h2 class="mt-3 text-3xl font-black">What to Use Mixtral For</h2>
@@ -191,6 +237,32 @@
               <p class="mt-3 text-sm text-slate-400">Organizations in regulated sectors that need the highest available open-model quality for internal workflows without any data leaving premises. Mixtral 8x22B under Apache 2.0 is the benchmark for this use case.</p>
             </div>
           </div>
+        </section>
+
+
+        <!-- SECTION: Licensing information (improved) -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">The standard Mixtral models (8x7B and 8x22B) are released under Apache 2.0 — one of the few high-capability open models with fully permissive commercial licensing. Newer Mistral products like Mistral Large use a separate Research License. Confirm the specific model before assuming Apache 2.0.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model / generation</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Verify</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3  font-semibold text-white">Mixtral 8x7B Instruct v0.1</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mixtral-8x7B-Instruct-v0.1 →</a></td></tr>
+<tr><td class="px-4 py-3  font-semibold text-white">Mixtral 8x22B Instruct v0.1</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/mistralai/Mixtral-8x22B-Instruct-v0.1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mixtral-8x22B-Instruct-v0.1 →</a></td></tr>
+
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">Apache 2.0 permits unrestricted commercial use. Note: this applies to the Mixtral models specifically — other Mistral-branded products use different licenses. License information sourced from Hugging Face model cards. Always verify current terms before commercial deployment.</p>
         </section>
 
         <section>
@@ -350,18 +422,6 @@
 
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
     <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Mistral AI or any model developer referenced on this page.</p>
-  
-  <div class="mx-auto max-w-6xl px-6 py-4">
-    <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
-      <strong class="text-slate-400">License information:</strong>
-      License terms for open-weight models are sourced from Hugging Face model cards and official repositories.
-      Licenses may vary by model generation, quantization, and deployment scale.
-      Always verify the current license at
-      <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
-      or the official developer repository before commercial deployment.
-      NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
-    </p>
-  </div>
   </footer>
 
 
