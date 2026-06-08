@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://nocloudgpt.com/models/mistral-large/">
   <meta property="og:title" content="Mistral Large — Private High-Capability AI | NoCloudGPT">
   <meta property="og:description" content="Deploy Mistral Large privately with NoCloudGPT. 123B parameters, 128K context, 80+ language support — frontier-level reasoning on your own infrastructure.">
+  <meta property="og:image" content="/models/mistral-large/og.webp">
   <meta property="og:type" content="website">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -27,8 +28,16 @@
   <section class="border-b border-slate-800 bg-slate-950">
     <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
-        <!-- TODO: /assets/models/mistral-large/mistrallarge-hero.webp -->[Mistral Large hero artwork — 480×180]
+      
+      <img
+        src="/models/mistral-large/hero.webp"
+        alt="Mistral Large 2 — frontier-quality private AI with NoCloudGPT"
+        width="1200" height="600"
+        class="mt-8 mb-6 w-full max-w-xs rounded-2xl object-cover"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+      />
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
+        [Mistral Large hero artwork]
       </div>
       <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Mistral Large</p>
       <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Mistral's Flagship — 123B Parameters, Frontier-Level Reasoning, Fully Private</h1>
@@ -133,5 +142,32 @@
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
     <p>NoCloudGPT is an independent deployment service. Not affiliated with Mistral AI or any model developer referenced on this page.</p>
   </footer>
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
+      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="font-semibold text-slate-400">Hero image</p>
+          <p class="mt-1">AI-generated abstract artwork created for NoCloudGPT. Original work, no third-party license required.</p>
+          <!-- TODO: Replace with licensed photo when available -->
+          <!-- Unsplash reference: https://unsplash.com/s/photos/enterprise-ai -->
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Developer reference</p>
+          <p class="mt-1">Mistral Large is developed by <a href="https://mistral.ai/" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Mistral AI</a>. NoCloudGPT is an independent deployment service not affiliated with Mistral AI.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Model catalog reference</p>
+          <p class="mt-1">See the <a href="https://ollama.com/library/mistral-large" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Ollama library page for Mistral Large</a> for current model tags.</p>
+          <!-- card.webp, sidebar.webp, og.webp: TODO — see models/artwork-sources.md -->
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>

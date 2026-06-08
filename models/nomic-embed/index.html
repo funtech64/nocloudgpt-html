@@ -79,6 +79,14 @@
 <body>
 
 <header>
+    <!-- hero.webp — Nomic Embed abstract semantic search artwork (generated for NoCloudGPT) -->
+    <img
+      src="/models/nomic-embed/hero.webp"
+      alt="Nomic Embed — private semantic search and RAG embeddings with NoCloudGPT"
+      width="1200" height="600"
+      style="width:100%; max-height:280px; object-fit:cover; display:block; margin-bottom:24px; border-radius:8px;"
+      onerror="this.style.display='none';"
+    />
     <div class="badge">137M–475M Parameters · 8K Context · Fully Open Source</div>
     <h1>Deploy <span>Nomic Embed</span> for Long-Context Private RAG</h1>
     <p class="subtitle">Nomic AI's embedding models are among the few in the open-weight space that combine long document context (8,192 tokens), strong MTEB benchmark performance, Matryoshka flexible dimensions, and fully auditable training data — all available through Ollama with zero cloud dependency.</p>
@@ -467,6 +475,33 @@ chunk_overlap = 150  # 10% overlap at section boundaries
     </p>
     <p style="margin-top: 16px;">© 2025 NoCloudGPT. Private AI deployment specialists. Not affiliated with Nomic AI.</p>
 </footer>
+
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
+      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="font-semibold text-slate-400">Hero image</p>
+          <p class="mt-1">AI-generated abstract artwork created for NoCloudGPT. Original work, no third-party license required.</p>
+          <!-- TODO: Replace with licensed photo when available -->
+          <!-- Unsplash reference: https://unsplash.com/s/photos/semantic-search -->
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Developer reference</p>
+          <p class="mt-1">Nomic Embed is developed by <a href="https://www.nomic.ai/" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Nomic AI</a>. NoCloudGPT is an independent deployment service not affiliated with Nomic AI.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Model catalog reference</p>
+          <p class="mt-1">See the <a href="https://ollama.com/library/nomic-embed" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Ollama library page for Nomic Embed</a> for current model tags.</p>
+          <!-- card.webp, sidebar.webp, og.webp: TODO — see models/artwork-sources.md -->
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
