@@ -291,7 +291,6 @@
           </div>
         </section>
 
-        <section 
         <!-- SECTION: Licensing information (improved) -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
@@ -318,7 +317,55 @@
           <p class="mt-3 text-xs text-slate-500">CC-BY-NC 4.0 restricts commercial use. If you are deploying Command R in a commercial product or service, you need to verify whether your use case qualifies under these terms. Cohere may offer commercial licensing separately. License information sourced from Hugging Face model cards — always verify current terms.</p>
         </section>
 
-class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
+          <p class="mt-5 text-slate-300">
+            The Command R line spans three sizes for different RAG and retrieval workloads.
+            VERIFY: Confirm current tags in the Ollama library before planning.
+            NoCloudGPT will confirm hardware requirements and select the right quantization before your pilot begins.
+          </p>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model</th>
+                  <th class="px-4 py-3">Deployment tier</th>
+                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Command R7B</td>
+                  <td class="px-4 py-3">Standard AI — 6–8 GB</td>
+                  <td class="px-4 py-3">Lightweight RAG and citation on modest hardware</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Command R (35B)</td>
+                  <td class="px-4 py-3">Professional AI — GPU 20–24 GB</td>
+                  <td class="px-4 py-3">Standard production document Q&amp;A and tool calling</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Command R+ (104B)</td>
+                  <td class="px-4 py-3">Enterprise AI — multi-GPU</td>
+                  <td class="px-4 py-3">Maximum retrieval accuracy on complex collections</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">
+            All Command R sizes currently carry CC-BY-NC licensing — confirm commercial eligibility before deployment.
+            Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
+            <!-- TODO: Link each row to individual model-size pages when created -->
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
           <h2 class="mt-3 text-3xl font-black">Start Your Private Command R Deployment</h2>
           <p class="mt-5 text-slate-300">

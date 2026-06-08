@@ -146,6 +146,50 @@
     </div>
   </section>
 
+  <!-- Who this model family is for -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Who DeepSeek Coder Is For</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-lg">👤</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Personal use</span>
+        </div>
+        <h3 class="font-bold mb-2">A private coding assistant for solo developers</h3>
+        <p class="text-gray-400 text-sm">If you build side projects, freelance, or just prefer not to send your code to a cloud completion service, the V2 Lite (16B) model runs on a single 12–16 GB GPU and handles everyday completion, refactoring, and "explain this function" tasks across mainstream languages. The 6.7B variant drops to 6–8 GB for laptops. You get Copilot-style help with no subscription and nothing leaving your machine.</p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-lg">🏢</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Business &amp; team use</span>
+        </div>
+        <h3 class="font-bold mb-2">Engineering teams that treat source code as a trade secret</h3>
+        <p class="text-gray-400 text-sm">For companies where the codebase is the product — fintech, defense, healthcare, anyone under NDA — DeepSeek Coder removes the per-seat licensing and the per-completion data exposure of cloud code AI in one move. A shared V2 deployment gives the whole team unlimited completions on hardware you control, which typically becomes cheaper than per-seat Copilot at around 10+ engineers.</p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-lg">⚙️</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Developer &amp; technical use</span>
+        </div>
+        <h3 class="font-bold mb-2">CI pipelines, IDE backends, and repo-scale tooling</h3>
+        <p class="text-gray-400 text-sm">Fill-in-the-middle completion and the 128K context window make DeepSeek Coder well suited to backing self-hosted tools like Continue, Aider, and Tabby through Ollama's OpenAI-compatible API. The 6.7B variant is light enough to run on CI runners for automated review and test generation, while V2 handles repo-level reasoning about cross-file dependencies.</p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-lg">🔬</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Data science &amp; research</span>
+        </div>
+        <h3 class="font-bold mb-2">Data and ML engineers working in Python and SQL</h3>
+        <p class="text-gray-400 text-sm">DeepSeek Coder's strength on Python, SQL, and notebook-style code makes it a practical assistant for building data pipelines, writing transformation logic, and scaffolding ML experiments — without routing proprietary datasets or feature logic through an external service. Its breadth across 338 languages also helps teams that glue together polyglot data stacks.</p>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Capabilities -->
   <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
     <h2 class="text-2xl font-bold mb-6">Core Capabilities</h2>
@@ -242,6 +286,66 @@
       </div>
 
     </div>
+  </section>
+
+  <!-- Licensing information -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Licensing Information</h2>
+    <p class="text-gray-300 mb-6">
+      DeepSeek Coder models are released under the DeepSeek License Agreement (a custom model license),
+      not Apache 2.0. The license permits commercial use but attaches a use-based restriction policy that
+      prohibits certain applications. Review the model card and the linked license file before deploying
+      commercially — terms differ slightly between the original Coder series and the V2 generation.
+    </p>
+    <div class="overflow-x-auto rounded-xl border border-gray-700">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-900 text-gray-400">
+          <tr class="text-left">
+            <th class="px-4 py-3">Model</th>
+            <th class="px-4 py-3">License</th>
+            <th class="px-4 py-3">Commercial use</th>
+            <th class="px-4 py-3">Model card</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800 bg-gray-900/40 text-gray-300">
+          <tr><td class="px-4 py-3 font-semibold text-white">DeepSeek Coder V2 (236B)</td><td class="px-4 py-3">DeepSeek License</td><td class="px-4 py-3"><span class="text-yellow-400">Permitted, use-based limits</span></td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Instruct" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300">deepseek-ai/DeepSeek-Coder-V2-Instruct →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">DeepSeek Coder V2 Lite (16B)</td><td class="px-4 py-3">DeepSeek License</td><td class="px-4 py-3"><span class="text-yellow-400">Permitted, use-based limits</span></td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300">deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">DeepSeek Coder 6.7B (V1)</td><td class="px-4 py-3">DeepSeek License</td><td class="px-4 py-3"><span class="text-yellow-400">Permitted, use-based limits</span></td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/deepseek-coder-6.7b-instruct" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300">deepseek-ai/deepseek-coder-6.7b-instruct →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-gray-500 text-xs mt-3">License information sourced from Hugging Face model cards and the DeepSeek License Agreement, and may change between releases. The use-based restrictions matter most for regulated or sensitive applications — review them with counsel before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+  </section>
+
+  <!-- Available model sizes -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Available Model Sizes</h2>
+    <p class="text-gray-300 mb-6">
+      The following DeepSeek Coder variants are available through Ollama for private deployment.
+      VERIFY current tags in the Ollama library before planning. NoCloudGPT confirms hardware
+      requirements and selects the right quantization before your pilot begins.
+    </p>
+    <div class="overflow-x-auto rounded-xl border border-gray-700">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-900 text-gray-400">
+          <tr class="text-left">
+            <th class="px-4 py-3">Model</th>
+            <th class="px-4 py-3">Deployment tier</th>
+            <th class="px-4 py-3">Best for</th>
+            <th class="px-4 py-3"></th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800 bg-gray-900/40 text-gray-300">
+          <tr><td class="px-4 py-3 font-semibold text-white">DeepSeek Coder 6.7B</td><td class="px-4 py-3">Standard AI — 6–8 GB</td><td class="px-4 py-3">Laptops, CI runners, edge completion</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs">Get quote →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">DeepSeek Coder V2 Lite (16B)</td><td class="px-4 py-3">Professional AI — 12–16 GB GPU</td><td class="px-4 py-3">Everyday team coding assistant</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs">Get quote →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">DeepSeek Coder V2 (236B)</td><td class="px-4 py-3">Enterprise AI — multi-GPU</td><td class="px-4 py-3">Frontier-grade code AI, repo-level work</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs">Get quote →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-gray-500 text-xs mt-3">
+      Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
+      <!-- TODO: Link each row to individual model-size pages when created -->
+    </p>
   </section>
 
   <!-- CTA -->
