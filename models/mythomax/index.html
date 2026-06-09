@@ -68,6 +68,30 @@
           </div>
         </div>
 
+        <h2 class="mt-10 text-3xl font-black">Who This Model Family Is For</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg">👤</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span></div>
+            <h3 class="text-lg font-bold text-cyan-200">A private writing partner that stays in character</h3>
+            <p class="mt-2 text-sm text-slate-400">For hobbyist writers, roleplayers, and worldbuilders, MythoMax is one of the most accessible high-quality creative models: the 13B runs on an 8 GB instance, so a personal creative AI costs less than most software subscriptions. It holds character voice and tone across long sessions without the refusals that make general assistants frustrating for fiction — and your drafts never leave your machine.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg">🏢</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span></div>
+            <h3 class="text-lg font-bold text-cyan-200">Studios and platforms producing creative content at volume</h3>
+            <p class="mt-2 text-sm text-slate-400">Game studios, interactive-fiction publishers, and roleplay platforms use MythoMax to generate genre-appropriate narrative content that commercial AI services refuse to support. Private deployment keeps unpublished creative IP off third-party servers — a genuine competitive and confidentiality advantage. Note the Llama 2 base license governs commercial use; confirm it fits your product.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg">⚙️</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span></div>
+            <h3 class="text-lg font-bold text-cyan-200">A creative backend for narrative apps and tools</h3>
+            <p class="mt-2 text-sm text-slate-400">Developers building writing assistants, NPC dialogue systems, or interactive-fiction engines can run MythoMax behind Ollama's API to generate consistent in-world content without an external content policy interrupting output. Its low hardware footprint makes it cheap to run several instances, and you supply your own age-gating and guardrails at the application layer.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg">🔬</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span></div>
+            <h3 class="text-lg font-bold text-cyan-200">A reference point for model-merging and creative evaluation</h3>
+            <p class="mt-2 text-sm text-slate-400">MythoMax is a well-known example of capability produced through model merging rather than fine-tuning, which makes it a useful subject for research into merge techniques and creative-writing evaluation. It is not a general reasoning model — treat it as a domain-specific creative baseline, and pair it with a modern instruct model for analytical tasks.</p>
+          </div>
+        </div>
+
         <h2 class="mt-10 text-3xl font-black">Who Should Be Running MythoMax</h2>
 
         <h3 class="mt-8 text-2xl font-bold text-cyan-200">Fiction writers — novelists, short story authors, and literary writers</h3>
@@ -132,6 +156,64 @@
           </table>
         </div>
         <p class="mt-5 text-slate-300">MythoMax at Q4 on an 8 GB Lightsail instance is one of the most cost-effective private AI deployments available. For solo writers and individual game masters, the monthly infrastructure cost is modest enough that it competes directly with a single software subscription. NoCloudGPT handles the setup so the writer can focus on writing rather than server configuration.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Licensing Information</h2>
+        <p class="mt-5 text-slate-300">MythoMax is built on Meta's Llama 2 13B, so it is governed by the Llama 2 Community License. That license permits commercial use and redistribution with attribution, but it is not an OSI open-source license — it includes an Acceptable Use Policy and the well-known clause requiring a separate license from Meta for products with more than 700 million monthly active users. Review the model card and the Llama 2 license before commercial deployment.</p>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Model</th>
+                <th class="px-4 py-3">License</th>
+                <th class="px-4 py-3">Commercial use</th>
+                <th class="px-4 py-3">Model card</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr><td class="px-4 py-3 font-semibold text-white">MythoMax L2 13B</td><td class="px-4 py-3">Llama 2 Community License</td><td class="px-4 py-3"><span class="text-amber-400">Permitted, conditions apply</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Gryphe/MythoMax-L2-13b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Gryphe/MythoMax-L2-13b →</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-xs text-slate-500">As a Llama 2 derivative, MythoMax inherits the Llama 2 Community License and its Acceptable Use Policy. License information sourced from the Hugging Face model card and may change between releases. Always verify the current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Available Model Sizes</h2>
+        <p class="mt-5 text-slate-300">MythoMax is distributed as a 13B model at several quantization levels. VERIFY: Confirm current Ollama tags before planning. NoCloudGPT will confirm hardware requirements and select the right quantization before your pilot begins.</p>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Model</th>
+                <th class="px-4 py-3">Deployment tier</th>
+                <th class="px-4 py-3">Best for</th>
+                <th class="px-4 py-3"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">MythoMax 13B Q4</td>
+                <td class="px-4 py-3">Standard AI — 8 GB</td>
+                <td class="px-4 py-3">Solo writer, individual GM, personal creative assistant</td>
+                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">MythoMax 13B Q5/Q6</td>
+                <td class="px-4 py-3">Standard AI — 16 GB</td>
+                <td class="px-4 py-3">Higher-quality output, small creative platform</td>
+                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">MythoMax + second model</td>
+                <td class="px-4 py-3">Professional AI — 16–32 GB</td>
+                <td class="px-4 py-3">Creative AI plus business AI on shared infrastructure</td>
+                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-xs text-slate-500">
+          Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
+          <!-- TODO: Link each row to individual model-size pages when created -->
+        </p>
 
         <h2 class="mt-10 text-3xl font-black">Deploy MythoMax on Your Infrastructure</h2>
         <p class="mt-5 text-slate-300">NoCloudGPT configures MythoMax on your Lightsail instance or on-premise server with Ollama and OpenWebUI. System prompt configuration for your specific genre — dark fantasy, contemporary fiction, horror, science fiction, mature roleplay — is available on request. For platforms and studios, multi-user access configuration and API endpoint setup are included.</p>

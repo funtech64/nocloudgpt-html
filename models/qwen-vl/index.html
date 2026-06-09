@@ -72,6 +72,46 @@
           </div>
         </section>
 
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying Qwen VL</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">A multilingual vision helper for documents and screenshots</h3>
+              <p class="mt-2 text-sm text-slate-400">Qwen VL is a vision model, so it needs a GPU rather than a tiny instance — but if you have one, the 3B and 7B variants give you a private assistant that reads scanned documents, screenshots, and charts, and answers in your language. It is a strong fit if you regularly work across languages and want image understanding without uploading personal documents to a cloud vision API.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Multilingual document and form processing for global teams</h3>
+              <p class="mt-2 text-sm text-slate-400">For international organisations processing invoices, forms, and reports in many languages, Qwen VL's combination of layout-aware document understanding and 30+ language output is its standout advantage. Scanned documents and visual data are processed entirely on your infrastructure — important where the content includes customer or regulated information that cannot leave the network.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Vision backends for extraction and UI/QA automation</h3>
+              <p class="mt-2 text-sm text-slate-400">Through Ollama's API, Qwen VL backs private pipelines that extract structured data from document images, analyse screenshots for UI testing, or process video frames for QC. The 7B is the practical default for building tools; the 3B suits embedding into resource-constrained services. Confirm the per-size license before shipping commercially — terms differ across the 3B, 7B, and 72B.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Chart, table, and multimodal dataset work</h3>
+              <p class="mt-2 text-sm text-slate-400">Qwen VL's strength at reading charts and tables makes it useful for turning visual reports and figures into structured data for analysis, and for building or labelling multimodal datasets privately. The 72B offers the highest-fidelity extraction for demanding research, while the smaller sizes let teams run larger batches cheaply on the same family.</p>
+            </div>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
           <h2 class="mt-3 text-3xl font-black">What to Use Qwen VL For</h2>
@@ -99,6 +139,78 @@
           <div class="mt-6 space-y-4">
             <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">You primarily need text, not vision</h3><p class="mt-2 text-sm text-slate-400">Vision models require GPU hardware. If vision is occasional, run a text model as the primary and add vision when needed. <a href="/models/qwen/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Qwen →</a></p></div>            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">You want a well-tested vision baseline</h3><p class="mt-2 text-sm text-slate-400">LLaVA 1.5/1.6 has a larger deployment track record. For new vision deployments, compare Qwen VL against LLaVA for your specific use case. <a href="/models/llava/" class="ml-1 text-cyan-300 hover:text-cyan-200">See LLaVA →</a></p></div>
           </div>
+        </section>
+
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">Qwen VL licensing varies by size, so confirm the variant you plan to deploy. In the Qwen2.5-VL generation the 7B is Apache 2.0 (clean commercial use), the 3B ships under the non-commercial Qwen Research License, and the 72B uses the custom Qwen License Agreement that permits commercial use subject to its conditions. VERIFY current per-size terms before commercial deployment.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model size</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Model card</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3 font-semibold text-white">Qwen2.5-VL 3B</td><td class="px-4 py-3">Qwen Research License</td><td class="px-4 py-3"><span class="text-red-400">Non-commercial only</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-VL-3B-Instruct →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Qwen2.5-VL 7B</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-VL-7B-Instruct →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Qwen2.5-VL 72B</td><td class="px-4 py-3">Qwen License Agreement</td><td class="px-4 py-3"><span class="text-amber-400">Permitted, conditions apply</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-VL-72B-Instruct →</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">The 3B variant's Qwen Research License is non-commercial; the 7B is Apache 2.0; the 72B uses the custom Qwen License Agreement. License information sourced from Hugging Face model cards and may change between releases. Always verify the current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
+          <p class="mt-5 text-slate-300">
+            The following Qwen2.5-VL sizes are available for private deployment.
+            VERIFY: Confirm current Ollama / Hugging Face tags before planning.
+            NoCloudGPT will confirm GPU requirements and select the right quantization before your pilot begins.
+          </p>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model</th>
+                  <th class="px-4 py-3">Deployment tier</th>
+                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-VL 3B</td>
+                  <td class="px-4 py-3">Standard/Professional AI — GPU</td>
+                  <td class="px-4 py-3">Lightweight vision, focused tasks (non-commercial)</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-VL 7B</td>
+                  <td class="px-4 py-3">Professional AI — GPU</td>
+                  <td class="px-4 py-3">Practical vision default — Apache 2.0</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-VL 72B</td>
+                  <td class="px-4 py-3">Heavy/Enterprise AI — large GPU</td>
+                  <td class="px-4 py-3">Maximum-quality vision and language</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">
+            Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
+            <!-- TODO: Link each row to individual model-size pages when created -->
+          </p>
         </section>
 
         <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">

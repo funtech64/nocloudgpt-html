@@ -55,19 +55,26 @@
   <li><strong>General-purpose assistant tasks</strong> — writing, Q&A, summarization, analysis; solid across the board</li>
 </ul>
 
-<h2>Who Should Care</h2>
+<h2>Who This Model Family Is For</h2>
 
-<h3>Business and Professional Use</h3>
+<h3>👤 Personal use</h3>
 <p>
-  Tulu 3 70B is one of the strongest open-weight instruction models available at its size, period. Organizations building internal AI assistants that need reliable, well-aligned responses — legal, compliance, research, or consulting contexts where hallucinations are costly — should benchmark Tulu 3 alongside Llama 3.1 70B Instruct and Command R.
-</p>
-<p>
-  Tulu 3 8B offers much of this quality in a size that runs on modest hardware, making it practical for budget-conscious private deployments where quality of instruction following matters more than raw speed.
+  Tulu 3 8B on a single GPU is an excellent homelab assistant — arguably better-aligned than the standard Llama 3.1 8B Instruct for carefully structured prompts, with lower hallucination rates thanks to Ai2's honesty-focused tuning. If you already run Llama-family models and care about reliable instruction following over raw speed, Tulu 3 is a worthwhile swap to test.
 </p>
 
-<h3>Personal and Homelab Use</h3>
+<h3>🏢 Business &amp; team use</h3>
 <p>
-  Tulu 3 8B on a single GPU is an excellent homelab assistant — arguably better-aligned than the standard Llama 3.1 8B Instruct for carefully structured prompts. If you care about reliable instruction following and are already running Llama-family models, Tulu 3 is worth a test.
+  Tulu 3 70B is one of the strongest open-weight instruction models at its size, making it a strong candidate for internal assistants in legal, compliance, research, or consulting contexts where a confidently wrong answer is costly. Benchmark it against Llama 3.1 70B Instruct and Command R on your own prompts. Because Tulu 3 builds on Llama 3.1, its commercial use is governed by the Llama 3.1 Community License — confirm that fits your deployment.
+</p>
+
+<h3>⚙️ Developer &amp; technical use</h3>
+<p>
+  Tulu's design goal is precise instruction following and multi-turn compliance, which makes it predictable to drive with system prompts in tools and agents. The 8B is light enough to embed in internal services, while the 70B handles more complex structured-output tasks. Ai2 publishes the full training recipe, data, and code, so teams that need to reproduce or extend the alignment pipeline can do so transparently.
+</p>
+
+<h3>🔬 Data science &amp; research</h3>
+<p>
+  Tulu is, first and foremost, a research artifact: Ai2 releases it to demonstrate the state of the art in open post-training, including Reinforcement Learning from Verifiable Rewards (RLVR) in Tulu 3. For researchers studying instruction tuning, preference optimization, and reasoning improvement, Tulu's open data and documented methodology make it a primary reference — not just a model to run, but a recipe to learn from.
 </p>
 
 <h2>Model Variants at a Glance</h2>
@@ -92,6 +99,34 @@
 <h3>On-Premise / Office Server</h3>
 <pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>vllm serve allenai/Llama-3.1-Tulu-3-70B \
   --tensor-parallel-size 4</code></pre>
+
+<h2>Available Model Sizes</h2>
+<p>The current Tulu 3 generation is the recommended choice; Tulu 2 remains relevant for Llama 2 stacks. VERIFY current Ollama tags before planning. NoCloudGPT confirms hardware requirements and selects the right quantization before your pilot begins.</p>
+<table>
+  <thead>
+    <tr><th>Model</th><th>Deployment tier</th><th>Best for</th><th></th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Tulu 3 8B</td><td>Standard AI — 8 GB</td><td>Budget-conscious assistants, homelab, embedding</td><td><a href="/quote.html">Get quote →</a></td></tr>
+    <tr><td>Tulu 3 70B</td><td>Heavy AI — multi-GPU (4× A10G class)</td><td>Near-frontier instruction following for teams</td><td><a href="/quote.html">Get quote →</a></td></tr>
+    <tr><td>Tulu 2 70B DPO</td><td>Heavy AI — multi-GPU</td><td>Existing Llama 2 stacks</td><td><a href="/quote.html">Get quote →</a></td></tr>
+  </tbody>
+</table>
+<!-- TODO: Link each row to individual model-size pages when created -->
+
+<h2>Licensing Information</h2>
+<p>Tulu's license follows the base model each generation is built on. Tulu 3 is built on Llama 3.1 and is therefore governed by the Llama 3.1 Community License; Tulu 2 is built on Llama 2 and follows the Llama 2 Community License. Ai2's training data and code are released openly (largely under permissive/ODC terms), but the model weights inherit the base-model license, which carries attribution and large-platform conditions. Verify before commercial deployment.</p>
+<table>
+  <thead>
+    <tr><th>Model</th><th>License</th><th>Commercial use</th><th>Model card</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Tulu 3 8B</td><td>Llama 3.1 Community License</td><td>Permitted, conditions apply</td><td><a href="https://huggingface.co/allenai/Llama-3.1-Tulu-3-8B" target="_blank" rel="noopener">allenai/Llama-3.1-Tulu-3-8B →</a></td></tr>
+    <tr><td>Tulu 3 70B</td><td>Llama 3.1 Community License</td><td>Permitted, conditions apply</td><td><a href="https://huggingface.co/allenai/Llama-3.1-Tulu-3-70B" target="_blank" rel="noopener">allenai/Llama-3.1-Tulu-3-70B →</a></td></tr>
+    <tr><td>Tulu 2 70B DPO</td><td>Llama 2 Community License</td><td>Permitted, conditions apply</td><td><a href="https://huggingface.co/allenai/tulu-2-dpo-70b" target="_blank" rel="noopener">allenai/tulu-2-dpo-70b →</a></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.85rem; color:#64748b;">Tulu weights inherit the Llama base-model license for their generation (Llama 3.1 for Tulu 3, Llama 2 for Tulu 2), including attribution and large-platform conditions. License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
 
 <div class="cta-box">
   <strong>Want one of the best-aligned open instruction models?</strong><br />

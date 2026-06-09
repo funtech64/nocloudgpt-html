@@ -107,12 +107,35 @@
             <div class="label">Training Tokens</div>
         </div>
         <div class="stat-card">
-            <span class="number">98.6</span>
-            <div class="label">MMLU Score</div>
+            <span class="number">78.7</span>
+            <div class="label">MMLU (5-shot)</div>
         </div>
         <div class="stat-card">
             <span class="number">73.2</span>
             <div class="label">HumanEval Score</div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Who Nemotron-4 340B Is For</h2>
+
+    <div class="tier-grid">
+        <div class="tier-card">
+            <h3>👤 Personal Use</h3>
+            <p>Realistically, Nemotron-4 340B is not a personal model — it needs roughly 170–190 GB of GPU memory even at 4-bit. Individuals wanting NVIDIA-aligned quality should look at Nemotron Mini 4B or Llama-3.1-Nemotron-70B instead. This flagship is for organizations with multi-GPU infrastructure, not homelabs.</p>
+        </div>
+        <div class="tier-card recommended">
+            <h3>🏢 Business &amp; Team Use <span class="rec-badge">Best fit</span></h3>
+            <p>This is the model's home audience: regulated enterprises — financial services, healthcare, defense, legal — that need GPT-4-class capability but cannot send data to a hosted API. Running Nemotron-4 on owned A100/H100 clusters keeps every prompt inside the network perimeter, and the NVIDIA Open Model License permits commercial use.</p>
+        </div>
+        <div class="tier-card">
+            <h3>⚙️ Developer &amp; Technical Use</h3>
+            <p>With a HumanEval score (73.2%) ahead of GPT-4's reported 67.0%, Nemotron-4 is strong for generating, reviewing, and documenting proprietary codebases at frontier quality without the code leaving your infrastructure. Ollama handles tensor parallelism across GPUs automatically, simplifying multi-GPU serving.</p>
+        </div>
+        <div class="tier-card">
+            <h3>🔬 Data Science &amp; Research Use</h3>
+            <p>Nemotron-4 was explicitly designed for synthetic data generation — over 98% of its own alignment data was synthetic — and ships alongside a Reward model for scoring outputs. Research teams use the pair to generate and filter high-quality training data for fine-tuning smaller domain-specific models, entirely on-premise.</p>
         </div>
     </div>
 
@@ -274,6 +297,43 @@
 
     <h3>Logging and Auditability</h3>
     <p>OpenWebUI provides built-in conversation logging stored in a local database. For organizations subject to e-discovery or regulatory examination requirements, this local logging is actually an advantage — you control the audit trail, its retention period, and who can access it, rather than relying on a vendor's logging infrastructure.</p>
+
+    <hr class="section-divider">
+
+    <h2>Licensing Information</h2>
+
+    <p>The Nemotron-4 340B family — Base, Instruct, and Reward — is released under the NVIDIA Open Model License. NVIDIA confirms the models are commercially usable, that you are free to create and distribute derivative models, and that NVIDIA claims no ownership of generated outputs. This is what makes Nemotron-4 viable for enterprise synthetic-data generation: the outputs are yours to use for training and production.</p>
+
+    <table class="benchmark-table">
+        <thead>
+            <tr><th>Model</th><th>License</th><th>Commercial use</th><th>Model card</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Nemotron-4 340B Instruct</td><td>NVIDIA Open Model License</td><td>Permitted</td><td><a href="https://huggingface.co/nvidia/Nemotron-4-340B-Instruct" target="_blank" rel="noopener" style="color:#76b900;">nvidia/Nemotron-4-340B-Instruct →</a></td></tr>
+            <tr><td>Nemotron-4 340B Reward</td><td>NVIDIA Open Model License</td><td>Permitted</td><td><a href="https://huggingface.co/nvidia/Nemotron-4-340B-Reward" target="_blank" rel="noopener" style="color:#76b900;">nvidia/Nemotron-4-340B-Reward →</a></td></tr>
+            <tr><td>Nemotron-4 340B Base</td><td>NVIDIA Open Model License</td><td>Permitted</td><td><a href="https://huggingface.co/nvidia/Nemotron-4-340B-Base" target="_blank" rel="noopener" style="color:#76b900;">nvidia/Nemotron-4-340B-Base →</a></td></tr>
+        </tbody>
+    </table>
+
+    <p style="font-size:0.85rem; color:#6e7681;">The NVIDIA Open Model License is a permissive, commercially usable license that permits derivative works and use of model outputs. License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+
+    <hr class="section-divider">
+
+    <h2>Available Model Sizes</h2>
+
+    <p>Nemotron-4 340B is a single flagship; the practical decision is quantization and GPU count, not size. Smaller Nemotron models are covered on the <a href="/nemotron/" style="color:#76b900;">Nemotron overview</a>. VERIFY current Ollama tags before planning. NoCloudGPT confirms hardware requirements and selects the right configuration before your pilot begins.</p>
+
+    <table class="benchmark-table">
+        <thead>
+            <tr><th>Configuration</th><th>Deployment tier</th><th>Best for</th><th></th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Nemotron-4 340B (Q4)</td><td>Enterprise AI — 4× A100 40GB (~160 GB)</td><td>Low-concurrency batch and document analysis</td><td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
+            <tr><td>Nemotron-4 340B (Q4/Q5)</td><td>Enterprise AI — 4× A100 80GB (~320 GB)</td><td>Standard production, 5–10 concurrent users</td><td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
+            <tr><td>Nemotron-4 340B (BF16)</td><td>Enterprise AI — 8× H100 80GB (~640 GB)</td><td>High-throughput, 20–50 concurrent users</td><td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
+        </tbody>
+    </table>
+    <!-- TODO: Link each row to individual model-size pages when created -->
 
     <hr class="section-divider">
 
