@@ -107,6 +107,29 @@
 
     <hr class="section-divider">
 
+    <h2>Who Zephyr Is For</h2>
+
+    <div class="use-case-grid">
+        <div class="use-case-card">
+            <h3>👤 Personal Use</h3>
+            <p>Zephyr 7B Beta runs on ~5–6 GB of VRAM and answers fast, so it is an excellent homelab and personal chat model on a single consumer GPU. Its DPO tuning gives direct, substantive answers rather than over-hedged ones — a good fit if you want a private, no-subscription assistant. The MIT license means you can use it however you like.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>🏢 Business &amp; Team Use</h3>
+            <p>For small teams wanting a private chat assistant for drafting, summarizing, and internal Q&amp;A without GPU spend, Zephyr 7B is a clean, MIT-licensed option that deploys on a modest server via Ollama and OpenWebUI. It is light and honest rather than the broadest-capability model — pair it with a larger model where you need deeper reasoning.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>⚙️ Developer &amp; Technical Use</h3>
+            <p>Ollama exposes Zephyr through an OpenAI-compatible endpoint, so apps built against the OpenAI API can point at a local Zephyr instance with no per-token cost or data egress. Its reliable instruction following and format adherence make it a predictable backend for content generation and extraction tasks. MIT licensing keeps commercial embedding friction-free.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>🔬 Data Science &amp; Research Use</h3>
+            <p>Zephyr is a well-known reference for what Direct Preference Optimization (DPO) produces at 7B scale, making it a useful baseline for alignment and preference-tuning research. Teams comparing SFT-only, RLHF, and DPO approaches can use Zephyr 7B Beta as a clean, openly licensed DPO data point.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
     <h2>What Zephyr Does Well</h2>
 
     <h3>Direct, Substantive Chat</h3>
@@ -247,6 +270,41 @@
             <p>Legal, healthcare, and financial organizations that need AI assistance but face data sovereignty requirements can use Zephyr as a private, on-premise tool that never transmits queries externally.</p>
         </div>
     </div>
+
+    <hr class="section-divider">
+
+    <h2>Licensing Information</h2>
+
+    <p>Zephyr's licensing is permissive and commercial-friendly across the family. The flagship Zephyr 7B Beta is released under the MIT License, and the larger Zephyr 141B (built on Mixtral 8x22B) is Apache 2.0. Both permit commercial use; as always, the underlying base model's terms are worth a glance, but neither imposes the usage thresholds some other families carry.</p>
+
+    <table class="hardware-table">
+        <thead>
+            <tr><th>Model</th><th>License</th><th>Commercial use</th><th>Model card</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Zephyr 7B Beta</td><td>MIT</td><td>Permitted</td><td><a href="https://huggingface.co/HuggingFaceH4/zephyr-7b-beta" target="_blank" rel="noopener" style="color:#76b900;">HuggingFaceH4/zephyr-7b-beta →</a></td></tr>
+            <tr><td>Zephyr 141B (ORPO, Mixtral 8x22B)</td><td>Apache 2.0</td><td>Permitted</td><td><a href="https://huggingface.co/HuggingFaceH4/zephyr-orpo-141b-A35b-v0.1" target="_blank" rel="noopener" style="color:#76b900;">HuggingFaceH4/zephyr-orpo-141b-A35b-v0.1 →</a></td></tr>
+        </tbody>
+    </table>
+
+    <p style="font-size:0.85rem; color:#6e7681;">Zephyr 7B Beta is MIT and Zephyr 141B is Apache 2.0 — both permit commercial use. License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+
+    <hr class="section-divider">
+
+    <h2>Available Model Sizes</h2>
+
+    <p>Zephyr is published in two sizes. VERIFY current tags in the Ollama library before planning. NoCloudGPT confirms hardware requirements and selects the right quantization before your pilot begins.</p>
+
+    <table class="hardware-table">
+        <thead>
+            <tr><th>Model</th><th>Deployment tier</th><th>Best for</th><th></th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Zephyr 7B Beta</td><td>Standard AI — 5–6 GB</td><td>Fast private chat, drafting, app backends — recommended</td><td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
+            <tr><td>Zephyr 141B (MoE)</td><td>Enterprise AI — ~90 GB / multi-GPU</td><td>Zephyr-quality alignment at much larger scale</td><td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
+        </tbody>
+    </table>
+    <!-- TODO: Link each row to individual model-size pages when created -->
 
     <hr class="section-divider">
 

@@ -192,6 +192,33 @@
     </div>
   </section>
 
+  <!-- Who this model family is for -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">Who This Model Family Is For</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-gray-800 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-2"><span class="text-xl">👤</span><span class="text-xs font-semibold uppercase tracking-wide text-gray-500">Personal use</span></div>
+        <h3 class="text-lg font-semibold text-white mb-2">A reliable private assistant on minimal hardware</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">OpenHermes 2.5 or Nous Hermes 2 (7B) run on a 4GB instance and follow instructions consistently across long chats, making a dependable personal assistant for writing, Q&amp;A, and light coding. The Mistral-based variants are Apache 2.0, so personal and side-project use is unrestricted.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-2"><span class="text-xl">🏢</span><span class="text-xs font-semibold uppercase tracking-wide text-gray-500">Business &amp; team use</span></div>
+        <h3 class="text-lg font-semibold text-white mb-2">GPT-3.5-class assistants without the API bill</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">For legal, compliance, and operations teams, Hermes models deliver structured reasoning and reliable JSON output for contract review, extraction, and internal copilots — entirely within your network. Pick the variant by license: Mistral/Mixtral are Apache 2.0; the Llama- and Yi-based variants follow their base-model licenses.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-2"><span class="text-xl">⚙️</span><span class="text-xs font-semibold uppercase tracking-wide text-gray-500">Developer &amp; technical use</span></div>
+        <h3 class="text-lg font-semibold text-white mb-2">A tool-calling backbone for private agents</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Nous Hermes 2 and OpenHermes 2.5 support JSON mode and tool-call formats compatible with LangChain and LlamaIndex, making them a strong locally-hosted core for agentic pipelines, RAG, and multi-step automation. Consistent structured output is the key advantage over a raw base model.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-2"><span class="text-xl">🔬</span><span class="text-xs font-semibold uppercase tracking-wide text-gray-500">Data science &amp; research</span></div>
+        <h3 class="text-lg font-semibold text-white mb-2">Long-context analysis and fine-tune research</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Nous Hermes 2 Yi (34B) offers a 200K context for long-document reasoning, and the family as a whole is a well-studied example of high-quality synthetic-data fine-tuning. For researchers comparing instruction-tuning approaches or building RAG over long corpora, Hermes is a strong, openly available reference.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Who Should Use This -->
   <section class="max-w-4xl mx-auto px-6 py-12">
     <h2 class="text-2xl font-bold text-white mb-6">Who Should Deploy Nous Hermes / OpenHermes?</h2>
@@ -211,6 +238,58 @@
         <h3 class="font-semibold text-white mb-2">Healthcare &amp; Research</h3>
         <p class="text-gray-400 text-sm">HIPAA-sensitive workflows that require on-premise NLP — clinical notes summarization, literature review, structured intake forms — without PHI leaving the facility.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Available Model Sizes -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-2">Available Model Sizes</h2>
+    <p class="text-gray-400 text-sm mb-6">VERIFY current Ollama tags before planning. NoCloudGPT confirms hardware requirements and selects the right quantization before your pilot begins.</p>
+    <div class="overflow-x-auto rounded-xl border border-gray-800">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wide">
+          <tr>
+            <th class="px-4 py-3 text-left">Model</th>
+            <th class="px-4 py-3 text-left">Deployment tier</th>
+            <th class="px-4 py-3 text-left">Best for</th>
+            <th class="px-4 py-3 text-left"></th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800">
+          <tr class="bg-gray-900"><td class="px-4 py-3 text-white font-medium">OpenHermes 2.5 / Nous Hermes 2 (7B)</td><td class="px-4 py-3 text-gray-300">Standard AI — 4 GB</td><td class="px-4 py-3 text-gray-300">Instruction following, agents — recommended</td><td class="px-4 py-3"><a href="/quote.html" class="text-blue-400 hover:text-blue-300">Get quote →</a></td></tr>
+          <tr class="bg-gray-900"><td class="px-4 py-3 text-white font-medium">Nous Hermes 2 Yi (34B)</td><td class="px-4 py-3 text-gray-300">Professional AI — GPU 24 GB</td><td class="px-4 py-3 text-gray-300">Long-context (200K) reasoning and analysis</td><td class="px-4 py-3"><a href="/quote.html" class="text-blue-400 hover:text-blue-300">Get quote →</a></td></tr>
+          <tr class="bg-gray-900"><td class="px-4 py-3 text-white font-medium">Nous Hermes 3 (Llama 3.1 70B)</td><td class="px-4 py-3 text-gray-300">Heavy AI — multi-GPU</td><td class="px-4 py-3 text-gray-300">Latest-gen reasoning, agentic loops at scale</td><td class="px-4 py-3"><a href="/quote.html" class="text-blue-400 hover:text-blue-300">Get quote →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-gray-500 text-xs mt-3">Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
+      <!-- TODO: Link each row to individual model-size pages when created --></p>
+  </section>
+
+  <!-- Licensing Information -->
+  <section class="bg-gray-900 py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-white mb-4">Licensing Information</h2>
+      <p class="text-gray-300 text-sm leading-relaxed mb-6">Hermes licensing follows each variant's base model. The Mistral- and Mixtral-based models (OpenHermes 2.5, Nous Hermes 2 Mistral/Mixtral) and the Yi-based 34B are Apache 2.0 — clean for commercial use. The Llama-based variants follow the relevant Llama Community License (Llama 2 for the 13B, Llama 3.1 for Hermes 3), permitting commercial use with attribution and a large-platform condition. Verify the specific variant before deploying commercially.</p>
+      <div class="overflow-x-auto rounded-xl border border-gray-800">
+        <table class="w-full text-sm">
+          <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wide">
+            <tr>
+              <th class="px-4 py-3 text-left">Model</th>
+              <th class="px-4 py-3 text-left">License</th>
+              <th class="px-4 py-3 text-left">Commercial use</th>
+              <th class="px-4 py-3 text-left">Model card</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr class="bg-gray-900"><td class="px-4 py-3 text-white font-medium">OpenHermes 2.5 (Mistral 7B)</td><td class="px-4 py-3 text-gray-300">Apache 2.0</td><td class="px-4 py-3 text-green-400">Permitted</td><td class="px-4 py-3"><a href="https://huggingface.co/teknium/OpenHermes-2.5-Mistral-7B" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300">teknium/OpenHermes-2.5-Mistral-7B →</a></td></tr>
+            <tr class="bg-gray-900"><td class="px-4 py-3 text-white font-medium">Nous Hermes 2 Mistral 7B DPO</td><td class="px-4 py-3 text-gray-300">Apache 2.0</td><td class="px-4 py-3 text-green-400">Permitted</td><td class="px-4 py-3"><a href="https://huggingface.co/NousResearch/Nous-Hermes-2-Mistral-7B-DPO" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300">NousResearch/Nous-Hermes-2-Mistral-7B-DPO →</a></td></tr>
+            <tr class="bg-gray-900"><td class="px-4 py-3 text-white font-medium">Nous Hermes 2 Yi (34B)</td><td class="px-4 py-3 text-gray-300">Apache 2.0</td><td class="px-4 py-3 text-green-400">Permitted</td><td class="px-4 py-3"><a href="https://huggingface.co/NousResearch/Nous-Hermes-2-Yi-34B" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300">NousResearch/Nous-Hermes-2-Yi-34B →</a></td></tr>
+            <tr class="bg-gray-900"><td class="px-4 py-3 text-white font-medium">Hermes 3 (Llama 3.1)</td><td class="px-4 py-3 text-gray-300">Llama 3.1 Community License</td><td class="px-4 py-3 text-yellow-400">Permitted, conditions apply</td><td class="px-4 py-3"><a href="https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-8B" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300">NousResearch/Hermes-3-Llama-3.1-8B →</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-gray-500 text-xs mt-3">Mistral/Mixtral/Yi-based Hermes models are Apache 2.0; Llama-based variants follow the relevant Llama Community License. License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
     </div>
   </section>
 

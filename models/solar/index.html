@@ -49,16 +49,26 @@
   <li><strong>Korean and English</strong> — bilingual capability with solid Korean output quality</li>
 </ul>
 
-<h2>Who Should Care</h2>
+<h2>Who This Model Family Is For</h2>
 
-<h3>Business and Professional Use</h3>
+<h3>👤 Personal use</h3>
 <p>
-  Solar 10.7B Instruct fits on a single 16GB GPU and produces output quality that competes with models twice its size. For teams that want a private document assistant or internal chatbot without investing in high-end GPU hardware, it's an efficient choice. It's particularly worth evaluating for workflows that involve <strong>Korean language content</strong> alongside English.
+  Solar 10.7B in 4-bit quantization runs on an RTX 3060 (12GB) — or an RTX 3070 8GB with slight compromise — making it a satisfying homelab model that is noticeably better than most 7B alternatives while staying smaller than a 13B. It is a good personal pick if you want a single capable assistant, and especially if your day includes Korean alongside English. For commercial side projects, use the Apache-2.0 base rather than the non-commercial Instruct weights.
 </p>
 
-<h3>Personal and Homelab Use</h3>
+<h3>🏢 Business &amp; team use</h3>
 <p>
-  Solar 10.7B in 4-bit quantization runs on an RTX 3060 (12GB) or RTX 3070 (8GB with slight compromise). It's a satisfying homelab model — better than most 7B alternatives, smaller than a 13B.
+  Solar 10.7B Instruct fits on a single 16GB GPU and produces output quality that competes with models twice its size, which makes it efficient for a private document assistant or internal chatbot without high-end hardware. It is particularly worth evaluating for Korean-and-English workflows. Important: the Instruct weights are CC-BY-NC (non-commercial) — for commercial production, plan on Solar Pro or a commercially licensed alternative.
+</p>
+
+<h3>⚙️ Developer &amp; technical use</h3>
+<p>
+  Solar's clean instruction following makes it straightforward to build RAG pipelines and document-extraction tooling around, and Upstage's document-AI heritage shows in structured-document handling. Developers should pick the variant by license: the SOLAR-10.7B base is Apache 2.0 for embedding in products, while the Instruct fine-tune is non-commercial. Confirm the terms before shipping.
+</p>
+
+<h3>🔬 Data science &amp; research</h3>
+<p>
+  Solar is a clean demonstration of <em>depth upscaling</em> — merging two Mistral 7B models and continuing pretraining — which makes it an interesting reference for researchers studying model-merging and efficient scaling. Its strong reasoning-per-parameter and bilingual Korean-English behaviour also make it a useful baseline for document-AI and cross-lingual evaluation work.
 </p>
 
 <h2>Model Variants at a Glance</h2>
@@ -89,6 +99,33 @@
 <p>
   Solar Pro (22B) runs well on a single A10G (24GB) or two RTX 4090s. Serve with vLLM for multi-user access.
 </p>
+
+<h2>Available Model Sizes</h2>
+<p>VERIFY current Ollama tags before planning. NoCloudGPT confirms hardware requirements and selects the right quantization before your pilot begins.</p>
+<table>
+  <thead>
+    <tr><th>Model</th><th>Deployment tier</th><th>Best for</th><th></th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Solar 10.7B Instruct</td><td>Standard/Professional AI — 12–16 GB</td><td>Private document assistant, internal chatbot (non-commercial)</td><td><a href="/quote.html">Get quote →</a></td></tr>
+    <tr><td>Solar Pro Preview (22B)</td><td>Professional AI — A10G 24GB</td><td>Higher-capability enterprise document AI</td><td><a href="/quote.html">Get quote →</a></td></tr>
+  </tbody>
+</table>
+<!-- TODO: Link each row to individual model-size pages when created -->
+
+<h2>Licensing Information</h2>
+<p>Solar's license varies by variant, and the distinction matters for commercial use. The SOLAR-10.7B base model is Apache 2.0 (commercial-friendly), but the popular SOLAR-10.7B-Instruct is released under CC-BY-NC 4.0, which prohibits commercial use. Solar Pro Preview is released under MIT. Pick the variant whose license matches your intended use.</p>
+<table>
+  <thead>
+    <tr><th>Model</th><th>License</th><th>Commercial use</th><th>Model card</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>SOLAR-10.7B (base)</td><td>Apache 2.0</td><td>Permitted</td><td><a href="https://huggingface.co/upstage/SOLAR-10.7B-v1.0" target="_blank" rel="noopener">upstage/SOLAR-10.7B-v1.0 →</a></td></tr>
+    <tr><td>SOLAR-10.7B Instruct</td><td>CC-BY-NC 4.0</td><td>Non-commercial</td><td><a href="https://huggingface.co/upstage/SOLAR-10.7B-Instruct-v1.0" target="_blank" rel="noopener">upstage/SOLAR-10.7B-Instruct-v1.0 →</a></td></tr>
+    <tr><td>Solar Pro Preview</td><td>MIT</td><td>Permitted</td><td><a href="https://huggingface.co/upstage/solar-pro-preview-instruct" target="_blank" rel="noopener">upstage/solar-pro-preview-instruct →</a></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.85rem; color:#64748b;">The SOLAR-10.7B base is Apache 2.0 and Solar Pro Preview is MIT, but SOLAR-10.7B-Instruct is CC-BY-NC (non-commercial). License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
 
 <div class="cta-box">
   <strong>Want Solar running on your own infrastructure?</strong><br />
