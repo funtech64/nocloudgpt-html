@@ -765,6 +765,100 @@
         </div>
       </section>
 
+      <!-- WHO THIS IS FOR -->
+      <section>
+        <h2>👥 Who This Model Is For</h2>
+
+        <h3>👤 Personal Use</h3>
+        <p>
+          Granite Guardian is enterprise infrastructure — it is not designed for personal use and the overhead of deploying a dedicated risk-scoring pipeline makes little sense for individuals. The exception is a technically sophisticated developer building and testing a personal AI application they intend to release publicly, who wants to validate safety infrastructure before launch. The 2B variant's low hardware requirements (runs on a Lightsail 4 GB instance) make it accessible for this prototype-and-validate workflow.
+        </p>
+
+        <h3>🏢 Business &amp; Team Use</h3>
+        <p>
+          Granite Guardian was designed for exactly the compliance and risk management requirements that regulated industries face when deploying AI. Financial services firms managing FINRA communication standards, healthcare organizations with HIPAA PHI exposure obligations, legal teams needing privilege-sensitive content detection, and government agencies building AI Act Article 9 risk management documentation — these are the primary use cases. The structured risk scores with named categories produce the audit-trail format that compliance teams, auditors, and regulators expect: not just "flagged" but "flagged for regulatory_sensitivity at 0.44 with threshold 0.40." Private deployment means sensitive interactions — patient queries, client communications, legally privileged discussions — never leave the organization's network.
+        </p>
+
+        <h3>⚙️ Developer &amp; Technical Use</h3>
+        <p>
+          Developers building AI pipelines for regulated industries will find Granite Guardian's structured JSON output integrates cleanly into existing logging, SIEM, and compliance infrastructure. The continuous risk scores (rather than binary SAFE/UNSAFE) let developers implement nuanced routing: low-risk passes through, medium-risk gets flagged for human review, high-risk gets blocked — all with per-category granularity. NoCloudGPT configures Granite Guardian alongside your primary model with pre-built log formatters for EU AI Act, NIST AI RMF, HIPAA, and FINRA audit trail requirements, reducing integration work significantly.
+        </p>
+
+        <h3>🔬 Data Science &amp; Research Use</h3>
+        <p>
+          IBM Research published Granite Guardian with detailed documentation of its training methodology and harm taxonomy. For researchers studying AI safety and content moderation, Granite Guardian's continuous risk scoring approach — versus the binary SAFE/UNSAFE output of Llama Guard 3 — offers a different technical baseline for comparative evaluation. Its direct compliance framework mapping (EU AI Act, NIST RMF, HIPAA, FINRA) also makes it useful for research studying the gap between AI safety benchmark performance and practical regulatory compliance requirements.
+        </p>
+      </section>
+
+      <!-- LICENSING -->
+      <section>
+        <h2>📄 Licensing Information</h2>
+        <p>
+          Both Granite Guardian variants are released by IBM Research under the <strong>Apache 2.0 License</strong>. Commercial use, modification, and redistribution are all permitted without restriction. Apache 2.0 is the most permissive commercially viable license available for AI models — no usage tier caps, no user-count restrictions, no platform-specific terms.
+        </p>
+        <table class="compliance-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>License</th>
+              <th>Commercial Use</th>
+              <th>Model Card</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Granite Guardian 3.2 2B</td>
+              <td>Apache 2.0</td>
+              <td><span class="check">✓ Permitted</span></td>
+              <td><a href="https://huggingface.co/ibm-granite/granite-guardian-3.2-2b" target="_blank" rel="noopener" style="color:var(--accent);">ibm-granite/granite-guardian-3.2-2b →</a></td>
+            </tr>
+            <tr>
+              <td>Granite Guardian 3.2 8B</td>
+              <td>Apache 2.0</td>
+              <td><span class="check">✓ Permitted</span></td>
+              <td><a href="https://huggingface.co/ibm-granite/granite-guardian-3.2-8b" target="_blank" rel="noopener" style="color:var(--accent);">ibm-granite/granite-guardian-3.2-8b →</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.85rem; color: var(--text-muted);">License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+      </section>
+
+      <!-- AVAILABLE SIZES -->
+      <section>
+        <h2>📐 Available Model Sizes</h2>
+        <table class="compliance-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Parameters</th>
+              <th>RAM (Q4)</th>
+              <th>Deployment Tier</th>
+              <th>Best For</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Granite Guardian 3.2 2B</td>
+              <td>2B</td>
+              <td>~1.5 GB</td>
+              <td>Lightsail 4 GB</td>
+              <td>Input screening, co-deployment with primary LLM, low-volume pipelines</td>
+              <td><a href="/quote.html" style="color:var(--accent);">Get quote →</a></td>
+            </tr>
+            <tr>
+              <td>Granite Guardian 3.2 8B</td>
+              <td>8B</td>
+              <td>~5 GB</td>
+              <td>Lightsail 8 GB / GPU instance</td>
+              <td>Full bidirectional screening, structured audit logs, regulated industry compliance</td>
+              <td><a href="/quote.html" style="color:var(--accent);">Get quote →</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- TODO: Link each row to individual model-size pages when created -->
+      </section>
+
       <!-- USE CASES -->
       <section>
         <h2>🏢 Who Deploys Granite Guardian?</h2>
@@ -955,8 +1049,8 @@
 
       <div class="sidebar-card">
         <h4>🚀 Start Deployment</h4>
-        <a class="cta-primary" href="/contact/">Start 90-Day Pilot</a>
-        <a class="cta-secondary" href="/models/">View All Models</a>
+        <a class="cta-primary" href="/quote.html">Build a Granite Guardian quote</a>
+        <a class="cta-secondary" href="/models/deploy/lightsail-guide.html">Start 90-day pilot</a>
       </div>
 
       <div class="sidebar-card">

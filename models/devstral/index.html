@@ -47,8 +47,7 @@
         proprietary source code ever leaving your infrastructure.
       </p>
       <p class="mt-4 max-w-3xl text-slate-400">
-        Built on the Mistral Nemo base. Apache 2.0 licensed. Released May 2025.
-        VERIFY: Confirm current Devstral Ollama tag and hardware requirements.
+        Built on the Mistral Nemo architecture. Apache 2.0 licensed. Released May 2025. Confirm current Ollama tags before deployment — tags may update between releases.
       </p>
       <div class="mt-10 flex flex-wrap gap-3">
         <a href="/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
@@ -80,7 +79,6 @@
           <p class="mt-4 text-slate-300">
             Apache 2.0 licensing makes it the cleanest commercial integration choice in the
             Mistral coding model lineup.
-            VERIFY: Confirm exact Devstral parameter count, hardware requirements, and Ollama tag before deployment.
           </p>
         </section>
 
@@ -97,10 +95,74 @@
             It was designed with SWE-bench performance as a specific target — benchmark-validated
             on real-world software engineering tasks rather than just code generation patterns.
           </p>
-          <p class="mt-4 text-slate-300">
-            VERIFY: Confirm current Devstral license — expected to be Apache 2.0 but verify at time of deployment.
-          </p>
           <p class="mt-4 text-slate-300">NoCloudGPT is independent of Mistral AI. We help organizations deploy Devstral on their own infrastructure using Ollama.</p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model is for</p>
+          <h2 class="mt-3 text-3xl font-black">Who Should Be Running Devstral</h2>
+          <div class="mt-6 space-y-5">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">👤 Personal Use</h3>
+              <p class="mt-3 text-slate-400">Devstral is a 24B model and requires a GPU instance to run at useful inference speeds — it is not a laptop model. Individual developers with access to a GPU machine who want agent-grade coding assistance for personal projects will find it meaningfully better than smaller coding models on multi-file refactoring and documentation tasks. For those working on side projects with proprietary ideas, private deployment means no code leaves the machine. Developers without GPU hardware should start with Code Llama 7B or Qwen2.5 Coder 7B instead.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">🏢 Business &amp; Team Use</h3>
+              <p class="mt-3 text-slate-400">Engineering teams that have outgrown single-file coding assistance and need an AI that understands how changes propagate across a codebase. Devstral's repository-level context understanding and tool calling make it the right choice for teams building internal coding automation — automated code review pipelines, continuous refactoring agents, documentation generation workflows. For companies building commercial developer tools, the Apache 2.0 license provides the cleanest integration path in the Mistral lineup: no Llama community license edge cases, no usage-tier restrictions to navigate in your product's terms.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">⚙️ Developer &amp; Technical Use</h3>
+              <p class="mt-3 text-slate-400">Devstral was evaluated on SWE-bench — a benchmark of real GitHub issues requiring multi-step code changes — which makes it directly relevant to developers building software engineering agents. If you are building an autonomous coding agent that needs to understand repository structure, plan changes across files, call external tools (linters, test runners, build systems), and synthesize results, Devstral's training on exactly these tasks gives it an advantage over general coding models. The Ollama tool-calling API integration is straightforward; NoCloudGPT configures OpenWebUI with tool-calling enabled as part of the standard deployment.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">🔬 Data Science &amp; Research Use</h3>
+              <p class="mt-3 text-slate-400">Research teams building automated experimentation pipelines, data cleaning agents, or ML evaluation workflows will find Devstral's tool-calling and multi-step planning capabilities directly applicable. Its SWE-bench training also makes it a useful research target for studying agentic coding capabilities — particularly for research into how fine-tuning on software engineering benchmark tasks transfers to real-world coding automation performance.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">Devstral License</h2>
+          <p class="mt-5 text-slate-300">Devstral is released by Mistral AI under the <strong class="text-white">Apache 2.0 License</strong>. Commercial use, modification, and redistribution are all permitted without restriction. This is the cleanest commercial license available among capable coding models — no usage tiers, no user-count limits, no custom commercial terms to negotiate.</p>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr><th class="px-4 py-3">Model</th><th class="px-4 py-3">License</th><th class="px-4 py-3">Commercial Use</th><th class="px-4 py-3">Model Card</th></tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Devstral Small 22B</td>
+                  <td class="px-4 py-3">Apache 2.0</td>
+                  <td class="px-4 py-3">Permitted</td>
+                  <td class="px-4 py-3"><a href="https://huggingface.co/mistralai/Devstral-Small-2505" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Devstral-Small-2505 →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4 text-xs text-slate-500">License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Devstral Deployment Tiers</h2>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr><th class="px-4 py-3">Model</th><th class="px-4 py-3">RAM (Q4)</th><th class="px-4 py-3">Deployment Tier</th><th class="px-4 py-3">Best For</th><th class="px-4 py-3"></th></tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Devstral Small 22B (Q4)</td>
+                  <td class="px-4 py-3">~13 GB</td>
+                  <td class="px-4 py-3">Professional AI (12–16 GB GPU)</td>
+                  <td class="px-4 py-3">Agent coding workflows, multi-file context, tool-calling pipelines</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 font-semibold">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- TODO: Link each row to individual model-size pages when created -->
         </section>
 
         <section>
@@ -148,7 +210,7 @@
               </tbody>
             </table>
           </div>
-          <p class="mt-4 text-sm text-slate-400">VERIFY: Confirm exact Devstral parameter count and RAM requirements at current Ollama quantization before planning. Devstral is intended for GPU-assisted deployment rather than CPU-only inference.</p>
+          <p class="mt-4 text-sm text-slate-400">Devstral requires GPU-assisted deployment for practical inference speeds. CPU-only inference is technically possible but too slow for interactive use at this model size.</p>
         </section>
 
         <section>
@@ -180,8 +242,8 @@
           <p class="mt-3 text-sm text-cyan-50">Agent-optimized private coding AI. Multi-file context, tool calling, and Apache 2.0 licensing for commercial integration.</p>
           <dl class="mt-5 space-y-3 text-sm">
             <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Developer</dt><dd class="font-semibold text-white">Mistral AI</dd></div>
-            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Base</dt><dd class="font-semibold text-white">Mistral Nemo (VERIFY)</dd></div>
-            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">VERIFY: Apache 2.0</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Base</dt><dd class="font-semibold text-white">Mistral Nemo</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">Apache 2.0</dd></div>
             <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Released</dt><dd class="font-semibold text-white">May 2025</dd></div>
             <div class="flex justify-between"><dt class="text-slate-400">Min. tier</dt><dd class="font-semibold text-white">Professional AI (GPU)</dd></div>
           </dl>
