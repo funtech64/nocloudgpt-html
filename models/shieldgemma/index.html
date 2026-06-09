@@ -11,7 +11,7 @@
 <body class="bg-slate-950 text-slate-100">
   <header class="border-b border-slate-800 bg-slate-950">
     <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="../index.html" class="text-sm font-semibold text-cyan-300">← Back to model menu</a>
+      <a href="/models/" class="text-sm font-semibold text-cyan-300">← Back to model menu</a>
       <p class="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">ShieldGemma</p>
       <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">ShieldGemma — AI Safety Classification That Runs on Your Infrastructure, Not Google's</h1>
   <!-- TODO: Add hero.webp — see models/artwork-sources.md, row: shieldgemma -->
@@ -19,9 +19,9 @@
 
       <p class="mt-6 max-w-3xl text-lg text-slate-300">ShieldGemma is Google's open safety classifier — a model specifically trained to evaluate whether AI inputs and outputs contain harmful content across defined safety categories. Deploy it as a local guardrail layer in your private AI pipeline without routing user conversations to an external safety service.</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="../quote.html" class="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
-        <a href="../deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day Lightsail pilot</a>
-        <a href="../deploy/on-premise.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+        <a href="/quote.html" class="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="/models/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day Lightsail pilot</a>
+        <a href="/models/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
       </div>
     </div>
   </header>
@@ -67,57 +67,103 @@
           </div>
         </div>
 
-        <h2 class="mt-10 text-3xl font-black">Who Should Be Running ShieldGemma</h2>
+        <h2 class="mt-10 text-3xl font-black">Who This Model Family Is For</h2>
 
-        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Organizations deploying AI in customer-facing applications</h3>
-        <p class="mt-3 text-slate-300">Any company offering an AI assistant, chatbot, or AI-generated content feature to end users faces reputational, legal, and operational risk from harmful AI outputs. ShieldGemma provides a technical safeguard that complements the model's intrinsic alignment — catching failure modes that the base model's training missed, particularly in adversarial or edge-case scenarios. For organizations in industries where a single harmful AI output could generate regulatory scrutiny or news coverage, this layer of defense is not optional.</p>
+        <h3 class="mt-8 text-xl font-bold text-cyan-200">👤 Personal Use</h3>
+        <p class="mt-3 text-slate-300">Individuals building personal AI assistants, home automation tools, or small private applications will rarely need a dedicated safety classifier — the overhead is disproportionate for personal deployments with a single trusted user. The exception is developers building and testing AI applications for public use who want to validate their safety layer before launch, or researchers conducting adversarial red-team testing on their own models. For those scenarios, ShieldGemma 2B is compact enough to run alongside any generation model without meaningful hardware overhead.</p>
 
-        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Companies preparing for AI Act and regulatory compliance</h3>
-        <p class="mt-3 text-slate-300">The EU AI Act and emerging AI regulations in multiple jurisdictions are beginning to require documented safety measures for AI systems in certain risk categories. ShieldGemma deployment, with associated audit logging, provides documented technical evidence that safety classification was implemented. Organizations building AI products for European markets in particular should be thinking about these requirements now, before deployment.</p>
+        <h3 class="mt-8 text-xl font-bold text-cyan-200">🏢 Business &amp; Team Use</h3>
+        <p class="mt-3 text-slate-300">Any organization offering an AI assistant, chatbot, or AI-generated content feature to end users faces reputational, legal, and operational risk from harmful outputs. ShieldGemma provides a technical safeguard that complements the generation model's intrinsic alignment — and does so entirely on your infrastructure. For organizations in industries where a single harmful AI output triggers regulatory scrutiny or press coverage, this classification layer is not optional. Companies preparing for EU AI Act compliance will find that ShieldGemma deployment with audit logging provides documented technical evidence of implemented safety measures — a specific requirement in the Act's high-risk AI provisions.</p>
 
-        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Platforms using open-weight models with variable alignment</h3>
-        <p class="mt-3 text-slate-300">Open-weight models that have been fine-tuned, merged, or otherwise modified from their original safety-aligned form — which includes many of the most capable creative, coding, and specialized models — may have reduced safety alignment compared to their base versions. Organizations deploying these models as products have a stronger case for external classification layers precisely because the model's internal guardrails are less reliable.</p>
+        <h3 class="mt-8 text-xl font-bold text-cyan-200">⚙️ Developer &amp; Technical Use</h3>
+        <p class="mt-3 text-slate-300">Developers deploying open-weight models that have been fine-tuned, merged, or modified from their original safety-aligned form need an external classification layer precisely because those models' internal guardrails are less reliable. ShieldGemma integrates into AI pipelines as an input filter, output filter, or both — the 2B variant adds sub-second classification latency, making it compatible with real-time applications. Developers replacing cloud moderation APIs (OpenAI Moderation endpoint, Perspective API) with ShieldGemma gain both privacy improvement — no conversation content leaves the network — and a per-classification cost reduction to infrastructure cost alone.</p>
 
-        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Legal and professional service AI deployments</h3>
-        <p class="mt-3 text-slate-300">Law firms, healthcare providers, and financial institutions deploying AI for professional purposes face unique liability exposures if their AI systems produce harmful, dangerous, or professionally inappropriate outputs. ShieldGemma classification running on the same infrastructure as the main model provides a defensible safety layer without routing privileged or confidential conversations to an external service.</p>
+        <h3 class="mt-8 text-xl font-bold text-cyan-200">🔬 Data Science &amp; Research Use</h3>
+        <p class="mt-3 text-slate-300">AI safety researchers and red-team evaluation teams can use ShieldGemma to systematically classify outputs across adversarial test suites without sending potentially sensitive test prompts to external services. Local deployment allows unrestricted testing against the classifier itself. Google's well-documented safety taxonomy — dangerous content, sexual content, harassment, prompt injection — makes ShieldGemma a clean baseline for research comparing safety classifier performance across different model families and fine-tuning approaches.</p>
 
-        <h2 class="mt-10 text-3xl font-black">Hardware and Deployment Reality</h2>
-        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+        <h2 class="mt-10 text-3xl font-black">Licensing Information</h2>
+        <p class="mt-5 text-slate-300">All ShieldGemma variants are released under the <strong class="text-white">Gemma Terms of Use</strong>, which permit commercial use for most organizations. The Gemma terms include acceptable use provisions that restrict use for harmful purposes. Verify the current Gemma Terms of Use before deployment, particularly for safety-critical or regulated applications.</p>
+        <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
           <table class="w-full text-left text-sm">
             <thead class="bg-slate-950 text-cyan-200">
               <tr>
-                <th class="px-4 py-3">Configuration</th>
-                <th class="px-4 py-3">Recommended instance</th>
-                <th class="px-4 py-3">Best use</th>
+                <th class="px-4 py-3">Model</th>
+                <th class="px-4 py-3">License</th>
+                <th class="px-4 py-3">Commercial Use</th>
+                <th class="px-4 py-3">Model Card</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-900">
-              <tr class="bg-slate-900">
-                <td class="px-4 py-3 font-semibold text-white">ShieldGemma 2B Q4</td>
-                <td class="px-4 py-3 text-slate-300">Shared on existing LLM instance</td>
-                <td class="px-4 py-3 text-slate-300">Low-latency input/output filtering, co-deployed with main model</td>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">ShieldGemma 2B</td>
+                <td class="px-4 py-3">Gemma Terms of Use</td>
+                <td class="px-4 py-3">Permitted (conditions apply)</td>
+                <td class="px-4 py-3"><a href="https://huggingface.co/google/shieldgemma-2b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">google/shieldgemma-2b →</a></td>
               </tr>
-              <tr class="bg-slate-900">
-                <td class="px-4 py-3 font-semibold text-white">ShieldGemma 9B Q4</td>
-                <td class="px-4 py-3 text-slate-300">Dedicated 8 GB GPU or Lightsail</td>
-                <td class="px-4 py-3 text-slate-300">Higher accuracy classification, production platform deployments</td>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">ShieldGemma 9B</td>
+                <td class="px-4 py-3">Gemma Terms of Use</td>
+                <td class="px-4 py-3">Permitted (conditions apply)</td>
+                <td class="px-4 py-3"><a href="https://huggingface.co/google/shieldgemma-9b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">google/shieldgemma-9b →</a></td>
               </tr>
-              <tr class="bg-slate-900">
+              <tr>
                 <td class="px-4 py-3 font-semibold text-white">ShieldGemma 27B</td>
-                <td class="px-4 py-3 text-slate-300">Dedicated 16–24 GB GPU</td>
-                <td class="px-4 py-3 text-slate-300">Highest accuracy, regulated industries, audit-critical deployments</td>
+                <td class="px-4 py-3">Gemma Terms of Use</td>
+                <td class="px-4 py-3">Permitted (conditions apply)</td>
+                <td class="px-4 py-3"><a href="https://huggingface.co/google/shieldgemma-27b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">google/shieldgemma-27b →</a></td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p class="mt-4 text-xs text-slate-500">License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Available Model Sizes</h2>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Model</th>
+                <th class="px-4 py-3">RAM (Q4)</th>
+                <th class="px-4 py-3">Deployment</th>
+                <th class="px-4 py-3">Best Use</th>
+                <th class="px-4 py-3"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">ShieldGemma 2B Q4</td>
+                <td class="px-4 py-3">~1.5 GB</td>
+                <td class="px-4 py-3">Co-deployed with primary LLM</td>
+                <td class="px-4 py-3">Low-latency input/output filtering alongside generation model</td>
+                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 font-semibold">Get quote →</a></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">ShieldGemma 9B Q4</td>
+                <td class="px-4 py-3">~5 GB</td>
+                <td class="px-4 py-3">Dedicated Lightsail 8 GB / GPU</td>
+                <td class="px-4 py-3">Higher accuracy classification for production platform deployments</td>
+                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 font-semibold">Get quote →</a></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">ShieldGemma 27B</td>
+                <td class="px-4 py-3">~16 GB</td>
+                <td class="px-4 py-3">Dedicated GPU (16–24 GB VRAM)</td>
+                <td class="px-4 py-3">Highest accuracy, regulated industries, audit-critical deployments</td>
+                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 font-semibold">Get quote →</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- TODO: Link each row to individual model-size pages when created -->
+
         <p class="mt-5 text-slate-300">ShieldGemma 2B is small enough to co-deploy on the same instance as a primary LLM without meaningful memory competition on a 16 GB or larger deployment. For high-throughput applications, a dedicated ShieldGemma instance with a load-balanced API endpoint scales independently from the main model, allowing safety classification capacity to be adjusted separately from generation capacity.</p>
 
         <h2 class="mt-10 text-3xl font-black">Deploy ShieldGemma on Your Infrastructure</h2>
         <p class="mt-5 text-slate-300">NoCloudGPT configures ShieldGemma as part of a complete private AI deployment — co-deployed with your primary model or on a dedicated safety classification instance with API integration into your existing AI pipeline. Logging configuration, threshold tuning, and integration with human review workflows are available for regulated industry deployments.</p>
         <div class="mt-6 grid gap-3 md:grid-cols-3">
-          <a href="../quote.html" class="rounded-2xl bg-cyan-300 p-5 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
-          <a href="../deploy/lightsail-guide.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Start the 90-day Lightsail pilot</a>
-          <a href="../deploy/on-premise.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Request on-premise installation</a>
+          <a href="/quote.html" class="rounded-2xl bg-cyan-300 p-5 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+          <a href="/models/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Start the 90-day Lightsail pilot</a>
+          <a href="/models/deploy/on-premise.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Request on-premise installation</a>
         </div>
       </article>
 
@@ -126,7 +172,7 @@
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">ShieldGemma deployment</p>
           <h2 class="mt-3 text-3xl font-black">AI safety classification that never phones home. Your guardrail. Your infrastructure.</h2>
           <p class="mt-4 text-cyan-50">ShieldGemma runs your safety layer locally — classifying inputs and outputs without routing user conversations through Google or any external service. Real guardrails for private AI deployments.</p>
-          <a href="../quote.html" class="mt-6 inline-block rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build a ShieldGemma quote</a>
+          <a href="/quote.html" class="mt-6 inline-block rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build a ShieldGemma quote</a>
         </div>
 
         <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
@@ -155,11 +201,11 @@
         <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
           <h3 class="text-xl font-bold">Related pages</h3>
           <ul class="mt-4 space-y-3">
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="../llama-guard-3/index.html">Llama Guard 3</a></li>
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="../granite-guardian/index.html">Granite Guardian</a></li>
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="../bespoke-minicheck/index.html">Bespoke-Minicheck</a></li>
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="../gemma/index.html">Gemma family</a></li>
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="../quote.html">Get a deployment quote</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/llama-guard-3/">Llama Guard 3</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/granite-guardian/">Granite Guardian</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/bespoke-minicheck/">Bespoke-Minicheck</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/gemma/">Gemma family</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/quote.html">Get a deployment quote</a></li>
           </ul>
         </div>
       </aside>
@@ -170,9 +216,9 @@
     <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-slate-500">
       <p>© 2025 NoCloudGPT. Private AI deployment on Amazon Lightsail and on-premise Linux servers.</p>
       <p class="mt-2">
-        <a href="../../index.html" class="text-cyan-400 hover:text-cyan-300">Home</a> ·
-        <a href="../index.html" class="text-cyan-400 hover:text-cyan-300">Model menu</a> ·
-        <a href="../quote.html" class="text-cyan-400 hover:text-cyan-300">Get a quote</a>
+        <a href="/" class="text-cyan-400 hover:text-cyan-300">Home</a> ·
+        <a href="/models/" class="text-cyan-400 hover:text-cyan-300">Model menu</a> ·
+        <a href="/quote.html" class="text-cyan-400 hover:text-cyan-300">Get a quote</a>
       </p>
     </div>
   </footer>

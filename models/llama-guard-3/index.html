@@ -692,6 +692,94 @@
       </section>
 
       <section>
+        <h2>👥 Who This Model Is For</h2>
+
+        <h3>👤 Personal Use</h3>
+        <p>
+          Individual developers experimenting with AI safety or building personal AI tools for others will find Llama Guard 3 useful as a lightweight classification layer. The 8B model runs on a standard Lightsail 8 GB instance — small enough that the infrastructure cost is accessible for a solo developer. For personal projects, the ability to configure which of the 14 categories are active is particularly useful: a personal productivity assistant needs different guardrails than a consumer-facing application.
+        </p>
+
+        <h3>🏢 Business &amp; Team Use</h3>
+        <p>
+          Organizations deploying AI in customer-facing applications — consumer chatbots, AI-powered support, educational platforms, content generation tools — carry responsibility for every output their system produces. Llama Guard 3's MLCommons alignment provides a taxonomy that is documented, externally validated, and increasingly referenced by regulatory bodies. Deploying it as an input and output filter creates an auditable safety layer whose classification decisions are logged with category codes — defensible documentation for AI governance reviews, platform compliance, and in the event of a safety incident. The on-premise deployment eliminates the privacy exposure of routing user conversations to an external moderation API.
+        </p>
+
+        <h3>⚙️ Developer &amp; Technical Use</h3>
+        <p>
+          Developers building AI pipelines on open-weight models — particularly fine-tuned or merged models whose safety alignment may be reduced from the base version — need an independent safety classification layer. Llama Guard 3's structured SAFE/UNSAFE verdicts with category codes integrate cleanly into routing logic: UNSAFE with S5 (cybersecurity) routes differently than UNSAFE with S13 (professional advice). The configurable category set lets developers enable exactly the categories relevant to their application and disable those that would generate false positives in their domain context. NoCloudGPT configures Llama Guard 3 alongside your primary model with Ollama, handling the pipeline integration as part of the standard deployment.
+        </p>
+
+        <h3>🔬 Data Science &amp; Research Use</h3>
+        <p>
+          Safety researchers and AI red-team evaluators can use Llama Guard 3 as a local classification baseline without sending test prompts to external APIs. The MLCommons taxonomy's 14 standardized categories provide a controlled, reproducible evaluation framework for studying safety classifier behavior. Llama Guard 3 also serves as a useful comparison point for research into the trade-offs between binary (SAFE/UNSAFE) classification and continuous risk scoring approaches — its binary output contrasts directly with Granite Guardian's continuous risk scores, enabling structured comparisons.
+        </p>
+      </section>
+
+      <section>
+        <h2>📄 Licensing Information</h2>
+        <p>
+          Llama Guard 3 is released by Meta AI under the <strong>Llama 3 Community License</strong>. Commercial use is permitted for most organizations. The license restricts use by organizations with more than 700 million monthly active users and requires Meta attribution in applications. Verify current license terms at the model card before deployment, particularly for large-scale or regulated applications.
+        </p>
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>License</th>
+              <th>Commercial Use</th>
+              <th>Model Card</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Llama Guard 3 8B</td>
+              <td>Llama 3 Community</td>
+              <td>Permitted (conditions apply)</td>
+              <td><a href="https://huggingface.co/meta-llama/Llama-Guard-3-8B" target="_blank" rel="noopener" style="color: var(--accent);">meta-llama/Llama-Guard-3-8B →</a></td>
+            </tr>
+            <tr>
+              <td>Llama Guard 3 1B</td>
+              <td>Llama 3 Community</td>
+              <td>Permitted (conditions apply)</td>
+              <td><a href="https://huggingface.co/meta-llama/Llama-Guard-3-1B" target="_blank" rel="noopener" style="color: var(--accent);">meta-llama/Llama-Guard-3-1B →</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.85rem; color: var(--text-muted);">License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+      </section>
+
+      <section>
+        <h2>📐 Available Model Sizes</h2>
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>RAM (Q4)</th>
+              <th>Deployment Tier</th>
+              <th>Best For</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Llama Guard 3 1B</td>
+              <td>~800 MB</td>
+              <td>Lightsail 2–4 GB (co-deployed)</td>
+              <td>Lightweight input screening, co-deployment with primary model</td>
+              <td><a href="/quote.html" style="color: var(--accent);">Get quote →</a></td>
+            </tr>
+            <tr>
+              <td>Llama Guard 3 8B</td>
+              <td>~6–8 GB</td>
+              <td>Lightsail 8 GB / GPU instance</td>
+              <td>Full bidirectional safety classification, production deployments</td>
+              <td><a href="/quote.html" style="color: var(--accent);">Get quote →</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- TODO: Link each row to individual model-size pages when created -->
+      </section>
+
+      <section>
         <h2>⚖️ Llama Guard 3 vs. Alternatives</h2>
         <table class="compare-table">
           <thead>
@@ -810,7 +898,36 @@
           <div class="tier-spec">Bidirectional screening at scale · Sub-100ms latency · High-throughput pipelines</div>
         </div>
 
-        <div class
+        <div class="tier">
+          <div class="tier-header">
+            <span class="tier-name">On-Premise / Air-Gap</span>
+            <span class="tier-badge badge-purple">Enterprise</span>
+          </div>
+          <div class="tier-spec">Full air-gap deployment · Zero external network · Regulatory compliance</div>
+        </div>
+
+        <a class="cta-primary" href="/quote.html">Build a Llama Guard 3 quote</a>
+        <a class="cta-secondary" href="/models/deploy/lightsail-guide.html">Start 90-day pilot</a>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>🔗 Related Safety Models</h4>
+        <ul style="list-style:none; font-size:0.88rem;">
+          <li style="padding:0.4rem 0; border-bottom:1px solid var(--border);"><a href="/models/granite-guardian/" style="color:var(--accent); text-decoration:none;">Granite Guardian — IBM risk scoring</a></li>
+          <li style="padding:0.4rem 0; border-bottom:1px solid var(--border);"><a href="/models/shieldgemma/" style="color:var(--accent); text-decoration:none;">ShieldGemma — Google safety classifier</a></li>
+          <li style="padding:0.4rem 0;"><a href="/models/bespoke-minicheck/" style="color:var(--accent); text-decoration:none;">Bespoke-Minicheck — fact verification</a></li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 NoCloudGPT. Private AI deployment specialists. Not affiliated with Meta AI Research.</p>
+  <p style="margin-top:0.5rem;"><a href="/">Home</a> &nbsp;·&nbsp; <a href="/models/">Model Menu</a> &nbsp;·&nbsp; <a href="/quote.html">Get a Quote</a></p>
+</footer>
 
   <!-- ============================================================
        ARTWORK AND SOURCE REFERENCES
@@ -829,8 +946,11 @@
         </div>
         <div>
           <p style="font-weight:600; color:#94a3b8;">Model catalog</p>
-          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/llama-guard-3" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: llama-guard-3</a> for current tags and sizes.</p>
+          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/llama-guard3" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: llama-guard3</a> for current tags and sizes.</p>
         </div>
       </div>
     </div>
   </section>
+
+</body>
+</html>

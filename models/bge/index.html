@@ -163,6 +163,112 @@
 
     <hr class="section-divider">
 
+    <h2>Who This Model Family Is For</h2>
+
+    <h3>👤 Personal Use</h3>
+    <p>BGE is not a conversational model — it is an infrastructure component. For personal use, the most relevant scenario is a developer or technically inclined individual building a private document search system for their own files: personal notes, research papers, a local knowledge base. BGE-Small or BGE-Large-EN-v1.5 gives you MTEB-leading retrieval quality in a model that fits comfortably on a laptop. BGE-M3 via Ollama adds 8K context and multilingual support for those whose personal document library spans languages.</p>
+
+    <h3>🏢 Business &amp; Team Use</h3>
+    <p>BGE-M3 is built for exactly the retrieval workloads that enterprise teams actually face: large document libraries in multiple languages, long contracts and reports that need whole-section embedding, and knowledge bases where both exact-term matching and semantic similarity matter. The hybrid retrieval capability — dense plus sparse from a single model — means you get enterprise search quality without needing to maintain separate retrieval pipelines. For organizations with confidentiality requirements, keeping all document embeddings on private infrastructure is a first-class benefit: no document content or vector representations leave your network.</p>
+
+    <h3>⚙️ Developer &amp; Technical Use</h3>
+    <p>BGE-M3 is the benchmark-grade choice for RAG applications where retrieval quality is a product differentiator. Developers building legal research tools, medical knowledge bases, technical documentation search, or multilingual customer-support systems will find BGE-M3's FlagEmbedding library integration and Ollama API straightforward. The three retrieval modes (dense, sparse, multi-vector) expose precise control over retrieval strategy without requiring a separate model for each approach. The 8K context window simplifies ingestion pipelines by removing the need for aggressive chunking on long documents.</p>
+
+    <h3>🔬 Data Science &amp; Research Use</h3>
+    <p>BGE and BGE-M3 are published by BAAI with accompanying technical papers and reproducible evaluation on MTEB. For researchers working on information retrieval, RAG architectures, or multilingual NLP, BGE-M3's three retrieval modes provide a single controllable baseline for studying dense, sparse, and multi-vector retrieval under identical training conditions. The model's strong cross-lingual performance also makes it valuable for cross-lingual IR research, where embedding queries and documents from different languages into a shared semantic space is the central problem.</p>
+
+    <hr class="section-divider">
+
+    <h2>Licensing Information</h2>
+
+    <p>All BGE models — including BGE-M3, BGE-Large-EN-v1.5, and BGE-Small-EN-v1.5 — are released under the <strong>MIT License</strong>, which permits unrestricted commercial and non-commercial use, modification, and redistribution. There are no usage-tier restrictions, no user-count caps, and no requirement to share modifications.</p>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>License</th>
+          <th>Commercial Use</th>
+          <th>Model Card</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>BGE-M3</td>
+          <td>MIT</td>
+          <td>Permitted</td>
+          <td><a href="https://huggingface.co/BAAI/bge-m3" target="_blank" rel="noopener" style="color:#06d6a0;">BAAI/bge-m3 →</a></td>
+        </tr>
+        <tr>
+          <td>BGE-Large-EN-v1.5</td>
+          <td>MIT</td>
+          <td>Permitted</td>
+          <td><a href="https://huggingface.co/BAAI/bge-large-en-v1.5" target="_blank" rel="noopener" style="color:#06d6a0;">BAAI/bge-large-en-v1.5 →</a></td>
+        </tr>
+        <tr>
+          <td>BGE-Small-EN-v1.5</td>
+          <td>MIT</td>
+          <td>Permitted</td>
+          <td><a href="https://huggingface.co/BAAI/bge-small-en-v1.5" target="_blank" rel="noopener" style="color:#06d6a0;">BAAI/bge-small-en-v1.5 →</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.85rem; color:#8a9aaa;">License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+
+    <hr class="section-divider">
+
+    <h2>Available Model Sizes</h2>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Parameters</th>
+          <th>Dimensions</th>
+          <th>Context</th>
+          <th>Deployment Tier</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>BGE-Small-EN-v1.5</td>
+          <td>33M</td>
+          <td>384</td>
+          <td>512 tokens</td>
+          <td>Lightsail 2 GB</td>
+          <td><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+        </tr>
+        <tr>
+          <td>BGE-Large-EN-v1.5</td>
+          <td>335M</td>
+          <td>1,024</td>
+          <td>512 tokens</td>
+          <td>Lightsail 4 GB</td>
+          <td><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+        </tr>
+        <tr>
+          <td>BGE-M3 (dense only)</td>
+          <td>568M</td>
+          <td>1,024</td>
+          <td>8,192 tokens</td>
+          <td>Lightsail 4–8 GB</td>
+          <td><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+        </tr>
+        <tr>
+          <td>BGE-M3 (hybrid)</td>
+          <td>568M</td>
+          <td>1,024</td>
+          <td>8,192 tokens</td>
+          <td>Lightsail 8 GB / GPU</td>
+          <td><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- TODO: Link each row to individual model-size pages when created -->
+
+    <hr class="section-divider">
+
     <h2>BGE-M3's Hybrid Retrieval Architecture</h2>
 
     <p>BGE-M3's most distinctive feature is its multi-functionality. Understanding the three retrieval modes helps you deploy it correctly and extract its full value.</p>
