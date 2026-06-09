@@ -25,10 +25,10 @@
   <!-- Hero -->
   <section class="max-w-4xl mx-auto px-6 py-16">
     <div class="flex items-center gap-3 mb-4 flex-wrap">
-      <span class="bg-yellow-900 text-yellow-300 text-xs font-semibold px-3 py-1 rounded-full">Coming Soon</span>
+      <span class="bg-green-900 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">Now Available</span>
       <span class="bg-blue-900 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">IBM Research</span>
-      <span class="bg-green-900 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">Apache 2.0 Expected</span>
-      <span class="bg-purple-900 text-purple-300 text-xs font-semibold px-3 py-1 rounded-full">Enterprise Roadmap</span>
+      <span class="bg-green-900 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">Apache 2.0</span>
+      <span class="bg-purple-900 text-purple-300 text-xs font-semibold px-3 py-1 rounded-full">Hybrid Mamba-2 / MoE</span>
     </div>
     
             <img
@@ -41,23 +41,128 @@
       <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
         [Granite 4 hero artwork]
       </div>
-      <h1 class="text-4xl font-bold mb-4">IBM Granite 4: The Next Generation of Private Enterprise AI</h1>
+      <h1 class="text-4xl font-bold mb-4">IBM Granite 4: Enterprise-Credible Open AI, Now Available for Private Deployment</h1>
     <p class="text-xl text-gray-400 mb-8">
-      IBM's Granite family has established itself as the most enterprise-credible open-weight AI series available today. Granite 4 will carry that foundation forward — deeper reasoning, extended context, enhanced compliance tooling, and the same commitment to transparency and Apache 2.0 licensing that makes Granite deployable in regulated industries where other models cannot go.
+      IBM's Granite family is the most enterprise-credible open-weight AI series available today, and Granite 4.0 carries that foundation forward: a hybrid Mamba-2/transformer architecture with mixture-of-experts in the larger models, Apache 2.0 licensing, documented training data, ISO 42001 certification, and cryptographically signed weights — the package regulated industries need where other models cannot go.
     </p>
-    <div class="bg-yellow-950 border border-yellow-800 rounded-xl p-4 mb-8">
+    <div class="bg-green-950 border border-green-800 rounded-xl p-4 mb-8">
       <div class="flex items-start gap-3">
-        <span class="text-yellow-400 text-lg">⚡</span>
+        <span class="text-green-400 text-lg">✓</span>
         <div>
-          <p class="text-yellow-300 font-semibold text-sm">Advance Planning Page</p>
-          <p class="text-gray-400 text-sm mt-1">Granite 4 has not yet been officially released. This page is maintained to help enterprise teams plan deployments ahead of availability. We update this page as IBM publishes roadmap information. <a href="/contact/" class="text-blue-400 underline">Notify me when Granite 4 is available →</a></p>
+          <p class="text-green-300 font-semibold text-sm">Granite 4.0 is released and deployable today</p>
+          <p class="text-gray-400 text-sm mt-1">The initial Granite 4.0 lineup — H-Small, H-Tiny, H-Micro, and a dense Micro — is available through Ollama and Hugging Face under Apache 2.0. NoCloudGPT deploys it privately on your infrastructure. <a href="/quote.html" class="text-blue-400 underline">Build your Granite 4 deployment quote →</a> VERIFY current Ollama tags and any additional sizes before planning.</p>
         </div>
       </div>
     </div>
     <div class="flex gap-4 flex-wrap">
-      <a href="/models/granite/" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold">Deploy Granite 3.1 Now</a>
-      <a href="/contact/" class="border border-gray-600 hover:border-gray-400 text-gray-300 px-6 py-3 rounded-lg font-semibold">Get Notified</a>
+      <a href="/quote.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold">Build your deployment quote</a>
+      <a href="/models/granite/" class="border border-gray-600 hover:border-gray-400 text-gray-300 px-6 py-3 rounded-lg font-semibold">See the Granite family</a>
     </div>
+  </section>
+
+  <!-- Who this model family is for -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Who Granite 4 Is For</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-lg">👤</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Personal use</span>
+        </div>
+        <h3 class="font-bold mb-2">Light, efficient models that run on ordinary hardware</h3>
+        <p class="text-gray-400 text-sm">Granite 4 is built for business rather than hobbyists, but its efficiency works in your favour: the 3B Micro and H-Micro models have an unusually small memory footprint and run comfortably on a laptop or mini-PC. If you want a private assistant for drafting, summarising, and tool-style tasks with a clean Apache 2.0 license and no data leaving your machine, the Micro tier is a sensible, low-cost choice.</p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-lg">🏢</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Business &amp; team use</span>
+        </div>
+        <h3 class="font-bold mb-2">Regulated enterprises that must answer "who built this?"</h3>
+        <p class="text-gray-400 text-sm">This is Granite's home audience. For finance, healthcare, legal, and government buyers, IBM brings documented training data, Apache 2.0 licensing, ISO 42001 certification, cryptographically signed checkpoints, and watsonx indemnification — answers most open models cannot give a risk officer. Granite-4.0-H-Small (32B/9B active) is the workhorse for RAG and multi-tool agents; the smaller models handle high-volume classification and extraction cheaply.</p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-lg">⚙️</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Developer &amp; technical use</span>
+        </div>
+        <h3 class="font-bold mb-2">Agent backends and long-context workloads at low memory cost</h3>
+        <p class="text-gray-400 text-sm">The hybrid Mamba-2/transformer architecture cuts memory use and speeds inference on long-context and multi-session workloads, and Granite 4 performs strongly on function calling — the foundation for reliable agents. The H-Tiny (7B/1B active) MoE is built for low-latency local and edge use, and the dense Micro exists specifically for stacks where Mamba-2 support is still maturing (llama.cpp, PEFT). All under Apache 2.0, so embedding it commercially is straightforward.</p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-lg">🔬</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Data science &amp; research</span>
+        </div>
+        <h3 class="font-bold mb-2">A transparent, governed model for reproducible work</h3>
+        <p class="text-gray-400 text-sm">Granite 4's documented data provenance and open Apache 2.0 weights make it a strong base for research that needs to be defensible and reproducible — and the hybrid architecture is itself a useful object of study for teams comparing state-space and transformer approaches. The size ladder, from 3B dense up to the 32B MoE, supports controlled experiments on how capability and efficiency trade off within a single, well-documented family.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Licensing information -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Licensing Information</h2>
+    <p class="text-gray-300 mb-6">
+      All Granite 4.0 language models are released under the Apache 2.0 license — permissive, OSI-approved,
+      and cleared for both research and commercial use without usage thresholds or non-commercial clauses.
+      IBM additionally provides indemnification for models used through watsonx.ai. The same Apache 2.0 terms
+      apply across the whole lineup, which is a large part of why Granite is deployable in regulated industries.
+    </p>
+    <div class="overflow-x-auto rounded-xl border border-gray-700">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-900 text-gray-400">
+          <tr class="text-left">
+            <th class="px-4 py-3">Model</th>
+            <th class="px-4 py-3">Architecture</th>
+            <th class="px-4 py-3">License</th>
+            <th class="px-4 py-3">Model card</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800 bg-gray-900/40 text-gray-300">
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite-4.0-H-Small (32B / 9B active)</td><td class="px-4 py-3">Hybrid MoE</td><td class="px-4 py-3"><span class="text-green-400">Apache 2.0 ✓</span></td><td class="px-4 py-3"><a href="https://huggingface.co/ibm-granite/granite-4.0-h-small" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300">ibm-granite/granite-4.0-h-small →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite-4.0-H-Tiny (7B / 1B active)</td><td class="px-4 py-3">Hybrid MoE</td><td class="px-4 py-3"><span class="text-green-400">Apache 2.0 ✓</span></td><td class="px-4 py-3"><a href="https://huggingface.co/ibm-granite/granite-4.0-h-tiny" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300">ibm-granite/granite-4.0-h-tiny →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite-4.0-H-Micro (3B)</td><td class="px-4 py-3">Hybrid dense</td><td class="px-4 py-3"><span class="text-green-400">Apache 2.0 ✓</span></td><td class="px-4 py-3"><a href="https://huggingface.co/ibm-granite/granite-4.0-h-micro" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300">ibm-granite/granite-4.0-h-micro →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite-4.0-Micro (3B)</td><td class="px-4 py-3">Dense transformer</td><td class="px-4 py-3"><span class="text-green-400">Apache 2.0 ✓</span></td><td class="px-4 py-3"><a href="https://huggingface.co/ibm-granite/granite-4.0-micro" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300">ibm-granite/granite-4.0-micro →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-gray-500 text-xs mt-3">All Granite 4.0 language models are distributed under Apache 2.0. The full collection of base and instruct checkpoints is on the <a href="https://huggingface.co/collections/ibm-granite/granite-40-language-models-6811a18b820ef362d9e5a82c" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300">IBM Granite 4.0 collection</a> on Hugging Face. IBM adds further sizes over time — VERIFY the current lineup and tags before planning. License information sourced from the model cards and may change between releases. NoCloudGPT is not a legal advisor.</p>
+  </section>
+
+  <!-- Available model sizes -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Available Model Sizes</h2>
+    <p class="text-gray-300 mb-6">
+      The initial Granite 4.0 sizes available for private deployment are below. VERIFY current tags in the
+      Ollama library before planning — IBM has signalled additional sizes, including sub-1B Nano models.
+      NoCloudGPT confirms hardware requirements and selects the right quantization before your pilot begins.
+    </p>
+    <div class="overflow-x-auto rounded-xl border border-gray-700">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-900 text-gray-400">
+          <tr class="text-left">
+            <th class="px-4 py-3">Model</th>
+            <th class="px-4 py-3">Deployment tier</th>
+            <th class="px-4 py-3">Best for</th>
+            <th class="px-4 py-3"></th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800 bg-gray-900/40 text-gray-300">
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite-4.0-Micro / H-Micro (3B)</td><td class="px-4 py-3">Starter AI — ~4 GB</td><td class="px-4 py-3">Edge, on-device, fast function calling</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs">Get quote →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite-4.0-H-Tiny (7B / 1B active)</td><td class="px-4 py-3">Standard AI — consumer GPU</td><td class="px-4 py-3">Low-latency local and edge applications</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs">Get quote →</a></td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-white">Granite-4.0-H-Small (32B / 9B active)</td><td class="px-4 py-3">Professional AI — L4-class GPU</td><td class="px-4 py-3">Workhorse for RAG and multi-tool agents</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs">Get quote →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-gray-500 text-xs mt-3">
+      Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
+      <!-- TODO: Link each row to individual model-size pages when created -->
+    </p>
   </section>
 
   <!-- Why Granite Matters -->
@@ -79,9 +184,9 @@
 
   <!-- What to Expect -->
   <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">What Granite 4 Is Expected to Deliver</h2>
+    <h2 class="text-2xl font-bold mb-6">What Granite 4 Delivers — and Where It Is Heading</h2>
     <p class="text-gray-300 mb-8">
-      IBM has not published a detailed Granite 4 specification as of this writing. The following capabilities are inferred from IBM Research publications, conference presentations, and the progression from Granite 2.x to 3.x. Enterprise teams should treat these as planning assumptions, not confirmed specifications.
+      The initial Granite 4.0 release confirmed the headline architecture: a hybrid Mamba-2/transformer design with mixture-of-experts in the larger models, delivering substantially lower memory use and faster inference on long-context and multi-session workloads, all under Apache 2.0. The themes below combine what has shipped with the directions IBM continues to develop across the Granite 4 series. Treat forward-looking items — especially around multimodal and 1M+ context — as planning assumptions rather than confirmed specifications for every variant, and VERIFY current capabilities on the model cards.
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

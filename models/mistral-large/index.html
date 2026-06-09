@@ -72,6 +72,46 @@
           </div>
         </section>
 
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying Mistral Large</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Generally the wrong tool for individuals</h3>
+              <p class="mt-2 text-sm text-slate-400">At 123B parameters Mistral Large needs 80+ GB of GPU memory, so it is not realistic on personal hardware, and the Mistral Research License rules out commercial personal projects anyway. If you want frontier-feeling quality privately, you will be far happier with Mistral Nemo 12B or Small on a normal machine. Reach for Large only when you have enterprise-class hardware and the quality genuinely has to be the best Mistral makes.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Regulated teams that need near-frontier quality privately</h3>
+              <p class="mt-2 text-sm text-slate-400">Mistral Large fits organisations in legal, finance, and other regulated sectors that cannot send sensitive documents to a commercial API but still need top-tier reasoning and 80+ language coverage. The crucial caveat: it ships under the Mistral Research License, so commercial production use requires a separate commercial agreement with Mistral — NoCloudGPT will help you confirm that before you build on it.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Demanding agentic pipelines with parallel tool calling</h3>
+              <p class="mt-2 text-sm text-slate-400">Mistral Large supports parallel function calling and follows instructions at a level that suits sophisticated multi-step automation — agents that coordinate several tools and reason across a 128K-token context. For developers building high-end private workflows it is a strong engine, as long as the deployment is internal/research or you have secured the commercial license for a shipped product.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">A natural fit for the license and the workload</h3>
+              <p class="mt-2 text-sm text-slate-400">The Mistral Research License is explicitly built for research and internal evaluation, so academic and R&D teams can use Mistral Large for deep literature synthesis, multilingual analysis, and frontier-quality experimentation without a commercial agreement. The 128K context lets researchers reason over long documents and large evidence sets in a single pass, on infrastructure they fully control.</p>
+            </div>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
           <h2 class="mt-3 text-3xl font-black">What to Use Mistral Large For</h2>
@@ -99,6 +139,73 @@
           <div class="mt-6 space-y-4">
             <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">Your budget or hardware is limited</h3><p class="mt-2 text-sm text-slate-400">Mistral Large requires 80+ GB of VRAM. For most teams, Mistral Nemo 12B or Small 22B cover professional needs at much lower hardware cost. <a href="/models/mistral/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Mistral →</a></p></div>            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">You need Apache 2.0 licensing</h3><p class="mt-2 text-sm text-slate-400">Mistral Large uses the Mistral Research License, not Apache 2.0. For clean commercial licensing at high quality, Mixtral 8x22B is the Apache 2.0 alternative. <a href="/models/mixtral/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Mixtral →</a></p></div>
           </div>
+        </section>
+
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">Mistral Large is <span class="text-amber-300 font-semibold">not</span> Apache 2.0. It is released under the Mistral Research License (MRL), which permits research and internal, non-commercial use but restricts redistribution and hosting for third parties. Commercial production deployment requires a separate Mistral Commercial License. This is the defining deployment constraint for the model — confirm which license your use case falls under before you build on it.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model / generation</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Model card</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3 font-semibold text-white">Mistral Large 2411 (123B)</td><td class="px-4 py-3">Mistral Research License</td><td class="px-4 py-3"><span class="text-red-400">Commercial license required</span></td><td class="px-4 py-3"><a href="https://huggingface.co/mistralai/Mistral-Large-Instruct-2411" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mistral-Large-Instruct-2411 →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Mistral Large 2407 (123B)</td><td class="px-4 py-3">Mistral Research License</td><td class="px-4 py-3"><span class="text-red-400">Commercial license required</span></td><td class="px-4 py-3"><a href="https://huggingface.co/mistralai/Mistral-Large-Instruct-2407" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mistral-Large-Instruct-2407 →</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">The Mistral Research License allows research and internal evaluation but not commercial production use without a separate agreement with Mistral AI. If you need clean permissive licensing at high quality, Mixtral 8x22B (Apache 2.0) is the alternative. License information sourced from Hugging Face model cards and may change between releases. NoCloudGPT is not a legal advisor.</p>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
+          <p class="mt-5 text-slate-300">
+            Mistral Large is a single 123B flagship; the practical decision is hardware and quantization,
+            not size. Smaller Mistral models are covered on the Mistral family page. VERIFY: Confirm current
+            tags in the Ollama library before planning. NoCloudGPT will confirm hardware requirements and
+            select the right quantization before your pilot begins.
+          </p>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model</th>
+                  <th class="px-4 py-3">Deployment tier</th>
+                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Mistral Large (123B) Q4 — GPU</td>
+                  <td class="px-4 py-3">Enterprise AI — 80+ GB GPU</td>
+                  <td class="px-4 py-3">Maximum quality (A100 80GB or equivalent)</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Mistral Large (123B) — Mac Studio</td>
+                  <td class="px-4 py-3">Enterprise AI — 192 GB unified</td>
+                  <td class="px-4 py-3">On-premise on M2/M3 Ultra unified memory</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">
+            Mistral Large requires a Mistral Commercial License for commercial production use — confirm eligibility before deployment.
+            Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
+            <!-- TODO: Link each row to individual model-size pages when created -->
+          </p>
         </section>
 
         <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">

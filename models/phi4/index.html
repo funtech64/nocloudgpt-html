@@ -133,6 +133,46 @@
           </div>
         </section>
 
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying Phi-4</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Better reasoning than a 7B, still on everyday hardware</h3>
+              <p class="mt-2 text-sm text-slate-400">Phi-4 is a strong pick if you want noticeably sharper maths and reasoning than typical small models but do not own a GPU. At 14B it runs at useful speed on a Standard AI 4–8 GB instance, so a single private server handles study help, STEM problem solving, and careful drafting. The MIT license means you are free to use it however you like, including in things you build for yourself.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">The cost-efficient default for a first private AI</h3>
+              <p class="mt-2 text-sm text-slate-400">For small businesses and teams moving off SaaS chat tools, Phi-4 hits the sweet spot: strong enough for daily writing, Q&A, and analysis, but light enough to run without GPU spend. The MIT license is trivial for legal and procurement to approve — no community-license edge cases or usage thresholds — which removes a common blocker to getting a private deployment signed off.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">A capable, embeddable model with clean licensing</h3>
+              <p class="mt-2 text-sm text-slate-400">Phi-4 generates solid code across Python, JavaScript, and SQL and follows instructions reliably, making it a practical engine for internal tools, scripted automation, and a private coding assistant on modest hardware. The permissive MIT terms mean you can embed it in commercial products without license review friction, and the optional reasoning variant adds chain-of-thought output where you need traceable steps.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">A reference point for data-quality-driven training</h3>
+              <p class="mt-2 text-sm text-slate-400">Phi-4 is one of the strongest 14B models on mathematical benchmarks, which makes it genuinely useful for quantitative analysis and STEM workflows. It is also a research artifact in its own right: the Phi line is the clearest demonstration that curated, high-quality training data can outweigh raw scale, so teams studying data-centric training have Microsoft's published methodology to work from.</p>
+            </div>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
           <h2 class="mt-3 text-3xl font-black">What to Use Phi-4 For</h2>
@@ -173,6 +213,78 @@
           <p class="mt-4 text-sm text-slate-400">VERIFY: Confirm exact RAM requirements at current quantization levels. Context length in use and concurrent users affect performance.</p>
         </section>
 
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">The Phi-4 family is released by Microsoft under the MIT License — one of the most permissive licenses in open-weight AI. There are no usage thresholds, no non-commercial clauses, and no community-license conditions to track. The same terms apply across the variants Microsoft has published, including the reasoning, mini, and multimodal models, which makes the whole family straightforward for legal and procurement review.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model / variant</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Model card</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3 font-semibold text-white">Phi-4 (14B)</td><td class="px-4 py-3">MIT License</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/microsoft/phi-4" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">microsoft/phi-4 →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Phi-4 Reasoning</td><td class="px-4 py-3">MIT License</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/microsoft/Phi-4-reasoning" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">microsoft/Phi-4-reasoning →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Phi-4 Mini Instruct</td><td class="px-4 py-3">MIT License</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/microsoft/Phi-4-mini-instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">microsoft/Phi-4-mini-instruct →</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">License information sourced from Hugging Face model cards and may change between releases. The MIT License places minimal restrictions on commercial use, but always verify the current terms on the specific model card before deployment. NoCloudGPT is not a legal advisor.</p>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
+          <p class="mt-5 text-slate-300">
+            The following Phi-4 variants are available through Ollama for private deployment.
+            VERIFY: Confirm current tags in the Ollama library before planning.
+            NoCloudGPT will confirm hardware requirements and select the right quantization before your pilot begins.
+          </p>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model</th>
+                  <th class="px-4 py-3">Deployment tier</th>
+                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Phi-4 Mini (3.8B)</td>
+                  <td class="px-4 py-3">Starter AI — 2–4 GB</td>
+                  <td class="px-4 py-3">Edge and low-cost pilots</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Phi-4 (14B) Q4</td>
+                  <td class="px-4 py-3">Standard AI — 4–8 GB</td>
+                  <td class="px-4 py-3">Everyday private AI — recommended default</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Phi-4 Reasoning</td>
+                  <td class="px-4 py-3">Standard AI — 4–8 GB</td>
+                  <td class="px-4 py-3">Chain-of-thought for analytical workflows</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">
+            Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
+            <!-- TODO: Link each row to individual model-size pages when created -->
+          </p>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Honest guidance</p>
           <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model Instead</h2>
@@ -209,7 +321,7 @@
           <dl class="mt-5 space-y-3 text-sm">
             <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Developer</dt><dd class="font-semibold text-white">Microsoft Research</dd></div>
             <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Parameters</dt><dd class="font-semibold text-white">14B</dd></div>
-            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">VERIFY: MIT</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">MIT</dd></div>
             <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Starter tier</dt><dd class="font-semibold text-white">Standard AI (4–8 GB)</dd></div>
             <div class="flex justify-between"><dt class="text-slate-400">Released</dt><dd class="font-semibold text-white">December 2024</dd></div>
           </dl>

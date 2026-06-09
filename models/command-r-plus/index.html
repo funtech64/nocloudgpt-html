@@ -66,6 +66,46 @@
           </div>
         </section>
 
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying Command R+</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Honestly, not the right model for individuals</h3>
+              <p class="mt-2 text-sm text-slate-400">Command R+ is a 104B enterprise RAG flagship that needs 50+ GB of GPU memory — it is not a practical personal assistant, and the CC-BY-NC license rules out commercial personal projects. If you want cited answers over your own notes and documents on hardware you actually own, the smaller Command R7B or a general model with an embedding layer will serve you far better. Choose R+ only when retrieval accuracy at scale is the whole point.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Enterprises where retrieval accuracy is mission-critical</h3>
+              <p class="mt-2 text-sm text-slate-400">R+ earns its hardware cost when wrong or uncited answers carry real consequences — large legal, compliance, and finance teams running document Q&A over thousands of sources. The 104B scale improves citation precision and multi-document reasoning over the 35B Command R. Note the CC-BY-NC license: most commercial production use requires a separate commercial agreement with Cohere, which NoCloudGPT will help you confirm.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Backends for high-end agentic and retrieval pipelines</h3>
+              <p class="mt-2 text-sm text-slate-400">R+ supports parallel, multi-step tool calling and follows Cohere's grounding protocol, producing structured citations that downstream systems can parse reliably. For teams building demanding agents that coordinate database queries, internal APIs, and knowledge-base retrieval in one workflow, its behaviour is more predictable than a general model prompted for the same task — provided the license fits your product.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Grounded generation and evidence-traceable synthesis</h3>
+              <p class="mt-2 text-sm text-slate-400">R+'s grounded generation attributes each claim to a retrieved passage, which is valuable for systematic literature review, intelligence synthesis, and any study requiring evidence traceability across large source sets. The 128K context lets researchers reason over many retrieved documents at once. Because it is CC-BY-NC, it is well suited to non-commercial research while a commercial study should confirm terms first.</p>
+            </div>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
           <h2 class="mt-3 text-3xl font-black">What to Use Command R+ For</h2>
@@ -93,6 +133,73 @@
           <div class="mt-6 space-y-4">
             <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">Hardware requirement is prohibitive</h3><p class="mt-2 text-sm text-slate-400">Command R 35B delivers strong RAG quality at a more accessible hardware cost. Most teams find it sufficient. <a href="/models/command-r/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Command R →</a></p></div>            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">License terms restrict your use case</h3><p class="mt-2 text-sm text-slate-400">VERIFY current R+ license before commercial deployment. If CC-BY-NC applies, Llama 3.1 70B with a RAG prompt configuration may be the commercial-license alternative. <a href="/models/llama/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Llama →</a></p></div>
           </div>
+        </section>
+
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">Command R+ is released under CC-BY-NC 4.0, which restricts use to non-commercial purposes. This is the single most important deployment consideration for the model: most commercial production use requires a separate commercial license from Cohere. Verify the exact terms for the specific R+ release you intend to deploy before committing, and treat any commercial workflow as needing Cohere's commercial agreement unless you have confirmed otherwise.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model / generation</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Model card</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3 font-semibold text-white">Command R+ (104B)</td><td class="px-4 py-3">CC-BY-NC 4.0</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/c4ai-command-r-plus" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r-plus →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Command R+ 08-2024 (104B)</td><td class="px-4 py-3">CC-BY-NC 4.0</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/c4ai-command-r-plus-08-2024" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r-plus-08-2024 →</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">CC-BY-NC 4.0 prohibits commercial use without a separate agreement. If you intend to deploy Command R+ in a commercial product or service, confirm commercial licensing with Cohere first. License information sourced from Hugging Face model cards and may change between releases. NoCloudGPT is not a legal advisor.</p>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
+          <p class="mt-5 text-slate-300">
+            Command R+ is a single 104B flagship. The smaller members of the Command R line are
+            covered on the Command R family page. VERIFY: Confirm current tags in the Ollama library
+            before planning. NoCloudGPT will confirm hardware requirements and select the right
+            quantization before your pilot begins.
+          </p>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model</th>
+                  <th class="px-4 py-3">Deployment tier</th>
+                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Command R+ (104B) Q4</td>
+                  <td class="px-4 py-3">Enterprise AI — 50+ GB GPU</td>
+                  <td class="px-4 py-3">Maximum RAG quality (multi-GPU or A100)</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Command R (35B)</td>
+                  <td class="px-4 py-3">Professional AI — GPU 20–24 GB</td>
+                  <td class="px-4 py-3">More accessible alternative — see Command R</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">
+            Command R+ carries CC-BY-NC licensing — confirm commercial eligibility before deployment.
+            Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
+            <!-- TODO: Link each row to individual model-size pages when created -->
+          </p>
         </section>
 
         <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">

@@ -153,6 +153,46 @@
           </div>
         </section>
 
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying Qwen2.5 Coder</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">A coding assistant that fits whatever hardware you have</h3>
+              <p class="mt-2 text-sm text-slate-400">Because the family starts at 1.5B and 3B, you can run a genuinely useful private coding helper on a small instance or an older laptop, then move up to 7B when you want stronger output — same prompts, same tooling. For hobbyists and solo developers who want completion and "explain this code" help without a subscription or sending source to the cloud, it is the most flexible private option available.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">A growth path from pilot to production without switching models</h3>
+              <p class="mt-2 text-sm text-slate-400">A team can prove the concept on a cheap 7B deployment and scale to 32B on GPU hardware as adoption grows, keeping the same workflow throughout. Most sizes are Apache 2.0, which clears procurement and legal review quickly, and source code stays on infrastructure you control — the requirement for agencies under NDA and companies whose code is a competitive asset.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">A backend for IDE plugins and polyglot codebases</h3>
+              <p class="mt-2 text-sm text-slate-400">With 40+ languages and Ollama's OpenAI-compatible API, Qwen2.5 Coder slots in behind Continue, Aider, or your own tooling and serves a full-stack or multi-language team from one deployment. The 14B and 32B variants handle multi-file reasoning and code review well enough to act as a shared review and refactoring service rather than just autocomplete.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Strong SQL and Python for data and ML work</h3>
+              <p class="mt-2 text-sm text-slate-400">Qwen2.5 Coder's notable SQL and Python performance makes it a useful assistant for writing queries, building ETL logic, and scaffolding analysis and ML code — privately, without proprietary data leaving your server. The wide size ladder also makes it convenient for researchers benchmarking how code-model capability scales with parameter count under a consistent architecture.</p>
+            </div>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
           <h2 class="mt-3 text-3xl font-black">What to Use Qwen2.5 Coder For</h2>
@@ -251,6 +291,86 @@
           </div>
         </section>
 
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">Qwen2.5 Coder licensing varies by size, and the difference matters for commercial deployment. Most of the family — 0.5B, 1.5B, 7B, 14B, and 32B — is released under Apache 2.0, which permits commercial use freely. The 3B model is the exception: it ships under the Qwen Research License, which restricts use to non-commercial purposes. If you need a small model for commercial work, choose the 1.5B (Apache 2.0) rather than the 3B.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model size</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Model card</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 1.5B</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-Coder-1.5B-Instruct →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 3B</td><td class="px-4 py-3">Qwen Research License</td><td class="px-4 py-3"><span class="text-red-400">Non-commercial only</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-Coder-3B-Instruct →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 7B</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-Coder-7B-Instruct →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 14B</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-Coder-14B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-Coder-14B-Instruct →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 32B</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-Coder-32B-Instruct →</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">The 3B variant's Qwen Research License is non-commercial; all other listed sizes are Apache 2.0. License information sourced from Hugging Face model cards and may change between releases. Always verify the current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
+          <p class="mt-5 text-slate-300">
+            The following sizes are available through Ollama for private deployment.
+            VERIFY: Confirm current tags in the Ollama library before planning.
+            NoCloudGPT will confirm hardware requirements and select the right quantization before your pilot begins.
+          </p>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model</th>
+                  <th class="px-4 py-3">Deployment tier</th>
+                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 1.5B</td>
+                  <td class="px-4 py-3">Nano/Starter AI — 2–4 GB</td>
+                  <td class="px-4 py-3">Edge pilots, simple completion (Apache 2.0)</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 7B</td>
+                  <td class="px-4 py-3">Standard AI — 8 GB</td>
+                  <td class="px-4 py-3">Recommended default for most teams</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 14B</td>
+                  <td class="px-4 py-3">Standard/Professional AI — 12–16 GB</td>
+                  <td class="px-4 py-3">Stronger multi-file reasoning and review</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 32B</td>
+                  <td class="px-4 py-3">Professional/Heavy AI — GPU 20 GB+</td>
+                  <td class="px-4 py-3">Production teams, highest output quality</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">
+            Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
+            <!-- TODO: Link each row to individual model-size pages when created -->
+          </p>
+        </section>
+
         <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
           <h2 class="mt-3 text-3xl font-black">Start Your Private Qwen2.5 Coder Deployment</h2>
@@ -293,7 +413,7 @@
             </div>
             <div class="flex justify-between border-b border-cyan-900 pb-2">
               <dt class="text-slate-400">License</dt>
-              <dd class="font-semibold text-white">VERIFY: Qwen license</dd>
+              <dd class="font-semibold text-white">Apache 2.0 (3B: Research)</dd>
             </div>
             <div class="flex justify-between">
               <dt class="text-slate-400">Starter tier</dt>
