@@ -134,6 +134,46 @@
           </div>
         </section>
 
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying Aya</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">A private assistant that actually works in your language</h3>
+              <p class="mt-2 text-sm text-slate-400">If your daily life or study happens in a language English-first models handle poorly — Swahili, Hindi, Amharic, Vietnamese, and dozens more — Aya is one of the few open models trained to treat those languages as first-class. The 8B variant runs on a Standard AI instance, giving you a genuinely multilingual assistant on a single private server. Note that Aya's instruct models are non-commercial, which is fine for personal use.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">Global teams serving genuinely multilingual markets</h3>
+              <p class="mt-2 text-sm text-slate-400">For organisations with customers or staff across many languages, Aya consolidates translation and AI assistance into one private deployment and outperforms English-first models on under-served languages. The critical caveat: the Aya 23 and Aya Expanse instruct models are CC-BY-NC (non-commercial). Commercial deployments need the Apache-2.0 Aya 101 or a different model — NoCloudGPT will confirm which fits.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">A multilingual backend where the license permits it</h3>
+              <p class="mt-2 text-sm text-slate-400">Aya is a useful engine for multilingual support bots, translation-assist tooling, and content workflows that span dozens of languages from a single endpoint. Because most current Aya instruct weights are non-commercial, developers building revenue-generating products should either use the Apache-2.0 Aya 101 or treat Aya as an evaluation/research baseline and ship on a permissively licensed multilingual model.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <h3 class="text-base font-bold text-cyan-200">A flagship for multilingual and low-resource NLP research</h3>
+              <p class="mt-2 text-sm text-slate-400">Aya is, at its core, a research project: it was built through a transparent global effort to create high-quality instruction data for under-represented languages. For NLP researchers, NGOs, and academics studying multilingual AI, low-resource languages, or data provenance, Aya is both a strong tool and a well-documented dataset — and its non-commercial license fits research use cleanly.</p>
+            </div>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
           <h2 class="mt-3 text-3xl font-black">What to Use Aya For</h2>
@@ -201,6 +241,79 @@
           </div>
         </section>
 
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
+          <p class="mt-5 text-slate-300">Aya licensing is the decisive factor for commercial use, and it varies by model. The headline instruct models — Aya 23 and Aya Expanse — are released under <span class="text-amber-300 font-semibold">CC-BY-NC 4.0, which prohibits commercial use</span>. The older Aya 101 (an mT5-based multilingual model) is Apache 2.0 and is the commercially usable option in the family. Confirm the exact variant before any revenue-generating deployment.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model</th>
+                  <th class="px-4 py-3">License</th>
+                  <th class="px-4 py-3">Commercial use</th>
+                  <th class="px-4 py-3">Model card</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3 font-semibold text-white">Aya Expanse 8B</td><td class="px-4 py-3">CC-BY-NC 4.0</td><td class="px-4 py-3"><span class="text-red-400">Non-commercial</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/aya-expanse-8b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/aya-expanse-8b →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Aya Expanse 32B</td><td class="px-4 py-3">CC-BY-NC 4.0</td><td class="px-4 py-3"><span class="text-red-400">Non-commercial</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/aya-expanse-32b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/aya-expanse-32b →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Aya 23 (8B / 35B)</td><td class="px-4 py-3">CC-BY-NC 4.0</td><td class="px-4 py-3"><span class="text-red-400">Non-commercial</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/aya-23-8B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/aya-23-8B →</a></td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Aya 101</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/aya-101" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/aya-101 →</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">The Aya 23 and Aya Expanse instruct models are CC-BY-NC 4.0 (non-commercial); only Aya 101 is Apache 2.0. License information sourced from Hugging Face model cards and may change between releases. Always verify the current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
+          <p class="mt-5 text-slate-300">
+            The following Aya variants are available for private deployment.
+            VERIFY: Confirm current Ollama / Hugging Face tags before planning.
+            NoCloudGPT will confirm hardware requirements and select the right quantization before your pilot begins.
+          </p>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model</th>
+                  <th class="px-4 py-3">Deployment tier</th>
+                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Aya Expanse 8B</td>
+                  <td class="px-4 py-3">Standard AI — 4–8 GB</td>
+                  <td class="px-4 py-3">Everyday multilingual work (non-commercial)</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Aya Expanse 32B</td>
+                  <td class="px-4 py-3">Professional/Heavy AI — GPU</td>
+                  <td class="px-4 py-3">Higher-quality multilingual reasoning (non-commercial)</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Aya 101 (13B)</td>
+                  <td class="px-4 py-3">Standard/Professional AI</td>
+                  <td class="px-4 py-3">Commercial multilingual use (Apache 2.0)</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">
+            Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
+            <!-- TODO: Link each row to individual model-size pages when created -->
+          </p>
+        </section>
+
         <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
           <h2 class="mt-3 text-3xl font-black">Start Your Private Multilingual AI Deployment</h2>
@@ -234,7 +347,7 @@
             </div>
             <div class="flex justify-between">
               <dt class="text-slate-400">License</dt>
-              <dd class="font-semibold text-white">VERIFY: Check Cohere ToU</dd>
+              <dd class="font-semibold text-white">CC-BY-NC (101: Apache 2.0)</dd>
             </div>
           </dl>
           <a href="/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build an Aya quote</a>

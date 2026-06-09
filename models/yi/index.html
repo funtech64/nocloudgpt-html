@@ -63,6 +63,30 @@
           </div>
         </div>
 
+        <h2 class="mt-10 text-3xl font-black">Who This Model Family Is For</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg">👤</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span></div>
+            <h3 class="text-lg font-bold text-cyan-200">A genuinely bilingual assistant on your own server</h3>
+            <p class="mt-2 text-sm text-slate-400">If you work or study across Chinese and English, Yi produces native-quality output in both rather than translated-sounding text. The 6B and 9B variants run on 4–8 GB instances, so an individual can keep correspondence, translation, and reading help entirely private. Apache 2.0 licensing means there are no usage restrictions to worry about.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg">🏢</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span></div>
+            <h3 class="text-lg font-bold text-cyan-200">China-facing teams that must keep data off mainland infrastructure</h3>
+            <p class="mt-2 text-sm text-slate-400">For procurement, legal, finance, and M&amp;A teams handling Chinese-language contracts, filings, and correspondence, Yi delivers the bilingual quality of a Chinese provider without routing sensitive material through mainland-connected APIs. Deployed on a region you choose, your data stays in that jurisdiction — and the Apache 2.0 license keeps commercial use clean.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg">⚙️</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span></div>
+            <h3 class="text-lg font-bold text-cyan-200">A bilingual backend with long context and clean licensing</h3>
+            <p class="mt-2 text-sm text-slate-400">Yi's long-context variants and strong instruction following make it a solid engine for cross-language document pipelines, translation-review tooling, and bilingual assistants built on Ollama. Apache 2.0 across the family means developers can embed it in commercial products without license review friction — unusual for a strong China-origin model.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg">🔬</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span></div>
+            <h3 class="text-lg font-bold text-cyan-200">Bilingual evaluation and long-document analysis</h3>
+            <p class="mt-2 text-sm text-slate-400">Yi's co-primary Chinese-English training makes it a useful subject and tool for cross-lingual NLP research, and its 200K-context variants suit analysis over long documents and corpora. With permissive Apache 2.0 terms and sizes from 6B to 34B, it supports reproducible bilingual experiments on infrastructure researchers fully control.</p>
+          </div>
+        </div>
+
         <h2 class="mt-10 text-3xl font-black">Who Should Be Running Yi</h2>
 
         <h3 class="mt-8 text-2xl font-bold text-cyan-200">Companies with China-facing manufacturing, sourcing, or supply chain relationships</h3>
@@ -127,6 +151,51 @@
           </table>
         </div>
         <p class="mt-5 text-slate-300">Most NoCloudGPT customers with China-facing work start with Yi 9B on an 8 GB Lightsail instance. This configuration handles the full range of everyday bilingual tasks — correspondence, document summarization, translation review, and research — at a monthly cost significantly below any bilingual SaaS alternative. Teams with high-volume document processing, legal work, or multiple concurrent users should consider the Yi 34B on a GPU instance.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Licensing Information</h2>
+        <p class="mt-5 text-slate-300">Yi's licensing is unusually clean for a China-origin model: the Yi-1.5 series and the current Yi series code and weights are distributed under Apache 2.0, which 01.AI confirms is free for personal, academic, and commercial use (with a derivative-work attribution notice). This removes the registration step that earlier Yi releases required and makes Yi a low-friction commercial choice.</p>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Model</th>
+                <th class="px-4 py-3">License</th>
+                <th class="px-4 py-3">Commercial use</th>
+                <th class="px-4 py-3">Model card</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr><td class="px-4 py-3 font-semibold text-white">Yi-1.5 6B Chat</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/01-ai/Yi-1.5-6B-Chat" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">01-ai/Yi-1.5-6B-Chat →</a></td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-white">Yi-1.5 9B Chat</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/01-ai/Yi-1.5-9B-Chat" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">01-ai/Yi-1.5-9B-Chat →</a></td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-white">Yi-1.5 34B Chat</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/01-ai/Yi-1.5-34B-Chat" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">01-ai/Yi-1.5-34B-Chat →</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-xs text-slate-500">Yi-1.5 and current Yi series weights are Apache 2.0 (derivative works require a 01.AI attribution notice). License information sourced from Hugging Face model cards and may change between releases. Always verify the current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Available Model Sizes</h2>
+        <p class="mt-5 text-slate-300">Yi spans efficient bilingual sizes for private deployment. VERIFY: Confirm current Ollama tags before planning. NoCloudGPT will confirm hardware requirements and select the right quantization before your pilot begins.</p>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Model</th>
+                <th class="px-4 py-3">Deployment tier</th>
+                <th class="px-4 py-3">Best for</th>
+                <th class="px-4 py-3"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr><td class="px-4 py-3 font-semibold text-white">Yi-1.5 6B Q4</td><td class="px-4 py-3">Standard AI — 4 GB</td><td class="px-4 py-3">Individual bilingual assistant, correspondence</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-white">Yi-1.5 9B Q4</td><td class="px-4 py-3">Standard AI — 8 GB</td><td class="px-4 py-3">Small-team bilingual workflows — recommended</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-white">Yi-1.5 34B Q4</td><td class="px-4 py-3">Professional AI — entry GPU</td><td class="px-4 py-3">Complex document analysis, legal and financial review</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-xs text-slate-500">
+          Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
+          <!-- TODO: Link each row to individual model-size pages when created -->
+        </p>
 
         <h2 class="mt-10 text-3xl font-black">Deploy Yi on Your Infrastructure</h2>
         <p class="mt-5 text-slate-300">NoCloudGPT configures Yi on your Lightsail instance, on-premise server, or air-gapped environment. Setup includes Ollama, OpenWebUI, and bilingual system prompt configuration for your specific use case. US-region, EU-region, and Asia-Pacific Lightsail deployments are all available — your data stays in the jurisdiction you specify.</p>

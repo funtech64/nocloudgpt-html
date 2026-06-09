@@ -3,23 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exaone on Ollama | Private Bilingual Code AI | NoCloudGPT.com</title>
-  <meta name="description" content="Run LG AI Research's Exaone locally with Ollama. A bilingual English-Korean code and instruction model built for enterprise use — zero data exposure, full on-premise control." />
+  <title>Exaone on Ollama | Private Bilingual English-Korean AI | NoCloudGPT.com</title>
+  <meta name="description" content="Run LG AI Research's EXAONE 3.5 locally with Ollama. A bilingual English-Korean instruction and code model — note: released under a non-commercial research license. Zero data exposure, full on-premise control." />
+  <link rel="canonical" href="https://nocloudgpt.com/models/exaone/" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; color: #1a1a1a; line-height: 1.7; }
+    h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+    h2 { font-size: 1.35rem; margin-top: 2.2rem; border-bottom: 2px solid #e2e2e2; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.4rem; color: #333; }
+    .tag { display: inline-block; background: #f0f4ff; color: #2244aa; border-radius: 4px; padding: 2px 8px; font-size: 0.82rem; margin-right: 5px; }
+    .cta-box { background: #f8f9ff; border-left: 4px solid #3355dd; padding: 1rem 1.4rem; margin: 2rem 0; border-radius: 4px; }
+    .cta-box a { color: #2244aa; font-weight: 600; }
+    .notice { background: #fff8e1; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; border-radius: 4px; margin: 1.5rem 0; font-size: 0.95rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 0.6rem 0.9rem; text-align: left; }
+    th { background: #f3f3f3; }
+    a { color: #2244aa; }
+    nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
+    pre { background: #f4f4f4; padding: 1rem; border-radius: 4px; overflow-x: auto; }
+    hr { border: none; border-top: 1px solid #e2e2e2; margin: 2.2rem 0; }
+  </style>
 </head>
 <body>
 
-<h1>Exaone: LG's Enterprise-Grade Bilingual AI Model, Running Entirely On Your Infrastructure</h1>
+<nav><a href="/models/">← Model Menu</a> &nbsp;/&nbsp; Exaone</nav>
+
+<h1>Exaone: LG's Bilingual English-Korean AI, Running Entirely On Your Infrastructure</h1>
   <!-- TODO: Add hero.webp — see models/artwork-sources.md, row: exaone -->
   <!-- Unsplash reference: https://unsplash.com/s/photos/enterprise-ai -->
 
+<p>
+  <span class="tag">Bilingual EN-KO</span>
+  <span class="tag">Instruction + Code</span>
+  <span class="tag">LG AI Research</span>
+  <span class="tag">Non-Commercial License</span>
+</p>
 
-<p>Most open-weight models treat language support as an afterthought — English first, everything else approximate. <strong>Exaone</strong>, developed by LG AI Research, was built differently. It is a bilingual English-Korean model trained with enterprise deployment in mind from the start, covering both code generation and general instruction-following with native fluency in both languages.</p>
+<div class="notice">
+  <strong>License note:</strong> EXAONE 3.5 is released under the EXAONE AI Model License Agreement 1.1 &mdash; <strong>NC</strong>, which permits research and evaluation only. Commercial use requires a separate written agreement with LG AI Research. Read the <a href="#licensing">licensing section</a> before planning a production deployment.
+</div>
 
-<p>For organizations operating across English and Korean-speaking teams — or serving Korean-market customers — Exaone offers something no general-purpose model reliably delivers: consistent quality in both languages, running on hardware you control, with no data leaving your network.</p>
+<p>Most open-weight models treat language support as an afterthought — English first, everything else approximate. <strong>Exaone</strong>, developed by LG AI Research, was built differently. It is a bilingual English-Korean model covering both code generation and general instruction-following with native fluency in both languages.</p>
+
+<p>For teams working across English and Korean — or evaluating non-US AI for Korean-language workflows — Exaone offers consistent quality in both languages, running on hardware you control, with no data leaving your network. Just be clear-eyed about the license: it is research/non-commercial unless you arrange commercial terms with LG.</p>
 
 <p>Deploy it today with <code>ollama run exaone3.5</code>.</p>
 
----
+<hr>
 
 <h2>What Exaone Actually Does</h2>
 
@@ -34,21 +64,31 @@
   <li><strong>Multiple size variants</strong> — 2.4B for edge and CPU deployments; 7.8B for team servers; 32B for high-demand production environments</li>
 </ul>
 
----
+<hr>
 
-<h2>Who Should Run Exaone On-Premise</h2>
+<h2>Who This Model Family Is For</h2>
 
-<p>Exaone's bilingual design and enterprise origins make it a strong fit for a specific set of organizations:</p>
+<h3>👤 Personal use</h3>
+<p>
+  For individuals working across English and Korean, EXAONE 2.4B runs on a laptop or a 4GB instance and gives you a private bilingual assistant for drafting, reading help, and light coding. The non-commercial license is a non-issue for personal study and experimentation. If you need a commercially usable bilingual model for a personal project that earns money, choose an Apache-2.0 alternative instead.
+</p>
 
-<ul>
-  <li><strong>Korean enterprises and multinationals</strong> — companies with Korean-language operations, documentation, or customer-facing workflows that cannot route sensitive data through US-based cloud AI providers</li>
-  <li><strong>Engineering teams with mixed-language codebases</strong> — organizations where code comments, documentation, and internal tools span both English and Korean</li>
-  <li><strong>Legal, compliance, and financial teams</strong> — professionals handling Korean-language contracts, regulatory filings, or client communications requiring air-gapped AI assistance</li>
-  <li><strong>LG ecosystem partners and integrators</strong> — vendors building on or alongside LG infrastructure who benefit from a shared AI lineage</li>
-  <li><strong>Enterprises evaluating non-US AI supply chains</strong> — organizations seeking to diversify away from OpenAI, Anthropic, and Google for geopolitical or vendor-concentration risk reasons</li>
-</ul>
+<h3>🏢 Business &amp; team use</h3>
+<p>
+  Exaone's bilingual quality is attractive for Korean-language document, support, and compliance workflows that should not leave the network — but the license is the deciding factor. EXAONE 3.5 is non-commercial; using it in revenue-generating products or services requires a commercial agreement with LG AI Research (contact_us@lgresearch.ai). For evaluation and internal research it is excellent; for production, secure commercial terms first or pick a permissively licensed model.
+</p>
 
----
+<h3>⚙️ Developer &amp; technical use</h3>
+<p>
+  EXAONE handles code generation and debugging across Python, JavaScript, Java, and C++ with bilingual comments and documentation, and supports long-context inputs — useful for mixed-language codebases. Note that the license also prohibits using the model or its outputs to train or improve other models. Treat Exaone as a research/evaluation tool in your stack unless you have a commercial license in place.
+</p>
+
+<h3>🔬 Data science &amp; research</h3>
+<p>
+  This is where Exaone fits the license cleanly: academic and R&amp;D teams can freely use it for evaluation, benchmarking, and Korean-English NLP research. It posts strong instruction-following and long-context benchmark results at 2.4B/7.8B/32B, making it a useful bilingual reference model for studies that do not require commercial deployment of the outputs.
+</p>
+
+<hr>
 
 <h2>Deployment Tiers and Compute Requirements</h2>
 
@@ -82,7 +122,7 @@
 </ul>
 <p><strong>Run it:</strong> <code>ollama run exaone3.5:32b</code></p>
 
----
+<hr>
 
 <h2>The Real Cost of Routing Korean-Language Data Through US Cloud AI</h2>
 
@@ -97,7 +137,7 @@
 
 <p>Exaone was built by a Korean enterprise for enterprise use. Running it locally is not just a cost decision — it is a compliance and quality decision.</p>
 
----
+<hr>
 
 <h2>Getting Started with Exaone on Ollama</h2>
 
@@ -115,7 +155,35 @@ ollama run exaone3.5:32b
 
 <p>Exaone integrates with any Ollama-compatible interface. Point your application at <code>http://localhost:11434</code> and all inference — in English, Korean, or both — runs entirely on your infrastructure.</p>
 
----
+<hr>
+
+<h2>Available Model Sizes</h2>
+<p>EXAONE 3.5 ships in three sizes. VERIFY current Ollama tags before planning. NoCloudGPT confirms hardware requirements and selects the right quantization before your pilot begins.</p>
+<table>
+  <thead>
+    <tr><th>Model</th><th>Deployment tier</th><th>Best for</th><th></th></tr>
+  </thead>
+  <tbody>
+    <tr><td>EXAONE 3.5 2.4B</td><td>Starter AI — 2–4 GB</td><td>Edge, solo use, offline bilingual drafting</td><td><a href="/quote.html">Get quote →</a></td></tr>
+    <tr><td>EXAONE 3.5 7.8B</td><td>Standard AI — 6–8 GB</td><td>Small teams, bilingual document and code workflows</td><td><a href="/quote.html">Get quote →</a></td></tr>
+    <tr><td>EXAONE 3.5 32B</td><td>Professional AI — A10G 24GB</td><td>High-quality bilingual generation at scale</td><td><a href="/quote.html">Get quote →</a></td></tr>
+  </tbody>
+</table>
+<!-- TODO: Link each row to individual model-size pages when created -->
+
+<h2 id="licensing">Licensing Information</h2>
+<p>This is the most important thing to understand about Exaone before deploying it. All EXAONE 3.5 models are released under the <strong>EXAONE AI Model License Agreement 1.1 - NC</strong>, a non-commercial license. It grants use for research, evaluation, and academic purposes only, and explicitly prohibits commercial use as well as using the model or its outputs to train or improve other models. Commercial deployment requires a separate written agreement with LG AI Research.</p>
+<table>
+  <thead>
+    <tr><th>Model</th><th>License</th><th>Commercial use</th><th>Model card</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>EXAONE 3.5 2.4B Instruct</td><td>EXAONE AI Model License 1.1 - NC</td><td>Non-commercial only</td><td><a href="https://huggingface.co/LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct" target="_blank" rel="noopener">LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct →</a></td></tr>
+    <tr><td>EXAONE 3.5 7.8B Instruct</td><td>EXAONE AI Model License 1.1 - NC</td><td>Non-commercial only</td><td><a href="https://huggingface.co/LGAI-EXAONE/EXAONE-3.5-7.8B-Instruct" target="_blank" rel="noopener">LGAI-EXAONE/EXAONE-3.5-7.8B-Instruct →</a></td></tr>
+    <tr><td>EXAONE 3.5 32B Instruct</td><td>EXAONE AI Model License 1.1 - NC</td><td>Non-commercial only</td><td><a href="https://huggingface.co/LGAI-EXAONE/EXAONE-3.5-32B-Instruct" target="_blank" rel="noopener">LGAI-EXAONE/EXAONE-3.5-32B-Instruct →</a></td></tr>
+  </tbody>
+</table>
+<p style="font-size:0.85rem; color:#64748b;">EXAONE 3.5 is non-commercial (research/evaluation) under the EXAONE AI Model License 1.1 - NC; commercial use requires a separate agreement with LG AI Research. License information sourced from Hugging Face model cards and the official license and may change between releases. Always verify current terms before any deployment. NoCloudGPT is not a legal advisor.</p>
 
 <h2>Start Your 90-Day Bilingual AI Pilot</h2>
 
