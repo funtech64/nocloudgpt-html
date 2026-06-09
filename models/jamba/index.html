@@ -69,6 +69,30 @@
           </div>
         </div>
 
+        <h2 class="mt-10 text-3xl font-black">Who This Model Family Is For</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg">👤</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span></div>
+            <h3 class="text-lg font-bold text-cyan-200">Long-document work on a single capable GPU</h3>
+            <p class="mt-2 text-sm text-slate-400">Jamba is an enterprise long-context model rather than a casual laptop assistant, but Jamba 1.5 Mini (12B active / 52B total) runs on a 16–24 GB GPU and shines if your personal workflow involves very long documents — reading a whole book, a long contract, or a large codebase in one pass without the truncation that frustrates standard models.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg">🏢</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span></div>
+            <h3 class="text-lg font-bold text-cyan-200">Legal, finance, and high-concurrency document teams</h3>
+            <p class="mt-2 text-sm text-slate-400">Teams that reason across long contracts, filings, and regulatory archives get Jamba's core advantage: coherent comprehension across an entire document without chunking, plus higher sustained throughput for many concurrent users. The Jamba Open Model License permits commercial use; organisations above $50M in annual revenue should confirm terms with AI21.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg">⚙️</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span></div>
+            <h3 class="text-lg font-bold text-cyan-200">Long-context backends with predictable memory</h3>
+            <p class="mt-2 text-sm text-slate-400">Jamba's hybrid SSM-Transformer design scales memory linearly with context, so its footprint does not spike on long inputs the way a pure transformer's does — useful for building document-ingestion services, extended-session assistants, and high-throughput inference APIs. Native function calling and structured JSON output make it straightforward to wire into existing pipelines.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-2"><span class="text-lg">🔬</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span></div>
+            <h3 class="text-lg font-bold text-cyan-200">Long-corpus analysis and architecture research</h3>
+            <p class="mt-2 text-sm text-slate-400">With a 256K effective context, Jamba is well suited to systematic literature review, meta-analysis, and reasoning over full papers rather than abstracts. It is also the first production SSM-Transformer hybrid, making it a primary object of study for teams evaluating where efficient long-context architectures are heading before they reach the mainstream.</p>
+          </div>
+        </div>
+
         <h2 class="mt-10 text-3xl font-black">Who Should Be Running Jamba</h2>
 
         <h3 class="mt-8 text-2xl font-bold text-cyan-200">Legal and compliance teams processing large document volumes</h3>
@@ -119,8 +143,8 @@
                 <td class="px-4 py-3">Individual analyst, small team, long-context Q&A</td>
               </tr>
               <tr>
-                <td class="px-4 py-3 font-semibold text-white">Jamba 1.5 Large (52B MoE)</td>
-                <td class="px-4 py-3">Single 80 GB GPU (A100/H100)</td>
+                <td class="px-4 py-3 font-semibold text-white">Jamba 1.5 Large (94B active / 398B total)</td>
+                <td class="px-4 py-3">Multi-GPU (e.g. 8× 80 GB with ExpertsInt8)</td>
                 <td class="px-4 py-3">Enterprise document processing, legal, financial analysis</td>
               </tr>
               <tr>
@@ -138,6 +162,59 @@
         </div>
         <p class="mt-5 text-slate-300">Jamba 1.5 Mini at 12B parameters is the accessible entry point — it runs on hardware more modest than the full 52B MoE Large model while delivering Jamba's architectural long-context efficiency at smaller scale. For individual analysts or small teams whose primary need is long-document coherence rather than maximum reasoning depth, Jamba Mini is a compelling option that does not require high-end GPU infrastructure.</p>
         <p class="mt-4 text-slate-300">Jamba 1.5 Large in a single 80 GB GPU configuration is the target deployment for organizations with serious long-context enterprise requirements. The ability to serve this model on a single A100 or H100 rather than requiring a multi-GPU cluster is a direct consequence of the SSM-MoE architecture and translates to lower infrastructure cost compared to equivalent dense transformer alternatives.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Licensing Information</h2>
+        <p class="mt-5 text-slate-300">Jamba 1.5 Mini and Jamba 1.5 Large are released under the Jamba Open Model License — a permissive license that allows both research and commercial use under its terms. It is more conditional than Apache 2.0 (which covered the original Jamba v0.1): notably, organisations with over $50 million in annual revenue should confirm terms directly with AI21 before commercial deployment.</p>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Model</th>
+                <th class="px-4 py-3">License</th>
+                <th class="px-4 py-3">Commercial use</th>
+                <th class="px-4 py-3">Model card</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr><td class="px-4 py-3 font-semibold text-white">Jamba 1.5 Mini (12B active / 52B total)</td><td class="px-4 py-3">Jamba Open Model License</td><td class="px-4 py-3"><span class="text-amber-400">Permitted, &gt;$50M revenue: confirm</span></td><td class="px-4 py-3"><a href="https://huggingface.co/ai21labs/AI21-Jamba-1.5-Mini" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">ai21labs/AI21-Jamba-1.5-Mini →</a></td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-white">Jamba 1.5 Large (94B active / 398B total)</td><td class="px-4 py-3">Jamba Open Model License</td><td class="px-4 py-3"><span class="text-amber-400">Permitted, &gt;$50M revenue: confirm</span></td><td class="px-4 py-3"><a href="https://huggingface.co/ai21labs/AI21-Jamba-1.5-Large" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">ai21labs/AI21-Jamba-1.5-Large →</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-xs text-slate-500">The Jamba Open Model License permits commercial use under its terms; organisations above $50M annual revenue should confirm with AI21. License information sourced from Hugging Face model cards and may change between releases. Always verify the current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Available Model Sizes</h2>
+        <p class="mt-5 text-slate-300">The Jamba 1.5 family ships in two sizes for private deployment. VERIFY: Confirm current Ollama / Hugging Face tags before planning. NoCloudGPT will confirm GPU requirements and select the right quantization before your pilot begins.</p>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Model</th>
+                <th class="px-4 py-3">Deployment tier</th>
+                <th class="px-4 py-3">Best for</th>
+                <th class="px-4 py-3"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Jamba 1.5 Mini (12B active / 52B total)</td>
+                <td class="px-4 py-3">Professional AI — 16–24 GB GPU</td>
+                <td class="px-4 py-3">Individual analyst, small team, long-context Q&amp;A</td>
+                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Jamba 1.5 Large (94B active / 398B total)</td>
+                <td class="px-4 py-3">Enterprise AI — multi-GPU</td>
+                <td class="px-4 py-3">Enterprise document processing, high-concurrency inference</td>
+                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-xs text-slate-500">
+          Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
+          <!-- TODO: Link each row to individual model-size pages when created -->
+        </p>
 
         <h2 class="mt-10 text-3xl font-black">Deploy Jamba on Your Infrastructure</h2>
         <p class="mt-5 text-slate-300">NoCloudGPT configures Jamba deployments on GPU cloud instances or on-premise GPU servers, handling CUDA driver setup, Ollama or vLLM configuration, system prompt optimization for your document type, and multi-user access setup. Jamba requires GPU infrastructure — we recommend a hardware specification call before deployment planning to ensure your configuration matches your concurrency and context length requirements.</p>

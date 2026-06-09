@@ -119,6 +119,29 @@
 
     <hr class="section-divider">
 
+    <h2>Who Nemotron Is For</h2>
+
+    <div class="use-case-grid">
+        <div class="use-case-card">
+            <h3>👤 Personal Use</h3>
+            <p>Nemotron targets enterprise GPU infrastructure, but the Nemotron Mini 4B is genuinely accessible — it fits in 4 GB and runs a capable private assistant on a single consumer GPU. For an enthusiast already running NVIDIA hardware, it is a clean, telemetry-free local model. The larger variants are out of reach for typical personal hardware.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>🏢 Business &amp; Team Use</h3>
+            <p>Organizations already operating NVIDIA GPUs get a natural upgrade path: Llama-3.1-Nemotron-70B on a single A100 covers most enterprise assistant, summarization, and analysis work, and the NVIDIA Open Model License permits commercial use. For regulated teams, running it via Ollama removes the NGC account and NIM telemetry surface entirely.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>⚙️ Developer &amp; Technical Use</h3>
+            <p>Nemotron's NVIDIA alignment pipeline produces strong code generation and reliable multi-step instruction following, which suits internal developer tools and structured-output automation. Ollama's single-binary deployment avoids NIM's CUDA-version and container complexity, so teams without dedicated MLOps can stand up a private endpoint quickly and keep proprietary code in-house.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>🔬 Data Science &amp; Research Use</h3>
+            <p>Over 98% of Nemotron-4's alignment data was synthetically generated, and NVIDIA open-sourced both the pipeline and a companion Reward model. For research teams, that makes Nemotron useful not just for analysis but as a tool for generating and scoring synthetic training data to fine-tune smaller domain models — entirely on-premise.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
     <h2>Why Self-Host Nemotron Instead of Using NVIDIA NIM?</h2>
 
     <p>NVIDIA's NIM platform is positioned as an on-premise solution, and in many configurations it does run locally. However, organizations evaluating Nemotron for sensitive workloads encounter several concerns that make a pure Ollama-based deployment preferable:</p>
@@ -242,6 +265,44 @@
     <p>Against hosted APIs like GPT-4, the comparison is not primarily about benchmark scores — it is about data control. A Nemotron 70B deployment running on a single A100 in your data center processes queries that never leave your environment, cannot be logged by a third party, and are not subject to any provider's terms of service changes. For regulated industries, this is not a nice-to-have. It is often a compliance requirement.</p>
 
     <p>Against Mixtral 8x22B, Nemotron's NVIDIA-optimized training pipeline produces stronger results on code and mathematics, while Mixtral maintains advantages in multilingual tasks and raw throughput on equivalent hardware due to the Mixture-of-Experts architecture.</p>
+
+    <hr class="section-divider">
+
+    <h2>Licensing Information</h2>
+
+    <p>Nemotron-4 and the Llama-Nemotron alignment fine-tunes are released under the NVIDIA Open Model License, which NVIDIA confirms is commercially usable, permits derivative models, and does not claim ownership of generated outputs. The one nuance: models built on Meta's Llama (such as Llama-3.1-Nemotron-70B) are additionally governed by the Llama Community License and carry the "Built with Llama" attribution requirement. Review the applicable terms before commercial deployment.</p>
+
+    <table class="hardware-table">
+        <thead>
+            <tr><th>Model</th><th>License</th><th>Commercial use</th><th>Model card</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Nemotron-4 340B Instruct</td><td>NVIDIA Open Model License</td><td>Permitted</td><td><a href="https://huggingface.co/nvidia/Nemotron-4-340B-Instruct" target="_blank" rel="noopener" style="color:#76b900;">nvidia/Nemotron-4-340B-Instruct →</a></td></tr>
+            <tr><td>Llama-3.1-Nemotron-70B Instruct</td><td>NVIDIA Open Model License + Llama 3.1 Community License</td><td>Permitted, attribution required</td><td><a href="https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Instruct" target="_blank" rel="noopener" style="color:#76b900;">nvidia/Llama-3.1-Nemotron-70B-Instruct →</a></td></tr>
+            <tr><td>Nemotron Mini 4B Instruct</td><td>NVIDIA Open Model License</td><td>Permitted</td><td><a href="https://huggingface.co/nvidia/Nemotron-Mini-4B-Instruct" target="_blank" rel="noopener" style="color:#76b900;">nvidia/Nemotron-Mini-4B-Instruct →</a></td></tr>
+        </tbody>
+    </table>
+
+    <p style="font-size:0.85rem; color:#6e7681;">The NVIDIA Open Model License permits commercial use; Llama-based variants additionally require compliance with the Llama Community License and "Built with Llama" attribution. License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+
+    <hr class="section-divider">
+
+    <h2>Available Model Sizes</h2>
+
+    <p>The Nemotron family spans edge-friendly to multi-GPU flagship sizes. VERIFY current tags in the Ollama library before planning. NoCloudGPT confirms hardware requirements and selects the right quantization before your pilot begins.</p>
+
+    <table class="hardware-table">
+        <thead>
+            <tr><th>Model</th><th>Deployment tier</th><th>Best for</th><th></th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Nemotron Mini 4B</td><td>Standard AI — 4 GB</td><td>Edge servers, lightweight private assistants</td><td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
+            <tr><td>Nemotron 12B (Q4)</td><td>Standard AI — 8 GB</td><td>Most enterprise inference servers</td><td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
+            <tr><td>Llama-3.1-Nemotron-70B (Q4)</td><td>Heavy AI — single A100 / 2× A6000</td><td>Balanced high-capability enterprise deployment</td><td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
+            <tr><td>Nemotron-4 340B (Q4)</td><td>Enterprise AI — 4× A100 80GB+</td><td>Maximum capability with full data sovereignty</td><td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
+        </tbody>
+    </table>
+    <!-- TODO: Link each row to individual model-size pages when created -->
 
     <hr class="section-divider">
 
