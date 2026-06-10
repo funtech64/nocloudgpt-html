@@ -82,28 +82,28 @@
                 <span class="text-lg">👤</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
               </div>
-              <p class="mt-2 text-sm text-slate-400">Mistral Large 2 is more model than most personal workflows require — but if you regularly tackle complex writing projects, work through difficult logic problems, or need to summarize lengthy documents accurately, it earns its keep. Its 128K context window means you can feed in long PDFs, research papers, or codebases without truncation. If you're running it locally, expect to need serious hardware; this is not a lightweight model.</p>
+              <p class="mt-2 text-sm text-slate-400">Mistral Large is a heavyweight model best suited for users who regularly work with complex documents, multi-step research, or nuanced reasoning tasks. Its 128K context window allows you to process entire contracts, manuscripts, or codebases in one go. While it is overkill for casual chatting or simple Q&amp;A, users who want a powerful private model for serious intellectual work will find it rewarding — provided they have the hardware to run it comfortably.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🏢</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
               </div>
-              <p class="mt-2 text-sm text-slate-400">Teams that rely on accurate reasoning, legal or financial document analysis, or multilingual communication will find Mistral Large 2 genuinely capable. It handles French, German, Spanish, Italian, Portuguese, Arabic, and several other languages with notably better fidelity than most models of its generation. For businesses with strict data privacy requirements, deploying it privately through NoCloudGPT means your documents and prompts never leave your infrastructure.</p>
+              <p class="mt-2 text-sm text-slate-400">Teams that depend on accurate, well-reasoned output — particularly in legal, finance, consulting, and technical fields — will find Mistral Large a strong performer. It excels at long-form document analysis, structured report generation, and multilingual workflows (French, German, Spanish, Italian, and more). Because it runs entirely on your own infrastructure through NoCloudGPT, sensitive documents and proprietary data never leave your network. This makes it especially relevant for regulated industries where data privacy and compliance are non-negotiable.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">⚙️</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
               </div>
-              <p class="mt-2 text-sm text-slate-400">Mistral Large 2 is a strong coding model. It handles multi-file context well, explains existing code clearly, and produces reliable output in Python, JavaScript, TypeScript, Rust, and more. Its function-calling support makes it a practical backbone for agentic workflows and internal tooling. Developers building RAG pipelines or document-heavy applications will appreciate the long context window without needing aggressive chunking strategies.</p>
+              <p class="mt-2 text-sm text-slate-400">Mistral Large 2 ranks among the strongest open-weight models for code generation, debugging, and technical documentation. It handles function calling and structured output reliably, making it practical for building internal developer tools, automating code review, or powering a private coding assistant. Its strong instruction-following reduces the amount of prompt engineering typically required with smaller models. For most development workflows, it offers an excellent balance of capability and reliability.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🔬</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
               </div>
-              <p class="mt-2 text-sm text-slate-400">Researchers who need a model that can reason through multi-step problems, interpret statistical outputs, and work with structured data will find Mistral Large 2 competitive with much larger proprietary models. It performs well on benchmarks involving mathematical reasoning and chain-of-thought tasks, which translates into useful assistance with hypothesis framing, methodology review, and literature synthesis. For sensitive research data, private deployment is a meaningful advantage over cloud-hosted alternatives.</p>
+              <p class="mt-2 text-sm text-slate-400">Researchers working with long documents, technical literature, or complex analytical tasks will appreciate Mistral Large's combination of long context, strong reasoning, and multilingual capability. It performs well on literature synthesis, methodology review, and structured data extraction. For teams working with sensitive or proprietary datasets, running this model locally provides both capability and data control that cloud-based alternatives cannot match.</p>
             </div>
           </div>
         </section>
@@ -142,7 +142,7 @@
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
           <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
           <p class="mt-5 text-slate-300">Mistral Large 2 is released under the <strong class="text-white">Mistral Research License</strong>, which permits free use for research and non-commercial purposes. Commercial use requires a separate license agreement directly with Mistral AI.</p>
-          <p class="mt-4 text-slate-300">This is an important distinction: if you plan to use Mistral Large 2 in a product, service, or internal business tool that generates revenue or supports commercial operations, you must review and comply with Mistral's commercial licensing terms before deploying.</p>
+          <p class="mt-4 text-slate-300">This is an important distinction: if you plan to use Mistral Large 2 in a product, service, or internal business workflow that generates revenue, you must confirm your compliance status with Mistral AI before deploying.</p>
           <p class="mt-5 text-slate-300"><strong class="text-white">Official model card:</strong></p>
           <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
             <li><a href="https://huggingface.co/mistralai/Mistral-Large-Instruct-2407" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mistral-Large-Instruct-2407</a></li>
@@ -156,12 +156,13 @@
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
           <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
-          <!-- TODO: Create individual size pages for each Mistral Large variant at /models/mistral-large/[size] -->
+          <p class="mt-5 text-slate-300">Mistral Large is positioned as a flagship-tier model. It is currently available in one primary size, though different quantization levels significantly affect hardware requirements.</p>
+          <!-- TODO: Create individual size pages for Mistral Large variants with hardware benchmarks and deployment guidance. -->
           <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
             <table class="w-full text-left text-sm">
               <thead class="bg-slate-950 text-cyan-200">
                 <tr>
-                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Model Version</th>
                   <th class="px-4 py-3">Ollama Tag</th>
                   <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
                   <th class="px-4 py-3">Notes</th>
@@ -172,22 +173,22 @@
                 <tr>
                   <td class="px-4 py-3 font-semibold text-white">Mistral Large 2 (123B)</td>
                   <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">mistral-large</code></td>
-                  <td class="px-4 py-3">Enterprise — High VRAM GPU Server</td>
-                  <td class="px-4 py-3">Requires ~80GB+ VRAM for full-precision inference. Best on multi-GPU or high-end single GPU setups.</td>
+                  <td class="px-4 py-3">Enterprise</td>
+                  <td class="px-4 py-3">Current flagship. Excellent reasoning, coding, and multilingual performance with a 128K context window. Requires high VRAM (80GB+ recommended for full-speed inference).</td>
                   <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
                   <td class="px-4 py-3 font-semibold text-white">Mistral Large 2 (Q4 Quantized)</td>
                   <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">mistral-large</code></td>
-                  <td class="px-4 py-3">Professional — Dedicated GPU</td>
-                  <td class="px-4 py-3">Quantized versions reduce VRAM requirements significantly (~40–48GB). Some quality tradeoff at aggressive quantization levels.</td>
+                  <td class="px-4 py-3">Professional / Enterprise</td>
+                  <td class="px-4 py-3">Quantized version significantly reduces VRAM requirements while retaining strong performance. Recommended starting point for most enterprise deployments.</td>
                   <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
-            <p class="text-sm text-slate-300"><strong class="text-white">Hardware note:</strong> Mistral Large 2 at 123B parameters is a resource-intensive model. NoCloudGPT can help you select the right hardware tier and quantization level to match your performance and budget requirements.</p>
+            <p class="text-sm text-slate-300"><strong class="text-white">Hardware note:</strong> Mistral Large is a resource-intensive model. Quantized versions make it more accessible, but serious production use generally benefits from dedicated GPU infrastructure. We can help you right-size the deployment to your actual workload.</p>
           </div>
         </section>
 
