@@ -63,11 +63,109 @@
           </div>
         </section>
 
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Llama 3.3 is a strong choice if you want genuinely capable AI assistance running entirely on your own hardware — no subscriptions and no data leaving your machine. It handles complex writing, summarization, and multi-step reasoning well enough to replace cloud tools for most daily workflows. The main honest caveat is that the 70B model requires a capable workstation (ideally with a modern GPU), so it isn't the right fit if you're working from a laptop with integrated graphics.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">If your team handles sensitive documents, client data, or proprietary research, Llama 3.3 delivers strong reasoning performance without routing anything through a third-party API. It performs particularly well on structured tasks like drafting contracts, analyzing reports, synthesizing meeting notes, and producing consistent internal documentation. Teams in legal, finance, healthcare, and consulting will find it capable enough to handle real workloads. When deployed through NoCloudGPT, your team gets a private, shared endpoint without needing an in-house ML engineer.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Llama 3.3 is a meaningful improvement over Llama 3.1 70B on coding benchmarks, with noticeably better performance on multi-step code generation, debugging, and explanation tasks. It handles Python, JavaScript, SQL, and Bash confidently and follows detailed system prompts reliably enough to serve as a functional coding assistant in a self-hosted IDE integration. For most development workflows, it hits a strong performance-to-resource ratio. If you need something more powerful for complex agentic tasks or frontier-level code synthesis, Llama 4 variants may be worth evaluating.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Researchers who need a locally deployable model for document analysis, literature review assistance, structured data interpretation, or hypothesis drafting will find Llama 3.3 a practical workhorse. Its improved instruction-following over earlier 70B generations makes it easier to prompt reliably in automated pipelines. It supports a 128K context window, which means it can ingest long documents without aggressive chunking in most workflows. It is not a multimodal model, so image or chart analysis requires a separate tool.</p>
+            </div>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
           <h2 class="mt-3 text-3xl font-black">What to Use Llama 3.3 For</h2>
           <div class="mt-6 grid gap-4 md:grid-cols-2">
             <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Complex analytical writing</h3><p class="mt-3 text-sm text-slate-400">Reports, competitive intelligence, executive briefings, and professional analysis where 8B models produce noticeably weaker output.</p></div>            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Multilingual professional work</h3><p class="mt-3 text-sm text-slate-400">Correspondence, summarization, and communication across German, French, Spanish, Portuguese, Italian, and other supported languages.</p></div>            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Advanced code review and generation</h3><p class="mt-3 text-sm text-slate-400">Architectural-level code review, complex refactoring, and multi-file generation for engineering teams that need quality above the 8B tier.</p></div>            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Research synthesis and long documents</h3><p class="mt-3 text-sm text-slate-400">Processing lengthy reports, research papers, and multi-document collections with greater comprehension depth than smaller models.</p></div>
+          </div>
+        </section>
+
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">Llama 3.3 is released under the <strong class="text-white">Meta Llama 3 Community License</strong>. This license permits commercial use for most organizations, with one important restriction: companies with more than 700 million monthly active users must obtain a separate commercial license directly from Meta.</p>
+          <p class="mt-4 text-slate-300">For the vast majority of businesses, startups, and research institutions, commercial deployment is permitted under the standard terms. You are required to include attribution when distributing or building products on top of Llama 3.3, and the license prohibits using the model to train other large language models in a way that systematically distills its outputs.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official model card:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">meta-llama/Llama-3.3-70B-Instruct</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+          </div>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <p class="mt-5 text-slate-300">Llama 3.3 currently ships as a single flagship 70B parameter model. Meta optimized this release for quality at that specific scale rather than offering a broad tiered family.</p>
+          <!-- TODO: Create individual size pages for Llama 3.3 70B variants (Q4, Q8, FP16) with hardware benchmarks and deployment guidance. -->
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">70B (Q4 Quantized)</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">llama3.3:70b</code></td>
+                  <td class="px-4 py-3">Performance</td>
+                  <td class="px-4 py-3">Best balance of quality and speed for most users. Requires ~48GB VRAM or strong CPU inference.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">70B (Q8 Quantized)</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">llama3.3:70b-instruct-q8_0</code></td>
+                  <td class="px-4 py-3">Performance+</td>
+                  <td class="px-4 py-3">Near full-precision quality with lower VRAM needs (~75GB). Good middle ground for teams prioritizing accuracy.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">70B (FP16 / Full Precision)</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">llama3.3:70b-instruct-fp16</code></td>
+                  <td class="px-4 py-3">Enterprise</td>
+                  <td class="px-4 py-3">Maximum output quality. Requires ~140GB VRAM (multi-GPU recommended).</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-white">Hardware note:</strong> CPU-only inference is possible for quantized variants but will be significantly slower. GPU deployment is strongly recommended for any interactive or team-facing use case.</p>
           </div>
         </section>
 
