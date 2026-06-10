@@ -248,7 +248,7 @@
         <!-- SECTION: Who this model family is for -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
-          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying This Family</h2>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
           <div class="mt-6 grid gap-5 md:grid-cols-2">
 
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
@@ -256,36 +256,28 @@
                 <span class="text-lg">👤</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">The smallest capable private assistant with room to grow</h3>
-              <p class="mt-2 text-sm text-slate-400">Qwen's sub-2B models run on a Raspberry Pi or a 2 GB Lightsail instance — some of the lightest capable assistants available. If you want a private AI that starts cheap and grows with your needs, Qwen's size ladder lets you upgrade from a tiny pilot to a 72B production deployment within the same family, without rewriting system prompts or retraining staff.</p>
-              
+              <p class="mt-2 text-sm text-slate-400">Qwen is a strong choice if you want a capable, private AI assistant that genuinely handles languages other than English — including Chinese, Japanese, Korean, and several European languages — without awkward degradation in quality. Smaller variants like Qwen2.5 7B run comfortably on a modern laptop or mini PC, making local deployment accessible without a server rack. If you write, research, or communicate across languages, Qwen's multilingual depth is one of the few areas where it measurably outperforms many Western-trained alternatives. It's honest, coherent, and doesn't require a cloud subscription to do useful work.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🏢</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">International teams and multilingual document workflows</h3>
-              <p class="mt-2 text-sm text-slate-400">Teams with Chinese, Japanese, Korean, Arabic, or European language requirements get substantively better output from Qwen than from English-first families at comparable sizes. A single Qwen deployment handles multilingual correspondence, document translation assistance, and customer communication across 30+ languages from one instance without maintaining separate models per language.</p>
-              
+              <p class="mt-2 text-sm text-slate-400">Teams that operate across language boundaries — whether that means customer-facing content, internal documentation, or communications between international offices — will find Qwen's language coverage unusually practical. It handles business writing, summarization, classification, and structured data extraction reliably across model sizes, so you can right-size your deployment to your budget without sacrificing coherence. Qwen's instruction-following is tight enough that non-technical staff can use it productively with minimal prompt engineering. Because it runs entirely on your hardware through NoCloudGPT, there's no data leaving your network — a meaningful advantage if you work in finance, legal, healthcare, or any regulated industry.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">⚙️</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Full-stack AI tools from edge to production in one family</h3>
-              <p class="mt-2 text-sm text-slate-400">The widest size range of any open family means you prototype on a tiny model and ship with the same family at scale. Qwen 2.5 Coder is a strong private Copilot alternative. Qwen VL adds vision. Qwen's Ollama library support is consistently current. The family is well-suited to teams building layered AI systems that need different capability tiers for different tasks.</p>
-              
+              <p class="mt-2 text-sm text-slate-400">Qwen consistently ranks among the top open model families for code generation, completion, and debugging across languages including Python, JavaScript, C++, and SQL. The dedicated Qwen2.5-Coder variants are specifically fine-tuned for software development tasks and outperform many general-purpose models on coding benchmarks. Developers building internal tools, code review assistants, or documentation generators will find these models a practical, private alternative to cloud-based coding copilots.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🔬</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Multilingual NLP research, multilabel classification, and text extraction</h3>
-              <p class="mt-2 text-sm text-slate-400">Qwen performs strongly across multilingual NLP benchmarks and structured output tasks. The thinking mode in Qwen 3 adds chain-of-thought capability useful for analytical pipeline steps. Alibaba Cloud publishes detailed technical reports for each Qwen generation, making it well-documented for research teams that need to cite model provenance.</p>
-              
+              <p class="mt-2 text-sm text-slate-400">Qwen's strong reasoning capabilities across both quantitative and language tasks make it useful for research workflows — summarizing literature, drafting methodology sections, cleaning and labeling datasets, or running structured analytical prompts at volume. Alibaba's training approach has produced models that perform well on multi-step reasoning tasks, which matters when you're using the model as a thinking tool rather than just a text generator. Researchers working with non-English source material have a particular advantage here given the model's multilingual depth.</p>
             </div>
           </div>
         </section>
@@ -426,86 +418,114 @@
 
         
 
-        <!-- SECTION: Licensing information (improved) -->
+        <!-- SECTION: Licensing information -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
-          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
-          <p class="mt-5 text-slate-300">Qwen licensing has improved substantially across generations. Recent Qwen 2.5 and Qwen 3 releases have moved to Apache 2.0, which is highly permissive. Earlier generations used custom Qwen-specific community licenses with more restrictive commercial terms. Always check the specific model generation you are deploying — the license varies.</p>
-          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-slate-950 text-cyan-200">
-                <tr>
-                  <th class="px-4 py-3">Model / generation</th>
-                  <th class="px-4 py-3">License</th>
-                  <th class="px-4 py-3">Commercial use</th>
-                  <th class="px-4 py-3">Verify</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-                <tr><td class="px-4 py-3  font-semibold text-white">Qwen 1 / Qwen 1.5</td><td class="px-4 py-3">Tongyi Qianwen LICENSE</td><td class="px-4 py-3"><span class="text-amber-400">Verify scope</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen-7B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen-7B →</a></td></tr>
-<tr><td class="px-4 py-3  font-semibold text-white">Qwen 2 (most variants)</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2-7B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2-7B →</a></td></tr>
-<tr><td class="px-4 py-3  font-semibold text-white">Qwen 2.5 (general)</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-7B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-7B-Instruct →</a></td></tr>
-<tr><td class="px-4 py-3  font-semibold text-white">Qwen 2.5 Coder</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-Coder-7B-Instruct →</a></td></tr>
-<tr><td class="px-4 py-3  font-semibold text-white">Qwen 3 (most variants)</td><td class="px-4 py-3">Apache 2.0 (VERIFY)</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen3-8B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen3-8B →</a></td></tr>
-<tr><td class="px-4 py-3  font-semibold text-white">Qwen VL variants</td><td class="px-4 py-3">Apache 2.0 (VERIFY)</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen/Qwen2.5-VL-7B-Instruct →</a></td></tr>
-
-              </tbody>
-            </table>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">The Qwen model family is released by Alibaba Cloud under the <strong class="text-white">Qwen License</strong>, which is a custom license — not a standard open-source license like Apache 2.0 or MIT.</p>
+          <p class="mt-4 text-slate-300">Commercial use is permitted, but with conditions: you must comply with Alibaba's usage policy, you cannot use Qwen outputs to train models intended to compete with Qwen or Alibaba products, and deployments serving more than <strong class="text-white">100 million monthly active users</strong> require a separate commercial agreement with Alibaba Cloud.</p>
+          <p class="mt-4 text-slate-300">For most businesses, teams, and developers, the Qwen license is permissive enough for internal tools, customer-facing products, and SaaS applications — but you should review the terms carefully before deploying in large-scale consumer contexts.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official model cards:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/Qwen/Qwen2.5" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen2.5 on Hugging Face</a></li>
+            <li><a href="https://huggingface.co/Qwen/Qwen2.5-Coder" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen2.5-Coder on Hugging Face</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
           </div>
-          <p class="mt-3 text-xs text-slate-500">Apache 2.0 permits unrestricted commercial use, modification, and distribution. Earlier Qwen licenses imposed more restrictions — confirm the exact generation tag. License information sourced from Hugging Face model cards. Always verify before commercial deployment.</p>
         </section>
 
-        <!-- SECTION: Available model sizes (Phase 4 — quote links placeholder) -->
+        <!-- SECTION: Available model sizes -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
-          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
-          <p class="mt-5 text-slate-300">
-            The following sizes are currently available through Ollama for private deployment.
-            VERIFY: Confirm current tags in the Ollama library before planning.
-            NoCloudGPT will confirm hardware requirements and select the right quantization before your pilot begins.
-          </p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <p class="mt-5 text-slate-300">NoCloudGPT supports the full Qwen2.5 family, including both the general-purpose instruct models and the Coder-specific variants.</p>
+          <!-- TODO: Create individual size pages for each Qwen2.5 and Qwen2.5-Coder variant with hardware requirements, benchmark comparisons, and use-case-specific guidance. -->
           <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
             <table class="w-full text-left text-sm">
               <thead class="bg-slate-950 text-cyan-200">
                 <tr>
-                  <th class="px-4 py-3">Model</th>
-                  <th class="px-4 py-3">Deployment tier</th>
-                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
                   <th class="px-4 py-3"></th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Qwen 0.5B – 1.8B</td>
-                  <td class="px-4 py-3">Nano/Starter AI — 2–4 GB</td>
-                  <td class="px-4 py-3">Pilots and edge deployment</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5 0.5B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">qwen2.5:0.5b</code></td>
+                  <td class="px-4 py-3">Starter</td>
+                  <td class="px-4 py-3">Ultra-lightweight; useful for edge cases or embedded tools. Limited reasoning depth.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Qwen 4B – 8B</td>
-                  <td class="px-4 py-3">Standard AI — 4–8 GB</td>
-                  <td class="px-4 py-3">Everyday general assistant</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5 1.5B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">qwen2.5:1.5b</code></td>
+                  <td class="px-4 py-3">Starter</td>
+                  <td class="px-4 py-3">Fast and lean. Better for classification and short-form tasks than complex reasoning.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Qwen 14B – 32B</td>
-                  <td class="px-4 py-3">Professional AI — GPU</td>
-                  <td class="px-4 py-3">Multilingual and stronger reasoning</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5 3B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">qwen2.5:3b</code></td>
+                  <td class="px-4 py-3">Starter</td>
+                  <td class="px-4 py-3">Solid entry point for personal use. Handles multilingual tasks better than comparably sized Western models.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Qwen 72B</td>
-                  <td class="px-4 py-3">Enterprise AI</td>
-                  <td class="px-4 py-3">Production workloads (VERIFY)</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5 7B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">qwen2.5:7b</code></td>
+                  <td class="px-4 py-3">Standard</td>
+                  <td class="px-4 py-3">The recommended starting point for most users. Strong multilingual output, capable coding, fast on modest hardware.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5 14B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">qwen2.5:14b</code></td>
+                  <td class="px-4 py-3">Standard</td>
+                  <td class="px-4 py-3">Noticeably sharper reasoning and writing quality. Good fit for team deployments and more demanding workflows.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5 32B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">qwen2.5:32b</code></td>
+                  <td class="px-4 py-3">Professional</td>
+                  <td class="px-4 py-3">Near-frontier quality for a locally-run model. Requires a capable GPU server.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5 72B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">qwen2.5:72b</code></td>
+                  <td class="px-4 py-3">Enterprise</td>
+                  <td class="px-4 py-3">Top of the open-weight Qwen family. Exceptional multilingual and reasoning performance. Requires serious GPU hardware.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 1.5B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">qwen2.5-coder:1.5b</code></td>
+                  <td class="px-4 py-3">Starter</td>
+                  <td class="px-4 py-3">Purpose-built for code on minimal hardware. Useful for lightweight autocomplete or CI-adjacent tasks.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 7B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">qwen2.5-coder:7b</code></td>
+                  <td class="px-4 py-3">Standard</td>
+                  <td class="px-4 py-3">Strong coding assistant at an accessible hardware cost. Recommended for most developer use cases.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Qwen2.5-Coder 32B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">qwen2.5-coder:32b</code></td>
+                  <td class="px-4 py-3">Professional</td>
+                  <td class="px-4 py-3">One of the best open coding models available. Handles complex, multi-file reasoning and uncommon languages well.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p class="mt-3 text-xs text-slate-500">
-            Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
-            <!-- TODO: Link each row to individual model-size pages when created -->
-          </p>
         </section>
 
         <!-- SECTION 6: Hardware and deployment reality -->
