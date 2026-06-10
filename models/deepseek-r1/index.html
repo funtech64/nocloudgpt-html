@@ -180,39 +180,35 @@
         <!-- SECTION: Who this model family is for -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
-          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying DeepSeek R1</h2>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
           <div class="mt-6 grid gap-5 md:grid-cols-2">
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">👤</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Step-by-step reasoning you can actually follow</h3>
-              <p class="mt-2 text-sm text-slate-400">If you work through maths, logic puzzles, engineering calculations, or any problem where a confident-but-wrong answer is worse than no answer, R1 is built for you. It shows its working before committing to a conclusion, so you can spot where the logic breaks instead of trusting a black box. The 7B distilled variant runs on a Standard AI instance, so this is genuinely usable on a single private server rather than only in the cloud.</p>
+              <p class="mt-2 text-sm text-slate-400">DeepSeek R1 is a strong fit if you regularly work on complex multi-step problems — tax logic, investment math, legal clause interpretation, debugging difficult code, or any task that requires more than a one-shot answer. It thinks out loud in a structured chain-of-thought style, which means you can actually follow its reasoning rather than just trusting a conclusion. Be aware that responses are longer and more deliberate than a typical chat model. If you want quick conversational answers, a general-purpose model will feel snappier. But for genuinely hard problems where being right matters more than being fast, R1 earns its keep. The 14B–70B distilled variants hit a practical sweet spot for most individuals.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🏢</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Compliance, finance, and legal teams that must defend a conclusion</h3>
-              <p class="mt-2 text-sm text-slate-400">When a regulator, auditor, or client asks "how did the AI reach this?", R1's reasoning trace is the answer a summary-only model cannot give. Finance teams get auditable multi-step working on models and risk calculations; compliance teams get a documented chain from requirement to conclusion. Running it privately keeps the underlying figures and documents off third-party infrastructure.</p>
+              <p class="mt-2 text-sm text-slate-400">Teams that deal with structured complexity — financial modeling, contract analysis, compliance logic, or multi-step data workflows — will find R1 significantly more reliable than general-purpose models on tasks where reasoning chains need to hold together across many steps. It is particularly useful for internal tools where a wrong answer has real consequences, because the visible reasoning trace makes it easier to spot where logic breaks down before acting on the output. The distilled variants (7B–70B) are practical to self-host on business-grade hardware. The full 671B model is a substantial infrastructure commitment, so most teams should start with a distilled size and scale up only if accuracy benchmarks demand it.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">⚙️</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Reasoning-heavy automation under a clean MIT license</h3>
-              <p class="mt-2 text-sm text-slate-400">R1's explicit reasoning steps are easier to parse, log, and validate programmatically than a free-form answer, which makes it a strong backbone for analytical tools and decision-support pipelines. The full R1 ships under MIT — about as low-friction as licensing gets for embedding a model in a commercial product. Distilled variants add the base model's terms (Qwen or Llama), so verify those before shipping.</p>
+              <p class="mt-2 text-sm text-slate-400">DeepSeek R1 was trained with coding and mathematical reasoning as first-class objectives. It handles algorithm design, code review, refactoring rationale, and debugging with a level of structured justification that generic models often skip — you get the <em>why</em>, not just the <em>what</em>. The chain-of-thought output is verbose by design, which is useful during development when you want to audit logic, but you may want to strip the <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">&lt;redacted_thinking&gt;</code> tags in production pipelines where only the final answer matters. Developers building reasoning-heavy agents, code-generation tools, or multi-step automated workflows will find R1's distilled variants a practical backbone that runs locally without external API calls.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🔬</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Quantitative analysis and a published reasoning methodology</h3>
-              <p class="mt-2 text-sm text-slate-400">R1 performs strongly on the quantitative and code-adjacent tasks that fill a data scientist's day — deriving formulas, reasoning about statistics, and decomposing analysis steps. Just as useful to researchers, DeepSeek published the reinforcement-learning recipe behind R1's reasoning, so the model is both a tool and a primary source for teams studying how reasoning behaviour is trained.</p>
+              <p class="mt-2 text-sm text-slate-400">R1 performs well on graduate-level STEM reasoning tasks, multi-step mathematical proofs, scientific problem decomposition, and statistical logic. It can walk through hypothesis structures, evaluate experimental designs, and explain methodology trade-offs with genuine analytical depth. The explicit reasoning trace is a meaningful advantage: you can read the model's chain of inference and identify faulty assumptions, which matters in research contexts where "trust me" isn't good enough. Note that R1 is not a retrieval model — it works from its training knowledge — so pair it with a document-grounding layer if your work depends on citing current literature.</p>
             </div>
           </div>
         </section>
@@ -262,81 +258,92 @@
         <!-- SECTION: Licensing information -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
-          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
-          <p class="mt-5 text-slate-300">The full DeepSeek R1 is released under the MIT License — unusually permissive for a frontier-class reasoning model and one of the cleanest commercial positions available. The distilled variants are also MIT-licensed by DeepSeek, but each was distilled onto a Qwen or Llama backbone whose own license still applies. Both the MIT terms and the base-model terms apply to a distilled model, so verify the backbone license for any variant you intend to deploy commercially.</p>
-          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-slate-950 text-cyan-200">
-                <tr>
-                  <th class="px-4 py-3">Model / variant</th>
-                  <th class="px-4 py-3">License</th>
-                  <th class="px-4 py-3">Commercial use</th>
-                  <th class="px-4 py-3">Model card</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-                <tr><td class="px-4 py-3 font-semibold text-white">DeepSeek R1 (full 671B)</td><td class="px-4 py-3">MIT License</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">deepseek-ai/DeepSeek-R1 →</a></td></tr>
-                <tr><td class="px-4 py-3 font-semibold text-white">R1 Distill Qwen 7B</td><td class="px-4 py-3">MIT + Qwen2.5 base license</td><td class="px-4 py-3"><span class="text-amber-400">Verify base terms</span></td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">deepseek-ai/DeepSeek-R1-Distill-Qwen-7B →</a></td></tr>
-                <tr><td class="px-4 py-3 font-semibold text-white">R1 Distill Qwen 32B</td><td class="px-4 py-3">MIT + Qwen2.5 base license</td><td class="px-4 py-3"><span class="text-amber-400">Verify base terms</span></td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">deepseek-ai/DeepSeek-R1-Distill-Qwen-32B →</a></td></tr>
-                <tr><td class="px-4 py-3 font-semibold text-white">R1 Distill Llama 8B</td><td class="px-4 py-3">MIT + Llama 3 community license</td><td class="px-4 py-3"><span class="text-amber-400">Verify base terms</span></td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-8B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">deepseek-ai/DeepSeek-R1-Distill-Llama-8B →</a></td></tr>
-                <tr><td class="px-4 py-3 font-semibold text-white">R1 Distill Llama 70B</td><td class="px-4 py-3">MIT + Llama 3 community license</td><td class="px-4 py-3"><span class="text-amber-400">Verify base terms</span></td><td class="px-4 py-3"><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">deepseek-ai/DeepSeek-R1-Distill-Llama-70B →</a></td></tr>
-              </tbody>
-            </table>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">DeepSeek R1 is released under the <strong class="text-white">DeepSeek R1 License</strong>, which permits free use for research and most commercial applications up to a defined usage threshold. It is not a fully open license in the OSI sense — there are restrictions on using the model to train or distill other models, and organizations with very large-scale deployments should review the terms carefully before assuming unrestricted commercial rights.</p>
+          <p class="mt-4 text-slate-300">The distilled variants (DeepSeek-R1-Distill-Qwen and DeepSeek-R1-Distill-Llama series) inherit licensing from their respective base model families. Some carry more permissive terms (MIT or Apache 2.0), while others follow the stricter DeepSeek license. Always check the specific model card before deploying commercially.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official model cards:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">DeepSeek-R1 on Hugging Face</a></li>
+            <li><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">DeepSeek-R1-Distill-Qwen-7B on Hugging Face</a></li>
+            <li><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">DeepSeek-R1-Distill-Llama-70B on Hugging Face</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides licensing information as a convenience summary only. License terms can change, and your use case may have specific legal requirements. Always read the full license text on the official model card and consult qualified legal counsel before deploying in a commercial or regulated environment. NoCloudGPT is not responsible for licensing decisions made by customers.</p>
           </div>
-          <p class="mt-3 text-xs text-slate-500">Distilled R1 variants carry both the MIT terms and their base model's license (Qwen or Llama) — both apply simultaneously. License information sourced from Hugging Face model cards and may change between releases. Always verify the current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
         </section>
 
         <!-- SECTION: Available model sizes -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
-          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
-          <p class="mt-5 text-slate-300">
-            The following R1 variants are available through Ollama for private deployment.
-            VERIFY: Confirm current tags in the Ollama library before planning.
-            NoCloudGPT will confirm hardware requirements and select the right quantization before your pilot begins.
-          </p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <!-- TODO: Create individual size pages for each DeepSeek R1 variant (e.g. /models/deepseek-r1-7b, /models/deepseek-r1-70b, etc.) and link the Model Size column entries once those pages are live. -->
           <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
             <table class="w-full text-left text-sm">
               <thead class="bg-slate-950 text-cyan-200">
                 <tr>
-                  <th class="px-4 py-3">Model</th>
-                  <th class="px-4 py-3">Deployment tier</th>
-                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
                   <th class="px-4 py-3"></th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">R1 Distill Qwen 7B</td>
-                  <td class="px-4 py-3">Standard AI — 4–8 GB</td>
-                  <td class="px-4 py-3">Everyday chain-of-thought reasoning on a single server</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Distill 1.5B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:1.5b</code></td>
+                  <td class="px-4 py-3">Starter</td>
+                  <td class="px-4 py-3">Extremely lightweight; useful for edge or embedded reasoning tasks. Peak accuracy is limited — best for simple structured problems.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">R1 Distill Qwen 14B–32B</td>
-                  <td class="px-4 py-3">Professional AI — GPU</td>
-                  <td class="px-4 py-3">Deeper reasoning for production analytical workflows</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Distill 7B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:7b</code></td>
+                  <td class="px-4 py-3">Starter / Personal</td>
+                  <td class="px-4 py-3">Good entry point for personal and small team use. Runs comfortably on a modern consumer GPU. Noticeable quality step up from 1.5B on multi-step reasoning.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">R1 Distill Llama 70B</td>
-                  <td class="px-4 py-3">Heavy AI — large GPU</td>
-                  <td class="px-4 py-3">Near-full-R1 quality without multi-GPU infrastructure</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Distill 8B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:8b</code></td>
+                  <td class="px-4 py-3">Starter / Personal</td>
+                  <td class="px-4 py-3">Llama-3-based distill. Slightly larger than the 7B Qwen variant with a different base model flavor. Compare both if accuracy on your specific task matters.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">DeepSeek R1 (full 671B)</td>
-                  <td class="px-4 py-3">Enterprise AI — multi-GPU</td>
-                  <td class="px-4 py-3">Maximum reasoning quality, on-premise only</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Distill 14B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:14b</code></td>
+                  <td class="px-4 py-3">Professional</td>
+                  <td class="px-4 py-3">Meaningful accuracy gains over 7B/8B on harder reasoning chains. Requires a capable consumer or workstation GPU. A practical sweet spot for solo power users.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Distill 32B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:32b</code></td>
+                  <td class="px-4 py-3">Professional / Team</td>
+                  <td class="px-4 py-3">Strong reasoning quality at a still-manageable size. Recommended starting point for team deployments where output quality directly affects decisions.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Distill 70B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:70b</code></td>
+                  <td class="px-4 py-3">Business / Enterprise</td>
+                  <td class="px-4 py-3">Near-full-R1 reasoning quality in many benchmarks. Requires serious server-class GPU memory (80GB+ VRAM recommended). Best accuracy-to-infrastructure ratio for most enterprise teams.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Full (671B)</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:671b</code></td>
+                  <td class="px-4 py-3">Enterprise (Custom)</td>
+                  <td class="px-4 py-3">The uncompromised model. Requires multi-GPU infrastructure and careful deployment planning. Reserved for organizations where maximum reasoning accuracy is non-negotiable.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p class="mt-3 text-xs text-slate-500">
-            Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
-            <!-- TODO: Link each row to individual model-size pages when created -->
-          </p>
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-white">A note on distilled models:</strong> The 1.5B–70B variants are knowledge-distilled from the full 671B model. They retain R1's chain-of-thought reasoning style and perform well above their parameter count on logic-heavy tasks — but they do trade some of the full model's peak reasoning depth, especially on the hardest problems. For most real-world business use cases, the 32B or 70B distilled variants hit the right balance between capability and deployability.</p>
+          </div>
         </section>
 
         <section>
