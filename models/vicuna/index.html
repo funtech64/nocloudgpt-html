@@ -71,40 +71,35 @@
         <!-- SECTION: Who this model family is for -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
-          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying Vicuna</h2>
-          <p class="mt-4 text-sm text-slate-400">Vicuna is a 2023 classic that newer models have largely overtaken. These perspectives are deliberately honest about when it still makes sense — and when it does not.</p>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
           <div class="mt-6 grid gap-5 md:grid-cols-2">
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">👤</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Mainly of historical interest for tinkerers</h3>
-              <p class="mt-2 text-sm text-slate-400">For most personal use, a current model like Llama 3.1 8B or Phi-4 will give you noticeably better answers on the same hardware. Vicuna is worth running if you are curious about open-source AI history or want to reproduce a 2023-era tutorial or experiment — its behaviour is among the most documented of any open model. For a daily assistant, start with something current.</p>
+              <p class="mt-2 text-sm text-slate-400">Vicuna is a decent choice if you want a conversational local AI that feels relatively natural and helpful. Because it was fine-tuned on real human conversations from ShareGPT, it tends to produce more fluid, back-and-forth responses than many other open models. It works reasonably well for everyday writing, summarization, and general Q&amp;A. However, for complex reasoning or serious coding work, newer models (such as Llama 3.3, Qwen 2.5, or DeepSeek V3) will give you noticeably better results.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🏢</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Only for maintaining an existing Vicuna-based system</h3>
-              <p class="mt-2 text-sm text-slate-400">The honest business case is narrow: if you already have a production system or evaluation pipeline tuned around Vicuna's specific behaviour, a private Vicuna deployment may be cheaper than migrating right now. For any new business deployment, a current-generation model will deliver materially better quality and a cleaner upgrade path — NoCloudGPT will help you pick one.</p>
+              <p class="mt-2 text-sm text-slate-400">Vicuna can be used for internal tools where the main need is clear, conversational output — such as drafting emails, summarizing meeting notes, or generating first-draft content. Its conversational style makes it feel more approachable than many technical models. That said, it is no longer among the strongest options for structured tasks, multi-step reasoning, or high-stakes business use. Teams that need reliability and accuracy should evaluate more recent models before committing to Vicuna.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">⚙️</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Compatibility shims and reproducible legacy stacks</h3>
-              <p class="mt-2 text-sm text-slate-400">Developers maintaining tooling, demos, or integrations built against Vicuna's prompt format and output style may find it simpler to run the original than to re-validate everything against a new model. Because it is based on Llama 1/2, its commercial use is governed by the underlying Llama license — confirm which base version your variant uses before shipping.</p>
+              <p class="mt-2 text-sm text-slate-400">Developers can use Vicuna for quick prototyping of conversational interfaces or internal chat tools. It responds reasonably well to instructions and handles multi-turn conversations adequately. However, it lacks the strong function calling, structured output, and coding performance found in newer models. If your project involves building production-grade tools, agentic workflows, or code-related features, you will likely get better results from more current alternatives.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🔬</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">A well-documented historical baseline</h3>
-              <p class="mt-2 text-sm text-slate-400">Vicuna's real ongoing value is in research: it was a landmark demonstration that fine-tuning on conversation data could approach GPT-3.5-class quality, and it remains a clean, heavily-studied baseline for evaluating how far open models have progressed. For reproducibility studies and model-generation comparisons, Vicuna is a reasonable fixed reference point.</p>
+              <p class="mt-2 text-sm text-slate-400">Vicuna holds historical value as one of the first widely popular fine-tunes that showed strong conversational ability from crowd-sourced data. Researchers studying instruction tuning, conversational behavior, or the evolution of open models may still find it useful as a reference point. For current research or production data work, however, newer models generally offer better performance and capabilities.</p>
             </div>
           </div>
         </section>
@@ -143,66 +138,62 @@
         <!-- SECTION: Licensing information -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
-          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
-          <p class="mt-5 text-slate-300">Vicuna is a fine-tune of Meta's Llama, so its license follows the base model. The current Vicuna v1.5 (7B and 13B) is built on Llama 2 and is therefore governed by the Llama 2 Community License — commercial use permitted with attribution and the standard large-platform condition. The older v1.3 is built on Llama 1 and is restricted to non-commercial research use. Confirm which base your variant uses before deploying.</p>
-          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-slate-950 text-cyan-200">
-                <tr>
-                  <th class="px-4 py-3">Model</th>
-                  <th class="px-4 py-3">Base / License</th>
-                  <th class="px-4 py-3">Commercial use</th>
-                  <th class="px-4 py-3">Model card</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-                <tr><td class="px-4 py-3 font-semibold text-white">Vicuna v1.5 7B</td><td class="px-4 py-3">Llama 2 Community License</td><td class="px-4 py-3"><span class="text-amber-400">Permitted, conditions apply</span></td><td class="px-4 py-3"><a href="https://huggingface.co/lmsys/vicuna-7b-v1.5" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">lmsys/vicuna-7b-v1.5 →</a></td></tr>
-                <tr><td class="px-4 py-3 font-semibold text-white">Vicuna v1.5 13B</td><td class="px-4 py-3">Llama 2 Community License</td><td class="px-4 py-3"><span class="text-amber-400">Permitted, conditions apply</span></td><td class="px-4 py-3"><a href="https://huggingface.co/lmsys/vicuna-13b-v1.5" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">lmsys/vicuna-13b-v1.5 →</a></td></tr>
-                <tr><td class="px-4 py-3 font-semibold text-white">Vicuna v1.3 (Llama 1)</td><td class="px-4 py-3">Llama 1 (research) license</td><td class="px-4 py-3"><span class="text-red-400">Non-commercial</span></td><td class="px-4 py-3"><a href="https://huggingface.co/lmsys/vicuna-13b-v1.3" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">lmsys/vicuna-13b-v1.3 →</a></td></tr>
-              </tbody>
-            </table>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">Vicuna is built on top of Meta's LLaMA base models and is released under a <strong class="text-white">research / non-commercial license</strong>. This means Vicuna is generally <strong class="text-white">not approved for commercial use</strong> without explicit permission from Meta.</p>
+          <p class="mt-4 text-slate-300">If your intended use is personal experimentation, academic research, or internal testing, you are usually within scope. If you plan to use Vicuna in a product, charge customers, or deploy it as part of a revenue-generating service, you should not use this model family without reviewing Meta's current license terms directly.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official model card:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/lmsys/vicuna-13b-v1.5" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">lmsys/vicuna-13b-v1.5 on Hugging Face</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
           </div>
-          <p class="mt-3 text-xs text-slate-500">Vicuna v1.5 inherits the Llama 2 Community License; v1.3 is Llama 1 (non-commercial research). License information sourced from Hugging Face model cards and may change between releases. Always verify the current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
         </section>
 
         <!-- SECTION: Available model sizes -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
-          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
-          <p class="mt-5 text-slate-300">
-            Vicuna is available primarily at 7B and 13B (with a legacy 33B). VERIFY: Confirm current Ollama tags before planning.
-            For new deployments, NoCloudGPT will usually recommend a current-generation model — we will confirm the right fit before your pilot begins.
-          </p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <!-- TODO: Create individual size pages for each Vicuna variant with hardware benchmarks and deployment guidance. -->
           <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
             <table class="w-full text-left text-sm">
               <thead class="bg-slate-950 text-cyan-200">
                 <tr>
-                  <th class="px-4 py-3">Model</th>
-                  <th class="px-4 py-3">Deployment tier</th>
-                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
                   <th class="px-4 py-3"></th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Vicuna 7B Q4</td>
-                  <td class="px-4 py-3">Standard AI — 4–8 GB</td>
-                  <td class="px-4 py-3">Legacy compatibility, simple chat</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">Vicuna 7B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">vicuna:7b</code></td>
+                  <td class="px-4 py-3">Starter</td>
+                  <td class="px-4 py-3">Lightest option. Runs on modest hardware. Suitable for personal use and light internal tools.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Vicuna 13B Q4</td>
-                  <td class="px-4 py-3">Standard/Professional AI — 8–12 GB</td>
-                  <td class="px-4 py-3">Better quality for legacy deployments</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">Vicuna 13B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">vicuna:13b</code></td>
+                  <td class="px-4 py-3">Standard</td>
+                  <td class="px-4 py-3">The most commonly used Vicuna variant. Better quality than 7B while remaining relatively accessible.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Vicuna 33B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">vicuna:33b</code></td>
+                  <td class="px-4 py-3">Professional</td>
+                  <td class="px-4 py-3">Stronger output quality, but requires more substantial hardware. Generally outperformed by newer models of similar size.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p class="mt-3 text-xs text-slate-500">
-            Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
-            <!-- TODO: Link each row to individual model-size pages when created -->
-          </p>
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-white">Note:</strong> Vicuna is an older model family (originally released in 2023). While it remains usable for conversational tasks, it has been surpassed in reasoning, coding, and overall capability by newer models such as Llama 3.3, Qwen 2.5, and DeepSeek V3.</p>
+          </div>
         </section>
 
         <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
