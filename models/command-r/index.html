@@ -163,44 +163,35 @@
         <!-- SECTION: Who this model family is for -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
-          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying This Family</h2>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
           <div class="mt-6 grid gap-5 md:grid-cols-2">
-
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">👤</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Personal knowledge base with cited answers</h3>
-              <p class="mt-2 text-sm text-slate-400">Command R is primarily designed for organizational RAG deployments, but it works well for personal use if you maintain a large personal knowledge base — notes, research papers, saved articles — and want cited answers rather than hallucinated summaries. If you want the model to say 'I found this in your note from March' rather than paraphrasing vaguely, Command R is purpose-built for this.</p>
-              
+              <p class="mt-2 text-sm text-slate-400">Command R (35B) is a strong option for users who want capable long-document reasoning and grounded answers without the heavy hardware requirements of Command R Plus. If you regularly work with lengthy PDFs, research reports, or internal documentation and want an AI that cites its sources and stays anchored to the material you provide, this model is worth considering. It is notably honest about uncertainty compared to many general-purpose models, which matters when using AI output for real decisions. It requires meaningful hardware to run well locally, so it is better suited to a dedicated workstation or home server than a laptop.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🏢</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Enterprise document search with audit trails</h3>
-              <p class="mt-2 text-sm text-slate-400">The specific value over general models: Command R consistently cites which passage in which document supports each claim. For compliance, legal, and finance teams that need AI-assisted document analysis with traceable sourcing — not just a summary that might be paraphrased from the wrong document — this citation behavior is a material operational advantage.</p>
-              
+              <p class="mt-2 text-sm text-slate-400">Command R's core strength is Retrieval-Augmented Generation (RAG). It is designed to take documents, internal knowledge bases, or retrieved content and produce grounded, cited responses. For teams that need AI to work with <em>their own data</em> rather than just general world knowledge, this is a meaningful advantage. It handles tool calling and multi-step agentic tasks reliably, making it practical for internal search assistants, document Q&amp;A systems, and workflow automation where accuracy and traceability matter. It is the more accessible option in the Command R family — meaningfully lighter than Command R Plus while retaining strong RAG and tool-use capabilities.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">⚙️</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Production RAG applications and retrieval pipeline backends</h3>
-              <p class="mt-2 text-sm text-slate-400">Native tool calling and explicit RAG optimization make Command R straightforward to integrate into production retrieval systems. The model follows Cohere's grounding protocol, which produces structured source references that downstream systems can parse. For teams building knowledge base products, Command R's retrieval behavior is more predictable than a general model prompted for RAG.</p>
-              <p class="mt-2 text-xs text-slate-500 italic">Verify current Cohere license terms before commercial deployment — some variants carry CC-BY-NC restrictions.</p>
+              <p class="mt-2 text-sm text-slate-400">Developers building RAG pipelines, enterprise search tools, or document-grounded chatbots will find Command R a practical deployment target when hardware budgets are constrained. Its tool-calling implementation follows Cohere's structured format cleanly and behaves predictably in agentic loops. The 128K context window allows you to pass substantial document chunks without aggressive chunking. Note that for pure code generation tasks, specialized models like Qwen 2.5 Coder generally outperform Command R. Its strengths lie in grounded language tasks and document reasoning rather than syntax-heavy code generation.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🔬</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Information retrieval research and grounded generation studies</h3>
-              <p class="mt-2 text-sm text-slate-400">Command R's grounded generation — where the model explicitly attributes each claim to a retrieved passage — is useful for systematic literature review and any research workflow requiring evidence traceability. The citation format is consistent enough to parse programmatically, which supports research into automated fact verification and claim attribution.</p>
-              
+              <p class="mt-2 text-sm text-slate-400">Researchers working with large text corpora — academic papers, legal documents, clinical notes, or policy files — will appreciate Command R's grounded generation behavior. It is less prone to fabricating citations or drifting from source material than many general-purpose models of similar size. The long context window makes it feasible to analyze lengthy documents that would otherwise need to be split across multiple calls with shorter-context models. It won't replace domain-specific fine-tuned models for specialized extraction tasks, but as a reasoning layer over retrieved documents, it remains one of the stronger open-weight options in its class.</p>
             </div>
           </div>
         </section>
@@ -291,78 +282,58 @@
           </div>
         </section>
 
-        <!-- SECTION: Licensing information (improved) -->
+        <!-- SECTION: Licensing information -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
-          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
-          <p class="mt-5 text-slate-300">Command R licensing requires careful verification. Cohere's open-weight releases have included CC-BY-NC terms on some variants, which restricts commercial use. Verify the specific model generation you are deploying, as terms have changed across releases.</p>
-          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-slate-950 text-cyan-200">
-                <tr>
-                  <th class="px-4 py-3">Model / generation</th>
-                  <th class="px-4 py-3">License</th>
-                  <th class="px-4 py-3">Commercial use</th>
-                  <th class="px-4 py-3">Verify</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-                <tr><td class="px-4 py-3  font-semibold text-white">Command R (35B)</td><td class="px-4 py-3">CC-BY-NC 4.0 (VERIFY)</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/c4ai-command-r-v01" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r-v01 →</a></td></tr>
-<tr><td class="px-4 py-3  font-semibold text-white">Command R+ (104B)</td><td class="px-4 py-3">CC-BY-NC 4.0 (VERIFY)</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/c4ai-command-r-plus" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r-plus →</a></td></tr>
-<tr><td class="px-4 py-3  font-semibold text-white">Command R7B</td><td class="px-4 py-3">CC-BY-NC 4.0 (VERIFY)</td><td class="px-4 py-3"><span class="text-red-400">Restricted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/CohereForAI/c4ai-command-r7b-12-2024" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r7b-12-2024 →</a></td></tr>
-
-              </tbody>
-            </table>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">Command R (35B) is released by Cohere under a <strong class="text-white">restrictive commercial license</strong>, not a fully permissive open-source license.</p>
+          <p class="mt-4 text-slate-300">Key points:</p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li>Non-commercial use is generally permitted.</li>
+            <li>Commercial use requires a separate agreement with Cohere.</li>
+            <li>There is no simple "scale threshold" — commercial deployment typically requires direct licensing discussions with Cohere.</li>
+            <li>The model may not be used to compete with Cohere's own products and services.</li>
+          </ul>
+          <p class="mt-4 text-slate-300">If you are evaluating Command R for any commercial or internal business use, you should contact Cohere directly before deploying.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official model card:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/CohereForAI/c4ai-command-r-35b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">CohereForAI/c4ai-command-r-35b</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides licensing information as a convenience summary only. License terms can change. Always review the official model card and consult qualified legal counsel before deploying in a commercial or regulated environment. NoCloudGPT is not responsible for licensing decisions made by customers.</p>
           </div>
-          <p class="mt-3 text-xs text-slate-500">CC-BY-NC 4.0 restricts commercial use. If you are deploying Command R in a commercial product or service, you need to verify whether your use case qualifies under these terms. Cohere may offer commercial licensing separately. License information sourced from Hugging Face model cards — always verify current terms.</p>
         </section>
 
         <!-- SECTION: Available model sizes -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
-          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
-          <p class="mt-5 text-slate-300">
-            The Command R line spans three sizes for different RAG and retrieval workloads.
-            VERIFY: Confirm current tags in the Ollama library before planning.
-            NoCloudGPT will confirm hardware requirements and select the right quantization before your pilot begins.
-          </p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <!-- TODO: Create an individual model size page for Command R 35B with detailed hardware benchmarks, RAG pipeline setup guidance, and comparison vs. Command R Plus. -->
           <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
             <table class="w-full text-left text-sm">
               <thead class="bg-slate-950 text-cyan-200">
                 <tr>
-                  <th class="px-4 py-3">Model</th>
-                  <th class="px-4 py-3">Deployment tier</th>
-                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
                   <th class="px-4 py-3"></th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Command R7B</td>
-                  <td class="px-4 py-3">Standard AI — 6–8 GB</td>
-                  <td class="px-4 py-3">Lightweight RAG and citation on modest hardware</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Command R (35B)</td>
-                  <td class="px-4 py-3">Professional AI — GPU 20–24 GB</td>
-                  <td class="px-4 py-3">Standard production document Q&amp;A and tool calling</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Command R+ (104B)</td>
-                  <td class="px-4 py-3">Enterprise AI — multi-GPU</td>
-                  <td class="px-4 py-3">Maximum retrieval accuracy on complex collections</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">Command R 35B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">command-r:35b</code></td>
+                  <td class="px-4 py-3">Standard / Pro</td>
+                  <td class="px-4 py-3">Strong RAG and tool-use capabilities with significantly lower hardware requirements than Command R Plus. Non-commercial license by default — commercial use requires separate agreement with Cohere.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p class="mt-3 text-xs text-slate-500">
-            All Command R sizes currently carry CC-BY-NC licensing — confirm commercial eligibility before deployment.
-            Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
-            <!-- TODO: Link each row to individual model-size pages when created -->
-          </p>
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-white">Note:</strong> If your use case requires maximum reasoning depth and you have the infrastructure to support it, consider <strong class="text-white">Command R Plus (104B)</strong> instead. It shares similar RAG strengths but demands substantially more hardware.</p>
+          </div>
         </section>
 
         <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
