@@ -71,39 +71,35 @@
         <!-- SECTION: Who this model family is for -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
-          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying Dolphin</h2>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
           <div class="mt-6 grid gap-5 md:grid-cols-2">
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">👤</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">A homelab assistant that follows instructions without nagging</h3>
-              <p class="mt-2 text-sm text-slate-400">Dolphin is popular with homelab users who find commercial assistants over-eager to refuse. Running a 7B–8B variant on a single GPU gives you a private, steerable assistant for creative writing, research, and open-ended questions. Because the restrictions are removed, you are responsible for how you use it — running it on your own server keeps that firmly in your control.</p>
+              <p class="mt-2 text-sm text-slate-400">Dolphin is a strong choice if you want a local AI that answers questions directly without adding unsolicited disclaimers or refusing legitimate requests. It was specifically tuned to be highly compliant and helpful, making it popular for creative writing, research on sensitive topics, role-playing, and general use where you want the model to follow instructions rather than lecture. Because it has fewer built-in guardrails, it rewards users who prompt thoughtfully and review outputs carefully.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🏢</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Teams that want to own the policy layer, not inherit one</h3>
-              <p class="mt-2 text-sm text-slate-400">Dolphin suits internal tools where a base model's default refusals get in the way of legitimate work, and the team prefers to apply its own guardrails and access controls. It is deliberately not for public-facing products without an added safety layer. Licensing follows the underlying base model (Llama, Mistral, or Qwen), so confirm the specific variant's terms before commercial use.</p>
+              <p class="mt-2 text-sm text-slate-400">Teams that need a cooperative assistant for internal drafting, policy work, or customer-facing content in complex or regulated industries will find Dolphin more willing to engage with difficult topics than heavily aligned models. It follows multi-step instructions reliably and rarely refuses reasonable requests. However, because it is less self-censoring, your own content policies and human review become the primary safeguards. It is not the best fit for high-stakes customer service or environments where strict output filtering is required out of the box.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">⚙️</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">A compliant, steerable base for custom guardrail design</h3>
-              <p class="mt-2 text-sm text-slate-400">For developers building agents or internal tools, Dolphin's reduced default refusals make it predictable to steer with system prompts rather than fighting built-in behaviour. Pair it with your own classifier or a dedicated safety model at the edge. The various base models mean you can pick an Apache 2.0 (Mistral-based) variant when you need the cleanest license for embedding.</p>
+              <p class="mt-2 text-sm text-slate-400">Developers building custom agents, tools, or applications often choose Dolphin because it responds predictably to system prompts and gets out of the way. This makes it easier to define your own behavior rules in code rather than fighting the model's built-in refusals. It performs well on coding tasks, tool use, and agentic workflows where consistent instruction following matters more than cautious hedging.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🔬</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Open-ended exploration without false refusals</h3>
-              <p class="mt-2 text-sm text-slate-400">Researchers studying sensitive but legitimate topics — security, content moderation, social science, red-teaming — often hit false refusals from safety-tuned models. Dolphin's reduced guardrails make it useful for that exploratory work in a controlled environment, and its synthetic-instruction training approach is itself a documented reference for studying instruction tuning and alignment behaviour.</p>
+              <p class="mt-2 text-sm text-slate-400">Researchers studying AI alignment, refusal behavior, instruction following, or red-teaming will find Dolphin a useful reference point because it sits at the high-compliance end of the spectrum by design. It is also practical for generating synthetic data or testing model behavior under fewer constraints. Some Dolphin variants are based on older base models, so capability varies significantly by version — always check the specific base model when using it for research.</p>
             </div>
           </div>
         </section>
@@ -146,73 +142,81 @@
         <!-- SECTION: Licensing information -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
-          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
-          <p class="mt-5 text-slate-300">Dolphin is a fine-tune, not a base model, so its license is inherited from whatever base model the specific variant was trained on. There is no single "Dolphin license" — a Mistral- or Mixtral-based Dolphin is Apache 2.0, a Llama-based Dolphin follows the relevant Llama Community License, and a Qwen-based Dolphin follows the Qwen license. Always check the exact variant's model card before commercial deployment.</p>
-          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-slate-950 text-cyan-200">
-                <tr>
-                  <th class="px-4 py-3">Variant family</th>
-                  <th class="px-4 py-3">Inherited license</th>
-                  <th class="px-4 py-3">Commercial use</th>
-                  <th class="px-4 py-3">Example model card</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-                <tr><td class="px-4 py-3 font-semibold text-white">Dolphin (Mistral / Mixtral base)</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/cognitivecomputations/dolphin-2.9.1-mixtral-1x22b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">cognitivecomputations/dolphin-2.9.1-mixtral-1x22b →</a></td></tr>
-                <tr><td class="px-4 py-3 font-semibold text-white">Dolphin (Llama 3.x base)</td><td class="px-4 py-3">Llama Community License</td><td class="px-4 py-3"><span class="text-amber-400">Permitted, conditions apply</span></td><td class="px-4 py-3"><a href="https://huggingface.co/cognitivecomputations/dolphin-2.9-llama3-8b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">cognitivecomputations/dolphin-2.9-llama3-8b →</a></td></tr>
-                <tr><td class="px-4 py-3 font-semibold text-white">Dolphin (Qwen base)</td><td class="px-4 py-3">Qwen / Tongyi license</td><td class="px-4 py-3"><span class="text-amber-400">Verify per variant</span></td><td class="px-4 py-3"><a href="https://huggingface.co/cognitivecomputations" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">cognitivecomputations on Hugging Face →</a></td></tr>
-              </tbody>
-            </table>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">Dolphin models are fine-tunes created by Eric Hartford (ehartford). Licensing depends on the base model used for each variant:</p>
+          <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-300">
+            <li>Variants based on <strong class="text-white">Meta's LLaMA 2 or LLaMA 3</strong> are subject to Meta's LLaMA Community License (commercial use permitted only under 700 million monthly active users, with redistribution restrictions).</li>
+            <li>Variants based on <strong class="text-white">Mistral</strong> are generally released under the permissive <strong class="text-white">Apache 2.0</strong> license.</li>
+            <li>Variants based on other architectures (Phi, Qwen, etc.) carry their respective upstream licenses.</li>
+          </ul>
+          <p class="mt-4 text-slate-300">You must verify the license of the specific Dolphin variant you intend to use. The fine-tune itself does not override the base model's license terms.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official model cards:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/ehartford" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">ehartford on Hugging Face</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
           </div>
-          <p class="mt-3 text-xs text-slate-500">Dolphin's license always derives from its base model — verify the specific variant's card rather than assuming. License information sourced from Hugging Face model cards and may change between releases. NoCloudGPT is not a legal advisor.</p>
         </section>
 
         <!-- SECTION: Available model sizes -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
-          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
-          <p class="mt-5 text-slate-300">
-            Dolphin is published across several base models and sizes. VERIFY: Confirm current tags and
-            which base models the current generation uses in the Ollama library before planning.
-            NoCloudGPT will confirm hardware requirements and select the right quantization before your pilot begins.
-          </p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <!-- TODO: Create individual size pages for each Dolphin variant with hardware benchmarks and deployment guidance. -->
           <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
             <table class="w-full text-left text-sm">
               <thead class="bg-slate-950 text-cyan-200">
                 <tr>
-                  <th class="px-4 py-3">Model</th>
-                  <th class="px-4 py-3">Deployment tier</th>
-                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
                   <th class="px-4 py-3"></th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Dolphin 7B–8B Q4</td>
-                  <td class="px-4 py-3">Standard AI — 4–8 GB</td>
-                  <td class="px-4 py-3">Everyday private use, interactive chat</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">Dolphin 7B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">dolphin-mistral:7b</code></td>
+                  <td class="px-4 py-3">Starter</td>
+                  <td class="px-4 py-3">Fast and lightweight. Good entry point for personal use and simple tasks. Based on Mistral (Apache 2.0).</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Dolphin 34B Q4</td>
-                  <td class="px-4 py-3">Professional AI — GPU</td>
-                  <td class="px-4 py-3">Longer context, deeper reasoning</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">Dolphin 8B (Llama 3)</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">dolphin-llama3:8b</code></td>
+                  <td class="px-4 py-3">Starter / Standard</td>
+                  <td class="px-4 py-3">Improved instruction following over older 7B versions. Check LLaMA 3 license for commercial use.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Dolphin 72B Q4</td>
-                  <td class="px-4 py-3">Heavy AI — large GPU</td>
-                  <td class="px-4 py-3">Maximum quality, demanding tasks</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">Dolphin 70B (Llama 3)</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">dolphin-llama3:70b</code></td>
+                  <td class="px-4 py-3">Professional</td>
+                  <td class="px-4 py-3">Significantly stronger reasoning and coherence. Requires substantial hardware. LLaMA 3 license applies.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Dolphin Mixtral 8x7B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">dolphin-mixtral:8x7b</code></td>
+                  <td class="px-4 py-3">Standard / Professional</td>
+                  <td class="px-4 py-3">Mixture-of-Experts architecture. Strong performance with better efficiency than dense 70B. Apache 2.0 base.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Dolphin Mixtral 8x22B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">dolphin-mixtral:8x22b</code></td>
+                  <td class="px-4 py-3">Professional / Enterprise</td>
+                  <td class="px-4 py-3">Top-tier Dolphin performance. High hardware requirements. Best for demanding generation workloads. Apache 2.0 base.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p class="mt-3 text-xs text-slate-500">
-            Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
-            <!-- TODO: Link each row to individual model-size pages when created -->
-          </p>
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-white">Note:</strong> Dolphin is known for high compliance and fewer refusals. However, some variants are based on older base models, and newer families (Llama 3.3, Qwen 2.5, DeepSeek V3) generally offer stronger reasoning and coding performance.</p>
+          </div>
         </section>
 
         <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
