@@ -767,26 +767,26 @@
 
       <!-- WHO THIS IS FOR -->
       <section>
-        <h2>👥 Who This Model Is For</h2>
+        <h2>👥 Who This Model Family is For</h2>
 
         <h3>👤 Personal Use</h3>
         <p>
-          Granite Guardian is enterprise infrastructure — it is not designed for personal use and the overhead of deploying a dedicated risk-scoring pipeline makes little sense for individuals. The exception is a technically sophisticated developer building and testing a personal AI application they intend to release publicly, who wants to validate safety infrastructure before launch. The 2B variant's low hardware requirements (runs on a Lightsail 4 GB instance) make it accessible for this prototype-and-validate workflow.
+          Granite Guardian is not a general-purpose chatbot. It does not answer questions or generate content. Instead, it functions as a local safety and content moderation layer. Privacy-conscious individuals who are building personal AI projects (such as home assistants, journaling apps, or family chatbots) can use it as a dedicated filter to flag risky or harmful content before it reaches users. Most casual users will have little need for it unless they are specifically building a safety pipeline.
         </p>
 
-        <h3>🏢 Business &amp; Team Use</h3>
+        <h3>🏢 Business / Team Use</h3>
         <p>
-          Granite Guardian was designed for exactly the compliance and risk management requirements that regulated industries face when deploying AI. Financial services firms managing FINRA communication standards, healthcare organizations with HIPAA PHI exposure obligations, legal teams needing privilege-sensitive content detection, and government agencies building AI Act Article 9 risk management documentation — these are the primary use cases. The structured risk scores with named categories produce the audit-trail format that compliance teams, auditors, and regulators expect: not just "flagged" but "flagged for regulatory_sensitivity at 0.44 with threshold 0.40." Private deployment means sensitive interactions — patient queries, client communications, legally privileged discussions — never leave the organization's network.
+          If your organization is deploying AI tools to employees, customers, or the public, Granite Guardian is purpose-built for the compliance and risk oversight that enterprise environments demand. It can act as a moderation layer in front of your primary LLM, screening both inputs and outputs for harmful content, policy violations, prompt injection attempts, and sensitive disclosures — without sending any data to a third-party API. For teams in regulated industries such as healthcare, finance, legal, or government, running this model on-premises keeps your safety infrastructure fully under your control and within your audit trail.
         </p>
 
         <h3>⚙️ Developer &amp; Technical Use</h3>
         <p>
-          Developers building AI pipelines for regulated industries will find Granite Guardian's structured JSON output integrates cleanly into existing logging, SIEM, and compliance infrastructure. The continuous risk scores (rather than binary SAFE/UNSAFE) let developers implement nuanced routing: low-risk passes through, medium-risk gets flagged for human review, high-risk gets blocked — all with per-category granularity. NoCloudGPT configures Granite Guardian alongside your primary model with pre-built log formatters for EU AI Act, NIST AI RMF, HIPAA, and FINRA audit trail requirements, reducing integration work significantly.
+          Developers building AI-powered applications will find Granite Guardian most useful as a guardrail component in a multi-model pipeline. It integrates cleanly into LLM orchestration frameworks and is designed to evaluate both user inputs and model-generated responses against a defined set of risk categories. IBM has published its risk taxonomy openly, which allows you to understand clearly what the model is and isn't catching. If you are building something that requires documented, defensible content moderation, this model gives you a strong, auditable foundation.
         </p>
 
         <h3>🔬 Data Science &amp; Research Use</h3>
         <p>
-          IBM Research published Granite Guardian with detailed documentation of its training methodology and harm taxonomy. For researchers studying AI safety and content moderation, Granite Guardian's continuous risk scoring approach — versus the binary SAFE/UNSAFE output of Llama Guard 3 — offers a different technical baseline for comparative evaluation. Its direct compliance framework mapping (EU AI Act, NIST RMF, HIPAA, FINRA) also makes it useful for research studying the gap between AI safety benchmark performance and practical regulatory compliance requirements.
+          Researchers working on AI safety, responsible AI, or LLM evaluation will find Granite Guardian useful as a reproducible, locally-runnable baseline for content risk classification. Because it is derived from IBM's open Granite model family and trained against a documented risk framework, it is more auditable than closed moderation APIs. You can inspect its outputs, probe its failure modes, and benchmark it against your own datasets without usage restrictions. It is also a practical tool for screening large corpora of text or synthetic training data for harmful content before use.
         </p>
       </section>
 
@@ -794,69 +794,57 @@
       <section>
         <h2>📄 Licensing Information</h2>
         <p>
-          Both Granite Guardian variants are released by IBM Research under the <strong>Apache 2.0 License</strong>. Commercial use, modification, and redistribution are all permitted without restriction. Apache 2.0 is the most permissive commercially viable license available for AI models — no usage tier caps, no user-count restrictions, no platform-specific terms.
+          Granite Guardian is released by IBM under the <strong>Apache 2.0 License</strong>, which is one of the most permissive and business-friendly open-source licenses available. This means you are free to use, modify, and distribute the model — including for commercial purposes — without royalty obligations or usage-based fees.
         </p>
-        <table class="compliance-table">
-          <thead>
-            <tr>
-              <th>Model</th>
-              <th>License</th>
-              <th>Commercial Use</th>
-              <th>Model Card</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Granite Guardian 3.2 2B</td>
-              <td>Apache 2.0</td>
-              <td><span class="check">✓ Permitted</span></td>
-              <td><a href="https://huggingface.co/ibm-granite/granite-guardian-3.2-2b" target="_blank" rel="noopener" style="color:var(--accent);">ibm-granite/granite-guardian-3.2-2b →</a></td>
-            </tr>
-            <tr>
-              <td>Granite Guardian 3.2 8B</td>
-              <td>Apache 2.0</td>
-              <td><span class="check">✓ Permitted</span></td>
-              <td><a href="https://huggingface.co/ibm-granite/granite-guardian-3.2-8b" target="_blank" rel="noopener" style="color:var(--accent);">ibm-granite/granite-guardian-3.2-8b →</a></td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="font-size:0.85rem; color: var(--text-muted);">License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+        <p>
+          There are no call-home requirements, no API keys, and no per-query costs. As with any model, you remain responsible for how you deploy and apply it in your specific context. The Apache 2.0 license does not grant trademark rights to IBM's brand or product names.
+        </p>
+        <p><strong>Official model card:</strong></p>
+        <ul style="list-style: none; margin: 0 0 1rem; padding: 0;">
+          <li style="padding: 0.4rem 0; color: var(--text-secondary);">→ <a href="https://huggingface.co/ibm-granite/granite-guardian-3.2-5b" target="_blank" rel="noopener" style="color:var(--accent);">ibm-granite/granite-guardian-3.2-5b</a></li>
+        </ul>
+        <div class="highlight-box">
+          <p><strong>Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. You are solely responsible for ensuring your use of Granite Guardian complies with the applicable license terms. License terms may change — always verify against the official model card before deploying.</p>
+        </div>
       </section>
 
       <!-- AVAILABLE SIZES -->
       <section>
         <h2>📐 Available Model Sizes</h2>
+        <p>
+          Granite Guardian is available in two sizes, optimized for different deployment contexts. The smaller model is fast and suitable for real-time screening, while the larger model offers better accuracy for nuanced or high-stakes risk detection.
+        </p>
+
+        <!-- TODO: Create individual model size pages for granite-guardian-2b and granite-guardian-5b with hardware benchmarks, latency profiles, and pipeline integration examples. -->
+
         <table class="compliance-table">
           <thead>
             <tr>
-              <th>Model</th>
-              <th>Parameters</th>
-              <th>RAM (Q4)</th>
-              <th>Deployment Tier</th>
-              <th>Best For</th>
-              <th></th>
+              <th>Model Size</th>
+              <th>Ollama Tag</th>
+              <th>Recommended NoCloudGPT Tier</th>
+              <th>Notes</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Granite Guardian 3.2 2B</td>
-              <td>2B</td>
-              <td>~1.5 GB</td>
-              <td>Lightsail 4 GB</td>
-              <td>Input screening, co-deployment with primary LLM, low-volume pipelines</td>
-              <td><a href="/quote.html" style="color:var(--accent);">Get quote →</a></td>
+              <td><strong>2B</strong></td>
+              <td><code style="font-family: 'Fira Code', 'Courier New', monospace; color: #8fc9e0;">granite3-guardian:2b</code></td>
+              <td>Starter</td>
+              <td>Low resource footprint. Ideal for real-time screening pipelines or edge deployments. Fast inference with a lower accuracy ceiling. <a href="/quote.html" style="color:var(--accent);">Get quote →</a></td>
             </tr>
             <tr>
-              <td>Granite Guardian 3.2 8B</td>
-              <td>8B</td>
-              <td>~5 GB</td>
-              <td>Lightsail 8 GB / GPU instance</td>
-              <td>Full bidirectional screening, structured audit logs, regulated industry compliance</td>
-              <td><a href="/quote.html" style="color:var(--accent);">Get quote →</a></td>
+              <td><strong>5B</strong></td>
+              <td><code style="font-family: 'Fira Code', 'Courier New', monospace; color: #8fc9e0;">granite3-guardian:latest</code></td>
+              <td>Professional</td>
+              <td>Better risk classification accuracy. Handles nuanced or ambiguous content more reliably. Recommended default for most business and production use cases. <a href="/quote.html" style="color:var(--accent);">Get quote →</a></td>
             </tr>
           </tbody>
         </table>
-        <!-- TODO: Link each row to individual model-size pages when created -->
+
+        <div class="highlight-box">
+          <p><strong>Recommendation:</strong> The 2B model is a good starting point for prototyping or resource-constrained environments. The 5B model is the stronger default for production deployments where classification accuracy matters.</p>
+        </div>
       </section>
 
       <!-- USE CASES -->
