@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Starling — NoCloudGPT Model Menu</title>
+  <meta name="description" content="Starling-LM: UC Berkeley's RLAIF-tuned 7B conversational model built on OpenChat. Deploy privately on AWS Lightsail or on-premise hardware for zero-egress conversational AI." />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans">
+
+  <!-- Nav -->
+  <nav class="bg-gray-900 border-b border-gray-800 px-6 py-4 flex items-center justify-between">
+    <a href="/menu" class="text-blue-400 hover:text-blue-300 text-sm font-medium">← Back to Model Menu</a>
+    <a href="/" class="text-xl font-bold text-white tracking-tight">NoCloudGPT</a>
+    <a href="/contact" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Get a Quote</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <div class="mb-4 flex flex-wrap gap-2">
+      <span class="bg-purple-900 text-purple-300 text-xs font-semibold px-3 py-1 rounded-full">Chat-Optimized</span>
+      <span class="bg-blue-900 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">RLAIF Training</span>
+      <span class="bg-green-900 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">OpenChat Base</span>
+      <span class="bg-gray-800 text-gray-300 text-xs font-semibold px-3 py-1 rounded-full">Llama 2 License</span>
+    </div>
+    <h1 class="text-4xl font-extrabold text-white mb-4">Starling</h1>
+  <!-- TODO: Add hero.webp — see models/artwork-sources.md, row: starling -->
+  <!-- Unsplash reference: https://unsplash.com/s/photos/starling-bird -->
+
+    <p class="text-lg text-gray-300 leading-relaxed">
+      Starling-LM is a 7B conversational model from UC Berkeley that uses Reinforcement Learning from AI Feedback (RLAIF) on top of OpenChat 3.5. It achieved an 8.09 MT-Bench score at release — one of the strongest conversational results in the 7B class — while running efficiently on modest hardware.
+    </p>
+  </section>
+
+  <!-- What Is It -->
+  <section class="max-w-4xl mx-auto px-6 pb-12">
+    <h2 class="text-2xl font-bold text-white mb-4">What Is Starling?</h2>
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Developed by researchers at UC Berkeley, Starling-LM introduced <strong class="text-white">Reinforcement Learning from AI Feedback (RLAIF)</strong> — using GPT-4-generated preference rankings from the Nectar dataset instead of human annotators to align the model for high-quality conversation.
+    </p>
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Built on OpenChat 3.5 (Mistral 7B), Starling inherits strong instruction-following and adds preference alignment on top. The result was an 8.09 MT-Bench score from a 7B model — competitive with much larger chat models at the time of its release.
+    </p>
+    <p class="text-gray-300 leading-relaxed">
+      For organizations that need a private, conversational assistant for internal Q&amp;A, documentation, or lightweight customer-facing chat — Starling delivers strong dialogue quality at minimal infrastructure cost.
+    </p>
+  </section>
+
+  <!-- Strengths -->
+  <section class="bg-gray-900 py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-white mb-6">Core Strengths</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-3xl mb-3">🏆</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Strong MT-Bench Results at 7B</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Starling 7B Alpha scored 8.09 on MT-Bench at release — among the highest conversational benchmark results for a 7B model of its generation.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-3xl mb-3">⚡</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Low Latency on Modest Hardware</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">At 7B parameters with Q4 quantization, Starling runs at interactive speeds on consumer hardware — making it one of the most accessible private chat deployments available.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-3xl mb-3">🗣️</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Natural Conversational Fluency</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">RLAIF training produces responses that feel natural and coherent across multi-turn exchanges. Excellent for customer-facing applications and internal assistants.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-3xl mb-3">📐</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Instruction Adherence</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Handles detailed, nuanced prompts well without drifting off-topic. Useful for building branded AI assistants with specific behavioral guidelines baked in at the system level.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-3xl mb-3">🔬</div>
+          <h3 class="text-lg font-semibold text-white mb-2">RLAIF Research Reference</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">The Nectar dataset and PairRM reward model were open-sourced alongside Starling, making it a valuable reference for preference alignment and conversational AI research.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-3xl mb-3">🔒</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Private Deployment</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Run entirely within your VPC or on-premise environment. No prompts, outputs, or documents ever leave your infrastructure.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Model Variants -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">Model Variants</h2>
+    <div class="overflow-x-auto rounded-xl border border-gray-800">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wide">
+          <tr>
+            <th class="px-4 py-3 text-left">Version</th>
+            <th class="px-4 py-3 text-left">Base Model</th>
+            <th class="px-4 py-3 text-left">Parameters</th>
+            <th class="px-4 py-3 text-left">Context</th>
+            <th class="px-4 py-3 text-left">Notable Features</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800">
+          <tr class="bg-gray-900 hover:bg-gray-800 transition">
+            <td class="px-4 py-3 font-semibold text-white">Starling-LM 7B Alpha</td>
+            <td class="px-4 py-3 text-gray-300">OpenChat 3.5 (Mistral 7B)</td>
+            <td class="px-4 py-3 text-gray-300">7B</td>
+            <td class="px-4 py-3 text-gray-300">8K</td>
+            <td class="px-4 py-3 text-gray-300">Original release; 8.09 MT-Bench score</td>
+          </tr>
+          <tr class="bg-gray-900 hover:bg-gray-800 transition">
+            <td class="px-4 py-3 font-semibold text-white">Starling-LM 7B Beta</td>
+            <td class="px-4 py-3 text-gray-300">OpenChat 3.5 (Mistral 7B)</td>
+            <td class="px-4 py-3 text-gray-300">7B</td>
+            <td class="px-4 py-3 text-gray-300">8K</td>
+            <td class="px-4 py-3 text-gray-300">Refined instruction-following over Alpha</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Hardware Table -->
+  <section class="bg-gray-900 py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-white mb-2">Hardware Requirements</h2>
+      <p class="text-gray-400 text-sm mb-6">Starling is designed to run efficiently on minimal hardware — a key advantage for private deployment.</p>
+      <div class="overflow-x-auto rounded-xl border border-gray-800">
+        <table class="w-full text-sm">
+          <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wide">
+            <tr>
+              <th class="px-4 py-3 text-left">Model</th>
+              <th class="px-4 py-3 text-left">Quantization</th>
+              <th class="px-4 py-3 text-left">RAM / VRAM</th>
+              <th class="px-4 py-3 text-left">Lightsail Plan</th>
+              <th class="px-4 py-3 text-left">On-Premise</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr class="bg-gray-900 hover:bg-gray-800 transition">
+              <td class="px-4 py-3 text-white font-medium">Starling-LM 7B (Alpha / Beta)</td>
+              <td class="px-4 py-3 text-gray-300">Q4_K_M</td>
+              <td class="px-4 py-3 text-gray-300">4–5 GB</td>
+              <td class="px-4 py-3"><span class="bg-green-900 text-green-300 text-xs px-2 py-1 rounded-full">4 GB Plan</span></td>
+              <td class="px-4 py-3 text-gray-300">Intel Core / Xeon, 16GB RAM</td>
+            </tr>
+            <tr class="bg-gray-900 hover:bg-gray-800 transition">
+              <td class="px-4 py-3 text-white font-medium">Starling-LM 7B (Alpha / Beta)</td>
+              <td class="px-4 py-3 text-gray-300">Q8 / FP16</td>
+              <td class="px-4 py-3 text-gray-300">7–8 GB</td>
+              <td class="px-4 py-3"><span class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded-full">8 GB Plan</span></td>
+              <td class="px-4 py-3 text-gray-300">RTX 3060 12GB / any mid-range GPU</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who this model family is for -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">Who This Model Family Is For</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-gray-800 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-2"><span class="text-xl">👤</span><span class="text-xs font-semibold uppercase tracking-wide text-gray-500">Personal use</span></div>
+        <p class="text-gray-400 text-sm leading-relaxed">Starling is a strong choice if you want a genuinely conversational local AI that feels helpful and responsive. Its RLHF/RLAIF training on top of OpenChat gives it excellent instruction-following and a natural tone, making it pleasant for everyday writing, brainstorming, summarization, and general chat. It runs efficiently on modest hardware. However, for heavy math, advanced coding, or complex multi-step reasoning, newer models have clearly moved ahead.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-2"><span class="text-xl">🏢</span><span class="text-xs font-semibold uppercase tracking-wide text-gray-500">Business / team use</span></div>
+        <p class="text-gray-400 text-sm leading-relaxed">Small teams that need a private, low-overhead assistant for internal drafting, document Q&amp;A, or customer-facing FAQ responses will find Starling practical and easy to work with. It follows workplace-style instructions reliably and produces natural-sounding output with relatively little prompt engineering. It is not the best fit if your workload is dominated by structured data analysis, code generation, or technical problem-solving — newer families like Qwen 2.5 or Llama 3.3 will serve you significantly better in those areas.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-2"><span class="text-xl">⚙️</span><span class="text-xs font-semibold uppercase tracking-wide text-gray-500">Developer &amp; technical use</span></div>
+        <p class="text-gray-400 text-sm leading-relaxed">Developers building conversational interfaces, internal chatbots, or documentation assistants will appreciate Starling's predictable behavior and strong instruction adherence. It integrates cleanly with Ollama and responds well to structured prompts. For code-generation tools, agentic pipelines, or anything requiring strong reasoning chains, more recent models are clearly superior. Starling remains useful for rapid prototyping or adding a polished conversational layer on modest hardware.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-2"><span class="text-xl">🔬</span><span class="text-xs font-semibold uppercase tracking-wide text-gray-500">Data science &amp; research</span></div>
+        <p class="text-gray-400 text-sm leading-relaxed">Starling earned recognition for its strong MT-Bench scores and remains a useful historical reference for studying the effects of advanced RLHF/RLAIF training on conversational quality at the 7B scale. Researchers exploring instruction-following behavior or preference alignment may still find it valuable as a baseline. For current research requiring state-of-the-art reasoning or coding performance, newer model families have largely superseded it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Should Use This -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">Who Should Deploy Starling?</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <div class="text-2xl mb-3">🎧</div>
+        <h3 class="font-semibold text-white mb-2">Customer Support Teams</h3>
+        <p class="text-gray-400 text-sm">Natural conversational fluency makes Starling ideal for front-line chat support — handling FAQs, ticket triage, and escalation routing without any data leaving your environment.</p>
+      </div>
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <div class="text-2xl mb-3">📝</div>
+        <h3 class="font-semibold text-white mb-2">Internal Documentation Teams</h3>
+        <p class="text-gray-400 text-sm">Deploy Starling as a private documentation assistant for drafting, summarization, and Q&amp;A over internal knowledge bases — with strong instruction adherence and natural tone.</p>
+      </div>
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <div class="text-2xl mb-3">🏢</div>
+        <h3 class="font-semibold text-white mb-2">Small Business Operations</h3>
+        <p class="text-gray-400 text-sm">Low-overhead internal assistants for meeting summaries, policy Q&amp;A, and lightweight customer-facing FAQ responses — powered by a private LLM on modest hardware.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Available Model Sizes -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-2">Available Model Sizes</h2>
+    <!-- TODO: Create individual size pages for Starling-LM-7B-alpha and Starling-LM-7B-beta with hardware benchmarks and deployment guidance. -->
+    <div class="overflow-x-auto rounded-xl border border-gray-800 mt-6">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wide">
+          <tr>
+            <th class="px-4 py-3 text-left">Model Size</th>
+            <th class="px-4 py-3 text-left">Ollama Tag</th>
+            <th class="px-4 py-3 text-left">Recommended NoCloudGPT Tier</th>
+            <th class="px-4 py-3 text-left">Notes</th>
+            <th class="px-4 py-3 text-left"></th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800">
+          <tr class="bg-gray-900">
+            <td class="px-4 py-3 text-white font-medium">Starling 7B (Alpha)</td>
+            <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-blue-300">starling-lm:7b-alpha</code></td>
+            <td class="px-4 py-3 text-gray-300">Starter</td>
+            <td class="px-4 py-3 text-gray-300">Original release with strong MT-Bench results. Good baseline for conversational use.</td>
+            <td class="px-4 py-3"><a href="/quote.html" class="text-blue-400 hover:text-blue-300 whitespace-nowrap">Get quote →</a></td>
+          </tr>
+          <tr class="bg-gray-900">
+            <td class="px-4 py-3 text-white font-medium">Starling 7B (Beta)</td>
+            <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-blue-300">starling-lm:7b-beta</code></td>
+            <td class="px-4 py-3 text-gray-300">Starter</td>
+            <td class="px-4 py-3 text-gray-300">Refined instruction-following over Alpha. Recommended for most deployments.</td>
+            <td class="px-4 py-3"><a href="/quote.html" class="text-blue-400 hover:text-blue-300 whitespace-nowrap">Get quote →</a></td>
+          </tr>
+          <tr class="bg-gray-900">
+            <td class="px-4 py-3 text-white font-medium">Starling 7B (Q4)</td>
+            <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-blue-300">starling-lm:7b-beta-q4_0</code></td>
+            <td class="px-4 py-3 text-gray-300">Starter</td>
+            <td class="px-4 py-3 text-gray-300">Quantized version for lower memory use. Suitable for machines with 8GB RAM or less.</td>
+            <td class="px-4 py-3"><a href="/quote.html" class="text-blue-400 hover:text-blue-300 whitespace-nowrap">Get quote →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="bg-gray-800 border border-gray-700 rounded-xl p-4 mt-4">
+      <p class="text-gray-300 text-sm"><strong class="text-white">Note:</strong> Starling is a 7B-scale model from 2023–2024. While it remains one of the strongest conversational models of its generation, it has been surpassed in raw reasoning, math, and coding performance by newer families such as Llama 3.3, Qwen 2.5, and DeepSeek V3.</p>
+    </div>
+  </section>
+
+  <!-- Licensing Information -->
+  <section class="bg-gray-900 py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-white mb-4">Licensing Information</h2>
+      <p class="text-gray-300 text-sm leading-relaxed mb-4">Starling-LM models are released by Berkeley AI Research under a license based on the <strong class="text-white">Llama 2 Community License</strong>. This permits commercial use under certain conditions but is <strong class="text-white">not fully permissive</strong> like Apache 2.0. There are restrictions on redistribution and use cases depending on your deployment scale.</p>
+      <p class="text-gray-300 text-sm leading-relaxed mb-4">Before deploying Starling in any commercial context, you must review the full license terms directly on the official model cards.</p>
+      <p class="text-gray-300 text-sm leading-relaxed mb-2"><strong class="text-white">Official model cards:</strong></p>
+      <ul class="list-disc space-y-2 pl-5 text-gray-300 text-sm mb-6">
+        <li><a href="https://huggingface.co/Nexusflow/Starling-LM-7B-alpha" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300">Starling-LM-7B-alpha on Hugging Face</a></li>
+        <li><a href="https://huggingface.co/Nexusflow/Starling-LM-7B-beta" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300">Starling-LM-7B-beta on Hugging Face</a></li>
+      </ul>
+      <div class="bg-gray-800 border border-yellow-900/50 rounded-xl p-4">
+        <p class="text-gray-300 text-sm"><strong class="text-yellow-400">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deployment -->
+  <section class="bg-gray-900 py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-white mb-4">Deployment Options</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="font-semibold text-white mb-2">☁️ 90-Day Lightsail Pilot</h3>
+          <p class="text-gray-400 text-sm mb-4">Starling-LM 7B Beta (Q4) on a $20–$40/month Lightsail instance via Ollama. Full REST API endpoint, private chat UI optional. Operational within hours.</p>
+          <a href="/contact" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Start Pilot →</a>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="font-semibold text-white mb-2">🖥️ On-Premise Installation</h3>
+          <p class="text-gray-400 text-sm mb-4">Starling deployed on your own server for private conversational AI. We handle installation, API setup, and integration with your existing tooling stack.</p>
+          <a href="/contact" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Request Install →</a>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="font-semibold text-white mb-2">📋 Custom Quote</h3>
+          <p class="text-gray-400 text-sm mb-4">Multi-instance deployments, high-availability configurations, or custom UI integration. We scope and deliver end-to-end private chat infrastructure.</p>
+          <a href="/contact" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Get a Quote →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-4xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-3xl font-bold text-white mb-4">Conversational Quality. Zero Data Egress.</h2>
+    <p class="text-gray-400 mb-8 max-w-xl mx-auto">Starling delivers strong conversational AI on a $20/month server. Start your private chat pilot today — no ongoing API costs, no data sharing, no lock-in.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contact" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3 rounded-xl transition">Start 90-Day Pilot</a>
+      <a href="/menu" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold px-8 py-3 rounded-xl transition">Browse All Models</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 border-t border-gray-800 px-6 py-8 text-center text-gray-500 text-sm">
+    <p>© 2025 NoCloudGPT. Private AI deployment specialists.</p>
+    <p class="mt-2">
+      <a href="/menu" class="text-blue-400 hover:text-blue-300 mr-4">Model Menu</a>
+      <a href="/contact" class="text-blue-400 hover:text-blue-300 mr-4">Contact</a>
+      <a href="/privacy" class="text-blue-400 hover:text-blue-300">Privacy Policy</a>
+    </p>
+  </footer>
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section style="border-top:1px solid #1e293b; background:#0f172a; padding:2rem 1.5rem; margin-top:3rem;">
+    <div style="max-width:56rem; margin:0 auto; font-size:0.75rem; color:#64748b;">
+      <p style="font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Artwork and source references</p>
+      <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Hero image</p>
+          <p style="margin-top:0.25rem;"><!-- TODO: Add hero.webp for starling --><br>Recommended source: <a href="https://unsplash.com/s/photos/starling-bird" target="_blank" rel="noopener" style="color:#67e8f9;">Unsplash: starling-bird</a></p>
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Developer reference</p>
+          <p style="margin-top:0.25rem;">Starling-LM is developed by <a href="https://huggingface.co/Nexusflow" target="_blank" rel="noopener" style="color:#67e8f9;">Berkeley AI Research / Nexusflow</a>. NoCloudGPT is an independent deployment service not affiliated with UC Berkeley.</p>
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Model catalog</p>
+          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/starling-lm" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: starling-lm</a> for current tags and sizes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
