@@ -174,44 +174,35 @@
         <!-- SECTION: Who this model family is for -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
-          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying This Family</h2>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
           <div class="mt-6 grid gap-5 md:grid-cols-2">
-
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">👤</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Not recommended without dedicated GPU hardware</h3>
-              <p class="mt-2 text-sm text-slate-400">Mixtral's 24+ GB RAM requirement rules out most home setups. If you have a workstation with two high-end GPUs or access to a professional GPU cloud instance, Mixtral provides near-70B reasoning quality at lower active compute cost. Without the hardware, other families will serve better.</p>
-              <p class="mt-2 text-xs text-slate-500 italic">Gemma 27B or Mistral Small 22B on a Professional AI GPU instance are better fits for most personal and homelab use cases.</p>
+              <p class="mt-2 text-sm text-slate-400">Mixtral is a practical choice for individuals who want a capable AI assistant without needing top-tier hardware. Its mixture-of-experts architecture activates only a portion of the model per token, delivering strong performance at lower memory and compute cost than dense models of similar total size. The 8x7B and 8x22B variants remain useful for creative writing, multilingual work, general reasoning, and light coding on consumer or workstation GPUs. If you value efficiency and don't need the absolute latest benchmark performance, Mixtral still delivers good real-world results.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🏢</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Organizations with existing GPU infrastructure that need more reasoning quality</h3>
-              <p class="mt-2 text-sm text-slate-400">For organizations that already run GPU hardware — engineering workstations, on-premise GPU servers, or professional cloud instances — Mixtral provides reasoning quality that would otherwise require a significantly larger and more expensive dense model. The Apache 2.0 license at this capability level is uncommon, which simplifies commercial deployment.</p>
-              
+              <p class="mt-2 text-sm text-slate-400">For small to mid-sized teams, Mixtral offers a cost-effective way to run a capable model locally or on modest infrastructure. Its efficiency makes it attractive for internal tools, customer support automation, content generation, and document processing where you want strong performance without the hardware demands of newer 70B+ dense models. It handles multiple languages well and performs reliably on structured tasks. However, for teams that need cutting-edge reasoning or coding performance, newer models (Llama 4, Qwen 2.5, DeepSeek R1) will generally outperform it.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">⚙️</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">High-capability commercial integrations under Apache 2.0</h3>
-              <p class="mt-2 text-sm text-slate-400">Mixtral 8x22B is one of the most capable open models available under Apache 2.0. For commercial products that need strong multi-domain reasoning without proprietary model licensing, this makes Mixtral a significant option. Function calling support is available. The MoE architecture also makes inference cost lower per token than an equivalent dense model.</p>
-              
+              <p class="mt-2 text-sm text-slate-400">Developers building tools, agents, or internal applications will find Mixtral's mixture-of-experts design efficient for inference, especially when running multiple instances or serving moderate traffic. It supports solid coding and reasoning capabilities and integrates cleanly with frameworks like LangChain or LlamaIndex. While it was state-of-the-art when released, it has since been surpassed by newer architectures in complex multi-step reasoning and advanced coding tasks. It remains a pragmatic choice when inference cost and speed matter more than peak capability.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🔬</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">MoE architecture research and efficiency-quality tradeoff studies</h3>
-              <p class="mt-2 text-sm text-slate-400">Mixtral was the model that made MoE architectures practical for open-weight deployment at scale. The research literature on expert routing, load balancing, and quality-per-compute tradeoffs is extensive and substantially built on Mixtral experiments. Teams studying efficient architectures have detailed primary literature to work with.</p>
-              
+              <p class="mt-2 text-sm text-slate-400">Researchers and data scientists can still use Mixtral effectively for data analysis, summarization, classification, and exploratory work, particularly when compute budget is limited. Its efficiency allows running meaningful experiments without requiring large GPU clusters. However, for state-of-the-art results on complex reasoning, mathematics, or coding benchmarks, newer models now outperform the Mixtral family. It can serve as a solid baseline or efficiency-focused option in research settings where resource constraints are a factor.</p>
             </div>
           </div>
         </section>
@@ -240,29 +231,59 @@
         </section>
 
 
-        <!-- SECTION: Licensing information (improved) -->
+        <!-- SECTION: Licensing information -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
-          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
-          <p class="mt-5 text-slate-300">The standard Mixtral models (8x7B and 8x22B) are released under Apache 2.0 — one of the few high-capability open models with fully permissive commercial licensing. Newer Mistral products like Mistral Large use a separate Research License. Confirm the specific model before assuming Apache 2.0.</p>
-          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">Mixtral models are released under the <strong class="text-white">Apache 2.0 License</strong>, which is one of the most permissive and business-friendly open-source licenses available. You can use, modify, and deploy Mixtral for both personal and commercial purposes without royalty fees or restrictive usage thresholds.</p>
+          <p class="mt-4 text-slate-300">This makes Mixtral straightforward for most organizations from a licensing perspective. As with any model, you should still review the specific model card for any additional usage guidelines from Mistral AI.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official model cards:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mixtral-8x7B-Instruct-v0.1</a></li>
+            <li><a href="https://huggingface.co/mistralai/Mixtral-8x22B-Instruct-v0.1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mixtral-8x22B-Instruct-v0.1</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides the software infrastructure to deploy AI models privately. We do not grant, manage, or verify licensing rights for third-party models. It is your responsibility to ensure your use of any model complies with its license terms. This does not constitute legal advice.</p>
+          </div>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <!-- TODO: Create individual size pages for each Mixtral variant with hardware benchmarks and deployment guidance. -->
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
             <table class="w-full text-left text-sm">
               <thead class="bg-slate-950 text-cyan-200">
                 <tr>
-                  <th class="px-4 py-3">Model / generation</th>
-                  <th class="px-4 py-3">License</th>
-                  <th class="px-4 py-3">Commercial use</th>
-                  <th class="px-4 py-3">Verify</th>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
+                  <th class="px-4 py-3"></th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-                <tr><td class="px-4 py-3  font-semibold text-white">Mixtral 8x7B Instruct v0.1</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mixtral-8x7B-Instruct-v0.1 →</a></td></tr>
-<tr><td class="px-4 py-3  font-semibold text-white">Mixtral 8x22B Instruct v0.1</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/mistralai/Mixtral-8x22B-Instruct-v0.1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mixtral-8x22B-Instruct-v0.1 →</a></td></tr>
-
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Mixtral 8x7B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">mixtral:8x7b</code></td>
+                  <td class="px-4 py-3">Standard</td>
+                  <td class="px-4 py-3">Efficient MoE model. Good balance of performance and resource usage. Still useful for many general tasks.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Mixtral 8x22B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">mixtral:8x22b</code></td>
+                  <td class="px-4 py-3">Professional</td>
+                  <td class="px-4 py-3">Significantly stronger than 8x7B. Requires more VRAM but offers better reasoning and coding quality.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
               </tbody>
             </table>
           </div>
-          <p class="mt-3 text-xs text-slate-500">Apache 2.0 permits unrestricted commercial use. Note: this applies to the Mixtral models specifically — other Mistral-branded products use different licenses. License information sourced from Hugging Face model cards. Always verify current terms before commercial deployment.</p>
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-white">Note:</strong> Mixtral uses a mixture-of-experts architecture. Only a subset of parameters is active during inference, which improves efficiency compared to dense models of similar total size. However, newer dense and MoE models have since surpassed Mixtral in most capability benchmarks.</p>
+          </div>
         </section>
 
         <section>
