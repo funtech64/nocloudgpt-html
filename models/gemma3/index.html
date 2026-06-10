@@ -80,39 +80,35 @@
         <!-- SECTION: Who this model family is for -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
-          <h2 class="mt-3 text-3xl font-black">Four Perspectives on Deploying Gemma 3</h2>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
           <div class="mt-6 grid gap-5 md:grid-cols-2">
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">👤</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">A current-generation assistant that scales to your machine</h3>
-              <p class="mt-2 text-sm text-slate-400">Gemma 3 gives you Google's newest open Gemma quality across a wide size ladder, so you can run a 1B model on a tiny instance or a 12B on a modest server and get genuinely capable drafting, summarising, and Q&A. Its strong multilingual coverage makes it a good pick if you work across languages day to day — all running privately, with nothing sent to a cloud service.</p>
+              <p class="mt-2 text-sm text-slate-400">Gemma 3 is one of the most capable small models you can run entirely on your own hardware. The smaller variants (1B–4B) run comfortably on a modern laptop with 8–16GB of RAM, making it realistic for individuals who want a genuinely useful private AI assistant without sending their conversations to Google or OpenAI. If you write, research, or work with documents daily and care about keeping that work private, Gemma 3 delivers strong value at a surprisingly low hardware cost.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🏢</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">The recommended general-purpose Gemma for most teams</h3>
-              <p class="mt-2 text-sm text-slate-400">For organisations standardising on a private assistant, Gemma 3 at 12B on a Standard AI instance is the current Gemma sweet spot — stronger reasoning and instruction following than Gemma 2 at a similar footprint. The 30+ language coverage suits international teams handling correspondence and documentation across markets without routing any of it externally.</p>
+              <p class="mt-2 text-sm text-slate-400">For small businesses and teams that handle sensitive information — legal documents, client communications, or internal strategy — Gemma 3 offers a practical path to AI assistance that never leaves your network. The 12B and 27B variants are well-suited to shared deployment scenarios where multiple team members need reliable summarization, drafting, and Q&amp;A capabilities. Gemma 3 is notably efficient for its performance tier, which helps keep infrastructure costs reasonable compared to running larger models.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">⚙️</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">Improved structured output and optional vision</h3>
-              <p class="mt-2 text-sm text-slate-400">Gemma 3's better instruction following and structured output make it a more reliable engine for templated workflows and JSON-style responses than the previous generation. The 4B and larger variants are multimodal, so the same family can also handle image and document-understanding tasks — useful when you want one deployment to cover both text and basic vision work. VERIFY current multimodal support per size.</p>
+              <p class="mt-2 text-sm text-slate-400">Gemma 3 follows instructions well and responds predictably to structured prompts, making it a dependable choice for building internal tools, chatbots, or document-processing pipelines. The multimodal variants (those accepting image input) open up use cases like automated screenshot analysis or basic visual QA without requiring a separate vision model. Developers building on NoCloudGPT will find it integrates cleanly via the Ollama-compatible API layer. For very long context or deep multi-step reasoning, the larger 27B variant performs meaningfully better than the smaller ones.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span class="text-lg">🔬</span>
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
               </div>
-              <h3 class="text-base font-bold text-cyan-200">A consistent ladder for capability and multilingual studies</h3>
-              <p class="mt-2 text-sm text-slate-400">With four sizes built on the same generation, Gemma 3 is convenient for studying how capability scales with parameter count, and its multilingual strength makes it a practical base for cross-language analysis and evaluation work. Researchers get a recent, well-supported open model with documented terms — a sensible default for reproducible private experimentation.</p>
+              <p class="mt-2 text-sm text-slate-400">Researchers who need a capable open-weight model for text classification, dataset annotation, or exploratory NLP work will find Gemma 3's efficiency-to-performance ratio genuinely useful. You can run meaningful experiments without expensive GPU clusters. Google's training approach emphasizes knowledge breadth and instruction following, which makes it reliable for structured data extraction and summarization across diverse domains. It is not specifically optimized for scientific reasoning or mathematics at the level of models like DeepSeek-R1.</p>
             </div>
           </div>
         </section>
@@ -146,80 +142,66 @@
         <!-- SECTION: Licensing information -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
-          <h2 class="mt-3 text-3xl font-black">License Summary</h2>
-          <p class="mt-5 text-slate-300">All Gemma 3 sizes are released under the Gemma Terms of Use, Google's custom open-weight license. It permits commercial use and redistribution but is not OSI-approved open source: it carries a Prohibited Use Policy and attribution requirements that follow the model into anything you build on it. The terms are consistent across 1B, 4B, 12B, and 27B — including the multimodal variants — so review the policy once before commercial deployment.</p>
-          <div class="mt-5 overflow-hidden rounded-2xl border border-slate-800">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-slate-950 text-cyan-200">
-                <tr>
-                  <th class="px-4 py-3">Model size</th>
-                  <th class="px-4 py-3">License</th>
-                  <th class="px-4 py-3">Commercial use</th>
-                  <th class="px-4 py-3">Model card</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-                <tr><td class="px-4 py-3 font-semibold text-white">Gemma 3 1B (text)</td><td class="px-4 py-3">Gemma Terms of Use</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted, policy applies</span></td><td class="px-4 py-3"><a href="https://huggingface.co/google/gemma-3-1b-it" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">google/gemma-3-1b-it →</a></td></tr>
-                <tr><td class="px-4 py-3 font-semibold text-white">Gemma 3 4B (multimodal)</td><td class="px-4 py-3">Gemma Terms of Use</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted, policy applies</span></td><td class="px-4 py-3"><a href="https://huggingface.co/google/gemma-3-4b-it" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">google/gemma-3-4b-it →</a></td></tr>
-                <tr><td class="px-4 py-3 font-semibold text-white">Gemma 3 12B (multimodal)</td><td class="px-4 py-3">Gemma Terms of Use</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted, policy applies</span></td><td class="px-4 py-3"><a href="https://huggingface.co/google/gemma-3-12b-it" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">google/gemma-3-12b-it →</a></td></tr>
-                <tr><td class="px-4 py-3 font-semibold text-white">Gemma 3 27B (multimodal)</td><td class="px-4 py-3">Gemma Terms of Use</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted, policy applies</span></td><td class="px-4 py-3"><a href="https://huggingface.co/google/gemma-3-27b-it" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">google/gemma-3-27b-it →</a></td></tr>
-              </tbody>
-            </table>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">Gemma 3 is released under the <strong class="text-white">Gemma Terms of Use</strong>, Google's custom license for the Gemma model family. This is not a fully open-source license in the traditional sense.</p>
+          <p class="mt-4 text-slate-300">Commercial use is permitted, but with restrictions: you may not use Gemma models to train competing foundation models, and usage must comply with Google's acceptable use policy. For most internal tools, productivity applications, and customer-facing assistants, the license is permissive enough to proceed. However, if you plan to redistribute the model weights or use them as a base for a new model, you should review the terms carefully with your legal team.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official model card:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/google/gemma-3" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Gemma 3 on Hugging Face</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides the software infrastructure to deploy AI models privately. We do not grant, manage, or verify licensing rights for third-party models. It is your responsibility to ensure your use of any model complies with its license terms. This does not constitute legal advice.</p>
           </div>
-          <p class="mt-3 text-xs text-slate-500">The Gemma Terms of Use permit commercial deployment but include a Prohibited Use Policy and attribution requirements — it is not equivalent to Apache 2.0 or MIT. License information sourced from Hugging Face model cards and may change between releases. Always verify the current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
         </section>
 
         <!-- SECTION: Available model sizes -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
-          <h2 class="mt-3 text-3xl font-black">Sizes Available for Private Deployment</h2>
-          <p class="mt-5 text-slate-300">
-            The following sizes are available through Ollama for private deployment.
-            VERIFY: Confirm current tags in the Ollama library before planning.
-            NoCloudGPT will confirm hardware requirements and select the right quantization before your pilot begins.
-          </p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <!-- TODO: Create individual size pages for each Gemma 3 variant (1B, 4B, 12B, 27B) with hardware benchmarks, use case breakdowns, and configuration guides. -->
           <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
             <table class="w-full text-left text-sm">
               <thead class="bg-slate-950 text-cyan-200">
                 <tr>
-                  <th class="px-4 py-3">Model</th>
-                  <th class="px-4 py-3">Deployment tier</th>
-                  <th class="px-4 py-3">Best for</th>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
                   <th class="px-4 py-3"></th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
                 <tr>
                   <td class="px-4 py-3 font-semibold text-white">Gemma 3 1B</td>
-                  <td class="px-4 py-3">Starter AI — 2 GB</td>
-                  <td class="px-4 py-3">Edge, pilots, simple text tasks</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">gemma3:1b</code></td>
+                  <td class="px-4 py-3">Starter</td>
+                  <td class="px-4 py-3">Extremely lightweight. Good for simple Q&amp;A and text tasks on minimal hardware. Not suitable for complex reasoning.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
                   <td class="px-4 py-3 font-semibold text-white">Gemma 3 4B</td>
-                  <td class="px-4 py-3">Starter/Standard AI — 4 GB</td>
-                  <td class="px-4 py-3">Light multimodal and everyday text work</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">gemma3:4b</code></td>
+                  <td class="px-4 py-3">Starter / Standard</td>
+                  <td class="px-4 py-3">Best balance of speed and capability for personal and light business use. Runs well on 8–16GB RAM.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Gemma 3 12B Q4</td>
-                  <td class="px-4 py-3">Standard AI — 8 GB</td>
-                  <td class="px-4 py-3">Everyday private AI — recommended default</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">Gemma 3 12B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">gemma3:12b</code></td>
+                  <td class="px-4 py-3">Standard</td>
+                  <td class="px-4 py-3">Strong all-around performer for team deployments. Handles summarization, drafting, and Q&amp;A reliably. Requires 16–32GB RAM.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Gemma 3 27B Q4</td>
-                  <td class="px-4 py-3">Professional AI — GPU</td>
-                  <td class="px-4 py-3">Stronger reasoning and analysis</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">Gemma 3 27B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">gemma3:27b</code></td>
+                  <td class="px-4 py-3">Professional</td>
+                  <td class="px-4 py-3">Best in family for reasoning and instruction following. Recommend GPU acceleration for production workloads.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p class="mt-3 text-xs text-slate-500">
-            Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
-            <!-- TODO: Link each row to individual model-size pages when created -->
-          </p>
         </section>
 
         <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8">
