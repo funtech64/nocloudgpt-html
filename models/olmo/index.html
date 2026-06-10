@@ -163,24 +163,24 @@
 
     <hr class="section-divider">
 
-    <h2>Who OLMo Is For</h2>
+    <h2>Who This Model Family Is For</h2>
 
     <div class="tier-grid">
         <div class="tier-card">
             <h3>👤 Personal Use</h3>
-            <p>OLMo 2 7B runs on a single consumer GPU or an Apple Silicon Mac via Ollama, and OLMo 1B runs almost anywhere. For privacy-minded individuals who also value knowing exactly what a model was trained on, OLMo is the rare assistant where the full Dolma training data is public. Apache 2.0 means no usage restrictions for personal projects.</p>
+            <p>OLMo is a strong choice for curious individuals who want full transparency into what they're running. Unlike most models, both the weights and the training data are publicly released, giving you complete visibility into what the model has seen. It performs well for writing assistance, research summaries, and general learning tasks. While it may not feel as polished in casual conversation as heavily instruction-tuned commercial models, its openness makes it uniquely valuable for users who care about understanding and auditing their AI.</p>
         </div>
         <div class="tier-card">
-            <h3>🏢 Business &amp; Team Use</h3>
-            <p>OLMo's draw for business is provenance plus a clean Apache 2.0 license: when a compliance officer asks what data the model was trained on, OLMo gives a specific, documented, verifiable answer that Llama or GPT-4 cannot. For regulated workflows and procurement that requires software-supply-chain documentation, that transparency simplifies approval. Quality is near Llama 3.1 8B and closing.</p>
-        </div>
-        <div class="tier-card recommended">
-            <h3>🔬 Data Science &amp; Research Use <span class="rec-badge">Best fit</span></h3>
-            <p>This is OLMo's home. AI2 released the weights, training code, the Dolma dataset, the OLMES evaluation framework, and intermediate checkpoints at regular training steps. Researchers can study capability emergence, memorization, and alignment with a methodological completeness that is simply impossible on closed or weights-only models.</p>
+            <h3>🏢 Business / Team Use</h3>
+            <p>Organizations in regulated or high-trust environments — such as healthcare, legal, education, and the public sector — will find OLMo's radical transparency genuinely useful for compliance and auditability. Because AllenAI publishes the full training dataset (Dolma), you can make a credible, documented case for what the model has and hasn't been exposed to. While it may require more prompt engineering than some commercial alternatives, it offers a level of auditability that few other models can match.</p>
         </div>
         <div class="tier-card">
             <h3>⚙️ Developer &amp; Technical Use</h3>
-            <p>For developers, OLMo 2 7B/13B is a capable, commercially licensed base for internal tools without Llama's custom-license conditions, and OLMo-Core makes it straightforward to fine-tune domain-adapted variants from a fully documented foundation. Ollama's OpenAI-compatible API makes wiring it into existing stacks simple.</p>
+            <p>Developers building research tools, educational platforms, or applications where explainability matters will find OLMo particularly well-suited. The fully open training corpus allows you to study, audit, and reason about model behavior in ways that aren't possible with closed or partially open models. It also serves as an excellent baseline for fine-tuning experiments, since you know exactly what the model was trained on before you begin.</p>
+        </div>
+        <div class="tier-card">
+            <h3>🔬 Data Science &amp; Research Use</h3>
+            <p>OLMo was built by researchers for researchers. AllenAI releases not only the weights but also the full training data, intermediate checkpoints, and training code — a level of openness that makes it the gold standard for reproducibility in language model research. If your work involves studying model behavior, training dynamics, bias analysis, or benchmarking, OLMo is one of the few families where you can follow the complete scientific chain from raw data to final output.</p>
         </div>
     </div>
 
@@ -383,38 +383,37 @@
 
     <h2>Licensing Information</h2>
 
-    <p>OLMo's licensing is as clean as its training transparency: every OLMo and OLMo 2 model — weights, code, the Dolma dataset, and the OLMES evaluation framework — is released under Apache 2.0. There are no usage thresholds, no non-commercial clauses, and no custom community terms. For organizations that want both documented provenance and unrestricted commercial use, OLMo is among the most straightforward choices available.</p>
+    <p>OLMo models are released by the Allen Institute for AI (AllenAI) under the <strong>Apache 2.0 License</strong>, which is one of the most permissive open-source licenses available. This allows commercial use, modification, and redistribution without royalty fees.</p>
 
-    <table class="hardware-table">
-        <thead>
-            <tr><th>Model</th><th>License</th><th>Commercial use</th><th>Model card</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>OLMo 2 7B Instruct</td><td>Apache 2.0</td><td>Permitted</td><td><a href="https://huggingface.co/allenai/OLMo-2-1124-7B-Instruct" target="_blank" rel="noopener" style="color:#4a9eff;">allenai/OLMo-2-1124-7B-Instruct →</a></td></tr>
-            <tr><td>OLMo 2 13B Instruct</td><td>Apache 2.0</td><td>Permitted</td><td><a href="https://huggingface.co/allenai/OLMo-2-1124-13B-Instruct" target="_blank" rel="noopener" style="color:#4a9eff;">allenai/OLMo-2-1124-13B-Instruct →</a></td></tr>
-            <tr><td>OLMo 7B (original)</td><td>Apache 2.0</td><td>Permitted</td><td><a href="https://huggingface.co/allenai/OLMo-7B" target="_blank" rel="noopener" style="color:#4a9eff;">allenai/OLMo-7B →</a></td></tr>
-        </tbody>
-    </table>
+    <p>The training dataset (Dolma) is also publicly released, though individual components within it carry their own licensing terms. You should review both the model and dataset licenses if your use case involves redistribution or derivative data products.</p>
 
-    <p style="font-size:0.85rem; color:#6e7681;">All OLMo and OLMo 2 models are Apache 2.0, including the Dolma data and OLMES framework. License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+    <p><strong>Official model card:</strong></p>
+    <ul style="list-style:disc; margin:0 0 18px 1.5rem; color:#c8d4e0;">
+        <li><a href="https://huggingface.co/allenai/OLMo" target="_blank" rel="noopener" style="color:#4a9eff;">allenai/OLMo on Hugging Face</a></li>
+    </ul>
+
+    <div class="info-box">
+        <p><strong>Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+    </div>
 
     <hr class="section-divider">
 
     <h2>Available Model Sizes</h2>
 
-    <p>OLMo spans edge to mid-range sizes that run on hardware many teams already own. VERIFY current tags in the Ollama library before planning. NoCloudGPT confirms hardware requirements and selects the right quantization before your pilot begins.</p>
+    <!-- TODO: Create individual size pages for each OLMo variant with hardware benchmarks and deployment guidance. -->
 
     <table class="hardware-table">
         <thead>
-            <tr><th>Model</th><th>Deployment tier</th><th>Best for</th><th></th></tr>
+            <tr><th>Model Size</th><th>Ollama Tag</th><th>Recommended NoCloudGPT Tier</th><th>Notes</th><th></th></tr>
         </thead>
         <tbody>
-            <tr><td>OLMo 1B</td><td>Starter AI — ~2 GB</td><td>Edge, Apple Silicon, classification</td><td><a href="/quote.html" style="color:#4a9eff;">Get quote →</a></td></tr>
-            <tr><td>OLMo 2 7B</td><td>Standard AI — ~8 GB</td><td>Transparent everyday AI — recommended</td><td><a href="/quote.html" style="color:#4a9eff;">Get quote →</a></td></tr>
-            <tr><td>OLMo 2 13B</td><td>Professional AI — single GPU</td><td>Best OLMo quality, research production</td><td><a href="/quote.html" style="color:#4a9eff;">Get quote →</a></td></tr>
+            <tr><td>OLMo 1B</td><td>olmo:1b</td><td>Starter</td><td>Extremely lightweight. Best for experimentation and simple tasks on modest hardware.</td><td><a href="/quote.html" style="color:#4a9eff;">Get quote →</a></td></tr>
+            <tr><td>OLMo 7B</td><td>olmo:7b</td><td>Standard</td><td>The primary research-grade model. Strong general performance with full training transparency.</td><td><a href="/quote.html" style="color:#4a9eff;">Get quote →</a></td></tr>
+            <tr><td>OLMo 7B Instruct</td><td>olmo:7b-instruct</td><td>Standard</td><td>Instruction-tuned variant with more natural conversational behavior. Recommended for most general use cases.</td><td><a href="/quote.html" style="color:#4a9eff;">Get quote →</a></td></tr>
+            <tr><td>OLMo 2 13B</td><td>olmo2:13b</td><td>Professional</td><td>Second-generation model with improved performance. Good balance of capability and hardware requirements.</td><td><a href="/quote.html" style="color:#4a9eff;">Get quote →</a></td></tr>
+            <tr><td>OLMo 2 32B</td><td>olmo2:32b</td><td>Professional / Enterprise</td><td>AllenAI's most capable open model. Competitive with much larger models while remaining fully auditable.</td><td><a href="/quote.html" style="color:#4a9eff;">Get quote →</a></td></tr>
         </tbody>
     </table>
-    <!-- TODO: Link each row to individual model-size pages when created -->
 
     <hr class="section-divider">
 
