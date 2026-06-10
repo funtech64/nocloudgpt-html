@@ -118,24 +118,24 @@
 
     <hr class="section-divider">
 
-    <h2>Who Nemotron-4 340B Is For</h2>
+    <h2>Who This Model Family is For</h2>
 
     <div class="tier-grid">
         <div class="tier-card">
             <h3>👤 Personal Use</h3>
-            <p>Realistically, Nemotron-4 340B is not a personal model — it needs roughly 170–190 GB of GPU memory even at 4-bit. Individuals wanting NVIDIA-aligned quality should look at Nemotron Mini 4B or Llama-3.1-Nemotron-70B instead. This flagship is for organizations with multi-GPU infrastructure, not homelabs.</p>
+            <p>Nemotron 4 is overbuilt for casual personal use — it is a heavyweight model designed with enterprise-grade tasks in mind. That said, if you are a technically curious individual who wants strong reasoning, nuanced writing, or complex problem-solving without sending your data to a third-party cloud, it is a compelling choice. Be prepared for the hardware requirements; this is not a model you will run comfortably on a standard laptop.</p>
         </div>
-        <div class="tier-card recommended">
-            <h3>🏢 Business &amp; Team Use <span class="rec-badge">Best fit</span></h3>
-            <p>This is the model's home audience: regulated enterprises — financial services, healthcare, defense, legal — that need GPT-4-class capability but cannot send data to a hosted API. Running Nemotron-4 on owned A100/H100 clusters keeps every prompt inside the network perimeter, and the NVIDIA Open Model License permits commercial use.</p>
+        <div class="tier-card">
+            <h3>🏢 Business / Team Use</h3>
+            <p>Nemotron 4 is purpose-built for the kinds of tasks businesses actually care about: summarizing dense documents, drafting precise technical communications, supporting internal knowledge bases, and handling multi-step reasoning workflows. NVIDIA trained this family with enterprise deployment in mind, which means it behaves predictably and responds well to structured prompts and system instructions. Teams dealing with sensitive data — legal, finance, healthcare, or compliance-heavy industries — will especially appreciate running this entirely on their own infrastructure.</p>
         </div>
         <div class="tier-card">
             <h3>⚙️ Developer &amp; Technical Use</h3>
-            <p>With a HumanEval score (73.2%) ahead of GPT-4's reported 67.0%, Nemotron-4 is strong for generating, reviewing, and documenting proprietary codebases at frontier quality without the code leaving your infrastructure. Ollama handles tensor parallelism across GPUs automatically, simplifying multi-GPU serving.</p>
+            <p>Developers will find Nemotron 4 notably capable at code generation, debugging, and explaining technical concepts across multiple languages and frameworks. It handles context well, making it useful for reviewing larger code blocks or stepping through logic errors. If you are building internal developer tooling, a private coding assistant, or integrating AI into a CI/CD pipeline, Nemotron 4 is worth benchmarking seriously. NVIDIA's training methodology emphasizes instruction-following accuracy, which matters when embedding a model into automated workflows.</p>
         </div>
         <div class="tier-card">
             <h3>🔬 Data Science &amp; Research Use</h3>
-            <p>Nemotron-4 was explicitly designed for synthetic data generation — over 98% of its own alignment data was synthetic — and ships alongside a Reward model for scoring outputs. Research teams use the pair to generate and filter high-quality training data for fine-tuning smaller domain-specific models, entirely on-premise.</p>
+            <p>Nemotron 4 was explicitly positioned by NVIDIA for research as well as production use. It performs well on structured reasoning tasks, mathematical problem-framing, and synthesizing findings from technical literature. Researchers who need a capable, locally-controlled model for hypothesis exploration, literature summarization, or generating analytical narratives will find it more disciplined than many open alternatives. The fact that it runs entirely on-premises also matters for teams working with proprietary datasets or unpublished research.</p>
         </div>
     </div>
 
@@ -302,38 +302,53 @@
 
     <h2>Licensing Information</h2>
 
-    <p>The Nemotron-4 340B family — Base, Instruct, and Reward — is released under the NVIDIA Open Model License. NVIDIA confirms the models are commercially usable, that you are free to create and distribute derivative models, and that NVIDIA claims no ownership of generated outputs. This is what makes Nemotron-4 viable for enterprise synthetic-data generation: the outputs are yours to use for training and production.</p>
+    <p>Nemotron 4 models are released under the <strong>NVIDIA Open Model License</strong>. This license permits commercial use, but it is not fully permissive like Apache 2.0. Key conditions include compliance with NVIDIA's acceptable use policy and restrictions on using model outputs to train competing foundation models.</p>
 
-    <table class="benchmark-table">
-        <thead>
-            <tr><th>Model</th><th>License</th><th>Commercial use</th><th>Model card</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>Nemotron-4 340B Instruct</td><td>NVIDIA Open Model License</td><td>Permitted</td><td><a href="https://huggingface.co/nvidia/Nemotron-4-340B-Instruct" target="_blank" rel="noopener" style="color:#76b900;">nvidia/Nemotron-4-340B-Instruct →</a></td></tr>
-            <tr><td>Nemotron-4 340B Reward</td><td>NVIDIA Open Model License</td><td>Permitted</td><td><a href="https://huggingface.co/nvidia/Nemotron-4-340B-Reward" target="_blank" rel="noopener" style="color:#76b900;">nvidia/Nemotron-4-340B-Reward →</a></td></tr>
-            <tr><td>Nemotron-4 340B Base</td><td>NVIDIA Open Model License</td><td>Permitted</td><td><a href="https://huggingface.co/nvidia/Nemotron-4-340B-Base" target="_blank" rel="noopener" style="color:#76b900;">nvidia/Nemotron-4-340B-Base →</a></td></tr>
-        </tbody>
-    </table>
+    <p>For most standard internal enterprise use cases (running the model behind your firewall for your own team), the license is generally workable. However, if you are building a product or service that will use Nemotron outputs as training data, you should review the full license terms carefully with your legal team.</p>
 
-    <p style="font-size:0.85rem; color:#6e7681;">The NVIDIA Open Model License is a permissive, commercially usable license that permits derivative works and use of model outputs. License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+    <p><strong>Official model card:</strong></p>
+    <ul class="use-case-list">
+        <li><a href="https://huggingface.co/nvidia/Nemotron-4-340B-Instruct" target="_blank" rel="noopener" style="color:#76b900;">nvidia/Nemotron-4-340B-Instruct</a></li>
+    </ul>
+
+    <div class="warning-box">
+        <p><strong>Disclaimer:</strong> NoCloudGPT provides the software infrastructure to deploy AI models privately. We do not grant, manage, or verify licensing rights for third-party models. It is your responsibility to ensure your use of any model complies with its license terms. This does not constitute legal advice.</p>
+    </div>
 
     <hr class="section-divider">
 
     <h2>Available Model Sizes</h2>
 
-    <p>Nemotron-4 340B is a single flagship; the practical decision is quantization and GPU count, not size. Smaller Nemotron models are covered on the <a href="/nemotron/" style="color:#76b900;">Nemotron overview</a>. VERIFY current Ollama tags before planning. NoCloudGPT confirms hardware requirements and selects the right configuration before your pilot begins.</p>
+    <!-- TODO: Create individual size pages for each Nemotron 4 variant with hardware benchmarks and deployment guidance. -->
 
     <table class="benchmark-table">
         <thead>
-            <tr><th>Configuration</th><th>Deployment tier</th><th>Best for</th><th></th></tr>
+            <tr>
+                <th>Model Size</th>
+                <th>Ollama Tag</th>
+                <th>Recommended NoCloudGPT Tier</th>
+                <th>Notes</th>
+            </tr>
         </thead>
         <tbody>
-            <tr><td>Nemotron-4 340B (Q4)</td><td>Enterprise AI — 4× A100 40GB (~160 GB)</td><td>Low-concurrency batch and document analysis</td><td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
-            <tr><td>Nemotron-4 340B (Q4/Q5)</td><td>Enterprise AI — 4× A100 80GB (~320 GB)</td><td>Standard production, 5–10 concurrent users</td><td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
-            <tr><td>Nemotron-4 340B (BF16)</td><td>Enterprise AI — 8× H100 80GB (~640 GB)</td><td>High-throughput, 20–50 concurrent users</td><td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
+            <tr>
+                <td><strong>Nemotron 4 340B Instruct</strong></td>
+                <td><code style="font-family: monospace; color: #79c0ff;">nemotron:340b</code></td>
+                <td>Enterprise</td>
+                <td>NVIDIA's flagship instruction-tuned model. Requires significant multi-GPU infrastructure. Best for production enterprise deployments. <a href="/quote.html" style="color:#76b900;">Get quote →</a></td>
+            </tr>
+            <tr>
+                <td><strong>Nemotron 4 340B Base</strong></td>
+                <td><code style="font-family: monospace; color: #79c0ff;">nemotron:340b-base</code></td>
+                <td>Enterprise (Research/Fine-tuning)</td>
+                <td>Base model intended for research and fine-tuning workflows. Not recommended for direct end-user deployment without additional tuning. <a href="/quote.html" style="color:#76b900;">Get quote →</a></td>
+            </tr>
         </tbody>
     </table>
-    <!-- TODO: Link each row to individual model-size pages when created -->
+
+    <div class="info-box">
+        <p><strong>Note:</strong> NVIDIA has indicated that smaller distilled variants of the Nemotron 4 family may be released in the future. Check back or contact us for the latest availability.</p>
+    </div>
 
     <hr class="section-divider">
 
