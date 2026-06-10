@@ -70,15 +70,15 @@
           <span class="text-lg">👤</span>
           <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Personal use</span>
         </div>
-        <p class="text-gray-400 text-sm">Granite 4 is purpose-built for business and enterprise contexts, so it is not primarily aimed at casual hobbyists. However, professionals (lawyers, analysts, financial advisors, engineers) who want a private AI assistant trained on high-quality, enterprise-grade data will find its reliability and structured output quality noticeably different from more general-purpose models. If you work in compliance-sensitive fields and value documented data provenance, Granite 4 is worth considering.</p>
+        <p class="text-gray-400 text-sm">Granite 4 is primarily built for enterprise and professional use, so it may be more model than most casual users need. However, technically curious individuals who want a well-trained, reliable model with documented data provenance will find it consistent and trustworthy for writing, research summaries, and structured reasoning. If you value transparency around training data and prefer a model that behaves predictably, Granite 4 is worth considering — though lighter models like Phi 4 or Gemma 3 may feel more responsive for everyday personal tasks.</p>
       </div>
 
       <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
         <div class="flex items-center gap-2 mb-2">
           <span class="text-lg">🏢</span>
-          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Business &amp; team use</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Business / team use</span>
         </div>
-        <p class="text-gray-400 text-sm">Granite 4 is IBM's most direct answer to the question: <em>Can we trust this model in a real business environment?</em> IBM trains Granite on curated, enterprise-quality data with documented provenance, which matters significantly if your organization has audit, compliance, or IP exposure concerns. The model excels at structured tasks — contract review, policy summarization, internal knowledge base Q&amp;A, and code review — that appear constantly in mid-to-large business operations. For teams already operating in IBM's ecosystem, Granite 4 integrates naturally into those workflows.</p>
+        <p class="text-gray-400 text-sm">Granite 4 is one of the stronger options for organizations that need a private, auditable AI for real business workflows. It performs well on policy document drafting, internal knowledge base Q&amp;A, compliance-aware summarization, and structured data extraction. IBM's emphasis on curated, high-quality training data results in more reliable outputs, which matters in regulated industries such as finance, healthcare, and legal services. Teams that want an on-premises model they can control and audit — without sending sensitive documents to external services — will find Granite 4 a practical and trustworthy choice.</p>
       </div>
 
       <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
@@ -86,7 +86,7 @@
           <span class="text-lg">⚙️</span>
           <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Developer &amp; technical use</span>
         </div>
-        <p class="text-gray-400 text-sm">Granite 4 performs strongly on coding tasks, particularly in enterprise languages and frameworks (Java, Python, SQL, and enterprise API patterns). If you are building internal developer tooling, code review automation, or a private coding assistant for an engineering team, Granite 4 is one of the more reliable choices in this class for structured, production-quality output. It responds well to system prompts that define specific roles and constraints, making it straightforward to build consistent, controllable applications on top of it.</p>
+        <p class="text-gray-400 text-sm">Granite 4 performs well on code generation and explanation tasks across common enterprise languages and frameworks. It is a solid option for internal developer tooling, code review assistance, and documenting legacy systems. IBM's transparency around training data sourcing helps reduce legal ambiguity when using AI-assisted code in production environments. Developers building RAG pipelines or tool-calling agents will find its instruction-following behavior reliable and predictable. If you are integrating local AI into CI/CD pipelines or internal developer platforms, Granite 4 is worth serious evaluation.</p>
       </div>
 
       <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
@@ -94,7 +94,7 @@
           <span class="text-lg">🔬</span>
           <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Data science &amp; research</span>
         </div>
-        <p class="text-gray-400 text-sm">IBM's emphasis on data quality and transparency in Granite's training pipeline makes it a credible choice for research applications where you need to understand and defend what the model was exposed to during training. Granite 4 handles structured data tasks — extraction, classification, and summarization of technical documents — with consistent formatting and relatively low hallucination rates. For organizations doing AI research in regulated industries (healthcare, finance, government), the documented training data approach reduces a meaningful layer of compliance risk.</p>
+        <p class="text-gray-400 text-sm">Researchers and data scientists who need a model with documented training methodology and traceable data provenance will appreciate IBM's unusually transparent approach. Granite 4 handles structured reasoning, tabular data interpretation, and multi-step analytical prompts with good consistency. It is a practical choice for teams building internal research tools, automated report generation, or domain-specific fine-tuning projects where training data quality and auditability matter. Its reliability makes it especially relevant in regulated research environments such as clinical trials, financial modeling, or government work.</p>
       </div>
 
     </div>
@@ -104,17 +104,14 @@
   <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
     <h2 class="text-2xl font-bold mb-6">Licensing Information</h2>
     <p class="text-gray-300 mb-4">
-      Granite 4 is released under the <strong class="text-white">Apache 2.0 License</strong>, which is one of the most permissive and business-friendly open-source licenses available. This means you can use Granite 4 for commercial purposes, modify it, integrate it into products, and deploy it privately — without royalty payments or usage restrictions tied to the license itself.
-    </p>
-    <p class="text-gray-300 mb-4">
-      This is a meaningful distinction from models like Gemma or Llama, which use custom licenses with commercial thresholds. Apache 2.0 is generally recognized and approved quickly by enterprise legal teams, which can accelerate internal procurement processes.
+      Granite 4 models are released by IBM under the <strong class="text-white">Apache 2.0 License</strong>, which is one of the most permissive and business-friendly open-source licenses available. This means you can use, modify, and deploy Granite 4 for both personal and commercial purposes without royalty fees or restrictive usage thresholds.
     </p>
     <p class="text-gray-300 mb-6">
-      IBM also publishes information about Granite's training data sources, which is relevant if your organization needs to demonstrate that your AI tooling does not expose you to copyright or IP liability from training data.
+      You should still review the full model card and any responsible use guidelines on the official page before deploying in production, especially in regulated industries.
     </p>
     <p class="text-gray-300 mb-2"><strong class="text-white">Official model card:</strong></p>
     <ul class="list-disc space-y-2 pl-5 text-gray-300 mb-6">
-      <li><a href="https://huggingface.co/ibm-granite" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300">Granite 4 on Hugging Face</a></li>
+      <li><a href="https://huggingface.co/ibm-granite" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300">ibm-granite/granite-4 on Hugging Face</a></li>
     </ul>
     <div class="rounded-xl border border-amber-800/50 bg-amber-950/30 p-5">
       <p class="text-sm text-gray-300"><strong class="text-amber-400">Disclaimer:</strong> NoCloudGPT provides the software infrastructure to deploy AI models privately. We do not grant, manage, or verify licensing rights for third-party models. It is your responsibility to ensure your use of any model complies with its license terms. This does not constitute legal advice.</p>
@@ -124,7 +121,10 @@
   <!-- Available model sizes -->
   <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
     <h2 class="text-2xl font-bold mb-6">Available Model Sizes</h2>
-    <!-- TODO: Create individual size pages for each Granite 4 variant (2B Dense, 8B Dense, MoE 3B) with hardware benchmarks, enterprise use case guides, compliance notes, and configuration documentation. -->
+    <p class="text-gray-300 mb-6">
+      Granite 4 focuses on delivering strong performance at efficient sizes through high-quality training data rather than raw parameter count.
+    </p>
+    <!-- TODO: Create individual size pages for each Granite 4 variant with hardware benchmarks and deployment guidance. -->
     <div class="overflow-x-auto rounded-xl border border-gray-700">
       <table class="w-full text-sm">
         <thead class="bg-gray-900 text-gray-400">
@@ -138,24 +138,31 @@
         </thead>
         <tbody class="divide-y divide-gray-800 bg-gray-900/40 text-gray-300">
           <tr>
-            <td class="px-4 py-3 font-semibold text-white">Granite 4 Dense 2B</td>
+            <td class="px-4 py-3 font-semibold text-white">Granite 4 2B</td>
             <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-cyan-400">granite4:2b</code></td>
-            <td class="px-4 py-3">Starter</td>
-            <td class="px-4 py-3">Fast and lightweight for structured tasks. Best for single-user or low-concurrency deployments.</td>
+            <td class="px-4 py-3">Starter / Edge</td>
+            <td class="px-4 py-3">Lightweight and efficient. Good for basic summarization, classification, and always-on internal tools.</td>
             <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs whitespace-nowrap">Get quote →</a></td>
           </tr>
           <tr>
-            <td class="px-4 py-3 font-semibold text-white">Granite 4 Dense 8B</td>
+            <td class="px-4 py-3 font-semibold text-white">Granite 4 8B</td>
             <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-cyan-400">granite4:8b</code></td>
             <td class="px-4 py-3">Standard</td>
-            <td class="px-4 py-3">Strong all-around performer for business Q&amp;A, summarization, and coding assistance. Recommended starting point for teams.</td>
+            <td class="px-4 py-3">The practical sweet spot for most business deployments. Handles coding, structured reasoning, and document tasks reliably.</td>
             <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs whitespace-nowrap">Get quote →</a></td>
           </tr>
           <tr>
-            <td class="px-4 py-3 font-semibold text-white">Granite 4 MoE 3B (A800M)</td>
-            <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-cyan-400">granite4:3b-a800m</code></td>
-            <td class="px-4 py-3">Starter / Standard</td>
-            <td class="px-4 py-3">Mixture-of-Experts variant. Efficient inference with reduced active parameters. Good for latency-sensitive applications.</td>
+            <td class="px-4 py-3 font-semibold text-white">Granite 4 14B</td>
+            <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-cyan-400">granite4:14b</code></td>
+            <td class="px-4 py-3">Standard / Professional</td>
+            <td class="px-4 py-3">Noticeably stronger on multi-step reasoning and longer context tasks. Recommended for knowledge-intensive workflows.</td>
+            <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs whitespace-nowrap">Get quote →</a></td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-white">Granite 4 32B</td>
+            <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-cyan-400">granite4:32b</code></td>
+            <td class="px-4 py-3">Professional / Enterprise</td>
+            <td class="px-4 py-3">Best performance in the family for complex enterprise use cases. Requires dedicated GPU resources.</td>
             <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs whitespace-nowrap">Get quote →</a></td>
           </tr>
         </tbody>
