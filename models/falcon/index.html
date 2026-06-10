@@ -70,24 +70,20 @@
         <h2 class="mt-10 text-3xl font-black">Who This Model Family Is For</h2>
         <div class="mt-6 grid gap-4 md:grid-cols-2">
           <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <div class="flex items-center gap-2 mb-2"><span class="text-lg">👤</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span></div>
-            <h3 class="text-lg font-bold text-cyan-200">A permissively licensed assistant that runs anywhere</h3>
-            <p class="mt-2 text-sm text-slate-400">Falcon 3's 1B and 3B models run on minimal hardware — even a sub-$100 device — making Falcon one of the easiest ways to own a private assistant outright. For Arabic, French, Spanish, or German speakers, the multilingual depth shows immediately. The Falcon licensing is permissive enough that anything you build on it personally is unencumbered.</p>
+            <div class="flex items-center gap-2 mb-3"><span class="text-lg">👤</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span></div>
+            <p class="mt-2 text-sm text-slate-400">Falcon is a reasonable choice if you want a capable local model that runs efficiently without requiring top-tier hardware. The smaller variants (such as Falcon 3 7B and 10B) offer solid reasoning and writing performance for everyday tasks like drafting, summarization, and research assistance. While it no longer leads the pack in raw capability compared to current frontier models, it remains practical for users who prioritize speed and lower resource usage over maximum intelligence.</p>
           </div>
           <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <div class="flex items-center gap-2 mb-2"><span class="text-lg">🏢</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span></div>
-            <h3 class="text-lg font-bold text-cyan-200">Commercial products and MENA / multilingual operations</h3>
-            <p class="mt-2 text-sm text-slate-400">Falcon's biggest draw for business is the cleanest licensing path in open AI: legal and procurement can approve it without the user-threshold conditions Llama imposes. Combined with genuine Arabic and European-language depth and a state-backed, non-commercial research origin, it is a low-risk infrastructure choice for commercial AI products and MENA-region deployments.</p>
+            <div class="flex items-center gap-2 mb-3"><span class="text-lg">🏢</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span></div>
+            <p class="mt-2 text-sm text-slate-400">Teams that need a reliable, self-hosted assistant for internal documentation, knowledge retrieval, or structured workflows will find Falcon a workable option, particularly when efficiency matters. Its relatively low inference cost compared to larger dense models can make it attractive for serving multiple users from modest hardware. However, for complex multi-step reasoning or high-stakes decision support, newer models from the Llama, Qwen, or DeepSeek families generally deliver stronger results. Falcon remains a sensible choice when balancing performance with operational simplicity and cost.</p>
           </div>
           <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <div class="flex items-center gap-2 mb-2"><span class="text-lg">⚙️</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span></div>
-            <h3 class="text-lg font-bold text-cyan-200">A consistent family from edge to server</h3>
-            <p class="mt-2 text-sm text-slate-400">With sizes from 1B to 180B under one family and tooling, developers can prototype on a 3B at the edge and scale to 7B/10B on a server without changing prompts or integration. The original Falcon 7B/40B are Apache 2.0 for the cleanest embedding; Falcon 3 adds materially better instruction following and STEM reasoning for tool and agent backends.</p>
+            <div class="flex items-center gap-2 mb-3"><span class="text-lg">⚙️</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span></div>
+            <p class="mt-2 text-sm text-slate-400">Developers can use Falcon effectively for code explanation, documentation generation, and building internal tools where fast iteration and lower hardware demands are priorities. It follows instructions reasonably well and integrates cleanly with standard frameworks. That said, for advanced coding tasks, agentic workflows, or complex debugging, more recent models (particularly Qwen 2.5-Coder and DeepSeek-Coder variants) currently outperform Falcon. It can still serve as a capable baseline when resource efficiency is a key constraint.</p>
           </div>
           <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <div class="flex items-center gap-2 mb-2"><span class="text-lg">🔬</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span></div>
-            <h3 class="text-lg font-bold text-cyan-200">RefinedWeb provenance and multilingual study</h3>
-            <p class="mt-2 text-sm text-slate-400">Falcon was trained on the purpose-built, documented RefinedWeb dataset, which makes it a useful reference for researchers studying data curation effects and multilingual capability. Permissive licensing allows modification and derivative research, and the broad size range supports controlled scaling experiments within a single architecture lineage.</p>
+            <div class="flex items-center gap-2 mb-3"><span class="text-lg">🔬</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span></div>
+            <p class="mt-2 text-sm text-slate-400">Researchers who need a locally deployable model for text analysis, summarization, or benchmarking will find Falcon usable, especially in resource-constrained environments. Its efficiency makes it practical for high-volume experimentation without requiring large GPU clusters. However, for state-of-the-art results on reasoning, mathematics, or coding benchmarks, newer open models have generally surpassed the Falcon series. It remains a reasonable baseline or efficiency-focused option when computational budget is limited.</p>
           </div>
         </div>
 
@@ -157,51 +153,58 @@
         <p class="mt-4 text-slate-300">The choice to deploy Falcon is rarely purely about raw benchmark performance. It is about choosing a model that fits the legal, operational, and linguistic requirements of a real deployment — and Falcon occupies a distinctive position on all three dimensions.</p>
 
         <h2 class="mt-10 text-3xl font-black">Licensing Information</h2>
-        <p class="mt-5 text-slate-300">Falcon's licensing is a genuine strength, but it is not uniform across the family. The original Falcon 7B and 40B are Apache 2.0. Falcon 2 and Falcon 3 are released under the TII Falcon License 2.0 — a permissive, Apache-2.0-based license with an acceptable use policy, broadly commercial-friendly. The exception is the giant Falcon 180B, which carries a more restrictive bespoke license with hosting restrictions. Verify the specific model before commercial deployment.</p>
-        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
-          <table class="w-full text-left text-sm">
-            <thead class="bg-slate-950 text-cyan-200">
-              <tr>
-                <th class="px-4 py-3">Model</th>
-                <th class="px-4 py-3">License</th>
-                <th class="px-4 py-3">Commercial use</th>
-                <th class="px-4 py-3">Model card</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-              <tr><td class="px-4 py-3 font-semibold text-white">Falcon 3 (1B–10B)</td><td class="px-4 py-3">TII Falcon License 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/tiiuae/Falcon3-10B-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">tiiuae/Falcon3-10B-Instruct →</a></td></tr>
-              <tr><td class="px-4 py-3 font-semibold text-white">Falcon 2 11B</td><td class="px-4 py-3">TII Falcon License 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/tiiuae/falcon-11B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">tiiuae/falcon-11B →</a></td></tr>
-              <tr><td class="px-4 py-3 font-semibold text-white">Falcon 7B / 40B (original)</td><td class="px-4 py-3">Apache 2.0</td><td class="px-4 py-3"><span class="text-green-400">✓ Permitted</span></td><td class="px-4 py-3"><a href="https://huggingface.co/tiiuae/falcon-40b-instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">tiiuae/falcon-40b-instruct →</a></td></tr>
-              <tr><td class="px-4 py-3 font-semibold text-white">Falcon 180B</td><td class="px-4 py-3">Falcon 180B TII License</td><td class="px-4 py-3"><span class="text-amber-400">Restricted — verify hosting</span></td><td class="px-4 py-3"><a href="https://huggingface.co/tiiuae/falcon-180B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">tiiuae/falcon-180B →</a></td></tr>
-            </tbody>
-          </table>
+        <p class="mt-5 text-slate-300">Most Falcon models are released under the <strong class="text-white">Apache 2.0 License</strong>, which is one of the most permissive and business-friendly open-source licenses available. This allows commercial use, modification, and redistribution without royalty fees or restrictive usage thresholds.</p>
+        <p class="mt-4 text-slate-300">You should still review the specific model card for any additional usage guidelines or notes from the Technology Innovation Institute (TII), as licensing details can vary slightly between releases.</p>
+        <p class="mt-5 text-slate-300"><strong class="text-white">Official model cards:</strong></p>
+        <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+          <li><a href="https://huggingface.co/tiiuae/falcon-3-10b-instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">tiiuae/falcon-3-10b-instruct</a></li>
+          <li><a href="https://huggingface.co/tiiuae/falcon-3-7b-instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">tiiuae/falcon-3-7b-instruct</a></li>
+        </ul>
+        <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+          <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
         </div>
-        <p class="mt-3 text-xs text-slate-500">Falcon 3 / Falcon 2 use the permissive TII Falcon License 2.0; the original 7B/40B are Apache 2.0; Falcon 180B has a more restrictive bespoke license. License information sourced from Hugging Face model cards and may change between releases. Always verify the current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
 
         <h2 class="mt-10 text-3xl font-black">Available Model Sizes</h2>
-        <p class="mt-5 text-slate-300">Falcon spans edge to flagship sizes. VERIFY: Confirm current Ollama tags before planning. NoCloudGPT will confirm hardware requirements and select the right quantization before your pilot begins.</p>
+        <!-- TODO: Create individual size pages for each Falcon variant with hardware benchmarks and deployment guidance. -->
         <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
           <table class="w-full text-left text-sm">
             <thead class="bg-slate-950 text-cyan-200">
               <tr>
-                <th class="px-4 py-3">Model</th>
-                <th class="px-4 py-3">Deployment tier</th>
-                <th class="px-4 py-3">Best for</th>
+                <th class="px-4 py-3">Model Size</th>
+                <th class="px-4 py-3">Ollama Tag</th>
+                <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                <th class="px-4 py-3">Notes</th>
                 <th class="px-4 py-3"></th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-              <tr><td class="px-4 py-3 font-semibold text-white">Falcon 3 1B / 3B</td><td class="px-4 py-3">Starter AI — 2 GB / edge</td><td class="px-4 py-3">Edge and disconnected deployments</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td></tr>
-              <tr><td class="px-4 py-3 font-semibold text-white">Falcon 3 7B / 10B Q4</td><td class="px-4 py-3">Standard AI — 4–8 GB</td><td class="px-4 py-3">General multilingual business use — recommended</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td></tr>
-              <tr><td class="px-4 py-3 font-semibold text-white">Falcon 40B Q4</td><td class="px-4 py-3">Professional AI — entry GPU</td><td class="px-4 py-3">Demanding reasoning and analysis</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td></tr>
-              <tr><td class="px-4 py-3 font-semibold text-white">Falcon 180B Q4</td><td class="px-4 py-3">Enterprise AI — large GPU / on-prem</td><td class="px-4 py-3">Frontier-competitive quality (license caveat)</td><td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs">Get quote →</a></td></tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Falcon 3 7B</td>
+                <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">falcon3:7b</code></td>
+                <td class="px-4 py-3">Starter / Standard</td>
+                <td class="px-4 py-3">Efficient and fast. Good for general tasks where resource usage matters.</td>
+                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Falcon 3 10B</td>
+                <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">falcon3:10b</code></td>
+                <td class="px-4 py-3">Standard</td>
+                <td class="px-4 py-3">Stronger reasoning than the 7B variant while remaining relatively efficient. Recommended for most team use cases.</td>
+                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Falcon 2 11B</td>
+                <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">falcon2:11b</code></td>
+                <td class="px-4 py-3">Standard</td>
+                <td class="px-4 py-3">Includes vision capabilities (multimodal). Useful when image understanding is needed alongside text.</td>
+                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <p class="mt-3 text-xs text-slate-500">
-          Individual model-size pages with exact pull commands, quantization guidance, and pricing are coming soon.
-          <!-- TODO: Link each row to individual model-size pages when created -->
-        </p>
+        <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+          <p class="text-sm text-slate-300"><strong class="text-white">Note:</strong> The Falcon series has been somewhat overtaken in raw capability by newer models (Llama 3/4, Qwen 2.5, DeepSeek). It remains a practical choice when inference speed and lower hardware requirements are priorities over maximum performance.</p>
+        </div>
 
         <h2 class="mt-10 text-3xl font-black">Deploy Falcon on Your Infrastructure</h2>
         <p class="mt-5 text-slate-300">NoCloudGPT configures Falcon or Falcon 3 on your Lightsail instance, on-premise server, or edge hardware. Setup includes Ollama, OpenWebUI, and model-specific configuration tailored to your primary language and use case. Multilingual system prompt configuration for Arabic, French, Spanish, or German workflows is available on request.</p>
