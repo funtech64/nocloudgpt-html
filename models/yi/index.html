@@ -67,19 +67,19 @@
         <div class="mt-6 grid gap-4 md:grid-cols-2">
           <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
             <div class="flex items-center gap-2 mb-3"><span class="text-lg">👤</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span></div>
-            <p class="mt-2 text-sm text-slate-400">Yi is a strong choice if you regularly work across English and Chinese. It handles writing, research summaries, and general reasoning well in both languages without the awkward degradation that affects many Western-centric models when processing Chinese input. The smaller variants (6B and 9B) run comfortably on consumer hardware, making private bilingual AI genuinely accessible. If you need a capable local assistant for cross-language work or content creation, Yi delivers practical value without requiring high-end infrastructure.</p>
+            <p class="mt-2 text-sm text-slate-400">Yi is an excellent choice if your work or personal life regularly moves between English and Chinese. Whether you're drafting bilingual emails, translating documents, studying Mandarin, or chatting with family abroad, Yi handles the language switch naturally and efficiently. The 6B and 9B versions run comfortably on a single consumer GPU or modern laptop, making private bilingual assistance genuinely accessible. For purely English-language tasks, however, newer families like Llama 3.3 or Qwen 2.5 often feel slightly more polished.</p>
           </div>
           <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
             <div class="flex items-center gap-2 mb-3"><span class="text-lg">🏢</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span></div>
-            <p class="mt-2 text-sm text-slate-400">Teams operating in cross-border or multilingual environments — particularly those with Chinese-speaking partners, customers, or markets — will find Yi's bilingual fluency genuinely useful. It performs well on document summarization, internal knowledge retrieval, and structured writing tasks in both English and Chinese. Because it runs entirely on your own infrastructure through NoCloudGPT, sensitive business communications and client data never leave your environment. This makes it a practical fit for legal, consulting, and finance teams where confidentiality and cross-language capability both matter.</p>
+            <p class="mt-2 text-sm text-slate-400">Teams operating across English- and Chinese-speaking markets — localization, bilingual customer support, cross-border documentation, or regional marketing — will find Yi particularly valuable. Running it privately through NoCloudGPT means sensitive business communications in either language never leave your infrastructure. If your operations are English-only, you will generally get better overall performance from Qwen 2.5 or Llama 3.3. Yi's real strength is balanced bilingual capability, not raw English-centric performance.</p>
           </div>
           <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
             <div class="flex items-center gap-2 mb-3"><span class="text-lg">⚙️</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span></div>
-            <p class="mt-2 text-sm text-slate-400">Developers can use Yi effectively for code generation, API documentation, technical Q&amp;A, and logic-heavy prompts. While it is not a code-specialist model like DeepSeek-Coder or Qwen 2.5-Coder, it offers solid general-purpose coding and reasoning performance. Its instruction-tuned variants respond well to structured prompts, making it straightforward to integrate into internal tools, chat applications, or automation workflows. The model's efficiency also helps keep inference costs reasonable when serving multiple developers or services.</p>
+            <p class="mt-2 text-sm text-slate-400">Developers building bilingual applications, translation tools, or chat interfaces serving both English and Chinese users will find Yi a practical and efficient foundation. It offers solid reasoning at the 34B scale without the extreme hardware demands of frontier models. That said, it is not a specialized coding model. For code generation, agentic workflows, or complex technical tasks, DeepSeek V3 or Qwen 2.5-Coder will deliver stronger results.</p>
           </div>
           <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
             <div class="flex items-center gap-2 mb-3"><span class="text-lg">🔬</span><span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span></div>
-            <p class="mt-2 text-sm text-slate-400">Researchers working with multilingual datasets — especially English-Chinese parallel corpora, translated literature, or cross-lingual NLP tasks — will appreciate Yi's balanced handling of both languages. It is useful for literature summarization, hypothesis drafting, and exploratory analysis of unstructured documents. Because it runs fully locally via NoCloudGPT, there are no API costs or data-sharing concerns. For highly specialized scientific domains, you should benchmark Yi against your specific requirements, as larger or more specialized models may outperform it in narrow fields.</p>
+            <p class="mt-2 text-sm text-slate-400">Researchers studying multilingual behavior, Chinese NLP, or cross-lingual transfer will find Yi a valuable subject because its training corpus is heavily Chinese-weighted. The 34B variant punches above its weight on reasoning benchmarks for its generation. For English-centric or coding-heavy research, newer models have largely surpassed it. Yi remains genuinely useful for bilingual evaluation work and comparative multilingual studies.</p>
           </div>
         </div>
 
@@ -149,25 +149,18 @@
         <p class="mt-5 text-slate-300">Most NoCloudGPT customers with China-facing work start with Yi 9B on an 8 GB Lightsail instance. This configuration handles the full range of everyday bilingual tasks — correspondence, document summarization, translation review, and research — at a monthly cost significantly below any bilingual SaaS alternative. Teams with high-volume document processing, legal work, or multiple concurrent users should consider the Yi 34B on a GPU instance.</p>
 
         <h2 class="mt-10 text-3xl font-black">Licensing Information</h2>
-        <p class="mt-5 text-slate-300">Yi models are released by 01.AI under the <strong class="text-white">Yi Series Models Community License</strong>. This is a custom, source-available license rather than a fully permissive open-source license like Apache 2.0.</p>
-        <p class="mt-4 text-slate-300"><strong class="text-white">Key points:</strong></p>
+        <p class="mt-5 text-slate-300">The current <strong class="text-white">Yi 1.5</strong> series is released under the <strong class="text-white">Apache 2.0 License</strong>, which permits commercial use, modification, and redistribution without royalty fees or special registration requirements.</p>
+        <p class="mt-4 text-slate-300">This is a meaningful improvement over the original Yi release, which used a more restrictive custom license. Make sure any deployment uses the Yi 1.5 series (current Ollama tags point to these versions).</p>
+        <p class="mt-5 text-slate-300"><strong class="text-white">Official source:</strong></p>
         <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
-          <li>Commercial use is permitted for most organizations.</li>
-          <li>Organizations with more than 100 million monthly active users must obtain a separate commercial license directly from 01.AI.</li>
-          <li>You may not redistribute the model weights outside the terms specified in the license.</li>
-        </ul>
-        <p class="mt-4 text-slate-300">For most standard business and research use cases, the license is workable. However, you should review the full terms on the official model card before deploying, especially if your use case involves redistribution or large-scale commercial applications.</p>
-        <p class="mt-5 text-slate-300"><strong class="text-white">Official model card:</strong></p>
-        <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
-          <li><a href="https://huggingface.co/01-ai" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">01-ai/Yi on Hugging Face</a></li>
+          <li><a href="https://huggingface.co/01-ai" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">01-ai on Hugging Face</a></li>
         </ul>
         <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
           <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
         </div>
 
         <h2 class="mt-10 text-3xl font-black">Available Model Sizes</h2>
-        <p class="mt-5 text-slate-300">Yi models are available in several sizes, with instruction-tuned (-chat) variants recommended for most conversational and task-based use cases.</p>
-        <!-- TODO: Create individual size pages for each Yi variant with hardware benchmarks and deployment guidance. -->
+        <!-- TODO: Create individual size pages for yi-6b, yi-9b, and yi-34b with hardware benchmarks, quantization options, and deployment guidance. -->
         <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
           <table class="w-full text-left text-sm">
             <thead class="bg-slate-950 text-cyan-200">
@@ -184,35 +177,25 @@
                 <td class="px-4 py-3 font-semibold text-white">Yi 6B</td>
                 <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">yi:6b</code></td>
                 <td class="px-4 py-3">Starter</td>
-                <td class="px-4 py-3">Fast and lightweight. Good for single-user bilingual chat and simple summarization.</td>
+                <td class="px-4 py-3">Lightweight and efficient. Good for personal bilingual use and light translation tasks.</td>
                 <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
               </tr>
               <tr>
                 <td class="px-4 py-3 font-semibold text-white">Yi 9B</td>
                 <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">yi:9b</code></td>
-                <td class="px-4 py-3">Starter / Standard</td>
-                <td class="px-4 py-3">A newer mid-small model with improved reasoning over 6B. Good balance of speed and quality.</td>
+                <td class="px-4 py-3">Standard</td>
+                <td class="px-4 py-3">Best balance of quality and resource use for small teams. Noticeably stronger reasoning than 6B.</td>
                 <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
               </tr>
               <tr>
                 <td class="px-4 py-3 font-semibold text-white">Yi 34B</td>
                 <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">yi:34b</code></td>
                 <td class="px-4 py-3">Professional</td>
-                <td class="px-4 py-3">The flagship size. Noticeably stronger reasoning and bilingual depth. Requires more substantial hardware.</td>
-                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3 font-semibold text-white">Yi 34B (Chat)</td>
-                <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">yi:34b-chat</code></td>
-                <td class="px-4 py-3">Professional</td>
-                <td class="px-4 py-3">Instruction-tuned variant of 34B. Recommended for most business and developer deployments.</td>
+                <td class="px-4 py-3">The strongest Yi model. Capable bilingual reasoning for production workloads. Requires 24GB+ VRAM (quantized).</td>
                 <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
               </tr>
             </tbody>
           </table>
-        </div>
-        <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
-          <p class="text-sm text-slate-300"><strong class="text-white">Hardware note:</strong> The Yi 34B models generally require at least 24GB VRAM for comfortable GPU-accelerated inference, or a well-configured high-RAM CPU server. We can help you match the right hardware tier to your workload.</p>
         </div>
 
         <h2 class="mt-10 text-3xl font-black">Deploy Yi on Your Infrastructure</h2>
