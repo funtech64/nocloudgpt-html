@@ -153,6 +153,84 @@
 
     <hr class="section-divider">
 
+    <!-- SECTION: Who this model family is for -->
+    <h2>Who This Model Family is For</h2>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>👤 Personal use</h3>
+            <p>All-MiniLM is a great fit if you want to build a personal semantic search tool or a local "chat with my notes" system without needing a powerful GPU. It runs comfortably on everyday laptops and mini PCs, and can index thousands of notes or PDFs in minutes. Keep in mind it only produces embeddings — it does not generate answers on its own. You will pair it with a chat model (such as Llama or Mistral) to complete a RAG pipeline.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🏢 Business / team use</h3>
+            <p>For small teams that need a private knowledge base search or internal RAG system, All-MiniLM offers one of the lowest-cost ways to get started. It is lightweight enough to run alongside other workloads on a single modest server, making it practical for validating whether semantic search delivers value before investing in larger models. It performs best on English-language content and smaller to medium-sized corpora.</p>
+        </div>
+        <div class="feature-card">
+            <h3>⚙️ Developer &amp; technical use</h3>
+            <p>Developers building RAG prototypes, search features, or recommendation systems will appreciate that All-MiniLM produces compact 384-dimensional vectors that are cheap to store and very fast to query. The small footprint means you can run the embedder in the same container or process as your application without significant resource overhead. It is a reliable default when you prioritize predictable latency and simplicity over maximum retrieval quality.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔬 Data science &amp; research</h3>
+            <p>All-MiniLM remains useful as a fast, well-documented baseline for clustering, topic modeling, deduplication, and similarity studies on English text. It is widely cited and easy to reproduce, making it a sensible reference point when benchmarking newer models such as BGE-M3 or Nomic Embed v1.5. On modern MTEB benchmarks it trails larger models, so it is best positioned as a speed-optimized baseline rather than a state-of-the-art result.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION: Licensing information -->
+    <h2>Licensing Information</h2>
+
+    <p>All-MiniLM models (including the widely used <code style="color:#06d6a0;">all-MiniLM-L6-v2</code> and <code style="color:#06d6a0;">all-MiniLM-L12-v2</code>) are released under the <strong style="color:#fff;">Apache 2.0 License</strong>, which permits commercial use, modification, and redistribution with attribution. There are no usage-based fees or restrictions tied to the model weights.</p>
+
+    <p><strong style="color:#fff;">Official model card:</strong></p>
+    <ul style="list-style:disc; padding-left:1.5rem; margin-bottom:18px; color:#c8d4e0;">
+        <li><a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2" target="_blank" rel="noopener" style="color:#06d6a0;">sentence-transformers/all-MiniLM-L6-v2 on Hugging Face</a></li>
+    </ul>
+
+    <div class="highlight-box" style="border-left-color:#f59e0b; background:#1a1408;">
+        <p><strong style="color:#f59e0b;">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION: Available model sizes -->
+    <h2>Available Model Sizes</h2>
+    <!-- TODO: Create individual model size detail pages for all-MiniLM-L6-v2 and all-MiniLM-L12-v2 with latency benchmarks and RAG configuration examples. -->
+
+    <table class="hardware-table">
+        <thead>
+            <tr>
+                <th>Model Size</th>
+                <th>Ollama Tag</th>
+                <th>Recommended NoCloudGPT Tier</th>
+                <th>Notes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong style="color:#fff;">MiniLM-L6-v2</strong> (~23M params)</td>
+                <td>all-minilm:l6-v2</td>
+                <td>Starter</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;">The classic fast option. Best for personal RAG, small knowledge bases, and rapid prototyping. Runs well on CPU.</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+            </tr>
+            <tr>
+                <td><strong style="color:#fff;">MiniLM-L12-v2</strong> (~33M params)</td>
+                <td>all-minilm:l12-v2</td>
+                <td>Starter / Standard</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;">Slightly higher quality than L6-v2 with modest extra cost. A good middle ground when L6 feels too lossy.</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="info-box">
+        <p><strong style="color:#fff;">Positioning note:</strong> All-MiniLM's main strengths are speed and simplicity. If you need stronger retrieval quality, multilingual support, or longer context handling, consider stepping up to <strong style="color:#fff;">BGE-M3</strong> or <strong style="color:#fff;">Nomic Embed v1.5</strong> instead. Embedding models are lightweight — the main performance bottleneck in a RAG system is almost always the generation model, not the embedder.</p>
+    </div>
+
+    <hr class="section-divider">
+
     <h2>What All-MiniLM Does Well</h2>
 
     <div class="feature-grid">
