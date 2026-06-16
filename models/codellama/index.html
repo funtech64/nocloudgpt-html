@@ -143,98 +143,108 @@
           </p>
         </section>
 
+        <!-- SECTION: Who this model family is for -->
         <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model is for</p>
-          <h2 class="mt-3 text-3xl font-black">Who Should Be Running Code Llama</h2>
-          <div class="mt-6 space-y-5">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <h3 class="text-lg font-bold text-cyan-200">👤 Personal Use</h3>
-              <p class="mt-3 text-slate-400">Developers who want AI coding assistance without their code leaving their machine. Code Llama 7B runs on a 4–8 GB Lightsail instance or a modern laptop with Ollama. For personal projects involving proprietary ideas, sensitive client work done under NDA, or simply a preference for data sovereignty, a private Code Llama deployment gives you GitHub Copilot-class code completion with no data leaving your control. The Instruct variant is the right choice for interactive use via OpenWebUI.</p>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">CodeLlama is a solid choice for solo developers who want a capable local coding assistant that runs entirely on their own hardware. It works well for personal side projects, learning new programming languages, writing scripts in Python, JavaScript, or Bash, and getting help with everyday coding tasks. The 7B and 13B versions run comfortably on consumer hardware. For the absolute best coding performance in 2026, newer models like DeepSeek V3 and Qwen 2.5-Coder generally deliver stronger results.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <h3 class="text-lg font-bold text-cyan-200">🏢 Business &amp; Team Use</h3>
-              <p class="mt-3 text-slate-400">Software agencies, product companies, and consultancies whose source code is a competitive asset or whose client NDAs prohibit routing code through external AI providers. A shared Code Llama deployment on a team's own infrastructure gives every developer access to AI-assisted code review, refactoring, and documentation without any code transiting cloud AI servers. The 34B variant on GPU hardware handles production engineering teams with complex multi-language codebases. Defense contractors and government software teams with air-gap or no-external-network requirements can run Code Llama entirely on-premise.</p>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">CodeLlama remains a practical option for teams that need a private, in-house coding assistant without relying on the very latest (and largest) models. It can support internal tools, code review helpers, documentation generation, and lightweight developer productivity workflows. For production-grade coding assistance in 2026, newer open models such as Qwen 2.5-Coder and Codestral typically produce stronger results. CodeLlama is best when stability, a well-understood license, and modest hardware requirements are priorities.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <h3 class="text-lg font-bold text-cyan-200">⚙️ Developer &amp; Technical Use</h3>
-              <p class="mt-3 text-slate-400">The Code Llama Python variant is specifically optimized for data engineering and ML pipeline work — Django/FastAPI development, scientific computing, and data transformation scripts in Python. For developers building coding AI products, the Llama community license permits commercial use for most deployment scenarios (verify scale thresholds). Code Llama Base's fill-in-the-middle capability makes it well-suited to IDE plugin integration for code completion, while the Instruct variant handles conversational code review and refactoring workflows through an API.</p>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">This is where CodeLlama still shines. The Instruct variants follow coding instructions reliably, and the base models support fill-in-the-middle (FIM) infilling, making them suitable for editor integrations, autocomplete tools, and refactoring assistants. Developers building local copilots, IDE plugins, or experimenting with agentic coding workflows will find CodeLlama predictable and well-supported by existing community tooling.</p>
             </div>
             <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <h3 class="text-lg font-bold text-cyan-200">🔬 Data Science &amp; Research Use</h3>
-              <p class="mt-3 text-slate-400">Research teams in computational biology, physics simulation, and data science who work in Python, R, Julia, or domain-specific languages and want a local coding assistant without institutional data governance concerns. Code Llama's three variant types — Base, Instruct, Python — also make it a useful controlled experiment for studying how fine-tuning emphasis (general instruction following versus Python specialization) affects coding output quality on domain-specific scientific code.</p>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">CodeLlama remains a useful baseline for code-generation research, ablation studies, and comparative evaluations. It is one of the most-cited open coding models and integrates cleanly with established benchmarks like HumanEval and MBPP. For cutting-edge performance research in 2026, you will likely also want to evaluate DeepSeek-Coder V3 and Qwen 2.5-Coder alongside it.</p>
             </div>
           </div>
         </section>
 
+        <!-- SECTION: Licensing information -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
-          <h2 class="mt-3 text-3xl font-black">Code Llama License</h2>
-          <p class="mt-5 text-slate-300">Code Llama is released under the <strong class="text-white">Llama 2 Community License</strong>. Commercial use is permitted for most organizations. The license restricts use by organizations with more than 700 million monthly active users and requires Meta attribution in applications. Verify the current license terms at the model card before deployment, as Meta has updated Llama licensing across model generations.</p>
-          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-slate-950 text-cyan-200">
-                <tr><th class="px-4 py-3">Model</th><th class="px-4 py-3">License</th><th class="px-4 py-3">Commercial Use</th><th class="px-4 py-3">Model Card</th></tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Code Llama (all sizes)</td>
-                  <td class="px-4 py-3">Llama 2 Community License</td>
-                  <td class="px-4 py-3">Permitted (conditions apply)</td>
-                  <td class="px-4 py-3"><a href="https://huggingface.co/codellama/CodeLlama-34b-Instruct-hf" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">codellama/CodeLlama-34b-Instruct-hf →</a></td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Code Llama Python (all sizes)</td>
-                  <td class="px-4 py-3">Llama 2 Community License</td>
-                  <td class="px-4 py-3">Permitted (conditions apply)</td>
-                  <td class="px-4 py-3"><a href="https://huggingface.co/codellama/CodeLlama-34b-Python-hf" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">codellama/CodeLlama-34b-Python-hf →</a></td>
-                </tr>
-              </tbody>
-            </table>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">CodeLlama is released by Meta under the <strong class="text-white">Llama 2 Community License</strong>, which permits commercial use for most organizations. The main restriction is that if your product or service has more than 700 million monthly active users, you must request a separate license from Meta.</p>
+          <p class="mt-4 text-slate-300">You can review the full license and model details on the official model card.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official source:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/codellama" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">codellama on Hugging Face</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
           </div>
-          <p class="mt-4 text-xs text-slate-500">License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
         </section>
 
+        <!-- SECTION: Available model sizes -->
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
-          <h2 class="mt-3 text-3xl font-black">Code Llama Sizes and Deployment Tiers</h2>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <!-- TODO: Create individual size pages for codellama-7b, codellama-13b, codellama-34b, and codellama-70b with hardware benchmarks, quantization options, and deployment guidance. -->
           <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
             <table class="w-full text-left text-sm">
               <thead class="bg-slate-950 text-cyan-200">
-                <tr><th class="px-4 py-3">Model</th><th class="px-4 py-3">RAM (Q4)</th><th class="px-4 py-3">Deployment Tier</th><th class="px-4 py-3">Best For</th><th class="px-4 py-3"></th></tr>
+                <tr>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
               </thead>
               <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Code Llama 7B (Instruct)</td>
-                  <td class="px-4 py-3">~4.5 GB</td>
-                  <td class="px-4 py-3">Standard AI (4–8 GB)</td>
-                  <td class="px-4 py-3">Individual developer, interactive coding assistance, simple debugging</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 font-semibold">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">CodeLlama 7B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">codellama:7b</code></td>
+                  <td class="px-4 py-3">Starter</td>
+                  <td class="px-4 py-3">Runs on ~8 GB VRAM. Good for autocomplete, simple scripts, and lightweight editor integrations.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Code Llama 13B (Instruct)</td>
-                  <td class="px-4 py-3">~8 GB</td>
-                  <td class="px-4 py-3">Standard/Professional AI (8–10 GB)</td>
-                  <td class="px-4 py-3">Small team shared assistant, multi-file refactoring, code review</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 font-semibold">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">CodeLlama 13B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">codellama:13b</code></td>
+                  <td class="px-4 py-3">Standard</td>
+                  <td class="px-4 py-3">~16 GB VRAM. Better at multi-file reasoning and longer functions. A balanced choice for most developers.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Code Llama 34B (Instruct)</td>
-                  <td class="px-4 py-3">~20 GB</td>
-                  <td class="px-4 py-3">Professional AI (GPU — 20–24 GB VRAM)</td>
-                  <td class="px-4 py-3">Production engineering teams, complex architectural questions, large codebase review</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 font-semibold">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">CodeLlama 34B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">codellama:34b</code></td>
+                  <td class="px-4 py-3">Professional</td>
+                  <td class="px-4 py-3">~24–32 GB VRAM. Strongest CodeLlama for general programming tasks.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Code Llama 70B (Instruct)</td>
-                  <td class="px-4 py-3">~40 GB</td>
-                  <td class="px-4 py-3">Heavy AI (multi-GPU)</td>
-                  <td class="px-4 py-3">Maximum quality for high-volume teams, enterprise-grade code intelligence</td>
-                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 font-semibold">Get quote →</a></td>
+                  <td class="px-4 py-3 font-semibold text-white">CodeLlama 70B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">codellama:70b</code></td>
+                  <td class="px-4 py-3">Professional / Enterprise</td>
+                  <td class="px-4 py-3">Requires 48+ GB VRAM or multi-GPU. Highest quality in the family, but consider whether a newer coding model would serve you better.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <!-- TODO: Link each row to individual model-size pages when created -->
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-white">Note:</strong> Each size is available in <strong class="text-white">Base</strong>, <strong class="text-white">Instruct</strong>, and <strong class="text-white">Python</strong> variants on Ollama. Use <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">-instruct</code> for chat-style coding assistants and the base variants for fill-in-the-middle (FIM) / autocomplete use cases. CodeLlama is an older model family (2023) and has been surpassed on most coding benchmarks by newer models such as DeepSeek V3, Qwen 2.5-Coder, and Codestral.</p>
+          </div>
         </section>
 
         <section>
