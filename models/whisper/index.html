@@ -150,6 +150,96 @@
 
     <hr class="section-divider">
 
+    <h2>Who This Model Family is For</h2>
+
+    <h3>Personal Use</h3>
+    <p>Whisper is an excellent choice if you record voice memos, lectures, podcasts, interviews, or meetings and want accurate transcription without uploading your audio to any cloud service. It handles real-world audio well — including accents, background noise, and casual speech — and produces clean, timestamped text. It is a specialized transcription tool, not a chatbot, so it will not summarize your recordings or answer questions about them on its own.</p>
+
+    <h3>Business / Team Use</h3>
+    <p>Whisper is particularly valuable for organizations that handle sensitive audio — such as client calls, internal meetings, medical or legal dictation, and HR interviews — where sending recordings to a third-party API creates compliance or confidentiality risks. Running it locally through NoCloudGPT keeps all audio inside your infrastructure. It delivers reliable, timestamped transcripts that can be fed into downstream workflows, though you will need a separate model or tool if you also require summaries or action items.</p>
+
+    <h3>Developer &amp; Technical Use</h3>
+    <p>Developers can use Whisper as a self-hosted speech-to-text engine for transcription features, voice interfaces, subtitling pipelines, and call analytics tools. It provides clean, predictable text output that is easy to integrate into larger systems, with strong multilingual support across nearly 100 languages. Because it is purpose-built for automatic speech recognition (ASR), integration is straightforward: send audio in, receive transcribed (and optionally translated) text out.</p>
+
+    <h3>Data Science &amp; Research Use</h3>
+    <p>Researchers working with audio corpora — including qualitative interviews, field recordings, linguistic datasets, or oral histories — will find Whisper highly effective for producing accurate transcripts across many languages without per-minute API costs or data-sharing concerns. Its robustness to noisy, real-world recordings makes it practical for messy source material. It is a transcription and translation tool, so it is best paired with other models for analysis, coding, or NLP tasks downstream.</p>
+
+    <hr class="section-divider">
+
+    <h2>Licensing Information</h2>
+
+    <p>Whisper is released by OpenAI under the <strong>MIT License</strong>, which is one of the most permissive open-source licenses available. This allows commercial use, modification, and deployment in your own products and internal systems without licensing fees or usage restrictions.</p>
+
+    <p><strong>Official model card:</strong></p>
+    <ul style="list-style:disc; padding-left:1.5rem; margin-bottom:18px; color:#c8d4e0;">
+        <li><a href="https://huggingface.co/openai/whisper-large-v3" target="_blank" rel="noopener" style="color:#76b900;">openai/whisper-large-v3 on Hugging Face</a></li>
+    </ul>
+
+    <div class="highlight-box" style="border-left-color:#f59e0b; background:rgba(245, 158, 11, 0.08); border-color:rgba(245, 158, 11, 0.35);">
+        <p><strong style="color:#f59e0b;">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Available Model Sizes</h2>
+
+    <!-- TODO: Create individual model size detail pages for each Whisper variant with benchmarks and hardware guidance. -->
+
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th>Model Size</th>
+                <th>Ollama Tag</th>
+                <th>Recommended NoCloudGPT Tier</th>
+                <th>Notes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Tiny</strong></td>
+                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">whisper:tiny</code></td>
+                <td>Starter</td>
+                <td>Fastest and lightest option. Good for quick voice notes and clear single-speaker audio. Lower accuracy on accents and noise.</td>
+                <td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td>
+            </tr>
+            <tr>
+                <td><strong>Base</strong></td>
+                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">whisper:base</code></td>
+                <td>Starter</td>
+                <td>Small step up in accuracy from Tiny with minimal extra cost. Solid for clean, everyday transcription.</td>
+                <td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td>
+            </tr>
+            <tr>
+                <td><strong>Small</strong></td>
+                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">whisper:small</code></td>
+                <td>Standard</td>
+                <td>A practical balance for many users. Noticeably better with accents and moderate background noise.</td>
+                <td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td>
+            </tr>
+            <tr>
+                <td><strong>Medium</strong></td>
+                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">whisper:medium</code></td>
+                <td>Professional</td>
+                <td>Strong multilingual accuracy and robust handling of noisy or overlapping audio. Good for business transcription.</td>
+                <td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td>
+            </tr>
+            <tr>
+                <td><strong>Large-v3</strong></td>
+                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">whisper:large-v3</code></td>
+                <td>Professional / Enterprise</td>
+                <td>State-of-the-art accuracy across ~100 languages and the most challenging real-world recordings. Best quality, highest hardware requirements.</td>
+                <td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="highlight-box" style="margin-top:24px;">
+        <p><strong>Positioning note:</strong> Whisper is a <strong>specialized speech recognition model</strong>. It excels at transcribing and translating audio to text with high accuracy, but it does not chat, reason, or generate original content. For summaries, Q&amp;A, or analysis of transcripts, pair it with a general-purpose language model.</p>
+    </div>
+
+    <hr class="section-divider">
+
     <h2>Supported Languages (Selected)</h2>
 
     <div class="lang-grid">
