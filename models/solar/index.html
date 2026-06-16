@@ -14,6 +14,7 @@
     .tag { display: inline-block; background: #f0f4ff; color: #2244aa; border-radius: 4px; padding: 2px 8px; font-size: 0.82rem; margin-right: 5px; }
     .cta-box { background: #f8f9ff; border-left: 4px solid #3355dd; padding: 1rem 1.4rem; margin: 2rem 0; border-radius: 4px; }
     .cta-box a { color: #2244aa; font-weight: 600; }
+    .notice { background: #fff8e1; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; border-radius: 4px; margin: 1.5rem 0; font-size: 0.95rem; }
     table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
     th, td { border: 1px solid #ddd; padding: 0.6rem 0.9rem; text-align: left; }
     th { background: #f3f3f3; }
@@ -49,26 +50,26 @@
   <li><strong>Korean and English</strong> — bilingual capability with solid Korean output quality</li>
 </ul>
 
-<h2>Who This Model Family Is For</h2>
+<h2>Who This Model Family is For</h2>
 
-<h3>👤 Personal use</h3>
+<h3>Personal Use</h3>
 <p>
-  Solar is a strong choice if you want a capable, locally-run assistant that doesn't demand high-end server hardware. Upstage's depth-upscaling approach delivers reasoning quality that punches above its parameter count, making it practical on a well-specced home machine or workstation. It handles writing, summarization, Q&amp;A, and light coding effectively without the sluggishness often associated with larger models. If you've found smaller models too limited and larger models too slow or resource-heavy, Solar often strikes a useful balance.
+  Solar is a practical choice if you want a capable local assistant that runs well on modest hardware. The original Solar 10.7B model offers solid reasoning and clean output for everyday writing, summarization, and Q&A. While it remains efficient, it has been surpassed by newer compact models on most benchmarks. For privacy-focused users who value low resource usage, it is still a sensible option for general tasks.
 </p>
 
-<h3>🏢 Business &amp; team use</h3>
+<h3>Business / Team Use</h3>
 <p>
-  Solar is well-suited for teams that need a reliable, self-hosted assistant for internal tasks such as drafting documents, summarizing reports, answering policy questions, or processing structured data — without sending sensitive information to external APIs. Its inference efficiency means you can serve multiple users from a single modest server. Upstage trained Solar with a focus on instruction-following accuracy, which translates to more consistent and predictable outputs in production workflows. It serves as a practical foundation for both internal tools and customer-facing applications where reliability matters more than occasional peak performance.
+  Teams that need grounded, on-premise AI for document-heavy workflows — such as internal knowledge search, drafting, and structured summarization — will find Solar useful due to its reputation for staying faithful to provided context. The smaller models keep deployment costs predictable, while the newer Solar Open 100B MoE provides significantly higher capacity for organizations that need more performance without sending data to the cloud. A focused pilot is recommended before standardizing on the larger MoE model.
 </p>
 
-<h3>⚙️ Developer &amp; technical use</h3>
+<h3>Developer &amp; Technical Use</h3>
 <p>
-  Developers building RAG pipelines, internal tooling, or document-processing applications will find Solar responsive and predictable. It follows structured prompts reliably, which helps reduce prompt-engineering overhead during development. While it is not the top choice for cutting-edge code synthesis, it performs solidly on code explanation, boilerplate generation, and debugging assistance. Its efficiency also makes local testing and iteration faster, shortening the feedback loop during development.
+  Developers building internal tools, RAG pipelines, or applications that require predictable behavior will appreciate Solar's efficiency and groundedness. The 10.7B size is light enough to embed in apps without large GPU budgets. The Solar Open 100B MoE offers more headroom for demanding workloads while maintaining efficient inference thanks to its mixture-of-experts architecture. Plan for the increased memory and serving requirements if moving beyond the compact sizes.
 </p>
 
-<h3>🔬 Data science &amp; research</h3>
+<h3>Data Science &amp; Research Use</h3>
 <p>
-  Researchers and data scientists working with text-heavy datasets will appreciate Solar's strong summarization and reasoning capabilities relative to its computational footprint. It is a credible option for NLP preprocessing, annotation assistance, and exploratory analysis of unstructured documents — all running entirely on your own infrastructure. Because it is fully self-hosted via NoCloudGPT, there are no API rate limits or data-sharing concerns. If your work requires state-of-the-art benchmark performance or very long context windows, you may want to evaluate larger models alongside Solar.
+  Solar is interesting for researchers studying model efficiency and architecture trade-offs. Upstage's Depth Up-Scaling approach produced strong results for its size, making the 10.7B model a useful reference point for reproducible experiments on limited hardware. The newer Solar Open 100B MoE provides a valuable data point for studying large open mixture-of-experts behavior, though community tooling and findings are still maturing.
 </p>
 
 <h2>Model Variants at a Glance</h2>
@@ -101,27 +102,57 @@
 </p>
 
 <h2>Available Model Sizes</h2>
-<p>Solar's lineup focuses on delivering strong performance from a single well-optimized size rather than offering a wide range of parameter counts.</p>
-<!-- TODO: Create individual size/variant pages for Solar with hardware benchmarks and deployment guidance. -->
+
+<!-- TODO: Create individual model size detail pages for solar-10.7b and solar-100b-moe with hardware benchmarks. -->
+
 <table>
   <thead>
-    <tr><th>Model Size</th><th>Ollama Tag</th><th>Recommended NoCloudGPT Tier</th><th>Notes</th></tr>
+    <tr>
+      <th>Model Size</th>
+      <th>Ollama Tag</th>
+      <th>Recommended NoCloudGPT Tier</th>
+      <th>Notes</th>
+      <th></th>
+    </tr>
   </thead>
   <tbody>
-    <tr><td><strong>Solar 10.7B</strong></td><td><code>solar</code></td><td>Starter / Standard</td><td>The flagship Solar model. Fits comfortably in 8–10GB VRAM. Good general-purpose performance for its size. <a href="/quote.html">Get quote →</a></td></tr>
-    <tr><td><strong>Solar 10.7B (Q4)</strong></td><td><code>solar:10.7b-instruct-v1-q4_K_M</code></td><td>Starter</td><td>Quantized for lower memory usage. Slight quality trade-off; practical for consumer hardware. <a href="/quote.html">Get quote →</a></td></tr>
-    <tr><td><strong>Solar 10.7B (Q8)</strong></td><td><code>solar:10.7b-instruct-v1-q8_0</code></td><td>Standard</td><td>Higher-fidelity quantization. Recommended if you have the VRAM and want output closest to full-precision quality. <a href="/quote.html">Get quote →</a></td></tr>
+    <tr>
+      <td><strong>Solar 10.7B</strong></td>
+      <td><code>solar:10.7b</code></td>
+      <td>Starter / Standard</td>
+      <td>Efficient and well-rounded for its size. Strong for personal use, RAG, and lightweight team tools, though newer compact models now lead on benchmarks.</td>
+      <td><a href="/quote.html">Get quote →</a></td>
+    </tr>
+    <tr>
+      <td><strong>Solar Open 100B MoE</strong></td>
+      <td><code>solar:100b</code></td>
+      <td>Professional / Enterprise</td>
+      <td>High-capacity mixture-of-experts model with efficient inference relative to its size. Newer to the open ecosystem — a focused pilot is recommended before large-scale deployment.</td>
+      <td><a href="/quote.html">Get quote →</a></td>
+    </tr>
   </tbody>
 </table>
 
+<p><strong>Positioning note:</strong> The Solar 10.7B remains a capable and efficient model for many general-purpose tasks. The newer Solar Open 100B MoE offers significantly more capacity for demanding workloads. For maximum performance on current benchmarks, newer families (Llama 3.3, Qwen 2.5, DeepSeek V3) are generally stronger.</p>
+
 <h2>Licensing Information</h2>
-<p>Solar models are released by Upstage AI under the <strong>Apache 2.0 License</strong>, which is one of the most permissive and business-friendly open-source licenses available. This means you can use, modify, and deploy Solar for both personal and commercial purposes without royalty fees or restrictive usage thresholds.</p>
-<p>You should still review the full model card and any accompanying guidelines on the official page before deploying in production.</p>
-<p><strong>Official model card:</strong></p>
+
+<p>
+  Licensing for Solar models varies by specific release. The widely used Solar 10.7B has historically been available under relatively permissive terms. The newer Solar Open 100B MoE has its own license that should be reviewed directly, as commercial use rights and redistribution conditions can differ between versions.
+</p>
+
+<p>
+  Because Upstage maintains multiple Solar releases with distinct terms, always confirm the exact license on the official model card for the specific size you intend to deploy.
+</p>
+
+<p><strong>Official source:</strong></p>
 <ul>
-  <li><a href="https://huggingface.co/upstage/solar-10.7b-instruct-v1.0" target="_blank" rel="noopener">upstage/solar-10.7b-instruct-v1.0 on Hugging Face</a></li>
+  <li><a href="https://huggingface.co/upstage">upstage on Hugging Face</a></li>
 </ul>
-<p style="font-size:0.85rem; color:#64748b; border-left:3px solid #f59e0b; padding-left:1rem; margin-top:1rem;"><strong>Disclaimer:</strong> NoCloudGPT provides the software infrastructure to deploy AI models privately. We do not grant, manage, or verify licensing rights for third-party models. It is your responsibility to ensure your use of any model complies with its license terms. This does not constitute legal advice.</p>
+
+<div class="notice">
+  <strong>Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.
+</div>
 
 <div class="cta-box">
   <strong>Want Solar running on your own infrastructure?</strong><br />
