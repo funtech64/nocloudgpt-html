@@ -35,16 +35,61 @@
 
 ---
 
-<h2>Who Should Run MiniCPM-V On-Premise</h2>
+<h2>Who This Model Family is For</h2>
 
+<h3>Personal Use</h3>
+<p>MiniCPM-V is an excellent choice if you want to understand and ask questions about your own photos, screenshots, and documents without uploading anything to the cloud. It can describe images, read text from pictures (OCR), and answer practical questions like "what's on this receipt?" or "what does this diagram show?" — all running locally on your machine. The models are small enough to run comfortably on a single consumer GPU or even a capable laptop.</p>
+
+<h3>Business / Team Use</h3>
+<p>For small teams, MiniCPM-V is useful for building lightweight internal tools that process visual content — such as extracting information from scanned forms, tagging product images, moderating user-uploaded content, or enabling private visual search. It delivers strong results on everyday image understanding tasks while keeping all data on your own infrastructure, which simplifies compliance for teams working with sensitive documents or customer visuals.</p>
+
+<h3>Developer &amp; Technical Use</h3>
+<p>Developers can use MiniCPM-V as a fast, self-hosted vision-language component for image captioning, OCR pipelines, visual Q&amp;A features, or accessibility tools. It integrates cleanly with Ollama and works well for interactive applications because of its low latency on single images. The small size makes it practical to run alongside other services without heavy resource overhead.</p>
+
+<h3>Data Science &amp; Research Use</h3>
+<p>Researchers working on multimodal systems, document understanding, or efficient vision-language models will find MiniCPM-V a strong small-scale baseline. It performs well on standard vision-language benchmarks relative to its size, making it useful for studying distillation, quantization, and fine-tuning approaches. For long-video understanding or highly complex multimodal reasoning, larger models are generally more capable.</p>
+
+---
+
+<h2>Licensing Information</h2>
+
+<p>MiniCPM-V is released by OpenBMB. The weights are generally available for academic and commercial use after completing their registration process. You should review the full terms and usage policy directly on the official model card before deploying in a commercial environment.</p>
+
+<p><strong>Official model card:</strong></p>
 <ul>
-  <li><strong>Manufacturing and industrial operations</strong> — deploy vision AI directly on production-floor hardware for defect detection, parts identification, and inspection report generation without routing imagery off-site</li>
-  <li><strong>Retail and logistics teams</strong> — automate shelf audit photography analysis, barcode and label reading, and shipment documentation processing on local infrastructure</li>
-  <li><strong>Healthcare and clinical documentation teams</strong> — process patient intake forms, scanned records, and medical photography on-premise with no cloud exposure, satisfying HIPAA requirements by design</li>
-  <li><strong>Organizations with multilingual document workflows</strong> — teams processing Chinese, English, or mixed-language scanned documents who need accurate OCR and extraction without third-party API dependencies</li>
-  <li><strong>Edge and IoT deployments</strong> — engineering teams embedding vision-language capability directly into edge devices, kiosks, or field hardware where cloud connectivity is unreliable or prohibited</li>
-  <li><strong>Budget-constrained teams evaluating multimodal AI</strong> — organizations that need to prove multimodal ROI before committing to larger GPU infrastructure investments</li>
+  <li><a href="https://huggingface.co/openbmb/MiniCPM-V-2_6">openbmb/MiniCPM-V-2_6 on Hugging Face</a></li>
 </ul>
+
+<p><strong>Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+
+---
+
+<h2>Available Model Sizes</h2>
+
+<!-- TODO: Create individual model size detail pages for minicpm-v (2.6) and link from the table. -->
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Model Size</th>
+      <th>Ollama Tag</th>
+      <th>Recommended NoCloudGPT Tier</th>
+      <th>Notes</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>MiniCPM-V 2.6</strong> (~8B)</td>
+      <td><code>minicpm-v</code></td>
+      <td>Starter / Small Workstation</td>
+      <td>Current recommended version. Strong OCR and single-image understanding. Runs well on a single mid-range GPU (12–16GB VRAM).</td>
+      <td><a href="/quote.html">Get quote →</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Positioning note:</strong> MiniCPM-V is a specialized <strong>vision-language model</strong>. It excels at understanding and reasoning about images but should be paired with a text generation model (such as Llama, Qwen, or Mistral) if you need full conversational capabilities over images + text.</p>
 
 ---
 
