@@ -51,21 +51,89 @@
           </div>
         </div>
 
-        <h2 class="mt-10 text-3xl font-black">Who Should Be Running Codestral</h2>
+        <!-- SECTION: Who this model family is for -->
+        <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+        <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
+        <div class="mt-6 grid gap-5 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-lg">👤</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">Codestral is a strong choice for developers who want a polished, well-mannered coding assistant running entirely on their own hardware. It excels at writing clean, readable code in mainstream languages like Python, JavaScript, Java, and C++, making it useful for side projects, learning new frameworks, and personal automation scripts. If you've found general-purpose models producing sloppy or inconsistent code, Codestral's dedicated coding focus delivers a noticeable improvement in quality and style.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-lg">🏢</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">For small engineering teams and consultancies that need a private coding assistant without sending proprietary code to external APIs, Codestral is one of the more trustworthy options. It handles common business workflows well: writing internal tools, generating boilerplate, drafting unit tests, and documenting legacy code. Teams working under NDAs or with regulated client codebases benefit from keeping everything on infrastructure they control.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-lg">⚙️</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">Codestral's standout technical feature is its strong fill-in-the-middle (FIM) capability, which makes it genuinely useful for IDE autocomplete plugins and inline code completion tools. It supports over 80 programming languages, including less common ones like Bash, Swift, and Fortran. Developers building internal copilots, code review bots, or refactoring tools will find it integrates cleanly with standard tooling such as Continue.dev and Ollama.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-lg">🔬</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">Codestral handles Python data workflows competently (pandas, NumPy, scikit-learn, and basic PyTorch). Researchers studying code LLM behavior may find it a useful comparison point against Qwen 2.5-Coder and DeepSeek-Coder, as it represents a different design philosophy focused on production-style code rather than pure benchmark optimization. It is less suited for cutting-edge research involving obscure libraries or novel architectures.</p>
+          </div>
+        </div>
 
-        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Engineering teams where developer time is the constraint</h3>
-        <p class="mt-3 text-slate-300">A senior engineer billing at $150/hour loses more value in one hour of friction from a low-quality coding assistant than the monthly cost of the GPU instance running Codestral. This is not about replacing engineers — it is about eliminating the small, repetitive, time-consuming tasks that accumulate across a team's week.</p>
-        <p class="mt-4 text-slate-300">Boilerplate generation, docstring writing, unit test scaffolding, migration scripting — these are tasks where a 22B model's output quality means the engineer reviews and ships rather than reviews and rewrites. The productivity delta between good enough and actually good is real and measurable in pull request velocity.</p>
+        <!-- SECTION: Licensing information -->
+        <p class="mt-10 text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+        <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+        <p class="mt-5 text-slate-300">Codestral is released under the <strong class="text-white">Mistral AI Non-Production License (MNPL)</strong>, which permits research, evaluation, and personal use but <strong class="text-white">restricts commercial and production deployment</strong>. Organizations wanting to use Codestral in revenue-generating products or services need to obtain a separate commercial license directly from Mistral AI.</p>
+        <p class="mt-4 text-slate-300">This is an important distinction from fully permissive models like Qwen 2.5-Coder (Apache 2.0). Review the terms carefully before deploying in a commercial context.</p>
+        <p class="mt-5 text-slate-300"><strong class="text-white">Official model card:</strong></p>
+        <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+          <li><a href="https://huggingface.co/mistralai/Codestral-22B-v0.1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Codestral-22B-v0.1 on Hugging Face</a></li>
+        </ul>
+        <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+          <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+        </div>
 
-        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Companies with non-trivial IP in their codebase</h3>
-        <p class="mt-3 text-slate-300">SaaS companies, fintech firms, defense contractors, and any organization where source code is a core competitive asset face a specific risk from cloud-based coding AI: the ToS. Most commercial coding assistants reserve the right to use customer inputs to improve the model. Your proprietary algorithms, your internal architecture, your unreleased features — these are training data for a competitor's product unless you host your own model.</p>
-        <p class="mt-4 text-slate-300">Codestral deployed privately on your infrastructure eliminates that exposure entirely. The weights are on your server. The queries never leave your network. There is no ToS governing your code because there is no third-party service involved.</p>
-
-        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Regulated industries with strict data residency requirements</h3>
-        <p class="mt-3 text-slate-300">Healthcare organizations, financial institutions, and government contractors often cannot legally route source code through external services. SOC 2, HIPAA, FedRAMP, and similar compliance frameworks impose real restrictions on where data can go and who can access it. A privately deployed Codestral instance satisfies those requirements by design — there is no external data flow to audit, disclose, or restrict.</p>
-
-        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Teams replacing expensive per-seat commercial licenses</h3>
-        <p class="mt-3 text-slate-300">GitHub Copilot Business runs $19/month per developer. JetBrains AI Assistant is similar. A 15-person engineering team pays $3,400 per year for those licenses — every year, with no ownership and no control over what the model does with their code. One Codestral deployment on a GPU instance costs a fraction of that annually, serves the entire team, and returns full ownership of both the infrastructure and the data.</p>
+        <!-- SECTION: Available model sizes -->
+        <p class="mt-10 text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+        <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+        <!-- TODO: Create individual size pages for codestral-22b and codestral-mamba-7b with hardware benchmarks and deployment guidance. -->
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Model Size</th>
+                <th class="px-4 py-3">Ollama Tag</th>
+                <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                <th class="px-4 py-3">Notes</th>
+                <th class="px-4 py-3"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Codestral 22B v0.1</td>
+                <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">codestral:22b</code></td>
+                <td class="px-4 py-3">Professional</td>
+                <td class="px-4 py-3">The flagship dense model. Best balance of code quality and speed. Requires a 24GB+ GPU (e.g. RTX 4090) for comfortable use at Q4–Q5 quantization.</td>
+                <td class="px-4 py-3"><a href="../quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Codestral Mamba 7B</td>
+                <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">codestral-mamba:7b</code></td>
+                <td class="px-4 py-3">Standard</td>
+                <td class="px-4 py-3">A lighter Mamba-architecture variant with efficient long-context inference. Good for autocomplete-style use cases but less capable than 22B on complex generation tasks.</td>
+                <td class="px-4 py-3"><a href="../quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-950 p-5">
+          <p class="text-sm text-slate-300"><strong class="text-white">Note:</strong> As of 2026, Codestral 22B is no longer the top open-weight coding model. Qwen 2.5-Coder (especially the 32B variant) and DeepSeek-Coder V2 generally lead on HumanEval, MBPP, and most multi-language benchmarks. Codestral remains a credible choice when you value Mistral's clean, production-oriented output style, strong FIM support, or already have Mistral models in your stack.</p>
+        </div>
 
         <h2 class="mt-10 text-3xl font-black">Hardware and Deployment Reality for Codestral</h2>
         <p class="mt-4 text-slate-300">Codestral is a 22B model. It requires more RAM than CodeGemma or smaller 7B models. The recommended deployment path uses a GPU-accelerated instance for best response latency, though CPU-only operation is possible for lower-concurrency use cases.</p>
