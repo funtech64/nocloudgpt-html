@@ -51,29 +51,94 @@
   <li><strong>Rapid prototyping</strong> — lightweight enough to spin up and test ideas quickly</li>
 </ul>
 
-<h2>Who Should Care</h2>
+<h2>Who This Model Family is For</h2>
 
-<h3>Business and Professional Use</h3>
+<h3>Personal Use</h3>
 <p>
-  StableLM is a second-tier consideration for most new deployments — newer families like Phi-3, Gemma 2, and SmolLM2 have largely surpassed it at comparable sizes. That said, if you have existing StableLM deployments or need a permissively-licensed model in the 1–3B range and have benchmarked it against your specific task, it's a valid choice.
+  StableLM is a practical choice if you want a lightweight, locally runnable assistant for everyday tasks like drafting emails, summarizing notes, or answering general questions without your data leaving your machine. The smaller variants (1.6B and 3B) run comfortably on most laptops and modest hardware. While it is reliable for straightforward work, it does not match the reasoning depth or overall capability of newer models like Llama 3.3, Qwen 2.5, or DeepSeek V3 on complex or multi-step tasks.
 </p>
 
-<h3>Personal and Homelab Use</h3>
+<h3>Business / Team Use</h3>
 <p>
-  StableLM 2 1.6B or Zephyr 3B are functional homelab models for users who want something slightly more capable than TinyLlama but still within CPU-only territory. SmolLM2 1.7B is now generally the better option at this size tier, but StableLM remains widely supported in tooling.
+  For teams that need a private, predictable AI for internal drafting, document summarization, customer-response templating, or routine knowledge-base Q&A, StableLM offers dependable outputs with relatively low infrastructure overhead. Its efficiency makes it suitable for serving multiple users on modest hardware. If your workflows require cutting-edge accuracy or heavy analytical reasoning, newer model families will generally deliver stronger results.
 </p>
 
-<h2>Model Variants at a Glance</h2>
+<h3>Developer &amp; Technical Use</h3>
+<p>
+  Developers can use StableLM for prototyping, building local AI features, and embedding a capable assistant into applications where keeping everything on-premise is important. The small footprint makes it attractive for testing pipelines and on-device inference scenarios where latency and privacy matter more than raw benchmark performance. Some versions include multilingual training, which can be useful for lightweight internationalized tools when output quality is validated per language.
+</p>
+
+<h3>Data Science &amp; Research Use</h3>
+<p>
+  StableLM remains useful as a baseline for studying small-model behavior, fine-tuning techniques, and efficiency trade-offs. Its manageable size makes it practical for experimentation and ablation studies. However, it has been largely surpassed on standard benchmarks by newer open models such as DeepSeek V3 and Qwen 2.5, so it is best positioned as a study subject and historical reference rather than a state-of-the-art research tool.
+</p>
+
+<h2>Licensing Information</h2>
+
+<p>
+  Licensing for StableLM has evolved across releases. Earlier versions were released under relatively permissive terms, while later StableLM 2 models fall under the <strong>Stability AI Community License</strong>. This license generally permits commercial use for individuals and smaller organizations up to a defined revenue threshold. Larger commercial deployments typically require a separate Stability AI Enterprise license.
+</p>
+
+<p>
+  Because terms vary by specific model and version, always confirm the current license directly on the official model card before commercial deployment.
+</p>
+
+<p><strong>Official source:</strong></p>
+<ul>
+  <li><a href="https://huggingface.co/stabilityai">stabilityai on Hugging Face</a></li>
+</ul>
+
+<div class="notice">
+  <strong>Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.
+</div>
+
+<h2>Available Model Sizes</h2>
+
+<!-- TODO: Create individual model size detail pages for stablelm2-1.6b, stablelm2-3b, and stablelm2-12b with hardware benchmarks and prompt examples. -->
+
 <table>
   <thead>
-    <tr><th>Model</th><th>Parameters</th><th>RAM / VRAM</th><th>Notes</th></tr>
+    <tr>
+      <th>Model Size</th>
+      <th>Ollama Tag</th>
+      <th>Recommended NoCloudGPT Tier</th>
+      <th>Notes</th>
+      <th></th>
+    </tr>
   </thead>
   <tbody>
-    <tr><td>StableLM 2 1.6B Chat</td><td>1.6B</td><td>~1.5GB</td><td>Lightweight; CPU-friendly</td></tr>
-    <tr><td>StableLM Zephyr 3B</td><td>3B</td><td>~2.5GB</td><td>Best StableLM for instruction tasks</td></tr>
-    <tr><td>StableLM 2 12B Chat</td><td>12B</td><td>~8GB</td><td>Largest variant; mid-range GPU</td></tr>
+    <tr>
+      <td><strong>StableLM 2 1.6B</strong></td>
+      <td><code>stablelm2:1.6b</code></td>
+      <td>Starter</td>
+      <td>Extremely lightweight. Best for simple drafting, summarization, and prototyping on modest hardware.</td>
+      <td><a href="/quote.html">Get quote →</a></td>
+    </tr>
+    <tr>
+      <td><strong>StableLM 2 Zephyr 1.6B</strong></td>
+      <td><code>stablelm2:zephyr</code></td>
+      <td>Starter</td>
+      <td>Instruction- and chat-tuned variant. More conversational and helpful for assistant-style tasks.</td>
+      <td><a href="/quote.html">Get quote →</a></td>
+    </tr>
+    <tr>
+      <td><strong>StableLM 3B</strong></td>
+      <td><code>stablelm:3b</code></td>
+      <td>Standard</td>
+      <td>Better general coherence than the 1.6B models while remaining efficient. A good balance for small-team internal tools.</td>
+      <td><a href="/quote.html">Get quote →</a></td>
+    </tr>
+    <tr>
+      <td><strong>StableLM 2 12B</strong></td>
+      <td><code>stablelm2:12b</code></td>
+      <td>Professional</td>
+      <td>Stronger reasoning and multilingual handling. Check enterprise license thresholds for larger commercial use.</td>
+      <td><a href="/quote.html">Get quote →</a></td>
+    </tr>
   </tbody>
 </table>
+
+<p><strong>Positioning note:</strong> StableLM's strongest value is in the 1.6B–3B range, where its efficiency-to-quality ratio is most compelling for private, fast, low-cost deployments. For maximum performance, newer model families (Llama 3.3, Qwen 2.5, DeepSeek V3) are generally recommended.</p>
 
 <h2>Deployment</h2>
 <pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>ollama run stablelm-zephyr:3b
