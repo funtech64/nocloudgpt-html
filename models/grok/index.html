@@ -74,6 +74,101 @@
           </div>
         </section>
 
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">For most individuals, self-hosting Grok is not realistic. The only open-weight version (Grok-1) has 314 billion parameters and requires multiple high-end GPUs just to load. If you are an enthusiast or researcher curious about xAI's architecture and want to study a genuinely massive open-weight model, Grok-1 is intellectually interesting — but for everyday personal use, a smaller, instruction-tuned model will serve you far better.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Grok-1 is only practical for organizations with significant GPU infrastructure that specifically want a very large, fully transparent base model under their own control. Because the open Grok-1 is a base model (not heavily instruction-tuned like later Grok versions), your team should expect to invest in fine-tuning and prompt engineering before it behaves like the polished conversational experience available through xAI's API. For most teams that simply need a helpful assistant, newer and more efficient open models are usually the better choice.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Developers who want to inspect, modify, and experiment with a frontier-scale Mixture-of-Experts architecture will find Grok-1 genuinely valuable — it is one of the few truly large open-weight models available. You get full access to the weights and an interesting architecture worth studying. However, building reliable applications on top of it requires handling its base-model behavior, high hardware demands, and the lack of the tool-use and real-time features found only in xAI's closed versions.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">This is where Grok-1 is most useful. Researchers studying large-scale Mixture-of-Experts models, scaling behavior, or working with an unmodified base model at frontier scale get rare, transparent access to a 314B-parameter system. It serves as an excellent reference point for academic work, benchmarking, and fine-tuning experiments — provided your lab or organization has the necessary compute resources.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">Grok-1 is released by xAI under the <strong class="text-white">Apache 2.0 License</strong>, which permits commercial use, modification, and redistribution. This is a genuinely permissive license for a model of this scale.</p>
+          <p class="mt-4 text-slate-300">Important limitations to understand:</p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li>Only <strong class="text-white">Grok-1</strong> is open-weight. Grok-2 and all later versions are closed and available exclusively through xAI's API.</li>
+            <li>Grok-1 is a <strong class="text-white">base model</strong>, not a heavily instruction-tuned conversational model. Expect to fine-tune it for production-quality behavior.</li>
+            <li>Practical self-hosting is limited to well-resourced teams due to its massive size.</li>
+          </ul>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official source:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/xai-org/grok-1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">xai-org/grok-1 on Hugging Face</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+          </div>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <!-- TODO: Create individual model size detail pages if additional Grok variants become available. -->
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Grok-1 (314B MoE)</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">grok-1</code> (community builds)</td>
+                  <td class="px-4 py-3">Enterprise / Multi-GPU Cluster</td>
+                  <td class="px-4 py-3">The only open-weight version. Requires substantial multi-GPU infrastructure. Plan for fine-tuning before production use.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Grok-2 and later</td>
+                  <td class="px-4 py-3">Not available for self-hosting</td>
+                  <td class="px-4 py-3">API-only</td>
+                  <td class="px-4 py-3">Closed models. Conversational, tool-using, and real-time features exist only in xAI's API and cannot be self-hosted.</td>
+                  <td class="px-4 py-3"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-950 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-white">Positioning note:</strong> Grok-1 is one of the largest openly released models. While intellectually significant, its practical self-hosting requirements are very high. For most use cases, newer and more efficient open models offer better performance-to-resource ratios.</p>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Hardware and deployment reality</p>
           <h2 class="mt-3 text-3xl font-black">Deployment Tiers</h2>
