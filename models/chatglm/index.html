@@ -453,6 +453,93 @@
 
     <hr class="section-divider">
 
+    <!-- SECTION: Who this model family is for -->
+    <h2>Who This Model Family is For</h2>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>👤 Personal use</h3>
+            <p>ChatGLM (GLM-4) is an excellent choice if you regularly work across Chinese and English. It handles Chinese cultural context, idioms, classical references, and natural phrasing significantly better than most Western-trained models. Whether you're translating documents, drafting bilingual emails, studying Mandarin, or communicating with Chinese-speaking contacts, it feels more natural and accurate. For purely English-language tasks, newer families like Llama 3.3 or Qwen 2.5 often produce slightly more polished results.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🏢 Business / team use</h3>
+            <p>Teams operating in or with Chinese-speaking markets get the most value from ChatGLM. It excels at bilingual customer support drafting, translating internal documentation, summarizing Chinese-language sources, and producing marketing or operational content that reads naturally to native speakers. Running it privately through NoCloudGPT means sensitive contracts, supplier communications, and customer data never leave your infrastructure — a meaningful advantage for companies with cross-border compliance requirements.</p>
+        </div>
+        <div class="feature-card">
+            <h3>⚙️ Developer &amp; technical use</h3>
+            <p>GLM-4 offers solid function calling, tool use, and a generous context window (up to 128K tokens on several variants), making it practical for agentic workflows and document-heavy pipelines that involve Chinese or bilingual content. Code generation is competent but generally trails specialized models like DeepSeek V3 and Qwen 2.5-Coder on English coding benchmarks. Choose ChatGLM when your application needs strong Chinese reasoning or generation; choose a coding-focused model when English code quality is the priority.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔬 Data science &amp; research</h3>
+            <p>Researchers working with Chinese-language corpora — academic papers, government documents, social media, or historical texts — will find ChatGLM's tokenizer and training data significantly more efficient on CJK content than most Western models. It serves as a strong baseline for bilingual NLP experiments, cross-lingual studies, and any research involving the Chinese web. For purely English-focused or heavy mathematical reasoning research, DeepSeek V3 or Qwen 2.5 typically provide stronger benchmarks.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION: Licensing information -->
+    <h2>Licensing Information</h2>
+
+    <p>The GLM-4 open-weight models are released by Zhipu AI / THUDM under the <strong style="color:#fff;">GLM-4 License</strong>. This license permits commercial use but includes specific terms around attribution, acceptable use, and restrictions on certain large-scale deployment scenarios. It is not as permissive as Apache 2.0.</p>
+
+    <p>You should review the full license terms directly on the official model card before deploying in a commercial environment.</p>
+
+    <p><strong style="color:#fff;">Official source:</strong></p>
+    <ul style="list-style:disc; padding-left:1.5rem; margin-bottom:18px; color:#c8d4e0;">
+        <li><a href="https://huggingface.co/THUDM" target="_blank" rel="noopener" style="color:#06d6a0;">THUDM on Hugging Face</a></li>
+    </ul>
+
+    <div class="highlight-box" style="border-left-color:#f59e0b; background:#1a1408;">
+        <p><strong style="color:#f59e0b;">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION: Available model sizes -->
+    <h2>Available Model Sizes</h2>
+    <!-- TODO: Create individual size pages for glm4-9b, glm4-9b-128k, and glm4-9b-1m with hardware benchmarks and deployment guidance. -->
+
+    <table class="hardware-table">
+        <thead>
+            <tr>
+                <th>Model Size</th>
+                <th>Ollama Tag</th>
+                <th>Recommended NoCloudGPT Tier</th>
+                <th>Notes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong style="color:#fff;">GLM-4 9B</strong></td>
+                <td>glm4:9b</td>
+                <td>Standard</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;">Best balance for most bilingual personal and small-team workloads. Runs well on a single mid-range GPU.</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+            </tr>
+            <tr>
+                <td><strong style="color:#fff;">GLM-4 9B Chat (128K)</strong></td>
+                <td>glm4:9b-chat-128k</td>
+                <td>Standard / Professional</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;">Extended 128K context version. Ideal for long documents and RAG pipelines involving Chinese or bilingual content.</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+            </tr>
+            <tr>
+                <td><strong style="color:#fff;">GLM-4 9B Chat (1M)</strong></td>
+                <td>glm4:9b-chat-1m</td>
+                <td>Professional / Enterprise</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;">Experimental ultra-long context variant. Useful for whole-book or large transcript analysis. Higher memory requirements.</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="highlight-box">
+        <p><strong style="color:#fff;">Note:</strong> Zhipu AI's larger flagship models (GLM-4-Plus and above) are currently API-only and not available as open weights for self-hosting.</p>
+    </div>
+
+    <hr class="section-divider">
+
     <h2>Deployment Service Options</h2>
 
     <div class="tier-grid">
