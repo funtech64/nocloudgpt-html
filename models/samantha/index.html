@@ -15,6 +15,9 @@
     .cta-box { background: #f8f9ff; border-left: 4px solid #3355dd; padding: 1rem 1.4rem; margin: 2rem 0; border-radius: 4px; }
     .cta-box a { color: #2244aa; font-weight: 600; }
     .notice { background: #fff8e1; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; border-radius: 4px; margin: 1.5rem 0; font-size: 0.95rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 0.6rem 0.9rem; text-align: left; }
+    th { background: #f3f3f3; }
     a { color: #2244aa; }
     nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
   </style>
@@ -48,59 +51,96 @@
   <li><strong>Active listening simulation</strong> — useful for training, coaching, and interview-prep applications</li>
 </ul>
 
-<h2>Who This Model Family Is For</h2>
+<h2>Who This Model Family is For</h2>
 
-<h3>👤 Personal use</h3>
+<h3>Personal Use</h3>
 <p>
-  Samantha is popular with people who find standard assistants cold and transactional. If you want a local AI that acts as a reflective conversational partner — a private journaling companion or a thinking partner that responds to emotional content rather than deflecting it — Samantha's persona is the draw. The 7B variants run on modest hardware, and running it locally keeps inherently personal conversations entirely on your own machine.
+  Samantha is built for people who want an AI that feels like a thoughtful, emotionally present conversational partner rather than a purely functional assistant. If you journal, process your thoughts out loud, or simply want a warm, consistent presence to talk through your day with, Samantha's persona-focused fine-tuning makes those conversations feel natural and reflective. Because NoCloudGPT runs it entirely on your own machine, those private reflections never leave your device.
 </p>
 
-<h3>🏢 Business &amp; team use</h3>
+<h3>Business / Team Use</h3>
 <p>
-  The clearest commercial applications are in <strong>wellness technology, education, and coaching products</strong> where a warm, engaging persona matters more than factual completeness. Elder-care tech, mental-wellness apps, and social-skills training platforms have built on Samantha. Private deployment is essential here: user conversations in wellness contexts are sensitive and should never transit third-party servers. It is explicitly not a clinical or therapy tool — position it accordingly.
+  Samantha is a niche fit for business use, and we're honest about that. It performs best in contexts where tone, empathy, and conversational consistency matter more than raw analytical power — such as internal wellbeing tools, reflective coaching prototypes, or customer experiences that benefit from a gentle, stable persona. It is not the right choice for structured data extraction, heavy task automation, or high-stakes analytical work. For those needs, a more general instruction-tuned family will serve your team better.
 </p>
 
-<h3>⚙️ Developer &amp; technical use</h3>
+<h3>Developer &amp; Technical Use</h3>
 <p>
-  For developers building companion apps, voice agents, or character-driven experiences, Samantha provides a consistent, emotionally-aware persona out of the box, reducing the prompt-engineering effort needed to avoid the flat default assistant voice. Because variants exist on Apache 2.0 (Mistral) and other bases, you can pick one whose license suits a commercial product, then add your own safety and escalation layer at the application edge.
+  Developers building companion apps, journaling tools, or emotionally-aware chat interfaces will appreciate Samantha's stable and consistent persona — it tends to maintain a coherent character across long conversations instead of drifting into a generic assistant voice. It serves as a solid foundation for warmth-first user experiences. Be aware that many Samantha versions are built on older base models, so raw reasoning depth, long-context handling, and tool-calling are generally weaker than in newer releases. Plan your architecture around conversation rather than complex agentic workflows.
 </p>
 
-<h3>🔬 Data science &amp; research</h3>
+<h3>Data Science &amp; Research Use</h3>
 <p>
-  Samantha is a useful reference for research into persona consistency, affective computing, and the effects of persona-focused fine-tuning datasets on conversational behaviour. Its shared dataset across multiple base models also makes it a convenient way to study how the same persona tuning transfers across Llama, Mistral, and Yi backbones — though it should be treated as a conversational artifact, not a benchmark reasoning model.
+  Samantha is a useful artifact for researchers studying persona consistency, emotional alignment, and conversational tone in fine-tuned models. Created by ehartford, it represents a deliberate design choice to prioritize empathy and a coherent character over maximum benchmark performance. This makes it an interesting comparison point against task-optimized models. For quantitative reasoning, math, or coding evaluation work, however, it will underperform purpose-built research models.
 </p>
-
-<h2>Available Model Sizes</h2>
-<p>
-  Samantha has been fine-tuned on several base models and scales over time. VERIFY current releases on Hugging Face (<code>cognitivecomputations/samantha-*</code> and <code>ehartford/samantha-*</code>) before planning. NoCloudGPT confirms hardware requirements and selects the right quantization before your pilot begins.
-</p>
-<table>
-  <thead>
-    <tr><th>Model</th><th>Deployment tier</th><th>Best for</th><th></th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Samantha 7B (Mistral base)</td><td>Standard AI — 4–8 GB</td><td>Personal companion, small wellness/coaching apps</td><td><a href="/quote.html">Get quote →</a></td></tr>
-    <tr><td>Samantha 13B (Llama 2 base)</td><td>Standard/Professional AI — 8–12 GB</td><td>Richer persona depth for product use</td><td><a href="/quote.html">Get quote →</a></td></tr>
-    <tr><td>Samantha 70B (Llama 2 / Yi base)</td><td>Heavy AI — multi-GPU</td><td>Maximum conversational quality and consistency</td><td><a href="/quote.html">Get quote →</a></td></tr>
-  </tbody>
-</table>
-<!-- TODO: Link each row to individual model-size pages when created -->
 
 <h2>Licensing Information</h2>
+
 <p>
-  Samantha is a fine-tune, so its license is inherited from the base model each variant was trained on — there is no single Samantha license. A Mistral-based Samantha is Apache 2.0, a Llama 2-based variant follows the Llama 2 Community License, and a Yi-based variant follows the Yi license. Check the specific model card before commercial deployment, especially for wellness products.
+  Samantha models are released by ehartford (Eric Hartford) on Hugging Face. Licensing varies across the family because different versions are built on different base models (primarily Llama and Mistral derivatives). Each release inherits the license of its underlying base model.
 </p>
+
+<p>
+  Before any commercial deployment, review the specific model card for the exact version you intend to use:
+</p>
+
+<p><strong>Official source:</strong></p>
+<ul>
+  <li><a href="https://huggingface.co/ehartford">ehartford on Hugging Face</a></li>
+</ul>
+
+<p>
+  Some Llama-based versions carry Meta community license terms that affect commercial use at scale, while Mistral-based versions are generally more permissive. Confirm the license on the exact model card before relying on it for any paid product or service.
+</p>
+
+<div class="notice">
+  <strong>Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.
+</div>
+
+<h2>Available Model Sizes</h2>
+
+<!-- TODO: Create individual model size detail pages for each Samantha variant and link them from the table. -->
+
 <table>
   <thead>
-    <tr><th>Variant base</th><th>Inherited license</th><th>Commercial use</th><th>Model card</th></tr>
+    <tr>
+      <th>Model Size</th>
+      <th>Ollama Tag</th>
+      <th>Recommended NoCloudGPT Tier</th>
+      <th>Notes</th>
+      <th></th>
+    </tr>
   </thead>
   <tbody>
-    <tr><td>Mistral 7B base</td><td>Apache 2.0</td><td>Permitted</td><td><a href="https://huggingface.co/cognitivecomputations/samantha-mistral-7b" target="_blank" rel="noopener">cognitivecomputations/samantha-mistral-7b →</a></td></tr>
-    <tr><td>Llama 2 base</td><td>Llama 2 Community License</td><td>Permitted, conditions apply</td><td><a href="https://huggingface.co/cognitivecomputations/Samantha-1.11-70b" target="_blank" rel="noopener">cognitivecomputations/Samantha-1.11-70b →</a></td></tr>
-    <tr><td>Yi base</td><td>Yi license</td><td>Verify per variant</td><td><a href="https://huggingface.co/cognitivecomputations" target="_blank" rel="noopener">cognitivecomputations on Hugging Face →</a></td></tr>
+    <tr>
+      <td><strong>Samantha 7B</strong></td>
+      <td><code>samantha-mistral:7b</code></td>
+      <td>Starter</td>
+      <td>Best balance of warmth, speed, and modernity. Mistral base offers the most permissive license and strongest overall performance in the family. Recommended starting point.</td>
+      <td><a href="/quote.html">Get quote →</a></td>
+    </tr>
+    <tr>
+      <td><strong>Samantha 13B</strong></td>
+      <td><code>samantha:13b</code></td>
+      <td>Standard</td>
+      <td>Richer and more nuanced emotional responses. Built on an older Llama base. Good for users who want deeper conversational presence.</td>
+      <td><a href="/quote.html">Get quote →</a></td>
+    </tr>
+    <tr>
+      <td><strong>Samantha 33B</strong></td>
+      <td><code>samantha:33b</code></td>
+      <td>Professional</td>
+      <td>Most consistent persona and depth in longer reflective conversations. Requires more substantial hardware.</td>
+      <td><a href="/quote.html">Get quote →</a></td>
+    </tr>
+    <tr>
+      <td><strong>Samantha 70B</strong></td>
+      <td><code>samantha:70b</code></td>
+      <td>Professional / Enterprise</td>
+      <td>Highest conversational quality in the family, but with diminishing returns for purely empathetic use cases and significantly higher hardware requirements.</td>
+      <td><a href="/quote.html">Get quote →</a></td>
+    </tr>
   </tbody>
 </table>
-<p style="font-size:0.85rem; color:#64748b;">Samantha's license always derives from its base model — verify the specific variant's card rather than assuming. License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
 
 <h2>Deployment</h2>
 <pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code># Download GGUF from HuggingFace (TheBloke mirrors)
