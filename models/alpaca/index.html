@@ -139,6 +139,69 @@
 
     <hr class="section-divider">
 
+    <h2>Who This Model Family is For</h2>
+
+    <p>Alpaca is a research-oriented, instruction-tuned model family derived from Meta's original LLaMA 1 weights and fine-tuned by Stanford on 52K instruction-following demonstrations. It was one of the first open instruction-tuned models and remains useful primarily for educational and historical purposes. It is <strong>not</strong> recommended as a production-grade assistant in 2024+, where newer families (Llama 3, Mistral, Qwen, Gemma) offer dramatically better quality and clearer licensing.</p>
+
+    <h3>Personal Use</h3>
+    <p>Alpaca is best suited for hobbyists and learners who want to explore how early instruction tuning worked. It can handle simple Q&amp;A, short summaries, and basic rewriting tasks on modest hardware, but everyday users looking for a daily-driver chatbot will get significantly better results from a modern open model.</p>
+
+    <h3>Business / Team Use</h3>
+    <p>Alpaca is <strong>not recommended for business or commercial team use</strong>. Its training data and base weights carry research-only restrictions, and its quality, safety alignment, and instruction-following are well behind current open alternatives. Teams should choose a clearly licensed modern model instead.</p>
+
+    <h3>Developer &amp; Technical Use</h3>
+    <p>Developers may find Alpaca valuable as a reference point for studying instruction tuning, prompt formats (the original Alpaca prompt template is still widely cited), and historical fine-tuning techniques. It is useful in coursework, reproducibility experiments, and demos that compare early instruction-tuned models against newer releases. It is not a strong choice for code generation, tool use, or agentic workflows.</p>
+
+    <h3>Data Science &amp; Research Use</h3>
+    <p>Alpaca is most relevant here. Researchers studying RLHF predecessors, instruction-following benchmarks, dataset distillation (the original training set was generated using OpenAI's <code style="font-family:'Courier New',monospace;color:#79c0ff;">text-davinci-003</code>), or the evolution of open LLMs can use Alpaca as a baseline. It is a teaching artifact more than a production tool.</p>
+
+    <hr class="section-divider">
+
+    <h2>Licensing Information</h2>
+
+    <p>Alpaca's released artifacts are restricted to <strong>non-commercial research use</strong>. The model was fine-tuned from Meta's original <strong>LLaMA 1</strong> weights (which carry a non-commercial research license) and trained on instruction data generated via OpenAI's API, whose terms prohibit using outputs to develop competing commercial models. As a result, Alpaca cannot be used for commercial deployments, paid products, or revenue-generating services.</p>
+
+    <p>Community-redistributed weights (e.g., on Ollama or Hugging Face) inherit these constraints. If you need a commercially usable instruction-tuned model, choose Llama 3, Mistral, Qwen, or Gemma instead.</p>
+
+    <div class="highlight-box" style="border-left-color:#f59e0b; background:rgba(245, 158, 11, 0.08); border-color:rgba(245, 158, 11, 0.35);">
+        <p><strong style="color:#f59e0b;">Disclaimer:</strong> This summary is provided for general informational purposes only and does <strong>not</strong> constitute legal advice. License terms can change, and your specific use case may have additional considerations. Always review the official LLaMA, Stanford Alpaca, and any redistributor licenses directly, and consult a qualified attorney before deploying Alpaca in any non-research context.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Available Model Sizes</h2>
+
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th>Model Size</th>
+                <th>Ollama Tag</th>
+                <th>Recommended NoCloudGPT Tier</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>7B</strong></td>
+                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">alpaca</code></td>
+                <td>Starter / Standard</td>
+                <td>Original Stanford Alpaca size. Runs on most modern CPUs and entry-level GPUs. Best for learning and lightweight experimentation.</td>
+            </tr>
+            <tr>
+                <td><strong>13B</strong></td>
+                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">alpaca:13b</code></td>
+                <td>Standard / Performance</td>
+                <td>Improved coherence and instruction-following over 7B. Needs more RAM/VRAM; still research-only.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="highlight-box" style="margin-top:24px;">
+        <p><strong>Positioning note:</strong> Alpaca holds an important place in the history of open LLMs as the first widely studied instruction-tuned LLaMA variant, but it is now superseded by modern, permissively licensed families. Choose Alpaca when you specifically need a research baseline, a teaching example, or a historical reference — for any practical assistant, coding, or business workload, a current-generation model will deliver far better results with cleaner licensing.</p>
+    </div>
+
+    <hr class="section-divider">
+
     <h2>Running Alpaca via Ollama (Historical Reference)</h2>
 
     <p>If you have a specific reason to run the original Alpaca — research comparison, historical reference, educational purposes — it is available via Ollama:</p>
