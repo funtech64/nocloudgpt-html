@@ -124,6 +124,77 @@
 
     <hr class="section-divider">
 
+    <h2>Who This Model Family is For</h2>
+
+    <h3>Personal Use</h3>
+    <p>Meditron is a strong choice for medical students, nurses, and healthcare professionals who want a private study companion for clinical reasoning, drug information, or guideline-based scenarios. Because it runs entirely on your own machine, you can explore medical questions without sending sensitive data to a third-party service. It is an educational and reference tool — not a substitute for a licensed physician — so all outputs should be verified against current clinical sources.</p>
+
+    <h3>Business / Team Use</h3>
+    <p>Clinics, telehealth providers, and health-tech teams can use Meditron to build private, on-premise tools for documentation drafting, patient education content, and clinical decision-support prototypes. Running it locally keeps protected health information inside your infrastructure, which is a significant advantage for HIPAA- and GDPR-conscious organizations. It should always be used with mandatory human review — Meditron is designed to assist clinicians, not replace clinical judgment.</p>
+
+    <h3>Developer &amp; Technical Use</h3>
+    <p>Developers building medical chat interfaces, triage assistants, or guideline-lookup tools will find Meditron a practical, license-friendly foundation that runs locally via Ollama. Its medical fine-tuning reduces the need for heavy prompt engineering around clinical knowledge. Note that it is built on the older Llama 2 architecture, so you may need to manage context limits and integrate retrieval (RAG) for the most current guidelines and references.</p>
+
+    <h3>Data Science &amp; Research Use</h3>
+    <p>Meditron was created by EPFL specifically for open medical research, making it one of the more transparent and reproducible medical LLMs available for fine-tuning and benchmarking. It is particularly valuable for studying clinical reasoning and adapting models for low-resource or humanitarian medical settings. Researchers should benchmark it against newer medical and generalist models, as both its architecture and training data predate more recent releases.</p>
+
+    <hr class="section-divider">
+
+    <h2>Licensing Information</h2>
+
+    <p>Meditron is released under the <strong>Llama 2 Community License</strong> (inherited from its Meta base model), with additional responsible-use guidance from EPFL. Commercial use is permitted under the standard Llama 2 terms, but the model is explicitly intended for research and clinical-support contexts that include qualified human oversight — not for autonomous clinical decision-making.</p>
+
+    <p>You should review the full terms and intended-use notes directly on the official model card before deploying.</p>
+
+    <p><strong>Official source:</strong></p>
+    <ul style="list-style:disc; padding-left:1.5rem; margin-bottom:18px; color:#c8d4e0;">
+        <li><a href="https://huggingface.co/epfl-llm/meditron" target="_blank" rel="noopener" style="color:#76b900;">epfl-llm/meditron on Hugging Face</a></li>
+    </ul>
+
+    <div class="highlight-box" style="border-left-color:#f59e0b; background:rgba(245, 158, 11, 0.08); border-color:rgba(245, 158, 11, 0.35);">
+        <p><strong style="color:#f59e0b;">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated (especially clinical) context.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Available Model Sizes</h2>
+
+    <!-- TODO: Create individual model size detail pages for meditron-7b and meditron-70b with hardware benchmarks and clinical prompt examples. -->
+
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th>Model Size</th>
+                <th>Ollama Tag</th>
+                <th>Recommended NoCloudGPT Tier</th>
+                <th>Notes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Meditron 7B</strong></td>
+                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">meditron:7b</code></td>
+                <td>Starter / Workstation</td>
+                <td>Lightweight option for study tools, prototyping, and single-user clinical reference. Runs on modest GPUs or high-RAM machines.</td>
+                <td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td>
+            </tr>
+            <tr>
+                <td><strong>Meditron 70B</strong></td>
+                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">meditron:70b</code></td>
+                <td>Professional / Server</td>
+                <td>Stronger clinical reasoning and medical knowledge for team deployments and research. Requires substantial GPU memory or multi-GPU setup.</td>
+                <td><a href="/quote.html" style="color:#76b900;">Get quote →</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="highlight-box" style="margin-top:24px;">
+        <p><strong>Positioning note:</strong> Meditron is a <strong>specialized medical LLM</strong>. It performs best when used as a clinical reasoning and reference assistant with human oversight. For the most current guidelines, pair it with a retrieval (RAG) layer.</p>
+    </div>
+
+    <hr class="section-divider">
+
     <h2>Meditron vs. MedGemma</h2>
 
     <p>Both are purpose-built medical models available for local deployment. The key differences:</p>
