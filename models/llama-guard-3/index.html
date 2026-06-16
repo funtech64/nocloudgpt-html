@@ -692,91 +692,79 @@
       </section>
 
       <section>
-        <h2>👥 Who This Model Is For</h2>
+        <h2>👥 Who This Model Family is For</h2>
 
         <h3>👤 Personal Use</h3>
         <p>
-          Individual developers experimenting with AI safety or building personal AI tools for others will find Llama Guard 3 useful as a lightweight classification layer. The 8B model runs on a standard Lightsail 8 GB instance — small enough that the infrastructure cost is accessible for a solo developer. For personal projects, the ability to configure which of the 14 categories are active is particularly useful: a personal productivity assistant needs different guardrails than a consumer-facing application.
+          Llama Guard 3 is not a chatbot — it does not write, answer questions, or generate text. Its sole purpose is to act as a safety classifier. For personal use, it is only relevant if you are building your own private AI setup and want an automated filter that flags toxic, harmful, or unsafe content (such as hate speech, harassment, sexual content, or dangerous instructions) before it reaches you. Most individuals will not need it unless they are actively constructing a custom moderation pipeline.
         </p>
 
-        <h3>🏢 Business &amp; Team Use</h3>
+        <h3>🏢 Business / Team Use</h3>
         <p>
-          Organizations deploying AI in customer-facing applications — consumer chatbots, AI-powered support, educational platforms, content generation tools — carry responsibility for every output their system produces. Llama Guard 3's MLCommons alignment provides a taxonomy that is documented, externally validated, and increasingly referenced by regulatory bodies. Deploying it as an input and output filter creates an auditable safety layer whose classification decisions are logged with category codes — defensible documentation for AI governance reviews, platform compliance, and in the event of a safety incident. The on-premise deployment eliminates the privacy exposure of routing user conversations to an external moderation API.
+          This is where Llama Guard 3 delivers real value. If your organization runs a private AI assistant for employees or customers and you need to moderate both user inputs and model outputs without sending data to a third-party moderation service, Llama Guard 3 gives you a self-hosted safety layer. It is especially useful for customer-facing tools, internal knowledge systems, or any deployment where you must catch harmful content while keeping all data inside your own infrastructure.
         </p>
 
         <h3>⚙️ Developer &amp; Technical Use</h3>
         <p>
-          Developers building AI pipelines on open-weight models — particularly fine-tuned or merged models whose safety alignment may be reduced from the base version — need an independent safety classification layer. Llama Guard 3's structured SAFE/UNSAFE verdicts with category codes integrate cleanly into routing logic: UNSAFE with S5 (cybersecurity) routes differently than UNSAFE with S13 (professional advice). The configurable category set lets developers enable exactly the categories relevant to their application and disable those that would generate false positives in their domain context. NoCloudGPT configures Llama Guard 3 alongside your primary model with Ollama, handling the pipeline integration as part of the standard deployment.
+          Developers use Llama Guard 3 as a guard model placed in front of or alongside a generative model (such as Llama, Mistral, Qwen, or Gemma). It evaluates text against defined harm categories and returns a clear safety judgment. You can then programmatically block, flag, log, or escalate the content. Because it is a focused classifier rather than a general LLM, integration is predictable and lightweight.
         </p>
 
         <h3>🔬 Data Science &amp; Research Use</h3>
         <p>
-          Safety researchers and AI red-team evaluators can use Llama Guard 3 as a local classification baseline without sending test prompts to external APIs. The MLCommons taxonomy's 14 standardized categories provide a controlled, reproducible evaluation framework for studying safety classifier behavior. Llama Guard 3 also serves as a useful comparison point for research into the trade-offs between binary (SAFE/UNSAFE) classification and continuous risk scoring approaches — its binary output contrasts directly with Granite Guardian's continuous risk scores, enabling structured comparisons.
+          Researchers studying content safety, moderation reliability, or adversarial prompting will find Llama Guard 3 a transparent and reproducible baseline. You can benchmark its performance against your own labeled datasets, tune decision thresholds, and audit how well your generative models behave across standard harm categories. It is particularly useful for building internal safety evaluations in an offline, auditable environment.
         </p>
       </section>
 
       <section>
         <h2>📄 Licensing Information</h2>
         <p>
-          Llama Guard 3 is released by Meta AI under the <strong>Llama 3 Community License</strong>. Commercial use is permitted for most organizations. The license restricts use by organizations with more than 700 million monthly active users and requires Meta attribution in applications. Verify current license terms at the model card before deployment, particularly for large-scale or regulated applications.
+          Llama Guard 3 is released by Meta under the <strong>Llama 3.2 Community License</strong> (or Llama 3.1 Community License for some variants). This license permits commercial use for most organizations, but includes the standard restriction: if your product or service has more than 700 million monthly active users, you must request a separate license from Meta.
         </p>
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th>Model</th>
-              <th>License</th>
-              <th>Commercial Use</th>
-              <th>Model Card</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Llama Guard 3 8B</td>
-              <td>Llama 3 Community</td>
-              <td>Permitted (conditions apply)</td>
-              <td><a href="https://huggingface.co/meta-llama/Llama-Guard-3-8B" target="_blank" rel="noopener" style="color: var(--accent);">meta-llama/Llama-Guard-3-8B →</a></td>
-            </tr>
-            <tr>
-              <td>Llama Guard 3 1B</td>
-              <td>Llama 3 Community</td>
-              <td>Permitted (conditions apply)</td>
-              <td><a href="https://huggingface.co/meta-llama/Llama-Guard-3-1B" target="_blank" rel="noopener" style="color: var(--accent);">meta-llama/Llama-Guard-3-1B →</a></td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="font-size:0.85rem; color: var(--text-muted);">License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+        <p>
+          You must retain the required attribution notice when distributing the model.
+        </p>
+        <p><strong>Official model card:</strong></p>
+        <ul style="list-style:disc; padding-left:1.5rem; margin-bottom:1rem; color:var(--text-secondary);">
+          <li><a href="https://huggingface.co/meta-llama/Llama-Guard-3-8B" target="_blank" rel="noopener" style="color:var(--accent);">meta-llama/Llama-Guard-3-8B on Hugging Face</a></li>
+        </ul>
+        <div class="highlight-box" style="border-left-color:#f59e0b; background:rgba(245, 158, 11, 0.08); border-color:rgba(245, 158, 11, 0.35);">
+          <p><strong style="color:#f59e0b;">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+        </div>
       </section>
 
       <section>
         <h2>📐 Available Model Sizes</h2>
+        <!-- TODO: Create individual model size detail pages for llama-guard3-1b and llama-guard3-8b with threshold tuning guidance. -->
         <table class="compare-table">
           <thead>
             <tr>
-              <th>Model</th>
-              <th>RAM (Q4)</th>
-              <th>Deployment Tier</th>
-              <th>Best For</th>
+              <th>Model Size</th>
+              <th>Ollama Tag</th>
+              <th>Recommended NoCloudGPT Tier</th>
+              <th>Notes</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Llama Guard 3 1B</td>
-              <td>~800 MB</td>
-              <td>Lightsail 2–4 GB (co-deployed)</td>
-              <td>Lightweight input screening, co-deployment with primary model</td>
-              <td><a href="/quote.html" style="color: var(--accent);">Get quote →</a></td>
+              <td><strong>Llama Guard 3 1B</strong></td>
+              <td><code style="color:var(--accent);">llama-guard3:1b</code></td>
+              <td>Starter</td>
+              <td>Lightweight guard model. Best for high-throughput input/output screening where low latency matters most.</td>
+              <td><a href="/quote.html" style="color:var(--accent);">Get quote →</a></td>
             </tr>
             <tr>
-              <td>Llama Guard 3 8B</td>
-              <td>~6–8 GB</td>
-              <td>Lightsail 8 GB / GPU instance</td>
-              <td>Full bidirectional safety classification, production deployments</td>
-              <td><a href="/quote.html" style="color: var(--accent);">Get quote →</a></td>
+              <td><strong>Llama Guard 3 8B</strong></td>
+              <td><code style="color:var(--accent);">llama-guard3:8b</code></td>
+              <td>Standard / Professional</td>
+              <td>Stronger classification accuracy on nuanced or borderline content. A solid default for most production moderation pipelines.</td>
+              <td><a href="/quote.html" style="color:var(--accent);">Get quote →</a></td>
             </tr>
           </tbody>
         </table>
-        <!-- TODO: Link each row to individual model-size pages when created -->
+        <div class="highlight-box" style="margin-top:1.25rem;">
+          <p><strong>Note:</strong> Llama Guard 3 is a <strong>safety classifier</strong>, not a generative model. It evaluates text and returns safety signals. You decide what action to take (block, flag, log, etc.) in your own application logic.</p>
+        </div>
       </section>
 
       <section>
