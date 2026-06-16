@@ -32,15 +32,71 @@
 
   <p>On the widely cited SQL-Eval benchmark from Defog AI, SQLCoder 15B outperforms GPT-4 on SQL generation accuracy for real-world database schemas — a benchmark result directly relevant to production data team use rather than academic code generation tasks.</p>
 
-  <h2>Who Should Deploy SQLCoder</h2>
+  <h2>Who This Model Family is For</h2>
 
+  <h3>Personal Use</h3>
+  <p>SQLCoder is a useful specialized tool if you occasionally need to query your own databases without memorizing complex SQL syntax. You can describe what you want in plain English (e.g., "show me the top 10 customers by total order value last quarter") and get working SQL back. It is particularly helpful when learning SQL or exploring personal datasets. Keep in mind this is a focused code-generation model — it does not chat, summarize, or act as a general assistant.</p>
+
+  <h3>Business / Team Use</h3>
+  <p>For teams where analysts, operations staff, or business users need to pull data without waiting on engineering for every report, SQLCoder enables natural-language querying while keeping sensitive database schemas and query patterns entirely on your own infrastructure. It performs best when paired with a clear, well-documented schema. This makes it valuable for organizations that want to democratize data access without compromising data privacy or compliance.</p>
+
+  <h3>Developer &amp; Technical Use</h3>
+  <p>Developers can use SQLCoder to accelerate query drafting, prototype reporting features, or build natural-language-to-SQL capabilities inside internal tools. It is particularly strong at interpreting complex database schemas and generating accurate joins, aggregations, and filters. Treat its output as a fast first draft — always review generated SQL before running it against production databases, and provide schema context for the most reliable results.</p>
+
+  <h3>Data Science &amp; Research Use</h3>
+  <p>Data scientists exploring unfamiliar datasets benefit from SQLCoder's ability to quickly translate analytical questions into SQL. It reduces friction when working with complex schemas and supports building reproducible query pipelines. It is not a statistical modeling or general reasoning tool — its value is narrowly focused on turning natural language into correct, executable SQL.</p>
+
+  <h2>Licensing Information</h2>
+
+  <p>SQLCoder models are released by Defog. Licensing depends on the specific variant and its underlying base model (some are Apache 2.0, while others follow the Meta Llama Community License). Commercial use is generally permitted, but you should review the exact terms for the variant you intend to deploy.</p>
+
+  <p><strong>Official source:</strong></p>
   <ul>
-    <li><strong>Data analysts and business intelligence teams</strong> who need to query databases without writing SQL by hand — and whose database schemas contain sensitive business data that cannot be transmitted to external APIs</li>
-    <li><strong>Data engineering teams</strong> building internal natural language query interfaces, automated reporting tools, or self-serve analytics platforms for non-technical stakeholders</li>
-    <li><strong>Healthcare, financial services, and legal organizations</strong> where database schemas contain PHI, financial records, or privileged information that is subject to strict data handling requirements</li>
-    <li><strong>Platform teams</strong> embedding natural language query capability into internal data products, dashboards, or developer tools without creating cloud API dependencies</li>
-    <li><strong>Organizations with large, complex schemas</strong> where the table count, relationship depth, or naming conventions make general-purpose models unreliable and a purpose-trained SQL model is the practical solution</li>
+    <li><a href="https://huggingface.co/defog">defog on Hugging Face</a></li>
   </ul>
+
+  <p><strong>Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+
+  <h2>Available Model Sizes</h2>
+
+  <!-- TODO: Create individual model size detail pages for sqlcoder-7b, sqlcoder-15b, and sqlcoder-70b with schema complexity guidance. -->
+
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Model Size</th>
+        <th>Ollama Tag</th>
+        <th>Recommended NoCloudGPT Tier</th>
+        <th>Notes</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>SQLCoder 7B</strong></td>
+        <td><code>sqlcoder:7b</code></td>
+        <td>Starter</td>
+        <td>Lightweight option for simpler schemas and learning. Fast on modest hardware.</td>
+        <td><a href="/quote.html">Get quote →</a></td>
+      </tr>
+      <tr>
+        <td><strong>SQLCoder 15B</strong></td>
+        <td><code>sqlcoder:15b</code></td>
+        <td>Standard / Professional</td>
+        <td>Strong balance of accuracy and resource use. Handles moderately complex schemas well.</td>
+        <td><a href="/quote.html">Get quote →</a></td>
+      </tr>
+      <tr>
+        <td><strong>SQLCoder 70B</strong></td>
+        <td><code>sqlcoder:70b</code></td>
+        <td>Professional / Enterprise</td>
+        <td>Highest accuracy on complex, multi-table schemas. Requires significant GPU memory.</td>
+        <td><a href="/quote.html">Get quote →</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Positioning note:</strong> SQLCoder is a <strong>specialized SQL generation model</strong>. It excels at turning natural language into accurate SQL when given a clear database schema, but it is not a general-purpose chat or reasoning model.</p>
 
   <h2>Deployment Tiers and Compute Requirements</h2>
 
