@@ -65,6 +65,42 @@
           </div>
         </section>
 
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Baichuan is a strong choice if you regularly work across Chinese and English — whether you're reading Chinese news, translating personal documents, studying Mandarin, or chatting with family in both languages. The 7B and 13B versions offer solid bilingual capability on consumer hardware. For purely English-language tasks, however, newer families like Llama 3.3 or Qwen 2.5 generally feel sharper and more capable.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Baichuan 2 was specifically tuned for strong bilingual Chinese-English performance, making it useful for teams handling cross-border communication, Chinese customer support drafts, contract review involving Chinese counterparties, or summarizing Mandarin-language reports. If your business is English-only, you will likely get better overall value from Qwen 2.5 or Llama 3.3. If you have meaningful Chinese content in your workflows, Baichuan remains a reasonable private-deployment option.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Baichuan handles instruction following and general reasoning well, making it useful for building bilingual chatbots, Chinese-language RAG systems, or internal tools where Mandarin input/output quality matters. For coding tasks specifically, you should look elsewhere — DeepSeek V3, Qwen 2.5-Coder, and CodeLlama clearly outperform Baichuan on programming benchmarks.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Baichuan 2 serves as a useful reference point for researchers studying bilingual LLM training, Chinese tokenization strategies, or comparative evaluation across Chinese-developed open models. For new research focused on math reasoning or English-language tasks, more recent models will give you a stronger baseline.</p>
+            </div>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
           <h2 class="mt-3 text-3xl font-black">What to Use Baichuan For</h2>
@@ -93,6 +129,60 @@
           <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model</h2>
           <div class="mt-6 space-y-4">
             <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">Qwen provides stronger multilingual coverage</h3><p class="mt-2 text-sm text-slate-400">Qwen 3 offers broader language coverage including stronger Chinese-English bilingual performance with a wider size range. For new deployments, compare Qwen against Baichuan. <a href="/models/qwen/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Qwen →</a></p></div>
+          </div>
+        </section>
+
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">Baichuan 2 is released by Baichuan Intelligence under a community license that permits <strong class="text-white">free commercial use</strong> for most organizations, provided you register and agree to their terms. Larger commercial deployments may require explicit permission from Baichuan Intelligence.</p>
+          <p class="mt-4 text-slate-300">You should always review the current license directly on the official model card before deploying in production.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official source:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/baichuan-inc" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">baichuan-inc on Hugging Face</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+          </div>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <!-- TODO: Create individual size pages for baichuan2-7b and baichuan2-13b with hardware benchmarks, quantization options, and deployment guidance. -->
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Baichuan 2 7B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">baichuan2:7b</code></td>
+                  <td class="px-4 py-3">Starter</td>
+                  <td class="px-4 py-3">Solid bilingual chat and summarization for individuals or small teams. Runs comfortably on consumer GPUs.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Baichuan 2 13B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">baichuan2:13b</code></td>
+                  <td class="px-4 py-3">Standard</td>
+                  <td class="px-4 py-3">Noticeably stronger reasoning and Chinese fluency than 7B. Best balance for business bilingual workloads.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-white">Note:</strong> Baichuan Intelligence has shifted focus toward closed commercial models (Baichuan 3 and 4) and has not released newer open-weight versions at the scale of competitors. For the most current open Chinese-capable models, also evaluate Qwen 2.5 and DeepSeek V3.</p>
           </div>
         </section>
 
