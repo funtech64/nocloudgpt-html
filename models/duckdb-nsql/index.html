@@ -30,15 +30,57 @@
     <li><strong>Iterative query refinement:</strong> Supports follow-up prompts that modify a generated query — "now filter to only rows where X" — maintaining schema context across a multi-turn session</li>
   </ul>
 
-  <h2>Who Should Deploy DuckDB-NSQL</h2>
+  <h2>Who This Model Family is For</h2>
 
+  <h3>Personal Use</h3>
+  <p>DuckDB NSQL is a practical tool if you work with local datasets (CSVs, Parquet files, or DuckDB databases) and want to generate queries using plain English instead of memorizing complex SQL syntax. It's especially useful for hobbyists, side projects, or personal data exploration on a laptop. Keep in mind this is a specialized SQL generation model — it does not chat, summarize, or act as a general assistant.</p>
+
+  <h3>Business / Team Use</h3>
+  <p>Teams that have standardized on DuckDB for local analytics, embedded reporting, or fast in-process querying can use DuckDB NSQL to make data access more accessible across the organization. Analysts and non-technical users can describe what they need and receive valid DuckDB queries, reducing reliance on a single SQL expert. Running it through NoCloudGPT keeps sensitive schemas and data entirely on your own infrastructure — an important advantage for finance, healthcare, and regulated industries.</p>
+
+  <h3>Developer &amp; Technical Use</h3>
+  <p>Developers building internal data tools, dashboards, or natural-language query interfaces on top of DuckDB will find this model useful as a focused text-to-SQL engine. It is specifically tuned for DuckDB's dialect, which reduces syntax mismatches compared to general-purpose models. Its output should be treated as a first draft — always validate queries before running them against production data.</p>
+
+  <h3>Data Science &amp; Research Use</h3>
+  <p>Data scientists and researchers using DuckDB for fast local exploration of analytical datasets will appreciate how DuckDB NSQL accelerates exploratory querying and prototyping of aggregations and joins. It handles the analytical patterns DuckDB excels at, allowing you to stay focused on your analysis rather than syntax. It is not a general reasoning or statistical modeling tool — its value is narrowly focused on turning natural language into correct DuckDB SQL.</p>
+
+  <h2>Licensing Information</h2>
+
+  <p>DuckDB NSQL was developed by MotherDuck and Numbers Station. Licensing depends on the specific variant and its underlying base model. Most published versions use permissive terms, but you should always confirm the exact license on the official model card before commercial deployment.</p>
+
+  <p><strong>Official source:</strong></p>
   <ul>
-    <li><strong>Data analysts using DuckDB for local analysis</strong> who want natural language query access without leaving their local environment or transmitting data schemas to a cloud service</li>
-    <li><strong>Data scientists and ML engineers</strong> who use DuckDB to query feature stores, training datasets, or evaluation results and want faster iteration without writing SQL by hand</li>
-    <li><strong>Analytics engineers</strong> building local-first data pipelines who want an embedded natural language layer for exploration and ad-hoc analysis</li>
-    <li><strong>Small data teams without dedicated SQL expertise</strong> where non-technical team members need to query analytical datasets without requiring SQL knowledge or analyst availability</li>
-    <li><strong>Organizations with sensitive analytical datasets</strong> — financial models, clinical research data, proprietary market data — where schema and query context cannot be transmitted outside the local environment under any circumstances</li>
+    <li><a href="https://huggingface.co/duckdb">DuckDB NSQL on Hugging Face</a></li>
   </ul>
+
+  <p><strong>Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+
+  <h2>Available Model Sizes</h2>
+
+  <!-- TODO: Create individual model size detail pages for duckdb-nsql-7b with schema examples and prompt patterns. -->
+
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Model Size</th>
+        <th>Ollama Tag</th>
+        <th>Recommended NoCloudGPT Tier</th>
+        <th>Notes</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>DuckDB NSQL 7B</strong></td>
+        <td><code>duckdb-nsql:7b</code></td>
+        <td>Starter / Small Workstation</td>
+        <td>The standard release. Strong DuckDB-specific SQL generation with modest hardware requirements. Best for individuals and small teams.</td>
+        <td><a href="/quote.html">Get quote →</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Positioning note:</strong> DuckDB NSQL is a <strong>specialized SQL generation model</strong> optimized for DuckDB. It performs best when generating analytical queries against DuckDB databases and is not intended as a general-purpose chat model or for other database systems without adaptation.</p>
 
   <h2>Deployment Requirements</h2>
 
