@@ -67,16 +67,88 @@
           </div>
         </div>
 
-        <h2 class="mt-10 text-3xl font-black">Who Should Be Running Reader-LM</h2>
+        <!-- SECTION: Who this model family is for -->
+        <p class="mt-10 text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+        <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
+        <div class="mt-6 grid gap-5 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-lg">👤</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">Reader LM is a strong choice if you want to build a clean, private reading archive from web articles, documentation, or saved pages. It converts messy HTML into well-structured Markdown by removing ads, navigation, sidebars, and other boilerplate. This makes it ideal for personal knowledge bases (Obsidian, Logseq, Markdown files) where you want readable, searchable content without the noise. Keep in mind it is a specialized conversion tool — it does not summarize, answer questions, or act as a chatbot.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-lg">🏢</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">Teams that maintain internal wikis, documentation portals, or content libraries will find Reader LM useful for standardizing messy web content into consistent Markdown suitable for ingestion into knowledge platforms or RAG systems. It is particularly helpful when migrating legacy HTML documentation or scraped web content into modern systems. Running it through NoCloudGPT keeps all sensitive internal or customer-facing pages on your own infrastructure during conversion.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-lg">⚙️</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">Developers building content pipelines, RAG preprocessing steps, or documentation tooling will appreciate that Reader LM is purpose-built for the HTML → Markdown conversion task. It handles boilerplate removal, preserves headings/links/structure, and produces output that downstream embedding models can use effectively. It is best paired with crawlers or ingestion jobs rather than used as a general reasoning or chat model.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-lg">🔬</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">Researchers building corpora from web sources benefit from Reader LM's ability to produce clean, consistently formatted text that is much easier to chunk, embed, and analyze than raw HTML. It excels at extracting meaningful body content from noisy pages, which improves dataset quality for retrieval or fine-tuning workflows. It should be treated as a focused extraction component in a data pipeline, not as an analysis or labeling model.</p>
+          </div>
+        </div>
 
-        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Organizations building private RAG systems</h3>
-        <p class="mt-3 text-slate-300">Any team deploying a private retrieval-augmented generation system that ingests web content should evaluate Reader-LM as the extraction layer. The alternative — using Jina's public API, a cloud-based scraping service, or a general-purpose HTML parser — trades either privacy, cost, or extraction quality. Reader-LM running locally provides better extraction quality than rule-based parsers, better privacy than any cloud service, and no per-page cost once deployed.</p>
+        <!-- SECTION: Licensing information -->
+        <p class="mt-10 text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+        <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+        <p class="mt-5 text-slate-300">Reader LM is released by Jina AI. Before deploying it commercially, you should review the exact license terms directly on the official model card, as details regarding commercial use and redistribution are maintained by the model authors.</p>
+        <p class="mt-5 text-slate-300"><strong class="text-white">Official model card:</strong></p>
+        <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+          <li><a href="https://huggingface.co/jinaai/ReaderLM" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">jinaai/ReaderLM on Hugging Face</a></li>
+        </ul>
+        <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+          <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+        </div>
 
-        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Research and intelligence teams</h3>
-        <p class="mt-3 text-slate-300">Investment analysts monitoring financial filings and press releases, policy researchers tracking regulatory publications, competitive intelligence teams monitoring industry developments, and academic researchers systematically reviewing publications all benefit from private Reader-LM deployment. The extraction quality enables reliable content analysis, and private deployment means research targets and monitoring patterns stay confidential.</p>
-
-        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Developer tooling and documentation systems</h3>
-        <p class="mt-3 text-slate-300">Development teams building internal documentation search, code assistant tools that can read external documentation, or developer portals that aggregate technical content need a reliable extraction layer for web-sourced material. Reader-LM's handling of code blocks and technical HTML structure makes it particularly well-suited for developer-facing knowledge systems.</p>
+        <!-- SECTION: Available model sizes -->
+        <p class="mt-10 text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+        <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+        <!-- TODO: Create individual model size detail pages for reader-lm-0.5b and reader-lm-1.5b with throughput benchmarks and example conversions. -->
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Model Size</th>
+                <th class="px-4 py-3">Ollama Tag</th>
+                <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                <th class="px-4 py-3">Notes</th>
+                <th class="px-4 py-3"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Reader LM 0.5B</td>
+                <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">reader-lm:0.5b</code></td>
+                <td class="px-4 py-3">Starter</td>
+                <td class="px-4 py-3">Lightweight option for high-volume conversion where speed and low resource use matter most. Good for personal archives and simpler pages.</td>
+                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Reader LM 1.5B</td>
+                <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">reader-lm:1.5b</code></td>
+                <td class="px-4 py-3">Standard</td>
+                <td class="px-4 py-3">Better at preserving structure on messy, deeply nested pages. Recommended for most production pipelines and RAG ingestion.</td>
+                <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-950 p-5">
+          <p class="text-sm text-slate-300"><strong class="text-white">Positioning note:</strong> Reader LM is a <strong class="text-white">specialized HTML-to-Markdown converter</strong>, not a general chat or reasoning model. It performs best when given raw web/HTML content that needs to be cleaned into structured Markdown for knowledge bases or RAG systems.</p>
+        </div>
 
         <h2 class="mt-10 text-3xl font-black">Hardware and Deployment Reality</h2>
         <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
