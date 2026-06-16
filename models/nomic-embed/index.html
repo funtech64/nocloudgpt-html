@@ -161,87 +161,81 @@
 
     <hr class="section-divider">
 
-    <h2>Who This Model Family Is For</h2>
+    <!-- SECTION: Who this model family is for -->
+    <h2>Who This Model Family is For</h2>
 
-    <h3>👤 Personal Use</h3>
-    <p>Nomic Embed is a strong choice for technically minded individuals building a private knowledge base or personal document search system. The 8K context window means you can embed whole articles, research papers, and long notes without splitting them — the retrieval pipeline stays simple, and results are more coherent. The fully open training data and Apache 2.0 license mean you own your embedding pipeline completely, with no dependency on proprietary model weights or commercial API terms.</p>
-
-    <h3>🏢 Business &amp; Team Use</h3>
-    <p>For organizations embedding long-form enterprise content — policy documents, compliance manuals, HR handbooks, detailed technical specifications — Nomic Embed v1.5's 8K context is the practical difference between a pipeline that works and one that fragments documents at arbitrary token boundaries. Matryoshka dimension support lets you tune storage costs to your corpus size without retraining. For compliance-sensitive environments, Nomic AI's fully published training data and methodology provides the provenance documentation that many internal AI governance programs now require.</p>
-
-    <h3>⚙️ Developer &amp; Technical Use</h3>
-    <p>Nomic Embed is a first-class citizen in LangChain, LlamaIndex, Haystack, and OpenWebUI's RAG pipeline — pull it via Ollama and it works immediately with standard integration code. The Matryoshka property means you can ship a product with 768-dimension vectors and later compress to 256 dimensions for storage savings without re-embedding your entire corpus. Nomic Embed v2 MOE's Mixture-of-Experts architecture handles diverse document corpora better than a single dense model, making it the right upgrade path when v1.5 retrieval quality plateaus on your specific data.</p>
-
-    <h3>🔬 Data Science &amp; Research Use</h3>
-    <p>Nomic AI's full publication of training data, methodology, and codebase makes Nomic Embed unusually transparent for a competitive embedding model. Researchers studying training data effects, long-context embedding behavior, or Matryoshka Representation Learning will find more to work with here than from models with closed training pipelines. The v1.5 and v2 MOE pair also makes a clean comparison target for studying how Mixture-of-Experts architecture affects embedding quality on diverse retrieval benchmarks.</p>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>👤 Personal use</h3>
+            <p>Nomic Embed is useful if you want to build a private semantic search index over your own notes, PDFs, research documents, or personal knowledge base. It does not chat or generate answers on its own — it converts text into vectors so another model (such as Llama or Qwen) can retrieve the most relevant passages. If you're building a personal "second brain" or local RAG system, Nomic Embed is one of the strongest fully open options available.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🏢 Business / team use</h3>
+            <p>Teams use Nomic Embed as the retrieval backbone for internal knowledge bases, contract search, support archives, and document Q&A systems. Its 8192-token context window allows you to embed longer documents with less aggressive chunking, preserving more meaning. Because the weights are fully open under Apache 2.0, sensitive content never needs to leave your infrastructure — unlike sending queries to closed embedding APIs.</p>
+        </div>
+        <div class="feature-card">
+            <h3>⚙️ Developer &amp; technical use</h3>
+            <p>Developers building RAG pipelines will appreciate Nomic Embed v1.5 for its Matryoshka Representation Learning: you can truncate the 768-dimensional embeddings down to 512, 256, 128, or 64 dimensions with graceful quality loss. This gives you fine-grained control over vector database storage costs. It also supports task-specific prefixes (<code style="color:#06d6a0;">search_query:</code>, <code style="color:#06d6a0;">search_document:</code>, etc.), allowing you to optimize embeddings for the specific retrieval task.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔬 Data science &amp; research</h3>
+            <p>Researchers working on retrieval, clustering, or topic modeling benefit from Nomic Embed being one of the most reproducible open embedding models — training data, code, and weights are all publicly available. It delivers competitive MTEB retrieval scores while offering a long context window and flexible embedding dimensions, making it a strong baseline for ablation studies and cost-quality tradeoff research.</p>
+        </div>
+    </div>
 
     <hr class="section-divider">
 
+    <!-- SECTION: Licensing information -->
     <h2>Licensing Information</h2>
 
-    <p>Both Nomic Embed Text v1.5 and Nomic Embed v2 MOE are released under the <strong>Apache 2.0 License</strong>, with the additional requirement that attribution be given to Nomic AI. The license permits unrestricted commercial and non-commercial use. Nomic AI also publishes the complete training data under open licenses, which is uncommon among embedding models at this performance tier.</p>
+    <p>Nomic Embed v1 and v1.5 are released under the <strong style="color:#fff;">Apache 2.0 License</strong>, which permits commercial use, modification, redistribution, and private deployment without royalty obligations or usage caps. This makes it one of the cleanest choices for commercial RAG and search products.</p>
 
-    <table class="comparison-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>License</th>
-          <th>Commercial Use</th>
-          <th>Model Card</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Nomic Embed Text v1.5</td>
-          <td>Apache 2.0</td>
-          <td>Permitted</td>
-          <td><a href="https://huggingface.co/nomic-ai/nomic-embed-text-v1.5" target="_blank" rel="noopener" style="color:#06d6a0;">nomic-ai/nomic-embed-text-v1.5 →</a></td>
-        </tr>
-        <tr>
-          <td>Nomic Embed v2 MOE</td>
-          <td>Apache 2.0</td>
-          <td>Permitted</td>
-          <td><a href="https://huggingface.co/nomic-ai/nomic-embed-text-v2-moe" target="_blank" rel="noopener" style="color:#06d6a0;">nomic-ai/nomic-embed-text-v2-moe →</a></td>
-        </tr>
-      </tbody>
-    </table>
-    <p style="font-size:0.85rem; color:#8a9aaa;">License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+    <p><strong style="color:#fff;">Official model card:</strong></p>
+    <ul style="list-style:disc; padding-left:1.5rem; margin-bottom:18px; color:#c8d4e0;">
+        <li><a href="https://huggingface.co/nomic-ai/nomic-embed-text-v1.5" target="_blank" rel="noopener" style="color:#06d6a0;">nomic-ai/nomic-embed-text-v1.5 on Hugging Face</a></li>
+    </ul>
+
+    <div class="highlight-box" style="border-left-color:#f59e0b; background:#1a1408;">
+        <p><strong style="color:#f59e0b;">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+    </div>
 
     <hr class="section-divider">
 
+    <!-- SECTION: Available model sizes -->
     <h2>Available Model Sizes</h2>
+    <!-- TODO: Create individual model size detail pages for nomic-embed-text and nomic-embed-text-v1 and link from the table. -->
 
-    <table class="comparison-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Parameters</th>
-          <th>Dimensions</th>
-          <th>Context</th>
-          <th>Deployment Tier</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Nomic Embed Text v1.5</td>
-          <td>137M</td>
-          <td>64–768 (Matryoshka)</td>
-          <td>8,192 tokens</td>
-          <td>Lightsail 2–4 GB</td>
-          <td><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
-        </tr>
-        <tr>
-          <td>Nomic Embed v2 MOE</td>
-          <td>475M</td>
-          <td>768</td>
-          <td>8,192 tokens</td>
-          <td>Lightsail 4–8 GB</td>
-          <td><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
-        </tr>
-      </tbody>
+    <table class="hardware-table">
+        <thead>
+            <tr>
+                <th>Model Size</th>
+                <th>Ollama Tag</th>
+                <th>Recommended NoCloudGPT Tier</th>
+                <th>Notes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong style="color:#fff;">Nomic Embed v1.5</strong> (137M params)</td>
+                <td>nomic-embed-text</td>
+                <td>Starter or higher</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;">Default recommendation. 8192-token context, Matryoshka dimensions (768→64), strong MTEB performance.</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+            </tr>
+            <tr>
+                <td><strong style="color:#fff;">Nomic Embed v1</strong> (137M params)</td>
+                <td>nomic-embed-text:v1</td>
+                <td>Starter or higher</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;">Original release without Matryoshka. Use only if matching an existing v1 index.</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+            </tr>
+        </tbody>
     </table>
-    <!-- TODO: Link each row to individual model-size pages when created -->
+
+    <div class="info-box">
+        <p><strong style="color:#fff;">Note:</strong> Embedding models are lightweight compared to chat models. The performance bottleneck in a RAG system is almost always the generation model (Llama, Qwen, Mistral, etc.), not the embedder. Nomic Embed runs efficiently even on modest hardware.</p>
+    </div>
 
     <hr class="section-divider">
 
