@@ -188,6 +188,42 @@
           </div>
         </section>
 
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Devstral is a strong choice if you're a developer working on personal projects, side applications, or learning to navigate larger codebases. It functions as a capable local pair-programmer that understands multi-file context and can explore repositories meaningfully. For non-coding personal tasks, a general-purpose model like Llama 3.3 or Qwen 2.5 will feel more appropriate.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Engineering teams that want a private, self-hosted agentic coding assistant without sending proprietary code to external APIs will find Devstral particularly valuable. It excels at internal developer tooling, code review assistance, automated bug triage, and powering custom coding agents that can read and modify real repositories. Teams in regulated industries (finance, healthcare, defense) benefit most, as every line of code stays on infrastructure they control.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">This is where Devstral truly shines. Built by Mistral AI in partnership with All Hands AI (the team behind OpenHands), it was specifically trained for agentic software engineering workflows: exploring unfamiliar codebases, making coherent edits across multiple files, using tools, and resolving real GitHub issues. It delivers strong results on SWE-Bench Verified for its size class, making it one of the better open-weight options for building Cursor-style assistants, autonomous coding agents, or CI/CD-integrated review bots — all running locally.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Researchers working on agent frameworks, tool-use benchmarks, or LLM-driven software engineering studies will find Devstral a reproducible, openly-licensed baseline. It is also useful for building evaluation harnesses or conducting fine-tuning experiments focused on code-editing tasks. For pure data analysis, statistics, or scientific writing, a general reasoning model will typically serve you better.</p>
+            </div>
+          </div>
+        </section>
+
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
           <h2 class="mt-3 text-3xl font-black">What to Use Devstral For</h2>
@@ -219,6 +255,67 @@
           <div class="mt-6 space-y-4">
             <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">You want the widest coding language coverage</h3><p class="mt-2 text-sm text-slate-400">Qwen2.5 Coder covers 40+ languages. For polyglot codebases, compare Qwen Coder against Devstral for your language stack. <a href="/models/qwen2.5-coder/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Qwen Coder →</a></p></div>
             <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">You need coding on Standard AI tier hardware</h3><p class="mt-2 text-sm text-slate-400">Code Llama 7B or Qwen Coder 7B run on Standard AI without GPU hardware. If GPU isn't available, these are the practical alternatives. <a href="/models/codellama/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Code Llama →</a></p></div>
+          </div>
+        </section>
+
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">Devstral is released by Mistral AI under the <strong class="text-white">Apache 2.0 License</strong>, which permits commercial use, modification, and redistribution without royalty obligations. This is one of the most permissive licenses available and represents a significant advantage over more restrictively licensed competitors.</p>
+          <p class="mt-4 text-slate-300">You can review the official model card and license terms directly on Hugging Face.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official source:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/mistralai/Devstral-Small-2505" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Devstral-Small-2505 on Hugging Face</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+          </div>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <!-- TODO: Create individual size pages for devstral-24b with hardware benchmarks, quantization options, and deployment guidance. -->
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Devstral Small 24B (Q4)</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">devstral:24b</code></td>
+                  <td class="px-4 py-3">Professional</td>
+                  <td class="px-4 py-3">Best balance of capability and cost for most teams. Runs comfortably on a single 24GB GPU (RTX 3090/4090 class).</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Devstral Small 24B (Q8)</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">devstral:24b-q8_0</code></td>
+                  <td class="px-4 py-3">Professional / Enterprise</td>
+                  <td class="px-4 py-3">Higher fidelity for production agent workloads. Requires ~28GB VRAM or GPU splitting.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Devstral Small 24B (FP16)</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">devstral:24b-fp16</code></td>
+                  <td class="px-4 py-3">Enterprise</td>
+                  <td class="px-4 py-3">Full precision for research, benchmarking, or fine-tuning. Requires 48GB+ VRAM.</td>
+                  <td class="px-4 py-3"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-white">Positioning note:</strong> Devstral is purpose-built for <em>agentic</em> coding workflows (tool use, multi-file editing, codebase exploration). On raw single-shot code generation, larger generalist models like Qwen 2.5-Coder 32B or DeepSeek-Coder V2 may still outperform it in some languages or tasks. Choose Devstral when you specifically need agent behavior rather than pure code completion.</p>
           </div>
         </section>
 
