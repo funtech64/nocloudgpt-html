@@ -163,109 +163,81 @@
 
     <hr class="section-divider">
 
-    <h2>Who This Model Family Is For</h2>
+    <!-- SECTION: Who this model family is for -->
+    <h2>Who This Model Family is For</h2>
 
-    <h3>👤 Personal Use</h3>
-    <p>BGE is not a conversational model — it is an infrastructure component. For personal use, the most relevant scenario is a developer or technically inclined individual building a private document search system for their own files: personal notes, research papers, a local knowledge base. BGE-Small or BGE-Large-EN-v1.5 gives you MTEB-leading retrieval quality in a model that fits comfortably on a laptop. BGE-M3 via Ollama adds 8K context and multilingual support for those whose personal document library spans languages.</p>
-
-    <h3>🏢 Business &amp; Team Use</h3>
-    <p>BGE-M3 is built for exactly the retrieval workloads that enterprise teams actually face: large document libraries in multiple languages, long contracts and reports that need whole-section embedding, and knowledge bases where both exact-term matching and semantic similarity matter. The hybrid retrieval capability — dense plus sparse from a single model — means you get enterprise search quality without needing to maintain separate retrieval pipelines. For organizations with confidentiality requirements, keeping all document embeddings on private infrastructure is a first-class benefit: no document content or vector representations leave your network.</p>
-
-    <h3>⚙️ Developer &amp; Technical Use</h3>
-    <p>BGE-M3 is the benchmark-grade choice for RAG applications where retrieval quality is a product differentiator. Developers building legal research tools, medical knowledge bases, technical documentation search, or multilingual customer-support systems will find BGE-M3's FlagEmbedding library integration and Ollama API straightforward. The three retrieval modes (dense, sparse, multi-vector) expose precise control over retrieval strategy without requiring a separate model for each approach. The 8K context window simplifies ingestion pipelines by removing the need for aggressive chunking on long documents.</p>
-
-    <h3>🔬 Data Science &amp; Research Use</h3>
-    <p>BGE and BGE-M3 are published by BAAI with accompanying technical papers and reproducible evaluation on MTEB. For researchers working on information retrieval, RAG architectures, or multilingual NLP, BGE-M3's three retrieval modes provide a single controllable baseline for studying dense, sparse, and multi-vector retrieval under identical training conditions. The model's strong cross-lingual performance also makes it valuable for cross-lingual IR research, where embedding queries and documents from different languages into a shared semantic space is the central problem.</p>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>👤 Personal use</h3>
+            <p>BGE (especially BGE-M3) is a strong choice if you want to build a private semantic search system over your notes, PDFs, research papers, or personal document collection. It turns text into high-quality vectors so you can find relevant passages by meaning. The model does not chat or generate answers by itself — you pair it with a generation model (Llama, Qwen, Mistral, etc.) to create a full local RAG setup. BGE-M3's multilingual strength makes it particularly useful if you work with content in multiple languages.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🏢 Business / team use</h3>
+            <p>Teams building internal knowledge bases, contract search, support ticket retrieval, or enterprise document Q&A systems will find BGE-M3 one of the strongest open embedding options available. Its combination of dense, sparse, and multi-vector (ColBERT) retrieval in a single model delivers excellent accuracy across many languages. Running it on-premise through NoCloudGPT keeps all sensitive documents inside your infrastructure, which is a significant advantage over commercial embedding APIs for compliance-sensitive organizations.</p>
+        </div>
+        <div class="feature-card">
+            <h3>⚙️ Developer &amp; technical use</h3>
+            <p>Developers building RAG pipelines, semantic search, or retrieval-augmented applications will appreciate BGE-M3's versatility. It supports dense retrieval, sparse retrieval, and multi-vector retrieval in one model, and handles up to 8192 tokens of context. It integrates cleanly with LangChain, LlamaIndex, and major vector databases (Qdrant, Weaviate, pgvector, Chroma). The ability to use task-specific prefixes further improves retrieval quality for different use cases.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔬 Data science &amp; research</h3>
+            <p>Researchers working on retrieval systems, multilingual NLP, or RAG evaluation will find BGE-M3 a strong, reproducible baseline. It consistently ranks at or near the top of multilingual MTEB retrieval benchmarks while remaining practical to run. The unified multi-functionality (dense + sparse + ColBERT) makes it especially valuable for comparative studies and ablation experiments.</p>
+        </div>
+    </div>
 
     <hr class="section-divider">
 
+    <!-- SECTION: Licensing information -->
     <h2>Licensing Information</h2>
 
-    <p>All BGE models — including BGE-M3, BGE-Large-EN-v1.5, and BGE-Small-EN-v1.5 — are released under the <strong>MIT License</strong>, which permits unrestricted commercial and non-commercial use, modification, and redistribution. There are no usage-tier restrictions, no user-count caps, and no requirement to share modifications.</p>
+    <p>BGE models (including BGE-M3) are released by BAAI under the <strong style="color:#fff;">MIT License</strong>, which is one of the most permissive open-source licenses. This allows commercial use, modification, and redistribution with minimal restrictions.</p>
 
-    <table class="comparison-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>License</th>
-          <th>Commercial Use</th>
-          <th>Model Card</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>BGE-M3</td>
-          <td>MIT</td>
-          <td>Permitted</td>
-          <td><a href="https://huggingface.co/BAAI/bge-m3" target="_blank" rel="noopener" style="color:#06d6a0;">BAAI/bge-m3 →</a></td>
-        </tr>
-        <tr>
-          <td>BGE-Large-EN-v1.5</td>
-          <td>MIT</td>
-          <td>Permitted</td>
-          <td><a href="https://huggingface.co/BAAI/bge-large-en-v1.5" target="_blank" rel="noopener" style="color:#06d6a0;">BAAI/bge-large-en-v1.5 →</a></td>
-        </tr>
-        <tr>
-          <td>BGE-Small-EN-v1.5</td>
-          <td>MIT</td>
-          <td>Permitted</td>
-          <td><a href="https://huggingface.co/BAAI/bge-small-en-v1.5" target="_blank" rel="noopener" style="color:#06d6a0;">BAAI/bge-small-en-v1.5 →</a></td>
-        </tr>
-      </tbody>
-    </table>
-    <p style="font-size:0.85rem; color:#8a9aaa;">License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+    <p><strong style="color:#fff;">Official model card:</strong></p>
+    <ul style="list-style:disc; padding-left:1.5rem; margin-bottom:18px; color:#c8d4e0;">
+        <li><a href="https://huggingface.co/BAAI/bge-m3" target="_blank" rel="noopener" style="color:#06d6a0;">BAAI/bge-m3 on Hugging Face</a></li>
+    </ul>
+
+    <div class="highlight-box" style="border-left-color:#f59e0b; background:#1a1408;">
+        <p><strong style="color:#f59e0b;">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+    </div>
 
     <hr class="section-divider">
 
+    <!-- SECTION: Available model sizes -->
     <h2>Available Model Sizes</h2>
+    <!-- TODO: Create individual model size detail pages for bge-m3 and link from the table. -->
 
-    <table class="comparison-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Parameters</th>
-          <th>Dimensions</th>
-          <th>Context</th>
-          <th>Deployment Tier</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>BGE-Small-EN-v1.5</td>
-          <td>33M</td>
-          <td>384</td>
-          <td>512 tokens</td>
-          <td>Lightsail 2 GB</td>
-          <td><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
-        </tr>
-        <tr>
-          <td>BGE-Large-EN-v1.5</td>
-          <td>335M</td>
-          <td>1,024</td>
-          <td>512 tokens</td>
-          <td>Lightsail 4 GB</td>
-          <td><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
-        </tr>
-        <tr>
-          <td>BGE-M3 (dense only)</td>
-          <td>568M</td>
-          <td>1,024</td>
-          <td>8,192 tokens</td>
-          <td>Lightsail 4–8 GB</td>
-          <td><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
-        </tr>
-        <tr>
-          <td>BGE-M3 (hybrid)</td>
-          <td>568M</td>
-          <td>1,024</td>
-          <td>8,192 tokens</td>
-          <td>Lightsail 8 GB / GPU</td>
-          <td><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
-        </tr>
-      </tbody>
+    <table class="hardware-table">
+        <thead>
+            <tr>
+                <th>Model Size</th>
+                <th>Ollama Tag</th>
+                <th>Recommended NoCloudGPT Tier</th>
+                <th>Notes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong style="color:#fff;">BGE-M3</strong> (570M)</td>
+                <td>bge-m3</td>
+                <td>Starter / Standard</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;">The flagship. Best balance of multilingual performance, multi-functionality (dense + sparse + ColBERT), and practicality. Recommended for most new deployments.</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+            </tr>
+            <tr>
+                <td><strong style="color:#fff;">BGE-Large-EN v1.5</strong></td>
+                <td>bge-large</td>
+                <td>Starter</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;">Strong English-only retrieval model. Still useful if your workload is primarily English and you want a lighter, well-established option.</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+            </tr>
+        </tbody>
     </table>
-    <!-- TODO: Link each row to individual model-size pages when created -->
+
+    <div class="info-box">
+        <p><strong style="color:#fff;">Note:</strong> BGE-M3 is currently the recommended default for most users because of its strong multilingual support and unified retrieval capabilities. Embedding models are lightweight — the main performance bottleneck in a RAG system is almost always the generation model, not the embedder.</p>
+    </div>
 
     <hr class="section-divider">
 
