@@ -245,3 +245,160 @@ Pass 4: Fact Verification
 * Verify model names and variants.
 * Verify hardware/tier recommendations.
 * Verify benchmark or performance claims.
+⸻
+
+June 2026 Public Draft Artifact Cleanup Audit
+
+Scope of this pass: `/models/**/*.html` and this guide only. This pass cleaned public-facing draft markers; it did not verify model facts, licenses, benchmark claims, pricing, partnerships, or current Ollama availability.
+
+Status updates from this pass:
+
+* Draft / noindex pages found or retained: Aquila (`/models/aquila/`), Bagel (`/models/bagel/`), Math (`/models/math/`), Nomic (`/models/nomic/`), Noroma (`/models/noroma/`), OpenClaw (`/models/openclaw/`), Pangu (`/models/pangu/`), Reka (`/models/reka/`), Snowball (`/models/snowball/`), TigerBot (`/models/tigerbot/`). These pages remain too thin, uncertain, or stub-like for public indexing.
+* Needs verification: broad family pages where visible verification text was softened into buyer-facing caution copy or standardized internal comments. These pages still need human fact-checking before anyone treats their model facts as verified.
+* Needs polish: pages where visible artwork/source instructions were removed or moved to internal comments but fallback artwork classes remain in the page implementation.
+
+Missing model family pages discovered under `/models/` during this pass:
+
+* `/models/airoboros/` — Needs verification.
+* `/models/all-minilm/` — Needs verification.
+* `/models/alpaca/` — Needs verification.
+* `/models/aquila/` — Draft / noindex.
+* `/models/arctic/` — Needs verification.
+* `/models/arctic-llm/` — Needs verification.
+* `/models/aya/` — Needs verification.
+* `/models/bagel/` — Draft / noindex.
+* `/models/bakllava/` — Needs verification.
+* `/models/bespoke-minicheck/` — Needs polish.
+* `/models/bge/` — Needs verification.
+* `/models/chatglm/` — Needs verification.
+* `/models/codegeex4/` — Needs verification.
+* `/models/codegemma/` — Needs verification.
+* `/models/codellama/` — Needs verification.
+* `/models/codestral/` — Needs verification.
+* `/models/cogito/` — Needs verification.
+* `/models/command-r/` — Needs verification.
+* `/models/command-r-plus/` — Needs verification.
+* `/models/dbrx/` — Needs verification.
+* `/models/deepseek-coder/` — Needs verification.
+* `/models/deepseek-r1/` — Needs verification.
+* `/models/deepseek-v3/` — Needs verification.
+* `/models/devstral/` — Needs verification.
+* `/models/dolphin/` — Needs verification.
+* `/models/duckdb-nsql/` — Needs verification.
+* `/models/embedding-gemma/` — Needs verification.
+* `/models/exaone/` — Needs verification.
+* `/models/falcon/` — Needs verification.
+* `/models/firefunction/` — Needs verification.
+* `/models/gemma/` — Needs verification.
+* `/models/gemma3/` — Needs verification.
+* `/models/gemma4/` — Needs verification.
+* `/models/glm/` — Needs verification.
+* `/models/glm5/` — Needs verification.
+* `/models/gpt-2/` — Needs verification.
+* `/models/gpt-oss/` — Needs polish.
+* `/models/granite/` — Needs verification.
+* `/models/granite-code/` — Needs verification.
+* `/models/granite-embedding/` — Needs verification.
+* `/models/granite-guardian/` — Needs polish.
+* `/models/granite4/` — Needs verification.
+* `/models/grok/` — Needs verification.
+* `/models/internlm/` — Needs verification.
+* `/models/jamba/` — Needs verification.
+* `/models/kimi/` — Needs verification.
+* `/models/laguna/` — Needs verification.
+* `/models/lfm/` — Needs verification.
+* `/models/lfm2/` — Needs verification.
+* `/models/llama-3.1-405b/` — Needs verification.
+* `/models/llama-3.2/` — Needs verification.
+* `/models/llama-3.2-vision/` — Needs verification.
+* `/models/llama-guard/` — Needs verification.
+* `/models/llama-guard-3/` — Needs polish.
+* `/models/llama3.3/` — Needs verification.
+* `/models/llama4/` — Needs verification.
+* `/models/llava/` — Needs verification.
+* `/models/magicoder/` — Needs verification.
+* `/models/magistral/` — Needs verification.
+* `/models/math/` — Draft / noindex.
+* `/models/medgemma/` — Needs verification.
+* `/models/meditron/` — Needs verification.
+* `/models/mimo/` — Needs verification.
+* `/models/minicpm-v/` — Needs verification.
+* `/models/minimax/` — Needs verification.
+* `/models/ministral/` — Needs verification.
+* `/models/mistral/` — Needs verification.
+* `/models/mistral-family/` — Needs verification.
+* `/models/mistral-large/` — Needs verification.
+* `/models/mistral-small/` — Needs verification.
+* `/models/mixtral/` — Needs verification.
+* `/models/moondream/` — Needs verification.
+* `/models/mxbai/` — Needs verification.
+* `/models/mythomax/` — Needs verification.
+* `/models/nemotron/` — Needs verification.
+* `/models/nemotron4/` — Needs verification.
+* `/models/neural-chat/` — Needs verification.
+* `/models/nomic/` — Draft / noindex.
+* `/models/nomic-embed/` — Needs verification.
+* `/models/noroma/` — Draft / noindex.
+* `/models/nous/` — Needs verification.
+* `/models/nous-hermes/` — Needs verification.
+* `/models/nuextract/` — Needs verification.
+* `/models/obsidian/` — Needs verification.
+* `/models/olmo/` — Needs verification.
+* `/models/openchat/` — Needs verification.
+* `/models/opencoder/` — Needs verification.
+* `/models/openhermes/` — Needs verification.
+* `/models/orca-mini/` — Needs verification.
+* `/models/paligemma/` — Needs verification.
+* `/models/pangu/` — Draft / noindex.
+* `/models/paraphrase-multilingual/` — Needs verification.
+* `/models/phi/` — Needs verification.
+* `/models/phi4/` — Needs verification.
+* `/models/phind-codellama/` — Needs verification.
+* `/models/pixtral/` — Needs verification.
+* `/models/qwen-embedding/` — Needs verification.
+* `/models/qwen-vl/` — Needs verification.
+* `/models/qwen2.5-coder/` — Needs verification.
+* `/models/qwen3.5/` — Needs verification.
+* `/models/reader-lm/` — Needs verification.
+* `/models/recurrentgemma/` — Needs verification.
+* `/models/reflection/` — Needs verification.
+* `/models/reka/` — Draft / noindex.
+* `/models/sailor2/` — Needs verification.
+* `/models/samantha/` — Needs verification.
+* `/models/seallm/` — Needs verification.
+* `/models/shieldgemma/` — Needs verification.
+* `/models/smollm/` — Needs verification.
+* `/models/snowball/` — Draft / noindex.
+* `/models/snowflake-arctic-embed/` — Needs verification.
+* `/models/solar/` — Needs verification.
+* `/models/sqlcoder/` — Needs verification.
+* `/models/stablelm/` — Needs verification.
+* `/models/starcoder/` — Needs verification.
+* `/models/starcoder2/` — Needs verification.
+* `/models/starling/` — Needs verification.
+* `/models/tigerbot/` — Draft / noindex.
+* `/models/translategemma/` — Needs verification.
+* `/models/tulu/` — Needs verification.
+* `/models/vicuna/` — Needs verification.
+* `/models/whisper/` — Needs verification.
+* `/models/wizardcoder/` — Needs verification.
+* `/models/wizardlm/` — Needs verification.
+* `/models/wizardlm2/` — Needs verification.
+* `/models/yi/` — Needs verification.
+* `/models/zamba/` — Needs verification.
+* `/models/zamba2/` — Needs verification.
+* `/models/zephyr/` — Needs verification.
+
+Notes from cleanup:
+
+* Visible verification labels were removed from rendered copy and replaced with safer NoCloudGPT review language across affected HTML pages.
+* Useful asset and follow-up comments were standardized as internal verification comments where they still help maintainers.
+* Visible source/artwork instructions and visible asset-path text were removed where they appeared in page content.
+* Stub language was changed from public draft phrasing to deployment-review phrasing, and thin/uncertain stub pages were kept or marked `noindex`.
+* Risky exact deployment and availability statements were softened where they were attached to visible verification labels. This pass did not independently verify the underlying facts.
+
+Remaining human decisions:
+
+* Decide whether uncertain families such as OpenClaw, Noroma, Snowball, TigerBot, Reka, Pangu, Nomic, Math, Bagel, and Aquila should remain in the catalog after factual review.
+* Decide whether fallback artwork class names containing the word `placeholder` should be renamed in a separate style-safe cleanup. They are implementation names, not public editorial copy, but the verification grep still reports them.
+* Verify current model availability, license terms, tags, hardware fit, and commercial suitability before marking any broad family page `Publish-ready`.

@@ -37,12 +37,11 @@
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
       />
       <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
-        [Llama 3.1 405B hero artwork]
       </div>
       <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Llama 3.1 405B</p>
       <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Meta's Flagship Dense Model — Frontier Reasoning on Enterprise Hardware You Control</h1>
       <p class="mt-6 max-w-3xl text-lg text-slate-300">Llama 3.1 405B is Meta's largest open-weight dense model — 405 billion parameters delivering reasoning quality competitive with closed frontier systems. Deployed privately through NoCloudGPT, sensitive documents, proprietary research, and internal analysis never leave infrastructure you own.</p>
-      <p class="mt-4 max-w-3xl text-slate-400">This is an enterprise deployment. Even quantized variants require multi-GPU infrastructure. VERIFY: Confirm current Ollama tags, quantization levels, and license terms before planning.</p>
+      <p class="mt-4 max-w-3xl text-slate-400">This is an enterprise deployment. Even quantized variants require multi-GPU infrastructure. NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.</p>
       <div class="mt-10 flex flex-wrap gap-3">
         <a href="/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
         <a href="/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
@@ -74,7 +73,7 @@
             Quantized variants (Q4, Q8) reduce memory requirements significantly, but even the most
             compressed 405B deployment requires enterprise-grade multi-GPU infrastructure. This is not
             a model for standard cloud instances or consumer hardware.
-            VERIFY: Confirm current hardware requirements for each quantization level before deployment planning.
+            NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
           </p>
 
           <div class="mt-8 grid gap-5 md:grid-cols-2">
@@ -101,11 +100,10 @@
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
           <h2 class="mt-3 text-3xl font-black">Meta AI Research</h2>
           <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
-            <!-- TODO: /assets/models/llama-3.1-405b/llama31405b-developer.webp -->
-            [Meta AI Research — developer badge]
+            <!-- INTERNAL: Verify /assets/models/llama-3.1-405b/llama31405b-developer.webp before publishing. -->
           </div>
           <p class="mt-6 text-slate-300">Llama 3.1 405B was released by Meta AI Research in July 2024 as the flagship model in the Llama 3.1 family. At 405 billion parameters, it represented Meta's most capable open-weight release at the time, competitive with closed frontier models on several benchmarks.</p>
-          <p class="mt-4 text-slate-400">VERIFY: Llama 3.1 405B is released under the Meta Llama 3.1 Community License — confirm commercial use conditions for your deployment scale and organization size.</p>
+          <p class="mt-4 text-slate-400">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.1 405B is released under the Meta Llama 3.1 Community License — confirm commercial use conditions for your deployment scale and organization size.</p>
           <p class="mt-4 text-slate-300">NoCloudGPT is independent of Meta. When 405B runs on your server via Ollama, no data is routed through Meta's infrastructure.</p>
         </section>
 
@@ -180,7 +178,7 @@
               </tbody>
             </table>
           </div>
-          <p class="mt-4 text-sm text-slate-400">VERIFY: Confirm exact VRAM and infrastructure requirements for each quantization at current Ollama tags before deployment planning.</p>
+          <p class="mt-4 text-sm text-slate-400">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.</p>
         </section>
 
         <!-- SECTION: Licensing information -->
@@ -203,7 +201,7 @@
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
           <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
           <p class="mt-5 text-slate-300">Llama 3.1 405B is available in full precision and quantized formats. Even quantized versions require substantial infrastructure.</p>
-          <!-- TODO: Create individual size/variant pages for Llama 3.1 405B (FP16, Q8, Q4) with hardware benchmarks and deployment guidance. -->
+          <!-- INTERNAL: Verify Create individual size/variant pages for Llama 3.1 405B (FP16, Q8, Q4) with hardware benchmarks and deployment guidance before publishing. -->
           <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
             <table class="w-full text-left text-sm">
               <thead class="bg-slate-950 text-cyan-200">
@@ -276,7 +274,7 @@
             <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Developer</dt><dd class="font-semibold text-white">Meta AI Research</dd></div>
             <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Parameters</dt><dd class="font-semibold text-white">405B (dense)</dd></div>
             <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Context</dt><dd class="font-semibold text-white">128K tokens</dd></div>
-            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">VERIFY: Llama 3.1 community</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.1 community</dd></div>
             <div class="flex justify-between"><dt class="text-slate-400">Min. tier</dt><dd class="font-semibold text-white">Enterprise (multi-GPU)</dd></div>
           </dl>
           <a href="/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build a 405B quote</a>
@@ -329,7 +327,7 @@
         <div>
           <p class="font-semibold text-slate-400">Hero image</p>
           <p class="mt-1">AI-generated abstract artwork created for NoCloudGPT. Original work, no third-party license required.</p>
-          <!-- TODO: Replace with licensed photo when available -->
+          <!-- INTERNAL: Verify Replace with licensed photo when available before publishing. -->
           <!-- Unsplash reference: https://unsplash.com/s/photos/enterprise-server -->
         </div>
         <div>
