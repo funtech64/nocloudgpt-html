@@ -29,15 +29,15 @@
     <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
       <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
-        <!-- TODO: /assets/models/dolphin/dolphin-hero.webp -->[Dolphin — hero artwork 480×180]
+        <!-- INTERNAL: Verify /assets/models/dolphin/dolphin-hero.webp before publishing. -->
       </div>
       <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Dolphin</p>
       <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Community Fine-Tuned AI for Open-Context Private Workflows</h1>
-  <!-- TODO: Add hero.webp — see models/artwork-sources.md, row: dolphin -->
+  <!-- INTERNAL: Verify Add hero.webp — see models/artwork-sources.md, row: dolphin before publishing. -->
   <!-- Unsplash reference: https://unsplash.com/s/photos/dolphin -->
 
       <p class="mt-6 max-w-3xl text-lg text-slate-300">Dolphin is a series of fine-tuned models from Eric Hartford, built on top of Llama, Mistral, and other base models. Dolphin models reduce the default instruction restrictions of the base models, making them popular for creative writing, research, unrestricted Q&A, and internal workflows where the default guardrails of commercial models interfere with legitimate use cases.</p>
-      <p class="mt-4 max-w-3xl text-slate-400">VERIFY: Confirm current Dolphin Ollama tags and which base models the current generation uses. License terms follow the underlying base model (Llama license or Mistral license depending on variant).</p>
+      <p class="mt-4 max-w-3xl text-slate-400">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.License terms follow the underlying base model (Llama license or Mistral license depending on variant).</p>
       <div class="mt-10 flex flex-wrap gap-3">
         <a href="/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
         <a href="/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
@@ -54,7 +54,7 @@
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
           <h2 class="mt-3 text-3xl font-black">Eric Hartford (Community)</h2>
           <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
-            <!-- TODO: /assets/models/dolphin/dolphin-developer.webp -->[Eric Hartford (Community) — developer badge]
+            <!-- INTERNAL: Verify /assets/models/dolphin/dolphin-developer.webp before publishing. -->
           </div>
           <p class="mt-6 text-slate-300">Dolphin is produced by Eric Hartford, a member of the open-source AI community. The fine-tunes use synthetic instruction data to train models with reduced default refusals and more open context following. Dolphin models are popular in the homelab, creative writing, and research communities.</p>
         </section>
@@ -135,7 +135,7 @@
           <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model</h2>
           <div class="mt-6 space-y-4">
             <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">You need built-in content safety for public-facing AI</h3><p class="mt-2 text-sm text-slate-400">Dolphin is designed for private internal use with your own access controls. For public-facing applications, a model with built-in safety layers or an explicit safety classifier is more appropriate. <a href="/models/llama-guard-3/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Llama Guard →</a></p></div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">License terms need verification</h3><p class="mt-2 text-sm text-slate-400">VERIFY: Dolphin's license terms follow the underlying base model. Confirm the specific variant's license before commercial deployment.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">License terms need verification</h3><p class="mt-2 text-sm text-slate-400">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins. Confirm the specific variant's license before commercial deployment.</p></div>
           </div>
         </section>
 
@@ -163,7 +163,7 @@
         <section>
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
           <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
-          <!-- TODO: Create individual size pages for each Dolphin variant with hardware benchmarks and deployment guidance. -->
+          <!-- INTERNAL: Verify Create individual size pages for each Dolphin variant with hardware benchmarks and deployment guidance before publishing. -->
           <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
             <table class="w-full text-left text-sm">
               <thead class="bg-slate-950 text-cyan-200">
@@ -239,7 +239,7 @@
           <dl class="mt-5 space-y-3 text-sm">
             <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Developer</dt><dd class="font-semibold text-white">Eric Hartford (community)</dd></div>
             <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Base models</dt><dd class="font-semibold text-white">Llama / Mistral variants</dd></div>
-            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">VERIFY: follows base model</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.</dd></div>
             <div class="flex justify-between"><dt class="text-slate-400">Use case</dt><dd class="font-semibold text-white">Private unrestricted internal use</dd></div>
           </dl>
           <a href="/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build a Dolphin quote</a>
@@ -276,7 +276,7 @@
       <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
         <div>
           <p style="font-weight:600; color:#94a3b8;">Hero image</p>
-          <p style="margin-top:0.25rem;"><!-- TODO: Add hero.webp for dolphin --><br>Recommended source: <a href="https://unsplash.com/s/photos/dolphin" target="_blank" rel="noopener" style="color:#67e8f9;">Unsplash: dolphin</a></p>
+          
         </div>
         <div>
           <p style="font-weight:600; color:#94a3b8;">Developer reference</p>
