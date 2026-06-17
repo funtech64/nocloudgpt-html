@@ -36,17 +36,23 @@
   <section class="border-b border-slate-800 bg-slate-950">
     <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <img
-        src="/models/gemma/hero.webp"
-        alt="Gemma model family — Google's open AI privately deployed with NoCloudGPT"
-        width="1200"
-        height="600"
-        class="mt-8 mb-6 w-full max-w-xs rounded-2xl object-cover"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-      />
-      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
-        [Gemma hero artwork]
-      </div>
+      
+      <!-- Image source: https://ollama.com/library/gemma (Ollama model library) -->
+      <figure class="mt-8 mb-2 w-full max-w-xs">
+        <a href="https://ollama.com/library/gemma" target="_blank" rel="noopener noreferrer" class="block">
+          <img
+            src="/models/gemma/hero.webp"
+            alt="Gemma model family — artwork from Ollama library"
+            width="1200"
+            height="600"
+            class="w-full rounded-2xl object-cover"
+          />
+        </a>
+        <figcaption class="mt-2 text-xs text-slate-500">
+          Source: <a href="https://ollama.com/library/gemma" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-cyan-300 underline underline-offset-2">Ollama</a>
+        </figcaption>
+      </figure>
+
 
       <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Gemma Model Family</p>
       <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">

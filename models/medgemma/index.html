@@ -15,10 +15,22 @@
     <h1 class="text-4xl font-bold leading-tight mb-6">
       MedGemma: Private Medical AI for Imaging and Clinical Text
     </h1>
-  <!-- TODO: Add hero.webp — see models/artwork-sources.md, row: medgemma -->
-  <!-- Unsplash reference: https://unsplash.com/s/photos/medical-ai -->
-
-    <p class="text-lg text-gray-300 mb-8">
+      <!-- Image source: https://ollama.com/library/medgemma (Ollama model library) -->
+      <figure class="mt-8 mb-2 w-full max-w-xs">
+        <a href="https://ollama.com/library/medgemma" target="_blank" rel="noopener noreferrer" class="block">
+          <img
+            src="/models/medgemma/hero.webp"
+            alt="Medgemma model family — artwork from Ollama library"
+            width="1200"
+            height="600"
+            class="w-full rounded-2xl object-cover"
+          />
+        </a>
+        <figcaption class="mt-2 text-xs text-slate-500">
+          Source: <a href="https://ollama.com/library/medgemma" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-cyan-300 underline underline-offset-2">Ollama</a>
+        </figcaption>
+      </figure>
+<p class="text-lg text-gray-300 mb-8">
       MedGemma is Google DeepMind's open-weight model purpose-built for healthcare. It combines a vision encoder trained on medical imaging datasets with a language backbone fine-tuned on clinical literature — so it understands radiology scans, pathology slides, and patient notes in the same model. Deployed privately via Ollama, no protected health information ever leaves your server.
     </p>
     <a href="/start" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-semibold px-6 py-3 rounded-lg transition">

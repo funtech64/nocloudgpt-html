@@ -79,15 +79,17 @@
 <body>
 
 <header>
-    <!-- hero.webp — Nomic Embed abstract semantic search artwork (generated for NoCloudGPT) -->
-    <img
-      src="/models/nomic-embed/hero.webp"
-      alt="Nomic Embed — private semantic search and RAG embeddings with NoCloudGPT"
-      width="1200" height="600"
-      style="width:100%; max-height:280px; object-fit:cover; display:block; margin-bottom:24px; border-radius:8px;"
-      onerror="this.style.display='none';"
-    />
-    <div class="badge">137M–475M Parameters · 8K Context · Fully Open Source</div>
+    
+    <!-- Image source: https://ollama.com/library/nomic-embed-text (Ollama model library) -->
+    <figure style="max-width:320px;margin:24px auto 8px;">
+      <a href="https://ollama.com/library/nomic-embed-text" target="_blank" rel="noopener noreferrer">
+        <img src="/models/nomic-embed/hero.webp" alt="Nomic Embed model family — artwork from Ollama library" width="1200" height="600" style="width:100%;border-radius:8px;display:block;" />
+      </a>
+      <figcaption style="margin-top:8px;font-size:0.75rem;color:#6e7681;text-align:center;">
+        Source: <a href="https://ollama.com/library/nomic-embed-text" target="_blank" rel="noopener noreferrer" style="color:#8a9aaa;text-decoration:underline;text-underline-offset:2px;">Ollama</a>
+      </figcaption>
+    </figure>
+<div class="badge">137M–475M Parameters · 8K Context · Fully Open Source</div>
     <h1>Deploy <span>Nomic Embed</span> for Long-Context Private RAG</h1>
     <p class="subtitle">Nomic AI's embedding models are among the few in the open-weight space that combine long document context (8,192 tokens), strong MTEB benchmark performance, Matryoshka flexible dimensions, and fully auditable training data — all available through Ollama with zero cloud dependency.</p>
     <div class="cta-group">
