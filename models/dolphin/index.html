@@ -28,13 +28,20 @@
   <section class="border-b border-slate-800 bg-slate-950">
     <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
-        <!-- INTERNAL: Verify /assets/models/dolphin/dolphin-hero.webp before publishing. -->
-      </div>
+      <!-- INTERNAL: hero.webp sourced from https://ollama.com/library/dolphin3 -->
+      <a href="https://ollama.com/library/dolphin3" target="_blank" rel="noopener noreferrer" class="inline-block">
+        <img
+          src="/models/dolphin/hero.webp"
+          alt="dolphin model family hero"
+          width="1200"
+          height="600"
+          class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+        />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/dolphin3" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
       <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Dolphin</p>
       <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Community Fine-Tuned AI for Open-Context Private Workflows</h1>
   <!-- INTERNAL: Verify Add hero.webp — see models/artwork-sources.md, row: dolphin before publishing. -->
-  <!-- Unsplash reference: https://unsplash.com/s/photos/dolphin -->
 
       <p class="mt-6 max-w-3xl text-lg text-slate-300">Dolphin is a series of fine-tuned models from Eric Hartford, built on top of Llama, Mistral, and other base models. Dolphin models reduce the default instruction restrictions of the base models, making them popular for creative writing, research, unrestricted Q&A, and internal workflows where the default guardrails of commercial models interfere with legitimate use cases.</p>
       <p class="mt-4 max-w-3xl text-slate-400">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.License terms follow the underlying base model (Llama license or Mistral license depending on variant).</p>
@@ -54,7 +61,6 @@
           <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
           <h2 class="mt-3 text-3xl font-black">Eric Hartford (Community)</h2>
           <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
-            <!-- INTERNAL: Verify /assets/models/dolphin/dolphin-developer.webp before publishing. -->
           </div>
           <p class="mt-6 text-slate-300">Dolphin is produced by Eric Hartford, a member of the open-source AI community. The fine-tunes use synthetic instruction data to train models with reduced default refusals and more open context following. Dolphin models are popular in the homelab, creative writing, and research communities.</p>
         </section>

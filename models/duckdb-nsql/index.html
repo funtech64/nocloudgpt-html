@@ -7,12 +7,19 @@
   <meta name="description" content="Run DuckDB-NSQL on your own hardware. A 7B text-to-SQL model fine-tuned specifically for DuckDB's analytical SQL dialect. Deploy privately for local data analysis without schema exposure." />
 </head>
 <body>
+<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/duckdb-nsql -->
+    <div style="margin:24px auto 8px;max-width:320px;text-align:center;">
+      <a href="https://ollama.com/library/duckdb-nsql" target="_blank" rel="noopener noreferrer">
+        <img src="/models/duckdb-nsql/hero.webp" alt="duckdb nsql model family hero" width="320" style="width:100%;max-width:320px;border-radius:12px;display:block;" />
+      </a>
+      <p style="margin-top:8px;font-size:0.75rem;color:#888;">Source: <a href="https://ollama.com/library/duckdb-nsql" target="_blank" rel="noopener noreferrer" style="color:#76b900;">Ollama</a></p>
+    </div>
+
 
 <article>
 
   <h1>DuckDB-NSQL: Natural Language SQL for Analytical Workloads, Deployed Privately</h1>
   <!-- INTERNAL: Verify Add hero.webp — see models/artwork-sources.md, row: duckdb-nsql before publishing. -->
-  <!-- Unsplash reference: https://unsplash.com/s/photos/database -->
 
 
   <p>DuckDB has become the default engine for local analytical workloads — fast, embedded, requiring no server, and capable of querying Parquet files, CSVs, and in-memory datasets with full SQL expressiveness. The gap it has not closed on its own is natural language access: data analysts who can describe what they want in plain English still need to translate that description into DuckDB's specific SQL dialect, including its analytical extensions and syntax preferences that differ from standard SQL in meaningful ways.</p>
