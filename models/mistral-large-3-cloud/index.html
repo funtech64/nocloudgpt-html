@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mistral Large 3 Cloud — Cloud-Accelerated Private AI | Terminal Glass</title>
+  <meta name="description" content="Run Mistral Large 3 through Terminal Glass and Ollama Cloud. Production multimodal AI without 675B local hosting — honest trade-offs on images, data movement, and high-usage cost.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/mistral-large-3-cloud/">
+  <meta property="og:title" content="Mistral Large 3 Cloud — Terminal Glass | NoCloudGPT">
+  <meta property="og:description" content="Mistral Large 3 on Ollama Cloud via Terminal Glass. OpenWebUI locally, inference in the cloud. Clear path to NoCloudGPT Private Instances when privacy justifies it.">
+  <meta property="og:image" content="/models/mistral-large-3-cloud/hero.webp">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 1. Hero -->
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <a href="https://ollama.com/library/mistral-large-3" target="_blank" rel="noopener noreferrer" class="inline-block">
+        <img
+          src="/models/mistral-large-3-cloud/hero.webp"
+          alt="Mistral Large 3 Cloud — Terminal Glass workflow with Ollama Cloud inference"
+          width="1200" height="600"
+          class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/mistral-large-3" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
+        Mistral Large 3 artwork placeholder
+      </div>
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Mistral Large 3 · Terminal Glass</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+        Mistral Large 3 Cloud — Production Multimodal AI Without Local 675B-Class Hosting
+      </h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">
+        Run Mistral's Large 3 cloud model through OpenWebUI on a modest Terminal Glass host while Ollama Cloud
+        handles inference — a 675B-parameter multimodal MoE model with 256K context, text and image input, and
+        native tool support for production-grade enterprise workflows. You avoid sizing hardware for a
+        675B-class checkpoint; in exchange, prompts, images, documents, retrieved context, tool outputs, and
+        usage costs leave your infrastructure at Ollama's high-usage tier.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Get quote →</a>
+        <a href="#how-it-works" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">See how it works</a>
+        <a href="/models/mistral/" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Compare NoCloudGPT Private Instances</a>
+      </div>
+      <p class="mt-6 text-sm text-emerald-400">
+        Terminal Glass runs OpenWebUI on your server while Mistral Large 3 inference happens on Ollama Cloud.
+      </p>
+    </div>
+  </section>
+
+  <main class="mx-auto max-w-6xl px-6 py-12 space-y-12">
+
+    <!-- 2. Overview -->
+    <section>
+      <h2 class="text-3xl font-black">What Mistral Large 3 is</h2>
+      <p class="mt-5 max-w-3xl text-lg text-slate-300">
+        Mistral Large 3 is Mistral's general-purpose multimodal Mixture-of-Experts model for production-grade
+        tasks and enterprise workloads. It supports text and image understanding, multilingual work, structured
+        output, function calling, system-prompt adherence, technical analysis, and agentic workflows. Ollama
+        lists 256K context, text and image input, and tool support on the cloud tag.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-400">
+        On Ollama today, Mistral Large 3 is available as a cloud-only tag:
+        <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">mistral-large-3:675b-cloud</code> (high usage tier).
+        That makes Terminal Glass a practical way to evaluate a 675B-class multimodal model without local hosting.
+        When you later need fully local inference, other Mistral-family models may be served on
+        <a href="/models/mistral/" class="text-cyan-300 hover:text-cyan-200">NoCloudGPT Private Instances</a> —
+        confirm which local tags fit your hardware before planning migration away from Large 3 cloud.
+      </p>
+    </section>
+
+    <!-- 3. The Terminal Glass Trade-off -->
+    <section class="rounded-3xl border border-amber-500/30 bg-amber-950/20 p-8">
+      <h2 class="text-2xl font-black text-amber-200">The Terminal Glass trade-off</h2>
+      <p class="mt-4 text-slate-300">
+        <strong class="text-white">Terminal Glass</strong> gives you the same OpenWebUI chat experience
+        and locally stored RAG index you would use on a private deployment — but routes each inference
+        request to Ollama Cloud. Your server runs the Ollama client, OpenWebUI, and your document index;
+        a small cloud VM, NUC, or mini-PC is usually enough. You do not need to provision infrastructure
+        for a 675B-class multimodal model to start evaluating production workflows.
+      </p>
+      <p class="mt-4 text-sm text-amber-300">
+        <strong>Honest reality:</strong> Prompts, uploaded images, documents, source-code snippets, RAG passages,
+        tool outputs, and conversation context leave your infrastructure and are processed on Ollama Cloud. This
+        is not air-gapped and is not equivalent to
+        <a href="/models/mistral/" class="underline hover:text-amber-200">NoCloudGPT Private Instances</a>,
+        where inference stays on hardware you control. Mistral Large 3 cloud is rated high usage on Ollama — expect
+        higher per-token cost than compact models, especially with images and long 256K contexts. You also accept
+        network-dependent latency and less control over strict reproducibility. When sensitive or regulated material
+        must never leave your network, migrate the same OpenWebUI and RAG workflow to a local Mistral deployment
+        on NoCloudGPT Private Instances.
+      </p>
+    </section>
+
+    <!-- 4. Who This Model Family is For -->
+    <section>
+      <h2 class="text-3xl font-black">Who This Model Family is For</h2>
+      <div class="mt-6 grid gap-5 md:grid-cols-2">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="flex items-center gap-2 text-lg font-bold text-white">
+            <span>👤</span> Personal Use
+          </h3>
+          <p class="mt-3 text-sm text-slate-400">
+            Useful for advanced users who want help with long documents, image interpretation, multilingual writing,
+            technical planning, code review, or complex research without maintaining large local inference hardware.
+            Every prompt and image you upload is sent to Ollama Cloud — avoid private photos, credentials, financial
+            records, and sensitive documents. Choose NoCloudGPT Private Instances if keeping data fully private is
+            your priority.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="flex items-center gap-2 text-lg font-bold text-white">
+            <span>🏢</span> Business / Team Use
+          </h3>
+          <p class="mt-3 text-sm text-slate-400">
+            A strong fit for teams evaluating multimodal assistants, internal research, policy Q&amp;A, visual
+            document review, customer-support drafting, structured extraction, and agent-enabled workflows when
+            your data policy permits cloud processing. Use NoCloudGPT Private Instances for regulated data,
+            confidential client material, sensitive screenshots, or proprietary source code that must remain inside
+            your environment.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="flex items-center gap-2 text-lg font-bold text-white">
+            <span>⚙️</span> Developer &amp; Technical Use
+          </h3>
+          <p class="mt-3 text-sm text-slate-400">
+            Well suited for function-calling prototypes, JSON extraction, multimodal technical review, architecture
+            analysis, tool workflows, and long-context debugging. For repository-scale coding agents, compare with
+            <a href="/models/devstral-2-cloud/" class="text-cyan-300 hover:text-cyan-200">Devstral 2 Cloud</a>
+            or other coding-specialized models before standardizing on Large 3.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="flex items-center gap-2 text-lg font-bold text-white">
+            <span>🔬</span> Data Science &amp; Research Use
+          </h3>
+          <p class="mt-3 text-sm text-slate-400">
+            Practical for public datasets, multimodal benchmark exploration, literature review, multilingual
+            classification, long-context synthesis, and visual reasoning research. Cloud inference does not pin
+            model versions the way a local checkpoint does. Confidential, unpublished, or regulated datasets should
+            stay on fully local NoCloudGPT Private Instances.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. How Terminal Glass Works with This Model -->
+    <section id="how-it-works">
+      <h2 class="text-3xl font-black">How Terminal Glass Works with This Model</h2>
+      <p class="mt-5 max-w-3xl text-slate-300">
+        You interact through <strong class="text-white">OpenWebUI</strong> on your Terminal Glass host
+        (or via the command line). Chat history, user accounts, and your locally built RAG document index
+        stay on hardware you control. When you submit a prompt to
+        <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">mistral-large-3:675b-cloud</code>,
+        the request — including images, code excerpts, and retrieved passages — is forwarded to Ollama Cloud;
+        the response streams back to your browser.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-300">
+        Cloud access requires an Ollama account (<code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">ollama signin</code>)
+        on the Terminal Glass machine. Mistral Large 3 is rated high usage on Ollama — budget accordingly for
+        image inputs, long 256K contexts, and agentic tool loops.
+      </p>
+      <pre class="mt-5 overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900 p-5 text-sm text-cyan-200"><code>ollama signin
+ollama run mistral-large-3:675b-cloud</code></pre>
+      <p class="mt-5 text-sm text-amber-300">
+        <strong>What leaves your infrastructure:</strong> prompt text, uploaded images, documents, code snippets,
+        RAG-retrieved passages, and tool context. Local RAG indexes and retrieves your documents, but any retrieved
+        passages and images included in a prompt are sent to cloud inference. <strong>Latency</strong> includes
+        network round-trips. <strong>Cost</strong> is usage-based at the high-usage tier. The same OpenWebUI setup
+        and RAG collection can later point at a locally hosted Mistral model on NoCloudGPT Private Instances when
+        private inference becomes the better fit.
+      </p>
+    </section>
+
+    <!-- 6. Honest Guidance -->
+    <section>
+      <h2 class="text-3xl font-black">Honest Guidance: When to Choose a Different Path</h2>
+      <ul class="mt-5 max-w-3xl space-y-3 text-slate-300">
+        <li>
+          <strong class="text-white">Regulated, confidential, or strict data-residency requirements</strong> —
+          Choose <a href="/models/mistral/" class="text-cyan-300 hover:text-cyan-200">NoCloudGPT Private Instances</a>
+          with a local Mistral build. Terminal Glass routes prompts, images, and documents to Ollama Cloud.
+        </li>
+        <li>
+          <strong class="text-white">Smaller multimodal pilots or tighter budgets</strong> —
+          <a href="/models/ministral-3-cloud/" class="text-cyan-300 hover:text-cyan-200">Ministral 3 Cloud</a>
+          offers 3B–14B multimodal options at a lower Ollama usage tier when Large 3 is more capability than required.
+        </li>
+        <li>
+          <strong class="text-white">Repository-scale software engineering</strong> —
+          A coding-specialized model such as
+          <a href="/models/devstral-2-cloud/" class="text-cyan-300 hover:text-cyan-200">Devstral 2 Cloud</a>
+          may fit better when agentic coding is the primary workload.
+        </li>
+        <li>
+          <strong class="text-white">Steady daily high-volume team usage</strong> —
+          Recurring high-usage cloud tokens may exceed owned inference hardware over many months of heavy daily use.
+        </li>
+        <li>
+          <strong class="text-white">Model-version pinning or audit-grade reproducibility</strong> —
+          A pinned local deployment on NoCloudGPT Private Instances provides more control than a cloud-only tag.
+        </li>
+      </ul>
+      <p class="mt-5 max-w-3xl text-slate-400">
+        The practical migration path: prove your multimodal workflow on Terminal Glass with
+        <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">mistral-large-3:675b-cloud</code>, then move the
+        same OpenWebUI and RAG setup to a self-hosted Mistral build on NoCloudGPT Private Instances when
+        privacy, volume, or cost justifies owned hardware.
+      </p>
+    </section>
+
+    <!-- 7. Recommended Terminal Glass Deployment -->
+    <section>
+      <h2 class="text-3xl font-black">Recommended Terminal Glass Deployment</h2>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-slate-950 text-cyan-200">
+            <tr>
+              <th class="px-4 py-3">Variant / Tag</th>
+              <th class="px-4 py-3">Recommended For</th>
+              <th class="px-4 py-3">Notes</th>
+              <th class="px-4 py-3"></th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+            <tr>
+              <td class="px-4 py-3 font-mono text-cyan-200">mistral-large-3:675b-cloud</td>
+              <td class="px-4 py-3">Teams evaluating production multimodal assistants</td>
+              <td class="px-4 py-3">675B model, 256K cloud context, text and image input, tools, high usage tier. Only verified Mistral Large 3 cloud tag on Ollama. Production-grade multimodal assistants, enterprise pilots, vision/text workflows, structured output, and tool use when content may leave your network.</td>
+              <td class="px-4 py-3 whitespace-nowrap"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200">Get quote →</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm text-slate-400">
+        Ollama currently lists no local weight variants for Mistral Large 3 — cloud is the practical access path.
+        Confirm availability at
+        <a href="https://ollama.com/library/mistral-large-3" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">ollama.com/library/mistral-large-3</a>
+        before deployment.
+      </p>
+    </section>
+
+    <!-- 8. Licensing & Access -->
+    <section>
+      <h2 class="text-3xl font-black">Licensing &amp; Access</h2>
+      <p class="mt-5 max-w-3xl text-slate-300">
+        Mistral Large 3 is released under the
+        <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Apache 2.0 license</a>
+        per the Ollama model card — which permits commercial use subject to standard Apache terms. Cloud access
+        requires an Ollama Cloud account with usage-based pricing; rate limits and tiers apply and may change.
+        Ollama Cloud usage is separately governed by Ollama's terms. Review both before production deployment.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-300">
+        Official catalog:
+        <a href="https://ollama.com/library/mistral-large-3" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">ollama.com/library/mistral-large-3</a>
+      </p>
+      <div class="mt-6 rounded-2xl border border-slate-800 bg-slate-900 p-5 text-sm text-slate-400">
+        <strong class="text-slate-300">Disclaimer:</strong> Terminal Glass is an independent deployment
+        workflow operated by NoCloudGPT. We do not own or control Mistral Large 3 or Ollama Cloud. Model availability,
+        exact tags, cloud pricing, and inference behavior are controlled by Mistral and Ollama and may change
+        without notice. Data and images sent to Ollama Cloud leave your infrastructure. This page is not legal advice.
+      </div>
+    </section>
+
+    <!-- 9. Final note -->
+    <section class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+      <h2 class="text-2xl font-black text-white">What Terminal Glass adds — and when to move local</h2>
+      <p class="mt-4 text-slate-300">
+        Terminal Glass packages a unified OpenWebUI interface, locally stored private RAG over your
+        documentation, multi-user access controls, and guidance on monitoring cloud usage so spend stays
+        predictable. Mistral Large 3 is a practical cloud starting point for production-grade multimodal workflows
+        because local hosting at 675B scale is impractical for most teams. The deliberate migration path is the
+        same interface and workflow pointed at a self-hosted Mistral build on NoCloudGPT Private Instances when
+        privacy, latency, reproducibility, or steady usage costs make owned hardware the better long-term choice.
+      </p>
+    </section>
+
+    <div class="text-center">
+      <a href="/quote.html" class="inline-block rounded-2xl bg-cyan-300 px-8 py-4 text-lg font-bold text-slate-950 hover:bg-cyan-200">
+        Get a quote for Mistral Large 3 Cloud →
+      </a>
+      <p class="mt-3 text-sm text-slate-500">We help you size the local host and plan the cloud-to-local migration when you need it.</p>
+    </div>
+
+  </main>
+
+  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
+      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="font-semibold text-slate-400">Hero image</p>
+          <p class="mt-1">Artwork shared with the <a href="/models/mistral/" class="text-cyan-600 hover:text-cyan-500">Mistral family page</a>. Sourced from the Ollama library listing.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Model developer</p>
+          <p class="mt-1">Mistral Large 3 is developed by <a href="https://mistral.ai/" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Mistral AI</a>. Terminal Glass and NoCloudGPT are independent services not affiliated with Mistral or Ollama.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Private deployment</p>
+          <p class="mt-1">For local Mistral deployments on hardware you control, see <a href="/models/mistral/" class="text-cyan-600 hover:text-cyan-500">Mistral — NoCloudGPT Private Instances</a> and <a href="/models/ministral-3-cloud/" class="text-cyan-600 hover:text-cyan-500">Ministral 3 Cloud</a> for a lighter multimodal option.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT is an independent deployment service. Not affiliated with Mistral AI, Ollama, or any model developer referenced on this page.</p>
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
+        <strong class="text-slate-400">License information:</strong>
+        License terms for open-weight models are sourced from official model cards and developer repositories.
+        Always verify the current license at
+        <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
+        or the official developer repository before commercial deployment.
+        NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
