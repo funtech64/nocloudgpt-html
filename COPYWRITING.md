@@ -107,12 +107,12 @@ Explain technical concepts in plain language. Focus on **outcomes** and **reduce
 
 ## Path Rule
 
-All model catalog content lives under `/menu/`.
+All model catalog content lives under `/models/`.
 
 When creating or editing family pages, always use paths such as:
-- `/menu/llama/`
-- `/menu/deepseek/`
-- `/menu/qwen/`
-- `/menu/gemma/`
+- `/models/llama/`
+- `/models/deepseek/`
+- `/models/qwen/`
+- `/models/gemma/`
 
-Do not create or reference `/models/` paths.
+Do not create or reference `/menu/` paths.

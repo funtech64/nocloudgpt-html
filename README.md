@@ -17,7 +17,7 @@ The platform focuses on:
 | Path                    | Purpose                                      |
 |-------------------------|----------------------------------------------|
 | `index.html`            | Main homepage                                |
-| `/menu/`                | Model family catalog (70+ families)          |
+| `/models/`                | Model family catalog (70+ families)          |
 | `/deploy/`              | Deployment guides (including 90-day pilot)   |
 | `pricing.html`          | Platform tiers + Compute tiers               |
 | `quote.html`            | Interactive quote builder                    |
@@ -25,7 +25,7 @@ The platform focuses on:
 
 ## Current Focus
 
-We are building a high-quality, **buyer-focused model catalog** under `/menu/`.
+We are building a high-quality, **buyer-focused model catalog** under `/models/`.
 
 Every model family page is designed to answer:
 1. What is this model family good at?
@@ -52,11 +52,10 @@ Small business owners can launch a fully private AI instance on **AWS Lightsail*
 
 Before editing catalog pages, please read:
 
-- `AGENT.md` — Agent / Cursor editing instructions
-- `COPYWRITING.md` — Sales voice and preferred language
-- `MODEL_MENU_PLAYBOOK.md` — Page structure standards and batch priorities
+- `AGENTS.md` and `sophie-AGENT.md` — repository agent instructions
+- `COPYWRITING.md` — sales voice and preferred language
 
-All model catalog work should be done under the `/menu/` directory.
+All model catalog work should be done under the `/models/` directory.
 
 ## Domain
 
@@ -64,4 +63,4 @@ Live site: [https://nocloudgpt.com](https://nocloudgpt.com)
 
 ## Status
 
-Active development. The model catalog under `/menu/` is the current priority.
+Active development. The model catalog under `/models/` is the current priority.
