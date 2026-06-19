@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RNJ-1 Cloud — Cloud-Accelerated Private AI | Terminal Glass</title>
+  <meta name="description" content="Run RNJ-1 through Terminal Glass and Ollama Cloud. Code and STEM assistance without local 8B hosting — honest trade-offs on data movement and usage cost.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/rnj-1-cloud/">
+  <meta property="og:title" content="RNJ-1 Cloud — Terminal Glass | NoCloudGPT">
+  <meta property="og:description" content="RNJ-1 on Ollama Cloud via Terminal Glass. OpenWebUI locally, inference in the cloud. Clear path to NoCloudGPT Private Instances when privacy justifies it.">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 1. Hero -->
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <a href="https://ollama.com/library/rnj-1" target="_blank" rel="noopener noreferrer" class="inline-block">
+        <img
+          src="/models/rnj-1-cloud/hero.webp"
+          alt="RNJ-1 Cloud — Terminal Glass workflow with Ollama Cloud inference"
+          width="1200" height="600"
+          class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/rnj-1" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
+        RNJ-1 artwork placeholder
+      </div>
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">RNJ-1 · Terminal Glass</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+        RNJ-1 Cloud — Code and STEM Assistance with Lower Local Hardware Requirements
+      </h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">
+        Run Essential AI's RNJ-1 cloud model through OpenWebUI on a modest Terminal Glass host while Ollama
+        Cloud handles inference — an 8B dense model with 32K context and native tool support optimized for
+        code, STEM, and lightweight agentic workflows. You avoid local model setup and tuning on day one; in
+        exchange, prompts, code snippets, tool context, and retrieved passages leave your infrastructure and
+        usage is billed per token.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Get quote →</a>
+        <a href="#how-it-works" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">See how it works</a>
+        <a href="/models/qwen2.5-coder/" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Compare NoCloudGPT Private Instances</a>
+      </div>
+      <p class="mt-6 text-sm text-emerald-400">
+        Terminal Glass runs OpenWebUI on your server while RNJ-1 inference happens on Ollama Cloud.
+      </p>
+    </div>
+  </section>
+
+  <main class="mx-auto max-w-6xl px-6 py-12 space-y-12">
+
+    <!-- 2. Overview -->
+    <section>
+      <h2 class="text-3xl font-black">What RNJ-1 is</h2>
+      <p class="mt-5 max-w-3xl text-lg text-slate-300">
+        RNJ-1 is an 8B open-weight dense model family from Essential AI, trained from scratch and optimized
+        for code, STEM, tool use, and agentic coding workflows. Ollama lists 32K context, text input, and
+        tool support on the cloud tag. It targets programming help, math and science problem solving, code
+        infilling, and lightweight software-engineering agent experiments.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-400">
+        On Ollama today, the Terminal Glass cloud tag is
+        <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">rnj-1:8b-cloud</code> (medium usage tier).
+        A local <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">rnj-1:8b</code> build is also
+        available (~5.1 GB) — a practical migration target when you move to
+        <a href="/models/qwen2.5-coder/" class="text-cyan-300 hover:text-cyan-200">NoCloudGPT Private Instances</a>
+        or another local coding deployment on hardware you control. Deploy cloud access with clear rules about
+        what code and documents may leave your network.
+      </p>
+    </section>
+
+    <!-- 3. The Terminal Glass Trade-off -->
+    <section class="rounded-3xl border border-amber-500/30 bg-amber-950/20 p-8">
+      <h2 class="text-2xl font-black text-amber-200">The Terminal Glass trade-off</h2>
+      <p class="mt-4 text-slate-300">
+        <strong class="text-white">Terminal Glass</strong> gives you the same OpenWebUI chat experience
+        and locally stored RAG index you would use on a private deployment — but routes each inference
+        request to Ollama Cloud. Your server runs the Ollama client, OpenWebUI, and your document index;
+        a small cloud VM, NUC, or mini-PC is usually enough. You do not need to maintain local model files,
+        quantizations, or inference tuning before evaluating RNJ-1 for code and STEM workflows.
+      </p>
+      <p class="mt-4 text-sm text-amber-300">
+        <strong>Honest reality:</strong> Prompts, code snippets, RAG passages, tool outputs, and conversation
+        context leave your infrastructure and are processed on Ollama Cloud. This is not air-gapped and is not
+        equivalent to a fully local deployment on
+        <a href="/models/qwen2.5-coder/" class="underline hover:text-amber-200">NoCloudGPT Private Instances</a>,
+        where inference stays on hardware you control. You also pay recurring, usage-based Ollama Cloud fees
+        and accept network-dependent latency. When sensitive or regulated material must never leave your
+        network, migrate the same OpenWebUI and RAG workflow to a local
+        <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">rnj-1:8b</code> build or another coding
+        model on NoCloudGPT Private Instances.
+      </p>
+    </section>
+
+    <!-- 4. Who This Model Family is For -->
+    <section>
+      <h2 class="text-3xl font-black">Who This Model Family is For</h2>
+      <div class="mt-6 grid gap-5 md:grid-cols-2">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="flex items-center gap-2 text-lg font-bold text-white">
+            <span>👤</span> Personal Use
+          </h3>
+          <p class="mt-3 text-sm text-slate-400">
+            Useful for students, hobby developers, and technical learners who want help with programming, math,
+            science, shell scripts, and debugging without setting up local inference. Every prompt and code
+            excerpt is sent to Ollama Cloud — avoid private records, credentials, personal documents, and
+            sensitive code. Choose NoCloudGPT Private Instances if keeping data fully private is your priority.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="flex items-center gap-2 text-lg font-bold text-white">
+            <span>🏢</span> Business / Team Use
+          </h3>
+          <p class="mt-3 text-sm text-slate-400">
+            A good fit for lightweight internal engineering assistants, documentation cleanup, IT support
+            triage, technical Q&amp;A, and prototype agent workflows when your data policy permits cloud
+            processing. Use NoCloudGPT Private Instances when source code, customer data, or proprietary
+            processes must remain inside your environment.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="flex items-center gap-2 text-lg font-bold text-white">
+            <span>⚙️</span> Developer &amp; Technical Use
+          </h3>
+          <p class="mt-3 text-sm text-slate-400">
+            Strong for code generation, code infilling, function-level debugging, tool-calling experiments,
+            and small agentic coding tasks. For repository-scale refactors or high-risk automation, pair it
+            with tests, review, and rollback discipline regardless of model quality.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="flex items-center gap-2 text-lg font-bold text-white">
+            <span>🔬</span> Data Science &amp; Research Use
+          </h3>
+          <p class="mt-3 text-sm text-slate-400">
+            Practical for public-code analysis, notebook explanation, STEM reasoning, benchmark exploration,
+            and lightweight data-pipeline help. Cloud inference does not pin model versions the way a local
+            checkpoint does. Confidential, unpublished, or regulated datasets should stay on fully local
+            NoCloudGPT Private Instances.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. How Terminal Glass Works with This Model -->
+    <section id="how-it-works">
+      <h2 class="text-3xl font-black">How Terminal Glass Works with This Model</h2>
+      <p class="mt-5 max-w-3xl text-slate-300">
+        You interact through <strong class="text-white">OpenWebUI</strong> on your Terminal Glass host
+        (or via the command line). Chat history, user accounts, and your locally built RAG document index
+        stay on hardware you control. When you submit a prompt to
+        <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">rnj-1:8b-cloud</code>,
+        the request — including code excerpts and retrieved passages — is forwarded to Ollama Cloud;
+        the response streams back to your browser.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-300">
+        Cloud access requires an Ollama account (<code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">ollama signin</code>)
+        on the Terminal Glass machine. RNJ-1 cloud is rated medium usage on Ollama — generally moderate
+        per-request cost for an 8B model, though frequent agentic tool loops can still accumulate spend.
+      </p>
+      <pre class="mt-5 overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900 p-5 text-sm text-cyan-200"><code>ollama signin
+ollama run rnj-1:8b-cloud</code></pre>
+      <p class="mt-5 text-sm text-amber-300">
+        <strong>What leaves your infrastructure:</strong> prompt text, code snippets, RAG-retrieved passages,
+        and tool context. RNJ-1 is text-only on Ollama. <strong>Latency</strong> includes network round-trips.
+        <strong>Cost</strong> is usage-based. The same OpenWebUI setup and RAG collection can later point at
+        <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">rnj-1:8b</code> on NoCloudGPT Private
+        Instances when private inference becomes the better fit.
+      </p>
+    </section>
+
+    <!-- 6. Honest Guidance -->
+    <section>
+      <h2 class="text-3xl font-black">Honest Guidance: When to Choose a Different Path</h2>
+      <ul class="mt-5 max-w-3xl space-y-3 text-slate-300">
+        <li>
+          <strong class="text-white">Regulated, confidential, or strict data-residency requirements</strong> —
+          Choose NoCloudGPT Private Instances with a local
+          <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">rnj-1:8b</code> build or another coding
+          model on hardware you control. Terminal Glass routes prompts and code to Ollama Cloud.
+        </li>
+        <li>
+          <strong class="text-white">Steady daily usage on modest hardware</strong> —
+          Local <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">rnj-1:8b</code> (~5.1 GB) fits many
+          small servers and may cost less over time than recurring cloud tokens.
+        </li>
+        <li>
+          <strong class="text-white">Repository-scale refactors or heavy software agents</strong> —
+          A larger coding model such as
+          <a href="/models/qwen3-coder-cloud/" class="text-cyan-300 hover:text-cyan-200">Qwen3-Coder Cloud</a>
+          or <a href="/models/devstral-small-2-cloud/" class="text-cyan-300 hover:text-cyan-200">Devstral Small 2 Cloud</a>
+          may fit better when 8B capacity is not enough.
+        </li>
+        <li>
+          <strong class="text-white">General assistant behavior</strong> —
+          RNJ-1 is code- and STEM-oriented. Use clear system prompts when you want non-technical drafting or
+          open-ended conversation.
+        </li>
+        <li>
+          <strong class="text-white">Model-version pinning or audit-grade reproducibility</strong> —
+          A pinned local deployment on NoCloudGPT Private Instances provides more control than a cloud-only tag.
+        </li>
+      </ul>
+      <p class="mt-5 max-w-3xl text-slate-400">
+        The practical migration path: prove your workflow on Terminal Glass with
+        <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">rnj-1:8b-cloud</code>, then move the same
+        OpenWebUI and RAG setup to a self-hosted RNJ-1 or other coding build on NoCloudGPT Private Instances
+        when privacy, volume, or cost justifies owned hardware.
+      </p>
+    </section>
+
+    <!-- 7. Recommended Terminal Glass Deployment -->
+    <section>
+      <h2 class="text-3xl font-black">Recommended Terminal Glass Deployment</h2>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-slate-950 text-cyan-200">
+            <tr>
+              <th class="px-4 py-3">Variant / Tag</th>
+              <th class="px-4 py-3">Recommended For</th>
+              <th class="px-4 py-3">Notes</th>
+              <th class="px-4 py-3"></th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+            <tr>
+              <td class="px-4 py-3 font-mono text-cyan-200">rnj-1:8b-cloud</td>
+              <td class="px-4 py-3">Individuals and small teams</td>
+              <td class="px-4 py-3">8B model, 32K cloud context, text input, tools, medium usage tier. Only verified RNJ-1 cloud tag on Ollama. Code and STEM help, tool use, lightweight agents, code infilling, and technical support workflows when content may leave your network.</td>
+              <td class="px-4 py-3 whitespace-nowrap"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200">Get quote →</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm text-slate-400">
+        Local tag <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">rnj-1:8b</code> (~5.1 GB) is also
+        available on Ollama for fully local deployment. Requires Ollama 0.13.3 or later per the model card.
+        Confirm availability at
+        <a href="https://ollama.com/library/rnj-1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">ollama.com/library/rnj-1</a>
+        before deployment.
+      </p>
+    </section>
+
+    <!-- 8. Licensing & Access -->
+    <section>
+      <h2 class="text-3xl font-black">Licensing &amp; Access</h2>
+      <p class="mt-5 max-w-3xl text-slate-300">
+        RNJ-1 is published by Essential AI under the
+        <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Apache 2.0 license</a>
+        per the Ollama model card — which permits commercial use subject to standard Apache terms. Cloud access
+        requires an Ollama Cloud account with usage-based pricing; rate limits and tiers apply and may change.
+        Ollama Cloud usage is separately governed by Ollama's terms. Review both before production deployment.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-300">
+        Official catalog:
+        <a href="https://ollama.com/library/rnj-1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">ollama.com/library/rnj-1</a>
+        · Reference:
+        <a href="https://www.essential.ai/research/rnj-1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Essential AI RNJ-1 research post</a>
+      </p>
+      <div class="mt-6 rounded-2xl border border-slate-800 bg-slate-900 p-5 text-sm text-slate-400">
+        <strong class="text-slate-300">Disclaimer:</strong> Terminal Glass is an independent deployment
+        workflow operated by NoCloudGPT. We do not own or control RNJ-1 or Ollama Cloud. Model availability,
+        exact tags, cloud pricing, and inference behavior are controlled by Essential AI and Ollama and may
+        change without notice. Data sent to Ollama Cloud leaves your infrastructure. This page is not legal advice.
+      </div>
+    </section>
+
+    <!-- 9. Final note -->
+    <section class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+      <h2 class="text-2xl font-black text-white">What Terminal Glass adds — and when to move local</h2>
+      <p class="mt-4 text-slate-300">
+        Terminal Glass packages a unified OpenWebUI interface, locally stored private RAG over your
+        documentation, multi-user access controls, and guidance on monitoring cloud usage so spend stays
+        predictable. RNJ-1 is a practical cloud starting point for code and STEM workflows because a matching
+        local 8B build is small enough for many owned servers. The deliberate migration path is the same
+        interface and workflow pointed at
+        <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">rnj-1:8b</code> on NoCloudGPT Private
+        Instances when privacy, latency, reproducibility, or steady usage costs make owned hardware the better
+        long-term choice.
+      </p>
+    </section>
+
+    <div class="text-center">
+      <a href="/quote.html" class="inline-block rounded-2xl bg-cyan-300 px-8 py-4 text-lg font-bold text-slate-950 hover:bg-cyan-200">
+        Get a quote for RNJ-1 Cloud →
+      </a>
+      <p class="mt-3 text-sm text-slate-500">We help you size the local host and plan the cloud-to-local migration when you need it.</p>
+    </div>
+
+  </main>
+
+  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
+      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="font-semibold text-slate-400">Hero image</p>
+          <p class="mt-1">See <a href="https://ollama.com/library/rnj-1" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Ollama RNJ-1 listing</a> for official assets.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Model developer</p>
+          <p class="mt-1">RNJ-1 is developed by <a href="https://www.essential.ai/" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Essential AI</a>. Terminal Glass and NoCloudGPT are independent services not affiliated with Essential AI or Ollama.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Private deployment</p>
+          <p class="mt-1">For local coding models on hardware you control, see <a href="/models/qwen2.5-coder/" class="text-cyan-600 hover:text-cyan-500">Qwen2.5-Coder — NoCloudGPT Private Instances</a>. Local <code class="text-slate-400">rnj-1:8b</code> runs on the same NoCloudGPT stack.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT is an independent deployment service. Not affiliated with Essential AI, Ollama, or any model developer referenced on this page.</p>
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
+        <strong class="text-slate-400">License information:</strong>
+        License terms for open-weight models are sourced from official model cards and developer repositories.
+        Always verify the current license at
+        <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
+        or the official developer repository before commercial deployment.
+        NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
