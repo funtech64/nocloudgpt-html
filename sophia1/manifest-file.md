@@ -24,7 +24,7 @@ Default production target:
 
 `/models/`
 
-If this repo is temporarily still using `/menu/`, replace `/models/` with `/menu/` for that run.
+This repository now uses `/models/` as the production catalog path. Do not generate legacy menu-path pages.
 
 ## Flat List of Models Left to Do
 

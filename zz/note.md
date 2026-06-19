@@ -1,7 +1,7 @@
-We are working on nocloudgpt.com/menu.
+We are working on nocloudgpt.com/models.
 
 IMPORTANT STATUS UPDATE:
-The main `/menu/` page and `/menu/chatgpt-alternatives/` page now have substantial content. Do NOT regenerate, rewrite, or replace those pages unless I specifically ask for it.
+The main `/models/` page and `/models/chatgpt-alternatives/` page now have substantial content. Do NOT regenerate, rewrite, or replace those pages unless I specifically ask for it.
 
 Your job is to continue creating missing model-family landing pages only. Before creating any page, compare the target model/page against the completed list below. If the page already exists, remove it from the todo list and move on.
 
@@ -12,12 +12,12 @@ Primary rule:
 - If a model is only a variant of an existing completed family page, add a note that it may belong inside the existing family page instead of creating a new page.
 
 Completed pages — REMOVE FROM TODO:
-- `/menu/`
-- `/menu/chatgpt-alternatives/`
-- `/menu/compare/`
-- `/menu/deploy/`
-- `/menu/pricing.html`
-- `/menu/quote.html`
+- `/models/`
+- `/models/chatgpt-alternatives/`
+- `/models/compare/`
+- `/models/deploy/`
+- `/models/pricing.html`
+- `/models/quote.html`
 
 Completed model-family pages — DO NOT RECREATE:
 - alpaca
@@ -186,7 +186,7 @@ Tone:
 - Avoid repeating the same structure word-for-word across every page
 
 Workflow:
-1. First inspect existing `/menu/` folders/files.
+1. First inspect existing `/models/` folders/files.
 2. Compare against the completed list above.
 3. Remove completed pages from the working todo list.
 4. Create only missing pages.

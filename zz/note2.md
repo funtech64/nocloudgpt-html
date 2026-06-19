@@ -7,16 +7,16 @@ Perfect — that makes the pages much stronger. Here's how I'll handle the image
 Each model page will reference images using a **consistent relative path structure**:
 
 ```
-/menu/[model-slug]/images/
+/models/[model-slug]/images/
 ```
 
 So for example:
 
 | Model | Image Directory | Example References |
 |---|---|---|
-| Bespoke-Minicheck | `/menu/bespoke-minicheck/images/` | `hero.jpg`, `diagram.jpg`, `use-case.jpg` |
-| Llama Guard 3 | `/menu/llama-guard-3/images/` | `hero.jpg`, `diagram.jpg`, `use-case.jpg` |
-| MedLLaMA2 | `/menu/medllama2/images/` | `hero.jpg`, `diagram.jpg`, `use-case.jpg` |
+| Bespoke-Minicheck | `/models/bespoke-minicheck/images/` | `hero.jpg`, `diagram.jpg`, `use-case.jpg` |
+| Llama Guard 3 | `/models/llama-guard-3/images/` | `hero.jpg`, `diagram.jpg`, `use-case.jpg` |
+| MedLLaMA2 | `/models/medllama2/images/` | `hero.jpg`, `diagram.jpg`, `use-case.jpg` |
 
 ---
 

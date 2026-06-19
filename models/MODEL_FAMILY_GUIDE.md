@@ -236,7 +236,7 @@ Pass 3: Consistency
 * Normalize family page structure.
 * Normalize CTAs.
 * Normalize tier language.
-* Resolve /models/ versus /menu/ canonical strategy.
+* Confirm `/models/` canonical strategy after removing the legacy `/menu/` branch.
 
 Pass 4: Fact Verification
 
