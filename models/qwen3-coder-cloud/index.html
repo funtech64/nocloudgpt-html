@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qwen3-Coder Cloud — Cloud-Accelerated Private AI | Terminal Glass</title>
+  <meta name="description" content="Run Qwen3-Coder through Terminal Glass and Ollama Cloud. Agentic coding and 256K context without 250GB local memory — honest trade-offs on code leaving your infrastructure and usage cost.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/qwen3-coder-cloud/">
+  <meta property="og:title" content="Qwen3-Coder Cloud — Terminal Glass | NoCloudGPT">
+  <meta property="og:description" content="Qwen3-Coder on Ollama Cloud via Terminal Glass. OpenWebUI locally, coding inference in the cloud. Clear path to NoCloudGPT Private Instances when source code must stay local.">
+  <meta property="og:image" content="/models/qwen3-coder-cloud/hero.webp">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 1. Hero -->
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <a href="https://ollama.com/library/qwen3-coder" target="_blank" rel="noopener noreferrer" class="inline-block">
+        <img
+          src="/models/qwen3-coder-cloud/hero.webp"
+          alt="Qwen3-Coder Cloud — Terminal Glass workflow with Ollama Cloud inference"
+          width="1200" height="600"
+          class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/qwen3-coder" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;"></div>
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Qwen3-Coder · Terminal Glass</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+        Qwen3-Coder Cloud — Agentic Coding Without 250 GB of Local Memory
+      </h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">
+        Run the Qwen3-Coder 480B cloud variant through OpenWebUI on a modest Linux host while Ollama Cloud
+        handles inference — including 256K context for repository-scale work and native tool use for agentic
+        coding tasks. You avoid provisioning hardware for a 290 GB local download; in exchange, prompts, pasted
+        code, and retrieved context leave your infrastructure and usage is billed per token.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Get quote →</a>
+        <a href="#how-it-works" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">See how it works</a>
+        <a href="/models/qwen2.5-coder/" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Compare NoCloudGPT Private Instances</a>
+      </div>
+      <p class="mt-6 text-sm text-emerald-400">
+        Terminal Glass runs OpenWebUI on your server while Qwen3-Coder inference happens on Ollama Cloud.
+      </p>
+    </div>
+  </section>
+
+  <main class="mx-auto max-w-6xl px-6 py-12 space-y-12">
+
+    <!-- 2. Overview -->
+    <section>
+      <h2 class="text-3xl font-black">What Qwen3-Coder is</h2>
+      <p class="mt-5 max-w-3xl text-lg text-slate-300">
+        Qwen3-Coder is Alibaba's coding-specialized model in the Qwen family, trained for code generation,
+        refactoring, test writing, multi-file edits, and explaining large codebases. It supports 256K context
+        natively for repository-scale understanding, tool-style agentic workflows, and long-horizon software
+        engineering tasks. On Ollama it is text-only — there is no image input path for this family.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-400">
+        The local 480B build requires roughly 250 GB of memory; the 30B MoE variant (3.3B active parameters)
+        runs locally at about 19 GB but is not offered as a cloud tag on Ollama today. Terminal Glass uses
+        <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">qwen3-coder:480b-cloud</code> so teams
+        can evaluate the largest coding model without that hardware commitment. For smaller local-only coding
+        workloads, <a href="/models/qwen2.5-coder/" class="text-cyan-300 hover:text-cyan-200">Qwen2.5-Coder</a>
+        on NoCloudGPT Private Instances may be sufficient.
+      </p>
+    </section>
+
+    <!-- 3. The Terminal Glass Trade-off -->
+    <section class="rounded-3xl border border-amber-500/30 bg-amber-950/20 p-8">
+      <h2 class="text-2xl font-black text-amber-200">The Terminal Glass trade-off</h2>
+      <p class="mt-4 text-slate-300">
+        <strong class="text-white">Terminal Glass</strong> gives you the same OpenWebUI chat experience
+        and locally stored RAG index you would use on a private deployment — but routes each inference
+        request to Ollama Cloud. Your server runs the Ollama client, OpenWebUI, and your document index;
+        a small cloud VM, NUC, or mini-PC is usually enough. You do not need a 250 GB memory footprint
+        on your own hardware to access 480B-class coding responses.
+      </p>
+      <p class="mt-4 text-sm text-amber-300">
+        <strong>Honest reality:</strong> Every prompt — including any code you paste — and every retrieved
+        RAG passage leaves your infrastructure and is processed on Ollama Cloud. This is not air-gapped and
+        is not equivalent to <a href="/models/qwen2.5-coder/" class="underline hover:text-amber-200">NoCloudGPT Private Instances</a>,
+        where inference stays on hardware you control. You also pay recurring, usage-based Ollama Cloud fees
+        that can accumulate quickly on agentic or automated coding loops. When source code must never leave
+        your network, migrate the same OpenWebUI and RAG workflow to a self-hosted Qwen3-Coder or Qwen Coder
+        build on NoCloudGPT Private Instances.
+      </p>
+    </section>
+
+    <!-- 4. Who This Model Family is For -->
+    <section>
+      <h2 class="text-3xl font-black">Who This Model Family is For</h2>
+      <div class="mt-6 grid gap-5 md:grid-cols-2">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="flex items-center gap-2 text-lg font-bold text-white">
+            <span>👤</span> Personal Use
+          </h3>
+          <p class="mt-3 text-sm text-slate-400">
+            A practical fit for solo developers who want strong code generation and refactoring on a laptop
+            or mini-PC that cannot host the 480B model locally. Useful for side projects, learning frameworks,
+            and generating boilerplate or tests. Any code snippets you paste are sent to Ollama Cloud — keep
+            proprietary personal projects on NoCloudGPT Private Instances. Open-source experimentation and
+            general learning are lower-risk uses of the cloud path.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="flex items-center gap-2 text-lg font-bold text-white">
+            <span>🏢</span> Business / Team Use
+          </h3>
+          <p class="mt-3 text-sm text-slate-400">
+            Small engineering teams use Qwen3-Coder Cloud for pull-request explanations, unit-test generation,
+            internal tooling scripts, and onboarding developers to unfamiliar codebases — often with private RAG
+            over internal docs. This path fits when code is not under strict regulatory, export-control, or NDA
+            constraints and you need capability without GPU procurement. It is not appropriate for healthcare,
+            defense, financial, or other environments where source code cannot legally leave your infrastructure;
+            those teams require NoCloudGPT Private Instances.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="flex items-center gap-2 text-lg font-bold text-white">
+            <span>⚙️</span> Developer &amp; Technical Use
+          </h3>
+          <p class="mt-3 text-sm text-slate-400">
+            Useful for prototyping coding assistants, multi-file refactor demos, API scaffolding, and agent
+            workflows wired through the local Ollama endpoint before you commit to inference hardware. Latency
+            is higher than local inference — typically seconds before tokens stream — so this suits considered
+            tasks better than real-time inline autocomplete. Standard Ollama tags port to a self-hosted
+            <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">qwen3-coder:30b</code> or
+            <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">qwen3-coder:480b</code> on
+            NoCloudGPT Private Instances when usage stabilizes.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h3 class="flex items-center gap-2 text-lg font-bold text-white">
+            <span>🔬</span> Data Science &amp; Research Use
+          </h3>
+          <p class="mt-3 text-sm text-slate-400">
+            Helpful for writing data pipelines, generating pandas or SQL transformations, debugging notebooks,
+            and documenting analytical workflows when you need capable coding help without intermittent GPU
+            rentals. Cloud inference is not strictly reproducible when provider behavior or tags change.
+            Dataset descriptions, unpublished analysis code, or confidential research material should stay on
+            fully local NoCloudGPT Private Instances with a pinned model version.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. How Terminal Glass Works with This Model -->
+    <section id="how-it-works">
+      <h2 class="text-3xl font-black">How Terminal Glass Works with This Model</h2>
+      <p class="mt-5 max-w-3xl text-slate-300">
+        You interact through <strong class="text-white">OpenWebUI</strong> on your Terminal Glass host
+        (or via the command line). Chat history, user accounts, and your locally built RAG document index
+        stay on hardware you control. When you submit a prompt, the request — including pasted code and any
+        retrieved passages — is forwarded to Ollama Cloud where Qwen3-Coder runs; the response streams back
+        to your browser or API client.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-300">
+        Cloud access requires an Ollama account (<code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">ollama signin</code>)
+        on the Terminal Glass machine. The 480B cloud tag is rated high usage on Ollama — expect higher
+        per-request cost than smaller general-purpose cloud models, especially with long context and agent loops.
+      </p>
+      <pre class="mt-5 overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900 p-5 text-sm text-cyan-200"><code>ollama signin
+ollama run qwen3-coder:480b-cloud</code></pre>
+      <p class="mt-5 text-sm text-amber-300">
+        <strong>What leaves your infrastructure:</strong> prompt text, pasted code, and RAG-retrieved passages.
+        <strong>Latency</strong> is network-bound and typically higher than a warm local model — often one to
+        several seconds before streaming begins. <strong>Cost</strong> scales with token volume and can grow
+        quickly on automated agents or CI-style batch jobs. The same OpenWebUI setup and RAG collection can
+        later point at a locally hosted Qwen3-Coder tag on NoCloudGPT Private Instances without rebuilding
+        your workflow.
+      </p>
+    </section>
+
+    <!-- 6. Honest Guidance -->
+    <section>
+      <h2 class="text-3xl font-black">Honest Guidance: When to Choose a Different Path</h2>
+      <ul class="mt-5 max-w-3xl space-y-3 text-slate-300">
+        <li>
+          <strong class="text-white">Proprietary, regulated, or NDA-protected source code</strong> —
+          Choose <a href="/models/qwen2.5-coder/" class="text-cyan-300 hover:text-cyan-200">NoCloudGPT Private Instances</a>
+          running Qwen3-Coder or another Qwen Coder build locally. Terminal Glass routes code to Ollama Cloud.
+        </li>
+        <li>
+          <strong class="text-white">Real-time inline autocomplete or very low latency</strong> —
+          Local inference on owned hardware — for example <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">qwen3-coder:30b</code>
+          on a NoCloudGPT Private Instance — performs better for editor-integrated suggestions.
+        </li>
+        <li>
+          <strong class="text-white">High-volume automated coding agents or CI workloads</strong> —
+          Sustained cloud token spend can exceed the cost of owned inference hardware over time.
+        </li>
+        <li>
+          <strong class="text-white">Fixed model versions or audit-grade reproducibility</strong> —
+          A pinned local build on NoCloudGPT Private Instances is more reliable than a cloud tag that may
+          change behavior between sessions.
+        </li>
+        <li>
+          <strong class="text-white">Smaller coding models on modest RAM</strong> —
+          Local <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">qwen3-coder:30b</code> or
+          <a href="/models/qwen2.5-coder/" class="text-cyan-300 hover:text-cyan-200">Qwen2.5-Coder</a>
+          on NoCloudGPT Private Instances may meet your quality bar without cloud inference.
+        </li>
+      </ul>
+      <p class="mt-5 max-w-3xl text-slate-400">
+        The practical migration path: prototype on Terminal Glass with
+        <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">qwen3-coder:480b-cloud</code>, then move
+        the same OpenWebUI and RAG setup to a self-hosted Qwen3-Coder on NoCloudGPT Private Instances when
+        privacy, volume, or cost justifies owned hardware.
+      </p>
+    </section>
+
+    <!-- 7. Recommended Terminal Glass Deployment -->
+    <section>
+      <h2 class="text-3xl font-black">Recommended Terminal Glass Deployment</h2>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-slate-950 text-cyan-200">
+            <tr>
+              <th class="px-4 py-3">Variant / Tag</th>
+              <th class="px-4 py-3">Recommended For</th>
+              <th class="px-4 py-3">Notes</th>
+              <th class="px-4 py-3"></th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+            <tr>
+              <td class="px-4 py-3 font-mono text-cyan-200">qwen3-coder:480b-cloud</td>
+              <td class="px-4 py-3">Teams and agentic coding prototypes</td>
+              <td class="px-4 py-3">256K context, text only, high usage tier on Ollama. Only verified Qwen3-Coder cloud tag. Best for complex multi-file work, coding agents, and repository-scale Q&amp;A when code can leave your network.</td>
+              <td class="px-4 py-3 whitespace-nowrap"><a href="/quote.html" class="text-cyan-300 hover:text-cyan-200">Get quote →</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm text-slate-400">
+        Ollama does not currently list a <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">30b-cloud</code>
+        tag for this family — the 30B MoE variant is local-only. Confirm current tags at
+        <a href="https://ollama.com/library/qwen3-coder" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">ollama.com/library/qwen3-coder</a>
+        before deployment.
+      </p>
+    </section>
+
+    <!-- 8. Licensing & Access -->
+    <section>
+      <h2 class="text-3xl font-black">Licensing &amp; Access</h2>
+      <p class="mt-5 max-w-3xl text-slate-300">
+        Qwen3-Coder cloud access requires an Ollama Cloud account with usage-based pricing; rate limits and
+        tiers apply and may change. Open-weight Qwen3-Coder models are released under the
+        <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Apache 2.0 license</a>,
+        which permits commercial use subject to standard Apache terms. Ollama Cloud usage is governed by
+        Ollama's separate terms — review both before production deployment.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-300">
+        Official catalog:
+        <a href="https://ollama.com/library/qwen3-coder" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">ollama.com/library/qwen3-coder</a>
+        · Reference:
+        <a href="https://qwenlm.github.io/blog/qwen3-coder/" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">Qwen3-Coder blog</a>
+      </p>
+      <div class="mt-6 rounded-2xl border border-slate-800 bg-slate-900 p-5 text-sm text-slate-400">
+        <strong class="text-slate-300">Disclaimer:</strong> Terminal Glass is an independent deployment
+        workflow operated by NoCloudGPT. Model availability, exact tags, cloud pricing, and inference
+        behavior are controlled by Ollama and Alibaba Cloud and may change without notice. This page is not
+        legal advice; customers are responsible for compliance with applicable license terms and
+        data-protection regulations.
+      </div>
+    </section>
+
+    <!-- 9. Final note -->
+    <section class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+      <h2 class="text-2xl font-black text-white">What Terminal Glass adds — and when to move local</h2>
+      <p class="mt-4 text-slate-300">
+        Terminal Glass packages a shared OpenWebUI interface, locally stored private RAG over your documentation,
+        per-user access controls, and guidance on monitoring cloud usage so spend stays predictable. The
+        deliberate migration path is the same interface and workflow pointed at a self-hosted Qwen3-Coder
+        — or a smaller Qwen Coder build — on NoCloudGPT Private Instances when source-code privacy, agent
+        volume, or long-term cost makes owned hardware the better choice.
+      </p>
+    </section>
+
+    <div class="text-center">
+      <a href="/quote.html" class="inline-block rounded-2xl bg-cyan-300 px-8 py-4 text-lg font-bold text-slate-950 hover:bg-cyan-200">
+        Get a quote for Qwen3-Coder Cloud →
+      </a>
+      <p class="mt-3 text-sm text-slate-500">We help you size the local host and plan the cloud-to-local migration when you need it.</p>
+    </div>
+
+  </main>
+
+  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
+      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="font-semibold text-slate-400">Hero image</p>
+          <p class="mt-1">Artwork shared with the <a href="/models/qwen2.5-coder/" class="text-cyan-600 hover:text-cyan-500">Qwen Coder family pages</a>. Sourced from the Ollama library listing.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Model developer</p>
+          <p class="mt-1">Qwen3-Coder is developed by <a href="https://qwen.ai/" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Alibaba Cloud's Qwen team</a>. Terminal Glass and NoCloudGPT are independent services not affiliated with Alibaba or Ollama.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Private deployment</p>
+          <p class="mt-1">For fully local coding models on hardware you control, see <a href="/models/qwen2.5-coder/" class="text-cyan-600 hover:text-cyan-500">Qwen Coder — NoCloudGPT Private Instances</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT is an independent deployment service. Not affiliated with Alibaba Cloud, Ollama, or any model developer referenced on this page.</p>
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
+        <strong class="text-slate-400">License information:</strong>
+        License terms for open-weight models are sourced from official model cards and developer repositories.
+        Always verify the current license at
+        <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
+        or the official developer repository before commercial deployment.
+        NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
