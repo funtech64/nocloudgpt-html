@@ -67,41 +67,49 @@ Observed folders / files from the repository view include:
 
 ## Recommended cloud family folders
 
-These folders should be treated as **Terminal Glass cloud family folders**. Each one deserves an `index.html` sales page, even if the local family already exists elsewhere.
+These folders are **verified Terminal Glass cloud family folders** (30 active). Each one deserves an `index.html` sales page. Hold/candidate families without confirmed Ollama `cloud` tags are listed separately in `models/data/terminal-glass-cloud-hold-models.json` — not in the active sales inventory.
 
 | Priority | Folder | Ollama model / family | Sales positioning | Relationship to local model catalog |
 |---:|---|---|---|---|
-| 1 | `/models/gpt-oss-cloud/` | `gpt-oss` | Flagship cloud reasoning and agentic work. | Keep `/models/gpt-oss/` for local/open-weight SEO. |
-| 2 | `/models/qwen3.5-cloud/` | `qwen3.5` | Strong all-rounder for thinking, tools, multimodal, and business workflows. | Separate from `/models/qwen/`. |
-| 3 | `/models/gemma4-cloud/` | `gemma4` | Google-backed multimodal and general-purpose cloud option. | Separate from `/models/gemma/`. |
-| 4 | `/models/qwen3-coder-cloud/` | `qwen3-coder` | Coding agents, long-context development, repository work. | Separate from `/models/qwen2.5-coder/`. |
-| 5 | `/models/qwen3-coder-next-cloud/` | `qwen3-coder-next` | Next-generation coding agent lane. | New cloud-only folder. |
-| 6 | `/models/qwen3.6-cloud/` | `qwen3.6` | Newer Qwen agentic coding and thinking family. | New cloud-only folder. |
-| 7 | `/models/deepseek-v3.2-cloud/` | `deepseek-v3.2` | Efficient reasoning and agent performance. | Separate from `/models/deepseek/`. |
-| 8 | `/models/deepseek-v3.1-cloud/` | `deepseek-v3.1` | Hybrid thinking/non-thinking DeepSeek lane. | Separate from `/models/deepseek/`. |
-| 9 | `/models/deepseek-v4-pro-cloud/` | `deepseek-v4-pro` | Frontier MoE reasoning, long context, multi-mode reasoning. | New cloud-only folder. |
-| 10 | `/models/deepseek-v4-flash-cloud/` | `deepseek-v4-flash` | Fast, efficient DeepSeek reasoning cloud option. | New cloud-only folder. |
-| 11 | `/models/glm-5.2-cloud/` | `glm-5.2` | Long-horizon tasks and agentic workflows. | Separate from `/models/glm5/`. |
-| 12 | `/models/glm-5.1-cloud/` | `glm-5.1` | Agentic engineering and coding. | Separate from `/models/glm5/`. |
-| 13 | `/models/glm-5-cloud/` | `glm-5` | Large reasoning and agentic model. | Separate from `/models/glm5/`. |
-| 14 | `/models/glm-4.7-cloud/` | `glm-4.7` | Coding capability and technical work. | Separate from `/models/glm/`. |
-| 15 | `/models/minimax-m3-cloud/` | `minimax-m3` | Coding and agentic frontier with multimodality. | Separate from `/models/minimax/`. |
-| 16 | `/models/minimax-m2.7-cloud/` | `minimax-m2.7` | Coding, productivity, and agentic workflows. | Separate from `/models/minimax/`. |
-| 17 | `/models/minimax-m2.5-cloud/` | `minimax-m2.5` | Productivity and coding cloud option. | Separate from `/models/minimax/`. |
-| 18 | `/models/minimax-m2.1-cloud/` | `minimax-m2.1` | Multilingual code engineering. | Separate from `/models/minimax/`. |
-| 19 | `/models/kimi-k2.7-code-cloud/` | `kimi-k2.7-code` | Moonshot coding-focused agentic cloud model. | Separate from `/models/kimi/`. |
-| 20 | `/models/kimi-k2.6-cloud/` | `kimi-k2.6` | Long-horizon coding, design, and autonomous execution. | Separate from `/models/kimi/`. |
+| 1 | `/models/gemma3-cloud/` | `gemma3` | Google Gemma 3 multimodal cloud variants (4B–27B). | Separate from `/models/gemma/`. |
+| 2 | `/models/gemma4-cloud/` | `gemma4` | Google-backed multimodal and general-purpose cloud option. | Separate from `/models/gemma/`. |
+| 3 | `/models/qwen3.5-cloud/` | `qwen3.5` | Strong all-rounder for thinking, tools, multimodal, and business workflows. | Separate from `/models/qwen/`. |
+| 4 | `/models/gpt-oss-cloud/` | `gpt-oss` | Flagship cloud reasoning and agentic work. | Keep `/models/gpt-oss/` for local/open-weight SEO. |
+| 5 | `/models/qwen3-coder-cloud/` | `qwen3-coder` | Coding agents, long-context development, repository work. | Separate from `/models/qwen2.5-coder/`. |
+| 6 | `/models/nemotron-3-super-cloud/` | `nemotron-3-super` | Efficient complex multi-agent work. | Separate from `/models/nemotron/`. |
+| 7 | `/models/glm-5-cloud/` | `glm-5` | Large reasoning and agentic model. | Separate from `/models/glm5/`. |
+| 8 | `/models/minimax-m2.5-cloud/` | `minimax-m2.5` | Productivity and coding cloud option. | Separate from `/models/minimax/`. |
+| 9 | `/models/glm-5.1-cloud/` | `glm-5.1` | Agentic engineering and coding. | Separate from `/models/glm5/`. |
+| 10 | `/models/gemini-3-flash-preview-cloud/` | `gemini-3-flash-preview` | Speed-focused frontier cloud model. | New cloud-only folder; needs careful branding review. |
+| 11 | `/models/minimax-m2.7-cloud/` | `minimax-m2.7` | Coding, productivity, and agentic workflows. | Separate from `/models/minimax/`. |
+| 12 | `/models/glm-4.7-cloud/` | `glm-4.7` | Coding capability and technical work. | Separate from `/models/glm/`. |
+| 13 | `/models/deepseek-v3.2-cloud/` | `deepseek-v3.2` | Efficient reasoning and agent performance. | Separate from `/models/deepseek/`. |
+| 14 | `/models/minimax-m2.1-cloud/` | `minimax-m2.1` | Multilingual code engineering. | Separate from `/models/minimax/`. |
+| 15 | `/models/qwen3-coder-next-cloud/` | `qwen3-coder-next` | Next-generation coding agent lane. | New cloud-only folder. |
+| 16 | `/models/ministral-3-cloud/` | `ministral-3` | Edge-oriented Mistral cloud/vision/tool model. | Separate from `/models/mistral/`. |
+| 17 | `/models/devstral-small-2-cloud/` | `devstral-small-2` | Codebase exploration and multi-file editing. | Separate from Mistral local/coding folders. |
+| 18 | `/models/deepseek-v3.1-cloud/` | `deepseek-v3.1` | Hybrid thinking/non-thinking DeepSeek lane. | Separate from `/models/deepseek/`. |
+| 19 | `/models/nemotron-3-nano-cloud/` | `nemotron-3-nano` | Efficient open agentic model with cloud option. | Separate from `/models/nemotron/`. |
+| 20 | `/models/rnj-1-cloud/` | `rnj-1` | 8B code/STEM cloud-supporting model. | New cloud-only folder. |
 | 21 | `/models/kimi-k2.5-cloud/` | `kimi-k2.5` | Native multimodal agentic model. | Separate from `/models/kimi/`. |
-| 22 | `/models/nemotron-3-ultra-cloud/` | `nemotron-3-ultra` | NVIDIA long-running agent workflows and high-throughput reasoning. | Separate from `/models/nemotron/`. |
-| 23 | `/models/nemotron-3-super-cloud/` | `nemotron-3-super` | Efficient complex multi-agent work. | Separate from `/models/nemotron/`. |
-| 24 | `/models/nemotron-3-nano-cloud/` | `nemotron-3-nano` | Efficient open agentic model with cloud option. | Separate from `/models/nemotron/`. |
-| 25 | `/models/nemotron-cascade-2-cloud/` | `nemotron-cascade-2` | Efficient MoE reasoning. | New cloud-only folder. |
-| 26 | `/models/devstral-2-cloud/` | `devstral-2` | Large coding agent model. | Separate from Mistral local/coding folders. |
-| 27 | `/models/devstral-small-2-cloud/` | `devstral-small-2` | Codebase exploration and multi-file editing. | Separate from Mistral local/coding folders. |
-| 28 | `/models/ministral-3-cloud/` | `ministral-3` | Edge-oriented Mistral cloud/vision/tool model. | Separate from `/models/mistral/`. |
-| 29 | `/models/mistral-large-3-cloud/` | `mistral-large-3` | Production-grade multimodal MoE cloud model. | Separate from `/models/mistral/`. |
-| 30 | `/models/gemini-3-flash-preview-cloud/` | `gemini-3-flash-preview` | Speed-focused frontier cloud model. | New cloud-only folder; needs careful branding review. |
-| 31 | `/models/rnj-1-cloud/` | `rnj-1` | 8B code/STEM cloud-supporting model. | New cloud-only folder. |
+| 22 | `/models/kimi-k2.6-cloud/` | `kimi-k2.6` | Long-horizon coding, design, and autonomous execution. | Separate from `/models/kimi/`. |
+| 23 | `/models/devstral-2-cloud/` | `devstral-2` | Large coding agent model. | Separate from Mistral local/coding folders. |
+| 24 | `/models/deepseek-v4-pro-cloud/` | `deepseek-v4-pro` | Frontier MoE reasoning, long context, multi-mode reasoning. | New cloud-only folder. |
+| 25 | `/models/deepseek-v4-flash-cloud/` | `deepseek-v4-flash` | Fast, efficient DeepSeek reasoning cloud option. | New cloud-only folder. |
+| 26 | `/models/mistral-large-3-cloud/` | `mistral-large-3` | Production-grade multimodal MoE cloud model. | Separate from `/models/mistral/`. |
+| 27 | `/models/minimax-m3-cloud/` | `minimax-m3` | Coding and agentic frontier with multimodality. | Separate from `/models/minimax/`. |
+| 28 | `/models/glm-5.2-cloud/` | `glm-5.2` | Long-horizon tasks and agentic workflows. | Separate from `/models/glm5/`. |
+| 29 | `/models/kimi-k2.7-code-cloud/` | `kimi-k2.7-code` | Moonshot coding-focused agentic cloud model. | Separate from `/models/kimi/`. |
+| 30 | `/models/nemotron-3-ultra-cloud/` | `nemotron-3-ultra` | NVIDIA long-running agent workflows and high-throughput reasoning. | Separate from `/models/nemotron/`. |
+
+## Hold — not in active cloud inventory
+
+Do not sell or deploy these as Terminal Glass Cloud pages until Ollama confirms `cloud` tags. See `models/data/terminal-glass-cloud-hold-models.json`.
+
+| Folder | Ollama model / family | Hold reason |
+|---|---|---|
+| `/models/qwen3.6-cloud/` | `qwen3.6` | Ollama page shows vision/tools/thinking variants, not `cloud`. |
+| `/models/nemotron-cascade-2-cloud/` | `nemotron-cascade-2` | Ollama page shows tools/thinking 30b, not `cloud`. |
 
 ## Deprecated or risky cloud items
 
@@ -150,13 +158,21 @@ Use this plain explanation somewhere near the top of every Terminal Glass cloud 
 
 ## Data file
 
-Maintain the cloud family list in:
+Maintain the **active** cloud family list in:
 
 ```text
 /models/data/terminal-glass-cloud-models.json
 ```
 
-Each entry should include:
+Hold/candidate families (not sellable yet) live in:
+
+```text
+/models/data/terminal-glass-cloud-hold-models.json
+```
+
+See `models/data/README.md` for the active vs hold rule.
+
+Each active entry should include:
 
 ```json
 {
@@ -169,7 +185,7 @@ Each entry should include:
   "folder": "/models/gpt-oss-cloud/",
   "localFamilyFolder": "/models/gpt-oss/",
   "deploymentMode": "terminal-glass-cloud",
-  "status": "priority"
+  "status": "active"
 }
 ```
 
