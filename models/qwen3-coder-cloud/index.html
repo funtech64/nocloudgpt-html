@@ -7,7 +7,7 @@
   <meta name="description" content="Run Qwen3-Coder through Terminal Glass and Ollama Cloud. Agentic coding and 256K context without 250GB local memory — honest trade-offs on code leaving your infrastructure and usage cost.">
   <link rel="canonical" href="https://nocloudgpt.com/models/qwen3-coder-cloud/">
   <meta property="og:title" content="Qwen3-Coder Cloud — Terminal Glass | NoCloudGPT">
-  <meta property="og:description" content="Qwen3-Coder on Ollama Cloud via Terminal Glass. OpenWebUI locally, coding inference in the cloud. Clear path to NoCloudGPT Private Instances when source code must stay local.">
+  <meta property="og:description" content="Qwen3-Coder on Ollama Cloud via Terminal Glass. OpenWebUI locally, coding inference in the cloud. Honest trade-offs on data residency, cost, and hardware.">
   <meta property="og:image" content="/models/qwen3-coder-cloud/hero.webp">
   <meta property="og:type" content="website">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -100,8 +100,7 @@
         is not equivalent to <a href="/models/qwen2.5-coder/" class="underline hover:text-amber-200">NoCloudGPT Private Instances</a>,
         where inference stays on hardware you control. You also pay recurring, usage-based Ollama Cloud fees
         that can accumulate quickly on agentic or automated coding loops. When source code must never leave
-        your network, migrate the same OpenWebUI and RAG workflow to a self-hosted Qwen3-Coder or Qwen Coder
-        build on NoCloudGPT Private Instances.
+        your network, choose a <a href="/models/">NoCloudGPT Air Gapped</a> deployment instead.
       </p>
     </section>
     <section>
@@ -201,9 +200,7 @@ ollama run qwen3-coder:480b-cloud</code></pre>
         <strong>What leaves your infrastructure:</strong> prompt text, pasted code, and RAG-retrieved passages.
         <strong>Latency</strong> is network-bound and typically higher than a warm local model — often one to
         several seconds before streaming begins. <strong>Cost</strong> scales with token volume and can grow
-        quickly on automated agents or CI-style batch jobs. The same OpenWebUI setup and RAG collection can
-        later point at a locally hosted Qwen3-Coder tag on NoCloudGPT Private Instances without rebuilding
-        your workflow.
+        quickly on automated agents or CI-style batch jobs.
       </p>
     </section>
 
@@ -237,12 +234,6 @@ ollama run qwen3-coder:480b-cloud</code></pre>
           on NoCloudGPT Private Instances may meet your quality bar without cloud inference.
         </li>
       </ul>
-      <p class="mt-5 max-w-3xl text-slate-400">
-        The practical migration path: prototype on Terminal Glass with
-        <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">qwen3-coder:480b-cloud</code>, then move
-        the same OpenWebUI and RAG setup to a self-hosted Qwen3-Coder on NoCloudGPT Private Instances when
-        privacy, volume, or cost justifies owned hardware.
-      </p>
     </section>
 
     <!-- 7. Recommended Terminal Glass Deployment -->
@@ -303,13 +294,10 @@ ollama run qwen3-coder:480b-cloud</code></pre>
 
     <!-- 9. Final note -->
     <section class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
-      <h2 class="text-2xl font-black text-white">What Terminal Glass adds — and when to move local</h2>
+      <h2 class="text-2xl font-black text-white">What Terminal Glass adds</h2>
       <p class="mt-4 text-slate-300">
         Terminal Glass packages a shared OpenWebUI interface, locally stored private RAG over your documentation,
-        per-user access controls, and guidance on monitoring cloud usage so spend stays predictable. The
-        deliberate migration path is the same interface and workflow pointed at a self-hosted Qwen3-Coder
-        — or a smaller Qwen Coder build — on NoCloudGPT Private Instances when source-code privacy, agent
-        volume, or long-term cost makes owned hardware the better choice.
+        per-user access controls, and guidance on monitoring cloud usage so spend stays predictable.
       </p>
     </section>
 
@@ -317,7 +305,7 @@ ollama run qwen3-coder:480b-cloud</code></pre>
       <a href="/quote.html" class="inline-block rounded-2xl bg-cyan-300 px-8 py-4 text-lg font-bold text-slate-950 hover:bg-cyan-200">
         Get a quote for Qwen3-Coder Cloud →
       </a>
-      <p class="mt-3 text-sm text-slate-500">We help you size the local host and plan the cloud-to-local migration when you need it.</p>
+      <p class="mt-3 text-sm text-slate-500">We help you size the local host and choose the right cloud variant for your team.</p>
     </div>
 
   </main>

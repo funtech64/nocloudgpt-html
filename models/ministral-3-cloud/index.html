@@ -7,7 +7,7 @@
   <meta name="description" content="Run Ministral 3 through Terminal Glass and Ollama Cloud. Compact multimodal 3B–14B models without local setup burden — honest trade-offs on data movement and usage cost.">
   <link rel="canonical" href="https://nocloudgpt.com/models/ministral-3-cloud/">
   <meta property="og:title" content="Ministral 3 Cloud — Terminal Glass | NoCloudGPT">
-  <meta property="og:description" content="Ministral 3 on Ollama Cloud via Terminal Glass. OpenWebUI locally, inference in the cloud. Clear path to NoCloudGPT Private Instances when privacy justifies it.">
+  <meta property="og:description" content="Ministral 3 on Ollama Cloud via Terminal Glass. OpenWebUI locally, inference in the cloud. Honest trade-offs on data residency, cost, and hardware.">
   <meta property="og:image" content="/models/ministral-3-cloud/hero.webp">
   <meta property="og:type" content="website">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -82,9 +82,7 @@
         <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">ministral-3:3b-cloud</code>,
         <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">ministral-3:8b-cloud</code>, and
         <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">ministral-3:14b-cloud</code> (low usage tier).
-        Unlike many cloud-only frontier models, Ministral 3 also has local Ollama tags — so the migration path
-        to <a href="/models/mistral/" class="text-cyan-300 hover:text-cyan-200">NoCloudGPT Private Instances</a>
-        is especially practical when your hardware can comfortably run 3B–14B weights locally.
+        Unlike many cloud-only frontier models, Ministral 3 also has local Ollama tags on NoCloudGPT Private Instances for teams that choose air-gapped deployment.
       </p>
     </section>
 
@@ -104,8 +102,7 @@
         equivalent to <a href="/models/mistral/" class="underline hover:text-amber-200">NoCloudGPT Private Instances</a>,
         where inference stays on hardware you control. You also pay recurring, usage-based Ollama Cloud fees
         and accept network-dependent latency. When sensitive or regulated material must never leave your network,
-        migrate the same OpenWebUI and RAG workflow to a local Ministral or Mistral-family deployment on
-        NoCloudGPT Private Instances.
+        choose a <a href="/models/">NoCloudGPT Air Gapped</a> deployment instead.
       </p>
     </section>
     <section>
@@ -161,8 +158,7 @@
             A practical fit for tool-calling prototypes, JSON extraction, support bots, lightweight code help,
             and testing vision-enabled workflows. It is not a replacement for larger coding-specialized models
             when repository-scale refactoring or advanced agentic coding is the primary use case. Validate fit
-            on Terminal Glass, then move to a local Ministral build on NoCloudGPT Private Instances when volume
-            or privacy requirements change.
+           .
           </p>
         </div>
         <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
@@ -199,12 +195,7 @@
 ollama run ministral-3:8b-cloud</code></pre>
       <p class="mt-5 text-sm text-amber-300">
         <strong>What leaves your infrastructure:</strong> prompt text, uploaded images, and RAG-retrieved passages.
-        <strong>Latency</strong> includes network round-trips. <strong>Cost</strong> is usage-based. The same
-        OpenWebUI setup and RAG collection can later point at a locally hosted
-        <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">ministral-3:3b</code>,
-        <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">ministral-3:8b</code>, or
-        <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">ministral-3:14b</code> on NoCloudGPT
-        Private Instances when private inference becomes the better fit.
+        <strong>Latency</strong> includes network round-trips. <strong>Cost</strong> is usage-based.
       </p>
     </section>
 
@@ -238,12 +229,6 @@ ollama run ministral-3:8b-cloud</code></pre>
           Cloud inference requires network access to Ollama Cloud. Local Ministral 3 weights run fully on-premises.
         </li>
       </ul>
-      <p class="mt-5 max-w-3xl text-slate-400">
-        The practical migration path: prove your workflow on Terminal Glass with a cloud tag such as
-        <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">ministral-3:8b-cloud</code>, then move the
-        same OpenWebUI and RAG setup to a matching local tag on NoCloudGPT Private Instances when privacy,
-        latency, or cost justifies owned hardware.
-      </p>
     </section>
 
     <!-- 7. Recommended Terminal Glass Deployment -->
@@ -315,14 +300,11 @@ ollama run ministral-3:8b-cloud</code></pre>
 
     <!-- 9. Final note -->
     <section class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
-      <h2 class="text-2xl font-black text-white">What Terminal Glass adds — and when to move local</h2>
+      <h2 class="text-2xl font-black text-white">What Terminal Glass adds</h2>
       <p class="mt-4 text-slate-300">
         Terminal Glass packages a unified OpenWebUI interface, locally stored private RAG over your
         documentation, multi-user access controls, and guidance on monitoring cloud usage so spend stays
-        predictable. Ministral 3 is a practical cloud starting point because the same family also runs locally
-        on modest hardware. The deliberate migration path is the same interface and workflow pointed at a
-        self-hosted Ministral 3 tag on NoCloudGPT Private Instances when privacy, latency, reproducibility,
-        or steady usage costs make owned hardware the better long-term choice.
+        predictable.
       </p>
     </section>
 
@@ -330,7 +312,7 @@ ollama run ministral-3:8b-cloud</code></pre>
       <a href="/quote.html" class="inline-block rounded-2xl bg-cyan-300 px-8 py-4 text-lg font-bold text-slate-950 hover:bg-cyan-200">
         Get a quote for Ministral 3 Cloud →
       </a>
-      <p class="mt-3 text-sm text-slate-500">We help you size the local host and plan the cloud-to-local migration when you need it.</p>
+      <p class="mt-3 text-sm text-slate-500">We help you size the local host and choose the right cloud variant for your team.</p>
     </div>
 
   </main>

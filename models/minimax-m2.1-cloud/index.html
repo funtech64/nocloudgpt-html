@@ -7,7 +7,7 @@
   <meta name="description" content="Run MiniMax M2.1 through Terminal Glass and Ollama Cloud. Multilingual code engineering and agent workflows without multi-GPU local hardware — honest trade-offs on data movement and usage cost.">
   <link rel="canonical" href="https://nocloudgpt.com/models/minimax-m2.1-cloud/">
   <meta property="og:title" content="MiniMax M2.1 Cloud — Terminal Glass | NoCloudGPT">
-  <meta property="og:description" content="MiniMax M2.1 on Ollama Cloud via Terminal Glass. OpenWebUI locally, inference in the cloud. Clear path to NoCloudGPT Private Instances when privacy justifies it.">
+  <meta property="og:description" content="MiniMax M2.1 on Ollama Cloud via Terminal Glass. OpenWebUI locally, inference in the cloud. Honest trade-offs on data residency, cost, and hardware.">
   <meta property="og:image" content="/models/minimax-m2.1-cloud/hero.webp">
   <meta property="og:type" content="website">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -81,9 +81,7 @@
         On Ollama today, MiniMax M2.1 is available as a cloud-only tag:
         <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">minimax-m2.1:cloud</code> (medium usage tier).
         That makes Terminal Glass a practical way to evaluate the model without hosting 230B-class weights locally.
-        Deploy with clear rules about what code and documents may be sent to cloud inference. When you later need
-        fully local inference, open weights are published on Hugging Face and can be served on
-        <a href="/models/minimax/" class="text-cyan-300 hover:text-cyan-200">NoCloudGPT Private Instances</a>.
+        Deploy with clear rules about what code and documents may be sent to cloud inference.</a>.
       </p>
     </section>
 
@@ -103,8 +101,7 @@
         equivalent to <a href="/models/minimax/" class="underline hover:text-amber-200">NoCloudGPT Private Instances</a>,
         where inference stays on hardware you control. You also pay recurring, usage-based Ollama Cloud
         fees and accept network-dependent latency. When sensitive or regulated material must never leave your
-        network, migrate the same OpenWebUI and RAG workflow to a local MiniMax deployment on NoCloudGPT
-        Private Instances.
+        network, choose a <a href="/models/">NoCloudGPT Air Gapped</a> deployment instead.
       </p>
     </section>
     <section>
@@ -160,8 +157,7 @@
             Strongest fit: multilingual coding, agent scaffolding, tool-oriented prompts, and long-context
             engineering work. Use it for prototypes, repo explanation, test planning, and cross-language refactors.
             Proprietary source code leaves your environment during inference unless cloud use has been approved.
-            Validate fit on Terminal Glass, then move to a local MiniMax build on NoCloudGPT Private Instances
-            when volume or privacy requirements change.
+           
           </p>
         </div>
         <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
@@ -199,9 +195,7 @@ ollama run minimax-m2.1:cloud</code></pre>
       <p class="mt-5 text-sm text-amber-300">
         <strong>What leaves your infrastructure:</strong> prompt text, code snippets, and RAG-retrieved passages.
         MiniMax M2.1 is text-only on Ollama. <strong>Latency</strong> includes network round-trips.
-        <strong>Cost</strong> is usage-based. The same OpenWebUI setup and RAG collection can later point at a
-        locally hosted MiniMax model on NoCloudGPT Private Instances when local weights and hardware fit your
-        requirements.
+        <strong>Cost</strong> is usage-based.
       </p>
     </section>
 
@@ -236,12 +230,6 @@ ollama run minimax-m2.1:cloud</code></pre>
           lightweight general chat.
         </li>
       </ul>
-      <p class="mt-5 max-w-3xl text-slate-400">
-        The practical migration path: prove your workflow on Terminal Glass with
-        <code class="rounded bg-slate-800 px-1 py-0.5 text-cyan-200">minimax-m2.1:cloud</code>, then move the same
-        OpenWebUI and RAG setup to a self-hosted MiniMax deployment on NoCloudGPT Private Instances when
-        privacy, volume, or cost justifies owned hardware.
-      </p>
     </section>
 
     <!-- 7. Recommended Terminal Glass Deployment -->
@@ -302,14 +290,11 @@ ollama run minimax-m2.1:cloud</code></pre>
 
     <!-- 9. Final note -->
     <section class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
-      <h2 class="text-2xl font-black text-white">What Terminal Glass adds — and when to move local</h2>
+      <h2 class="text-2xl font-black text-white">What Terminal Glass adds</h2>
       <p class="mt-4 text-slate-300">
         Terminal Glass packages a unified OpenWebUI interface, locally stored private RAG over your
         documentation, multi-user access controls, and guidance on monitoring cloud usage so spend stays
-        predictable. Start here when you want lower hardware requirements and fast evaluation. The deliberate
-        migration path is the same interface and workflow pointed at a self-hosted MiniMax model on
-        NoCloudGPT Private Instances when privacy, predictable cost, latency, or reproducibility becomes
-        more important than cloud convenience.
+        predictable.
       </p>
     </section>
 
@@ -317,7 +302,7 @@ ollama run minimax-m2.1:cloud</code></pre>
       <a href="/quote.html" class="inline-block rounded-2xl bg-cyan-300 px-8 py-4 text-lg font-bold text-slate-950 hover:bg-cyan-200">
         Get a quote for MiniMax M2.1 Cloud →
       </a>
-      <p class="mt-3 text-sm text-slate-500">We help you size the local host and plan the cloud-to-local migration when you need it.</p>
+      <p class="mt-3 text-sm text-slate-500">We help you size the local host and choose the right cloud variant for your team.</p>
     </div>
 
   </main>
