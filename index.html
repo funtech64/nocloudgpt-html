@@ -1,646 +1,190 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YC-GPT Software | Your Cloud GPT</title>
-  <meta name="description" content="YC-GPT helps businesses launch preconfigured Ollama-based AI servers on their own cloud infrastructure with fast deployment, model options, simple controls, and a practical path to paid usage." />
-  <meta name="keywords" content="YC-GPT, Your Cloud GPT, Ollama AMI, private AI server, EC2 AI appliance, Open WebUI, self-hosted AI, cloud AI deployment, DeepSeek, SQL AI, Linux AI server" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="NoCloudGPT" />
-  <meta property="og:title" content="YC-GPT Software | Your Cloud GPT" />
-  <meta property="og:description" content="Launch private AI server flavors in your cloud with prebuilt model appliances, simple controls, and faster deployment." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nocloudgpt.com/" />
-  <meta property="og:site_name" content="NoCloudGPT" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="YC-GPT Software | Your Cloud GPT" />
-  <meta name="twitter:description" content="Prebuilt AI server flavors for businesses that want fast deployment, simpler hosting, and their own cloud control." />
-  <link rel="canonical" href="https://nocloudgpt.com/" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoCloudGPT • Private AI Deployments</title>
+  <meta name="description" content="Run powerful open-source AI models privately with simple one-script deployments. Choose Air-Gapped, AWS Lightsail, or DigitalOcean.">
+  <link rel="stylesheet" href="styles.css">
   <style>
     :root {
-      --bg: #f4f8fc;
-      --panel: #ffffff;
-      --panel-2: #eef4fb;
-      --text: #18324a;
-      --muted: #5f748b;
-      --line: #d7e3f0;
       --accent: #2f6fed;
-      --accent-2: #5f9cff;
-      --success: #1f8f5f;
-      --shadow: 0 14px 34px rgba(34, 66, 110, 0.10);
-      --radius: 18px;
-      --max: 1160px;
     }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #f8fbff 0%, #eef5fb 100%);
-      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8fbff;
+      color: #18324a;
       line-height: 1.6;
+      margin: 0;
     }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
     .container {
-      width: min(var(--max), calc(100% - 2rem));
+      max-width: 1100px;
       margin: 0 auto;
+      padding: 0 1.5rem;
     }
-
     header {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.92);
-      border-bottom: 1px solid rgba(47, 111, 237, 0.10);
-    }
-
-    .nav-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      background: white;
+      border-bottom: 1px solid #d7e3f0;
       padding: 1rem 0;
     }
-
-    .brand {
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      color: #10263a;
-    }
-
     nav {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
+      justify-content: space-between;
       align-items: center;
     }
-
+    .logo {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #10263a;
+    }
     nav a {
-      color: var(--text);
-      opacity: 0.95;
-      font-size: 0.98rem;
+      margin-left: 1.5rem;
+      color: #18324a;
+      text-decoration: none;
+      font-weight: 500;
     }
-
     .hero {
-      padding: 4.5rem 0 2.5rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 2rem;
-      align-items: stretch;
-    }
-
-    .hero-copy,
-    .hero-card,
-    .section-card,
-    .pricing-card,
-    .faq,
-    .cta-panel {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 249, 255, 0.98));
-      border: 1px solid rgba(47, 111, 237, 0.10);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-copy {
-      padding: 2rem;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(47, 111, 237, 0.08);
-      color: var(--accent);
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      margin-bottom: 1rem;
-    }
-
-    h1, h2, h3 {
-      line-height: 1.2;
-      margin: 0 0 0.8rem;
-      color: #10263a;
-    }
-
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      margin-bottom: 0.8rem;
-    }
-
-    h2 {
-      font-size: clamp(1.55rem, 3vw, 2.3rem);
-      margin-bottom: 0.9rem;
-    }
-
-    h3 {
-      font-size: 1.15rem;
-    }
-
-    .lead {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 58ch;
-    }
-
-    .hero-copy p,
-    .hero-card p,
-    .section-card p,
-    .pricing-card p,
-    .faq p,
-    .cta-panel p,
-    li {
-      color: var(--muted);
-    }
-
-    .button-row,
-    .switcher {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 1.2rem;
-    }
-
-    .btn,
-    .switch-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0.85rem 1.1rem;
-      border-radius: 12px;
-      border: 1px solid transparent;
-      font-weight: 700;
+      padding: 5rem 0 4rem;
       text-align: center;
-      transition: 0.2s ease;
-      text-decoration: none;
-      cursor: pointer;
     }
-
-    .btn-primary,
-    .switch-btn.active {
-      background: linear-gradient(135deg, var(--accent), #7db0ff);
-      color: #ffffff;
-    }
-
-    .btn-secondary,
-    .switch-btn {
-      background: rgba(47, 111, 237, 0.04);
-      border-color: rgba(47, 111, 237, 0.16);
-      color: var(--text);
-    }
-
-    .btn:hover,
-    .switch-btn:hover {
-      transform: translateY(-1px);
-      text-decoration: none;
-    }
-
-    .hero-card {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1.2rem;
-    }
-
-    .mini-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.8rem;
-    }
-
-    .mini-list li {
-      padding: 0.9rem 1rem;
-      border-radius: 14px;
-      background: rgba(47, 111, 237, 0.03);
-      border: 1px solid rgba(47, 111, 237, 0.08);
-    }
-
-    .mini-list strong {
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
       color: #10263a;
-      display: block;
-      margin-bottom: 0.2rem;
     }
-
-    main section {
-      padding: 1rem 0 2.2rem;
+    .hero p {
+      font-size: 1.25rem;
+      color: #5f748b;
+      max-width: 620px;
+      margin: 0 auto 2rem;
     }
-
-    .grid-3,
-    .grid-2,
-    .pricing-grid,
-    .faq-grid {
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    .btn-primary {
+      background: #2f6fed;
+      color: white;
+    }
+    .btn-secondary {
+      background: white;
+      color: #2f6fed;
+      border: 2px solid #2f6fed;
+    }
+    .section {
+      padding: 3rem 0;
+    }
+    .grid {
       display: grid;
-      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
+    .card {
+      background: white;
+      border: 1px solid #d7e3f0;
+      border-radius: 12px;
+      padding: 1.75rem;
     }
-
-    .grid-2,
-    .pricing-grid,
-    .faq-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .section-card,
-    .pricing-card,
-    .faq,
-    .cta-panel {
-      padding: 1.4rem;
-    }
-
-    .check-list {
-      padding-left: 1.1rem;
-      margin: 0.8rem 0 0;
-    }
-
-    .check-list li + li {
-      margin-top: 0.55rem;
-    }
-
-    .price {
-      font-size: 2rem;
-      font-weight: 800;
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
       color: #10263a;
-      margin: 0.3rem 0 0.5rem;
     }
-
-    .price-note {
-      font-size: 0.95rem;
-      color: var(--success);
-      font-weight: 700;
-    }
-
-    .tagline-box {
-      margin-top: 1rem;
-      padding: 1rem;
-      border-radius: 14px;
-      background: rgba(47, 111, 237, 0.05);
-      border: 1px solid rgba(47, 111, 237, 0.10);
-    }
-
-    .seo-note {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
     footer {
-      border-top: 1px solid rgba(47, 111, 237, 0.10);
-      padding: 2rem 0 3rem;
-      color: var(--muted);
-    }
-
-    .footer-flex {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .grid-3,
-      .grid-2,
-      .pricing-grid,
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav-wrap {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero {
-        padding-top: 3rem;
-      }
-
-      .hero-copy,
-      .hero-card,
-      .section-card,
-      .pricing-card,
-      .faq,
-      .cta-panel {
-        padding: 1.2rem;
-      }
+      background: #10263a;
+      color: #a8c0d8;
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.95rem;
     }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "YC-GPT",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Linux",
-    "description": "YC-GPT helps businesses launch preconfigured Ollama-based AI servers on their own cloud infrastructure with fast deployment, model options, and simple controls.",
-    "brand": {
-      "@type": "Brand",
-      "name": "NoCloudGPT"
-    },
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "YC-GPT Base",
-        "price": "0.15",
-        "priceCurrency": "USD",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "0.15",
-          "priceCurrency": "USD",
-          "unitCode": "HUR"
-        }
-      },
-      {
-        "@type": "Offer",
-        "name": "YC-GPT Premium Flavors",
-        "price": "0.25",
-        "priceCurrency": "USD",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "0.25",
-          "priceCurrency": "USD",
-          "unitCode": "HUR"
-        }
-      }
-    ],
-    "url": "https://nocloudgpt.com/"
-  }
-  </script>
 </head>
 <body>
-  <header>
-    <div class="container nav-wrap">
-      <div class="brand">NoCloudGPT</div>
-      <nav aria-label="Primary">
-        <a href="/">Home</a>
-        <a href="/services.html">Services</a>
-        <a href="/index-nc.html">NC-GPT</a>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">NoCloudGPT</div>
+      <div>
+        <a href="/models/">Browse Models</a>
         <a href="/pricing.html">Pricing</a>
         <a href="/contact.html">Contact</a>
-        <a href="/software.html" aria-current="page">Software</a>
-      </nav>
+        <a href="https://terminal.glass" target="_blank">terminal.glass</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>Private AI.<br>Simple Deployments.</h1>
+    <p>Run powerful open-source models on infrastructure you control — with clean one-script options for Air-Gapped, AWS Lightsail, or DigitalOcean.</p>
+    
+    <div style="margin-top: 2rem;">
+      <a href="/models/" class="btn btn-primary">Browse Model Catalog</a>
+      <a href="/contact.html" class="btn btn-secondary">Get Started</a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">Your Cloud AI Appliance</div>
-          <h1>Launch YC-GPT in Your Cloud</h1>
-          <p class="lead">
-            YC-GPT is the faster path to market: preconfigured AI server flavors that launch in your own cloud with a simple chat URL, model-specific setup, and lightweight controls for real-world use.
-          </p>
-
-          <div class="switcher" aria-label="Product switcher">
-            <a class="switch-btn" href="/index-nc.html">No Cloud NC-GPT</a>
-            <a class="switch-btn active" href="/">Your Cloud YC-GPT</a>
-          </div>
-
-          <div class="tagline-box">
-            <p>
-              YC-GPT is built for customers who want a practical AI server they can boot quickly instead of spending weeks wiring together infrastructure, model pulls, chat tools, and reset logic by hand.
-            </p>
-            <p>
-              It is designed around prebuilt model flavors, simple deployment, and a cleaner path to revenue for businesses that want AI available in minutes online.
-            </p>
-          </div>
-
-          <div class="button-row">
-            <a class="btn btn-primary" href="/contact.html">Request YC-GPT Information</a>
-            <a class="btn btn-secondary" href="#pricing">View Software Pricing</a>
-          </div>
-        </div>
-
-        <aside class="hero-card" aria-label="YC-GPT Highlights">
-          <div>
-            <h2>What YC-GPT is built to solve</h2>
-            <ul class="mini-list">
-              <li>
-                <strong>Fast cloud deployment</strong>
-                Launch a preconfigured AI environment without rebuilding the whole stack every time.
-              </li>
-              <li>
-                <strong>Model-specific appliance flavors</strong>
-                Offer dedicated server flavors for coding, SQL, research, and other targeted use cases.
-              </li>
-              <li>
-                <strong>Simpler end-user experience</strong>
-                Present a clean landing screen with model information, chat URL, and reset controls.
-              </li>
-              <li>
-                <strong>Revenue-minded packaging</strong>
-                Start with a base hourly product and grow into premium model tiers and richer features.
-              </li>
-            </ul>
-          </div>
-        </aside>
+<!-- Value -->
+<section class="section">
+  <div class="container">
+    <h2>Three Clean Deployment Paths</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Air-Gapped</h3>
+        <p>Maximum privacy and isolation. Run everything behind your firewall with zero outbound dependencies.</p>
       </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2>Why YC-GPT is the faster-selling software path</h2>
-        <div class="grid-3">
-          <article class="section-card">
-            <h3>Built for immediate cloud launch</h3>
-            <p>
-              YC-GPT is positioned around quick deployment and online availability, making it easier to demonstrate, sell, and monetize quickly.
-            </p>
-          </article>
-          <article class="section-card">
-            <h3>Cleaner appliance-style delivery</h3>
-            <p>
-              Instead of exposing the entire server experience, YC-GPT can present a focused page with the essentials: model details, chat access, and reset options.
-            </p>
-          </article>
-          <article class="section-card">
-            <h3>Designed for repeatable flavors</h3>
-            <p>
-              Once the canary build is stable, the same deployment approach can be reused for multiple model-focused software offerings.
-            </p>
-          </article>
-        </div>
+      <div class="card">
+        <h3>AWS Lightsail</h3>
+        <p>Simple, reliable cloud deployment with Amazon infrastructure — without the complexity.</p>
       </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2>Core YC-GPT features</h2>
-        <div class="grid-2">
-          <article class="section-card">
-            <h3>Preconfigured AI server deployment</h3>
-            <p>
-              YC-GPT packages the core AI stack into a cleaner cloud-ready deployment so businesses can launch faster and spend less time on setup friction.
-            </p>
-          </article>
-          <article class="section-card">
-            <h3>Dedicated model flavors</h3>
-            <p>
-              Build focused offerings around specific models and use cases instead of forcing every user into the same generic chat setup.
-            </p>
-          </article>
-          <article class="section-card">
-            <h3>Simple cloud landing page</h3>
-            <p>
-              Each deployment can present a lightweight page with the model identity, relevant legal links, the chat URL, and a reset path.
-            </p>
-          </article>
-          <article class="section-card">
-            <h3>History and premium data paths</h3>
-            <p>
-              Base deployments can keep chat history while premium versions can point to stronger storage paths and paid data features.
-            </p>
-          </article>
-          <article class="section-card">
-            <h3>Canary-first rollout model</h3>
-            <p>
-              Test changes on the canary, confirm the model pull and page behavior, then promote the stable version into a reusable product image.
-            </p>
-          </article>
-          <article class="section-card">
-            <h3>Better path to productized revenue</h3>
-            <p>
-              YC-GPT is designed around software packaging and faster monetization, not just around internal deployment convenience.
-            </p>
-          </article>
-        </div>
+      <div class="card">
+        <h3>DigitalOcean</h3>
+        <p>Fast, developer-friendly infrastructure for quick and clean private AI deployments.</p>
       </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2>Example YC-GPT model flavors</h2>
-        <div class="section-card">
-          <ul class="check-list">
-            <li><strong>YC-GPT Base</strong> — entry-level cloud AI appliance for general chat and lightweight business use.</li>
-            <li><strong>YC-GPT SQL</strong> — a model flavor focused on SQL-oriented prompting and database-oriented workflows.</li>
-            <li><strong>YC-GPT DeepSeek</strong> — a more advanced coding or reasoning-oriented flavor for users who want a stronger specialized model path.</li>
-            <li><strong>YC-GPT Research</strong> — a flavor designed around drafting, exploration, and internal knowledge support.</li>
-            <li><strong>YC-GPT Custom</strong> — a customer-specific deployment path for businesses that want a more tailored AI server flavor.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2>What YC-GPT can help a business do</h2>
-        <div class="section-card">
-          <ul class="check-list">
-            <li>Launch an AI server in the cloud without piecing the whole environment together manually.</li>
-            <li>Give staff a simple chat entry point tied to a specific model or use case.</li>
-            <li>Offer clean appliance-style access with less interface clutter for end users.</li>
-            <li>Keep model-specific legal references visible on each deployment.</li>
-            <li>Use a canary-first workflow to test and promote stable software flavors.</li>
-            <li>Create a clearer path for hourly billing and premium feature tiers.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing">
-      <div class="container">
-        <h2>YC-GPT software pricing</h2>
-        <div class="pricing-grid">
-          <article class="pricing-card">
-            <h3>YC-GPT Base</h3>
-            <div class="price">$0.15/hr</div>
-            <p>Entry-level hourly software pricing for a simple AI appliance deployment.</p>
-            <p class="price-note">Designed as the fastest path to launch and monetize online.</p>
-            <ul class="check-list">
-              <li>General-purpose base model</li>
-              <li>Simple chat access</li>
-              <li>Lightweight control page</li>
-              <li>Practical starting point for customers</li>
-            </ul>
-          </article>
-          <article class="pricing-card">
-            <h3>Premium Model Flavors</h3>
-            <div class="price">Custom / Higher Hourly Rate</div>
-            <p>Premium YC-GPT variants for specialized use cases, stronger models, or richer feature paths.</p>
-            <p class="price-note">Ideal for higher-value deployments such as SQL, coding, or advanced reasoning flavors.</p>
-            <ul class="check-list">
-              <li>Specialized model flavor packaging</li>
-              <li>Higher-value business use cases</li>
-              <li>Potential premium history and storage paths</li>
-              <li>Expandable product line strategy</li>
-            </ul>
-          </article>
-        </div>
-        <p class="seo-note">
-          Infrastructure costs may be separate from software pricing. Individual models may have their own terms, notices, or usage restrictions.
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <div class="container faq-grid">
-        <article class="faq">
-          <h3>How is YC-GPT different from NC-GPT?</h3>
-          <p>
-            NC-GPT is focused on the no-cloud private deployment side. YC-GPT is positioned as the faster cloud-based software path with easier automation and quicker online rollout.
-          </p>
-        </article>
-        <article class="faq">
-          <h3>Can different models have different software pages?</h3>
-          <p>
-            Yes. One of the product ideas behind YC-GPT is to let each deployment expose the model identity, relevant legal information, chat URL, and reset controls in a clean way.
-          </p>
-        </article>
-        <article class="faq">
-          <h3>Is chat history required?</h3>
-          <p>
-            Not necessarily. History can remain available while premium versions can use stronger storage paths or richer data handling for customers who need more.
-          </p>
-        </article>
-        <article class="faq">
-          <h3>Why start with a canary?</h3>
-          <p>
-            Because stable product rollout matters. Canary-first testing lets the software be adjusted safely before it is promoted into a sellable deployment flavor.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="cta-panel">
-          <h2>Ready to explore YC-GPT for your business?</h2>
-          <p>
-            If you want a faster cloud-ready AI software path with model-specific deployment flavors, simple controls, and a clearer route to online monetization, let’s talk.
-          </p>
-          <div class="button-row">
-            <a class="btn btn-primary" href="/contact.html">Contact NoCloudGPT</a>
-            <a class="btn btn-secondary" href="/pricing.html">See Pricing</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-flex">
-      <div>Colorado, USA • Remote Services Available</div>
-      <div>© 2026 NoCloudGPT</div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<!-- Model Catalog -->
+<section class="section" style="background: white;">
+  <div class="container">
+    <h2>Explore 70+ Model Families</h2>
+    <p style="text-align: center; max-width: 620px; margin: 0 auto 2rem; color: #5f748b;">
+      Find the right model for your workload. Every family page includes clear use cases, deployment recommendations, and honest guidance.
+    </p>
+    <div style="text-align: center;">
+      <a href="/models/" class="btn btn-primary">Browse the Full Catalog →</a>
+    </div>
+  </div>
+</section>
+
+<!-- terminal.glass -->
+<section class="section">
+  <div class="container" style="max-width: 720px; text-align: center;">
+    <h2>Need One-Script Deployments?</h2>
+    <p style="color: #5f748b; margin-bottom: 1.5rem;">
+      For deterministic, headless AI workers (especially SEO and automation use cases), visit our sister project:
+    </p>
+    <a href="https://terminal.glass" target="_blank" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 36px;">
+      Go to terminal.glass →
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Colorado, USA • Private AI Deployments You Control</p>
+    <p style="margin-top: 0.5rem; opacity: 0.7;">© 2026 NoCloudGPT</p>
+  </div>
+</footer>
+
 </body>
 </html>
