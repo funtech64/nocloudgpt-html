@@ -1,7 +1,10 @@
-# NoCloudGPT Flat List (Non-Cloud Pages)
+# NoCloudGPT Flat List (Non-Cloud Pages) — Reference Only
+
+**Warning for AI Agents:**  
+This is a human reference list only.  
+Do **not** use this file to decide what work has been done, what still needs doing, or to generate status reports unless a human explicitly asks you to analyze the entire list.
 
 ## Model Family Pages (Non-Cloud)
-
 - airoboros
 - all-minilm
 - alpaca
