@@ -523,7 +523,15 @@
       .risk-grid { grid-template-columns: 1fr 1fr; }
       .nav-links { display: none; }
     }
-  </style>
+  
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -595,6 +603,16 @@
           <strong>structured risk scores</strong> across named harm categories — giving compliance
           teams, platform engineers, and AI operators the granularity they need for defensible policy enforcement.
         </p>
+
+<!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3ANATO_Cyber_Defense_Pledge_Conference_at_The_Hague%2C_Netherlands_on_17_May_2024_-_NAVO_Cyber_Defence_Pledge_Conference_%2853727534173%29.jpg" target="_blank" rel="noopener">
+    <img src="/models/granite-guardian/secondary.webp" alt="Granite Guardian secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3ANATO_Cyber_Defense_Pledge_Conference_at_The_Hague%2C_Netherlands_on_17_May_2024_-_NAVO_Cyber_Defence_Pledge_Conference_%2853727534173%29.jpg">Wikimedia Commons</a>
+  </p>
+</div>
         <p>
           The model family spans 2B and 8B parameter sizes, enabling deployment across resource-constrained
           cloud instances and dedicated GPU servers. NoCloudGPT deploys Granite Guardian via

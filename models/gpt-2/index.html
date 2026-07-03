@@ -56,6 +56,14 @@
         .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
         footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
         footer a { color: #76b900; text-decoration: none; margin: 0 12px; }
+    
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
     </style>
 </head>
 <body>
@@ -92,6 +100,17 @@
     <div class="highlight-box">
         <p><strong>Why GPT-2 matters in 2025:</strong> Not because it's a competitive model for production use — it isn't. But because it represents the proof of concept for everything that followed. Understanding GPT-2 is understanding the foundation on which Llama, Mistral, and Zephyr are built. For researchers, educators, and technically curious users, running it locally provides direct perspective on how far language models have come in six years.</p>
     </div>
+
+    <!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3AVintage_Computer_Festival_Southeast_3.0_%2817348434711%29.jpg" target="_blank" rel="noopener">
+    <img src="/models/gpt-2/secondary.webp" alt="Gpt 2 secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3AVintage_Computer_Festival_Southeast_3.0_%2817348434711%29.jpg">Wikimedia Commons</a>
+  </p>
+</div>
+
 
     <hr class="section-divider">
 

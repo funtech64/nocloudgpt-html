@@ -51,6 +51,14 @@
         .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
         footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
         footer a { color: #76b900; text-decoration: none; margin: 0 12px; }
+    
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
     </style>
 </head>
 <body>
@@ -87,6 +95,17 @@
     <div class="highlight-box">
         <p><strong>Alpaca's place in history:</strong> Alpaca is not the best model available today — not even close. Two years of intensive open-source development have produced models that surpass it comprehensively. But it represents the moment when private, locally-deployable AI became practically achievable for small teams and individuals. Every model on this site exists in a landscape Alpaca helped create.</p>
     </div>
+
+    <!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3AD%C3%BClmen%2C_B%C3%B6rnste%2C_Alpakas_--_2020_--_5462.jpg" target="_blank" rel="noopener">
+    <img src="/models/alpaca/secondary.webp" alt="Alpaca secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3AD%C3%BClmen%2C_B%C3%B6rnste%2C_Alpakas_--_2020_--_5462.jpg">Wikimedia Commons</a>
+  </p>
+</div>
+
 
     <hr class="section-divider">
 

@@ -43,6 +43,16 @@
     <p class="text-gray-400 mb-4">
       PaliGemma combines Google's SigLIP vision encoder with a Gemma 2B language model. The design is deliberately task-focused: rather than trying to be a general-purpose conversational assistant, PaliGemma excels at <strong class="text-white">structured vision tasks</strong> — answering specific questions about images, generating accurate captions, detecting and localizing objects, and performing document understanding on visually rich inputs.
     </p>
+
+<!-- Secondary artwork -->
+<div class="secondary-artwork my-8 md:float-right md:ml-6 md:mb-4 md:max-w-[42%]">
+  <a href="https://commons.wikimedia.org/wiki/File%3A2023-08-30_-_Fujinon_GF_120mm_F4_LM_OIS_WR_Macro_Lens_-_DSG6179_-_%28HiRes_focus_stack%29.jpg" target="_blank" rel="noopener">
+    <img src="/models/paligemma/secondary.webp" alt="Paligemma secondary visual" class="rounded-xl border border-slate-700">
+  </a>
+  <p class="mt-1 text-center text-xs text-slate-400">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3A2023-08-30_-_Fujinon_GF_120mm_F4_LM_OIS_WR_Macro_Lens_-_DSG6179_-_%28HiRes_focus_stack%29.jpg" class="underline">Wikimedia Commons</a>
+  </p>
+</div>
     <p class="text-gray-400 mb-4">
       This focused architecture means it performs at a level competitive with much larger models on captioning and detection benchmarks, while requiring a fraction of the compute. The 3B parameter model at Q4 quantization fits comfortably within 4GB of RAM — deployable on a Lightsail 4GB instance at roughly $16–20/month.
     </p>

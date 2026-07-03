@@ -51,6 +51,14 @@
         .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
         footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
         footer a { color: #76b900; text-decoration: none; margin: 0 12px; }
+    
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
     </style>
 </head>
 <body>
@@ -87,6 +95,17 @@
     <div class="highlight-box">
         <p><strong>What makes Airoboros different:</strong> Most instruction-tuned models are either general (covering many tasks shallowly) or specialized (covering fewer tasks deeply). Airoboros attempts genuine breadth with genuine depth — systematic data generation across a wide taxonomy of instruction types, each with its own prompting strategy designed to produce high-quality examples. The result is a model that handles unusual instruction types better than models trained on less carefully structured data.</p>
     </div>
+
+    <!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3AClassical_Meitei_sculptures_of_traditional_Meetei_dragons_installed_in_the_entrance_gate_%28Sanathong%29_to_the_holy_%26_sacred_place_of_worship_of_God_Lainingthou_Khamlangba_in_Imphal%2C_Kangleipak_01.jpg" target="_blank" rel="noopener">
+    <img src="/models/airoboros/secondary.webp" alt="Airoboros secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3AClassical_Meitei_sculptures_of_traditional_Meetei_dragons_installed_in_the_entrance_gate_%28Sanathong%29_to_the_holy_%26_sacred_place_of_worship_of_God_Lainingthou_Khamlangba_in_Imphal%2C_Kangleipak_01.jpg">Wikimedia Commons</a>
+  </p>
+</div>
+
 
     <hr class="section-divider">
 

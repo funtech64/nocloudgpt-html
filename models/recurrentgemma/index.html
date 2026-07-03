@@ -48,6 +48,14 @@
         .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
         footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
         footer a { color: #76b900; text-decoration: none; margin: 0 12px; }
+    
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
     </style>
 </head>
 <body>
@@ -87,6 +95,17 @@
     <div class="highlight-box">
         <p><strong>Griffin architecture in plain terms:</strong> Standard transformer models attend to every previous token at every layer — powerful but expensive. Griffin replaces most of those layers with recurrent processing that builds up a compressed representation of previous context, using actual attention only within a local window of nearby tokens. The result processes sequences faster and with constant memory overhead regardless of sequence length.</p>
     </div>
+
+    <!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3ACast_Iron_Fence_with_Spiral_Pattern_Rainbow_Horseshoe_Falls_View_from_Niagara_River_Parkway_Niagara_Falls_Ontario_Canada.jpg" target="_blank" rel="noopener">
+    <img src="/models/recurrentgemma/secondary.webp" alt="Recurrentgemma secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3ACast_Iron_Fence_with_Spiral_Pattern_Rainbow_Horseshoe_Falls_View_from_Niagara_River_Parkway_Niagara_Falls_Ontario_Canada.jpg">Wikimedia Commons</a>
+  </p>
+</div>
+
 
     <hr class="section-divider">
 

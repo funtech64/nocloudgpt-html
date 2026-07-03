@@ -53,6 +53,14 @@
         .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
         footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
         footer a { color: #76b900; text-decoration: none; margin: 0 12px; }
+    
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
     </style>
 </head>
 <body>
@@ -92,6 +100,17 @@
     <div class="highlight-box">
         <p><strong>The privacy case for local Whisper:</strong> Cloud transcription services — including OpenAI's own Whisper API — receive your audio. For legal consultations, medical discussions, financial calls, internal strategy meetings, and personal recordings, sending audio to a third-party server is a significant data exposure. Local Whisper eliminates this entirely. The same model, the same accuracy, zero external data transmission.</p>
     </div>
+
+    <!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3AWelcome_speech_in_REETH.jpg" target="_blank" rel="noopener">
+    <img src="/models/whisper/secondary.webp" alt="Whisper secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3AWelcome_speech_in_REETH.jpg">Wikimedia Commons</a>
+  </p>
+</div>
+
 
     <hr class="section-divider">
 

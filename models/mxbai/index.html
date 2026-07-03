@@ -74,6 +74,14 @@
         footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
         footer a { color: #06d6a0; text-decoration: none; margin: 0 12px; }
         @media (max-width: 600px) { h1 { font-size: 1.9rem; } }
+    
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
     </style>
 </head>
 <body>
@@ -112,6 +120,16 @@
   <section style="border-top:1px solid #1e293b; background:#0f172a; padding:2rem 1.5rem; margin-top:3rem;">
     <div style="max-width:56rem; margin:0 auto; font-size:0.75rem; color:#64748b;">
       <p style="font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Artwork and source references</p>
+
+<!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3ABakery_in_Tallinn_01.jpg" target="_blank" rel="noopener">
+    <img src="/models/mxbai/secondary.webp" alt="Mxbai secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3ABakery_in_Tallinn_01.jpg">Wikimedia Commons</a>
+  </p>
+</div>
       <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
         <div>
           <p style="font-weight:600; color:#94a3b8;">Hero image</p>

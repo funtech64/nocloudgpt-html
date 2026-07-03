@@ -54,6 +54,14 @@
         .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
         footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
         footer a { color: #76b900; text-decoration: none; margin: 0 12px; }
+    
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
     </style>
 </head>
 <body>
@@ -93,6 +101,17 @@
     <div class="highlight-box">
         <p><strong>What Evol-Instruct means for you:</strong> Most instruction-tuned models are good at simple commands and struggle as instructions get more specific and complex. WizardLM2 was trained specifically on progressively harder instructions — so tasks that would cause a standard Mistral Instruct to drop constraints or go off-spec are more reliably handled by WizardLM2. This matters most for automated pipelines, structured output generation, and multi-step document workflows.</p>
     </div>
+
+    <!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3AOpen_Internal_Pages_of_the_Book_Diario_de_Incertidumbre_pandemia_%28Honys_Torres%29_08.png" target="_blank" rel="noopener">
+    <img src="/models/wizardlm2/secondary.webp" alt="Wizardlm2 secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3AOpen_Internal_Pages_of_the_Book_Diario_de_Incertidumbre_pandemia_%28Honys_Torres%29_08.png">Wikimedia Commons</a>
+  </p>
+</div>
+
 
     <hr class="section-divider">
 

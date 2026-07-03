@@ -30,7 +30,17 @@
     <section class="grid gap-8 lg:grid-cols-[1.55fr_0.95fr]">
       <article class="rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10">
 
-        <p class="text-slate-300">Every major open-weight language model available today is a transformer. Llama, Mistral, Mixtral, Falcon, Phi, Gemma, Command R — all of them are built on the same foundational architecture that Google introduced in 2017. The transformer's self-attention mechanism is genuinely powerful, but it carries a well-understood cost: computational complexity scales quadratically with context length. The longer the document or conversation you feed a transformer, the more memory and compute it requires to process it, and the slower it gets.</p>
+        <p class="text-slate-300">Every major open-weight language model available today is a transformer. Llama, Mistral, Mixtral, Falcon, Phi, Gemma, Command R — all of them are built on the same foundational architecture that Google introduced in 2017. The transformer's self-attention mechanism is genuinely powerful, but it carries a well-understood cost: computational complexity scales quadratically with context length. The longer the document or conversation you feed a transformer, the more memory and compute it requires to process it, and the slower it gets.
+<!-- Secondary artwork -->
+<div class="secondary-artwork my-8 md:float-right md:ml-6 md:mb-4 md:max-w-[42%]">
+  <a href="https://commons.wikimedia.org/wiki/File%3AMan_working_behind_a_desk._Desk_is_filled_with_stacks_of_manuscripts._LCCN2014684500.jpg" target="_blank" rel="noopener">
+    <img src="/models/jamba/secondary.webp" alt="Jamba secondary visual" class="rounded-xl border border-slate-700">
+  </a>
+  <p class="mt-1 text-center text-xs text-slate-400">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3AMan_working_behind_a_desk._Desk_is_filled_with_stacks_of_manuscripts._LCCN2014684500.jpg" class="underline">Wikimedia Commons</a>
+  </p>
+</div>
+</p>
         <p class="mt-4 text-slate-300">Jamba is architecturally different. AI21 Labs built it as a hybrid of transformer attention layers and Mamba state space model layers — interleaving both types of processing to capture the strengths of each. Mamba processes sequences with linear rather than quadratic complexity, which means its memory and compute requirements grow proportionally with context length rather than explosively. By combining Mamba's efficiency with transformer attention's strength at selective focus and complex reasoning, Jamba delivers throughput and memory characteristics that pure transformer models cannot match for long-context workloads — while preserving the quality benchmarks that make transformers the current standard.</p>
         <p class="mt-4 text-slate-300">This is not a theoretical distinction. For organizations deploying AI against long regulatory documents, extended contracts, multi-chapter research reports, or conversation logs that stretch over many thousands of tokens, the difference between a model that handles long context gracefully and one that degrades or runs out of memory is a production constraint, not a benchmark footnote. Jamba was built to solve this specific problem in a deployment context, and it does so on hardware that organizations can actually provision.</p>
         <p class="mt-4 text-slate-300">AI21 Labs released Jamba under an open license for the base model, with the instruct-tuned Jamba-Instruct available for commercial use subject to their terms — making it a viable private deployment option for organizations that need its architectural advantages without routing sensitive documents through a cloud API.</p>

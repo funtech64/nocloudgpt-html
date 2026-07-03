@@ -27,7 +27,17 @@
     <section class="grid gap-8 lg:grid-cols-[1.55fr_0.95fr]">
       <article class="rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10">
 
-        <p class="text-slate-300">Structured data extraction — pulling specific fields, entities, relationships, and values from unstructured text into a consistent JSON format — is one of the most common AI tasks in enterprise automation. Invoice processing, contract review, medical record parsing, regulatory filing analysis, and customer data extraction all follow the same pattern: take a document in, get structured data out. The question is how you do it and where the document goes in the process.</p>
+        <p class="text-slate-300">Structured data extraction — pulling specific fields, entities, relationships, and values from unstructured text into a consistent JSON format — is one of the most common AI tasks in enterprise automation. Invoice processing, contract review, medical record parsing, regulatory filing analysis, and customer data extraction all follow the same pattern: take a document in, get structured data out. The question is how you do it and where the document goes in the process.
+<!-- Secondary artwork -->
+<div class="secondary-artwork my-8 md:float-right md:ml-6 md:mb-4 md:max-w-[42%]">
+  <a href="https://commons.wikimedia.org/wiki/File%3AHP-Scanjet4C-ADF-C2525B_10.jpg" target="_blank" rel="noopener">
+    <img src="/models/nuextract/secondary.webp" alt="Nuextract secondary visual" class="rounded-xl border border-slate-700">
+  </a>
+  <p class="mt-1 text-center text-xs text-slate-400">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3AHP-Scanjet4C-ADF-C2525B_10.jpg" class="underline">Wikimedia Commons</a>
+  </p>
+</div>
+</p>
         <p class="mt-4 text-slate-300">NuExtract was built by NuMind specifically for this task. Unlike general-purpose language models prompted to do extraction, NuExtract is trained on extraction tasks: you provide a template schema specifying what fields you want, provide the source document, and the model returns filled JSON. The specialization produces more consistent schema adherence than general models, particularly on longer documents and complex nested schemas. The model is available in 1B, 3.8B, and a larger NuExtract-large variant, making private deployment accessible from very modest hardware up to production server configurations.</p>
         <p class="mt-4 text-slate-300">The privacy case for private NuExtract deployment is direct. Document extraction workflows typically operate on the most sensitive material an organization handles: contracts with pricing and liability terms, medical records with PHI, financial statements with non-public information, employment documents with personal data, and legal filings with privileged content. Routing this material through an external AI API creates data handling obligations, potential compliance violations, and IP exposure that a private deployment avoids entirely. NuExtract running on your server means your documents are processed locally and never transmitted to a third party.</p>
 

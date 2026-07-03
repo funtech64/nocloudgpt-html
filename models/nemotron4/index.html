@@ -61,6 +61,14 @@
         .rec-badge { background: #76b900; color: #000; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; margin-left: 8px; }
         footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
         footer a { color: #76b900; text-decoration: none; margin: 0 12px; }
+    
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
     </style>
 </head>
 <body>
@@ -114,7 +122,17 @@
             <span class="number">73.2</span>
             <div class="label">HumanEval Score</div>
         </div>
-    </div>
+    
+<!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3AWikimedia_Servers-0001_42.jpg" target="_blank" rel="noopener">
+    <img src="/models/nemotron4/secondary.webp" alt="Nemotron4 secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3AWikimedia_Servers-0001_42.jpg">Wikimedia Commons</a>
+  </p>
+</div>
+</div>
 
     <hr class="section-divider">
 

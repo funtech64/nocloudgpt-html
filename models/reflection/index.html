@@ -17,7 +17,15 @@
     .notice { background: #fff0f0; border-left: 4px solid #e53e3e; padding: 0.8rem 1.2rem; border-radius: 4px; margin: 1.5rem 0; font-size: 0.95rem; }
     a { color: #2244aa; }
     nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
-  </style>
+  
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -58,6 +66,16 @@
   Consider also evaluating <a href="/models/magistral/">Magistral</a> and
   <a href="/models/cogito/">Cogito</a> for production reasoning workloads.
   <a href="/models/quote.html">Build a deployment quote</a> for your setup.
+
+<!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3ALake_Seliger._Ostashkov._View_of_Voroniy_Island.jpg" target="_blank" rel="noopener">
+    <img src="/models/reflection/secondary.webp" alt="Reflection secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3ALake_Seliger._Ostashkov._View_of_Voroniy_Island.jpg">Wikimedia Commons</a>
+  </p>
+</div>
 </div>
 
 <h2>Related Pages</h2>

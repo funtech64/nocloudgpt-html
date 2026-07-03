@@ -346,7 +346,15 @@
       .taxonomy-grid { grid-template-columns: 1fr 1fr; }
       .nav-links { display: none; }
     }
-  </style>
+  
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -438,7 +446,17 @@
             technical standards working groups.
           </p>
         </div>
-      </section>
+      
+<!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3ACybersecurity.png" target="_blank" rel="noopener">
+    <img src="/models/llama-guard-3/secondary.webp" alt="Llama Guard 3 secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3ACybersecurity.png">Wikimedia Commons</a>
+  </p>
+</div>
+</section>
 
       <section>
         <h2>📋 MLCommons Hazard Taxonomy</h2>

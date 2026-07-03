@@ -75,6 +75,14 @@
         footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
         footer a { color: #00b4d8; text-decoration: none; margin: 0 12px; }
         @media (max-width: 600px) { .demo-row { grid-template-columns: 1fr; } h1 { font-size: 1.9rem; } }
+    
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
     </style>
 </head>
 <body>
@@ -128,7 +136,17 @@
             <span class="number">Apache 2.0</span>
             <div class="label">License (GLM-4-9B)</div>
         </div>
-    </div>
+    
+<!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3ATsinghua_University_Gate.jpg" target="_blank" rel="noopener">
+    <img src="/models/glm/secondary.webp" alt="Glm secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3ATsinghua_University_Gate.jpg">Wikimedia Commons</a>
+  </p>
+</div>
+</div>
 
     <hr class="section-divider">
 

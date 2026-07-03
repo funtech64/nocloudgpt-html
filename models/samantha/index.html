@@ -20,7 +20,15 @@
     th { background: #f3f3f3; }
     a { color: #2244aa; }
     nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
-  </style>
+  
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -94,6 +102,16 @@
 
 <div class="notice">
   <strong>Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.
+
+<!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3AMicrophones_in_SPNN_Podcast_studio-01.jpg" target="_blank" rel="noopener">
+    <img src="/models/samantha/secondary.webp" alt="Samantha secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3AMicrophones_in_SPNN_Podcast_studio-01.jpg">Wikimedia Commons</a>
+  </p>
+</div>
 </div>
 
 <h2>Available Model Sizes</h2>
