@@ -29,6 +29,7 @@
         <h2 class="text-2xl font-bold">How to use this catalog</h2>
         <p class="mt-4 text-slate-300">Click any model family tile to see what it does, who should care, hardware requirements, and how to start a private deployment. New to private AI? Start with <a href="llama/index.html" class="text-cyan-300 hover:text-cyan-200">Llama</a> or <a href="gemma/index.html" class="text-cyan-300 hover:text-cyan-200">Gemma</a> — they cover the majority of everyday business use cases on modest hardware.</p>
         <p class="mt-4 text-slate-300">Need coding AI? Start with <a href="deepseek-coder/index.html" class="text-cyan-300 hover:text-cyan-200">DeepSeek Coder</a> or <a href="qwen2.5-coder/index.html" class="text-cyan-300 hover:text-cyan-200">Qwen 2.5 Coder</a>. Need private document search? That's the <a href="nomic-embed/index.html" class="text-cyan-300 hover:text-cyan-200">embedding families</a>. Not sure where to start? <a href="quote.html" class="text-cyan-300 hover:text-cyan-200">Build a quote</a> and let NoCloudGPT recommend.</p>
+        <p class="mt-4 text-slate-300"><span class="rounded-full border border-cyan-500/40 bg-cyan-950/60 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-cyan-300">Cloud</span> variants use <strong class="font-semibold text-slate-200">Terminal Glass</strong>: your familiar Ollama/OpenWebUI workflow on a small local server, with heavy inference offloaded to Ollama Cloud. Less GPU hardware upfront — see each cloud family page for data and cost trade-offs.</p>
       </div>
       <aside class="rounded-3xl border border-cyan-500/30 bg-cyan-950/50 p-8">
         <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">Featured offer</p>
@@ -249,11 +250,50 @@
       ['OpenClaw', 'openclaw', 'Community model. Verify current status and Ollama availability before planning any deployment.', 'community'],
       ['Snowball', 'snowball', 'Verify model identity and Ollama availability before planning. Check the Ollama library for current status.', 'community'],
       ['Noroma', 'noroma', 'Model identity unclear. Verify what this refers to before building deployment plans around it.', 'community'],
+
+      // ── Terminal Glass Cloud (Ollama Cloud-backed) ──
+      ['Gemma 3 Cloud', 'gemma3-cloud', 'Google Gemma 3 via Ollama Cloud. Multimodal 4B–27B variants on a Terminal Glass workflow — minimal local hardware.', 'general'],
+      ['Gemma 4 Cloud', 'gemma4-cloud', 'Google\'s latest multimodal family through Ollama Cloud. Vision and text without a GPU workstation.', 'general'],
+      ['Qwen 3.5 Cloud', 'qwen3.5-cloud', 'Alibaba\'s current standard via Ollama Cloud. Thinking mode, tools, and 30+ languages on a light local host.', 'general'],
+      ['Nemotron 3 Super Cloud', 'nemotron-3-super-cloud', 'NVIDIA\'s efficient MoE for complex multi-agent work via Ollama Cloud. Purpose-built for NVIDIA-friendly stacks.', 'general'],
+      ['Gemini 3 Flash Preview Cloud', 'gemini-3-flash-preview-cloud', 'Speed-focused frontier preview via Ollama Cloud. Fast responses from Google\'s latest flash tier.', 'general'],
+      ['Nemotron 3 Nano Cloud', 'nemotron-3-nano-cloud', 'Efficient open agentic model through Ollama Cloud. NVIDIA agent workflows at cloud scale, light local footprint.', 'general'],
+      ['Kimi K2.5 Cloud', 'kimi-k2.5-cloud', 'Native multimodal agentic model through Ollama Cloud. Moonshot\'s K2.5 without long-context local hosting.', 'general'],
+      ['Mistral Large 3 Cloud', 'mistral-large-3-cloud', 'Production-grade multimodal MoE via Ollama Cloud. European Apache 2.0 at enterprise cloud scale.', 'general'],
+      ['GLM 5.2 Cloud', 'glm-5.2-cloud', 'Long-horizon tasks and agentic workflows via Ollama Cloud. GLM\'s extended agent lane.', 'general'],
+      ['Qwen3 Coder Cloud', 'qwen3-coder-cloud', 'Coding agents and long-context development via Ollama Cloud. Repository-scale work without local 72B hosting.', 'coding'],
+      ['MiniMax M2.5 Cloud', 'minimax-m2.5-cloud', 'Productivity and coding through Ollama Cloud. Agentic workflows from a small private server.', 'coding'],
+      ['GLM 5.1 Cloud', 'glm-5.1-cloud', 'Agentic engineering and coding via Ollama Cloud. GLM\'s coding-focused cloud lane.', 'coding'],
+      ['MiniMax M2.7 Cloud', 'minimax-m2.7-cloud', 'Coding, productivity, and agentic workflows through Ollama Cloud.', 'coding'],
+      ['GLM 4.7 Cloud', 'glm-4.7-cloud', 'Technical and coding work via Ollama Cloud. GLM\'s coding-capable cloud option.', 'coding'],
+      ['MiniMax M2.1 Cloud', 'minimax-m2.1-cloud', 'Multilingual code engineering via Ollama Cloud. Strong across languages without heavy local hosting.', 'coding'],
+      ['Qwen3 Coder Next Cloud', 'qwen3-coder-next-cloud', 'Next-generation coding agents through Ollama Cloud. The latest Qwen coding lane for repository work.', 'coding'],
+      ['Devstral Small 2 Cloud', 'devstral-small-2-cloud', 'Codebase exploration and multi-file editing via Ollama Cloud. Mistral\'s focused coding cloud variant.', 'coding'],
+      ['RNJ-1 Cloud', 'rnj-1-cloud', '8B code and STEM model via Ollama Cloud. Focused technical workloads from a minimal local host.', 'coding'],
+      ['Kimi K2.6 Cloud', 'kimi-k2.6-cloud', 'Long-horizon coding, design, and autonomous execution via Ollama Cloud.', 'coding'],
+      ['Devstral 2 Cloud', 'devstral-2-cloud', 'Large coding agent model through Ollama Cloud. Multi-file software engineering without a GPU farm.', 'coding'],
+      ['MiniMax M3 Cloud', 'minimax-m3-cloud', 'Coding and agentic frontier with multimodality through Ollama Cloud.', 'coding'],
+      ['Kimi K2.7 Code Cloud', 'kimi-k2.7-code-cloud', 'Moonshot\'s coding-focused agentic model through Ollama Cloud. Built for autonomous development workflows.', 'coding'],
+      ['GPT-OSS Cloud', 'gpt-oss-cloud', 'Flagship cloud reasoning through Ollama Cloud. 120B-class agentic work without owning the GPU.', 'reasoning'],
+      ['GLM 5 Cloud', 'glm-5-cloud', 'Large reasoning and agentic model via Ollama Cloud. Tsinghua\'s GLM 5 without the local GPU bill.', 'reasoning'],
+      ['DeepSeek V3.2 Cloud', 'deepseek-v3.2-cloud', 'Efficient reasoning and agent performance through Ollama Cloud. DeepSeek capability without 671B local RAM.', 'reasoning'],
+      ['DeepSeek V3.1 Cloud', 'deepseek-v3.1-cloud', 'Hybrid thinking and non-thinking DeepSeek via Ollama Cloud. Exceptional reasoning without frontier local hardware.', 'reasoning'],
+      ['DeepSeek V4 Pro Cloud', 'deepseek-v4-pro-cloud', 'Frontier MoE reasoning with long context via Ollama Cloud. Multi-mode reasoning at cloud scale.', 'reasoning'],
+      ['DeepSeek V4 Flash Cloud', 'deepseek-v4-flash-cloud', 'Fast, efficient DeepSeek reasoning through Ollama Cloud. Speed-first frontier inference.', 'reasoning'],
+      ['Nemotron 3 Ultra Cloud', 'nemotron-3-ultra-cloud', 'NVIDIA long-running agent workflows and high-throughput reasoning via Ollama Cloud.', 'reasoning'],
+      ['Ministral 3 Cloud', 'ministral-3-cloud', 'Edge-oriented Mistral cloud model with vision and tools. Compact cloud inference for workflow orchestration.', 'tiny'],
     ];
 
     function makeCard(name, slug, desc) {
-      return `<a class="group rounded-2xl border border-slate-800 bg-slate-900 p-5 hover:border-cyan-400 hover:bg-slate-900/80 transition-colors" href="${slug}/index.html">
-        <div class="text-base font-bold group-hover:text-cyan-300 transition-colors">${name}</div>
+      const isCloud = slug.endsWith('-cloud');
+      const borderClass = isCloud ? 'border-cyan-500/30' : 'border-slate-800';
+      const badge = isCloud
+        ? '<span class="ml-2 shrink-0 rounded-full border border-cyan-500/40 bg-cyan-950/60 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-cyan-300">Cloud</span>'
+        : '';
+      return `<a class="group rounded-2xl border ${borderClass} bg-slate-900 p-5 hover:border-cyan-400 hover:bg-slate-900/80 transition-colors" href="${slug}/index.html">
+        <div class="flex flex-wrap items-center gap-x-1 gap-y-1">
+          <span class="text-base font-bold group-hover:text-cyan-300 transition-colors">${name}</span>${badge}
+        </div>
         <div class="mt-2 text-xs leading-relaxed text-slate-400">${desc}</div>
       </a>`;
     }
