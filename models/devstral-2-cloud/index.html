@@ -124,12 +124,21 @@
         This is the question most buyers are actually trying to answer.
       </p>
       <p>
-        Some teams want to avoid buying, sizing, cooling, or maintaining GPUs entirely. 
-        For them, Terminal Glass Cloud is often the cleaner choice — you get capable models through a familiar OpenWebUI interface without taking on the hardware project.
+        Running these models without a proper GPU usually means falling back to CPU only. 
+        This works for very light use, but it becomes extremely slow for normal workloads. 
+        Many people discover this the hard way after spinning up a cloud server that ends up being too expensive or too slow.
       </p>
       <p>
-        Other teams prefer to run models on hardware they control — whether for cost at scale, data residency, compliance, or a deliberate air-gapped policy. 
-        For those teams, a <a href="/models/">NoCloudGPT Air Gapped</a> deployment is usually the better path.
+        Some teams want to avoid dealing with GPUs altogether. 
+        For them, Terminal Glass Cloud is usually the simpler option — you get capable models through a familiar OpenWebUI interface without having to select, size, or manage video cards.
+      </p>
+      <p>
+        Other teams prefer to run on infrastructure they control. In that case, they typically choose a GPU-based instance (on AWS Lightsail, Digital Ocean, or their own servers) and install NoCloudGPT on it. 
+        Because these models are designed to run with local Ollama, you become responsible for selecting and managing the GPU.
+      </p>
+      <p>
+        Some organizations need everything to stay fully inside their own environment from day one. 
+        For those teams, a <a href="/models/">NoCloudGPT Air Gapped</a> deployment on their own hardware is the right approach.
       </p>
       <p class="text-sm text-slate-400">
         There isn’t a single right answer. The right answer depends on your constraints around cost, privacy, compliance, latency, and long-term ownership.
