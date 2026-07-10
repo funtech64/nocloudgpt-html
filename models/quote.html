@@ -3,46 +3,80 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NoCloudGPT Quote Builder</title>
+<title>terminal.glass Launch Plan Builder</title>
+<meta name="description" content="Build a terminal.glass private AI launch plan across NoCloudGPT, YourCloudGPT, Glass Agents, Jet Agent model lanes, and Alchemist Conductor readiness.">
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-950 text-slate-100">
 <div class="mx-auto max-w-5xl px-6 py-16">
-<h1 class="text-5xl font-black">Build a private AI quote.</h1>
-<p class="mt-6 text-lg text-slate-300">This page will evolve into a guided NoCloudGPT recommendation engine for Ollama deployments.</p>
-<form class="mt-12 grid gap-6 rounded-3xl border border-slate-800 bg-slate-900 p-10">
-<div>
-<label class="block text-sm font-bold uppercase tracking-widest text-cyan-300">Primary use case</label>
-<select class="mt-3 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white">
-<option>General chatbot</option>
-<option>Private office assistant</option>
-<option>Code generation</option>
-<option>Reasoning and research</option>
-<option>Vision and OCR</option>
-</select>
-</div>
-<div>
-<label class="block text-sm font-bold uppercase tracking-widest text-cyan-300">Deployment target</label>
-<select class="mt-3 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white">
-<option>AWS Lightsail</option>
-<option>Ubuntu server</option>
-<option>Proxmox cluster</option>
-<option>Dedicated GPU server</option>
-</select>
-</div>
-<div>
-<label class="block text-sm font-bold uppercase tracking-widest text-cyan-300">Preferred model family</label>
-<select class="mt-3 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white">
-<option>DeepSeek</option>
-<option>Llama</option>
-<option>Qwen</option>
-<option>Mistral</option>
-<option>Gemma</option>
-<option>Phi</option>
-</select>
-</div>
-<button class="rounded-2xl bg-cyan-300 px-6 py-4 text-lg font-black text-slate-950 hover:bg-cyan-200">Generate recommendation</button>
-</form>
+  <a href="index.html" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+  <p class="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">terminal.glass launch planner</p>
+  <h1 class="mt-4 text-5xl font-black">Build a private-AI launch plan.</h1>
+  <p class="mt-6 text-lg text-slate-300">This page should evolve from a basic NoCloudGPT quote form into the customer-facing terminal.glass recommendation engine. The output should recommend a Sunrise package, deployment lane, model lane, and agent path.</p>
+
+  <form class="mt-12 grid gap-6 rounded-3xl border border-slate-800 bg-slate-900 p-10">
+    <div>
+      <label class="block text-sm font-bold uppercase tracking-widest text-cyan-300">Primary business use case</label>
+      <select class="mt-3 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white">
+        <option>Private office assistant</option>
+        <option>Sales drafting and follow-up</option>
+        <option>Private document search / RAG</option>
+        <option>Code generation and repository work</option>
+        <option>Research and reasoning</option>
+        <option>Vision, screenshots, and document images</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-sm font-bold uppercase tracking-widest text-cyan-300">Where should the AI live first?</label>
+      <select class="mt-3 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white">
+        <option>NoCloudGPT on my server</option>
+        <option>YourCloudGPT in my cloud account</option>
+        <option>Start with Jet Agent cloud-model lanes</option>
+        <option>Start with Glass Agents for approved actions</option>
+        <option>I need help choosing</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-sm font-bold uppercase tracking-widest text-cyan-300">What matters most?</label>
+      <select class="mt-3 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white">
+        <option>Better answers from multiple models</option>
+        <option>Avoiding one corporate AI experience</option>
+        <option>Private computing for agent work</option>
+        <option>Keeping data local where possible</option>
+        <option>Avoiding expensive GPU hardware</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-sm font-bold uppercase tracking-widest text-cyan-300">Preferred model or agent lane</label>
+      <select class="mt-3 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white">
+        <option>General business model lane</option>
+        <option>GPT-OSS / reasoning Jet Agent lane</option>
+        <option>Nemotron-style big model Jet Agent lane</option>
+        <option>DeepSeek / coding and reasoning lane</option>
+        <option>Qwen / coding and multilingual lane</option>
+        <option>Local NoCloudGPT model lane</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-sm font-bold uppercase tracking-widest text-cyan-300">Recommended package target</label>
+      <select class="mt-3 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white">
+        <option>Sunrise Starter - $200 - 2 Glass Licenses</option>
+        <option>Sunrise Group Plan - $400 - 5-6 Glass Licenses, TBD</option>
+        <option>Custom on-premise / support quote</option>
+      </select>
+    </div>
+
+    <div class="rounded-2xl border border-cyan-500/30 bg-cyan-950/40 p-6">
+      <h2 class="text-xl font-black">Future recommendation output</h2>
+      <p class="mt-3 text-cyan-50">The generated recommendation should eventually explain: package, number of Glass Licenses, deployment path, model lane, suggested Glass Agents, suggested Jet Agents, and Alchemist Conductor eligibility.</p>
+    </div>
+
+    <button class="rounded-2xl bg-cyan-300 px-6 py-4 text-lg font-black text-slate-950 hover:bg-cyan-200">Generate recommendation</button>
+  </form>
 </div>
 </body>
 </html>
