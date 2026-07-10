@@ -3,27 +3,81 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NoCloudGPT Deployment Options</title>
+<title>terminal.glass Deployment Paths | NoCloudGPT</title>
+<meta name="description" content="Choose where terminal.glass private AI should live: NoCloudGPT on your server, YourCloudGPT in your cloud, Glass Agents, or Jet Agent model lanes.">
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-950 text-slate-100">
 <div class="mx-auto max-w-6xl px-6 py-16">
-<h1 class="text-5xl font-black">NoCloudGPT Deployment Paths</h1>
-<p class="mt-6 max-w-3xl text-lg text-slate-300">Choose the deployment model that fits your customer. All deployment paths center around Ollama, Linux, and private AI ownership.</p>
-<div class="mt-12 grid gap-6 md:grid-cols-3">
-<a href="lightsail-guide.html" class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-cyan-400">
-<h2 class="text-2xl font-bold">AWS Lightsail</h2>
-<p class="mt-4 text-slate-400">Low-cost pilot deployments for startups, consultants, and rapid private AI evaluation.</p>
-</a>
-<a href="on-premise.html" class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-cyan-400">
-<h2 class="text-2xl font-bold">On-Premise Linux</h2>
-<p class="mt-4 text-slate-400">Deploy Ollama directly on Ubuntu or Debian servers inside a business or homelab.</p>
-</a>
-<a href="private-cloud.html" class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-cyan-400">
-<h2 class="text-2xl font-bold">Private Cloud</h2>
-<p class="mt-4 text-slate-400">Multi-node deployments using Proxmox, QEMU, GPU systems, and internal AI services.</p>
-</a>
-</div>
+  <a href="../index.html" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+  <p class="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">terminal.glass deployment wizard</p>
+  <h1 class="mt-4 text-5xl font-black">Where do you want your AI to live?</h1>
+  <p class="mt-6 max-w-3xl text-lg text-slate-300">terminal.glass should give customers an easy path to connect, not ask them to hand over server access. The customer buys Sunrise, receives Glass Licenses, chooses a deployment path, and the deployment activates outward to the terminal.glass license dashboard.</p>
+
+  <section class="mt-12 grid gap-6 md:grid-cols-2">
+    <a href="on-premise.html" class="rounded-3xl border border-cyan-500/40 bg-cyan-950/40 p-8 hover:border-cyan-300">
+      <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">Install on my server</p>
+      <h2 class="mt-4 text-3xl font-black">NoCloudGPT</h2>
+      <p class="mt-4 text-cyan-50">Local/private GPT host running on customer-owned hardware, office Linux servers, homelabs, clinics, shops, churches, or other customer-controlled systems.</p>
+      <ul class="mt-6 space-y-2 text-cyan-50">
+        <li>Ollama-backed local/private model runtime</li>
+        <li>OpenWebUI browser chat interface</li>
+        <li>Best when the customer wants maximum local control</li>
+      </ul>
+    </a>
+
+    <a href="lightsail-guide.html" class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-cyan-400">
+      <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Launch in my cloud</p>
+      <h2 class="mt-4 text-3xl font-black">YourCloudGPT</h2>
+      <p class="mt-4 text-slate-300">Customer-owned cloud deployment, starting with AWS/Lightsail-style paths. The customer owns the cloud account while terminal.glass provides the install and activation path.</p>
+      <ul class="mt-6 space-y-2 text-slate-300">
+        <li>Good first paid rollout path</li>
+        <li>Works with Passport activation and private installer delivery</li>
+        <li>Useful when office hardware is not ready</li>
+      </ul>
+    </a>
+
+    <a href="../quote.html" class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-cyan-400">
+      <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Add action workers</p>
+      <h2 class="mt-4 text-3xl font-black">Glass Agents</h2>
+      <p class="mt-4 text-slate-300">OpenClaw-based workers that can act inside an approved customer environment. Glass Agents are the action-capable lane for file, server, workflow, and later Alchemist-directed tasks.</p>
+      <ul class="mt-6 space-y-2 text-slate-300">
+        <li>OpenClaw-powered action agent lane</li>
+        <li>Customer-approved environment boundary</li>
+        <li>Future detachable OpenClaw-Glass beta path</li>
+      </ul>
+    </a>
+
+    <a href="../terminal-glass-cloud-models.md" class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-cyan-400">
+      <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Add cloud-model help</p>
+      <h2 class="mt-4 text-3xl font-black">Jet Agents</h2>
+      <p class="mt-4 text-slate-300">Curated cloud-model lanes for speed, coding, research, drafting, and model variety. Jet Agents are not separate licenses; they are capabilities available inside the Glass License package.</p>
+      <ul class="mt-6 space-y-2 text-slate-300">
+        <li>Useful when GPU hardware is too expensive</li>
+        <li>Helps customers compare answers from different models</li>
+        <li>Supports big-model workflows such as Nemotron-style or GPT-OSS cloud lanes</li>
+      </ul>
+    </a>
+  </section>
+
+  <section class="mt-12 rounded-3xl border border-slate-800 bg-slate-900 p-8">
+    <h2 class="text-3xl font-black">Customer-safe deployment flow</h2>
+    <ol class="mt-6 list-decimal space-y-3 pl-6 text-slate-300">
+      <li>Customer buys Sunrise Starter or Sunrise Group Plan.</li>
+      <li>Customer receives portable Glass Licenses.</li>
+      <li>Customer chooses where AI lives: server, cloud, Glass Agent, or Jet Agent lane.</li>
+      <li>terminal.glass generates an activation or bootstrap path.</li>
+      <li>The customer runs the install or launch path in their own environment.</li>
+      <li>The deployment activates outward to the terminal.glass license authority.</li>
+      <li>The customer chats on their own terminal.glass/NoCloudGPT instance.</li>
+    </ol>
+  </section>
+
+  <section class="mt-12 rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8">
+    <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">Trust message</p>
+    <h2 class="mt-4 text-3xl font-black">terminal.glass does not need access to your server by default.</h2>
+    <p class="mt-4 text-cyan-50">Your deployment activates outward to your terminal.glass license dashboard. Support can still offer white-glove help later, but the standard customer path should preserve customer control.</p>
+  </section>
 </div>
 </body>
 </html>
