@@ -1,229 +1,307 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pricing | NoCloudGPT</title>
-  <meta name="description" content="Simple, transparent pricing for private AI deployments. Choose Air-Gapped, AWS Lightsail, or DigitalOcean.">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing | terminal.glass + NoCloudGPT</title>
+  <meta name="description" content="Sunrise pricing for terminal.glass private AI deployments, portable Glass Licenses, NoCloudGPT, YourCloudGPT, Glass Agents, Jet Agents, and future Alchemist Conductor access." />
+  <meta name="keywords" content="terminal.glass pricing, NoCloudGPT pricing, Glass License, Sunrise Starter, Sunrise Group Plan, private AI pricing, Jet Agents, Glass Agents" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="terminal.glass" />
+  <meta property="og:title" content="Pricing | terminal.glass + NoCloudGPT" />
+  <meta property="og:description" content="Buy portable Glass Licenses for NoCloudGPT, YourCloudGPT, Glass Agents, Jet Agent model lanes, and the Alchemist Conductor upgrade path." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nocloudgpt.com/pricing.html" />
+  <meta property="og:site_name" content="NoCloudGPT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pricing | terminal.glass + NoCloudGPT" />
+  <meta name="twitter:description" content="Sunrise packages give your business portable Glass Licenses for private AI deployments and curated agent workflows." />
+  <link rel="canonical" href="https://nocloudgpt.com/pricing.html" />
   <style>
+    :root {
+      --bg: #f4f8fc;
+      --panel: #ffffff;
+      --panel-2: #eef4fb;
+      --text: #18324a;
+      --muted: #5f748b;
+      --line: #d7e3f0;
+      --accent: #2f6fed;
+      --accent-2: #5f9cff;
+      --success: #1f8f5f;
+      --shadow: 0 14px 34px rgba(34, 66, 110, 0.10);
+      --radius: 18px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f8fbff;
-      color: #18324a;
-      line-height: 1.6;
       margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef5fb 100%);
+      color: var(--text);
+      line-height: 1.6;
     }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
+
     header {
-      background: white;
-      border-bottom: 1px solid #d7e3f0;
-      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(47, 111, 237, 0.10);
     }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+
+    .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; }
+    .brand { font-size: 1.2rem; font-weight: 800; letter-spacing: 0.02em; color: #10263a; }
+    nav { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    nav a { color: var(--text); opacity: 0.95; font-size: 0.98rem; }
+
+    .hero { padding: 4.5rem 0 2.5rem; }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr 0.9fr; gap: 1.25rem; align-items: stretch; }
+
+    .hero-copy, .section-card, .pricing-card, .license-card, .cta-panel, .faq {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 249, 255, 0.98));
+      border: 1px solid rgba(47, 111, 237, 0.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
     }
-    .logo {
-      font-weight: 700;
-      font-size: 1.4rem;
+
+    .dark-card {
+      background: linear-gradient(135deg, #10263a, #183f72);
+      color: #ffffff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
     }
-    nav a {
-      margin-left: 1.5rem;
-      color: #18324a;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .hero {
-      padding: 4rem 0 3rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #5f748b;
-      max-width: 620px;
-      margin: 0 auto;
-    }
-    .section {
-      padding: 3rem 0;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: white;
-      border: 1px solid #d7e3f0;
-      border-radius: 12px;
-      padding: 2rem;
-    }
-    .price {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #10263a;
-      margin: 0.5rem 0;
-    }
-    .price small {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #5f748b;
-    }
+    .dark-card p, .dark-card li { color: rgba(255,255,255,0.82); }
+
+    h1, h2, h3 { line-height: 1.2; margin: 0 0 0.8rem; color: #10263a; }
+    .dark-card h2, .dark-card h3 { color: #fff; }
+    h1 { font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 0.8rem; }
+    h2 { font-size: clamp(1.55rem, 3vw, 2.3rem); margin-bottom: 0.9rem; }
+    h3 { font-size: 1.15rem; }
+    p, li { color: var(--muted); }
+
+    .eyebrow { color: var(--accent); font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.82rem; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.2rem; }
+
     .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-weight: 600;
-      text-decoration: none;
-      margin-top: 1rem;
-    }
-    .btn-primary {
-      background: #2f6fed;
-      color: white;
-    }
-    .btn-secondary {
-      background: white;
-      color: #2f6fed;
-      border: 2px solid #2f6fed;
-    }
-    .highlight {
-      background: #f0f7ff;
-      border: 2px solid #2f6fed;
-    }
-    footer {
-      background: #10263a;
-      color: #a8c0d8;
-      padding: 2rem 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.85rem 1.1rem;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight: 800;
       text-align: center;
-      font-size: 0.95rem;
+      transition: 0.2s ease;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), #7db0ff); color: #ffffff; }
+    .btn-secondary { background: rgba(47, 111, 237, 0.04); border-color: rgba(47, 111, 237, 0.16); color: var(--text); }
+    .btn:hover { transform: translateY(-1px); text-decoration: none; }
+
+    main section { padding: 1rem 0 2.2rem; }
+    .pricing-grid, .license-grid, .faq-grid { display: grid; gap: 1.2rem; }
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+    .license-grid { grid-template-columns: repeat(3, 1fr); }
+    .faq-grid { grid-template-columns: repeat(2, 1fr); }
+    .pricing-card.featured { border-color: rgba(47, 111, 237, 0.35); box-shadow: 0 20px 44px rgba(47, 111, 237, 0.16); }
+
+    .label {
+      display: inline-block;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(47, 111, 237, 0.08);
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.8rem;
+    }
+
+    .price { font-size: 2.35rem; font-weight: 900; color: #10263a; margin: 0.3rem 0 0.5rem; }
+    .price-note { font-size: 0.95rem; color: var(--success); font-weight: 800; }
+    .check-list { padding-left: 1.1rem; margin: 0.8rem 0 0; }
+    .check-list li + li { margin-top: 0.55rem; }
+    .fine-print { font-size: 0.95rem; color: var(--muted); margin-top: 1rem; }
+    footer { border-top: 1px solid rgba(47, 111, 237, 0.10); padding: 2rem 0 3rem; color: var(--muted); }
+    .footer-flex { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+
+    @media (max-width: 980px) { .hero-grid, .pricing-grid, .license-grid, .faq-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) {
+      .nav-wrap { flex-direction: column; align-items: flex-start; }
+      .hero { padding-top: 3rem; }
+      .hero-copy, .section-card, .pricing-card, .license-card, .cta-panel, .faq, .dark-card { padding: 1.2rem; }
     }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="container">
-    <nav>
-      <div class="logo">NoCloudGPT</div>
-      <div>
-        <a href="/models/">Browse Models</a>
-        <a href="/pricing.html">Pricing</a>
+  <header>
+    <div class="container nav-wrap">
+      <div class="brand">terminal.glass + NoCloudGPT</div>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/models/">Models</a>
+        <a href="/models/deploy/">Deploy</a>
+        <a href="/pricing.html" aria-current="page">Pricing</a>
         <a href="/contact.html">Contact</a>
-        <a href="https://terminal.glass" target="_blank">terminal.glass</a>
-      </div>
-    </nav>
-  </div>
-</header>
-
-<!-- Hero -->
-<section class="hero">
-  <div class="container">
-    <h1>Simple Pricing.<br>Clear Choices.</h1>
-    <p>Private AI deployments with transparent pricing. Choose the path that fits your needs.</p>
-  </div>
-</section>
-
-<!-- Deployment Options -->
-<section class="section">
-  <div class="container">
-    <h2>Choose Your Deployment Path</h2>
-    
-    <div class="grid">
-      <!-- Air-Gapped -->
-      <div class="card">
-        <h3>Air-Gapped</h3>
-        <div class="price">$99 <small>per model</small></div>
-        <p>Maximum privacy. Run everything on your own infrastructure with zero cloud dependencies.</p>
-        <ul>
-          <li>Full data sovereignty</li>
-          <li>One-script deployment</li>
-          <li>Ideal for compliance &amp; security</li>
-        </ul>
-        <a href="/contact.html" class="btn btn-secondary">Get Started</a>
-      </div>
-
-      <!-- AWS Lightsail -->
-      <div class="card">
-        <h3>AWS Lightsail</h3>
-        <div class="price">$99 <small>per model</small></div>
-        <p>Simple, reliable cloud deployment on Amazon infrastructure without the complexity.</p>
-        <ul>
-          <li>Fast setup</li>
-          <li>Managed infrastructure</li>
-          <li>Great balance of ease and control</li>
-        </ul>
-        <a href="/contact.html" class="btn btn-secondary">Get Started</a>
-      </div>
-
-      <!-- DigitalOcean -->
-      <div class="card">
-        <h3>DigitalOcean</h3>
-        <div class="price">$99 <small>per model</small></div>
-        <p>Developer-friendly cloud option with fast performance and clean APIs.</p>
-        <ul>
-          <li>Quick deployment</li>
-          <li>Transparent pricing</li>
-          <li>Excellent for scaling</li>
-        </ul>
-        <a href="/contact.html" class="btn btn-secondary">Get Started</a>
-      </div>
+        <a href="/software.html">Software</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- Sunrise Package -->
-<section class="section" style="background: white;">
-  <div class="container">
-    <h2>Sunrise Package</h2>
-    <div class="grid">
-      <div class="card highlight">
-        <h3>Sunrise Package</h3>
-        <div class="price">$299</div>
-        <p>Includes <strong>20 model licenses</strong> + priority support.</p>
-        <p><strong>Additional deployments:</strong> $10 each</p>
-        <a href="/contact.html" class="btn btn-primary">Get the Sunrise Package</a>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Sunrise launch packages</p>
+          <h1>Private AI with model choice, agent flexibility, and portable Glass Licenses.</h1>
+          <p>
+            terminal.glass is the sales and deployment hub for NoCloudGPT, YourCloudGPT, Glass Agents, Jet Agent model lanes, and the future Alchemist Conductor. The point is not just privacy or bare metal. The value is avoiding one corporate AI box and using the models and agents that fit your work.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="/contact.html">Buy Sunrise</a>
+            <a class="btn btn-secondary" href="/models/quote.html">Build my launch plan</a>
+          </div>
+        </div>
+        <aside class="dark-card">
+          <p class="eyebrow" style="color:#9fe8ff">License rule</p>
+          <h2>Glass Licenses are interchangeable. Deployment Keys are not.</h2>
+          <p>
+            A Glass License is the portable capacity customers buy. A Deployment Key is the revocable credential for one active installation or approved deployment.
+          </p>
+          <ul class="check-list">
+            <li>No separate Jet License for launch.</li>
+            <li>Jet Agents are curated cloud-model lanes inside the package.</li>
+            <li>Glass Agents are OpenClaw-powered action workers.</li>
+          </ul>
+        </aside>
       </div>
-      <div class="card">
-        <h3>Additional Deployments</h3>
-        <div class="price">$25 <small>each</small></div>
-        <p>Add extra deployments to any base license.</p>
-        <p>Basic accounts that reach $299 in total spend automatically upgrade to Sunrise.</p>
+    </section>
+
+    <section id="packages">
+      <div class="container">
+        <h2>Sunrise packages</h2>
+        <p class="fine-print">These launch packages are designed to get customers into a working private-AI path first, then grow into more agents, model lanes, and Alchemist coordination later.</p>
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <div class="label">Starter</div>
+            <h3>Sunrise Starter</h3>
+            <div class="price">$200</div>
+            <p class="price-note">Includes 2 portable Glass Licenses</p>
+            <p>For a small business that wants private AI, model choice, and curated agent workflows without overcommitting.</p>
+            <ul class="check-list">
+              <li>NoCloudGPT or YourCloudGPT deployment eligibility</li>
+              <li>Starter Happy Nerds Menu agents</li>
+              <li>Glass License capacity for hosts and supported agent workflows</li>
+              <li>Jet Agent access where supported by the package</li>
+              <li>OpenClaw-Glass beta eligibility</li>
+            </ul>
+            <div class="button-row"><a class="btn btn-primary" href="/contact.html">Start with Sunrise</a></div>
+          </article>
+
+          <article class="pricing-card featured">
+            <div class="label">Best value</div>
+            <h3>Sunrise Group Plan</h3>
+            <div class="price">$400</div>
+            <p class="price-note">Includes 5-6 portable Glass Licenses, final count TBD</p>
+            <p>For teams that want several AI helpers, better local/cloud flexibility, and a founder path into Alchemist Conductor.</p>
+            <ul class="check-list">
+              <li>Everything in Sunrise Starter</li>
+              <li>More included Happy Nerds Menu agents</li>
+              <li>Better room for multiple model personalities and Jet Agent lanes</li>
+              <li>Priority beta access for Glass Agents and Jet Agents</li>
+              <li>Major discount or free founding upgrade for Alchemist Conductor, final offer TBD</li>
+            </ul>
+            <div class="button-row"><a class="btn btn-primary" href="/contact.html">Choose Group Plan</a></div>
+          </article>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- CTA -->
-<section class="section">
-  <div class="container" style="text-align: center; max-width: 700px;">
-    <h2>Ready to deploy?</h2>
-    <p>Browse the model catalog or contact us to get started with the right deployment for your needs.</p>
-    <div style="margin-top: 1.5rem;">
-      <a href="/models/" class="btn btn-primary">Browse Models</a>
-      <a href="/contact.html" class="btn btn-secondary">Contact Us</a>
-    </div>
-  </div>
-</section>
+    <section id="licenses">
+      <div class="container">
+        <h2>How Glass Licenses grow</h2>
+        <div class="license-grid">
+          <article class="license-card">
+            <h3>Starter add-ons</h3>
+            <p>Additional Glass Licenses are $100 each for Sunrise Starter customers.</p>
+            <p class="fine-print">When a Starter customer reaches $400 total spend, provide a bulk gift upgrade into the Group Plan structure.</p>
+          </article>
+          <article class="license-card">
+            <h3>Group Plan add-ons</h3>
+            <p>Additional Glass Licenses start at $50 each inside the same organization.</p>
+            <p class="fine-print">Each extra license drops by $5 until reaching a $25 floor.</p>
+          </article>
+          <article class="license-card">
+            <h3>One organization</h3>
+            <p>The Group Plan discount applies only when the licenses remain inside the same organization.</p>
+            <p class="fine-print">This keeps the offer generous for real teams without turning it into uncontrolled resale.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <div class="container">
-    <p>Colorado, USA • Private AI You Control</p>
-    <p style="margin-top: 0.5rem; opacity: 0.7;">© 2026 NoCloudGPT</p>
-  </div>
-</footer>
+    <section id="deployment">
+      <div class="container section-card">
+        <p class="eyebrow">Where your AI lives</p>
+        <h2>Use the same sales plan across NoCloudGPT, YourCloudGPT, Glass Agents, and Jet Agents.</h2>
+        <ul class="check-list">
+          <li><strong>NoCloudGPT:</strong> local/private AI host running on customer-owned hardware or a customer-controlled server.</li>
+          <li><strong>YourCloudGPT:</strong> customer-owned cloud deployment, such as AWS-hosted terminal.glass.</li>
+          <li><strong>Glass Agents:</strong> OpenClaw-based action workers inside an approved environment.</li>
+          <li><strong>Jet Agents:</strong> curated cloud-model workflows for speed, coding, research, drafting, and model variety.</li>
+          <li><strong>Alchemist Conductor:</strong> future premium layer that coordinates Glass Agents and Jet Agents into business workflows.</li>
+        </ul>
+        <div class="button-row">
+          <a class="btn btn-primary" href="/models/deploy/">See deployment paths</a>
+          <a class="btn btn-secondary" href="/models/">Compare model families</a>
+        </div>
+      </div>
+    </section>
 
+    <section id="faq">
+      <div class="container faq-grid">
+        <article class="faq">
+          <h3>Is this mainly about privacy?</h3>
+          <p>Privacy matters, but the bigger sales value is choice: different models, different agent workflows, and a private computing path that avoids locking the business into one monolithic AI vendor experience.</p>
+        </article>
+        <article class="faq">
+          <h3>Is a Jet Agent a separate license?</h3>
+          <p>No. For launch, Glass Licenses are the sellable capacity unit. Jet Agents are curated cloud-model lanes available through the customer’s terminal.glass package and deployment.</p>
+        </article>
+        <article class="faq">
+          <h3>Does terminal.glass need access to the customer server?</h3>
+          <p>Not by default. The customer deployment activates outward to the terminal.glass license system. Customers chat on their own instance.</p>
+        </article>
+        <article class="faq">
+          <h3>What happens when Alchemist Conductor launches?</h3>
+          <p>Sunrise Group Plan customers should receive a major founding discount or free upgrade path, final offer TBD. Alchemist will coordinate Glass Agents and Jet Agents into approved business workflows.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container"><div class="cta-panel">
+        <h2>Ready to build a private-AI launch plan?</h2>
+        <p>Start with Sunrise, choose NoCloudGPT or YourCloudGPT, then add the Glass Agent and Jet Agent workflows that fit your business.</p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="/contact.html">Contact terminal.glass</a>
+          <a class="btn btn-secondary" href="/models/quote.html">Build a launch plan</a>
+        </div>
+      </div></div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-flex"><div>Colorado, USA - Remote Services Available</div><div>© 2026 NoCloudGPT / terminal.glass</div></div></footer>
 </body>
 </html>
