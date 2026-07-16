@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Run All-MiniLM Privately | Fast Sentence Embeddings for RAG | NoCloudGPT</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Run All-MiniLM Privately | Fast Sentence Embeddings for RAG | NoCloudGPT</title>
     <meta name="description" content="Deploy All-MiniLM privately via Ollama. Microsoft's lightweight sentence embedding model delivers fast, accurate vector search for RAG pipelines. Self-hosted on your infrastructure with complete data sovereignty.">
     <meta name="keywords" content="All-MiniLM private deployment, All-MiniLM Ollama, sentence embeddings self-hosted, RAG embedding model local, All-MiniLM-L6-v2 on-premise, private vector search">
     <link rel="canonical" href="https://nocloudgpt.com/all-minilm/">
@@ -83,18 +84,18 @@
     <h1>Deploy <span>All-MiniLM</span> for Private RAG Embeddings</h1>
     <p class="subtitle">The sentence embedding workhorse of the open-source RAG ecosystem. All-MiniLM-L6-v2 and L12-v2 deliver fast, accurate semantic search on CPU hardware — ideal for teams building private document search, knowledge bases, and retrieval pipelines without cloud API dependency.</p>
     <div class="cta-group">
-        <a href="/quote" class="btn-primary">Plan My Deployment</a>
-        <a href="/nomic-embed/" class="btn-secondary">See Nomic Embed (Larger)</a>
+        <a href="/models/quote.html" class="btn-primary">Plan My Deployment</a>
+        <a href="/models/nomic-embed/" class="btn-secondary">See Nomic Embed (Larger)</a>
     </div>
 </header>
 
 <nav>
     <a href="/">Home</a>
-    <a href="/all-minilm/">All-MiniLM</a>
-    <a href="/nomic-embed/">Nomic Embed</a>
-    <a href="/bge/">BGE</a>
-    <a href="/mxbai/">Mxbai</a>
-    <a href="/deploy/">Deploy</a>
+    <a href="/models/all-minilm/">All-MiniLM</a>
+    <a href="/models/nomic-embed/">Nomic Embed</a>
+    <a href="/models/bge/">BGE</a>
+    <a href="/models/mxbai/">Mxbai</a>
+    <a href="/models/deploy/">Deploy</a>
 </nav>
 
 
@@ -248,14 +249,14 @@
                 <td>all-minilm:l6-v2</td>
                 <td>Starter</td>
                 <td style="font-family:'Segoe UI',system-ui,sans-serif;">The classic fast option. Best for personal RAG, small knowledge bases, and rapid prototyping. Runs well on CPU.</td>
-                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/models/quote.html" style="color:#06d6a0;">Get quote →</a></td>
             </tr>
             <tr>
                 <td><strong style="color:#fff;">MiniLM-L12-v2</strong> (~33M params)</td>
                 <td>all-minilm:l12-v2</td>
                 <td>Starter / Standard</td>
                 <td style="font-family:'Segoe UI',system-ui,sans-serif;">Slightly higher quality than L6-v2 with modest extra cost. A good middle ground when L6 feels too lossy.</td>
-                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/models/quote.html" style="color:#06d6a0;">Get quote →</a></td>
             </tr>
         </tbody>
     </table>
@@ -309,9 +310,9 @@
 
     <p><strong>256-token input limit.</strong> This is the most significant practical constraint. L6-v2 was trained with a 256 subword token maximum, which equates to roughly 180–200 words of English text. Documents longer than this must be chunked before embedding, and the chunk boundary strategy directly affects retrieval quality. For most RAG pipelines this is manageable, but it requires deliberate attention to chunking design.</p>
 
-    <p><strong>English-optimized.</strong> All-MiniLM performs well on English and adequately on closely related European languages, but it was not designed for multilingual use. Organizations with document corpora in non-European languages should evaluate <a href="/paraphrase-multilingual/" style="color: #06d6a0;">Paraphrase-Multilingual</a>, <a href="/bge/" style="color: #06d6a0;">BGE-M3</a>, or <a href="/qwen-embedding/" style="color: #06d6a0;">Qwen3 Embedding</a> instead.</p>
+    <p><strong>English-optimized.</strong> All-MiniLM performs well on English and adequately on closely related European languages, but it was not designed for multilingual use. Organizations with document corpora in non-European languages should evaluate <a href="/models/paraphrase-multilingual/" style="color: #06d6a0;">Paraphrase-Multilingual</a>, <a href="/models/bge/" style="color: #06d6a0;">BGE-M3</a>, or <a href="/models/qwen-embedding/" style="color: #06d6a0;">Qwen3 Embedding</a> instead.</p>
 
-    <p><strong>384 dimensions may underfit complex corpora.</strong> For large, semantically diverse document libraries — enterprise wikis spanning dozens of domains, research paper corpora, multi-product documentation sets — the 384-dimensional space can become crowded and retrieval precision can suffer. Models like <a href="/nomic-embed/" style="color: #06d6a0;">Nomic Embed</a> or <a href="/bge/" style="color: #06d6a0;">BGE-Large</a> at 768 dimensions often show meaningful retrieval improvement on these cases.</p>
+    <p><strong>384 dimensions may underfit complex corpora.</strong> For large, semantically diverse document libraries — enterprise wikis spanning dozens of domains, research paper corpora, multi-product documentation sets — the 384-dimensional space can become crowded and retrieval precision can suffer. Models like <a href="/models/nomic-embed/" style="color: #06d6a0;">Nomic Embed</a> or <a href="/models/bge/" style="color: #06d6a0;">BGE-Large</a> at 768 dimensions often show meaningful retrieval improvement on these cases.</p>
 
     <div class="info-box">
         <h3>When to Upgrade from All-MiniLM</h3>
@@ -523,7 +524,7 @@ collection = chroma_client.create_collection(
     </table>
 
     <div class="highlight-box">
-        <p><strong>The positioning is clear:</strong> All-MiniLM leads on speed and efficiency. Every other model in this table offers better MTEB scores at the cost of more compute, more RAM, and slower inference. For the majority of enterprise RAG deployments, the quality difference does not justify the infrastructure difference. When it does — when retrieval recall is provably insufficient — upgrading to <a href="/nomic-embed/" style="color: #06d6a0;">Nomic Embed</a> or <a href="/mxbai/" style="color: #06d6a0;">Mxbai-Embed-Large</a> is a straightforward model swap.</p>
+        <p><strong>The positioning is clear:</strong> All-MiniLM leads on speed and efficiency. Every other model in this table offers better MTEB scores at the cost of more compute, more RAM, and slower inference. For the majority of enterprise RAG deployments, the quality difference does not justify the infrastructure difference. When it does — when retrieval recall is provably insufficient — upgrading to <a href="/models/nomic-embed/" style="color: #06d6a0;">Nomic Embed</a> or <a href="/models/mxbai/" style="color: #06d6a0;">Mxbai-Embed-Large</a> is a straightforward model swap.</p>
     </div>
 
     <hr class="section-divider">
@@ -548,13 +549,13 @@ collection = chroma_client.create_collection(
         </div>
     </div>
 
-    <a href="/quote" class="btn-primary" style="display:inline-block; margin-top: 8px;">Request Deployment Quote</a>
+    <a href="/models/quote.html" class="btn-primary" style="display:inline-block; margin-top: 8px;">Request Deployment Quote</a>
 
     <hr class="section-divider">
 
     <div class="info-box">
         <h3>Related Embedding Models</h3>
-        <p>Need longer document context? <a href="/nomic-embed/" style="color: #06d6a0;">Nomic Embed Text</a> handles 8K tokens. Need multilingual support? <a href="/bge/" style="color: #06d6a0;">BGE-M3</a> covers 100 languages. Need the strongest English retrieval? <a href="/mxbai/" style="color: #06d6a0;">Mxbai-Embed-Large</a> leads MTEB benchmarks. All-MiniLM remains the right default — upgrade only when retrieval testing proves you need to.</p>
+        <p>Need longer document context? <a href="/models/nomic-embed/" style="color: #06d6a0;">Nomic Embed Text</a> handles 8K tokens. Need multilingual support? <a href="/models/bge/" style="color: #06d6a0;">BGE-M3</a> covers 100 languages. Need the strongest English retrieval? <a href="/models/mxbai/" style="color: #06d6a0;">Mxbai-Embed-Large</a> leads MTEB benchmarks. All-MiniLM remains the right default — upgrade only when retrieval testing proves you need to.</p>
     </div>
 
 </div>
@@ -562,12 +563,12 @@ collection = chroma_client.create_collection(
 <footer>
     <p>
         <a href="/">NoCloudGPT Home</a>
-        <a href="/all-minilm/">All-MiniLM</a>
-        <a href="/bge/">BGE / BGE-M3</a>
-        <a href="/nomic-embed/">Nomic Embed</a>
-        <a href="/mxbai/">Mxbai</a>
-        <a href="/deploy/">Deployment Guide</a>
-        <a href="/quote/">Get Quote</a>
+        <a href="/models/all-minilm/">All-MiniLM</a>
+        <a href="/models/bge/">BGE / BGE-M3</a>
+        <a href="/models/nomic-embed/">Nomic Embed</a>
+        <a href="/models/mxbai/">Mxbai</a>
+        <a href="/models/deploy/">Deployment Guide</a>
+        <a href="/models/quote.html">Get Quote</a>
     </p>
     <p style="margin-top: 16px;">© 2025 NoCloudGPT. Private AI deployment specialists. Not affiliated with Microsoft or the sentence-transformers project.</p>
 </footer>

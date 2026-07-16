@@ -5,9 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Private AI Model Catalog — Deploy Any Open Model with NoCloudGPT</title>
   <meta name="description" content="Browse 80+ open-weight AI model families. Each page answers what it's good at, who should deploy it, and which NoCloudGPT tier fits. Find your model, start your pilot.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nocloudgpt.com/models/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Private AI Model Catalog | NoCloudGPT">
+  <meta property="og:description" content="Browse 80+ open-weight AI model families with deployment guidance for private, self-hosted AI.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nocloudgpt.com/models/">
+  <meta property="og:site_name" content="NoCloudGPT">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Private AI Model Catalog | NoCloudGPT">
+  <meta name="twitter:description" content="Educational catalog of open models for private AI deployment.">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-950 text-slate-100">
+
+  <div class="border-b border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+      <nav class="flex flex-wrap gap-4 text-slate-400">
+        <a href="/models/" class="text-white">Models</a>
+        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+        <a href="/services.html" class="hover:text-white">Services</a>
+        <a href="/pricing.html" class="hover:text-white">Pricing</a>
+        <a href="/contact.html" class="hover:text-white">Contact</a>
+        <a href="https://terminal.glass" target="_blank" rel="noopener" class="hover:text-white">terminal.glass</a>
+      </nav>
+    </div>
+  </div>
 
   <header class="border-b border-slate-800 bg-slate-950/90">
     <div class="mx-auto max-w-7xl px-6 py-8">
@@ -320,5 +345,10 @@
       if (grid) grid.innerHTML += makeCard(name, slug, desc);
     }
   </script>
+
+  <footer class="border-t border-slate-800 px-6 py-10 text-center text-sm text-slate-500">
+    <p>© 2026 NoCloudGPT · Colorado, USA · Private AI you control</p>
+    <p class="mt-2"><a href="/contact.html" class="text-cyan-400 hover:text-cyan-300">Contact</a> · <a href="https://terminal.glass" class="text-cyan-400 hover:text-cyan-300" target="_blank" rel="noopener">Ready to deploy? terminal.glass →</a></p>
+  </footer>
 </body>
 </html>

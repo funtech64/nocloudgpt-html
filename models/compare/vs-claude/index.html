@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <title>Local AI vs Claude: Privacy, Cost & Control Comparison | NoCloudGPT</title>
 <meta name="description" content="Claude sends every prompt to Anthropic's servers. Compare data privacy, compliance risk, and total cost against running Llama 3.3 or Mistral locally.">
 <style>
@@ -144,10 +145,10 @@ section:last-of-type { border-bottom: none; }
     <a href="/" class="nav-brand">No<span>Cloud</span>GPT</a>
     <ul class="nav-links">
       <li><a href="/models/">Models</a></li>
-      <li><a href="/deploy/quickstart/">Deploy</a></li>
-      <li><a href="/compare/vs-chatgpt/">vs ChatGPT</a></li>
-      <li><a href="/compare/vs-claude/" class="active">vs Claude</a></li>
-      <li><a href="/compare/vs-copilot/">vs Copilot</a></li> <!-- STUB: /compare/vs-copilot/ -->
+      <li><a href="/models/deploy/">Deploy</a></li>
+      <li><a href="/models/compare/compare-vs-chatgpt/">vs ChatGPT</a></li>
+      <li><a href="/models/compare/vs-claude/" class="active">vs Claude</a></li>
+      <li><a href="/models/compare/vs-copilot/">vs Copilot</a></li> <!-- STUB: /compare/vs-copilot/ -->
       <li><a href="#" >Solutions</a></li> <!-- STUB: /solutions/ -->
     </ul>
   </div>
@@ -311,7 +312,7 @@ section:last-of-type { border-bottom: none; }
           <p>Sending client communications, contract drafts, or case strategy to Claude may waive attorney-client privilege under the voluntary disclosure doctrine.</p>
           <div class="risk-detail">
             <strong>Risk:</strong> Courts in the US and UK have found that disclosure to third-party AI systems can constitute waiver. No published ruling specifically addresses Claude, but the legal theory is well-established.<br><br>
-            <strong>Local alternative:</strong> <a href="/mistral-large/" style="color:#6366f1;">Mistral Large 2</a> — 128k context, strong legal drafting, zero egress.
+            <strong>Local alternative:</strong> <a href="/models/mistral-large/" style="color:#6366f1;">Mistral Large 2</a> — 128k context, strong legal drafting, zero egress.
           </div>
         </div>
 
@@ -321,7 +322,7 @@ section:last-of-type { border-bottom: none; }
           <p>Analysts using Claude to process earnings data, M&A details, or portfolio strategies before public disclosure face material MNPI and insider trading exposure.</p>
           <div class="risk-detail">
             <strong>Risk:</strong> MNPI transmitted to any third-party system — including AI providers — creates a chain of custody problem for compliance teams. SEC guidance on AI tools is evolving rapidly.<br><br>
-            <strong>Local alternative:</strong> <a href="/mistral-large/" style="color:#6366f1;">Mistral Large 2</a> or Llama 3.3 70B on an isolated finance VLAN.
+            <strong>Local alternative:</strong> <a href="/models/mistral-large/" style="color:#6366f1;">Mistral Large 2</a> or Llama 3.3 70B on an isolated finance VLAN.
           </div>
         </div>
 
@@ -341,7 +342,7 @@ section:last-of-type { border-bottom: none; }
           <p>Pasting proprietary source code, internal APIs, or unreleased product specs into Claude creates IP disclosure risk and may violate NDAs with clients or partners.</p>
           <div class="risk-detail">
             <strong>Risk:</strong> Even with training opt-out, code sits on Anthropic's infrastructure during the 30-day monitoring window. Employees who paste trade secrets may personally violate employment agreements.<br><br>
-            <strong>Local alternative:</strong> <a href="/deploy/quickstart/" style="color:#6366f1;">Ollama + Llama 3.3</a> running in your dev environment.
+            <strong>Local alternative:</strong> <a href="/models/deploy/" style="color:#6366f1;">Ollama + Llama 3.3</a> running in your dev environment.
           </div>
         </div>
 
@@ -443,8 +444,8 @@ section:last-of-type { border-bottom: none; }
     <div class="container">
       <h2>Ready to Run Private AI?</h2>
       <p>Get a local model running in 15 minutes. No cloud account. No data leaks.</p>
-      <a href="/deploy/quickstart/" class="btn-primary">Quick Start Guide →</a>
-      <a href="/compare/vs-chatgpt/" class="btn-ghost">vs ChatGPT</a>
+      <a href="/models/deploy/" class="btn-primary">Quick Start Guide →</a>
+      <a href="/models/compare/compare-vs-chatgpt/" class="btn-ghost">vs ChatGPT</a>
     </div>
   </section>
 
@@ -455,8 +456,8 @@ section:last-of-type { border-bottom: none; }
     <span class="footer-brand">No<span>Cloud</span>GPT</span>
     <ul class="footer-links">
       <li><a href="/models/">Models</a></li>
-      <li><a href="/deploy/quickstart/">Deploy</a></li>
-      <li><a href="/compare/vs-chatgpt/">Compare</a></li>
+      <li><a href="/models/deploy/">Deploy</a></li>
+      <li><a href="/models/compare/compare-vs-chatgpt/">Compare</a></li>
     </ul>
     <span class="footer-copy">© 2025 NoCloudGPT. No data collected.</span>
   </div>
