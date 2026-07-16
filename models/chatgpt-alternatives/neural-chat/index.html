@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Neural Chat 7B: Intel's CPU-Optimized Local AI | PrivateAI.guide</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Neural Chat 7B: Intel's CPU-Optimized Local AI | PrivateAI.guide</title>
   <meta name="description" content="Neural Chat 7B is Intel's fine-tuned Mistral model — optimized for x86 CPUs via Intel Extension for Transformers. Run a full 7B assistant without a GPU." />
   <link rel="canonical" href="https://privateai.guide/chatgpt-alternatives/neural-chat/" />
 
@@ -447,7 +448,7 @@
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <span>›</span>
-    <a href="/chatgpt-alternatives/">ChatGPT Alternatives</a>
+    <a href="/models/chatgpt-alternatives/">ChatGPT Alternatives</a>
     <span>›</span>
     <span>Neural Chat 7B</span>
   </nav>
@@ -511,7 +512,7 @@
     The model itself is Mistral 7B v0.1 fine-tuned on a curated instruction dataset 
     using Intel's preferred alignment pipeline. The fine-tune is competent but 
     not exceptional — Mistral 7B Instruct and 
-    <a href="/chatgpt-alternatives/zephyr/">Zephyr 7B</a> both score slightly higher 
+    <a href="/models/chatgpt-alternatives/zephyr/">Zephyr 7B</a> both score slightly higher 
     on standard benchmarks. What distinguishes Neural Chat is the 
     <strong>inference stack Intel built around it</strong>.
   </p>
@@ -697,8 +698,8 @@
         through llama.cpp — they bypass the Intel optimization path entirely and 
         perform better than Intel CPUs on a raw tokens/second basis. If you're 
         on Apple Silicon, 
-        <a href="/chatgpt-alternatives/zephyr/">Zephyr 7B</a> or 
-        <a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> are 
+        <a href="/models/chatgpt-alternatives/zephyr/">Zephyr 7B</a> or 
+        <a href="/models/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> are 
         equally good choices with better benchmark scores. Neural Chat's 
         advantages are most pronounced on <strong>Intel x86 hardware</strong>.
       </p>
@@ -752,7 +753,7 @@
           <td>Ollama / GPU</td>
         </tr>
         <tr>
-          <td><a href="/chatgpt-alternatives/zephyr/">Zephyr 7B β</a></td>
+          <td><a href="/models/chatgpt-alternatives/zephyr/">Zephyr 7B β</a></td>
           <td class="val-yellow">61.4%</td>
           <td class="val-yellow">7.3/10</td>
           <td>32K</td>
@@ -768,7 +769,7 @@
           <td><strong>IPEX-LLM / ITREX</strong></td>
         </tr>
         <tr>
-          <td><a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a></td>
+          <td><a href="/models/chatgpt-alternatives/openchat/">OpenChat 3.5</a></td>
           <td class="val-yellow">64.3%</td>
           <td class="val-yellow">7.8/10</td>
           <td>8K</td>
@@ -776,7 +777,7 @@
           <td>Ollama / GPU</td>
         </tr>
         <tr>
-          <td><a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a></td>
+          <td><a href="/models/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a></td>
           <td class="val-yellow">63.8%</td>
           <td class="val-yellow">7.5/10</td>
           <td>32K</td>
@@ -923,7 +924,7 @@
     The easiest entry point. Uses GGUF quantization via llama.cpp. 
     You won't get Intel-specific VNNI optimizations, but you'll have 
     a working Neural Chat in minutes. See our 
-    <a href="/deploy/quickstart/">Quickstart guide</a> to install Ollama first.
+    <a href="/models/deploy/">Quickstart guide</a> to install Ollama first.
   </p>
 
   <div class="code-block">
@@ -1100,9 +1101,9 @@ EOF</pre>
     <div class="callout-body">
       <strong>Relevant cross-references</strong>
       <p>
-        See our <a href="/compare/vs-chatgpt/">vs ChatGPT comparison</a> for 
+        See our <a href="/models/compare/compare-vs-chatgpt/">vs ChatGPT comparison</a> for 
         a full breakdown of what local models give up vs. cloud AI. 
-        The <a href="/deploy/quickstart/">Quickstart guide</a> covers 
+        The <a href="/models/deploy/">Quickstart guide</a> covers 
         Ollama installation for all platforms if you want the simplest 
         path to running Neural Chat today.
       </p>
@@ -1124,12 +1125,12 @@ EOF</pre>
       <tbody>
         <tr>
           <td>You have a GPU (any VRAM ≥ 8GB)</td>
-          <td><a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> or Llama 3.1 8B</td>
+          <td><a href="/models/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> or Llama 3.1 8B</td>
           <td>GPU inference 4–5× faster; Neural Chat's CPU advantage disappears</td>
         </tr>
         <tr>
           <td>You need best-in-class reasoning</td>
-          <td><a href="/chatgpt-alternatives/orca-2/">Orca 2</a></td>
+          <td><a href="/models/chatgpt-alternatives/orca-2/">Orca 2</a></td>
           <td>Significantly better on multi-step reasoning tasks</td>
         </tr>
         <tr>
@@ -1139,17 +1140,17 @@ EOF</pre>
         </tr>
         <tr>
           <td>You're on Apple Silicon</td>
-          <td><a href="/chatgpt-alternatives/zephyr/">Zephyr 7B</a></td>
+          <td><a href="/models/chatgpt-alternatives/zephyr/">Zephyr 7B</a></td>
           <td>Metal GPU offload makes any 7B model fast on M-series chips</td>
         </tr>
         <tr>
           <td>You want the simplest possible setup</td>
-          <td><a href="/chatgpt-alternatives/openchat/">OpenChat 3.5</a> via Ollama</td>
+          <td><a href="/models/chatgpt-alternatives/openchat/">OpenChat 3.5</a> via Ollama</td>
           <td>Better MT-Bench score, one-command install, less toolchain complexity</td>
         </tr>
         <tr>
           <td>You're on AMD CPU (no GPU)</td>
-          <td><a href="/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> via Ollama</td>
+          <td><a href="/models/chatgpt-alternatives/nous-hermes/">Nous Hermes 2</a> via Ollama</td>
           <td>Neural Chat's VNNI optimizations are Intel-specific; AMD gets no benefit</td>
         </tr>
       </tbody>
@@ -1158,8 +1159,8 @@ EOF</pre>
 
   <!-- Footer Nav -->
   <nav class="page-nav" aria-label="Page navigation">
-    <a href="/chatgpt-alternatives/gpt-2/">← GPT-2</a>
-    <a href="/chatgpt-alternatives/nous-hermes/" class="next">Nous Hermes →</a>
+    <a href="/models/chatgpt-alternatives/gpt-2/">← GPT-2</a>
+    <a href="/models/chatgpt-alternatives/nous-hermes/" class="next">Nous Hermes →</a>
   </nav>
 
 </div>
