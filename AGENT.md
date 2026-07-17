@@ -62,21 +62,17 @@ terminal.glass is being repositioned as a **deterministic, one-script deployment
 - || = Pipe / connection layer (Docker + Ollama)
 - G = Glass (clean, deterministic result/container)
 
-## 5. Current Pricing (Reference Only)
+## 5. Current Pricing (terminal.glass is authoritative)
 
-Use these prices when writing or editing sales-related copy:
+Use these prices only when writing educational copy that clearly points sales to terminal.glass:
 
-- **Basic**: $99.00 per model
-- **Additional Deployments**: $25.00 each
-- **Sunrise Package**: $299.00 (includes 20 licenses)
-- **Sunrise Additional Deployments**: $10.00 each
-
-**Upgrade Rule:**  
-If a Basic ($99) account reaches $299 in total purchases, it automatically converts to a Sunrise account.
+- **Sunrise Starter**: $199 — 2 portable Glass Licenses
+- **Sunrise Business**: $399 — 6 portable Glass Licenses
+- **Additional Glass License**: $99 — one more active supported deployment
 
 **Important:**  
-`pricing.html`, `quote.html`, and related pricing/quote pages are currently outdated.  
-They will be updated in **Phase 5** only. Do not touch them during Phase 1.
+NoCloudGPT must not present a separate competing checkout. Authoritative sales and package details live at [https://terminal.glass/pricing/](https://terminal.glass/pricing/).  
+`pricing.html`, `models/pricing.html`, and `models/quote.html` are educational/licensing pages that link to terminal.glass.
 
 ## 6. How to Work in This Repo
 
