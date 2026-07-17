@@ -76,22 +76,21 @@ All model catalog work should be done under the `/models/` directory.
 
 ## Related Project: terminal.glass
 
-`terminal.glass` is the sister project focused on **deterministic, one-script AI deployments** for SEO professionals and MLOps users who want headless operation with no interface.
+`terminal.glass` is the **licensing, pricing, and deployment sales destination** for supported private AI installations, including NoCloudGPT on customer-owned infrastructure.
 
-- Logo concept: `T>||G`
-- Positioning: “Turn Any Server into an SEO AI Worker. One script. No Interface. Just Results.”
-- Uses the same three deployment options (Air-Gapped, AWS Lightsail, DigitalOcean)
+- Authoritative pricing: [https://terminal.glass/pricing/](https://terminal.glass/pricing/)
+- NoCloudGPT explains technical fit, models, and deployment guides
+- Glass Licenses enable supported NoCloudGPT deployments
 
-## Pricing (Current Structure)
+## Pricing (Authoritative Source: terminal.glass)
 
-- **Basic**: $99.00 per model
-- **Additional Deployments**: $25.00 each
-- **Sunrise Package**: $299.00 (includes 20 licenses)
-- **Sunrise Additional Deployments**: $10.00 each
+Do not publish competing checkout or package structures on NoCloudGPT pages. Current terminal.glass packages (summary):
 
-Basic accounts that reach $299 in total spend automatically convert to Sunrise.
+- **Sunrise Starter**: $199 — 2 portable Glass Licenses
+- **Sunrise Business**: $399 — 6 portable Glass Licenses
+- **Additional Glass License**: $99 — one more active supported deployment
 
-**Note:** Full pricing and quote pages will be refreshed in Phase 5.
+Confirm current offers on [terminal.glass/pricing](https://terminal.glass/pricing/).
 
 ## Domain
 

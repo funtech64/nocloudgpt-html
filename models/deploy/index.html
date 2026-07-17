@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NoCloudGPT Deployment Options</title>
-<meta name="description" content="Choose a NoCloudGPT deployment path: AWS Lightsail pilot, on-premise Linux, or private cloud with Ollama and OpenWebUI.">
+<meta name="description" content="Choose a NoCloudGPT deployment path: on-premise Linux, AWS Lightsail, or private cloud — enabled by terminal.glass Glass Licenses.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://nocloudgpt.com/models/deploy/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta property="og:title" content="NoCloudGPT Deployment Options">
-<meta property="og:description" content="Educational deployment paths for private AI with Ollama — Lightsail, on-premise, and private cloud.">
+<meta property="og:description" content="Educational deployment paths for private AI with Ollama — on-premise, Lightsail, and private cloud.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nocloudgpt.com/models/deploy/">
 <meta property="og:site_name" content="NoCloudGPT">
@@ -19,33 +19,60 @@
 <header class="border-b border-slate-800">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 text-sm">
     <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-    <nav class="flex gap-4 text-slate-400">
+    <nav class="flex flex-wrap gap-4 text-slate-400">
       <a href="/models/" class="hover:text-white">Models</a>
       <a href="/models/deploy/" class="text-white">Deploy</a>
+      <a href="/pricing.html" class="hover:text-white">Licensing</a>
       <a href="/contact.html" class="hover:text-white">Contact</a>
+      <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
     </nav>
   </div>
 </header>
 <div class="mx-auto max-w-6xl px-6 py-16">
-<h1 class="text-5xl font-black">NoCloudGPT Deployment Paths</h1>
-<p class="mt-6 max-w-3xl text-lg text-slate-300">Choose the deployment model that fits your customer. All deployment paths center around Ollama, Linux, and private AI ownership.</p>
-<div class="mt-12 grid gap-6 md:grid-cols-3">
-<a href="lightsail-guide.html" class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-cyan-400">
-<h2 class="text-2xl font-bold">AWS Lightsail</h2>
-<p class="mt-4 text-slate-400">Low-cost pilot deployments for startups, consultants, and rapid private AI evaluation.</p>
-</a>
-<a href="on-premise.html" class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-cyan-400">
-<h2 class="text-2xl font-bold">On-Premise Linux</h2>
-<p class="mt-4 text-slate-400">Deploy Ollama directly on Ubuntu or Debian servers inside a business or homelab.</p>
-</a>
-<a href="private-cloud.html" class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-cyan-400">
-<h2 class="text-2xl font-bold">Private Cloud</h2>
-<p class="mt-4 text-slate-400">Multi-node deployments using Proxmox, QEMU, GPU systems, and internal AI services.</p>
-</a>
-</div>
+  <h1 class="text-5xl font-black">NoCloudGPT deployment paths</h1>
+  <p class="mt-6 max-w-3xl text-lg text-slate-300">NoCloudGPT is the local and private deployment option within <a href="https://terminal.glass" class="text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener">terminal.glass</a>. Choose where your AI should live, plan hardware and model fit here, then purchase supported Glass Licenses on <a href="https://terminal.glass/pricing/" class="text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener">terminal.glass/pricing/</a>.</p>
+
+  <div class="mt-12 grid gap-6 md:grid-cols-3">
+    <a href="on-premise.html" class="rounded-3xl border border-cyan-500/40 bg-cyan-950/40 p-8 hover:border-cyan-300">
+      <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">On your hardware</p>
+      <h2 class="mt-4 text-2xl font-bold">On-Premise Linux</h2>
+      <p class="mt-4 text-cyan-50">Deploy Ollama on Ubuntu or Debian servers you own — office Linux, homelab, clinic, or air-gapped environments.</p>
+    </a>
+    <a href="lightsail-guide.html" class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-cyan-400">
+      <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Customer cloud</p>
+      <h2 class="mt-4 text-2xl font-bold">AWS Lightsail</h2>
+      <p class="mt-4 text-slate-400">Low-cost pilot deployments when local hardware is not ready. You retain the cloud account.</p>
+    </a>
+    <a href="private-cloud.html" class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-cyan-400">
+      <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Scale-up</p>
+      <h2 class="mt-4 text-2xl font-bold">Private Cloud</h2>
+      <p class="mt-4 text-slate-400">Multi-node Proxmox, QEMU, and GPU systems for teams that need shared internal AI services.</p>
+    </a>
+  </div>
+
+  <section class="mt-12 rounded-3xl border border-slate-800 bg-slate-900 p-8">
+    <h2 class="text-3xl font-black">Typical deployment flow</h2>
+    <ol class="mt-6 list-decimal space-y-3 pl-6 text-slate-300">
+      <li>Evaluate model and hardware fit in the <a href="/models/" class="text-cyan-300 hover:text-cyan-200">NoCloudGPT catalog</a>.</li>
+      <li>Purchase Glass License packages on <a href="https://terminal.glass/pricing/" class="text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener">terminal.glass</a>.</li>
+      <li>Choose on-premise, Lightsail, or private cloud architecture.</li>
+      <li>Run the supported installer or bootstrap path in your environment.</li>
+      <li>Activate the deployment to your terminal.glass license dashboard.</li>
+    </ol>
+  </section>
+
+  <section class="mt-12 rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8">
+    <h2 class="text-3xl font-black">Ready for packages and pricing?</h2>
+    <p class="mt-4 text-cyan-50">Glass License sales, Sunrise packages, and expansion pricing are maintained on terminal.glass — not on NoCloudGPT.</p>
+    <div class="mt-6 flex flex-wrap gap-4">
+      <a href="https://terminal.glass/pricing/" class="rounded-2xl bg-cyan-300 px-6 py-4 font-black text-slate-950 hover:bg-cyan-200" target="_blank" rel="noopener">View Deployment Pricing</a>
+      <a href="/models/quote.html" class="rounded-2xl border border-cyan-400/50 px-6 py-4 font-bold text-cyan-100 hover:border-cyan-300">Plan deployment fit</a>
+      <a href="/pricing.html" class="rounded-2xl border border-cyan-400/50 px-6 py-4 font-bold text-cyan-100 hover:border-cyan-300">Licensing overview</a>
+    </div>
+  </section>
 </div>
 <footer class="border-t border-slate-800 px-6 py-10 text-center text-sm text-slate-500">
-  <p>© 2026 NoCloudGPT · <a href="https://terminal.glass" class="text-cyan-400 hover:text-cyan-300" target="_blank" rel="noopener">Ready to deploy? terminal.glass →</a></p>
+  <p>© 2026 NoCloudGPT · <a href="https://terminal.glass" class="text-cyan-400 hover:text-cyan-300" target="_blank" rel="noopener">terminal.glass platform →</a></p>
 </footer>
 </body>
 </html>

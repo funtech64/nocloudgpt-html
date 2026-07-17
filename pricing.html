@@ -1,243 +1,317 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pricing | NoCloudGPT</title>
-  <meta name="description" content="Simple, transparent pricing for private AI deployments. Choose Air-Gapped, AWS Lightsail, or DigitalOcean.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/pricing.html">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="Pricing | NoCloudGPT">
-  <meta property="og:description" content="Transparent pricing for private AI deployments — air-gapped, AWS Lightsail, and DigitalOcean paths.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/pricing.html">
-  <meta property="og:site_name" content="NoCloudGPT">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Pricing | NoCloudGPT">
-  <meta name="twitter:description" content="Simple pricing for private AI deployments you control.">
-  <link rel="stylesheet" href="/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deployment &amp; Licensing | NoCloudGPT</title>
+  <meta name="description" content="How NoCloudGPT private AI deployments work with terminal.glass Glass Licenses — hardware paths, local versus cloud architecture, and where to buy packages." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="NoCloudGPT" />
+  <meta property="og:title" content="Deployment &amp; Licensing | NoCloudGPT" />
+  <meta property="og:description" content="Educational guide to NoCloudGPT deployments, customer-owned hardware, and terminal.glass Glass License packages." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nocloudgpt.com/pricing.html" />
+  <meta property="og:site_name" content="NoCloudGPT" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Deployment &amp; Licensing | NoCloudGPT" />
+  <meta name="twitter:description" content="Understand private AI deployment paths and how terminal.glass licensing enables NoCloudGPT." />
+  <link rel="canonical" href="https://nocloudgpt.com/pricing.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <style>
+    :root {
+      --bg: #f4f8fc;
+      --panel: #ffffff;
+      --text: #18324a;
+      --muted: #5f748b;
+      --line: #d7e3f0;
+      --accent: #2f6fed;
+      --success: #1f8f5f;
+      --shadow: 0 14px 34px rgba(34, 66, 110, 0.10);
+      --radius: 18px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f8fbff;
-      color: #18324a;
-      line-height: 1.6;
       margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef5fb 100%);
+      color: var(--text);
+      line-height: 1.6;
     }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
+
     header {
-      background: white;
-      border-bottom: 1px solid #d7e3f0;
-      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(47, 111, 237, 0.10);
     }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+
+    .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; }
+    .brand { font-size: 1.2rem; font-weight: 800; letter-spacing: 0.02em; color: #10263a; }
+    nav { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    nav a { color: var(--text); opacity: 0.95; font-size: 0.98rem; }
+
+    .hero { padding: 4.5rem 0 2.5rem; }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr 0.9fr; gap: 1.25rem; align-items: stretch; }
+
+    .hero-copy, .section-card, .path-card, .cta-panel, .faq, .package-summary {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 249, 255, 0.98));
+      border: 1px solid rgba(47, 111, 237, 0.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
     }
-    .logo {
-      font-weight: 700;
-      font-size: 1.4rem;
+
+    .dark-card {
+      background: linear-gradient(135deg, #10263a, #183f72);
+      color: #ffffff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
     }
-    nav a {
-      margin-left: 1.5rem;
-      color: #18324a;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .hero {
-      padding: 4rem 0 3rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #5f748b;
-      max-width: 620px;
-      margin: 0 auto;
-    }
-    .section {
-      padding: 3rem 0;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: white;
-      border: 1px solid #d7e3f0;
-      border-radius: 12px;
-      padding: 2rem;
-    }
-    .price {
-      font-size: 2.2rem;
+    .dark-card p, .dark-card li { color: rgba(255,255,255,0.82); }
+
+    h1, h2, h3 { line-height: 1.2; margin: 0 0 0.8rem; color: #10263a; }
+    .dark-card h2, .dark-card h3 { color: #fff; }
+    h1 { font-size: clamp(2rem, 5vw, 3.4rem); margin-bottom: 0.8rem; }
+    h2 { font-size: clamp(1.45rem, 3vw, 2.1rem); margin-bottom: 0.9rem; }
+    h3 { font-size: 1.15rem; }
+    p, li { color: var(--muted); }
+
+    .eyebrow {
+      color: var(--accent);
       font-weight: 800;
-      color: #10263a;
-      margin: 0.5rem 0;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
     }
-    .price small {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #5f748b;
-    }
+
+    .button-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.2rem; }
+
     .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-weight: 600;
-      text-decoration: none;
-      margin-top: 1rem;
-    }
-    .btn-primary {
-      background: #2f6fed;
-      color: white;
-    }
-    .btn-secondary {
-      background: white;
-      color: #2f6fed;
-      border: 2px solid #2f6fed;
-    }
-    .highlight {
-      background: #f0f7ff;
-      border: 2px solid #2f6fed;
-    }
-    footer {
-      background: #10263a;
-      color: #a8c0d8;
-      padding: 2rem 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.85rem 1.1rem;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight: 800;
       text-align: center;
+      transition: 0.2s ease;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), #7db0ff); color: #ffffff; }
+    .btn-secondary { background: rgba(47, 111, 237, 0.04); border-color: rgba(47, 111, 237, 0.16); color: var(--text); }
+    .btn:hover { transform: translateY(-1px); text-decoration: none; }
+
+    main section { padding: 1rem 0 2.2rem; }
+    .path-grid, .faq-grid, .package-grid { display: grid; gap: 1.2rem; }
+    .path-grid { grid-template-columns: repeat(3, 1fr); }
+    .faq-grid { grid-template-columns: repeat(2, 1fr); }
+    .package-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .check-list { padding-left: 1.1rem; margin: 0.8rem 0 0; }
+    .check-list li + li { margin-top: 0.55rem; }
+    .fine-print { font-size: 0.95rem; color: var(--muted); margin-top: 1rem; }
+    .sales-note {
+      margin-top: 1rem;
+      padding: 1rem 1.1rem;
+      border-radius: 12px;
+      background: rgba(31, 143, 95, 0.08);
+      border: 1px solid rgba(31, 143, 95, 0.2);
+      color: var(--success);
+      font-weight: 700;
       font-size: 0.95rem;
+    }
+
+    footer { border-top: 1px solid rgba(47, 111, 237, 0.10); padding: 2rem 0 3rem; color: var(--muted); }
+    .footer-flex { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .path-grid, .faq-grid, .package-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-wrap { flex-direction: column; align-items: flex-start; }
+      .hero { padding-top: 3rem; }
+      .hero-copy, .section-card, .path-card, .cta-panel, .faq, .package-summary, .dark-card { padding: 1.2rem; }
     }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="container">
-    <nav>
-      <div class="logo">NoCloudGPT</div>
-      <div>
+  <header>
+    <div class="container nav-wrap">
+      <div class="brand">NoCloudGPT</div>
+      <nav aria-label="Primary">
         <a href="/">Home</a>
-        <a href="/models/">Models</a>
         <a href="/services.html">Services</a>
+        <a href="/models/">Models</a>
         <a href="/software.html">Software</a>
-        <a href="/pricing.html">Pricing</a>
+        <a href="/models/deploy/">Deploy</a>
         <a href="/contact.html">Contact</a>
         <a href="https://terminal.glass" target="_blank" rel="noopener">terminal.glass</a>
-      </div>
-    </nav>
-  </div>
-</header>
-
-<!-- Hero -->
-<section class="hero">
-  <div class="container">
-    <h1>Simple Pricing.<br>Clear Choices.</h1>
-    <p>Private AI deployments with transparent pricing. Choose the path that fits your needs.</p>
-  </div>
-</section>
-
-<!-- Deployment Options -->
-<section class="section">
-  <div class="container">
-    <h2>Choose Your Deployment Path</h2>
-    
-    <div class="grid">
-      <!-- Air-Gapped -->
-      <div class="card">
-        <h3>Air-Gapped</h3>
-        <div class="price">$99 <small>per model</small></div>
-        <p>Maximum privacy. Run everything on your own infrastructure with zero cloud dependencies.</p>
-        <ul>
-          <li>Full data sovereignty</li>
-          <li>One-script deployment</li>
-          <li>Ideal for compliance &amp; security</li>
-        </ul>
-        <a href="/contact.html" class="btn btn-secondary">Get Started</a>
-      </div>
-
-      <!-- AWS Lightsail -->
-      <div class="card">
-        <h3>AWS Lightsail</h3>
-        <div class="price">$99 <small>per model</small></div>
-        <p>Simple, reliable cloud deployment on Amazon infrastructure without the complexity.</p>
-        <ul>
-          <li>Fast setup</li>
-          <li>Managed infrastructure</li>
-          <li>Great balance of ease and control</li>
-        </ul>
-        <a href="/contact.html" class="btn btn-secondary">Get Started</a>
-      </div>
-
-      <!-- DigitalOcean -->
-      <div class="card">
-        <h3>DigitalOcean</h3>
-        <div class="price">$99 <small>per model</small></div>
-        <p>Developer-friendly cloud option with fast performance and clean APIs.</p>
-        <ul>
-          <li>Quick deployment</li>
-          <li>Transparent pricing</li>
-          <li>Excellent for scaling</li>
-        </ul>
-        <a href="/contact.html" class="btn btn-secondary">Get Started</a>
-      </div>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- Sunrise Package -->
-<section class="section" style="background: white;">
-  <div class="container">
-    <h2>Sunrise Package</h2>
-    <div class="grid">
-      <div class="card highlight">
-        <h3>Sunrise Package</h3>
-        <div class="price">$299</div>
-        <p>Includes <strong>20 model licenses</strong> + priority support.</p>
-        <p><strong>Additional deployments:</strong> $10 each</p>
-        <a href="/contact.html" class="btn btn-primary">Get the Sunrise Package</a>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Deployment &amp; licensing</p>
+          <h1>Private AI you control. Licensed through terminal.glass.</h1>
+          <p>
+            NoCloudGPT is the local and private deployment option within the <a href="https://terminal.glass" target="_blank" rel="noopener">terminal.glass</a> platform. This page explains how deployments work, what hardware and architecture choices matter, and how Glass Licenses enable supported NoCloudGPT installations.
+          </p>
+          <p class="sales-note">
+            Authoritative package pricing and checkout live on terminal.glass — not on NoCloudGPT.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="https://terminal.glass/pricing/" target="_blank" rel="noopener">View Deployment Pricing</a>
+            <a class="btn btn-secondary" href="/models/deploy/">Explore Deployment Guides</a>
+          </div>
+        </div>
+        <aside class="dark-card">
+          <p class="eyebrow" style="color:#9fe8ff">License rule</p>
+          <h2>Glass Licenses are portable. Deployment Keys are not.</h2>
+          <p>
+            A Glass License is the capacity customers buy from terminal.glass. A Deployment Key is the revocable credential for one active supported deployment.
+          </p>
+          <ul class="check-list">
+            <li>One Glass License supports one active deployment at a time.</li>
+            <li>Licenses can be reassigned when needs change.</li>
+            <li>NoCloudGPT runs on customer-owned or customer-controlled infrastructure.</li>
+          </ul>
+        </aside>
       </div>
-      <div class="card">
-        <h3>Additional Deployments</h3>
-        <div class="price">$25 <small>each</small></div>
-        <p>Add extra deployments to any base license.</p>
-        <p>Basic accounts that reach $299 in total spend automatically upgrade to Sunrise.</p>
+    </section>
+
+    <section id="paths">
+      <div class="container">
+        <h2>Choose your deployment path</h2>
+        <p class="fine-print">NoCloudGPT supports several practical architectures. Pick the path that matches your privacy, connectivity, and operations requirements.</p>
+        <div class="path-grid">
+          <article class="path-card">
+            <h3>Air-gapped / on-premise</h3>
+            <p>Maximum privacy. Run Ollama and your chat interface on hardware you own, with no required outbound cloud dependency.</p>
+            <ul class="check-list">
+              <li>Full data sovereignty</li>
+              <li>Ideal for compliance-sensitive environments</li>
+              <li>Works offline once models are present</li>
+            </ul>
+            <p><a href="/models/deploy/on-premise.html">On-premise deployment guide →</a></p>
+          </article>
+          <article class="path-card">
+            <h3>AWS Lightsail / customer cloud</h3>
+            <p>Customer-owned cloud instances when local hardware is not ready or a remote pilot is faster to launch.</p>
+            <ul class="check-list">
+              <li>Customer retains cloud account control</li>
+              <li>Good first rollout for many teams</li>
+              <li>Pairs with YourCloudGPT-style paths on terminal.glass</li>
+            </ul>
+            <p><a href="/models/deploy/lightsail-guide.html">Lightsail deployment guide →</a></p>
+          </article>
+          <article class="path-card">
+            <h3>Private cloud / GPU cluster</h3>
+            <p>Multi-node Linux, Proxmox, or dedicated GPU servers for larger teams and heavier model workloads.</p>
+            <ul class="check-list">
+              <li>Shared internal AI services</li>
+              <li>Better concurrency for reasoning and coding models</li>
+              <li>Scales with your infrastructure team</li>
+            </ul>
+            <p><a href="/models/deploy/private-cloud.html">Private cloud guide →</a></p>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <section id="packages">
+      <div class="container section-card">
+        <p class="eyebrow">Current terminal.glass packages</p>
+        <h2>Glass License packages (summary)</h2>
+        <p>
+          The packages below are summarized for orientation only. Current offers, feature details, and checkout are maintained on
+          <a href="https://terminal.glass/pricing/" target="_blank" rel="noopener">terminal.glass/pricing/</a>.
+        </p>
+        <div class="package-grid" style="margin-top: 1.5rem;">
+          <article class="package-summary">
+            <h3>Sunrise Starter</h3>
+            <p><strong>$199</strong> — includes <strong>2 portable Glass Licenses</strong></p>
+            <p>A practical entry point for a first private AI host and a second supported deployment or expansion path.</p>
+          </article>
+          <article class="package-summary">
+            <h3>Sunrise Business</h3>
+            <p><strong>$399</strong> — includes <strong>6 portable Glass Licenses</strong></p>
+            <p>For teams that need multiple hosts, environments, or room to grow into additional supported deployments.</p>
+          </article>
+          <article class="package-summary">
+            <h3>Additional Glass License</h3>
+            <p><strong>$99</strong> — one more active supported deployment</p>
+            <p>Expansion pricing for existing terminal.glass customers who need another server, cloud instance, or supported agent lane.</p>
+          </article>
+        </div>
+        <div class="button-row">
+          <a class="btn btn-primary" href="https://terminal.glass/pricing/" target="_blank" rel="noopener">Deploy with terminal.glass</a>
+          <a class="btn btn-secondary" href="https://terminal.glass/contact/" target="_blank" rel="noopener">Contact Sales</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="fit">
+      <div class="container">
+        <h2>What to plan before you deploy</h2>
+        <div class="faq-grid">
+          <article class="faq">
+            <h3>Hardware and storage</h3>
+            <p>Model size, quantization, and concurrent users determine RAM, VRAM, and disk needs. Browse the <a href="/models/">model catalog</a> for family-specific guidance.</p>
+          </article>
+          <article class="faq">
+            <h3>Local versus cloud</h3>
+            <p>Local deployments keep inference on your systems. Cloud deployments can still be customer-owned while using terminal.glass installers and activation.</p>
+          </article>
+          <article class="faq">
+            <h3>Internet access</h3>
+            <p>Air-gapped NoCloudGPT can run without outbound internet after models are downloaded. Activation and license checks follow your terminal.glass deployment path.</p>
+          </article>
+          <article class="faq">
+            <h3>Data ownership</h3>
+            <p>Prompts, documents, and model outputs remain on infrastructure you control. NoCloudGPT is an educational and technical brand; terminal.glass handles licensing and sales.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-panel">
+          <h2>Ready to deploy private AI?</h2>
+          <p>
+            View current Glass License packages and deployment pricing at terminal.glass. Use NoCloudGPT for model selection, deployment guides, and technical fit — then purchase through the terminal.glass sales path.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="https://terminal.glass/pricing/" target="_blank" rel="noopener">View Deployment Pricing</a>
+            <a class="btn btn-secondary" href="/models/quote.html">Plan Your Deployment Fit</a>
+            <a class="btn btn-secondary" href="/contact.html">NoCloudGPT Technical Questions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-flex">
+      <div>Colorado, USA • Private AI You Control • Part of the terminal.glass platform</div>
+      <div>© 2026 NoCloudGPT</div>
     </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section">
-  <div class="container" style="text-align: center; max-width: 700px;">
-    <h2>Ready to deploy?</h2>
-    <p>Browse the model catalog or contact us to get started with the right deployment for your needs.</p>
-    <div style="margin-top: 1.5rem;">
-      <a href="/models/" class="btn btn-primary">Browse Models</a>
-      <a href="/contact.html" class="btn btn-secondary">Contact Us</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <p>Colorado, USA • Private AI You Control</p>
-    <p style="margin-top: 0.5rem; opacity: 0.7;">© 2026 NoCloudGPT</p>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
