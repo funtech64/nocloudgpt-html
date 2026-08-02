@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copy Phase 4A P4-Public-Catalog from terminal-glass/8-ball into the pinned website input.
+# Copy exact Phase 4A P4-Public-Catalog from terminal-glass/8-ball.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/../../.." && pwd)"
 SRC="${1:?Usage: $0 /path/to/terminal-glass/8-ball/P4-Public-Catalog}"
@@ -12,7 +12,7 @@ fi
 
 rm -rf "$DEST"
 mkdir -p "$DEST"
-rsync -a --delete "$SRC/" "$DEST/"
+cp -a "$SRC/." "$DEST/"
 
-echo "Pinned catalog updated from $SRC"
+echo "Pinned authoritative catalog from $SRC"
 echo "Run: npm run build && npm test"

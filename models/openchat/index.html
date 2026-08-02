@@ -1,74 +1,342 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>openchat — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for openchat: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/openchat/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="openchat — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for openchat: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/openchat/">
+<title>OpenChat — NoCloudGPT Model Menu</title>
+  <meta name="description" content="OpenChat: a high-performance open-source chat model rivaling ChatGPT. Deploy privately on AWS Lightsail or on-premise hardware for zero-egress conversational AI." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "openchat", "description": "Catalog facts for openchat: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/openchat/"}</script>
 </head>
-<body class="bg-slate-950 text-slate-100">
+<body class="bg-gray-950 text-gray-100 font-sans">
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
-      </nav>
-    </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">openchat</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">openchat family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
+  <!-- Nav -->
+  <nav class="bg-gray-900 border-b border-gray-800 px-6 py-4 flex items-center justify-between">
+    <a href="/models/" class="text-blue-400 hover:text-blue-300 text-sm font-medium">← Back to Model Menu</a>
+    <a href="/" class="text-xl font-bold text-white tracking-tight">NoCloudGPT</a>
+    <a href="/contact" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Get a Quote</a>
+  </nav>
 
-      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: openchat.</p>
+  <!-- Hero -->
+  
+<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/openchat -->
+      <a href="https://ollama.com/library/openchat" target="_blank" rel="noopener noreferrer" class="inline-block">
+        <img
+          src="/models/openchat/hero.webp"
+          alt="openchat model family hero"
+          width="1200"
+          height="600"
+          class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+        />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/openchat" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
+<section class="max-w-4xl mx-auto px-6 py-16">
+    <div class="mb-4 flex flex-wrap gap-2">
+      <span class="bg-purple-900 text-purple-300 text-xs font-semibold px-3 py-1 rounded-full">Chat-Optimized</span>
+      <span class="bg-blue-900 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">C-RLFT Training</span>
+      <span class="bg-green-900 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">Mistral / Llama 3 Base</span>
+      <span class="bg-gray-800 text-gray-300 text-xs font-semibold px-3 py-1 rounded-full">Apache 2.0</span>
     </div>
-  </header>
-  <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
+    <h1 class="text-4xl font-extrabold text-white mb-4">OpenChat</h1>
+    <p class="text-lg text-gray-300 leading-relaxed">
+      OpenChat is an open-source conversational model that achieved ChatGPT-competitive performance using a novel training method called C-RLFT — without relying on human preference labels or expensive RLHF pipelines. It delivers fast, accurate, and naturally fluid responses on consumer-grade hardware.
+    </p>
+  </section>
+
+  <!-- What Is It -->
+  <section class="max-w-4xl mx-auto px-6 pb-12">
+    <h2 class="text-2xl font-bold text-white mb-4">What Is OpenChat?</h2>
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Developed by researchers at Tsinghua University, OpenChat introduced <strong class="text-white">Conditioned Reinforcement Learning Fine-Tuning (C-RLFT)</strong> — a technique that treats mixed-quality instruction data as a conditional optimization problem, allowing the model to learn selectively from high-quality interactions without needing an explicit reward model.
+    </p>
+    <p class="text-gray-300 leading-relaxed mb-4">
+      The result was remarkable: OpenChat 3.5 (7B parameters) scored above ChatGPT (gpt-3.5-turbo) on multiple benchmarks including MT-Bench and AlpacaEval, despite being a fraction of the size. OpenChat 3.6 extended this with Mistral 7B and Llama 3 bases, further improving reasoning and code generation.
+    </p>
+    <p class="text-gray-300 leading-relaxed">
+      For organizations that need a private, ChatGPT-equivalent conversational interface — for customer support, internal Q&A, or developer tooling — OpenChat delivers compelling quality at minimal infrastructure cost.
+    </p>
+  </section>
+
+  <!-- Strengths -->
+  <section class="bg-gray-900 py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-white mb-6">Core Strengths</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-3xl mb-3">🏆</div>
+          <h3 class="text-lg font-semibold text-white mb-2">ChatGPT-Competitive at 7B</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">OpenChat 3.5 outperformed gpt-3.5-turbo on MT-Bench at the time of its release — achieving this with 7B parameters via C-RLFT training rather than brute-force scale. Ideal for teams replacing cloud chat APIs.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-3xl mb-3">⚡</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Low Latency on CPU &amp; GPU</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">At 7B parameters with Q4 quantization, OpenChat runs at interactive speeds on CPU-only servers and achieves real-time response on a single consumer GPU — making it one of the most accessible private chat deployments available.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-3xl mb-3">💻</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Strong Code Generation</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">OpenChat performs well on HumanEval and coding benchmarks, supporting Python, JavaScript, SQL, and more — suitable for internal developer assistants, code review tools, and automated documentation generation.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-3xl mb-3">🗣️</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Natural Conversational Fluency</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">C-RLFT training produces responses that feel natural and coherent across multi-turn exchanges, without the robotic or overly-cautious tone common in heavily RLHF-aligned models. Excellent for customer-facing applications.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-3xl mb-3">📐</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Instruction Adherence</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Handles system prompt customization well — allowing operators to define persona, tone, and domain focus. Useful for building branded AI assistants with specific behavioral guidelines baked in at the system level.</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-3xl mb-3">🔓</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Apache 2.0 License</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Fully permissive commercial use. OpenChat can be integrated into proprietary products, SaaS platforms, and enterprise systems without royalty payments or usage restrictions.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Model Variants -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">Model Variants</h2>
+    <div class="overflow-x-auto rounded-xl border border-gray-800">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wide">
           <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
+            <th class="px-4 py-3 text-left">Version</th>
+            <th class="px-4 py-3 text-left">Base Model</th>
+            <th class="px-4 py-3 text-left">Parameters</th>
+            <th class="px-4 py-3 text-left">Context</th>
+            <th class="px-4 py-3 text-left">Notable Features</th>
           </tr>
         </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/openchat/" class="font-semibold text-cyan-300 hover:text-cyan-200">openchat</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">text</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
+        <tbody class="divide-y divide-gray-800">
+          <tr class="bg-gray-900 hover:bg-gray-800 transition">
+            <td class="px-4 py-3 font-semibold text-white">OpenChat 3.5</td>
+            <td class="px-4 py-3 text-gray-300">Mistral 7B</td>
+            <td class="px-4 py-3 text-gray-300">7B</td>
+            <td class="px-4 py-3 text-gray-300">8K</td>
+            <td class="px-4 py-3 text-gray-300">Landmark release; beats GPT-3.5 on MT-Bench</td>
+          </tr>
+          <tr class="bg-gray-900 hover:bg-gray-800 transition">
+            <td class="px-4 py-3 font-semibold text-white">OpenChat 3.6</td>
+            <td class="px-4 py-3 text-gray-300">Mistral 7B</td>
+            <td class="px-4 py-3 text-gray-300">7B</td>
+            <td class="px-4 py-3 text-gray-300">8K</td>
+            <td class="px-4 py-3 text-gray-300">Improved reasoning, updated training data</td>
+          </tr>
+          <tr class="bg-gray-900 hover:bg-gray-800 transition">
+            <td class="px-4 py-3 font-semibold text-white">OpenChat 3.6 20B</td>
+            <td class="px-4 py-3 text-gray-300">Llama 3 / Yi</td>
+            <td class="px-4 py-3 text-gray-300">20B</td>
+            <td class="px-4 py-3 text-gray-300">8K–32K</td>
+            <td class="px-4 py-3 text-gray-300">Higher accuracy, complex reasoning tasks</td>
+          </tr>
         </tbody>
       </table>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+  <!-- Hardware Table -->
+  <section class="bg-gray-900 py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-white mb-2">Hardware Requirements</h2>
+      <p class="text-gray-400 text-sm mb-6">OpenChat is designed to run efficiently on minimal hardware — a key advantage for private deployment.</p>
+      <div class="overflow-x-auto rounded-xl border border-gray-800">
+        <table class="w-full text-sm">
+          <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wide">
+            <tr>
+              <th class="px-4 py-3 text-left">Model</th>
+              <th class="px-4 py-3 text-left">Quantization</th>
+              <th class="px-4 py-3 text-left">RAM / VRAM</th>
+              <th class="px-4 py-3 text-left">Lightsail Plan</th>
+              <th class="px-4 py-3 text-left">On-Premise</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr class="bg-gray-900 hover:bg-gray-800 transition">
+              <td class="px-4 py-3 text-white font-medium">OpenChat 3.5 / 3.6 (7B)</td>
+              <td class="px-4 py-3 text-gray-300">Q4_K_M</td>
+              <td class="px-4 py-3 text-gray-300">4–5 GB</td>
+              <td class="px-4 py-3"><span class="bg-green-900 text-green-300 text-xs px-2 py-1 rounded-full">4 GB Plan</span></td>
+              <td class="px-4 py-3 text-gray-300">Intel Core / Xeon, 16GB RAM</td>
+            </tr>
+            <tr class="bg-gray-900 hover:bg-gray-800 transition">
+              <td class="px-4 py-3 text-white font-medium">OpenChat 3.5 / 3.6 (7B)</td>
+              <td class="px-4 py-3 text-gray-300">Q8 / FP16</td>
+              <td class="px-4 py-3 text-gray-300">7–8 GB</td>
+              <td class="px-4 py-3"><span class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded-full">8 GB Plan</span></td>
+              <td class="px-4 py-3 text-gray-300">RTX 3060 12GB / any mid-range GPU</td>
+            </tr>
+            <tr class="bg-gray-900 hover:bg-gray-800 transition">
+              <td class="px-4 py-3 text-white font-medium">OpenChat 3.6 20B</td>
+              <td class="px-4 py-3 text-gray-300">Q4_K_M</td>
+              <td class="px-4 py-3 text-gray-300">12–14 GB</td>
+              <td class="px-4 py-3"><span class="bg-yellow-900 text-yellow-300 text-xs px-2 py-1 rounded-full">16 GB Plan / GPU</span></td>
+              <td class="px-4 py-3 text-gray-300">RTX 3090 / A4000 16GB</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who this model family is for -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">Who This Model Family Is For</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-gray-800 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-2"><span class="text-xl">👤</span><span class="text-xs font-semibold uppercase tracking-wide text-gray-500">Personal use</span></div>
+        <p class="text-gray-400 text-sm leading-relaxed">OpenChat is a strong choice if you want a genuinely conversational local AI that feels natural and responsive. Its C-RLFT training gives it excellent instruction-following ability, so it handles detailed, nuanced prompts well without drifting off-topic. It runs efficiently on modest hardware, making it practical for everyday writing, brainstorming, summarization, and general chat. While it no longer leads in raw reasoning or coding benchmarks, it remains one of the most pleasant and capable conversational models in the 7B class.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-2"><span class="text-xl">🏢</span><span class="text-xs font-semibold uppercase tracking-wide text-gray-500">Business / team use</span></div>
+        <p class="text-gray-400 text-sm leading-relaxed">Teams that need a reliable, self-hosted assistant for internal Q&amp;A, document drafting, meeting summaries, or lightweight customer-facing chat will find OpenChat practical and easy to work with. It produces coherent, on-topic responses with relatively little prompt engineering. However, for complex multi-step reasoning, structured data extraction, or production-grade code generation, newer families like Qwen 2.5, Llama 3.3, or DeepSeek V3 generally deliver stronger results. OpenChat earns its place where conversational fluency and fast, lightweight deployment matter most.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-2"><span class="text-xl">⚙️</span><span class="text-xs font-semibold uppercase tracking-wide text-gray-500">Developer &amp; technical use</span></div>
+        <p class="text-gray-400 text-sm leading-relaxed">Developers building conversational interfaces, chatbots, or dialogue-driven tools will appreciate OpenChat's predictable behavior and strong instruction adherence. It integrates cleanly with Ollama and responds well to structured prompts. It is less ideal for heavy coding assistance or complex algorithmic work, where more recent models have pulled ahead. Its small footprint makes it especially useful for prototyping and resource-constrained environments.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-2"><span class="text-xl">🔬</span><span class="text-xs font-semibold uppercase tracking-wide text-gray-500">Data science &amp; research</span></div>
+        <p class="text-gray-400 text-sm leading-relaxed">Researchers studying conversational alignment, instruction following, or the effects of C-RLFT (Conditioned Reinforcement Learning from Fine-Tuning) will find OpenChat historically significant and practically useful as a baseline. It provides a clean reference point for comparing dialogue quality and instruction adherence. For research requiring state-of-the-art reasoning or coding performance, newer model families have largely superseded it. It remains valuable in resource-constrained research settings or studies focused specifically on conversational behavior.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Should Use This -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">Who Should Deploy OpenChat?</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <div class="text-2xl mb-3">🎧</div>
+        <h3 class="font-semibold text-white mb-2">Customer Support Teams</h3>
+        <p class="text-gray-400 text-sm">Natural conversational fluency makes OpenChat ideal for front-line chat support — handling FAQs, ticket triage, and escalation routing without any data leaving your environment.</p>
+      </div>
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <div class="text-2xl mb-3">👩‍💻</div>
+        <h3 class="font-semibold text-white mb-2">Developer Teams</h3>
+        <p class="text-gray-400 text-sm">Deploy OpenChat as a private coding assistant — running locally or on a shared team server — for code review, documentation, debugging help, and onboarding acceleration.</p>
+      </div>
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+        <div class="text-2xl mb-3">🏢</div>
+        <h3 class="font-semibold text-white mb-2">Enterprise IT Departments</h3>
+        <p class="text-gray-400 text-sm">Internal knowledge base Q&A, IT helpdesk automation, and policy lookup — powered by a private LLM that never sends employee queries to external servers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Available Model Sizes -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-2">Available Model Sizes</h2>
+    <!-- INTERNAL: Verify Create individual size pages for each OpenChat variant with hardware benchmarks and deployment guidance before publishing. -->
+    <div class="overflow-x-auto rounded-xl border border-gray-800 mt-6">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wide">
+          <tr>
+            <th class="px-4 py-3 text-left">Model Size</th>
+            <th class="px-4 py-3 text-left">Ollama Tag</th>
+            <th class="px-4 py-3 text-left">Recommended NoCloudGPT Tier</th>
+            <th class="px-4 py-3 text-left">Notes</th>
+            <th class="px-4 py-3 text-left"></th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800">
+          <tr class="bg-gray-900">
+            <td class="px-4 py-3 text-white font-medium">OpenChat 7B</td>
+            <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-blue-300">openchat</code></td>
+            <td class="px-4 py-3 text-gray-300">Starter</td>
+            <td class="px-4 py-3 text-gray-300">Best balance of speed and quality. Runs well on 8GB RAM or consumer GPUs.</td>
+            <td class="px-4 py-3"><a href="/models/quote.html" class="text-blue-400 hover:text-blue-300 whitespace-nowrap">Get quote →</a></td>
+          </tr>
+          <tr class="bg-gray-900">
+            <td class="px-4 py-3 text-white font-medium">OpenChat 7B (Q4)</td>
+            <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-blue-300">openchat:7b-v3.5-1210-q4_0</code></td>
+            <td class="px-4 py-3 text-gray-300">Starter</td>
+            <td class="px-4 py-3 text-gray-300">Quantized for lower memory use. Good for personal or lightweight deployments.</td>
+            <td class="px-4 py-3"><a href="/models/quote.html" class="text-blue-400 hover:text-blue-300 whitespace-nowrap">Get quote →</a></td>
+          </tr>
+          <tr class="bg-gray-900">
+            <td class="px-4 py-3 text-white font-medium">OpenChat 7B (Q8)</td>
+            <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-blue-300">openchat:7b-v3.5-q8_0</code></td>
+            <td class="px-4 py-3 text-gray-300">Standard</td>
+            <td class="px-4 py-3 text-gray-300">Higher fidelity with modest extra VRAM cost. Recommended when hardware allows.</td>
+            <td class="px-4 py-3"><a href="/models/quote.html" class="text-blue-400 hover:text-blue-300 whitespace-nowrap">Get quote →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="bg-gray-800 border border-gray-700 rounded-xl p-4 mt-4">
+      <p class="text-gray-300 text-sm"><strong class="text-white">Note:</strong> OpenChat is a single-size family centered on 7B. It has been surpassed in raw reasoning and coding performance by newer models such as Llama 3.3, Qwen 2.5, and DeepSeek V3, but remains one of the strongest conversational models of its generation.</p>
+    </div>
+  </section>
+
+  <!-- Licensing Information -->
+  <section class="bg-gray-900 py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-white mb-4">Licensing Information</h2>
+      <p class="text-gray-300 text-sm leading-relaxed mb-4">OpenChat models are released under the <strong class="text-white">Apache 2.0 License</strong>, which is one of the most permissive open-source licenses available. This allows commercial use, modification, and redistribution without royalty fees (subject to standard Apache 2.0 attribution requirements).</p>
+      <p class="text-gray-300 text-sm leading-relaxed mb-4">The underlying base model (Mistral 7B) is also Apache 2.0 licensed, so the full stack is commercially clean with no conflicting upstream restrictions.</p>
+      <p class="text-gray-300 text-sm leading-relaxed mb-2"><strong class="text-white">Official model card:</strong></p>
+      <ul class="list-disc space-y-2 pl-5 text-gray-300 text-sm mb-6">
+        <li><a href="https://huggingface.co/openchat/openchat-3.5-0106" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300">openchat/openchat-3.5-0106 on Hugging Face</a></li>
+      </ul>
+      <div class="bg-gray-800 border border-yellow-900/50 rounded-xl p-4">
+        <p class="text-gray-300 text-sm"><strong class="text-yellow-400">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deployment -->
+  <section class="bg-gray-900 py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-white mb-4">Deployment Options</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="font-semibold text-white mb-2">☁️ 90-Day Lightsail Pilot</h3>
+          <p class="text-gray-400 text-sm mb-4">OpenChat 3.5 or 3.6 (7B Q4) on a $20–$40/month Lightsail instance via Ollama. Full REST API endpoint, private chat UI optional. Operational within hours.</p>
+          <a href="/contact" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Start Pilot →</a>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="font-semibold text-white mb-2">🖥️ On-Premise Installation</h3>
+          <p class="text-gray-400 text-sm mb-4">OpenChat 3.6 20B deployed on your own GPU server for higher accuracy. We handle installation, API setup, and integration with your existing customer support or developer tooling stack.</p>
+          <a href="/contact" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Request Install →</a>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="font-semibold text-white mb-2">📋 Custom Quote</h3>
+          <p class="text-gray-400 text-sm mb-4">Multi-instance deployments, high-availability configurations, or custom UI integration. We scope and deliver end-to-end private chat infrastructure.</p>
+          <a href="/contact" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Get a Quote →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-4xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-3xl font-bold text-white mb-4">ChatGPT Quality. Zero Data Egress.</h2>
+    <p class="text-gray-400 mb-8 max-w-xl mx-auto">OpenChat delivers ChatGPT-competitive conversation on a $20/month server. Start your private chat pilot today — no ongoing API costs, no data sharing, no lock-in.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contact" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3 rounded-xl transition">Start 90-Day Pilot</a>
+      <a href="/models/" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold px-8 py-3 rounded-xl transition">Browse All Models</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 border-t border-gray-800 px-6 py-8 text-center text-gray-500 text-sm">
+    <p>© 2025 NoCloudGPT. Private AI deployment specialists.</p>
+    <p class="mt-2">
+      <a href="/models/" class="text-blue-400 hover:text-blue-300 mr-4">Model Menu</a>
+      <a href="/contact" class="text-blue-400 hover:text-blue-300 mr-4">Contact</a>
+      <a href="/contact.html" class="text-blue-400 hover:text-blue-300">Privacy Policy</a>
+    </p>
   </footer>
+
 </body>
 </html>

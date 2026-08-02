@@ -1,74 +1,369 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>medgemma — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for medgemma: capabilities (vision), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/medgemma/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="medgemma — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for medgemma: capabilities (vision), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/medgemma/">
+<title>MedGemma – Private Medical AI | NoCloudGPT</title>
+  <meta name="description" content="Run MedGemma locally or on AWS Lightsail for private medical imaging analysis and clinical text understanding. No PHI leaves your infrastructure. HIPAA-aligned deployment with Ollama." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "medgemma", "description": "Catalog facts for medgemma: capabilities (vision), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/medgemma/"}</script>
 </head>
-<body class="bg-slate-950 text-slate-100">
+<body class="bg-gray-950 text-gray-100 font-sans">
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
-      </nav>
-    </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">medgemma</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">medgemma family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: verified publisher.</p>
+  <!-- Hero -->
+  
+<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/medgemma -->
+      <a href="https://ollama.com/library/medgemma" target="_blank" rel="noopener noreferrer" class="inline-block">
+        <img
+          src="/models/medgemma/hero.webp"
+          alt="medgemma model family hero"
+          width="1200"
+          height="600"
+          class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+        />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/medgemma" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
+<section class="max-w-4xl mx-auto px-6 py-16">
+    <p class="text-sm uppercase tracking-widest text-emerald-400 mb-3">Vision / Multimodal Models</p>
+    <h1 class="text-4xl font-bold leading-tight mb-6">
+      MedGemma: Private Medical AI for Imaging and Clinical Text
+    </h1>
+  <!-- INTERNAL: Verify Add hero.webp — see models/artwork-sources.md, row: medgemma before publishing. -->
 
-      <p class="mt-4 text-slate-400">Capabilities: vision. Ollama families: medgemma.</p>
+    <p class="text-lg text-gray-300 mb-8">
+      MedGemma is Google DeepMind's open-weight model purpose-built for healthcare. It combines a vision encoder trained on medical imaging datasets with a language backbone fine-tuned on clinical literature — so it understands radiology scans, pathology slides, and patient notes in the same model. Deployed privately via Ollama, no protected health information ever leaves your server.
+    </p>
+    <a href="/models/quote.html" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-semibold px-6 py-3 rounded-lg transition">
+      Start Your 90-Day Private Pilot →
+    </a>
+  </section>
+
+  <!-- What It Does -->
+  <section class="bg-gray-900 py-14">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-8 text-white">What MedGemma Does</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="text-emerald-400 font-semibold text-lg mb-3">Medical Image Understanding</h3>
+          <p class="text-gray-300 text-sm">
+            Analyze chest X-rays, CT slices, dermatology photos, and pathology slides. MedGemma's vision encoder is pre-trained on diverse biomedical imaging corpora — it recognizes anatomical structures and common findings out of the box, without extra fine-tuning for basic use cases.
+          </p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="text-emerald-400 font-semibold text-lg mb-3">Clinical Text Comprehension</h3>
+          <p class="text-gray-300 text-sm">
+            Summarize discharge summaries, extract ICD-relevant findings from clinical notes, answer questions about lab reports, and draft structured clinical documentation. MedGemma understands medical abbreviations, drug names, and diagnostic terminology that general-purpose models struggle with.
+          </p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="text-emerald-400 font-semibold text-lg mb-3">Multimodal Clinical Reasoning</h3>
+          <p class="text-gray-300 text-sm">
+            Combine image and text in a single prompt. Ask "Given this chest X-ray and the patient's reported symptoms, what findings are present and what differentials should be considered?" — and receive a structured, medically grounded response entirely within your private environment.
+          </p>
+        </div>
+
+      </div>
     </div>
-  </header>
-  <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
+  </section>
+
+  <!-- SECTION: Who this model family is for -->
+  <section class="max-w-4xl mx-auto px-6 py-14">
+    <p class="text-sm font-bold uppercase tracking-widest text-emerald-400">Who this model family is for</p>
+    <h2 class="mt-3 text-2xl font-semibold text-white">Who This Model Family is For</h2>
+    <div class="mt-6 grid gap-5 md:grid-cols-2">
+      <div class="border border-gray-700 rounded-xl p-6 bg-gray-900">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-lg">👤</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Personal use</span>
+        </div>
+        <p class="text-sm text-gray-300">MedGemma is a specialized medical model, not a general-purpose chatbot. It can be useful for medical students, residents, or healthcare professionals who want to privately explore clinical reasoning, review sample imaging, or study medical terminology offline. For everyday tasks or general conversation, a standard model like Llama 3.3 or Qwen 2.5 will serve you much better.</p>
+      </div>
+      <div class="border border-gray-700 rounded-xl p-6 bg-gray-900">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-lg">🏢</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Business / team use</span>
+        </div>
+        <p class="text-sm text-gray-300">Clinics, telehealth providers, and health-tech teams can use MedGemma to build private, on-premise tools for tasks like drafting radiology report summaries, triaging imaging studies, or extracting structured information from clinical notes. Because it runs entirely on your own hardware, sensitive patient data never leaves your infrastructure. It is a decision-support and productivity tool — not a diagnostic system — so all outputs that could affect patient care must be reviewed by a qualified clinician.</p>
+      </div>
+      <div class="border border-gray-700 rounded-xl p-6 bg-gray-900">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-lg">⚙️</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Developer &amp; technical use</span>
+        </div>
+        <p class="text-sm text-gray-300">Developers building private healthcare applications get a multimodal foundation that understands both medical images (X-rays, pathology, dermatology, ophthalmology) and clinical text. It is well suited for prototyping report generation tools, image analysis assistants, or document parsing pipelines without sending protected health information to external APIs. Expect to invest in prompt engineering, validation, and safety guardrails — MedGemma is a capable building block, not a finished clinical product.</p>
+      </div>
+      <div class="border border-gray-700 rounded-xl p-6 bg-gray-900">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-lg">🔬</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Data science &amp; research</span>
+        </div>
+        <p class="text-sm text-gray-300">Research teams in radiology, pathology, and clinical NLP can use MedGemma as a strong, openly available baseline for benchmarking and fine-tuning on domain-specific datasets. Its multimodal design makes it valuable for experiments that combine imaging and text. Local deployment allows work with sensitive cohorts under your own data governance rules. All results should be treated as research-grade and validated rigorously against ground truth before any clinical conclusions are drawn.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: Licensing information -->
+  <section class="bg-gray-900 py-14">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="text-sm font-bold uppercase tracking-widest text-emerald-400">Licensing information</p>
+      <h2 class="mt-3 text-2xl font-semibold text-white">Licensing Information</h2>
+      <p class="mt-5 text-gray-300">MedGemma is released by Google under the Health AI Developer Foundations (HAI-DEF) terms, which build on the Gemma license. Commercial use is permitted, but the license includes important health-specific restrictions and responsible-use requirements.</p>
+      <p class="mt-4 text-gray-300">MedGemma is intended as a research and development foundation. It is <strong class="text-white">not</strong> a cleared or approved medical device, and its outputs must not be used for direct clinical decision-making without independent validation and appropriate professional oversight.</p>
+      <p class="mt-5 text-gray-300"><strong class="text-white">Official model card:</strong></p>
+      <ul class="mt-2 list-disc space-y-2 pl-5 text-gray-300">
+        <li><a href="https://huggingface.co/google/medgemma" target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300">Google MedGemma on Hugging Face</a></li>
+      </ul>
+      <div class="mt-5 rounded-xl border border-amber-500/30 bg-amber-950/20 p-5">
+        <p class="text-sm text-gray-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated (especially clinical) context.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: Available model sizes -->
+  <section class="max-w-4xl mx-auto px-6 py-14">
+    <p class="text-sm font-bold uppercase tracking-widest text-emerald-400">Available model sizes</p>
+    <h2 class="mt-3 text-2xl font-semibold text-white">Available Model Sizes</h2>
+    <!-- INTERNAL: Verify Create individual model size detail pages for medgemma-4b and medgemma-27b with hardware benchmarks and clinical use guidance before publishing. -->
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-sm text-left border border-gray-700 rounded-xl overflow-hidden">
+        <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wider">
           <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
+            <th class="px-4 py-3">Model Size</th>
+            <th class="px-4 py-3">Ollama Tag</th>
+            <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+            <th class="px-4 py-3">Notes</th>
+            <th class="px-4 py-3"></th>
           </tr>
         </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/medgemma/" class="font-semibold text-cyan-300 hover:text-cyan-200">medgemma</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">vision</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
+        <tbody class="divide-y divide-gray-700">
+          <tr class="bg-gray-900">
+            <td class="px-4 py-3 text-white font-medium">MedGemma 4B (Multimodal)</td>
+            <td class="px-4 py-3"><code class="bg-gray-800 px-1.5 py-0.5 rounded text-emerald-300">medgemma:4b</code></td>
+            <td class="px-4 py-3">Starter / Workstation</td>
+            <td class="px-4 py-3">Handles both medical images and text. Best balance of capability and modest hardware requirements. Good for prototyping.</td>
+            <td class="px-4 py-3"><a href="/models/quote.html" class="text-emerald-400 hover:text-emerald-300 text-xs whitespace-nowrap">Get quote →</a></td>
+          </tr>
+          <tr class="bg-gray-950">
+            <td class="px-4 py-3 text-white font-medium">MedGemma 27B (Text)</td>
+            <td class="px-4 py-3"><code class="bg-gray-800 px-1.5 py-0.5 rounded text-emerald-300">medgemma:27b</code></td>
+            <td class="px-4 py-3">Professional / Server</td>
+            <td class="px-4 py-3">Text-only model optimized for advanced clinical reasoning and document-heavy workflows.</td>
+            <td class="px-4 py-3"><a href="/models/quote.html" class="text-emerald-400 hover:text-emerald-300 text-xs whitespace-nowrap">Get quote →</a></td>
+          </tr>
+          <tr class="bg-gray-900">
+            <td class="px-4 py-3 text-white font-medium">MedGemma 27B (Multimodal)</td>
+            <td class="px-4 py-3"><code class="bg-gray-800 px-1.5 py-0.5 rounded text-emerald-300">medgemma:27b-mm</code></td>
+            <td class="px-4 py-3">Professional / Server</td>
+            <td class="px-4 py-3">Full image + text understanding at higher capability. Best option for imaging-focused deployments.</td>
+            <td class="px-4 py-3"><a href="/models/quote.html" class="text-emerald-400 hover:text-emerald-300 text-xs whitespace-nowrap">Get quote →</a></td>
+          </tr>
         </tbody>
       </table>
-    </section>
-  </main>
+    </div>
+    <div class="mt-5 rounded-xl border border-gray-700 bg-gray-900 p-5">
+      <p class="text-sm text-gray-300"><strong class="text-white">Important note:</strong> MedGemma is a <strong class="text-white">specialized medical multimodal model</strong>. It should be used with appropriate caution in any clinical or patient-facing context. All outputs that could influence care decisions require review by qualified medical professionals.</p>
+    </div>
+  </section>
 
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
-  </footer>
+  <!-- Use Cases -->
+  <section class="max-w-4xl mx-auto px-6 py-14">
+    <h2 class="text-2xl font-semibold mb-8 text-white">Who Uses MedGemma — and Why Privately</h2>
+
+    <div class="space-y-6">
+
+      <div class="border border-gray-700 rounded-xl p-6">
+        <h3 class="text-white font-semibold mb-2">🏥 Hospitals and Health Systems</h3>
+        <p class="text-gray-300 text-sm">
+          Radiology departments running second-read triage tools need a model that never exfiltrates patient data. A MedGemma instance on a dedicated Lightsail 8 GB server — behind your VPN — gives clinicians an AI assistant for preliminary image review, flagging studies that warrant urgent radiologist attention. PHI stays on-prem or in your private cloud account.
+        </p>
+      </div>
+
+      <div class="border border-gray-700 rounded-xl p-6">
+        <h3 class="text-white font-semibold mb-2">🔬 Clinical Research Organizations</h3>
+        <p class="text-gray-300 text-sm">
+          CROs handling imaging data from multi-site trials need consistent, auditable analysis without routing scans through consumer AI APIs. MedGemma deployed on a dedicated instance can batch-process trial imaging data, generate structured observation reports, and maintain a complete local audit log — all without a data-sharing agreement headache.
+        </p>
+      </div>
+
+      <div class="border border-gray-700 rounded-xl p-6">
+        <h3 class="text-white font-semibold mb-2">🩺 Telehealth and Digital Health Startups</h3>
+        <p class="text-gray-300 text-sm">
+          Building a dermatology triage app? An AI ophthalmology screener? MedGemma gives you a medically capable foundation model you can fine-tune on your own labeled dataset and deploy to a server your legal team actually controls. Stop paying per-API-call for a model trained on unknown data with opaque licensing.
+        </p>
+      </div>
+
+      <div class="border border-gray-700 rounded-xl p-6">
+        <h3 class="text-white font-semibold mb-2">📋 Health Insurance and Utilization Review</h3>
+        <p class="text-gray-300 text-sm">
+          Prior authorization teams reviewing submitted clinical documentation and imaging can use MedGemma to extract structured findings, compare against clinical criteria, and pre-populate review forms — processing member records without routing them through a third-party AI vendor.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Variants and Hardware -->
+  <section class="bg-gray-900 py-14">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-8 text-white">Model Variants and Recommended Hardware</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left border border-gray-700 rounded-xl overflow-hidden">
+          <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wider">
+            <tr>
+              <th class="px-4 py-3">Variant</th>
+              <th class="px-4 py-3">Parameters</th>
+              <th class="px-4 py-3">Min RAM</th>
+              <th class="px-4 py-3">Recommended Deployment</th>
+              <th class="px-4 py-3">Best For</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-700">
+            <tr class="bg-gray-900">
+              <td class="px-4 py-3 text-emerald-400 font-medium">MedGemma 4B (text)</td>
+              <td class="px-4 py-3">4B</td>
+              <td class="px-4 py-3">4 GB</td>
+              <td class="px-4 py-3">Lightsail 4 GB</td>
+              <td class="px-4 py-3">Clinical text summarization, note Q&amp;A</td>
+            </tr>
+            <tr class="bg-gray-950">
+              <td class="px-4 py-3 text-emerald-400 font-medium">MedGemma 4B (multimodal)</td>
+              <td class="px-4 py-3">4B</td>
+              <td class="px-4 py-3">6 GB</td>
+              <td class="px-4 py-3">Lightsail 8 GB</td>
+              <td class="px-4 py-3">Image + text, radiology triage</td>
+            </tr>
+            <tr class="bg-gray-900">
+              <td class="px-4 py-3 text-emerald-400 font-medium">MedGemma 27B (multimodal)</td>
+              <td class="px-4 py-3">27B</td>
+              <td class="px-4 py-3">20 GB+</td>
+              <td class="px-4 py-3">GPU instance / on-premise</td>
+              <td class="px-4 py-3">High-accuracy research, complex multimodal reasoning</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-400 text-sm mt-6">
+        For most clinical workflow pilots, <strong class="text-white">MedGemma 4B multimodal on Lightsail 8 GB</strong> is the right starting point. It runs at Q4 quantization (~5–6 GB RAM) without GPU acceleration and handles real-time image + text queries at acceptable clinical-support latency. The 27B variant requires a GPU-equipped instance (A10G or better) for production throughput.
+      </p>
+    </div>
+  </section>
+
+  <!-- Privacy / Compliance -->
+  <section class="max-w-4xl mx-auto px-6 py-14">
+    <h2 class="text-2xl font-semibold mb-6 text-white">Privacy and Compliance Posture</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <div class="bg-gray-800 rounded-xl p-6">
+        <h3 class="text-emerald-400 font-semibold mb-3">No PHI to Third Parties</h3>
+        <p class="text-gray-300 text-sm">
+          Because MedGemma runs entirely on your infrastructure via Ollama, patient images and clinical notes never leave your environment. There's no API call to Google, no model-provider data retention, and no ambiguity about where your data goes.
+        </p>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl p-6">
+        <h3 class="text-emerald-400 font-semibold mb-3">HIPAA-Aligned Architecture</h3>
+        <p class="text-gray-300 text-sm">
+          AWS Lightsail instances can be deployed in HIPAA-eligible regions under your existing AWS Business Associate Agreement. Combine with encrypted EBS volumes and VPC isolation for a defensible HIPAA technical safeguard posture — without standing up a complex managed AI service.
+        </p>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl p-6">
+        <h3 class="text-emerald-400 font-semibold mb-3">Auditable Inference Logs</h3>
+        <p class="text-gray-300 text-sm">
+          Every query and response can be logged locally to structured JSON. Your compliance team gets a complete audit trail of AI-assisted clinical decisions — query, image hash, response, timestamp — without exporting sensitive data to a vendor's logging infrastructure.
+        </p>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl p-6">
+        <h3 class="text-emerald-400 font-semibold mb-3">Fine-Tuning on Your Data</h3>
+        <p class="text-gray-300 text-sm">
+          MedGemma's open weights mean you can fine-tune the model on your institution's labeled imaging dataset using LoRA adapters — then deploy the adapted model privately. Your institution's clinical knowledge stays yours, not incorporated into a shared vendor model.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Important Disclaimer -->
+  <section class="bg-yellow-950 border border-yellow-700 rounded-xl max-w-4xl mx-auto px-6 py-8 mb-10">
+    <h3 class="text-yellow-400 font-semibold text-lg mb-3">⚠️ Clinical Decision Support — Not a Medical Device</h3>
+    <p class="text-yellow-200 text-sm">
+      MedGemma is a research and clinical decision <em>support</em> tool. It is not FDA-cleared or CE-marked as a medical device and should not be used as the sole basis for diagnostic or treatment decisions. All AI-generated clinical outputs must be reviewed by qualified healthcare professionals. Confirm your specific regulatory obligations with your compliance and legal teams before deployment.
+    </p>
+  </section>
+
+  <!-- Setup -->
+  <section class="bg-gray-900 py-14">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-6 text-white">Getting Started in Under an Hour</h2>
+      <ol class="space-y-4 text-gray-300 text-sm list-none">
+        <li class="flex gap-4">
+          <span class="text-emerald-400 font-bold text-lg leading-tight">1.</span>
+          <span>Provision an <strong class="text-white">AWS Lightsail 8 GB</strong> instance (Ubuntu 22.04 LTS) in your preferred HIPAA-eligible region.</span>
+        </li>
+        <li class="flex gap-4">
+          <span class="text-emerald-400 font-bold text-lg leading-tight">2.</span>
+          <span>Install Ollama: <code class="bg-gray-800 px-2 py-0.5 rounded text-emerald-300">curl -fsSL https://ollama.com/install.sh | sh</code></span>
+        </li>
+        <li class="flex gap-4">
+          <span class="text-emerald-400 font-bold text-lg leading-tight">3.</span>
+          <span>Pull the multimodal variant: <code class="bg-gray-800 px-2 py-0.5 rounded text-emerald-300">ollama pull medgemma</code></span>
+        </li>
+        <li class="flex gap-4">
+          <span class="text-emerald-400 font-bold text-lg leading-tight">4.</span>
+          <span>Restrict network access to your VPN or internal IP range via Lightsail firewall rules.</span>
+        </li>
+        <li class="flex gap-4">
+          <span class="text-emerald-400 font-bold text-lg leading-tight">5.</span>
+          <span>Connect your clinical application or internal tool to <code class="bg-gray-800 px-2 py-0.5 rounded text-emerald-300">http://localhost:11434</code> via Ollama's REST API.</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-4xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-3xl font-bold mb-4">Keep Patient Data Where It Belongs</h2>
+    <p class="text-gray-300 mb-8 max-w-xl mx-auto">
+      Run medical-grade AI on your infrastructure. NoCloudGPT helps you deploy MedGemma with a HIPAA-aligned configuration, Ollama setup, and 90-day pilot plan — so your clinical team can evaluate it before committing to any long-term infrastructure spend.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/models/quote.html" class="bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-semibold px-8 py-3 rounded-lg transition">
+        Start 90-Day Pilot
+      </a>
+      <a href="/models/" class="border border-gray-600 hover:border-emerald-500 text-gray-300 hover:text-emerald-400 font-semibold px-8 py-3 rounded-lg transition">
+        ← Back to Model Menu
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section style="border-top:1px solid #1e293b; background:#0f172a; padding:2rem 1.5rem; margin-top:3rem;">
+    <div style="max-width:56rem; margin:0 auto; font-size:0.75rem; color:#64748b;">
+      <p style="font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Artwork and source references</p>
+      <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Hero image</p>
+          
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Developer reference</p>
+          <p style="margin-top:0.25rem;">MedGemma is developed by <a href="https://deepmind.google/models/gemma/" target="_blank" rel="noopener" style="color:#67e8f9;">Google DeepMind</a>. NoCloudGPT is an independent deployment service not affiliated with Google DeepMind.</p>
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Model catalog</p>
+          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/medgemma" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: medgemma</a> for current tags and sizes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>

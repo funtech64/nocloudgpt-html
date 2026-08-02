@@ -3,72 +3,465 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>deepseek-r1 — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for deepseek-r1: capabilities (thinking, tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/deepseek-r1/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="deepseek-r1 — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for deepseek-r1: capabilities (thinking, tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+<title>DeepSeek R1 — Private Chain-of-Thought Reasoning AI | NoCloudGPT</title>
+  <meta name="description" content="Deploy DeepSeek R1 privately with NoCloudGPT. Auditable chain-of-thought reasoning for compliance, finance, and technical analysis — distilled variants run on modest hardware.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/deepseek-r1/">
+  <meta property="og:title" content="DeepSeek R1 — Private Reasoning AI | NoCloudGPT">
+  <meta property="og:description" content="Run DeepSeek R1 on your own server. Explicit chain-of-thought output — each reasoning step is visible, auditable, and private.">
+  <meta property="og:image" content="/models/deepseek-r1/og.webp">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/deepseek-r1/">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "deepseek-r1", "description": "Catalog facts for deepseek-r1: capabilities (thinking, tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/deepseek-r1/"}</script>
 </head>
 <body class="bg-slate-950 text-slate-100">
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/models/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/models/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
       </nav>
     </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">deepseek-r1</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">deepseek-r1 family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
-
-      <p class="mt-4 text-slate-400">Capabilities: thinking, tools. Ollama families: deepseek-r1.</p>
-    </div>
   </header>
+
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+            <!-- INTERNAL: hero.webp sourced from https://ollama.com/library/deepseek-r1 -->
+      <a href="https://ollama.com/library/deepseek-r1" target="_blank" rel="noopener noreferrer" class="inline-block">
+<img
+        src="/models/deepseek-r1/hero.webp"
+        alt="DeepSeek R1 chain-of-thought reasoning — privately deployed with NoCloudGPT"
+        width="1200"
+        height="600"
+        class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+      />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/deepseek-r1" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
+      </div>
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">DeepSeek R1</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+        Private Chain-of-Thought Reasoning — Every Step Auditable, Nothing Leaving Your Server
+      </h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">
+        DeepSeek R1 is a reasoning-focused model that works through problems in visible,
+        step-by-step chains before delivering a final answer. For compliance review, financial
+        analysis, legal reasoning, and any workflow where showing your working matters as
+        much as the conclusion — R1's auditable logic is a practical advantage.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-400">
+        Distilled R1 variants run on Standard AI instances. The full R1 requires GPU hardware.
+        Released under MIT license — one of the most commercially permissive available.
+        NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/models/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="/models/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+        <a href="/models/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </section>
+
   <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/deepseek-r1/" class="font-semibold text-cyan-300 hover:text-cyan-200">deepseek-r1</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">thinking, tools</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
-        </tbody>
-      </table>
-    </section>
+    <div class="grid gap-10 lg:grid-cols-[1.55fr_0.95fr]">
+      <div class="space-y-14">
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">What this model is</p>
+          <h2 class="mt-3 text-3xl font-black">A Reasoning Model That Shows Its Work — Privately</h2>
+          <p class="mt-5 text-slate-300">
+            DeepSeek R1 is DeepSeek AI's reasoning-specialized model, trained with reinforcement
+            learning to produce explicit chain-of-thought output before delivering a final answer.
+            Unlike standard models that generate an answer directly, R1 reasons through the problem
+            step by step — and that reasoning is visible in the output. You can follow the logic,
+            identify where it went wrong, and audit the conclusion against the steps that produced it.
+          </p>
+          <p class="mt-4 text-slate-300">
+            For regulated industries, compliance teams, and analytical workflows, this auditability
+            is not just convenient — it is often a requirement. When an AI-assisted decision needs
+            to be justified to an auditor, regulator, or client, R1's reasoning trace provides the
+            documentation that a black-box answer cannot.
+          </p>
+          <p class="mt-4 text-slate-300">
+            R1 is available as distilled variants (7B through 70B) that inherit reasoning capability
+            in a fraction of the hardware footprint. Distilled R1-7B runs on a Standard AI instance.
+            The full R1 (671B MoE) requires enterprise hardware.
+            NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
+          </p>
+
+          <div class="mt-8 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-cyan-500/30 bg-cyan-950/40 p-6">
+              <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Distilled R1 (7B–70B)</p>
+              <h3 class="mt-2 text-lg font-bold text-white">Practical everyday reasoning</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                Smaller models distilled from the full R1, retaining much of the chain-of-thought
+                capability in a fraction of the hardware footprint. The 7B distilled runs on 4–8 GB.
+                The recommended starting point for most deployments.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-violet-500/30 bg-violet-950/40 p-6">
+              <p class="text-xs font-bold uppercase tracking-widest text-violet-300">Full R1 (671B MoE)</p>
+              <h3 class="mt-2 text-lg font-bold text-white">Maximum reasoning quality</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                The full model. Competitive with frontier commercial models on mathematical
+                and analytical reasoning benchmarks. NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
+                Not practical for standard Lightsail instances.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
+          <h2 class="mt-3 text-3xl font-black">DeepSeek AI</h2>
+          <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+            <!-- INTERNAL: Verify /assets/models/deepseek-r1/deepseek-r1-developer.webp before publishing. -->
+          </div>
+          <p class="mt-6 text-slate-300">
+            DeepSeek AI is an AI research organization based in Hangzhou, China. DeepSeek R1
+            was released in January 2025 and gained significant international attention when it
+            achieved reasoning benchmark results competitive with significantly larger models from
+            major Western AI labs, while releasing the weights under MIT licensing.
+          </p>
+          <p class="mt-4 text-slate-300">
+            NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
+            which may carry different terms than the full model. Confirm commercial use eligibility
+            for your specific deployment context.
+          </p>
+          <p class="mt-4 text-slate-300">
+            NoCloudGPT is independent of DeepSeek AI. When R1 runs on your server via Ollama,
+            no data is routed through DeepSeek's infrastructure.
+          </p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Why teams choose it</p>
+          <h2 class="mt-3 text-3xl font-black">The Private Auditable Reasoning Argument</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Auditable compliance and legal reasoning</h3>
+              <p class="mt-3 text-slate-400">
+                R1 shows its reasoning steps. When a compliance officer asks "why did the AI
+                flag this clause?" — the reasoning trace provides the answer. For regulated
+                industries where black-box AI answers are not acceptable, this changes what's
+                possible with private AI.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Financial and quantitative analysis</h3>
+              <p class="mt-3 text-slate-400">
+                Multi-step quantitative problems — financial modeling, statistical analysis,
+                formula derivation — benefit from R1's training emphasis on working through
+                numerical problems explicitly rather than leaping to conclusions.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">MIT license — cleanest IP position</h3>
+              <p class="mt-3 text-slate-400">
+                R1's MIT licensing is among the most permissive available for a high-capability
+                reasoning model. Confirm current terms, but for most commercial deployments
+                this removes the license review friction of Llama or proprietary options.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Proprietary analytical work stays private</h3>
+              <p class="mt-3 text-slate-400">
+                Financial models, proprietary research, confidential client analysis —
+                when this work is routed through a cloud reasoning API, it's processed
+                on someone else's infrastructure. R1 on your server eliminates this exposure.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">DeepSeek R1 is a strong fit if you regularly work on complex multi-step problems — tax logic, investment math, legal clause interpretation, debugging difficult code, or any task that requires more than a one-shot answer. It thinks out loud in a structured chain-of-thought style, which means you can actually follow its reasoning rather than just trusting a conclusion. Be aware that responses are longer and more deliberate than a typical chat model. If you want quick conversational answers, a general-purpose model will feel snappier. But for genuinely hard problems where being right matters more than being fast, R1 earns its keep. The 14B–70B distilled variants hit a practical sweet spot for most individuals.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Teams that deal with structured complexity — financial modeling, contract analysis, compliance logic, or multi-step data workflows — will find R1 significantly more reliable than general-purpose models on tasks where reasoning chains need to hold together across many steps. It is particularly useful for internal tools where a wrong answer has real consequences, because the visible reasoning trace makes it easier to spot where logic breaks down before acting on the output. The distilled variants (7B–70B) are practical to self-host on business-grade hardware. The full 671B model is a substantial infrastructure commitment, so most teams should start with a distilled size and scale up only if accuracy benchmarks demand it.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">DeepSeek R1 was trained with coding and mathematical reasoning as first-class objectives. It handles algorithm design, code review, refactoring rationale, and debugging with a level of structured justification that generic models often skip — you get the <em>why</em>, not just the <em>what</em>. The chain-of-thought output is verbose by design, which is useful during development when you want to audit logic, but you may want to strip the <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">&lt;redacted_thinking&gt;</code> tags in production pipelines where only the final answer matters. Developers building reasoning-heavy agents, code-generation tools, or multi-step automated workflows will find R1's distilled variants a practical backbone that runs locally without external API calls.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">R1 performs well on graduate-level STEM reasoning tasks, multi-step mathematical proofs, scientific problem decomposition, and statistical logic. It can walk through hypothesis structures, evaluate experimental designs, and explain methodology trade-offs with genuine analytical depth. The explicit reasoning trace is a meaningful advantage: you can read the model's chain of inference and identify faulty assumptions, which matters in research contexts where "trust me" isn't good enough. Note that R1 is not a retrieval model — it works from its training knowledge — so pair it with a document-grounding layer if your work depends on citing current literature.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
+          <h2 class="mt-3 text-3xl font-black">What to Use DeepSeek R1 For</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Compliance review and audit support</h3>
+              <p class="mt-3 text-sm text-slate-400">Reasoning through regulatory requirements, flagging compliance gaps, and generating audit-ready documentation where each conclusion is traceable to reasoning steps.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Legal and contract reasoning</h3>
+              <p class="mt-3 text-sm text-slate-400">Multi-step legal analysis where the reasoning chain — not just the conclusion — needs to be reviewed, challenged, and documented by qualified professionals.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Mathematical and quantitative problems</h3>
+              <p class="mt-3 text-sm text-slate-400">Financial modeling, algorithm design, statistical problem solving, and multi-variable analysis where showing the working is as important as the answer.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Technical problem decomposition</h3>
+              <p class="mt-3 text-sm text-slate-400">Architecture decisions, debugging complex systems, and engineering trade-off analysis where the reasoning process itself is valuable for team learning and documentation.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Which variant should you choose?</p>
+          <h2 class="mt-3 text-3xl font-black">Distilled R1 vs Full R1</h2>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr><th class="px-4 py-3">Variant</th><th class="px-4 py-3">NoCloudGPT tier</th><th class="px-4 py-3">Best use</th></tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3 font-semibold text-white">Distilled R1 7B</td><td class="px-4 py-3">Standard AI (4–8 GB)</td><td class="px-4 py-3">Everyday analytical reasoning, compliance support</td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Distilled R1 14B–32B</td><td class="px-4 py-3">Professional AI (GPU)</td><td class="px-4 py-3">Better reasoning depth, professional analytical work</td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Distilled R1 70B</td><td class="px-4 py-3">Heavy AI (large GPU)</td><td class="px-4 py-3">Near full-R1 quality, production analytical workflows</td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Full R1 (671B)</td><td class="px-4 py-3">Enterprise AI (multi-GPU)</td><td class="px-4 py-3">Maximum reasoning quality, on-premise only</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4 text-sm text-slate-400">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.</p>
+        </section>
+
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">DeepSeek R1 is released under the <strong class="text-white">DeepSeek R1 License</strong>, which permits free use for research and most commercial applications up to a defined usage threshold. It is not a fully open license in the OSI sense — there are restrictions on using the model to train or distill other models, and organizations with very large-scale deployments should review the terms carefully before assuming unrestricted commercial rights.</p>
+          <p class="mt-4 text-slate-300">The distilled variants (DeepSeek-R1-Distill-Qwen and DeepSeek-R1-Distill-Llama series) inherit licensing from their respective base model families. Some carry more permissive terms (MIT or Apache 2.0), while others follow the stricter DeepSeek license. Always check the specific model card before deploying commercially.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official model cards:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">DeepSeek-R1 on Hugging Face</a></li>
+            <li><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">DeepSeek-R1-Distill-Qwen-7B on Hugging Face</a></li>
+            <li><a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">DeepSeek-R1-Distill-Llama-70B on Hugging Face</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides licensing information as a convenience summary only. License terms can change, and your use case may have specific legal requirements. Always read the full license text on the official model card and consult qualified legal counsel before deploying in a commercial or regulated environment. NoCloudGPT is not responsible for licensing decisions made by customers.</p>
+          </div>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <!-- INTERNAL: Verify Create individual size pages for each DeepSeek R1 variant (e.g. /models/deepseek-r1-7b, /models/deepseek-r1-70b, etc.) and link the Model Size column entries once those pages are live before publishing. -->
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Distill 1.5B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:1.5b</code></td>
+                  <td class="px-4 py-3">Starter</td>
+                  <td class="px-4 py-3">Extremely lightweight; useful for edge or embedded reasoning tasks. Peak accuracy is limited — best for simple structured problems.</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Distill 7B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:7b</code></td>
+                  <td class="px-4 py-3">Starter / Personal</td>
+                  <td class="px-4 py-3">Good entry point for personal and small team use. Runs comfortably on a modern consumer GPU. Noticeable quality step up from 1.5B on multi-step reasoning.</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Distill 8B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:8b</code></td>
+                  <td class="px-4 py-3">Starter / Personal</td>
+                  <td class="px-4 py-3">Llama-3-based distill. Slightly larger than the 7B Qwen variant with a different base model flavor. Compare both if accuracy on your specific task matters.</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Distill 14B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:14b</code></td>
+                  <td class="px-4 py-3">Professional</td>
+                  <td class="px-4 py-3">Meaningful accuracy gains over 7B/8B on harder reasoning chains. Requires a capable consumer or workstation GPU. A practical sweet spot for solo power users.</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Distill 32B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:32b</code></td>
+                  <td class="px-4 py-3">Professional / Team</td>
+                  <td class="px-4 py-3">Strong reasoning quality at a still-manageable size. Recommended starting point for team deployments where output quality directly affects decisions.</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Distill 70B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:70b</code></td>
+                  <td class="px-4 py-3">Business / Enterprise</td>
+                  <td class="px-4 py-3">Near-full-R1 reasoning quality in many benchmarks. Requires serious server-class GPU memory (80GB+ VRAM recommended). Best accuracy-to-infrastructure ratio for most enterprise teams.</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">R1 Full (671B)</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">deepseek-r1:671b</code></td>
+                  <td class="px-4 py-3">Enterprise (Custom)</td>
+                  <td class="px-4 py-3">The uncompromised model. Requires multi-GPU infrastructure and careful deployment planning. Reserved for organizations where maximum reasoning accuracy is non-negotiable.</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-white">A note on distilled models:</strong> The 1.5B–70B variants are knowledge-distilled from the full 671B model. They retain R1's chain-of-thought reasoning style and perform well above their parameter count on logic-heavy tasks — but they do trade some of the full model's peak reasoning depth, especially on the hardest problems. For most real-world business use cases, the 32B or 70B distilled variants hit the right balance between capability and deployability.</p>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Honest guidance</p>
+          <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model Instead</h2>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">Your use case is general writing, summarization, or Q&A</h3>
+              <p class="mt-2 text-sm text-slate-400">R1's chain-of-thought output adds latency and verbosity. For everyday business writing, Llama or Qwen deliver better results at lower cost. <a href="/models/llama/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Llama →</a></p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">Your primary workload is coding</h3>
+              <p class="mt-2 text-sm text-slate-400">DeepSeek Coder V2 is purpose-built for software engineering tasks. For code generation and review, see the dedicated coding page. <a href="/models/deepseek-coder/" class="ml-1 text-cyan-300 hover:text-cyan-200">See DeepSeek Coder →</a></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
+          <h2 class="mt-3 text-3xl font-black">Start Your Private DeepSeek R1 Deployment</h2>
+          <p class="mt-5 text-slate-300">
+            NoCloudGPT configures DeepSeek R1 distilled variants on your Lightsail instance or
+            on-premise server. We help you select the right distilled size for your hardware,
+            configure Ollama and OpenWebUI, and make sure the first reasoning session is
+            useful before you hand it to your team.
+          </p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <a href="/models/quote.html" class="rounded-2xl bg-cyan-300 p-5 text-center font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+            <a href="/models/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+            <a href="/models/deploy/on-premise.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-7">
+          <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Quick reference</p>
+          <h2 class="mt-3 text-2xl font-black">DeepSeek R1 deployment</h2>
+          <p class="mt-3 text-sm text-cyan-50">Auditable chain-of-thought reasoning. Distilled variants run on Standard AI. Full model needs enterprise hardware.</p>
+          <dl class="mt-5 space-y-3 text-sm">
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Developer</dt><dd class="font-semibold text-white">DeepSeek AI</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Full model</dt><dd class="font-semibold text-white">671B MoE</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Distilled sizes</dt><dd class="font-semibold text-white">7B–70B; confirm current support</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Starter tier</dt><dd class="font-semibold text-white">Standard AI (7B distilled)</dd></div>
+            <div class="flex justify-between"><dt class="text-slate-400">Output style</dt><dd class="font-semibold text-white">Chain-of-thought</dd></div>
+          </dl>
+          <a href="/models/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build an R1 quote</a>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-300">
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Compliance review and audit support</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Legal and contract reasoning</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Financial and quantitative analysis</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Technical problem decomposition</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Auditable decision documentation</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deepseek/">DeepSeek family overview</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deepseek-coder/">DeepSeek Coder</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/llama4/">Llama 4 — general reasoning</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/phi4/">Phi 4 — small reasoning model</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deploy/on-premise.html">On-premise GPU installation</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
   </main>
 
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+    <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by DeepSeek AI or any model developer referenced on this page.</p>
+  
+  <div class="mx-auto max-w-6xl px-6 py-4">
+    <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
+      <strong class="text-slate-400">License information:</strong>
+      License terms for open-weight models are sourced from Hugging Face model cards and official repositories.
+      Licenses may vary by model generation, quantization, and deployment scale.
+      Always verify the current license at
+      <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
+      or the official developer repository before commercial deployment.
+      NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
+    </p>
+  </div>
   </footer>
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
+      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="font-semibold text-slate-400">Hero image</p>
+          <p class="mt-1">AI-generated abstract artwork created for NoCloudGPT. Original work, no third-party license required.</p>
+          <!-- INTERNAL: Verify Replace with licensed photo from Unsplash when available before publishing. -->
+          <!-- Unsplash search reference: https://unsplash.com/s/photos/mathematics -->
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Developer reference</p>
+          <p class="mt-1">DeepSeek R1 is developed by <a href="https://huggingface.co/deepseek-ai/DeepSeek-R1" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">DeepSeek AI</a>. NoCloudGPT is an independent deployment service and is not affiliated with or endorsed by DeepSeek AI.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Model catalog reference</p>
+          <p class="mt-1">See the <a href="https://ollama.com/library/deepseek-r1" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Ollama library page for DeepSeek R1</a> for current model tags, sizes, and release notes.</p>
+          <!-- card.webp, sidebar.webp, og.webp: TODO — see models/artwork-sources.md -->
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>

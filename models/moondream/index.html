@@ -1,74 +1,360 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>moondream — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for moondream: capabilities (thinking, vision), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/moondream/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="moondream — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for moondream: capabilities (thinking, vision), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/moondream/">
+<title>Moondream on Ollama | Edge Vision AI | NoCloudGPT</title>
+  <meta name="description" content="Deploy Moondream with NoCloudGPT for fast, private image understanding on minimal hardware. Ideal for edge devices, embedded systems, and lightweight server setups." />
+  <meta name="keywords" content="Moondream Ollama, Moondream private deployment, edge vision AI, lightweight image AI, Raspberry Pi vision model, self-hosted image understanding" />
+  <link rel="canonical" href="https://nocloudgpt.com/models/moondream/" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "moondream", "description": "Catalog facts for moondream: capabilities (thinking, vision), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/moondream/"}</script>
 </head>
-<body class="bg-slate-950 text-slate-100">
+<body class="bg-gray-950 text-gray-100 font-sans">
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
-      </nav>
+  <nav class="border-b border-gray-800 px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold text-blue-400">NoCloudGPT</a>
+    <div class="flex gap-6 text-sm text-gray-400">
+      <a href="/models/" class="hover:text-white">Models</a>
+      <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+      <a href="/pricing.html" class="hover:text-white">Pricing</a>
+      <a href="/contact.html" class="hover:text-white">Contact</a>
     </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">moondream</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">moondream family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
+  </nav>
 
-      <p class="mt-4 text-slate-400">Capabilities: thinking, vision. Ollama families: moondream.</p>
+  <!-- Hero -->
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <div class="flex items-center gap-3 mb-4 flex-wrap">
+      <span class="bg-emerald-900 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full">Edge AI</span>
+      <span class="bg-blue-900 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">2B Parameters</span>
+      <span class="bg-yellow-900 text-yellow-300 text-xs font-semibold px-3 py-1 rounded-full">2 GB RAM Min</span>
+      <span class="bg-purple-900 text-purple-300 text-xs font-semibold px-3 py-1 rounded-full">Raspberry Pi Ready</span>
     </div>
-  </header>
-  <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
+    <h1 class="text-4xl font-bold mb-4">Moondream – Lightweight Private Vision AI for Edge and Low-Resource Deployment</h1>
+  <!-- INTERNAL: Verify Add hero.webp — see models/artwork-sources.md, row: moondream before publishing. -->
+  <!-- Unsplash reference: https://unsplash.com/s/photos/computer-vision -->
+
+    <p class="text-xl text-gray-400 mb-8">
+      Not every use case needs a 13-billion-parameter model. Moondream delivers capable image understanding — captioning, object identification, visual Q&amp;A, scene description — in under 2 billion parameters. It runs on hardware most vision models refuse: a Raspberry Pi, an old laptop, or the smallest available cloud instance. Always-on private vision at a fraction of the resource cost.
+    </p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-gray-900 rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-emerald-400">2B</div>
+        <div class="text-xs text-gray-500 mt-1">Parameters</div>
+      </div>
+      <div class="bg-gray-900 rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-blue-400">2 GB</div>
+        <div class="text-xs text-gray-500 mt-1">Min RAM (Q4)</div>
+      </div>
+      <div class="bg-gray-900 rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-yellow-400">Fast</div>
+        <div class="text-xs text-gray-500 mt-1">Response Speed</div>
+      </div>
+      <div class="bg-gray-900 rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-purple-400">$0</div>
+        <div class="text-xs text-gray-500 mt-1">Per-Image Cost</div>
+      </div>
+    </div>
+    <div class="flex gap-4 flex-wrap">
+      <a href="/models/quote.html" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold">Deploy on Minimal Hardware</a>
+      <a href="#variants" class="border border-gray-600 hover:border-gray-400 text-gray-300 px-6 py-3 rounded-lg font-semibold">See Deployment Options</a>
+    </div>
+  </section>
+
+  <!-- The Case for Small -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Why Small Is the Right Answer for Many Vision Workloads</h2>
+    <p class="text-gray-300 mb-6">
+      The AI industry defaults to measuring models by their maximum capability. What gets less attention is whether that capability is actually needed for the task at hand. Image captioning for a photo library does not require a 34-billion-parameter model. Object identification in a monitoring feed does not need frontier-class reasoning. Describing the contents of a submitted photo for a field service application does not justify the hardware cost of a GPU server.
+    </p>
+
+<!-- Secondary artwork -->
+<div class="secondary-artwork my-8 md:float-right md:ml-6 md:mb-4 md:max-w-[42%]">
+  <a href="https://commons.wikimedia.org/wiki/File%3ANight_sky_with_beautiful_moon.jpg" target="_blank" rel="noopener">
+    <img src="/models/moondream/secondary.webp" alt="Moondream secondary visual" class="rounded-xl border border-slate-700">
+  </a>
+  <p class="mt-1 text-center text-xs text-slate-400">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3ANight_sky_with_beautiful_moon.jpg" class="underline">Wikimedia Commons</a>
+  </p>
+</div>
+    <p class="text-gray-300 mb-6">
+      Moondream was built with a different priority: deliver vision capability that is actually sufficient for the majority of real-world use cases, at a resource cost that makes private deployment genuinely accessible. A 2 GB RAM requirement means Moondream runs on a Lightsail instance that costs less than a cloud vision API subscription. It runs on edge hardware already deployed in the field. It runs continuously without thermal throttling or memory pressure on hardware that a larger model would stall.
+    </p>
+    <p class="text-gray-300">
+      For organizations evaluating private vision AI, Moondream is the right starting point — deploy it first, measure whether it meets your accuracy requirements, and only step up to a heavier model if the task genuinely requires it. Many teams find they do not need to step up at all.
+    </p>
+  </section>
+
+  <!-- Variants -->
+  <section id="variants" class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Moondream Deployment Options</h2>
+    <div class="space-y-4 mb-8">
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-emerald-700">
+        <div class="flex items-start justify-between flex-wrap gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-2 flex-wrap">
+              <h3 class="font-bold text-lg">Moondream 2B Q4</h3>
+              <span class="bg-emerald-900 text-emerald-300 text-xs px-2 py-0.5 rounded">Recommended</span>
+              <span class="bg-yellow-900 text-yellow-300 text-xs px-2 py-0.5 rounded">Lightsail 2 GB</span>
+            </div>
+            <p class="text-gray-400 text-sm mb-3">The smallest practical private vision deployment available. Runs on a Lightsail 2 GB instance, Raspberry Pi 4, or any edge device with 2 GB RAM. Handles image captioning, object identification, basic VQA, and scene description at practical speed.</p>
+            <div class="bg-gray-800 rounded p-2 font-mono text-xs text-green-400">ollama pull moondream</div>
+          </div>
+          <div class="text-right text-xs text-gray-500 space-y-1 flex-shrink-0">
+            <div>RAM: ~2 GB Q4</div>
+            <div>Instance: Lightsail 2 GB</div>
+            <div>License: Apache 2.0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <div class="flex items-start justify-between flex-wrap gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-2 flex-wrap">
+              <h3 class="font-bold text-lg">Moondream 2B Q8</h3>
+              <span class="bg-gray-700 text-gray-300 text-xs px-2 py-0.5 rounded">Higher Precision</span>
+            </div>
+            <p class="text-gray-400 text-sm mb-3">Higher quantization precision for slightly improved accuracy on detailed or ambiguous images. Still fits in 3 GB RAM — runs on a Lightsail 4 GB instance with room to spare. Recommended when hardware allows and accuracy matters.</p>
+            <div class="bg-gray-800 rounded p-2 font-mono text-xs text-green-400">ollama pull moondream:latest-q8_0</div>
+          </div>
+          <div class="text-right text-xs text-gray-500 space-y-1 flex-shrink-0">
+            <div>RAM: ~3 GB Q8</div>
+            <div>Instance: Lightsail 4 GB</div>
+            <div>License: Apache 2.0</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="bg-emerald-950 border border-emerald-800 rounded-xl p-4">
+      <p class="text-emerald-300 text-sm">
+        <strong>Unique advantage:</strong> Moondream is the only vision model in the NoCloudGPT catalog that runs meaningfully on a Lightsail 2 GB instance. For budget-constrained deployments or edge hardware, it is the default recommendation before evaluating larger alternatives.
+      </p>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Core Capabilities</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <h3 class="font-bold mb-3">📸 Image Captioning</h3>
+        <p class="text-gray-400 text-sm">
+          Generate accurate, descriptive captions for images. Useful for accessibility workflows, content cataloging, photo library management, and automated metadata generation — all running locally with no API call.
+        </p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <h3 class="font-bold mb-3">🔎 Object Identification</h3>
+        <p class="text-gray-400 text-sm">
+          Identify objects, people, animals, and items in images. Ask what is in a photo and receive plain-language descriptions. Practical for inventory monitoring, field condition review, and visual cataloging tasks.
+        </p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <h3 class="font-bold mb-3">❓ Basic Visual Q&amp;A</h3>
+        <p class="text-gray-400 text-sm">
+          Ask natural language questions about image content. "What color is the car?" "Is the door open or closed?" "How many people are visible?" Simple, direct answers at speed — practical for monitoring and inspection workflows.
+        </p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <h3 class="font-bold mb-3">🌐 Scene Description</h3>
+        <p class="text-gray-400 text-sm">
+          Describe the overall scene in an image — setting, conditions, key elements, and relationships between visible objects. Useful for documentation, field reporting assistance, and accessibility image description tools.
+        </p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <h3 class="font-bold mb-3">⚡ High-Speed Batch Processing</h3>
+        <p class="text-gray-400 text-sm">
+          Small model size means fast inference. For applications processing many images in sequence — monitoring feeds, batch photo tagging, high-frequency inspection workflows — Moondream's speed-to-accuracy ratio often outperforms a larger model running slowly on insufficient hardware.
+        </p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <h3 class="font-bold mb-3">🔋 Always-On Operation</h3>
+        <p class="text-gray-400 text-sm">
+          Small model size means no memory pressure or thermal throttling under continuous operation. Teams that need a vision assistant available 24/7 without a dedicated server budget find Moondream reliable for sustained always-on deployment.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Who This Model Is For -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Who This Model Family Is For</h2>
+    <div class="space-y-5">
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <h3 class="font-bold mb-2 text-emerald-300">👤 Personal Use</h3>
+        <p class="text-gray-400 text-sm">
+          Moondream is the rare vision AI model that actually works on personal hardware. A Raspberry Pi 4, an old laptop, a basic home server — Moondream runs on all of them. Hobbyist computer vision projects, personal photo cataloging with automatic captions, accessibility tools for image description, home automation that interprets camera feeds: these are all realistic personal use cases at near-zero cost. No cloud API subscription needed, no per-image billing, no images leaving your home network.
+        </p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <h3 class="font-bold mb-2 text-blue-300">🏢 Business &amp; Team Use</h3>
+        <p class="text-gray-400 text-sm">
+          Small businesses that need image understanding without a cloud vision API budget will find Moondream compelling. Retail operations cataloging product photos, property managers reviewing maintenance submissions, logistics teams tracking package conditions, small manufacturing lines needing basic visual inspection — all of these fit Moondream's capabilities and hardware requirements. A $5/month Lightsail 2 GB instance is less than most cloud vision API subscriptions, and all image data stays within the business's own infrastructure. Larger organizations can also use Moondream as the edge layer in a tiered vision architecture: fast Moondream screening at the edge, escalation to a larger model only for ambiguous or high-stakes images.
+        </p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <h3 class="font-bold mb-2 text-yellow-300">⚙️ Developer &amp; Technical Use</h3>
+        <p class="text-gray-400 text-sm">
+          Developers prototyping vision features should start with Moondream before committing to heavier infrastructure. The Ollama API compatibility means the integration code written for Moondream works with LLaVA, Qwen VL, or PaliGemma with a single line change — so a prototype built on Moondream validates the application architecture before the infrastructure decision is made. Edge AI developers deploying on constrained hardware — industrial controllers, field devices, embedded systems — will find Moondream the only option that runs reliably without thermal throttling or memory pressure on devices with 2–4 GB RAM.
+        </p>
+      </div>
+
+      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+        <h3 class="font-bold mb-2 text-purple-300">🔬 Data Science &amp; Research Use</h3>
+        <p class="text-gray-400 text-sm">
+          Researchers working on large image datasets can use Moondream for automated captioning, metadata generation, and visual QA at scale without GPU infrastructure costs. A 2B model processing thousands of images for annotation or classification is far more economical than a frontier vision model. Researchers studying vision model efficiency and small-parameter image understanding will also find Moondream a useful baseline — it represents a well-optimized lower bound on what a 2B-class vision model can reliably deliver.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Licensing -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Licensing Information</h2>
+    <p class="text-gray-300 mb-5">Moondream is released under the <strong class="text-white">Apache 2.0 License</strong>, which permits unrestricted commercial and non-commercial use, modification, and redistribution.</p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left text-gray-500 border-b border-gray-800">
+            <th class="pb-3 pr-6">Model</th>
+            <th class="pb-3 pr-6">License</th>
+            <th class="pb-3 pr-6">Commercial Use</th>
+            <th class="pb-3">Model Card</th>
           </tr>
         </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/moondream/" class="font-semibold text-cyan-300 hover:text-cyan-200">moondream</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">thinking, vision</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
+        <tbody class="text-gray-300 divide-y divide-gray-800">
+          <tr>
+            <td class="py-3 pr-6 font-semibold text-white">Moondream 2B</td>
+            <td class="py-3 pr-6">Apache 2.0</td>
+            <td class="py-3 pr-6 text-emerald-400">Permitted</td>
+            <td class="py-3"><a href="https://huggingface.co/vikhyatk/moondream2" target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300">vikhyatk/moondream2 →</a></td>
+          </tr>
         </tbody>
       </table>
-    </section>
-  </main>
+    </div>
+    <p class="mt-4 text-xs text-gray-600">License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+  </section>
 
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+  <!-- Deployment -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-2xl font-bold mb-6">Deployment at a Glance</h2>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left text-gray-500 border-b border-gray-800">
+            <th class="pb-3 pr-6">Variant</th>
+            <th class="pb-3 pr-6">Min RAM</th>
+            <th class="pb-3 pr-6">Recommended Instance</th>
+            <th class="pb-3">Best For</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-300 divide-y divide-gray-800">
+          <tr>
+            <td class="py-3 pr-6 font-mono text-xs">moondream (Q4)</td>
+            <td class="py-3 pr-6">2 GB</td>
+            <td class="py-3 pr-6">Lightsail 2 GB / RPi 4</td>
+            <td class="py-3 pr-4 text-gray-400">Edge, budget, always-on</td>
+            <td class="py-3"><a href="/models/quote.html" class="text-emerald-400 hover:text-emerald-300 font-semibold text-sm">Get quote →</a></td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-6 font-mono text-xs">moondream Q8</td>
+            <td class="py-3 pr-6">3 GB</td>
+            <td class="py-3 pr-6">Lightsail 4 GB</td>
+            <td class="py-3 pr-4 text-gray-400">Higher accuracy, still minimal</td>
+            <td class="py-3"><a href="/models/quote.html" class="text-emerald-400 hover:text-emerald-300 font-semibold text-sm">Get quote →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- INTERNAL: Verify Link each row to individual model-size pages when created before publishing. -->
+    <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
+      <h3 class="font-bold mb-3 text-sm">Quick Start</h3>
+      <div class="space-y-2">
+        <div class="bg-gray-800 rounded p-2 font-mono text-xs text-green-400"># Install Ollama</div>
+        <div class="bg-gray-800 rounded p-2 font-mono text-xs text-green-400">curl -fsSL https://ollama.com/install.sh | sh</div>
+        <div class="bg-gray-800 rounded p-2 font-mono text-xs text-green-400"># Pull and run Moondream</div>
+        <div class="bg-gray-800 rounded p-2 font-mono text-xs text-green-400">ollama pull moondream &amp;&amp; ollama run moondream</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <div class="bg-gradient-to-r from-emerald-950 to-teal-950 rounded-2xl p-8 border border-emerald-800">
+      <h2 class="text-2xl font-bold mb-3">Always-On Private Vision on Minimal Hardware</h2>
+      <p class="text-gray-400 mb-6">
+        NoCloudGPT deploys Moondream on a Lightsail 2 GB instance — the most affordable private vision AI deployment available. OpenWebUI included. Your team gets private image understanding from any browser at the lowest possible infrastructure cost.
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <a href="/models/quote.html" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold">Start 90-Day Pilot</a>
+        <a href="/models/" class="border border-emerald-600 text-emerald-400 px-6 py-3 rounded-lg font-semibold">See All Vision Models →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
+    <h2 class="text-xl font-bold mb-4">Related Vision Models</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="/models/llava/" class="bg-gray-900 rounded-xl p-4 border border-gray-700 hover:border-emerald-500 transition-colors">
+        <h3 class="font-bold mb-1">LLaVA</h3>
+        <p class="text-gray-400 text-xs">Full-featured vision AI with Phi-3 and LLaMA3 variants — stronger capability when hardware allows</p>
+      </a>
+      <a href="/models/paligemma/" class="bg-gray-900 rounded-xl p-4 border border-gray-700 hover:border-emerald-500 transition-colors">
+        <h3 class="font-bold mb-1">PaliGemma</h3>
+        <p class="text-gray-400 text-xs">Google's open vision model — precise captioning, VQA, and object detection with fine-tuning support</p>
+      </a>
+      <a href="/models/granite/" class="bg-gray-900 rounded-xl p-4 border border-gray-700 hover:border-emerald-500 transition-colors">
+        <h3 class="font-bold mb-1">Granite 3.2 Vision</h3>
+        <p class="text-gray-400 text-xs">IBM's compact enterprise vision model — Apache 2.0, audit-ready, 2B parameters</p>
+      </a>
+    </div>
+  </section>
+
+  <footer class="border-t border-gray-800 px-6 py-8 text-center text-gray-500 text-sm">
+    <p>© 2025 NoCloudGPT. Private AI infrastructure for enterprise teams.</p>
+    <div class="flex justify-center gap-6 mt-3">
+      <a href="/contact.html" class="hover:text-gray-300">Privacy Policy</a>
+      <a href="/contact.html" class="hover:text-gray-300">Terms</a>
+      <a href="/models/" class="hover:text-gray-300">All Models</a>
+    </div>
   </footer>
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section style="border-top:1px solid #1e293b; background:#0f172a; padding:2rem 1.5rem; margin-top:3rem;">
+    <div style="max-width:56rem; margin:0 auto; font-size:0.75rem; color:#64748b;">
+      <p style="font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Artwork and source references</p>
+      <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Hero image</p>
+          
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Developer reference</p>
+          <p style="margin-top:0.25rem;">Moondream is developed by <a href="https://moondream.ai/" target="_blank" rel="noopener" style="color:#67e8f9;">Moondream</a>. NoCloudGPT is an independent deployment service not affiliated with Moondream.</p>
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Model catalog</p>
+          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/moondream" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: moondream</a> for current tags and sizes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>

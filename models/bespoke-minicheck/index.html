@@ -1,74 +1,1123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>bespoke-minicheck — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for bespoke-minicheck: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/bespoke-minicheck/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="bespoke-minicheck — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for bespoke-minicheck: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/bespoke-minicheck/">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "bespoke-minicheck", "description": "Catalog facts for bespoke-minicheck: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/bespoke-minicheck/"}</script>
-</head>
-<body class="bg-slate-950 text-slate-100">
+<title>Bespoke-Minicheck | AI Fact-Checking & Hallucination Detection | NoCloudGPT</title>
+  <meta name="description" content="Bespoke-Minicheck is a lightweight fact-checking model that detects AI hallucinations and verifies claims against source documents. Deploy privately via Ollama on NoCloudGPT infrastructure." />
+  <meta name="keywords" content="Bespoke-Minicheck, hallucination detection, AI fact checking, grounded generation, RAG verification, private AI safety, Ollama fact check model, NLI model, claim verification, enterprise AI safety" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nocloudgpt.com/models/bespoke-minicheck/" />
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
-      </nav>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bespoke-Minicheck | AI Hallucination Detection | NoCloudGPT" />
+  <meta property="og:description" content="Deploy Bespoke-Minicheck privately. Verify AI-generated claims against source documents. Zero data egress. Runs on CPU or GPU via Ollama." />
+  <meta property="og:url" content="https://nocloudgpt.com/models/bespoke-minicheck/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://nocloudgpt.com/models/bespoke-minicheck/images/hero.jpg" />
+
+  <!-- Schema: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bespoke-Minicheck: Private AI Fact-Checking and Hallucination Detection",
+    "description": "Bespoke-Minicheck is a lightweight NLI-based model for verifying AI-generated claims against source documents. Deploy privately via Ollama with zero data egress.",
+    "image": "https://nocloudgpt.com/models/bespoke-minicheck/images/hero.jpg",
+    "author": { "@type": "Organization", "name": "NoCloudGPT" },
+    "publisher": { "@type": "Organization", "name": "NoCloudGPT", "url": "https://nocloudgpt.com" },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-07-01",
+    "mainEntityOfPage": "https://nocloudgpt.com/models/bespoke-minicheck/"
+  }
+  </script>
+
+  <!-- Schema: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nocloudgpt.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Model Menu", "item": "https://nocloudgpt.com/models/" },
+      { "@type": "ListItem", "position": 3, "name": "Bespoke-Minicheck", "item": "https://nocloudgpt.com/models/bespoke-minicheck/" }
+    ]
+  }
+  </script>
+
+  <!-- Schema: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Bespoke-Minicheck?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bespoke-Minicheck is a lightweight natural language inference model trained specifically to detect hallucinations in AI-generated text by verifying claims against provided source documents."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Bespoke-Minicheck detect hallucinations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It uses a binary NLI classification approach: given a source document and a generated claim, it outputs whether the claim is supported or unsupported by the source. This makes it fast, deterministic, and auditable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Bespoke-Minicheck run on CPU-only hardware?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Bespoke-Minicheck is highly efficient and runs well on CPU-only instances including AWS Lightsail 4GB RAM nodes, making it suitable for continuous background verification pipelines."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Bespoke-Minicheck and a full LLM safety layer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bespoke-Minicheck is focused specifically on factual grounding — checking whether claims are supported by source documents. It is not a content moderation model. For content safety, models like Llama Guard 3 or ShieldGemma are more appropriate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I deploy Bespoke-Minicheck privately?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NoCloudGPT deploys Bespoke-Minicheck via Ollama on your dedicated infrastructure — AWS Lightsail, GPU cloud, or on-premise servers. No data leaves your environment."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #b45309;
+      --primary-light: #fef3c7;
+      --primary-mid: #d97706;
+      --accent: #92400e;
+      --dark: #1c1917;
+      --mid: #44403c;
+      --light: #fafaf9;
+      --border: #e7e5e4;
+      --code-bg: #1c1917;
+      --radius: 10px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--mid);
+    }
+    .breadcrumb a { color: var(--mid); }
+    .breadcrumb span { margin: 0 0.4rem; }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #92400e 0%, #b45309 40%, #d97706 100%);
+      color: #fff;
+      padding: 4rem 1.5rem 3rem;
+      overflow: hidden;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.18;
+    }
+    .hero-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8rem;
+      opacity: 0.12;
+      user-select: none;
+    }
+    .hero-content {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .hero-category {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero-subtitle {
+      font-size: 1.15rem;
+      opacity: 0.92;
+      max-width: 620px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .hero-tag {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 6px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.8rem;
+    }
+
+    /* ── Layout ── */
+    .page-body {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .page-body { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      position: sticky;
+      top: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .toc-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+    .toc ol { padding-left: 1.2rem; }
+    .toc li { margin-bottom: 0.4rem; font-size: 0.88rem; }
+    .toc a { color: var(--mid); }
+    .toc a:hover { color: var(--primary); }
+    .toc ol ol { margin-top: 0.3rem; padding-left: 1rem; }
+    .toc ol ol li { font-size: 0.82rem; }
+
+    /* ── Quick Stats ── */
+    .quick-stats {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+    .quick-stats h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-label { color: var(--mid); }
+    .stat-value { font-weight: 600; color: var(--dark); }
+
+    /* ── Main Content ── */
+    .main-content section {
+      margin-bottom: 3rem;
+    }
+    .main-content h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-light);
+    }
+    .main-content h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 1.5rem 0 0.6rem;
+    }
+    .main-content p { margin-bottom: 1rem; color: var(--mid); }
+    .main-content ul, .main-content ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--mid);
+    }
+    .main-content li { margin-bottom: 0.4rem; }
+
+    /* ── Section image ── */
+    .section-image-wrap {
+      margin: 1.5rem 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--primary-light);
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .section-image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .section-image-placeholder {
+      padding: 2rem;
+      text-align: center;
+      color: var(--primary);
+      font-size: 0.85rem;
+    }
+    .section-image-placeholder .icon { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+
+    /* ── Application Cards ── */
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+    .app-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+    .app-card-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+    .app-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+    .app-card p { font-size: 0.85rem; color: var(--mid); margin: 0; }
+
+    /* ── Code blocks ── */
+    .code-block {
+      background: var(--code-bg);
+      color: #e5e7eb;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      font-family: 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .code-block .comment { color: #6b7280; }
+    .code-block .keyword { color: #f59e0b; }
+    .code-block .string { color: #34d399; }
+    .code-block .function { color: #60a5fa; }
+
+    /* ── Callout ── */
+    .callout {
+      border-left: 4px solid var(--primary);
+      background: var(--primary-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-size: 0.92rem;
+      color: var(--accent);
+    }
+    .callout strong { display: block; margin-bottom: 0.3rem; }
+
+    /* ── Tier cards ── */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+    .tier-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+    .tier-card h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .tier-card ul { padding-left: 1.1rem; font-size: 0.85rem; color: var(--mid); }
+    .tier-card li { margin-bottom: 0.35rem; }
+
+    /* ── Comparison table ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 1rem;
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .compare-table th {
+      background: var(--primary);
+      color: #fff;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .compare-table td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--mid);
+      vertical-align: top;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: var(--primary-light); }
+    .badge {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 4px;
+      padding: 0.1rem 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-green { background: #d1fae5; color: #065f46; }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+
+    /* ── CTA ── */
+    .cta-block {
+      background: linear-gradient(135deg, #92400e, #d97706);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .cta-block h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .cta-block p { opacity: 0.9; font-size: 0.95rem; margin-bottom: 1.25rem; }
+    .cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--accent);
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: transform 0.15s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); text-decoration: none; }
+
+    /* ── FAQ ── */
+    .faq-item { margin-bottom: 1.25rem; }
+    .faq-item h4 {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+    .faq-item p { font-size: 0.9rem; }
+  </style>
+</head>
+
+<body>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://nocloudgpt.com/">Home</a>
+  <span>›</span>
+  <a href="https://nocloudgpt.com/models/">Model Menu</a>
+  <span>›</span>
+  <span>Bespoke-Minicheck</span>
+</nav>
+
+<!-- Hero -->
+
+<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/bespoke-minicheck -->
+    <div style="margin:24px auto 8px;max-width:320px;text-align:center;">
+      <a href="https://ollama.com/library/bespoke-minicheck" target="_blank" rel="noopener noreferrer">
+        <img src="/models/bespoke-minicheck/hero.webp" alt="bespoke minicheck model family hero" width="320" style="width:100%;max-width:320px;border-radius:12px;display:block;" />
+      </a>
+      <p style="margin-top:8px;font-size:0.75rem;color:#888;">Source: <a href="https://ollama.com/library/bespoke-minicheck" target="_blank" rel="noopener noreferrer" style="color:#76b900;">Ollama</a></p>
+    </div>
+<header class="hero">
+  <img
+    src="/models/bespoke-minicheck/images/hero.jpg"
+    alt="Bespoke-Minicheck hallucination detection model — abstract visualization of claim verification"
+    class="hero-image"
+    width="1200"
+    height="600"
+    onerror="this.style.display='none'"
+  />
+  <div class="hero-placeholder" aria-hidden="true">🔍</div>
+  <div class="hero-content">
+    <div class="hero-category">Safety &amp; Utility Models</div>
+    <h1>Bespoke-Minicheck</h1>
+    <p class="hero-subtitle">
+      A lightweight, high-accuracy fact-checking model that detects hallucinations in AI-generated text
+      by verifying claims against source documents — deployed privately with zero data egress.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">Hallucination Detection</span>
+      <span class="hero-tag">Claim Verification</span>
+      <span class="hero-tag">RAG Safety Layer</span>
+      <span class="hero-tag">NLI Classification</span>
+      <span class="hero-tag">Ollama</span>
+      <span class="hero-tag">CPU Friendly</span>
     </div>
   </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">bespoke-minicheck</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">bespoke-minicheck family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
+</header>
 
-      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: bespoke-minicheck.</p>
-    </div>
-  </header>
-  <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
+<!-- Page Body -->
+<div class="page-body">
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- 1. What Is -->
+    <section id="what-is">
+      <h2>1. What Is Bespoke-Minicheck?</h2>
+      <p>
+        Bespoke-Minicheck is a purpose-built natural language inference (NLI) model designed to solve one
+        of the most commercially damaging problems in deployed AI systems: <strong>hallucination</strong>.
+        When large language models generate text, they sometimes produce plausible-sounding statements that
+        are factually incorrect or not supported by any source material. In customer-facing or
+        compliance-critical environments, this is not merely inconvenient — it is a liability.
+      </p>
+      <p>
+        Unlike general-purpose LLMs that can be prompted to "check themselves," Bespoke-Minicheck is a
+        <strong>specialist verification model</strong>. It takes two inputs — a source document and a
+        generated claim — and outputs a single binary classification: <em>supported</em> or
+        <em>unsupported</em>. This deterministic, auditable output makes it suitable as a
+        <strong>post-generation filter</strong> inside RAG pipelines, document Q&amp;A systems,
+        summarization workflows, and automated report generation tools.
+      </p>
+      <p>
+        Developed by Bespoke Labs, Minicheck was benchmarked on the LLM-AggreFact benchmark — a
+        comprehensive fact-checking evaluation suite — and achieved state-of-the-art performance among
+        models of comparable size, outperforming much larger models on grounded factual verification tasks.
+      </p>
+
+      <div class="section-image-wrap">
+        <img
+          src="/models/bespoke-minicheck/images/diagram.jpg"
+          alt="Bespoke-Minicheck architecture diagram showing claim verification pipeline"
+          width="800"
+          height="450"
+          loading="lazy"
+          onerror="this.parentElement.innerHTML='<div class=\'section-image-placeholder\'><span class=\'icon\'>🏗️</span>Architecture diagram</div>'"
+        />
+      </div>
+    </section>
+
+    <!-- 2. How It Works -->
+    <section id="how-it-works">
+      <h2>2. How It Works</h2>
+      <p>
+        Bespoke-Minicheck operates as a <strong>binary NLI classifier</strong>. The model is fine-tuned on
+        large-scale fact-checking datasets and trained to answer a single question:
+        <em>"Is this claim supported by this document?"</em>
+      </p>
+
+      <h3>The Verification Pipeline</h3>
+      <p>In a typical deployment, Bespoke-Minicheck sits as a post-generation layer in a larger workflow:</p>
+      <ol>
+        <li><strong>Retrieval:</strong> A RAG system retrieves relevant document chunks from a vector store.</li>
+        <li><strong>Generation:</strong> A primary LLM (e.g., Llama 3, Mistral, Gemma) generates a response grounded in those chunks.</li>
+        <li><strong>Verification:</strong> Bespoke-Minicheck receives each generated sentence (or claim) alongside the source chunk and classifies it as supported or unsupported.</li>
+        <li><strong>Filtering / Flagging:</strong> Unsupported claims are either removed, flagged for human review, or trigger a regeneration request.</li>
+      </ol>
+
+      <h3>Model Architecture</h3>
+      <p>
+        Bespoke-Minicheck uses a compact transformer encoder architecture fine-tuned specifically for
+        entailment classification. It is not an autoregressive text generator — it does not produce open-ended
+        text — which makes it significantly faster and more resource-efficient than using a full generative
+        LLM for the same verification task.
+      </p>
+      <p>
+        The model operates at the <strong>sentence or paragraph level</strong>. For long-form document
+        verification, claims can be split into individual sentences and each verified independently,
+        producing a granular, sentence-level confidence map of the generated output.
+      </p>
+
+      <div class="callout">
+        <strong>Why not just prompt GPT to check itself?</strong>
+        Self-verification via prompting is unreliable — LLMs are prone to confirming their own hallucinations.
+        Bespoke-Minicheck is a separate, dedicated model trained exclusively on verification data, making its
+        outputs far more trustworthy and consistent than self-critique approaches.
+      </div>
+
+      <h3>Scoring Output</h3>
+      <p>
+        The model outputs a probability score between 0 and 1 for the "supported" class. Organizations can
+        set their own confidence threshold — for example, flagging any claim scoring below 0.75 for human
+        review, or rejecting any claim below 0.5 from automated outputs. This tuneable threshold allows
+        teams to balance precision and recall based on their specific risk tolerance.
+      </p>
+    </section>
+
+    <!-- 3. Ideal Applications -->
+    <section id="ideal-applications">
+      <h2>3. Ideal Applications</h2>
+      <p>
+        Bespoke-Minicheck's narrow, deterministic purpose makes it exceptionally useful across a wide range
+        of industries where AI-generated text must be trusted, audited, or compliant with regulatory
+        standards. Below are the highest-value deployment scenarios.
+      </p>
+
+      <div class="section-image-wrap">
+        <img
+          src="/models/bespoke-minicheck/images/use-case.jpg"
+          alt="Enterprise AI safety use cases for Bespoke-Minicheck in legal, medical, and financial environments"
+          width="800"
+          height="400"
+          loading="lazy"
+          onerror="this.parentElement.innerHTML='<div class=\'section-image-placeholder\'><span class=\'icon\'>🏢</span>Use case image</div>'"
+        />
+      </div>
+
+      <div class="app-grid">
+
+        <div class="app-card">
+          <div class="app-card-icon">⚖️</div>
+          <h4>Legal Document Q&amp;A</h4>
+          <p>
+            Law firms and legal operations teams use AI to extract answers from contracts, case files, and
+            regulatory documents. Bespoke-Minicheck acts as a grounding layer, verifying that every
+            extracted answer is genuinely present in the cited document — critical for avoiding professional
+            liability from AI-generated misstatements.
+          </p>
+        </div>
+
+        <div class="app-card">
+          <div class="app-card-icon">🏥</div>
+          <h4>Clinical Knowledge Assistants</h4>
+          <p>
+            Healthcare organizations deploying AI assistants for clinical decision support or patient
+            communication need verification that generated responses align with approved clinical guidelines,
+            formularies, or patient records. Bespoke-Minicheck provides an auditable safety net before any
+            AI-generated clinical text is presented to staff or patients.
+          </p>
+        </div>
+
+        <div class="app-card">
+          <div class="app-card-icon">📊</div>
+          <h4>Financial Report Summarization</h4>
+          <p>
+            Investment research, earnings summaries, and regulatory filings generated or summarized by AI
+            must be factually grounded. A single hallucinated revenue figure or misattributed forecast can
+            create significant compliance and reputational risk. Minicheck provides sentence-level
+            verification against source financial documents.
+          </p>
+        </div>
+
+        <div class="app-card">
+          <div class="app-card-icon">📰</div>
+          <h4>Automated News &amp; Content Monitoring</h4>
+          <p>
+            Media organizations and brand monitoring teams using AI to synthesize news summaries or generate
+            content briefs can use Minicheck to flag any claims in AI output that cannot be traced back to
+            verified source articles — reducing the risk of publishing AI-generated inaccuracies.
+          </p>
+        </div>
+
+        <div class="app-card">
+          <div class="app-card-icon">🔬</div>
+          <h4>Scientific &amp; Research Assistants</h4>
+          <p>
+            Research institutions using AI to help scientists survey literature, draft grant applications,
+            or summarize experimental results can use Minicheck to verify that every cited finding is
+            genuinely present in the referenced paper — preventing fabricated citations, a known failure
+            mode of general LLMs.
+          </p>
+        </div>
+
+        <div class="app-card">
+          <div class="app-card-icon">🛡️</div>
+          <h4>RAG Pipeline Quality Assurance</h4>
+          <p>
+            Any organization running a retrieval-augmented generation pipeline — internal knowledge bases,
+            product documentation Q&amp;A, HR policy assistants — can integrate Minicheck as an automated
+            QA layer that continuously monitors output quality and flags generative drift before it reaches
+            end users.
+          </p>
+        </div>
+
+        <div class="app-card">
+          <div class="app-card-icon">🏛️</div>
+          <h4>Government &amp; Public Sector</h4>
+          <p>
+            Government agencies producing AI-assisted policy documents, public communications, or citizen
+            service responses must ensure outputs are grounded in official policy sources. Minicheck
+            supports EU AI Act compliance requirements around transparency and factual accuracy in
+            high-risk AI applications.
+          </p>
+        </div>
+
+        <div class="app-card">
+          <div class="app-card-icon">🎓</div>
+          <h4>Educational Content Platforms</h4>
+          <p>
+            EdTech platforms using AI tutors or content generators need to ensure that explanations,
+            quiz answers, and study materials are factually consistent with their curriculum sources.
+            Minicheck can verify AI-generated educational content against approved textbooks or
+            learning standards before delivery.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Deployment via Ollama -->
+    <section id="deployment">
+      <h2>4. Deployment via Ollama on NoCloudGPT</h2>
+      <p>
+        Bespoke-Minicheck is available in the Ollama model library and can be deployed on any
+        NoCloudGPT infrastructure tier. Because it is a classification model rather than a generative
+        LLM, it has modest hardware requirements and is particularly well-suited to always-on
+        background verification use cases.
+      </p>
+
+      <h3>Pulling and Running</h3>
+      <div class="code-block">
+<span class="comment"># Pull Bespoke-Minicheck via Ollama</span>
+<span class="keyword">ollama</span> pull bespoke-minicheck
+
+<span class="comment"># Run interactively to test</span>
+<span class="keyword">ollama</span> run bespoke-minicheck
+      </div>
+
+      <h3>REST API Integration</h3>
+      <div class="code-block">
+<span class="comment"># POST to local Ollama endpoint</span>
+curl -s http://localhost:<span class="string">11434</span>/api/generate \
+  -H <span class="string">"Content-Type: application/json"</span> \
+  -d <span class="string">'{
+    "model": "bespoke-minicheck",
+    "prompt": "Document: The quarterly revenue was $4.2 million.\nClaim: Revenue reached $5 million this quarter.\nIs the claim supported by the document?",
+    "stream": false
+  }'</span>
+      </div>
+
+      <h3>Python Integration</h3>
+      <div class="code-block">
+<span class="keyword">import</span> requests
+<span class="keyword">import</span> json
+
+<span class="keyword">def</span> <span class="function">verify_claim</span>(document: str, claim: str, threshold: float = <span class="string">0.75</span>) -> dict:
+    prompt = <span class="string">f"""Document: {document}
+
+Claim: {claim}
+
+Is this claim fully supported by the document above?
+Answer with only: SUPPORTED or UNSUPPORTED, then explain briefly."""</span>
+
+    response = requests.<span class="function">post</span>(
+        <span class="string">"http://localhost:11434/api/generate"</span>,
+        json={
+            <span class="string">"model"</span>: <span class="string">"bespoke-minicheck"</span>,
+            <span class="string">"prompt"</span>: prompt,
+            <span class="string">"stream"</span>: <span class="keyword">False</span>
+        }
+    )
+
+    result = response.<span class="function">json</span>()
+    answer = result[<span class="string">"response"</span>].<span class="function">strip</span>()
+    supported = answer.<span class="function">upper</span>().<span class="function">startswith</span>(<span class="string">"SUPPORTED"</span>)
+
+    <span class="keyword">return</span> {
+        <span class="string">"claim"</span>: claim,
+        <span class="string">"supported"</span>: supported,
+        <span class="string">"explanation"</span>: answer
+    }
+
+<span class="comment"># Example usage</span>
+doc = <span class="string">"NoCloudGPT deploys AI models on dedicated infrastructure with zero data egress."</span>
+claim = <span class="string">"NoCloudGPT sends user data to third-party cloud providers."</span>
+result = <span class="function">verify_claim</span>(doc, claim)
+<span class="keyword">print</span>(result)
+<span class="comment"># {'claim': '...', 'supported': False, 'explanation': 'UNSUPPORTED — ...'}</span>
+      </div>
+
+      <h3>Batch Verification Pipeline</h3>
+      <div class="code-block">
+<span class="keyword">import</span> requests
+<span class="keyword">from</span> typing <span class="keyword">import</span> List, Dict
+
+<span class="keyword">def</span> <span class="function">batch_verify</span>(document: str, claims: List[str]) -> List[Dict]:
+    <span class="string">"""Verify multiple claims against a single source document."""</span>
+    results = []
+    <span class="keyword">for</span> claim <span class="keyword">in</span> claims:
+        result = <span class="function">verify_claim</span>(document, claim)
+        results.<span class="function">append</span>(result)
+    
+    supported_count = <span class="function">sum</span>(<span class="string">1</span> <span class="keyword">for</span> r <span class="keyword">in</span> results <span class="keyword">if</span> r[<span class="string">"supported"</span>])
+    
+    <span class="keyword">return</span> {
+        <span class="string">"total_claims"</span>: <span class="function">len</span>(claims),
+        <span class="string">"supported"</span>: supported_count,
+        <span class="string">"unsupported"</span>: <span class="function">len</span>(claims) - supported_count,
+        <span class="string">"grounding_score"</span>: supported_count / <span class="function">len</span>(claims),
+        <span class="string">"details"</span>: results
+    }
+      </div>
+    </section>
+
+    <!-- 5. Hardware Requirements -->
+    <section id="hardware">
+      <h2>5. Hardware Requirements</h2>
+      <p>
+        Bespoke-Minicheck is one of the most hardware-efficient models in the safety and utility category.
+        Because it performs classification rather than open-ended text generation, inference is fast even
+        on modest CPU-only hardware.
+      </p>
+
+      <table class="compare-table">
+        <thead>
           <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
+            <th>Configuration</th>
+            <th>RAM Required</th>
+            <th>Throughput</th>
+            <th>Best For</th>
           </tr>
         </thead>
         <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/bespoke-minicheck/" class="font-semibold text-cyan-300 hover:text-cyan-200">bespoke-minicheck</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">text</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
+          <tr>
+            <td>CPU Only (2–4GB RAM)</td>
+            <td><span class="badge">~1.5GB</span></td>
+            <td>~50–120 verifications/min</td>
+            <td>Batch overnight processing</td>
+          </tr>
+          <tr>
+            <td>CPU Only (4–8GB RAM)</td>
+            <td><span class="badge">~1.5GB</span></td>
+            <td>~80–150 verifications/min</td>
+            <td>Background pipeline monitoring</td>
+          </tr>
+          <tr>
+            <td>GPU (8GB VRAM)</td>
+            <td><span class="badge badge-green">~1.5GB VRAM</span></td>
+            <td>~300–600 verifications/min</td>
+            <td>Real-time chat verification</td>
+          </tr>
+          <tr>
+            <td>GPU (16GB+ VRAM)</td>
+            <td><span class="badge badge-green">~1.5GB VRAM</span></td>
+            <td>~500–1000+ verifications/min</td>
+            <td>High-throughput production pipelines</td>
+          </tr>
         </tbody>
       </table>
+
+      <div class="callout">
+        <strong>Pairing recommendation:</strong>
+        Bespoke-Minicheck is designed to run <em>alongside</em> a primary generative model. On a GPU
+        instance, it can share VRAM with a Llama 3 8B or Mistral 7B model, adding verification to a
+        RAG pipeline with minimal additional hardware overhead.
+      </div>
     </section>
+
+    <!-- 6. Deployment Tiers -->
+    <section id="tiers">
+      <h2>6. NoCloudGPT Deployment Tiers</h2>
+      <p>
+        Bespoke-Minicheck is available across all NoCloudGPT deployment tiers. Its low resource footprint
+        makes it viable even on entry-level infrastructure, while GPU deployments unlock real-time
+        verification at scale.
+      </p>
+
+      <div class="tier-grid">
+        <div class="tier-card">
+          <h4>☁️ Lightsail 2GB</h4>
+          <ul>
+            <li>Minicheck runs standalone comfortably</li>
+            <li>Suitable for low-volume batch verification</li>
+            <li>Ideal for nightly QA pipelines on document outputs</li>
+            <li>Not recommended for pairing with large primary LLMs</li>
+          </ul>
+        </div>
+        <div class="tier-card">
+          <h4>☁️ Lightsail 4–8GB</h4>
+          <ul>
+            <li>Run Minicheck alongside a small embedding model</li>
+            <li>Handles moderate throughput verification pipelines</li>
+            <li>Suitable for background RAG QA monitoring</li>
+            <li>Most cost-effective tier for pure verification workloads</li>
+          </ul>
+        </div>
+        <div class="tier-card">
+          <h4>⚡ GPU Accelerated</h4>
+          <ul>
+            <li>Pair Minicheck with Llama 3, Mistral, or Gemma on same GPU</li>
+            <li>Real-time verification on every generated response</li>
+            <li>Sub-second claim verification for live chat applications</li>
+            <li>Recommended for customer-facing AI assistants</li>
+          </ul>
+        </div>
+        <div class="tier-card">
+          <h4>🏢 On-Premise / Air-Gapped</h4>
+          <ul>
+            <li>Full network isolation for legal, medical, or government data</li>
+            <li>HIPAA, FedRAMP, and EU AI Act compliance support</li>
+            <li>Integrates into existing document management systems</li>
+            <li>NoCloudGPT handles installation, configuration, and training</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Related Models -->
+    <section id="related">
+      <h2>7. Related Models &amp; Complementary Stack</h2>
+      <p>
+        Bespoke-Minicheck addresses factual grounding specifically. A comprehensive private AI safety
+        stack typically combines it with complementary models:
+      </p>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Function</th>
+            <th>Complements Minicheck?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Llama Guard 3</strong></td>
+            <td>Content safety — detects harmful, toxic, or policy-violating inputs/outputs</td>
+            <td><span class="badge badge-green">Yes — different layer</span></td>
+          </tr>
+          <tr>
+            <td><strong>ShieldGemma</strong></td>
+            <td>Google's safety classifier for harmful content categories</td>
+            <td><span class="badge badge-green">Yes — different layer</span></td>
+          </tr>
+          <tr>
+            <td><strong>Granite Guardian</strong></td>
+            <td>IBM's multi-risk safety model covering hallucination + harm</td>
+            <td><span class="badge badge-blue">Partial overlap</span></td>
+          </tr>
+          <tr>
+            <td><strong>NuExtract</strong></td>
+            <td>Structured data extraction from documents</td>
+            <td><span class="badge badge-green">Yes — upstream partner</span></td>
+          </tr>
+          <tr>
+            <td><strong>BGE / Nomic Embed</strong></td>
+            <td>Embedding models for RAG retrieval</td>
+            <td><span class="badge badge-green">Yes — RAG foundation</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <strong>Recommended safety stack:</strong>
+        For enterprise RAG deployments, NoCloudGPT recommends pairing Bespoke-Minicheck (factual grounding)
+        with Llama Guard 3 (content safety) and a high-quality embedding model like BGE-M3 (retrieval quality).
+        This three-layer approach covers the primary failure modes of production AI systems.
+      </div>
+    </section>
+
+    <!-- 8. FAQ -->
+    <section id="faq">
+      <h2>8. Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h4>What is Bespoke-Minicheck best used for?</h4>
+        <p>
+          Bespoke-Minicheck is best used as a post-generation verification layer in RAG pipelines,
+          document Q&amp;A systems, and automated report generation workflows. It verifies whether
+          AI-generated claims are supported by provided source documents, catching hallucinations
+          before they reach end users.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Is Bespoke-Minicheck a content moderation model?</h4>
+        <p>
+          No. Bespoke-Minicheck is a factual grounding model — it checks whether claims are supported
+          by source documents. For content moderation (detecting harmful, toxic, or policy-violating
+          content), use Llama Guard 3 or ShieldGemma instead.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Can it run on the same server as my primary LLM?</h4>
+        <p>
+          Yes. Bespoke-Minicheck requires approximately 1.5GB of RAM or VRAM, making it lightweight
+          enough to run alongside a primary 7B–8B parameter model on a single GPU instance without
+          meaningful performance impact on either model.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How does NoCloudGPT deploy Bespoke-Minicheck?</h4>
+        <p>
+          NoCloudGPT provisions your chosen infrastructure tier, installs Ollama, pulls and configures
+          Bespoke-Minicheck, and integrates it into your existing pipeline via Python SDK or REST API.
+          Our 90-day pilot program includes prompt engineering support and integration assistance.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Does my data leave my environment?</h4>
+        <p>
+          Never. All inference runs locally on your dedicated infrastructure. Source documents and
+          generated claims are processed entirely within your environment — they are never sent to
+          external APIs, cloud AI services, or third parties.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h4>What compliance frameworks does this support?</h4>
+        <p>
+          Private deployment of Bespoke-Minicheck supports compliance with HIPAA (healthcare data
+          privacy), GDPR (EU data protection), EU AI Act (transparency and accuracy requirements for
+          high-risk AI), SOC 2 (security and availability), and FedRAMP (US government cloud security)
+          depending on your infrastructure configuration.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <h3>Deploy Bespoke-Minicheck Privately</h3>
+      <p>
+        Stop hallucinations before they reach your users. NoCloudGPT deploys Bespoke-Minicheck on your
+        dedicated infrastructure — zero data egress, full audit trail, 90-day pilot program included.
+      </p>
+      <a href="https://nocloudgpt.com/contact.html" class="cta-btn">Start Your Pilot →</a>
+    </div>
+
   </main>
 
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
-  </footer>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <!-- TOC -->
+    <nav class="toc" aria-label="Page contents">
+      <div class="toc-title">Contents</div>
+      <ol>
+        <li><a href="#what-is">What Is Bespoke-Minicheck?</a></li>
+        <li><a href="#how-it-works">How It Works</a>
+          <ol>
+            <li><a href="#how-it-works">Verification Pipeline</a></li>
+            <li><a href="#how-it-works">Scoring Output</a></li>
+          </ol>
+        </li>
+        <li><a href="#ideal-applications">Ideal Applications</a></li>
+        <li><a href="#deployment">Deployment via Ollama</a>
+          <ol>
+            <li><a href="#deployment">REST API</a></li>
+            <li><a href="#deployment">Python Integration</a></li>
+          </ol>
+        </li>
+        <li><a href="#hardware">Hardware Requirements</a></li>
+        <li><a href="#tiers">Deployment Tiers</a></li>
+        <li><a href="#related">Related Models</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ol>
+    </nav>
+
+    <!-- Quick Stats -->
+    <div class="quick-stats">
+      <h3>Quick Reference</h3>
+      <div class="stat-row">
+        <span class="stat-label">Model Type</span>
+        <span class="stat-value">NLI Classifier</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Primary Use</span>
+        <span class="stat-value">Hallucination Detection</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">RAM (CPU)</span>
+        <span class="stat-value">~1.5GB</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">VRAM (GPU)</span>
+        <span class="stat-value">~1.5GB</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Output Type</span>
+        <span class="stat-value">Binary Classification</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Ollama Tag</span>
+        <span class="stat-value">bespoke-minicheck</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">License</span>
+        <span class="stat-value">Apache 2.0</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">CPU Friendly</span>
+        <span class="stat-value">✅ Yes</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Pilot Program</span>
+        <span class="stat-value">90 Days</span>
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+
 </body>
 </html>

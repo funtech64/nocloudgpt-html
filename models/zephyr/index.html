@@ -1,74 +1,369 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>zephyr — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for zephyr: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/zephyr/">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="zephyr — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for zephyr: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/zephyr/">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "zephyr", "description": "Catalog facts for zephyr: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/zephyr/"}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Run Zephyr Privately | HuggingFace Chat LLM via Ollama | NoCloudGPT</title>
+    <meta name="description" content="Deploy Zephyr locally — HuggingFace's RLHF-tuned chat model built on Mistral. Honest, helpful responses with no data leaving your machine. Run via Ollama and Open WebUI.">
+    <meta name="keywords" content="Zephyr local deployment, HuggingFace chat model Ollama, Zephyr 7B self-hosted, RLHF fine-tuned LLM private, Mistral chat model local">
+    <link rel="canonical" href="https://nocloudgpt.com/models/zephyr/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0a; color: #e8e8e8; line-height: 1.7; }
+        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 60px 20px; text-align: center; border-bottom: 2px solid #76b900; }
+        .badge { display: inline-block; background: #76b900; color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase; }
+        h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; }
+        h1 span { color: #76b900; }
+        .subtitle { font-size: 1.15rem; color: #a0b4c8; max-width: 680px; margin: 0 auto 30px; }
+        .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: #76b900; color: #000; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; }
+        .btn-secondary { background: transparent; color: #76b900; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; border: 2px solid #76b900; }
+        nav { background: #111; padding: 12px 20px; text-align: center; border-bottom: 1px solid #222; }
+        nav a { color: #76b900; text-decoration: none; margin: 0 16px; font-size: 0.9rem; }
+        .container { max-width: 960px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 1.9rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; }
+        h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; color: #76b900; }
+        p { margin-bottom: 18px; color: #c8d4e0; }
+        .highlight-box { background: #111827; border-left: 4px solid #76b900; padding: 24px 28px; border-radius: 0 8px 8px 0; margin: 32px 0; }
+        .highlight-box p { margin-bottom: 0; }
+        .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 32px 0; }
+        .model-card { background: #111; border: 1px solid #222; border-radius: 10px; padding: 24px; transition: border-color 0.2s; }
+        .model-card:hover { border-color: #76b900; }
+        .model-card h3 { margin-bottom: 8px; }
+        .model-card .size-badge { background: #1a2a0a; color: #76b900; padding: 3px 10px; border-radius: 12px; font-size: 0.78rem; font-weight: 600; display: inline-block; margin-bottom: 12px; }
+        .model-card p { font-size: 0.9rem; margin-bottom: 0; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 32px 0; }
+        .use-case-card { background: #0d1117; border: 1px solid #1e2d1e; border-radius: 10px; padding: 22px; }
+        .use-case-card h3 { color: #a8d878; margin-bottom: 10px; }
+        .use-case-card p { font-size: 0.88rem; margin-bottom: 0; }
+        .hardware-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .hardware-table th { background: #111; color: #76b900; padding: 12px 16px; text-align: left; border-bottom: 2px solid #76b900; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .hardware-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; }
+        .hardware-table tr:hover td { background: #111; }
+        .code-block { background: #0d1117; border: 1px solid #1e2d3e; border-radius: 8px; padding: 20px 24px; margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.88rem; color: #79c0ff; overflow-x: auto; }
+        .code-block .comment { color: #6e7681; }
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .compare-table th { background: #111; color: #76b900; padding: 12px 16px; text-align: left; border-bottom: 2px solid #76b900; font-size: 0.85rem; }
+        .compare-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; }
+        .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
+        footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
+        footer a { color: #76b900; text-decoration: none; margin: 0 12px; }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100">
+<body>
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
-      </nav>
+<header>
+    <div class="badge">HuggingFace H4 — RLHF Chat</div>
+<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/zephyr -->
+    <div style="margin:24px auto 8px;max-width:320px;text-align:center;">
+      <a href="https://ollama.com/library/zephyr" target="_blank" rel="noopener noreferrer">
+        <img src="/models/zephyr/hero.webp" alt="zephyr model family hero" width="320" style="width:100%;max-width:320px;border-radius:12px;display:block;" />
+      </a>
+      <p style="margin-top:8px;font-size:0.75rem;color:#888;">Source: <a href="https://ollama.com/library/zephyr" target="_blank" rel="noopener noreferrer" style="color:#76b900;">Ollama</a></p>
     </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">zephyr</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">zephyr family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
+    <h1>Run <span>Zephyr</span> Without Sending Conversations to the Cloud</h1>
 
-      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: zephyr.</p>
+    <p class="subtitle">Zephyr is HuggingFace's RLHF-aligned chat model built on Mistral 7B. Designed for honest, direct, helpful responses — and small enough to run on a single consumer GPU. Deploy via Ollama and keep every conversation private.</p>
+    <div class="cta-group">
+        <a href="/models/quote.html" class="btn-primary">Get Deployment Quote</a>
+        <a href="/models/deploy/" class="btn-secondary">Deployment Guide</a>
     </div>
-  </header>
-  <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/models/">Models</a>
+    <a href="/models/mistral/">Mistral</a>
+    <a href="/models/wizardlm/">WizardLM</a>
+    <a href="/models/llama/">Llama</a>
+    <a href="/models/phi/">Phi</a>
+</nav>
+
+<div class="container">
+
+    <h2>What Is Zephyr?</h2>
+
+    <p>Zephyr is a family of chat-aligned language models released by HuggingFace's H4 (Helpful, Harmless, Honest, Huggy) team. The flagship <strong>Zephyr 7B Beta</strong> is fine-tuned from Mistral 7B using Direct Preference Optimization (DPO) — a more stable alternative to traditional RLHF that aligns model outputs with human preferences without requiring a separate reward model.</p>
+
+    <p>What made Zephyr notable at release was its benchmark performance relative to its size. At 7B parameters, Zephyr 7B Beta matched or exceeded significantly larger models on chat and instruction-following benchmarks — a strong demonstration that careful alignment training, not just raw parameter count, drives useful output quality.</p>
+
+    <p>Zephyr is a practical model for real deployment. It fits on any mid-range consumer GPU, generates responses quickly, and produces output that feels genuinely helpful rather than excessively hedged. For privacy-conscious users and organizations that need a capable chat model running entirely on their own hardware, Zephyr is one of the cleanest options at the 7B scale.</p>
+
+    <div class="highlight-box">
+        <p><strong>What DPO alignment means in practice:</strong> Zephyr was trained to prefer responses that humans actually rate as helpful and honest — not just responses that avoid refusals. The result is a model that gives direct, substantive answers rather than hedged non-answers. It's one of the reasons Zephyr's subjective output quality felt ahead of similarly sized models when it launched.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Model Variants</h2>
+
+    <div class="model-grid">
+        <div class="model-card">
+            <h3>Zephyr 7B Beta</h3>
+            <span class="size-badge">7B Parameters</span>
+            <p>The primary Zephyr model. Fine-tuned from Mistral 7B with DPO alignment on curated preference data. Strong chat and instruction following, direct responses, runs on 6GB VRAM. The go-to choice for most local deployments.</p>
+        </div>
+        <div class="model-card">
+            <h3>Zephyr 141B (MoE)</h3>
+            <span class="size-badge">141B MoE</span>
+            <p>A larger Zephyr variant built on Mixtral 8x22B using the same DPO alignment approach. Dramatically stronger output quality and reasoning depth at the cost of substantial hardware requirements. For organizations with GPU infrastructure that want Zephyr-quality alignment at scale.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Who Zephyr Is For</h2>
+
+    <div class="use-case-grid">
+        <div class="use-case-card">
+            <h3>👤 Personal Use</h3>
+            <p>Zephyr 7B Beta runs on ~5–6 GB of VRAM and answers fast, so it is an excellent homelab and personal chat model on a single consumer GPU. Its DPO tuning gives direct, substantive answers rather than over-hedged ones — a good fit if you want a private, no-subscription assistant. The MIT license means you can use it however you like.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>🏢 Business &amp; Team Use</h3>
+            <p>For small teams wanting a private chat assistant for drafting, summarizing, and internal Q&amp;A without GPU spend, Zephyr 7B is a clean, MIT-licensed option that deploys on a modest server via Ollama and OpenWebUI. It is light and honest rather than the broadest-capability model — pair it with a larger model where you need deeper reasoning.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>⚙️ Developer &amp; Technical Use</h3>
+            <p>Ollama exposes Zephyr through an OpenAI-compatible endpoint, so apps built against the OpenAI API can point at a local Zephyr instance with no per-token cost or data egress. Its reliable instruction following and format adherence make it a predictable backend for content generation and extraction tasks. MIT licensing keeps commercial embedding friction-free.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>🔬 Data Science &amp; Research Use</h3>
+            <p>Zephyr is a well-known reference for what Direct Preference Optimization (DPO) produces at 7B scale, making it a useful baseline for alignment and preference-tuning research. Teams comparing SFT-only, RLHF, and DPO approaches can use Zephyr 7B Beta as a clean, openly licensed DPO data point.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>What Zephyr Does Well</h2>
+
+    <h3>Direct, Substantive Chat</h3>
+    <p>Zephyr was specifically tuned to give helpful, direct answers rather than cautious deflections. For users frustrated by AI assistants that refuse to engage substantively with reasonable queries, Zephyr's alignment approach produces noticeably more useful responses. It answers what you asked, not a safer version of what you asked.</p>
+
+    <h3>Instruction Following</h3>
+    <p>DPO training on high-quality preference data makes Zephyr reliable at following multi-step instructions, maintaining format requirements, and adhering to constraints specified in system prompts. For applications where the model needs to behave consistently according to defined rules, Zephyr's alignment training pays off.</p>
+
+    <h3>Writing and Summarization</h3>
+    <p>Zephyr produces clean, well-structured prose. For drafting, editing, summarizing, and rewriting tasks — the everyday content work that most knowledge workers actually spend time on — Zephyr delivers quality output quickly and privately at the 7B scale.</p>
+
+    <h3>Task Automation via API</h3>
+    <p>Ollama exposes Zephyr via a local OpenAI-compatible API endpoint. Applications built against OpenAI's API can point to your local Ollama instance instead — routing document processing, content generation, or data extraction through a private model with no external API costs or data exposure.</p>
+
+    <hr class="section-divider">
+
+    <h2>Zephyr vs. Similar Chat Models</h2>
+
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Base</th>
+                <th>Alignment</th>
+                <th>Parameters</th>
+                <th>Best For</th>
+            </tr>
         </thead>
         <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/zephyr/" class="font-semibold text-cyan-300 hover:text-cyan-200">zephyr</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">text</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
+            <tr>
+                <td>Zephyr 7B Beta</td>
+                <td>Mistral 7B</td>
+                <td>DPO</td>
+                <td>7B</td>
+                <td>Direct chat, instruction following</td>
+            </tr>
+            <tr>
+                <td>WizardLM 2</td>
+                <td>Mistral/Mixtral</td>
+                <td>Evol-Instruct</td>
+                <td>7B–8x22B</td>
+                <td>Complex instructions, reasoning</td>
+            </tr>
+            <tr>
+                <td>Mistral 7B Instruct</td>
+                <td>Mistral 7B</td>
+                <td>SFT</td>
+                <td>7B</td>
+                <td>General instruction following</td>
+            </tr>
+            <tr>
+                <td>Llama 3.1 8B Instruct</td>
+                <td>Llama 3.1</td>
+                <td>RLHF</td>
+                <td>8B</td>
+                <td>Broad capability, strong ecosystem</td>
+            </tr>
         </tbody>
-      </table>
-    </section>
-  </main>
+    </table>
 
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
-  </footer>
+    <p>Zephyr's edge over base Mistral Instruct is the quality of its alignment data and DPO training — responses feel more calibrated and useful. Against Llama 3 Instruct, Zephyr is lighter and faster; Llama 3 typically has broader capability and a stronger tool ecosystem. For users who want a fast, honest chat model that runs comfortably on mid-range hardware, Zephyr 7B remains a solid choice.</p>
+
+    <hr class="section-divider">
+
+    <h2>Hardware Requirements</h2>
+
+    <table class="hardware-table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>VRAM Required</th>
+                <th>RAM (CPU)</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Zephyr 7B Beta</td>
+                <td>~5–6 GB</td>
+                <td>~12 GB</td>
+                <td>Runs on most consumer GPUs; fast interactive use</td>
+            </tr>
+            <tr>
+                <td>Zephyr 141B (MoE)</td>
+                <td>~90 GB</td>
+                <td>~180 GB</td>
+                <td>Multi-GPU or high-memory server required</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr class="section-divider">
+
+    <h2>Deploying Zephyr via Ollama</h2>
+
+    <div class="code-block">
+        <span class="comment"># Zephyr 7B Beta — primary deployment</span><br>
+        ollama pull zephyr<br><br>
+        <span class="comment"># Start Open WebUI</span><br>
+        docker run -d -p 3000:8080 \<br>
+        &nbsp;&nbsp;-e OLLAMA_BASE_URL=http://localhost:11434 \<br>
+        &nbsp;&nbsp;ghcr.io/open-webui/open-webui:main<br><br>
+        <span class="comment"># Test via API (OpenAI-compatible)</span><br>
+        curl http://localhost:11434/v1/chat/completions \<br>
+        &nbsp;&nbsp;-H "Content-Type: application/json" \<br>
+        &nbsp;&nbsp;-d '{"model":"zephyr","messages":[{"role":"user","content":"Hello"}]}'
+    </div>
+
+    <p>Open <strong>http://localhost:3000</strong> in your browser, select zephyr from the model dropdown, and your private chat assistant is running. All conversation data stays on your machine — no API calls to HuggingFace, no logging to external servers.</p>
+
+    <hr class="section-divider">
+
+    <h2>Use Cases</h2>
+
+    <div class="use-case-grid">
+        <div class="use-case-card">
+            <h3>Private Team Chat Assistant</h3>
+            <p>Deploy Zephyr on a shared server and give your team a private AI assistant accessible via Open WebUI. Internal questions, document drafting, and knowledge lookups stay within your network boundary.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>Content Drafting and Editing</h3>
+            <p>Zephyr's clean output and instruction adherence make it effective for drafting emails, reports, documentation, and marketing content — with sensitive drafts never transmitted to external services.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>Customer-Facing App Backend</h3>
+            <p>Applications needing a chat backend can call Ollama's OpenAI-compatible API locally. No per-token costs, no API rate limits, no customer data sent to third parties during inference.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>Homelab AI Assistant</h3>
+            <p>For homelab enthusiasts who want a capable, fast chat model running on existing hardware, Zephyr 7B is responsive on a single consumer GPU without requiring a dedicated AI server.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>Research and Evaluation</h3>
+            <p>Teams evaluating RLHF and DPO alignment approaches can run Zephyr as a reference point for what DPO-aligned output looks like at 7B scale, comparing directly with SFT-only or RLHF-trained alternatives.</p>
+        </div>
+        <div class="use-case-card">
+            <h3>Regulated Industry Internal Tools</h3>
+            <p>Legal, healthcare, and financial organizations that need AI assistance but face data sovereignty requirements can use Zephyr as a private, on-premise tool that never transmits queries externally.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Licensing Information</h2>
+
+    <p>Zephyr's licensing is permissive and commercial-friendly across the family. The flagship Zephyr 7B Beta is released under the MIT License, and the larger Zephyr 141B (built on Mixtral 8x22B) is Apache 2.0. Both permit commercial use; as always, the underlying base model's terms are worth a glance, but neither imposes the usage thresholds some other families carry.</p>
+
+    <table class="hardware-table">
+        <thead>
+            <tr><th>Model</th><th>License</th><th>Commercial use</th><th>Model card</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Zephyr 7B Beta</td><td>MIT</td><td>Permitted</td><td><a href="https://huggingface.co/HuggingFaceH4/zephyr-7b-beta" target="_blank" rel="noopener" style="color:#76b900;">HuggingFaceH4/zephyr-7b-beta →</a></td></tr>
+            <tr><td>Zephyr 141B (ORPO, Mixtral 8x22B)</td><td>Apache 2.0</td><td>Permitted</td><td><a href="https://huggingface.co/HuggingFaceH4/zephyr-orpo-141b-A35b-v0.1" target="_blank" rel="noopener" style="color:#76b900;">HuggingFaceH4/zephyr-orpo-141b-A35b-v0.1 →</a></td></tr>
+        </tbody>
+    </table>
+
+    <p style="font-size:0.85rem; color:#6e7681;">Zephyr 7B Beta is MIT and Zephyr 141B is Apache 2.0 — both permit commercial use. License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+
+    <hr class="section-divider">
+
+    <h2>Available Model Sizes</h2>
+
+    <p>Zephyr is published in two sizes. NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins. NoCloudGPT confirms hardware requirements and selects the right quantization before your pilot begins.</p>
+
+    <table class="hardware-table">
+        <thead>
+            <tr><th>Model</th><th>Deployment tier</th><th>Best for</th><th></th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Zephyr 7B Beta</td><td>Standard AI — 5–6 GB</td><td>Fast private chat, drafting, app backends — recommended</td><td><a href="/models/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
+            <tr><td>Zephyr 141B (MoE)</td><td>Enterprise AI — ~90 GB / multi-GPU</td><td>Zephyr-quality alignment at much larger scale</td><td><a href="/models/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
+        </tbody>
+    </table>
+    <!-- INTERNAL: Verify Link each row to individual model-size pages when created before publishing. -->
+
+    <hr class="section-divider">
+
+    <h2>Deployment Options We Offer</h2>
+
+    <h3>Single-User Local Setup</h3>
+    <p>We install and configure Zephyr 7B with Ollama and Open WebUI on your existing machine as a persistent background service. Running within minutes on any mid-range modern GPU — and functional on CPU for lower-throughput use.</p>
+
+    <h3>Team Server Deployment</h3>
+    <p>Multi-user Open WebUI deployment on a shared server, with user accounts, conversation history, and network access controls. Your team gets a private AI assistant with no external dependencies during inference.</p>
+
+    <div style="margin-top: 32px;">
+        <a href="/models/quote.html" class="btn-primary">Request Deployment Quote</a>
+        &nbsp;&nbsp;
+        <a href="/models/deploy/" class="btn-secondary">View Deployment Guide</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>
+        <a href="/">NoCloudGPT Home</a>
+        <a href="/models/">All Models</a>
+        <a href="/models/mistral/">Mistral</a>
+        <a href="/models/wizardlm/">WizardLM</a>
+        <a href="/models/deploy/">Deployment Guide</a>
+        <a href="/models/quote.html">Get Quote</a>
+    </p>
+    <p style="margin-top: 16px;">© 2025 NoCloudGPT. Private AI deployment specialists. Not affiliated with HuggingFace.</p>
+</footer>
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section style="border-top:1px solid #1e293b; background:#0f172a; padding:2rem 1.5rem; margin-top:3rem;">
+    <div style="max-width:56rem; margin:0 auto; font-size:0.75rem; color:#64748b;">
+      <p style="font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Artwork and source references</p>
+      <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Hero image</p>
+          
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Developer reference</p>
+          <p style="margin-top:0.25rem;">Zephyr is developed by <a href="https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha" target="_blank" rel="noopener" style="color:#67e8f9;">Hugging Face H4</a>. NoCloudGPT is an independent deployment service not affiliated with Hugging Face H4.</p>
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Model catalog</p>
+          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/zephyr" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: zephyr</a> for current tags and sizes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>

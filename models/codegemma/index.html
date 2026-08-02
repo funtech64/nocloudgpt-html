@@ -3,72 +3,167 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>codegemma — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for codegemma: capabilities (cloud), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/codegemma/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="codegemma — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for codegemma: capabilities (cloud), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/codegemma/">
+<title>CodeGemma — Private Code Completion AI for Developers | NoCloudGPT</title>
+  <meta name="description" content="Deploy CodeGemma privately on your own server. Lightweight code completion and generation from Google DeepMind — runs on modest hardware with no data leaving your infrastructure.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/codegemma/">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "codegemma", "description": "Catalog facts for codegemma: capabilities (cloud), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/codegemma/"}</script>
 </head>
 <body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800 bg-slate-950">
+<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/codegemma -->
+      <a href="https://ollama.com/library/codegemma" target="_blank" rel="noopener noreferrer" class="inline-block">
+        <img
+          src="/models/codegemma/hero.webp"
+          alt="codegemma model family hero"
+          width="1200"
+          height="600"
+          class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+        />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/codegemma" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
-      </nav>
-    </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
     <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">codegemma</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">codegemma family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: verified publisher.</p>
-
-      <p class="mt-4 text-slate-400">Capabilities: cloud. Ollama families: codegemma.</p>
+      <a href="../index.html" class="text-sm font-semibold text-cyan-300">← Back to model menu</a>
+      <p class="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">CodeGemma Family</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">CodeGemma — Google's Lightweight Code Model That Runs on Hardware You Already Have</h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">CodeGemma fits on a laptop, a $20/month cloud instance, or an edge server. Private code completion and generation without GPU requirements, without subscription fees, and without your code leaving your machine.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="../quote.html" class="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="../deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day Lightsail pilot</a>
+        <a href="../deploy/on-premise.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
     </div>
   </header>
+
   <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/codegemma/" class="font-semibold text-cyan-300 hover:text-cyan-200">codegemma</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">cloud</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
-        </tbody>
-      </table>
+    <section class="grid gap-8 lg:grid-cols-[1.55fr_0.95fr]">
+      <article class="rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10">
+        <p class="text-slate-300">Most private AI deployments assume you have serious hardware. A 34B model needs 20 GB of RAM. A GPU instance adds cost fast. For individual developers, small teams, or organizations deploying AI at the edge, that hardware bar is the blocker — not the willingness to run models privately.</p>
+        <p class="mt-4 text-slate-300">CodeGemma changes that math. Built on Google DeepMind's Gemma architecture and trained on over 500 billion tokens of code, the 2B variant runs on 2–3 GB of RAM. The 7B instruction-tuned variant — the practical workhorse — runs on 4–6 GB. That means a basic Lightsail instance, a developer laptop, or a NUC sitting under a desk can run a capable private coding assistant with no external dependencies and no per-query cost.</p>
+
+        <h2 class="mt-10 text-3xl font-black">What Makes CodeGemma Different From Larger Code Models</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Designed to run without a GPU</h3>
+            <p class="mt-3 text-slate-400">CodeGemma 2B and 7B are small enough to run efficiently on CPU-only hardware. This is not a compromise — it is the design intent. Google released these weights specifically for low-resource deployment scenarios where larger models are not practical.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Fill-in-the-middle completion at the architecture level</h3>
+            <p class="mt-3 text-slate-400">Like Code Llama, CodeGemma supports FIM natively — meaning it understands existing code before and after the cursor position. This makes it genuinely useful as an IDE-integrated completion engine rather than just a chat interface that generates code blocks.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Instruction-tuned variant for conversational use</h3>
+            <p class="mt-3 text-slate-400">The 7B-it model is fine-tuned for instruction following. Ask it to explain a function, refactor a loop, write a test, or translate between languages and it responds in plain English as well as code — not just raw completions.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Strong Python and web stack performance</h3>
+            <p class="mt-3 text-slate-400">CodeGemma was trained with heavy weighting toward Python, JavaScript, Java, Kotlin, Go, and C++. Teams working primarily in these languages will find quality above what the parameter count would suggest.</p>
+          </div>
+        </div>
+
+        <h2 class="mt-10 text-3xl font-black">Who Should Be Running CodeGemma</h2>
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Individual developers replacing Copilot</h3>
+        <p class="mt-3 text-slate-300">A developer paying for GitHub Copilot Individual is spending money every month to send their code to Microsoft's servers. CodeGemma 7B on a local machine or a $10–20 Lightsail instance provides comparable daily completion capability at a one-time setup cost — with no subscription, no usage tracking, and no third-party terms of service governing what happens to their code.</p>
+        <p class="mt-4 text-slate-300">The 7B model is fast enough for interactive use on modern hardware. For most everyday tasks — autocomplete, docstring generation, test scaffolding, quick refactors — the quality difference between CodeGemma 7B and a much larger model is smaller than the infrastructure cost difference.</p>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Small engineering teams on constrained budgets</h3>
+        <p class="mt-3 text-slate-300">A five-person startup paying $19/month per developer for Copilot Business spends nearly $1,200 per year on AI coding assistance. One CodeGemma deployment on a shared instance eliminates that recurring cost. The whole team shares one private instance that costs a fraction of those per-seat fees.</p>
+        <p class="mt-4 text-slate-300">For early-stage companies where budget discipline matters and source code is the core asset, running AI assistance privately is both cheaper and more defensible from a security standpoint.</p>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Edge deployments and air-gapped environments</h3>
+        <p class="mt-3 text-slate-300">Manufacturing facilities, industrial control environments, and secure government networks often cannot route traffic to external AI APIs at all. CodeGemma 2B fits on hardware with constrained resources and runs entirely offline once deployed. A developer working on embedded systems firmware or OT/ICS code has a coding assistant that never needs to phone home.</p>
+
+        <h3 class="mt-6 text-2xl font-bold text-cyan-200">Educational and training environments</h3>
+        <p class="mt-3 text-slate-300">Code bootcamps, university computer science departments, and corporate training programs can deploy CodeGemma as a shared learning assistant for cohorts of students. Learners get an always-available explainer that doesn't require individual accounts, doesn't log their struggles to a commercial service, and can be customized to the curriculum stack.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Hardware and Deployment Reality for CodeGemma</h2>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Deployment tier</th>
+                <th class="px-4 py-3">Practical fit</th>
+                <th class="px-4 py-3">Best use</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Lightsail 2 GB<br><span class="font-normal text-slate-400">CodeGemma 2B Q4</span></td>
+                <td class="px-4 py-3">Fits comfortably in minimal RAM. Fastest response times of any code model in the lineup. Constrained reasoning on complex tasks.</td>
+                <td class="px-4 py-3">Single developer, completion-focused use, edge hardware, offline environments with limited resources.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Lightsail 4 GB<br><span class="font-normal text-slate-400">CodeGemma 7B Q4</span></td>
+                <td class="px-4 py-3">Recommended tier. Instruction-tuned variant handles conversational coding, explanation, and generation with good quality-to-cost ratio.</td>
+                <td class="px-4 py-3">Individual developer or small team daily driver. Best value entry point for private coding AI.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Lightsail 8 GB<br><span class="font-normal text-slate-400">CodeGemma 7B full precision</span></td>
+                <td class="px-4 py-3">Runs the unquantized 7B with headroom to spare. Improved output quality over Q4. Allows concurrent users without memory pressure.</td>
+                <td class="px-4 py-3">Shared team instance. Up to 4–6 concurrent developers without performance degradation.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="mt-10 text-3xl font-black">CodeGemma vs. Code Llama — Which One to Choose</h2>
+        <p class="mt-5 text-slate-300">Both models are solid private coding assistants. The decision comes down to hardware and use case:</p>
+        <ul class="mt-4 space-y-3 text-slate-300 list-none">
+          <li class="rounded-2xl border border-slate-800 bg-slate-950 p-4"><span class="font-semibold text-white">Choose CodeGemma</span> when hardware is limited, when you need the lowest possible RAM footprint, or when you're deploying to edge hardware or a budget cloud instance. The 7B model punches above its weight for Python and JavaScript work specifically.</li>
+          <li class="rounded-2xl border border-slate-800 bg-slate-950 p-4"><span class="font-semibold text-white">Choose Code Llama 13B or 34B</span> when you have the RAM to support it and need stronger performance on complex multi-file tasks, long-context analysis, or less common languages. The larger model wins on breadth and context length.</li>
+          <li class="rounded-2xl border border-slate-800 bg-slate-950 p-4"><span class="font-semibold text-white">Run both</span> on larger deployments — CodeGemma 7B for fast interactive completions, Code Llama 34B for deep analysis tasks. Ollama supports multiple models on the same instance and users can select per session.</li>
+        </ul>
+
+        <h2 class="mt-10 text-3xl font-black">Deploy CodeGemma on Your Infrastructure</h2>
+        <p class="mt-5 text-slate-300">NoCloudGPT installs Ollama and OpenWebUI on your Lightsail instance or on-premise server, pulls the CodeGemma variant that fits your hardware, and configures everything for immediate use. The 2B model is running in minutes on almost any hardware. The 7B takes a bit longer to pull but is ready for daily use the same day.</p>
+        <p class="mt-4 text-slate-300">Test the model locally before committing to a server deployment with <code class="rounded bg-slate-800 px-2 py-0.5 text-cyan-300 text-sm">ollama pull codegemma:7b</code> — it will be on your machine and ready to query in under five minutes on a standard internet connection.</p>
+        <div class="mt-6 grid gap-3 md:grid-cols-3">
+          <a href="../quote.html" class="rounded-2xl bg-cyan-300 p-5 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+          <a href="../deploy/lightsail-guide.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Start the 90-day Lightsail pilot</a>
+          <a href="../deploy/on-premise.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Request on-premise installation</a>
+        </div>
+      </article>
+
+      <aside class="space-y-6">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-8">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">CodeGemma deployment</p>
+          <h2 class="mt-3 text-3xl font-black">Private coding AI that fits on hardware you already own</h2>
+          <p class="mt-4 text-cyan-50">The 2B runs on 2 GB RAM. The 7B instruction-tuned model handles daily coding work on a $20/month instance. No GPU required.</p>
+          <a href="../quote.html" class="mt-6 inline-block rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build a CodeGemma quote</a>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li>Low-resource private code completion</li>
+            <li>Python and JavaScript daily development</li>
+            <li>Edge and air-gapped deployments</li>
+            <li>Individual Copilot replacement</li>
+            <li>Shared team instance on budget infrastructure</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Model sizes available</h3>
+          <ul class="mt-4 space-y-3 text-slate-400 text-sm">
+            <li><span class="font-semibold text-white">2B Q4</span> — 2–3 GB RAM, minimal footprint</li>
+            <li><span class="font-semibold text-white">7B Q4</span> — 4–6 GB RAM, recommended daily driver</li>
+            <li><span class="font-semibold text-white">7B full</span> — 8 GB RAM, shared team use</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li><a class="text-cyan-300" href="../codellama/">Code Llama deployments</a></li>
+            <li><a class="text-cyan-300" href="../deepseek-coder/index.html">DeepSeek Coder deployments</a></li>
+            <li><a class="text-cyan-300" href="../deploy/lightsail-guide.html">Lightsail setup guide</a></li>
+            <li><a class="text-cyan-300" href="../deploy/on-premise.html">On-premise Linux guide</a></li>
+          </ul>
+        </div>
+      </aside>
     </section>
   </main>
-
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
-  </footer>
 </body>
 </html>

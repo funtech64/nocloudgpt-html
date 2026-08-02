@@ -1,74 +1,577 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>all-minilm — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for all-minilm: capabilities (embedding), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/all-minilm/">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="all-minilm — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for all-minilm: capabilities (embedding), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/all-minilm/">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "all-minilm", "description": "Catalog facts for all-minilm: capabilities (embedding), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/all-minilm/"}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Run All-MiniLM Privately | Fast Sentence Embeddings for RAG | NoCloudGPT</title>
+    <meta name="description" content="Deploy All-MiniLM privately via Ollama. Microsoft's lightweight sentence embedding model delivers fast, accurate vector search for RAG pipelines. Self-hosted on your infrastructure with complete data sovereignty.">
+    <meta name="keywords" content="All-MiniLM private deployment, All-MiniLM Ollama, sentence embeddings self-hosted, RAG embedding model local, All-MiniLM-L6-v2 on-premise, private vector search">
+    <link rel="canonical" href="https://nocloudgpt.com/all-minilm/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0a; color: #e8e8e8; line-height: 1.7; }
+        header { background: linear-gradient(135deg, #0a0f1a 0%, #0d1a2e 50%, #0a1f3a 100%); padding: 60px 20px; text-align: center; border-bottom: 2px solid #06d6a0; }
+        .badge { display: inline-block; background: #06d6a0; color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase; }
+        h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; }
+        h1 span { color: #06d6a0; }
+        .subtitle { font-size: 1.15rem; color: #a0b4c8; max-width: 700px; margin: 0 auto 30px; }
+        .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: #06d6a0; color: #000; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; }
+        .btn-secondary { background: transparent; color: #06d6a0; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; border: 2px solid #06d6a0; }
+        nav { background: #111; padding: 12px 20px; text-align: center; border-bottom: 1px solid #222; }
+        nav a { color: #06d6a0; text-decoration: none; margin: 0 16px; font-size: 0.9rem; }
+        .container { max-width: 960px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 1.9rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; }
+        h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; color: #06d6a0; }
+        p { margin-bottom: 18px; color: #c8d4e0; }
+        .highlight-box { background: #091a14; border-left: 4px solid #06d6a0; padding: 24px 28px; border-radius: 0 8px 8px 0; margin: 32px 0; }
+        .highlight-box p { margin-bottom: 0; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin: 32px 0; }
+        .stat-card { background: #111; border: 1px solid #0a2520; border-radius: 10px; padding: 24px; text-align: center; }
+        .stat-card .number { font-size: 2rem; font-weight: 800; color: #06d6a0; display: block; }
+        .stat-card .label { font-size: 0.85rem; color: #8a9aaa; margin-top: 4px; }
+        .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
+        .model-card { background: #0d1117; border: 1px solid #1a2d3e; border-radius: 10px; padding: 24px; }
+        .model-card h3 { color: #06d6a0; margin-bottom: 8px; }
+        .model-card .tag { display: inline-block; background: #091a14; color: #06d6a0; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; margin-bottom: 12px; }
+        .model-card p { font-size: 0.88rem; margin-bottom: 8px; }
+        .model-card .spec { font-family: monospace; color: #06d6a0; font-size: 0.85rem; display: block; margin-top: 8px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 32px 0; }
+        .feature-card { background: #091a14; border: 1px solid #1a3040; border-radius: 8px; padding: 20px; }
+        .feature-card .icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+        .feature-card h3 { font-size: 1rem; margin-bottom: 8px; color: #06d6a0; }
+        .feature-card p { font-size: 0.85rem; margin-bottom: 0; }
+        .use-case-list { list-style: none; margin: 16px 0 24px; }
+        .use-case-list li { padding: 10px 0; border-bottom: 1px solid #1a1a1a; color: #c8d4e0; padding-left: 20px; position: relative; font-size: 0.95rem; }
+        .use-case-list li::before { content: "→"; color: #06d6a0; position: absolute; left: 0; }
+        .code-block { background: #0d1117; border: 1px solid #1a2d3e; border-radius: 8px; padding: 20px 24px; margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.88rem; color: #06d6a0; overflow-x: auto; }
+        .code-block .comment { color: #6e7681; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .comparison-table th { background: #111; color: #06d6a0; padding: 12px 16px; text-align: left; border-bottom: 2px solid #06d6a0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; }
+        .comparison-table tr:hover td { background: #0d1117; }
+        .check { color: #06d6a0; font-weight: 700; }
+        .strong { color: #06d6a0; font-weight: 600; }
+        .info-box { background: #091a14; border: 1px solid #1a3040; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+        .info-box h3 { color: #06d6a0; margin-bottom: 8px; }
+        .info-box p { font-size: 0.9rem; margin-bottom: 0; }
+        .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
+        .hardware-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .hardware-table th { background: #111; color: #06d6a0; padding: 12px 16px; text-align: left; border-bottom: 2px solid #1a3040; font-size: 0.85rem; }
+        .hardware-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; font-family: monospace; }
+        .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
+        .tier-card { background: #0d1117; border: 1px solid #222; border-radius: 10px; padding: 24px; }
+        .tier-card.recommended { border-color: #06d6a0; }
+        .tier-card h3 { margin-bottom: 8px; color: #ffffff; }
+        .tier-card .price-label { color: #8a9aaa; font-size: 0.85rem; margin-bottom: 12px; display: block; }
+        .tier-card p { font-size: 0.88rem; margin-bottom: 0; }
+        .rec-badge { background: #06d6a0; color: #000; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; margin-left: 8px; }
+        .prompt-examples { background: #0d1117; border: 1px solid #1a2d3e; border-radius: 10px; padding: 28px; margin: 32px 0; }
+        .prompt-row { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #1a1a1a; }
+        .prompt-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .prompt-label { font-size: 0.75rem; color: #8a9aaa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .prompt-text { font-family: monospace; font-size: 0.88rem; color: #06d6a0; background: #091a14; padding: 10px 14px; border-radius: 4px; }
+        footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
+        footer a { color: #06d6a0; text-decoration: none; margin: 0 12px; }
+        @media (max-width: 600px) { h1 { font-size: 1.9rem; } }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100">
+<body>
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
-      </nav>
+<header>
+    <div class="badge">22M–33M Parameters · CPU-Native · Battle-Tested</div>
+    <h1>Deploy <span>All-MiniLM</span> for Private RAG Embeddings</h1>
+    <p class="subtitle">The sentence embedding workhorse of the open-source RAG ecosystem. All-MiniLM-L6-v2 and L12-v2 deliver fast, accurate semantic search on CPU hardware — ideal for teams building private document search, knowledge bases, and retrieval pipelines without cloud API dependency.</p>
+    <div class="cta-group">
+        <a href="/models/quote.html" class="btn-primary">Plan My Deployment</a>
+        <a href="/models/nomic-embed/" class="btn-secondary">See Nomic Embed (Larger)</a>
     </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">all-minilm</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">all-minilm family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
+</header>
 
-      <p class="mt-4 text-slate-400">Capabilities: embedding. Ollama families: all-minilm.</p>
+<nav>
+    <a href="/">Home</a>
+    <a href="/models/all-minilm/">All-MiniLM</a>
+    <a href="/models/nomic-embed/">Nomic Embed</a>
+    <a href="/models/bge/">BGE</a>
+    <a href="/models/mxbai/">Mxbai</a>
+    <a href="/models/deploy/">Deploy</a>
+</nav>
+
+
+<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/all-minilm -->
+    <div style="margin:24px auto 8px;max-width:320px;text-align:center;">
+      <a href="https://ollama.com/library/all-minilm" target="_blank" rel="noopener noreferrer">
+        <img src="/models/all-minilm/hero.webp" alt="all minilm model family hero" width="320" style="width:100%;max-width:320px;border-radius:12px;display:block;" />
+      </a>
+      <p style="margin-top:8px;font-size:0.75rem;color:#888;">Source: <a href="https://ollama.com/library/all-minilm" target="_blank" rel="noopener noreferrer" style="color:#76b900;">Ollama</a></p>
     </div>
-  </header>
-  <main class="mx-auto max-w-6xl px-6 py-12">
+<div class="container">
+
+    <h2>Why All-MiniLM Is Still the Default RAG Embedding Choice</h2>
+
+    <p>When developers build their first RAG pipeline, they almost universally reach for All-MiniLM-L6-v2. When enterprises audit their production RAG stacks, they frequently find All-MiniLM already running in the embedding layer — often placed there by an engineer who needed something that worked immediately and never got replaced because it kept working well.</p>
+
+    <p>This is not an accident. All-MiniLM is the product of Microsoft's sentence-transformers research, distilled from a much larger model down to 22 million parameters without sacrificing the semantic understanding that makes embeddings useful. The result is a model that generates 384-dimensional embedding vectors in milliseconds on CPU hardware, handles the semantic similarity tasks that RAG pipelines depend on with genuine accuracy, and requires so little compute that it can run alongside a generation model on the same modest instance without contention.</p>
+
+    <p>For organizations building private document search, internal knowledge bases, customer support retrieval systems, or any RAG-based application where data cannot leave the organization's network, All-MiniLM delivers the embedding layer reliably, efficiently, and at essentially zero marginal infrastructure cost.</p>
+
+    <div class="stat-grid">
+        <div class="stat-card">
+            <span class="number">22M</span>
+            <div class="label">Parameters (L6-v2)</div>
+        </div>
+        <div class="stat-card">
+            <span class="number">384</span>
+            <div class="label">Embedding Dimensions</div>
+        </div>
+        <div class="stat-card">
+            <span class="number">256</span>
+            <div class="label">Max Token Input</div>
+        </div>
+        <div class="stat-card">
+            <span class="number">Apache 2.0</span>
+            <div class="label">License</div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>All-MiniLM Variants on Ollama</h2>
+
+    <div class="model-grid">
+        <div class="model-card">
+            <h3>All-MiniLM-L6-v2</h3>
+            <span class="tag">Recommended — Speed</span>
+            <p>6-layer transformer, 22M parameters, 384 dimensions. The standard choice for the vast majority of RAG deployments. Generates embeddings at several hundred documents per second on CPU. Quality is strong for general English semantic search.</p>
+            <span class="spec">ollama pull all-minilm</span>
+            <span class="spec">RAM: ~90MB · Dims: 384</span>
+        </div>
+        <div class="model-card">
+            <h3>All-MiniLM-L12-v2</h3>
+            <span class="tag">Higher Quality</span>
+            <p>12-layer variant, 33M parameters, same 384-dimensional output. Approximately 15–20% better on semantic similarity benchmarks at roughly double the inference time. Useful when retrieval quality is the primary constraint.</p>
+            <span class="spec">ollama pull all-minilm:l12</span>
+            <span class="spec">RAM: ~130MB · Dims: 384</span>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <p><strong>Which variant to choose:</strong> Start with L6-v2. It handles the overwhelming majority of enterprise RAG use cases without compromise. Upgrade to L12-v2 only if retrieval quality testing reveals meaningful gaps on your specific document corpus — the speed difference matters at scale when embedding large document libraries.</p>
+    </div>
+
+    <hr class="section-divider">
+
     <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
+      <h2>What about the video card?</h2>
+      <p>
+        This is the question most buyers are actually trying to answer.
+      </p>
+      <p>
+        Running these models without a proper GPU usually means falling back to CPU only. 
+        This works for very light use, but it becomes extremely slow for normal workloads. 
+        Many people discover this the hard way after spinning up a cloud server that ends up being too expensive or too slow.
+      </p>
+      <p>
+        Some teams want to avoid dealing with GPUs altogether. 
+        For them, Terminal Glass Cloud is usually the simpler option — you get capable models through a familiar OpenWebUI interface without having to select, size, or manage video cards.
+      </p>
+      <p>
+        Other teams prefer to run on infrastructure they control. In that case, they typically choose a GPU-based instance (on AWS Lightsail, Digital Ocean, or their own servers) and install NoCloudGPT on it. 
+        Because these models are designed to run with local Ollama, you become responsible for selecting and managing the GPU.
+      </p>
+      <p>
+        Some organizations need everything to stay fully inside their own environment from day one. 
+        For those teams, a <a href="/models/">NoCloudGPT Air Gapped</a> deployment on their own hardware is the right approach.
+      </p>
+      <p class="text-sm text-slate-400">
+        There isn’t a single right answer. The right answer depends on your constraints around cost, privacy, compliance, latency, and long-term ownership.
+      </p>
+    </section>
+
+    <!-- SECTION: Who this model family is for -->
+    <h2>Who This Model Family is For</h2>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>👤 Personal use</h3>
+            <p>All-MiniLM is a great fit if you want to build a personal semantic search tool or a local "chat with my notes" system without needing a powerful GPU. It runs comfortably on everyday laptops and mini PCs, and can index thousands of notes or PDFs in minutes. Keep in mind it only produces embeddings — it does not generate answers on its own. You will pair it with a chat model (such as Llama or Mistral) to complete a RAG pipeline.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🏢 Business / team use</h3>
+            <p>For small teams that need a private knowledge base search or internal RAG system, All-MiniLM offers one of the lowest-cost ways to get started. It is lightweight enough to run alongside other workloads on a single modest server, making it practical for validating whether semantic search delivers value before investing in larger models. It performs best on English-language content and smaller to medium-sized corpora.</p>
+        </div>
+        <div class="feature-card">
+            <h3>⚙️ Developer &amp; technical use</h3>
+            <p>Developers building RAG prototypes, search features, or recommendation systems will appreciate that All-MiniLM produces compact 384-dimensional vectors that are cheap to store and very fast to query. The small footprint means you can run the embedder in the same container or process as your application without significant resource overhead. It is a reliable default when you prioritize predictable latency and simplicity over maximum retrieval quality.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔬 Data science &amp; research</h3>
+            <p>All-MiniLM remains useful as a fast, well-documented baseline for clustering, topic modeling, deduplication, and similarity studies on English text. It is widely cited and easy to reproduce, making it a sensible reference point when benchmarking newer models such as BGE-M3 or Nomic Embed v1.5. On modern MTEB benchmarks it trails larger models, so it is best positioned as a speed-optimized baseline rather than a state-of-the-art result.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION: Licensing information -->
+    <h2>Licensing Information</h2>
+
+    <p>All-MiniLM models (including the widely used <code style="color:#06d6a0;">all-MiniLM-L6-v2</code> and <code style="color:#06d6a0;">all-MiniLM-L12-v2</code>) are released under the <strong style="color:#fff;">Apache 2.0 License</strong>, which permits commercial use, modification, and redistribution with attribution. There are no usage-based fees or restrictions tied to the model weights.</p>
+
+    <p><strong style="color:#fff;">Official model card:</strong></p>
+    <ul style="list-style:disc; padding-left:1.5rem; margin-bottom:18px; color:#c8d4e0;">
+        <li><a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2" target="_blank" rel="noopener" style="color:#06d6a0;">sentence-transformers/all-MiniLM-L6-v2 on Hugging Face</a></li>
+    </ul>
+
+    <div class="highlight-box" style="border-left-color:#f59e0b; background:#1a1408;">
+        <p><strong style="color:#f59e0b;">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION: Available model sizes -->
+    <h2>Available Model Sizes</h2>
+    <!-- INTERNAL: Verify Create individual model size detail pages for all-MiniLM-L6-v2 and all-MiniLM-L12-v2 with latency benchmarks and RAG configuration examples before publishing. -->
+
+    <table class="hardware-table">
+        <thead>
+            <tr>
+                <th>Model Size</th>
+                <th>Ollama Tag</th>
+                <th>Recommended NoCloudGPT Tier</th>
+                <th>Notes</th>
+                <th></th>
+            </tr>
         </thead>
         <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/all-minilm/" class="font-semibold text-cyan-300 hover:text-cyan-200">all-minilm</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">embedding</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
+            <tr>
+                <td><strong style="color:#fff;">MiniLM-L6-v2</strong> (~23M params)</td>
+                <td>all-minilm:l6-v2</td>
+                <td>Starter</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;">The classic fast option. Best for personal RAG, small knowledge bases, and rapid prototyping. Runs well on CPU.</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/models/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+            </tr>
+            <tr>
+                <td><strong style="color:#fff;">MiniLM-L12-v2</strong> (~33M params)</td>
+                <td>all-minilm:l12-v2</td>
+                <td>Starter / Standard</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;">Slightly higher quality than L6-v2 with modest extra cost. A good middle ground when L6 feels too lossy.</td>
+                <td style="font-family:'Segoe UI',system-ui,sans-serif;"><a href="/models/quote.html" style="color:#06d6a0;">Get quote →</a></td>
+            </tr>
         </tbody>
-      </table>
-    </section>
-  </main>
+    </table>
 
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
-  </footer>
+    <div class="info-box">
+        <p><strong style="color:#fff;">Positioning note:</strong> All-MiniLM's main strengths are speed and simplicity. If you need stronger retrieval quality, multilingual support, or longer context handling, consider stepping up to <strong style="color:#fff;">BGE-M3</strong> or <strong style="color:#fff;">Nomic Embed v1.5</strong> instead. Embedding models are lightweight — the main performance bottleneck in a RAG system is almost always the generation model, not the embedder.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>What All-MiniLM Does Well</h2>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <span class="icon">⚡</span>
+            <h3>Exceptional Speed on CPU</h3>
+            <p>L6-v2 can embed hundreds of short documents per second on a standard CPU. For real-time search interfaces and live document ingestion pipelines, this throughput means the embedding layer never becomes the bottleneck.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🔍</span>
+            <h3>Semantic Similarity</h3>
+            <p>Trained specifically on sentence-level semantic similarity tasks using contrastive learning. It captures meaning, not just keywords — "quarterly revenue declined" and "sales dropped in Q3" will be close in vector space.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">💾</span>
+            <h3>Minimal Memory Footprint</h3>
+            <p>The L6-v2 model weights occupy roughly 90MB of RAM. It runs alongside any generation model on the same instance without meaningful memory competition. Ideal for single-server full-stack RAG deployments.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🔗</span>
+            <h3>Universal Framework Compatibility</h3>
+            <p>All-MiniLM is supported natively by LangChain, LlamaIndex, Haystack, ChromaDB, Weaviate, Qdrant, and virtually every RAG framework. Switching vector stores does not require changing the embedding model.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">📚</span>
+            <h3>Proven at Scale</h3>
+            <p>One of the most downloaded embedding models on Hugging Face with millions of production deployments. Edge cases are documented, failure modes are known, and community support for troubleshooting is deep.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🏷️</span>
+            <h3>Zero-Cost Inference</h3>
+            <p>At 22M parameters, embedding costs are effectively free in terms of compute. You can re-embed entire document corpora, experiment with chunking strategies, and run embedding-heavy batch pipelines without infrastructure strain.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Understanding All-MiniLM's Limitations</h2>
+
+    <p>All-MiniLM is excellent at what it was designed for. It is important to understand where those boundaries are before committing to it as a long-term embedding layer.</p>
+
+    <p><strong>256-token input limit.</strong> This is the most significant practical constraint. L6-v2 was trained with a 256 subword token maximum, which equates to roughly 180–200 words of English text. Documents longer than this must be chunked before embedding, and the chunk boundary strategy directly affects retrieval quality. For most RAG pipelines this is manageable, but it requires deliberate attention to chunking design.</p>
+
+    <p><strong>English-optimized.</strong> All-MiniLM performs well on English and adequately on closely related European languages, but it was not designed for multilingual use. Organizations with document corpora in non-European languages should evaluate <a href="/models/paraphrase-multilingual/" style="color: #06d6a0;">Paraphrase-Multilingual</a>, <a href="/models/bge/" style="color: #06d6a0;">BGE-M3</a>, or <a href="/models/qwen-embedding/" style="color: #06d6a0;">Qwen3 Embedding</a> instead.</p>
+
+    <p><strong>384 dimensions may underfit complex corpora.</strong> For large, semantically diverse document libraries — enterprise wikis spanning dozens of domains, research paper corpora, multi-product documentation sets — the 384-dimensional space can become crowded and retrieval precision can suffer. Models like <a href="/models/nomic-embed/" style="color: #06d6a0;">Nomic Embed</a> or <a href="/models/bge/" style="color: #06d6a0;">BGE-Large</a> at 768 dimensions often show meaningful retrieval improvement on these cases.</p>
+
+    <div class="info-box">
+        <h3>When to Upgrade from All-MiniLM</h3>
+        <p>All-MiniLM is the right starting point for almost every RAG project. Consider upgrading to a larger embedding model when: (1) retrieval recall testing shows consistent misses on semantically relevant documents, (2) your corpus spans multiple domains with significant vocabulary differences, (3) you need multilingual support, or (4) your documents average longer than 200 words and chunking is creating context fragmentation problems.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Hardware Requirements</h2>
+
+    <table class="hardware-table">
+        <thead>
+            <tr>
+                <th>Deployment Scenario</th>
+                <th>Hardware</th>
+                <th>RAM Usage</th>
+                <th>Throughput</th>
+                <th>Best For</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CPU — L6-v2</td>
+                <td>Any modern server / Lightsail 2GB+</td>
+                <td>~90MB</td>
+                <td>300–500 docs/s</td>
+                <td>All standard RAG deployments</td>
+            </tr>
+            <tr>
+                <td>CPU — L12-v2</td>
+                <td>Any modern server / Lightsail 2GB+</td>
+                <td>~130MB</td>
+                <td>150–250 docs/s</td>
+                <td>Quality-sensitive retrieval</td>
+            </tr>
+            <tr>
+                <td>Paired with LLM</td>
+                <td>Lightsail 4–8GB alongside Llama/Mistral</td>
+                <td>Negligible add</td>
+                <td>Unaffected by LLM load</td>
+                <td>Full-stack single-server RAG</td>
+            </tr>
+            <tr>
+                <td>Batch ingestion</td>
+                <td>Multi-core CPU server</td>
+                <td>~90MB per worker</td>
+                <td>Linear with cores</td>
+                <td>Large initial corpus embedding</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="info-box">
+        <h3>No GPU Required</h3>
+        <p>All-MiniLM does not benefit meaningfully from GPU acceleration for typical RAG workloads. The model is small enough that CPU inference is fast, and GPU overhead for small batch sizes can actually reduce throughput. Run it on CPU and reserve GPU resources for your generation model.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Deployment with Ollama</h2>
+
+    <div class="code-block">
+        <span class="comment"># Pull All-MiniLM via Ollama</span><br>
+        ollama pull all-minilm<br><br>
+        <span class="comment"># Pull L12 variant for higher quality</span><br>
+        ollama pull all-minilm:l12<br><br>
+        <span class="comment"># Generate embeddings via Ollama API</span><br>
+        curl http://localhost:11434/api/embeddings \<br>
+        &nbsp;&nbsp;-d '{<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"model": "all-minilm",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"prompt": "Private AI deployment for enterprise document search"<br>
+        &nbsp;&nbsp;}'<br><br>
+        <span class="comment"># Batch embed multiple documents</span><br>
+        curl http://localhost:11434/api/embed \<br>
+        &nbsp;&nbsp;-d '{<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"model": "all-minilm",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"input": [<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Document chunk one text here",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Document chunk two text here",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Document chunk three text here"<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;]<br>
+        &nbsp;&nbsp;}'<br><br>
+        <span class="comment"># LangChain integration (Python)</span><br>
+        from langchain_community.embeddings import OllamaEmbeddings<br>
+        embeddings = OllamaEmbeddings(model="all-minilm")<br>
+        vectorstore = Chroma.from_documents(docs, embeddings)<br><br>
+        <span class="comment"># LlamaIndex integration (Python)</span><br>
+        from llama_index.embeddings.ollama import OllamaEmbedding<br>
+        embed_model = OllamaEmbedding(model_name="all-minilm")<br>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>RAG Architecture Patterns for All-MiniLM</h2>
+
+    <div class="prompt-examples">
+        <div class="prompt-row">
+            <div class="prompt-label">Recommended Chunk Size</div>
+            <div class="prompt-text">chunk_size = 200  # tokens — stays within 256 limit with overlap buffer
+chunk_overlap = 40  # ~20% overlap preserves context across boundaries
+# Use sentence-aware splitter — never cut mid-sentence</div>
+        </div>
+        <div class="prompt-row">
+            <div class="prompt-label">Vector Store Pairing (ChromaDB)</div>
+            <div class="prompt-text">chroma_client = chromadb.Client()
+collection = chroma_client.create_collection(
+    name="company_docs",
+    metadata={"hnsw:space": "cosine"}  # cosine similarity for MiniLM
+)</div>
+        </div>
+        <div class="prompt-row">
+            <div class="prompt-label">Full-Stack RAG — Single Server</div>
+            <div class="prompt-text"># Embedding: all-minilm on CPU (90MB RAM)
+# Generation: llama3.2 or mistral on same server
+# Vector DB: ChromaDB or Qdrant local instance
+# Interface: OpenWebUI with RAG pipeline enabled
+# Total RAM needed: 6–8GB for full stack</div>
+        </div>
+        <div class="prompt-row">
+            <div class="prompt-label">Similarity Threshold Guidance</div>
+            <div class="prompt-text"># All-MiniLM cosine similarity ranges:
+# > 0.85 — very high similarity, same topic/phrasing
+# 0.70–0.85 — semantically related, good retrieval hits
+# 0.50–0.70 — loosely related, review before using
+# < 0.50 — likely irrelevant, filter out
+# Recommended RAG retrieval threshold: 0.65–0.70</div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Use Cases Where All-MiniLM Fits Best</h2>
+
+    <ul class="use-case-list">
+        <li><strong>Internal knowledge base search:</strong> HR policy documents, IT runbooks, product documentation, and company wikis. All-MiniLM handles the vocabulary of a single organization's domain exceptionally well and does so on a 2GB Lightsail instance that costs less than $10/month.</li>
+        <li><strong>Customer support RAG:</strong> Embedding product manuals, FAQ libraries, and support ticket histories to power a private support assistant. The speed allows real-time similarity search even on modest hardware.</li>
+        <li><strong>Legal document retrieval:</strong> Embedding contract clauses, case law summaries, and regulatory text for semantic search. Keep sensitive legal documents entirely on-premise while enabling AI-assisted research.</li>
+        <li><strong>Research paper corpora (single domain):</strong> Academic teams embedding papers within a narrow field. All-MiniLM works well when the vocabulary is relatively consistent. For cross-domain or very large corpora, step up to BGE-Large.</li>
+        <li><strong>Email and communication archives:</strong> Embedding historical email threads, meeting notes, and Slack exports for organizational memory search. Short texts play to All-MiniLM's strengths.</li>
+        <li><strong>Product catalog semantic search:</strong> E-commerce and inventory systems where users search by meaning rather than exact keywords. All-MiniLM's speed at scale supports real-time product search on CPU hardware.</li>
+        <li><strong>Prototype and MVP RAG pipelines:</strong> The fastest path from zero to a working private RAG system. All-MiniLM requires no GPU, no complex setup, and no tuning to produce useful results on day one.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <h2>All-MiniLM vs. Other Embedding Models</h2>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Dimensions</th>
+                <th>Max Tokens</th>
+                <th>Multilingual</th>
+                <th>CPU Speed</th>
+                <th>MTEB Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>All-MiniLM-L6-v2</strong></td>
+                <td>384</td>
+                <td>256</td>
+                <td>Limited</td>
+                <td class="strong">Fastest</td>
+                <td>56.3</td>
+            </tr>
+            <tr>
+                <td>All-MiniLM-L12-v2</td>
+                <td>384</td>
+                <td>256</td>
+                <td>Limited</td>
+                <td>Fast</td>
+                <td>59.8</td>
+            </tr>
+            <tr>
+                <td>Nomic Embed v1.5</td>
+                <td>768</td>
+                <td>8192</td>
+                <td>Limited</td>
+                <td>Moderate</td>
+                <td>62.4</td>
+            </tr>
+            <tr>
+                <td>BGE-Large</td>
+                <td>1024</td>
+                <td>512</td>
+                <td>Limited</td>
+                <td>Slow</td>
+                <td>63.6</td>
+            </tr>
+            <tr>
+                <td>BGE-M3</td>
+                <td>1024</td>
+                <td>8192</td>
+                <td class="check">✓ 100 langs</td>
+                <td>Slow</td>
+                <td>64.8</td>
+            </tr>
+            <tr>
+                <td>Mxbai-Embed-Large</td>
+                <td>1024</td>
+                <td>512</td>
+                <td>Limited</td>
+                <td>Moderate</td>
+                <td>64.7</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="highlight-box">
+        <p><strong>The positioning is clear:</strong> All-MiniLM leads on speed and efficiency. Every other model in this table offers better MTEB scores at the cost of more compute, more RAM, and slower inference. For the majority of enterprise RAG deployments, the quality difference does not justify the infrastructure difference. When it does — when retrieval recall is provably insufficient — upgrading to <a href="/models/nomic-embed/" style="color: #06d6a0;">Nomic Embed</a> or <a href="/models/mxbai/" style="color: #06d6a0;">Mxbai-Embed-Large</a> is a straightforward model swap.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Deployment Service Options</h2>
+
+    <div class="tier-grid">
+        <div class="tier-card">
+            <h3>Embedding Layer Only</h3>
+            <span class="price-label">Add-on to existing stack</span>
+            <p>All-MiniLM configured as the embedding provider for an existing Ollama deployment. Includes Ollama API configuration, vector store connection guidance, and chunking strategy recommendations for your document type.</p>
+        </div>
+        <div class="tier-card recommended">
+            <h3>Full RAG Stack <span class="rec-badge">Most Common</span></h3>
+            <span class="price-label">Standard engagement</span>
+            <p>Complete private RAG deployment: All-MiniLM for embeddings, LangChain or LlamaIndex pipeline, ChromaDB or Qdrant vector store, generation model (Llama, Mistral, or Qwen), and OpenWebUI interface. Document ingestion pipeline included.</p>
+        </div>
+        <div class="tier-card">
+            <h3>Embedding Upgrade Path</h3>
+            <span class="price-label">Future-proofing</span>
+            <p>Start with All-MiniLM for speed and cost. We architect the vector store and pipeline so upgrading to Nomic Embed or BGE-Large requires only a re-embedding run — no application code changes. Preserves your development investment.</p>
+        </div>
+    </div>
+
+    <a href="/models/quote.html" class="btn-primary" style="display:inline-block; margin-top: 8px;">Request Deployment Quote</a>
+
+    <hr class="section-divider">
+
+    <div class="info-box">
+        <h3>Related Embedding Models</h3>
+        <p>Need longer document context? <a href="/models/nomic-embed/" style="color: #06d6a0;">Nomic Embed Text</a> handles 8K tokens. Need multilingual support? <a href="/models/bge/" style="color: #06d6a0;">BGE-M3</a> covers 100 languages. Need the strongest English retrieval? <a href="/models/mxbai/" style="color: #06d6a0;">Mxbai-Embed-Large</a> leads MTEB benchmarks. All-MiniLM remains the right default — upgrade only when retrieval testing proves you need to.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>
+        <a href="/">NoCloudGPT Home</a>
+        <a href="/models/all-minilm/">All-MiniLM</a>
+        <a href="/models/bge/">BGE / BGE-M3</a>
+        <a href="/models/nomic-embed/">Nomic Embed</a>
+        <a href="/models/mxbai/">Mxbai</a>
+        <a href="/models/deploy/">Deployment Guide</a>
+        <a href="/models/quote.html">Get Quote</a>
+    </p>
+    <p style="margin-top: 16px;">© 2025 NoCloudGPT. Private AI deployment specialists. Not affiliated with Microsoft or the sentence-transformers project.</p>
+</footer>
+
 </body>
 </html>

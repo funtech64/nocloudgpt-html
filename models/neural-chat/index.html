@@ -1,74 +1,330 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>neural-chat — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for neural-chat: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/neural-chat/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="neural-chat — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for neural-chat: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/neural-chat/">
+<title>Neural Chat – Private On-Premise AI | NoCloudGPT</title>
+  <meta name="description" content="Deploy Intel's Neural Chat locally. Optimized for CPU inference on Intel hardware, Neural Chat delivers fast, private conversational AI without cloud dependency." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "neural-chat", "description": "Catalog facts for neural-chat: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/neural-chat/"}</script>
 </head>
-<body class="bg-slate-950 text-slate-100">
+<body class="bg-gray-950 text-gray-100 font-sans">
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
-      </nav>
+  <!-- Nav -->
+  <nav class="bg-gray-900 border-b border-gray-800 px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold text-white tracking-tight">NoCloud<span class="text-blue-400">GPT</span></a>
+    <div class="hidden md:flex gap-6 text-sm text-gray-400">
+      <a href="/models/" class="hover:text-white transition">Model Menu</a>
+      <a href="/pricing" class="hover:text-white transition">Pricing</a>
+      <a href="/models/deploy/" class="hover:text-white transition">Docs</a>
+      <a href="/contact" class="hover:text-white transition">Contact</a>
     </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">neural-chat</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">neural-chat family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
+    <a href="/contact" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Get a Quote</a>
+  </nav>
 
-      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: neural-chat.</p>
+  <!-- Hero -->
+  
+<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/neural-chat -->
+      <a href="https://ollama.com/library/neural-chat" target="_blank" rel="noopener noreferrer" class="inline-block">
+        <img
+          src="/models/neural-chat/hero.webp"
+          alt="neural-chat model family hero"
+          width="1200"
+          height="600"
+          class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+        />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/neural-chat" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
+<section class="max-w-5xl mx-auto px-6 py-16 text-center">
+    <div class="inline-block bg-blue-900/40 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">Intel Optimized · CPU-First · Conversational AI</div>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Neural Chat</h1>
+    <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+      Intel's Neural Chat is purpose-built for fast, efficient inference on CPU-based infrastructure. Derived from Mistral 7B and fine-tuned using Intel's Direct Preference Optimization pipeline, it delivers responsive conversational AI on the hardware you already own — no GPU required.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/contact" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg transition">Request a Deployment Quote</a>
+      <a href="/lightsail-pilot" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg transition">Start 90-Day Lightsail Pilot</a>
     </div>
-  </header>
-  <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/neural-chat/" class="font-semibold text-cyan-300 hover:text-cyan-200">neural-chat</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">text</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
+  </section>
 
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+  <!-- What Makes Neural Chat Different -->
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">What Makes Neural Chat Different</h2>
+    <div class="grid md:grid-cols-2 gap-8 text-gray-300 leading-relaxed">
+      <div>
+        <p class="mb-4">
+          Most open-weight models are optimized for GPU throughput — designed to run fast on NVIDIA hardware with massive VRAM. Neural Chat takes a different approach. Intel built it specifically for deployment on Xeon processors and consumer Intel CPUs, using a combination of quantization-aware training, INT8 precision, and OpenVINO runtime support to deliver low-latency responses without a single GPU in the stack.
+        </p>
+        <p class="mb-4">
+          This makes Neural Chat unusually practical for organizations that operate in environments where GPUs are unavailable, cost-prohibitive, or simply unnecessary for the workload at hand. Customer support pipelines, internal knowledge base Q&A, document summarization, and meeting transcription assistants are all viable targets — running on standard rack servers or even edge nodes.
+        </p>
+      </div>
+      <div>
+        <p class="mb-4">
+          Neural Chat v3 (the current release) is fine-tuned from Mistral 7B Instruct, inheriting its strong instruction-following capabilities while benefiting from Intel's Direct Preference Optimization (DPO) alignment process. The result is a model that follows conversational instructions cleanly, handles multi-turn dialogue well, and produces appropriately structured outputs for downstream automation.
+        </p>
+        <p class="mb-4">
+          Where GPU-optimized models require careful infrastructure planning — reserved capacity, driver management, cooling overhead — Neural Chat slots into existing CPU infrastructure with minimal friction. For NoCloudGPT deployments, this translates directly to lower per-instance costs, simpler scaling, and deployments that fit comfortably on AWS Lightsail plans starting at 2GB RAM.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Strengths -->
+  <section class="bg-gray-900 py-12">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-white mb-8">Core Strengths</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-blue-400 text-2xl mb-3">⚙️</div>
+          <h3 class="text-white font-semibold text-lg mb-2">CPU-Native Performance</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Optimized for Intel Xeon and Core architectures using OpenVINO and INT8 quantization. Achieves competitive token-per-second rates without GPU dependency, making it viable on standard cloud VMs or edge hardware.</p>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-blue-400 text-2xl mb-3">💬</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Strong Instruction Following</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Fine-tuned with DPO alignment on conversational datasets, Neural Chat handles multi-turn exchanges, structured prompts, and role-based instructions reliably — essential for customer-facing or agent-driven applications.</p>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-blue-400 text-2xl mb-3">🔒</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Complete Data Privacy</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Every inference stays on your infrastructure. No telemetry, no API logging, no third-party processing. Ideal for industries with strict data residency requirements — healthcare, legal, financial services, and government.</p>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-blue-400 text-2xl mb-3">💰</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Low Infrastructure Cost</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">CPU deployment eliminates GPU rental costs entirely. At 7B parameters with INT8 quantization, Neural Chat runs on modest hardware — enabling cost structures that favor internal deployment over per-token SaaS pricing.</p>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-blue-400 text-2xl mb-3">🧩</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Mistral Foundation</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Built on Mistral 7B Instruct, Neural Chat inherits proven performance on reasoning, summarization, and code assistance tasks. Intel's fine-tuning preserves these capabilities while improving alignment for enterprise conversation patterns.</p>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6">
+          <div class="text-blue-400 text-2xl mb-3">🚀</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Edge and Air-Gap Ready</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Low resource footprint and CPU compatibility make Neural Chat suitable for air-gapped environments, edge deployments, and on-premise server rooms where internet connectivity is restricted or prohibited.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Should Use Neural Chat -->
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">Who Should Use Neural Chat</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="space-y-4">
+        <div class="flex items-start gap-4 bg-gray-800/50 rounded-xl p-5">
+          <div class="text-2xl">🏥</div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Healthcare & Clinical Operations</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Deploy internal patient FAQ assistants, clinical note drafting tools, or appointment routing chatbots entirely on-premise — no PHI ever leaves the facility network.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-gray-800/50 rounded-xl p-5">
+          <div class="text-2xl">⚖️</div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Legal & Compliance Teams</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Document Q&A, contract clause extraction, and policy lookup assistants that operate entirely within firm infrastructure — critical for maintaining attorney-client privilege in AI-assisted workflows.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-gray-800/50 rounded-xl p-5">
+          <div class="text-2xl">🏭</div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Manufacturing & Industrial IoT</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Edge-deployed maintenance assistants, equipment troubleshooting guides, and shift-handoff summarizers on factory floor servers — no cloud latency, no connectivity dependency.</p>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div class="flex items-start gap-4 bg-gray-800/50 rounded-xl p-5">
+          <div class="text-2xl">🏛️</div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Government & Defense</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Air-gapped deployments for internal knowledge retrieval, policy Q&A, and report drafting. Neural Chat's CPU compatibility enables installation on existing classified network hardware without GPU procurement.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-gray-800/50 rounded-xl p-5">
+          <div class="text-2xl">🎓</div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Education & Research Institutions</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Budget-conscious universities and research labs can deploy Neural Chat on existing CPU clusters for student tutoring tools, literature review assistants, and academic Q&A — no additional hardware investment required.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-gray-800/50 rounded-xl p-5">
+          <div class="text-2xl">📞</div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Customer Support Operations</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">High-volume, privacy-sensitive customer service platforms benefit from Neural Chat's low cost per inference and strong multi-turn dialogue capabilities — handling thousands of sessions daily on modest server infrastructure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hardware & Deployment -->
+  <section class="bg-gray-900 py-12">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-white mb-8">Hardware Requirements & Deployment Options</h2>
+
+      <div class="overflow-x-auto rounded-xl border border-gray-700 mb-10">
+        <table class="w-full text-sm text-left">
+          <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wider">
+            <tr>
+              <th class="px-5 py-4">Configuration</th>
+              <th class="px-5 py-4">Quantization</th>
+              <th class="px-5 py-4">RAM Required</th>
+              <th class="px-5 py-4">Hardware Profile</th>
+              <th class="px-5 py-4">Use Case Fit</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr class="hover:bg-gray-800/50 transition">
+              <td class="px-5 py-4 text-white font-medium">Neural Chat 7B (INT8)</td>
+              <td class="px-5 py-4 text-gray-300">INT8 / OpenVINO</td>
+              <td class="px-5 py-4 text-gray-300">~6–8 GB RAM</td>
+              <td class="px-5 py-4 text-gray-300">2–4 vCPU, 8GB+ RAM</td>
+              <td class="px-5 py-4 text-gray-300">Lightsail 4–8GB, edge node</td>
+            </tr>
+            <tr class="hover:bg-gray-800/50 transition">
+              <td class="px-5 py-4 text-white font-medium">Neural Chat 7B (Q4_K_M)</td>
+              <td class="px-5 py-4 text-gray-300">GGUF 4-bit</td>
+              <td class="px-5 py-4 text-gray-300">~4–5 GB RAM</td>
+              <td class="px-5 py-4 text-gray-300">2 vCPU, 4GB+ RAM</td>
+              <td class="px-5 py-4 text-gray-300">Lightsail 2–4GB, minimal edge</td>
+            </tr>
+            <tr class="hover:bg-gray-800/50 transition">
+              <td class="px-5 py-4 text-white font-medium">Neural Chat 7B (FP16)</td>
+              <td class="px-5 py-4 text-gray-300">Full Precision</td>
+              <td class="px-5 py-4 text-gray-300">~14 GB VRAM/RAM</td>
+              <td class="px-5 py-4 text-gray-300">GPU (RTX 3080/4080) or high-RAM CPU</td>
+              <td class="px-5 py-4 text-gray-300">On-premise GPU server, max quality</td>
+            </tr>
+            <tr class="hover:bg-gray-800/50 transition">
+              <td class="px-5 py-4 text-white font-medium">Multi-Instance CPU Cluster</td>
+              <td class="px-5 py-4 text-gray-300">INT8</td>
+              <td class="px-5 py-4 text-gray-300">16–32 GB RAM per node</td>
+              <td class="px-5 py-4 text-gray-300">Intel Xeon multi-core</td>
+              <td class="px-5 py-4 text-gray-300">High-throughput enterprise deployment</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="text-white font-semibold text-lg mb-3">☁️ AWS Lightsail Pilot</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Neural Chat 7B with Q4_K_M quantization runs comfortably on a 4GB Lightsail instance. Our 90-day pilot includes full Ollama setup, API configuration, and usage reporting — ideal for evaluating CPU-based AI economics before committing to on-premise hardware.</p>
+          <a href="/lightsail-pilot" class="text-blue-400 text-sm font-semibold hover:text-blue-300 transition">Start Pilot →</a>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="text-white font-semibold text-lg mb-3">🖥️ On-Premise Server</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Deploy Neural Chat on your existing Intel Xeon infrastructure. NoCloudGPT handles model installation, OpenVINO runtime configuration, API gateway setup, and staff onboarding. Full air-gap support available for classified environments.</p>
+          <a href="/contact" class="text-blue-400 text-sm font-semibold hover:text-blue-300 transition">Request Installation →</a>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6">
+          <h3 class="text-white font-semibold text-lg mb-3">📦 Edge Deployment</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Neural Chat's low resource footprint enables deployment on industrial edge nodes, workstations, and embedded servers. We configure llama.cpp with GGUF quantization for maximum portability across hardware generations.</p>
+          <a href="/contact" class="text-blue-400 text-sm font-semibold hover:text-blue-300 transition">Discuss Edge Options →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Case Deep Dive -->
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-white mb-6">Use Case Deep Dive: Internal Knowledge Assistant</h2>
+    <div class="bg-gray-800/60 rounded-2xl p-8 border border-gray-700">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        One of the highest-ROI applications for Neural Chat is an internal knowledge base assistant — a private chatbot that answers employee questions by retrieving and synthesizing content from your organization's documentation, policies, and procedures.
+      </p>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Paired with a lightweight retrieval pipeline (embedding model + vector store), Neural Chat reads retrieved document chunks and generates accurate, contextualized responses. Employees can ask plain-language questions — "What is our PTO carryover policy?" or "How do I submit a vendor exception request?" — and receive immediate, specific answers sourced from authoritative internal documents.
+      </p>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Because Neural Chat runs entirely on your infrastructure, sensitive HR policies, financial procedures, and operational playbooks never leave your network. The entire system — embedding, retrieval, and generation — operates on a single 8GB server running standard Intel hardware.
+      </p>
+      <p class="text-gray-300 leading-relaxed">
+        NoCloudGPT configures this full stack as a turnkey deployment: Neural Chat 7B (INT8) serving as the generation layer, a Chroma or Weaviate vector store for document retrieval, and an Ollama-compatible API endpoint your existing internal tools can call. Setup time is typically two to three days for standard documentation corpora.
+      </p>
+    </div>
+  </section>
+
+  <!-- Comparison Context -->
+  <section class="bg-gray-900 py-12">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-white mb-6">Neural Chat vs. Alternatives</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-700">
+        <table class="w-full text-sm text-left">
+          <thead class="bg-gray-800 text-gray-400 uppercase text-xs tracking-wider">
+            <tr>
+              <th class="px-5 py-4">Model</th>
+              <th class="px-5 py-4">CPU Optimized</th>
+              <th class="px-5 py-4">Min RAM (Quantized)</th>
+              <th class="px-5 py-4">Instruction Following</th>
+              <th class="px-5 py-4">Best For</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr class="hover:bg-gray-800/50 transition">
+              <td class="px-5 py-4 text-white font-semibold">Neural Chat 7B</td>
+              <td class="px-5 py-4 text-green-400">✅ Intel-native</td>
+              <td class="px-5 py-4 text-gray-300">~4 GB</td>
+              <td class="px-5 py-4 text-gray-300">Strong (DPO aligned)</td>
+              <td class="px-5 py-4 text-gray-300">CPU-only enterprise deployments</td>
+            </tr>
+            <tr class="hover:bg-gray-800/50 transition">
+              <td class="px-5 py-4 text-white font-semibold">Mistral 7B Instruct</td>
+              <td class="px-5 py-4 text-yellow-400">⚠️ Partial</td>
+              <td class="px-5 py-4 text-gray-300">~4 GB</td>
+              <td class="px-5 py-4 text-gray-300">Very Strong</td>
+              <td class="px-5 py-4 text-gray-300">General instruction tasks</td>
+            </tr>
+            <tr class="hover:bg-gray-800/50 transition">
+              <td class="px-5 py-4 text-white font-semibold">Phi-4 Mini</td>
+              <td class="px-5 py-4 text-yellow-400">⚠️ Partial</td>
+              <td class="px-5 py-4 text-gray-300">~2 GB</td>
+              <td class="px-5 py-4 text-gray-300">Strong (reasoning)</td>
+              <td class="px-5 py-4 text-gray-300">Ultra-low RAM, reasoning tasks</td>
+            </tr>
+            <tr class="hover:bg-gray-800/50 transition">
+              <td class="px-5 py-4 text-white font-semibold">TinyLlama 1.1B</td>
+              <td class="px-5 py-4 text-green-400">✅ CPU viable</td>
+              <td class="px-5 py-4 text-gray-300">~1 GB</td>
+              <td class="px-5 py-4 text-gray-300">Limited</td>
+              <td class="px-5 py-4 text-gray-300">Extreme edge, IoT</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-5xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-3xl font-bold text-white mb-4">Deploy Neural Chat Without the Cloud</h2>
+    <p class="text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+      Intel's Neural Chat gives you a capable, privately deployed conversational AI that runs on the CPU infrastructure you already have. NoCloudGPT handles the full stack — from quantization and runtime configuration to API setup and team onboarding.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/contact" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-lg transition text-lg">Get a Deployment Quote</a>
+      <a href="/lightsail-pilot" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold px-8 py-4 rounded-lg transition text-lg">Start 90-Day Pilot</a>
+      <a href="/models/" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold px-8 py-4 rounded-lg transition text-lg">Browse All Models</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 border-t border-gray-800 px-6 py-10 text-center text-gray-500 text-sm">
+    <p class="mb-2"><a href="/" class="text-white font-semibold">NoCloudGPT</a> — Private AI Infrastructure, Fully On-Premise</p>
+    <p class="mb-4">AWS Lightsail Pilots · On-Premise Installation · Air-Gap Deployments</p>
+    <div class="flex justify-center gap-6 text-xs">
+      <a href="/models/" class="hover:text-white transition">Model Menu</a>
+      <a href="/pricing" class="hover:text-white transition">Pricing</a>
+      <a href="/models/deploy/" class="hover:text-white transition">Docs</a>
+      <a href="/contact.html" class="hover:text-white transition">Privacy</a>
+      <a href="/contact" class="hover:text-white transition">Contact</a>
+    </div>
   </footer>
+
 </body>
 </html>
