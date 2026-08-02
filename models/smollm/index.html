@@ -1,169 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>smollm — Model family catalog | NoCloudGPT</title>
+  <meta name="description" content="Catalog facts for smollm: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nocloudgpt.com/models/smollm/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>SmolLM / SmolLM2 – Tiny On-Device Models | NoCloudGPT</title>
-  <meta name="description" content="HuggingFace's SmolLM and SmolLM2 are sub-2B models designed for on-device and edge deployment. Run capable AI on minimal hardware with no cloud required." />
-  <link rel="canonical" href="https://nocloudgpt.com/models/smollm/" />
-  <style>
-    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; color: #1a1a1a; line-height: 1.7; }
-    h1 { font-size: 2rem; margin-bottom: 0.4rem; }
-    h2 { font-size: 1.35rem; margin-top: 2.2rem; border-bottom: 2px solid #e2e2e2; padding-bottom: 0.3rem; }
-    h3 { font-size: 1.1rem; margin-top: 1.4rem; color: #333; }
-    .tag { display: inline-block; background: #f0f4ff; color: #2244aa; border-radius: 4px; padding: 2px 8px; font-size: 0.82rem; margin-right: 5px; }
-    .cta-box { background: #f8f9ff; border-left: 4px solid #3355dd; padding: 1rem 1.4rem; margin: 2rem 0; border-radius: 4px; }
-    .cta-box a { color: #2244aa; font-weight: 600; }
-    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
-    th, td { border: 1px solid #ddd; padding: 0.6rem 0.9rem; text-align: left; }
-    th { background: #f3f3f3; }
-    a { color: #2244aa; }
-    nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
-    .callout { background: #f0fff4; border-left: 4px solid #38a169; padding: 0.8rem 1.2rem; border-radius: 4px; margin: 1.5rem 0; }
-  </style>
+  <meta property="og:title" content="smollm — Model family catalog | NoCloudGPT">
+  <meta property="og:description" content="Catalog facts for smollm: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nocloudgpt.com/models/smollm/">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "smollm", "description": "Catalog facts for smollm: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/smollm/"}</script>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100">
 
-<nav><a href="/models/">← Model Menu</a> &nbsp;/&nbsp; SmolLM</nav>
-
-
-<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/smollm -->
-    <div style="margin:24px auto 8px;max-width:320px;text-align:center;">
-      <a href="https://ollama.com/library/smollm" target="_blank" rel="noopener noreferrer">
-        <img src="/models/smollm/hero.webp" alt="smollm model family hero" width="320" style="width:100%;max-width:320px;border-radius:12px;display:block;" />
-      </a>
-      <p style="margin-top:8px;font-size:0.75rem;color:#888;">Source: <a href="https://ollama.com/library/smollm" target="_blank" rel="noopener noreferrer" style="color:#76b900;">Ollama</a></p>
+  <div class="border-b border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+      <nav class="flex flex-wrap gap-4 text-slate-400">
+        <a href="/models/" class="text-white">Models</a>
+        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+        <a href="/services.html" class="hover:text-white">Services</a>
+        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
+        <a href="/contact.html" class="hover:text-white">Contact</a>
+        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+      </nav>
     </div>
-<h1>SmolLM / SmolLM2: AI That Runs Anywhere</h1>
-  <!-- INTERNAL: Verify Add hero.webp — see models/artwork-sources.md, row: smollm before publishing. -->
+  </div>
+  <header class="border-b border-slate-800 bg-slate-950/90">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">smollm</p>
+      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">smollm family</h1>
+      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
 
-<p>
-  <span class="tag">Edge</span>
-  <span class="tag">On-Device</span>
-  <span class="tag">Sub-2B</span>
-  <span class="tag">CPU Friendly</span>
-  <span class="tag">HuggingFace</span>
-</p>
-
-<p>
-  SmolLM and SmolLM2 are HuggingFace's own open-weight model series, purpose-built for <strong>extremely resource-constrained deployment</strong>. We're talking 135M, 360M, and 1.7B parameter models that run on a Raspberry Pi, a cheap VPS, an Android phone, or inside a browser via WebAssembly. SmolLM2 is the second-generation refresh with improved instruction following and better benchmark performance at every size. These are not trimmed-down versions of larger models — they are trained from scratch for efficient on-device inference.
-</p>
-
-<div class="callout">
-  <strong>When SmolLM makes sense:</strong> You need AI embedded in a product, app, or device where you cannot guarantee a network connection or GPU availability. SmolLM fits where no other serious model does.
-</div>
-
-<h2>What SmolLM Is Good At</h2>
-<ul>
-  <li><strong>Text classification and intent detection</strong> — fast, reliable categorization at tiny scale</li>
-  <li><strong>Short-form Q&A and factoid lookups</strong> — the 1.7B Instruct handles many simple queries surprisingly well</li>
-  <li><strong>Embedded assistant features in applications</strong> — bundle it inside a desktop app, mobile app, or browser extension</li>
-  <li><strong>Edge pipeline preprocessing</strong> — summarize, classify, or route data on-device before sending to a larger model</li>
-  <li><strong>Offline operation</strong> — no internet required; runs entirely on local hardware</li>
-  <li><strong>Teaching and experimentation</strong> — low barrier to run; great for learning LLM deployment without expensive hardware</li>
-</ul>
-
-<h2>Who Should Care</h2>
-
-<h3>Business and Professional Use</h3>
-<p>
-  SmolLM is the right tool when you need <strong>AI embedded inside a product</strong> rather than served from a central API. A customer-facing kiosk with no reliable internet connection, a document classification tool that runs inside a secure air-gapped network, or an on-device privacy assistant for field workers — these are scenarios where SmolLM's size constraints become advantages.
-</p>
-<p>
-  It's also useful as the <strong>routing layer</strong> in a two-model system: SmolLM classifies or preprocesses the query cheaply, and only complex queries get forwarded to a heavier model. This dramatically reduces GPU load on the main server.
-</p>
-
-<h3>Personal and Homelab Use</h3>
-<p>
-  SmolLM2 1.7B is one of the few models that runs usefully on a Raspberry Pi 4 or 5, an old laptop, or a mini-PC with no GPU. If you want local AI on the absolute cheapest possible hardware, SmolLM2 Instruct is your starting point.
-</p>
-
-<h2>Model Variants at a Glance</h2>
-<table>
-  <thead>
-    <tr><th>Model</th><th>Parameters</th><th>RAM Needed</th><th>Best Use</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>SmolLM2 135M Instruct</td><td>135M</td><td>&lt;1GB</td><td>Classification, routing, ultra-edge</td></tr>
-    <tr><td>SmolLM2 360M Instruct</td><td>360M</td><td>~500MB</td><td>Simple Q&A, mobile/browser</td></tr>
-    <tr><td>SmolLM2 1.7B Instruct</td><td>1.7B</td><td>~1.5GB</td><td>Best SmolLM for general assistant tasks</td></tr>
-  </tbody>
-</table>
-
-<h2>NoCloudGPT Deployment Guidance</h2>
-
-<h3>Small Cloud Server (Lightsail)</h3>
-<p>
-  SmolLM2 1.7B runs on the smallest Lightsail CPU instance (1 vCPU / 1GB RAM). This is arguably overkill — the main value is edge or embedded deployment, not server-side use. That said, it's a valid option for extremely high-volume, low-latency classification tasks where you want fast CPU throughput:
-</p>
-<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>ollama run smollm2:1.7b-instruct-q4_K_M</code></pre>
-
-<h3>Local / Edge Device</h3>
-<p>
-  Pull the GGUF directly and run with llama.cpp. SmolLM2 1.7B Q4_K_M is under 1GB on disk:
-</p>
-<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code># On a Raspberry Pi 5 or any low-power Linux device
-./llama-cli -m smollm2-1.7b-instruct-q4_k_m.gguf \
-  -p "You are a helpful assistant." -i</code></pre>
-
-<h3>Embedded in Applications</h3>
-<p>
-  HuggingFace provides JavaScript and Python libraries for running SmolLM in-browser via Transformers.js, or embedded in Python apps via the standard Transformers library. No server required:
-</p>
-<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>from transformers import pipeline
-pipe = pipeline("text-generation",
-    model="HuggingFaceTB/SmolLM2-1.7B-Instruct")
-print(pipe("Summarize this in one sentence: ..."))</code></pre>
-
-<div class="cta-box">
-  <strong>Need AI that runs on minimal hardware, everywhere?</strong><br />
-  SmolLM is a building block, not a finished product — but it's a powerful one.
-  <a href="/models/quote.html">Build a deployment quote</a> for a full private AI stack,
-  or see the <a href="/models/deploy/">pilot setup guide</a> for larger model options.
-</div>
-
-<h2>Frequently Asked Questions</h2>
-
-<h3>Is SmolLM2 good enough to replace ChatGPT for real tasks?</h3>
-<p>No — and it's not designed to. SmolLM2 excels at constrained, well-defined tasks: classification, summarization of short text, simple Q&A. For open-ended reasoning or complex queries, you want Phi-3, Gemma 2, or Mistral at minimum.</p>
-
-<h3>Can SmolLM run in a browser?</h3>
-<p>Yes. HuggingFace's Transformers.js library supports SmolLM models via WebAssembly, enabling fully in-browser inference with no server calls. This is useful for privacy-first web applications.</p>
-
-<h3>What's the difference between SmolLM and TinyLlama?</h3>
-<p>Both are sub-2B models. SmolLM2 is newer and generally outperforms TinyLlama on benchmarks. TinyLlama uses the Llama architecture (which has broader community tooling), while SmolLM uses a custom efficient architecture. See our <a href="/models/tinyllama/">TinyLlama page</a> for a direct comparison.</p>
-
-<h2>Related Pages</h2>
-<ul>
-  <li><a href="/models/tinyllama/">TinyLlama</a></li>
-  <li><a href="/models/phi/">Phi-3 Mini (next step up in capability)</a></li>
-  <li><a href="/models/gemma/">Gemma 2B</a></li>
-  <li><a href="/models/compare/">Compare open models</a></li>
-</ul>
-
-  <!-- ============================================================
-       ARTWORK AND SOURCE REFERENCES
-  ============================================================ -->
-  <section style="border-top:1px solid #1e293b; background:#0f172a; padding:2rem 1.5rem; margin-top:3rem;">
-    <div style="max-width:56rem; margin:0 auto; font-size:0.75rem; color:#64748b;">
-      <p style="font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Artwork and source references</p>
-      <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
-        <div>
-          <p style="font-weight:600; color:#94a3b8;">Hero image</p>
-          
-        </div>
-        <div>
-          <p style="font-weight:600; color:#94a3b8;">Developer reference</p>
-          <p style="margin-top:0.25rem;">SmolLM is developed by <a href="https://huggingface.co/blog/smollm" target="_blank" rel="noopener" style="color:#67e8f9;">Hugging Face</a>. NoCloudGPT is an independent deployment service not affiliated with Hugging Face.</p>
-        </div>
-        <div>
-          <p style="font-weight:600; color:#94a3b8;">Model catalog</p>
-          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/smollm" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: smollm</a> for current tags and sizes.</p>
-        </div>
-      </div>
+      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: smollm.</p>
     </div>
-  </section>
+  </header>
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section>
+      <h2 class="text-2xl font-bold">Models in this family</h2>
+      <table class="mt-6 w-full text-left text-sm">
+        <thead class="text-slate-400">
+          <tr>
+            <th class="pb-3">Model</th>
+            <th class="pb-3">Params</th>
+            <th class="pb-3">Quant</th>
+            <th class="pb-3">Capabilities</th>
+            <th class="pb-3">Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="border-t border-slate-800">
+          <td class="py-3 pr-4"><a href="/models/model/smollm/" class="font-semibold text-cyan-300 hover:text-cyan-200">smollm</a></td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">text</td>
+          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
 
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
+    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+  </footer>
 </body>
 </html>

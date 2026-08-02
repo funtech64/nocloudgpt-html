@@ -3,469 +3,72 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>Code Llama — Private Coding AI for Teams That Can't Share Source Code | NoCloudGPT</title>
-  <meta name="description" content="Deploy Code Llama privately with NoCloudGPT. Meta's purpose-built coding model runs on your own server — code generation, review, and debugging without sending source code to external APIs.">
+  <title>codellama — Model family catalog | NoCloudGPT</title>
+  <meta name="description" content="Catalog facts for codellama: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://nocloudgpt.com/models/codellama/">
-  <meta property="og:title" content="Code Llama — Private Coding AI | NoCloudGPT">
-  <meta property="og:description" content="Run Code Llama on your own infrastructure. Private code generation, debugging, and review for teams that cannot route source code through cloud AI providers.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="codellama — Model family catalog | NoCloudGPT">
+  <meta property="og:description" content="Catalog facts for codellama: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nocloudgpt.com/models/codellama/">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "codellama", "description": "Catalog facts for codellama: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/codellama/"}</script>
 </head>
 <body class="bg-slate-950 text-slate-100">
 
-  <header class="border-b border-slate-800 bg-slate-950">
-    <div class="mx-auto max-w-6xl px-6 py-4">
-      <nav class="flex items-center justify-between text-sm">
-        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-        <div class="flex gap-6 text-slate-400">
-          <a href="/models/" class="hover:text-white">Models</a>
-          <a href="/models/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
-          <a href="/models/quote.html" class="hover:text-white">Get a Quote</a>
-        </div>
+  <div class="border-b border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+      <nav class="flex flex-wrap gap-4 text-slate-400">
+        <a href="/models/" class="text-white">Models</a>
+        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+        <a href="/services.html" class="hover:text-white">Services</a>
+        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
+        <a href="/contact.html" class="hover:text-white">Contact</a>
+        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
       </nav>
     </div>
-  </header>
-
-  <section class="border-b border-slate-800 bg-slate-950">
-    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+  </div>
+  <header class="border-b border-slate-800 bg-slate-950/90">
+    <div class="mx-auto max-w-6xl px-6 py-12">
       <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <!-- INTERNAL: hero.webp sourced from https://ollama.com/library/codellama -->
-      <a href="https://ollama.com/library/codellama" target="_blank" rel="noopener noreferrer" class="inline-block">
-        <img
-          src="/models/codellama/hero.webp"
-          alt="codellama model family hero"
-          width="1200"
-          height="600"
-          class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
-        />
-      </a>
-      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/codellama" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
+      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">codellama</p>
+      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">codellama family</h1>
+      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
 
-      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Code Llama Model Family</p>
-      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
-        Private Code Generation and Review Without Sending Source Code Off-Site
-      </h1>
-  <!-- INTERNAL: Verify Add hero.webp — see models/artwork-sources.md, row: codellama before publishing. -->
-
-      <p class="mt-6 max-w-3xl text-lg text-slate-300">
-        Code Llama is Meta's purpose-built coding model, fine-tuned from Llama for software
-        development tasks. Deployed privately, your proprietary code, unreleased algorithms,
-        and client work stay on your server — never routed through GitHub Copilot, Cursor,
-        or any cloud coding AI provider.
-      </p>
-      <p class="mt-4 max-w-3xl text-slate-400">
-        Available in Python-specialized and instruction-following variants. Supports code
-        generation, completion, debugging, explanation, and review across dozens of languages.
-      </p>
-      <div class="mt-10 flex flex-wrap gap-3">
-        <a href="/models/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
-        <a href="/models/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
-        <a href="/models/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
-      </div>
+      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: codellama.</p>
     </div>
-  </section>
-
+  </header>
   <main class="mx-auto max-w-6xl px-6 py-12">
-    <div class="grid gap-10 lg:grid-cols-[1.55fr_0.95fr]">
-      <div class="space-y-14">
-
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">What this model family is</p>
-          <h2 class="mt-3 text-3xl font-black">Llama Fine-Tuned Specifically for Software Development Workflows</h2>
-          <p class="mt-5 text-slate-300">
-            Code Llama is a family of large language models built on Meta's Llama base and
-            trained specifically on code. The training process produces a model that understands
-            code structure, syntax patterns, debugging logic, and software engineering context
-            in a way that a general-purpose model does not.
-          </p>
-          <p class="mt-4 text-slate-300">
-            The most important property of Code Llama for a private deployment is not its
-            benchmark position — it is what it means to run your coding assistant on your own
-            server. Developers and agencies using cloud coding AI tools are, in many cases,
-            routing their proprietary codebase through a third-party inference provider. For
-            companies with competitive code, NDAs, or client confidentiality requirements,
-            that is not acceptable. Code Llama on NoCloudGPT infrastructure solves this.
-          </p>
-
-          <div class="mt-8 grid gap-5 md:grid-cols-2">
-            <div class="rounded-2xl border border-cyan-500/30 bg-cyan-950/40 p-6">
-              <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Code Llama Base</p>
-              <h3 class="mt-2 text-lg font-bold text-white">Code generation and completion</h3>
-              <p class="mt-3 text-sm text-slate-300">
-                The foundation model. Strong at code completion, fill-in-the-middle, and
-                generating code from context. Supports Python, JavaScript, TypeScript, Go,
-                Rust, SQL, and many other languages. Available at 7B, 13B, 34B, and 70B.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-violet-500/30 bg-violet-950/40 p-6">
-              <p class="text-xs font-bold uppercase tracking-widest text-violet-300">Code Llama Instruct</p>
-              <h3 class="mt-2 text-lg font-bold text-white">Instruction-following for developers</h3>
-              <p class="mt-3 text-sm text-slate-300">
-                Fine-tuned for conversational coding: "explain this function," "write a test
-                for this class," "refactor to remove the bug." The recommended variant for
-                interactive developer assistance via OpenWebUI or API integration.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-emerald-500/30 bg-emerald-950/40 p-6">
-              <p class="text-xs font-bold uppercase tracking-widest text-emerald-300">Code Llama Python</p>
-              <h3 class="mt-2 text-lg font-bold text-white">Python-specialized variant</h3>
-              <p class="mt-3 text-sm text-slate-300">
-                Trained with additional Python emphasis. Best for data engineering, ML
-                pipelines, Django/FastAPI development, and scientific computing teams
-                whose primary language is Python.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-amber-500/30 bg-amber-950/40 p-6">
-              <p class="text-xs font-bold uppercase tracking-widest text-amber-300">Note on newer options</p>
-              <h3 class="mt-2 text-lg font-bold text-white">Consider DeepSeek Coder or Qwen Coder</h3>
-              <p class="mt-3 text-sm text-slate-300">
-                For new coding deployments, DeepSeek Coder V2 and Qwen2.5 Coder have
-                shown strong performance on coding benchmarks. NoCloudGPT can help
-                you compare options for your specific language and task profile.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
-          <h2 class="mt-3 text-3xl font-black">Meta AI Research</h2>
-          <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
-          </div>
-          <p class="mt-6 text-slate-300">
-            Code Llama was released by Meta AI Research in August 2023 as a set of
-            code-specialized models fine-tuned from the Llama 2 base. Meta has since
-            released updated variants. The Code Llama family is released under the
-            Llama 2 Community License, which permits commercial use for most organizations.
-            Verify current license terms at the Hugging Face model card before deployment,
-            particularly for large-scale commercial applications.
-          </p>
-          <p class="mt-4 text-slate-300">
-            NoCloudGPT is independent of Meta AI. We help organizations deploy Code Llama
-            on their own infrastructure using Ollama.
-          </p>
-        </section>
-
-        <!-- SECTION: Who this model family is for -->
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
-          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
-          <div class="mt-6 grid gap-5 md:grid-cols-2">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <div class="flex items-center gap-2 mb-3">
-                <span class="text-lg">👤</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
-              </div>
-              <p class="mt-2 text-sm text-slate-400">CodeLlama is a solid choice for solo developers who want a capable local coding assistant that runs entirely on their own hardware. It works well for personal side projects, learning new programming languages, writing scripts in Python, JavaScript, or Bash, and getting help with everyday coding tasks. The 7B and 13B versions run comfortably on consumer hardware. For stronger coding performance in many current deployments, newer models like DeepSeek V3 and Qwen 2.5-Coder generally deliver stronger results.</p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <div class="flex items-center gap-2 mb-3">
-                <span class="text-lg">🏢</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
-              </div>
-              <p class="mt-2 text-sm text-slate-400">CodeLlama remains a practical option for teams that need a private, in-house coding assistant without relying on newer, larger models. It can support internal tools, code review helpers, documentation generation, and lightweight developer productivity workflows. For production-grade coding assistance in 2026, newer open models such as Qwen 2.5-Coder and Codestral typically produce stronger results. CodeLlama is best when stability, a well-understood license, and modest hardware requirements are priorities.</p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <div class="flex items-center gap-2 mb-3">
-                <span class="text-lg">⚙️</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
-              </div>
-              <p class="mt-2 text-sm text-slate-400">This is where CodeLlama still shines. The Instruct variants follow coding instructions reliably, and the base models support fill-in-the-middle (FIM) infilling, making them suitable for editor integrations, autocomplete tools, and refactoring assistants. Developers building local copilots, IDE plugins, or experimenting with agentic coding workflows will find CodeLlama predictable and well-supported by existing community tooling.</p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <div class="flex items-center gap-2 mb-3">
-                <span class="text-lg">🔬</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
-              </div>
-              <p class="mt-2 text-sm text-slate-400">CodeLlama remains a useful baseline for code-generation research, ablation studies, and comparative evaluations. It is one of the most-cited open coding models and integrates cleanly with established benchmarks like HumanEval and MBPP. For cutting-edge performance research in 2026, you will likely also want to evaluate DeepSeek-Coder V3 and Qwen 2.5-Coder alongside it.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- SECTION: Licensing information -->
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
-          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
-          <p class="mt-5 text-slate-300">CodeLlama is released by Meta under the <strong class="text-white">Llama 2 Community License</strong>, which permits commercial use for most organizations. The main restriction is that if your product or service has more than 700 million monthly active users, you must request a separate license from Meta.</p>
-          <p class="mt-4 text-slate-300">You can review the full license and model details on the official model card.</p>
-          <p class="mt-5 text-slate-300"><strong class="text-white">Official source:</strong></p>
-          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
-            <li><a href="https://huggingface.co/codellama" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">codellama on Hugging Face</a></li>
-          </ul>
-          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
-            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
-          </div>
-        </section>
-
-        <!-- SECTION: Available model sizes -->
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
-          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
-          <!-- INTERNAL: Verify Create individual size pages for codellama-7b, codellama-13b, codellama-34b, and codellama-70b with hardware benchmarks, quantization options, and deployment guidance before publishing. -->
-          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-slate-950 text-cyan-200">
-                <tr>
-                  <th class="px-4 py-3">Model Size</th>
-                  <th class="px-4 py-3">Ollama Tag</th>
-                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
-                  <th class="px-4 py-3">Notes</th>
-                  <th class="px-4 py-3"></th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-white">CodeLlama 7B</td>
-                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">codellama:7b</code></td>
-                  <td class="px-4 py-3">Starter</td>
-                  <td class="px-4 py-3">Runs on ~8 GB VRAM. Good for autocomplete, simple scripts, and lightweight editor integrations.</td>
-                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-white">CodeLlama 13B</td>
-                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">codellama:13b</code></td>
-                  <td class="px-4 py-3">Standard</td>
-                  <td class="px-4 py-3">~16 GB VRAM. Better at multi-file reasoning and longer functions. A balanced choice for most developers.</td>
-                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-white">CodeLlama 34B</td>
-                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">codellama:34b</code></td>
-                  <td class="px-4 py-3">Professional</td>
-                  <td class="px-4 py-3">~24–32 GB VRAM. Strongest CodeLlama for general programming tasks.</td>
-                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-white">CodeLlama 70B</td>
-                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">codellama:70b</code></td>
-                  <td class="px-4 py-3">Professional / Enterprise</td>
-                  <td class="px-4 py-3">Requires 48+ GB VRAM or multi-GPU. Highest quality in the family, but consider whether a newer coding model would serve you better.</td>
-                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
-            <p class="text-sm text-slate-300"><strong class="text-white">Note:</strong> Each size is available in <strong class="text-white">Base</strong>, <strong class="text-white">Instruct</strong>, and <strong class="text-white">Python</strong> variants on Ollama. Use <code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">-instruct</code> for chat-style coding assistants and the base variants for fill-in-the-middle (FIM) / autocomplete use cases. CodeLlama is an older model family (2023) and has been surpassed on most coding benchmarks by newer models such as DeepSeek V3, Qwen 2.5-Coder, and Codestral.</p>
-          </div>
-        </section>
-
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Why teams choose it</p>
-          <h2 class="mt-3 text-3xl font-black">The Private Coding AI Argument</h2>
-          <div class="mt-6 grid gap-5 md:grid-cols-2">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <h3 class="text-lg font-bold text-cyan-200">IP stays on your server</h3>
-              <p class="mt-3 text-slate-400">
-                Startups, agencies, and defense contractors whose source code is a competitive
-                asset cannot send it to a cloud AI provider. Code Llama on your server means
-                your codebase never leaves your infrastructure. This is not a preference —
-                for many organizations it is a contractual obligation.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <h3 class="text-lg font-bold text-cyan-200">NDA-bound development work</h3>
-              <p class="mt-3 text-slate-400">
-                Consultants and agencies working under non-disclosure agreements who need AI
-                assistance for client code have no safe option with cloud coding assistants.
-                Private deployment removes third-party exposure entirely.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <h3 class="text-lg font-bold text-cyan-200">Full codebase context without limits</h3>
-              <p class="mt-3 text-slate-400">
-                Run your entire codebase through Code Llama for code review, refactoring
-                suggestions, documentation generation, and test writing — without the per-token
-                billing that makes large-context cloud AI usage expensive at scale.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <h3 class="text-lg font-bold text-cyan-200">Available at sizes from team laptop to GPU server</h3>
-              <p class="mt-3 text-slate-400">
-                The 7B variant runs on a 4–8 GB instance for individual developers or small
-                teams. The 34B and 70B variants on GPU hardware provide output quality that
-                handles complex architectural questions and code review at production scale.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Which size should you choose?</p>
-          <h2 class="mt-3 text-3xl font-black">Matching Code Llama Size to Your Development Workflow</h2>
-          <div class="mt-6 space-y-4">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <div class="flex flex-wrap items-start justify-between gap-2">
-                <h3 class="text-lg font-bold text-white">Code Llama 7B — Standard AI</h3>
-                <span class="rounded-full bg-cyan-800 px-3 py-1 text-xs font-bold text-cyan-100">Individual dev / small team</span>
-              </div>
-              <p class="mt-3 text-slate-400">
-                Runs on a 4–8 GB instance. Good for code completion, simple explanation,
-                and basic debugging in well-known languages. The right starting point for
-                individual developers or small teams testing private coding AI. Instruct
-                variant recommended for interactive use.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <div class="flex flex-wrap items-start justify-between gap-2">
-                <h3 class="text-lg font-bold text-white">Code Llama 13B — Standard/Professional AI</h3>
-                <span class="rounded-full bg-slate-700 px-3 py-1 text-xs font-bold text-slate-200">Better quality</span>
-              </div>
-              <p class="mt-3 text-slate-400">
-                Noticeably better code quality and reasoning than 7B. Handles more complex
-                refactoring, multi-file context, and code review tasks. Requires 8–10 GB
-                RAM at Q4. The practical upgrade step for teams that outgrow the 7B.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <div class="flex flex-wrap items-start justify-between gap-2">
-                <h3 class="text-lg font-bold text-white">Code Llama 34B — Professional AI</h3>
-                <span class="rounded-full bg-violet-800 px-3 py-1 text-xs font-bold text-violet-100">Production teams</span>
-              </div>
-              <p class="mt-3 text-slate-400">
-                Strong performance on complex architectural questions, multi-step code
-                generation, and code review at scale. Requires a GPU instance (approximately
-                20–24 GB VRAM at Q4). The recommended tier for production engineering teams
-                with regular AI-assisted development workflows.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Honest guidance</p>
-          <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model Instead</h2>
-          <div class="mt-6 space-y-4">
-            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-              <h3 class="text-base font-bold text-amber-300">You need the strongest current coding benchmark performance</h3>
-              <p class="mt-2 text-sm text-slate-400">
-                DeepSeek Coder V2 and Qwen2.5 Coder have shown strong results on current
-                coding benchmarks. For new deployments, compare all three options with
-                NoCloudGPT before committing.
-                <a href="/models/deepseek-coder/" class="ml-1 text-cyan-300 hover:text-cyan-200">See DeepSeek Coder →</a>
-              </p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-              <h3 class="text-base font-bold text-amber-300">Your primary use case is natural language reasoning, not code</h3>
-              <p class="mt-2 text-sm text-slate-400">
-                Code Llama trades some general reasoning ability for coding specialization.
-                For teams that need AI assistance for both code and general business writing,
-                Llama 3.1 or Qwen may serve both use cases better from a single deployment.
-                <a href="/models/llama/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Llama →</a>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
-          <h2 class="mt-3 text-3xl font-black">Start Your Private Code Llama Deployment</h2>
-          <p class="mt-5 text-slate-300">
-            NoCloudGPT installs Code Llama on your Lightsail instance or on-premise server,
-            configures Ollama and OpenWebUI, and selects the right variant and size for your
-            development workflow. We can also help you compare Code Llama against DeepSeek
-            Coder and Qwen Coder for your specific language stack.
-          </p>
-          <div class="mt-8 grid gap-4 sm:grid-cols-3">
-            <a href="/models/quote.html" class="rounded-2xl bg-cyan-300 p-5 text-center font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
-            <a href="/models/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
-            <a href="/models/deploy/on-premise.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
-          </div>
-        </section>
-
-      </div>
-
-      <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
-
-        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-7">
-          <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Quick reference</p>
-          <h2 class="mt-3 text-2xl font-black">Code Llama deployment</h2>
-          <p class="mt-3 text-sm text-cyan-50">Private coding AI. Keep your source code on your server. Code generation, review, and debugging across dozens of languages.</p>
-          <dl class="mt-5 space-y-3 text-sm">
-            <div class="flex justify-between border-b border-cyan-900 pb-2">
-              <dt class="text-slate-400">Developer</dt>
-              <dd class="font-semibold text-white">Meta AI Research</dd>
-            </div>
-            <div class="flex justify-between border-b border-cyan-900 pb-2">
-              <dt class="text-slate-400">Type</dt>
-              <dd class="font-semibold text-white">Code-specialized LLM</dd>
-            </div>
-            <div class="flex justify-between border-b border-cyan-900 pb-2">
-              <dt class="text-slate-400">Sizes</dt>
-              <dd class="font-semibold text-white">7B, 13B, 34B, 70B</dd>
-            </div>
-            <div class="flex justify-between border-b border-cyan-900 pb-2">
-              <dt class="text-slate-400">License</dt>
-              <dd class="font-semibold text-white">Llama 2 Community</dd>
-            </div>
-            <div class="flex justify-between">
-              <dt class="text-slate-400">Starter tier</dt>
-              <dd class="font-semibold text-white">Standard AI (4–8 GB)</dd>
-            </div>
-          </dl>
-          <a href="/models/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build a Code Llama quote</a>
-        </div>
-
-        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
-          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Best-fit workloads</h3>
-          <ul class="mt-4 space-y-3 text-sm text-slate-300">
-            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Private code generation and completion</li>
-            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Code review and refactoring suggestions</li>
-            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Debugging and error explanation</li>
-            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Documentation and test generation</li>
-            <li class="flex gap-2"><span class="text-cyan-400">✓</span> NDA-bound client development work</li>
-            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Python-specific workflows (Python variant)</li>
-          </ul>
-        </div>
-        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
-          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Model artwork</h3>
-          <div class="mt-4 flex h-32 w-full items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-950 text-xs text-slate-500 text-center px-4">
-          </div>
-        </div>
-
-        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
-          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Related pages</h3>
-          <ul class="mt-4 space-y-3 text-sm">
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deepseek-coder/">DeepSeek Coder — strong coding performance</a></li>
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/qwen2.5-coder/">Qwen2.5 Coder — multilingual coding AI</a></li>
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/codegemma/">CodeGemma — Google's coding model</a></li>
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/codestral/">Codestral — Mistral's code specialist</a></li>
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/llama/">Llama — general-purpose private AI</a></li>
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deploy/on-premise.html">On-premise Linux installation</a></li>
-          </ul>
-        </div>
-
-      </aside>
-    </div>
+    <section>
+      <h2 class="text-2xl font-bold">Models in this family</h2>
+      <table class="mt-6 w-full text-left text-sm">
+        <thead class="text-slate-400">
+          <tr>
+            <th class="pb-3">Model</th>
+            <th class="pb-3">Params</th>
+            <th class="pb-3">Quant</th>
+            <th class="pb-3">Capabilities</th>
+            <th class="pb-3">Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="border-t border-slate-800">
+          <td class="py-3 pr-4"><a href="/models/model/codellama/" class="font-semibold text-cyan-300 hover:text-cyan-200">codellama</a></td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">text</td>
+          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
   </main>
 
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Meta AI or any model developer referenced on this page.</p>
+    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
+    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
   </footer>
-
-  <!-- ============================================================
-       ARTWORK AND SOURCE REFERENCES
-  ============================================================ -->
-  <section style="border-top:1px solid #1e293b; background:#0f172a; padding:2rem 1.5rem; margin-top:3rem;">
-    <div style="max-width:56rem; margin:0 auto; font-size:0.75rem; color:#64748b;">
-      <p style="font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Artwork and source references</p>
-      <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
-        <div>
-          <p style="font-weight:600; color:#94a3b8;">Hero image</p>
-          
-        </div>
-        <div>
-          <p style="font-weight:600; color:#94a3b8;">Developer reference</p>
-          <p style="margin-top:0.25rem;">Code Llama is developed by <a href="https://ai.meta.com/llama/" target="_blank" rel="noopener" style="color:#67e8f9;">Meta AI Research</a>. NoCloudGPT is an independent deployment service not affiliated with Meta AI Research.</p>
-        </div>
-        <div>
-          <p style="font-weight:600; color:#94a3b8;">Model catalog</p>
-          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/codellama" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: codellama</a> for current tags and sizes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </body>
 </html>

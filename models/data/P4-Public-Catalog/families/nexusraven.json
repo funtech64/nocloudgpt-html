@@ -1,0 +1,19 @@
+{
+  "slug": "nexusraven",
+  "displayName": "nexusraven",
+  "ollamaFamilies": [
+    "nexusraven"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "nexusraven"
+  ],
+  "sitePath": "/models/nexusraven/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

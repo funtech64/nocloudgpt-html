@@ -1,0 +1,21 @@
+{
+  "slug": "nemotron3",
+  "displayName": "nemotron3",
+  "ollamaFamilies": [
+    "nemotron3"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "thinking",
+    "tools",
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "nemotron3"
+  ],
+  "sitePath": "/models/nemotron3/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

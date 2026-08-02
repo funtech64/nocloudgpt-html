@@ -1,0 +1,11 @@
+{
+  "name": "nocloudgpt-html-catalog",
+  "private": true,
+  "description": "Build tooling for Phase 4B model catalog (pinned P4 input)",
+  "scripts": {
+    "build": "python3 scripts/catalog/build.py",
+    "test": "python3 scripts/catalog/test_catalog_build.py",
+    "pin-catalog": "python3 scripts/catalog/pin_snapshot.py",
+    "lint": "python3 -m py_compile scripts/catalog/build.py scripts/catalog/pin_snapshot.py scripts/catalog/test_catalog_build.py && xmllint --noout sitemap.xml"
+  }
+}

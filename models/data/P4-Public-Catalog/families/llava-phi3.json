@@ -1,0 +1,19 @@
+{
+  "slug": "llava-phi3",
+  "displayName": "llava-phi3",
+  "ollamaFamilies": [
+    "llava-phi3"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "llava-phi3"
+  ],
+  "sitePath": "/models/llava-phi3/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

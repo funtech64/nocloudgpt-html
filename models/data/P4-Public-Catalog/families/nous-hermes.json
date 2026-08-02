@@ -1,0 +1,19 @@
+{
+  "slug": "nous-hermes",
+  "displayName": "nous-hermes",
+  "ollamaFamilies": [
+    "nous-hermes"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "nous-hermes"
+  ],
+  "sitePath": "/models/nous-hermes/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

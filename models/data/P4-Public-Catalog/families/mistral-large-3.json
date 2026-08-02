@@ -1,0 +1,21 @@
+{
+  "slug": "mistral-large-3",
+  "displayName": "mistral-large-3",
+  "ollamaFamilies": [
+    "mistral-large-3"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "cloud",
+    "tools",
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "mistral-large-3"
+  ],
+  "sitePath": "/models/mistral-large-3/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

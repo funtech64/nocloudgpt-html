@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "medgemma1.5",
+  "familySlug": "medgemma1.5",
+  "displayName": "medgemma1.5",
+  "ollamaTag": "medgemma1.5",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "vision"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "medgemma1.5",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/medgemma1.5/"
+}

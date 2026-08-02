@@ -1,0 +1,31 @@
+{
+  "canonicalSlug": "north-mini-code-1-0",
+  "familySlug": "north-mini-code-1.0",
+  "displayName": "north-mini-code-1.0",
+  "ollamaTag": "north-mini-code-1.0",
+  "aliases": [
+    "north-mini-code-1.0"
+  ],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "embedding",
+    "thinking",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "north-mini-code-1.0",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/north-mini-code-1-0/"
+}

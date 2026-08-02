@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "rnj-1",
+  "familySlug": "rnj-1",
+  "displayName": "rnj-1",
+  "ollamaTag": "rnj-1",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "rnj-1",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/rnj-1/"
+}

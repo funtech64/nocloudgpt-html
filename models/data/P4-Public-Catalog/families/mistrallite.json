@@ -1,0 +1,19 @@
+{
+  "slug": "mistrallite",
+  "displayName": "mistrallite",
+  "ollamaFamilies": [
+    "mistrallite"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "mistrallite"
+  ],
+  "sitePath": "/models/mistrallite/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "granite4.1",
+  "displayName": "granite4.1",
+  "ollamaFamilies": [
+    "granite4.1"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "granite4.1",
+    "ibm"
+  ],
+  "sitePath": "/models/granite4.1/",
+  "modelCount": 2,
+  "seoEligible": true,
+  "availability": "available"
+}

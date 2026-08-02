@@ -1,0 +1,19 @@
+{
+  "slug": "meditron",
+  "displayName": "meditron",
+  "ollamaFamilies": [
+    "meditron"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "meditron"
+  ],
+  "sitePath": "/models/meditron/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

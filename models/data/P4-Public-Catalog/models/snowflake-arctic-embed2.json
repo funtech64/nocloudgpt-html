@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "snowflake-arctic-embed2",
+  "familySlug": "snowflake-arctic-embed2",
+  "displayName": "snowflake-arctic-embed2",
+  "ollamaTag": "snowflake-arctic-embed2",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "embedding"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "snowflake-arctic-embed2",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/snowflake-arctic-embed2/"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "dolphincoder",
+  "displayName": "dolphincoder",
+  "ollamaFamilies": [
+    "dolphincoder"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "dolphincoder"
+  ],
+  "sitePath": "/models/dolphincoder/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

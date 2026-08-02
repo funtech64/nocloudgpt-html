@@ -1,0 +1,20 @@
+{
+  "slug": "functiongemma",
+  "displayName": "functiongemma",
+  "ollamaFamilies": [
+    "functiongemma"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "cloud",
+    "tools"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "functiongemma"
+  ],
+  "sitePath": "/models/functiongemma/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

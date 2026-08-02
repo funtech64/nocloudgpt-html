@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "granite3.1-dense",
+  "familySlug": "granite3.1-dense",
+  "displayName": "granite3.1-dense",
+  "ollamaTag": "granite3.1-dense",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "granite3.1-dense",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/granite3.1-dense/"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "llama3",
+  "displayName": "llama3",
+  "ollamaFamilies": [
+    "llama3"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "llama3"
+  ],
+  "sitePath": "/models/llama3/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

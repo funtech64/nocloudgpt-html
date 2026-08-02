@@ -1,0 +1,19 @@
+{
+  "slug": "exaone3.5",
+  "displayName": "exaone3.5",
+  "ollamaFamilies": [
+    "exaone3.5"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "exaone3.5"
+  ],
+  "sitePath": "/models/exaone3.5/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

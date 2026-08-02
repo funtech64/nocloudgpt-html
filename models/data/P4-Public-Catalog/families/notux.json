@@ -1,0 +1,19 @@
+{
+  "slug": "notux",
+  "displayName": "notux",
+  "ollamaFamilies": [
+    "notux"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "notux"
+  ],
+  "sitePath": "/models/notux/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

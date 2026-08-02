@@ -1,0 +1,19 @@
+{
+  "slug": "starling-lm",
+  "displayName": "starling-lm",
+  "ollamaFamilies": [
+    "starling-lm"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "starling-lm"
+  ],
+  "sitePath": "/models/starling-lm/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

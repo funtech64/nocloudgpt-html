@@ -1,0 +1,19 @@
+{
+  "slug": "codebooga",
+  "displayName": "codebooga",
+  "ollamaFamilies": [
+    "codebooga"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "codebooga"
+  ],
+  "sitePath": "/models/codebooga/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

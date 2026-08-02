@@ -1,0 +1,28 @@
+{
+  "canonicalSlug": "qwen3-coder-next",
+  "familySlug": "qwen3-coder-next",
+  "displayName": "qwen3-coder-next",
+  "ollamaTag": "qwen3-coder-next",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "qwen3-coder-next",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/qwen3-coder-next/"
+}

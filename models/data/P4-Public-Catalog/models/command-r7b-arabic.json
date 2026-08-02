@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "command-r7b-arabic",
+  "familySlug": "command-r7b-arabic",
+  "displayName": "command-r7b-arabic",
+  "ollamaTag": "command-r7b-arabic",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "command-r7b-arabic",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/command-r7b-arabic/"
+}

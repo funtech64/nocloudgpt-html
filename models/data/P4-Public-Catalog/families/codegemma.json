@@ -1,0 +1,19 @@
+{
+  "slug": "codegemma",
+  "displayName": "codegemma",
+  "ollamaFamilies": [
+    "codegemma"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "cloud"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "codegemma"
+  ],
+  "sitePath": "/models/codegemma/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

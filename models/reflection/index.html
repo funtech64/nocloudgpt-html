@@ -1,90 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>reflection — Model family catalog | NoCloudGPT</title>
+  <meta name="description" content="Catalog facts for reflection: capabilities (thinking), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nocloudgpt.com/models/reflection/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>Reflection Models – Self-Correcting AI | NoCloudGPT</title>
-  <meta name="description" content="Reflection 70B uses self-reflection tokens to detect and correct reasoning errors during generation. Deploy it privately for higher-accuracy analytical tasks." />
-  <link rel="canonical" href="https://nocloudgpt.com/models/reflection/" />
-  <style>
-    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; color: #1a1a1a; line-height: 1.7; }
-    h1 { font-size: 2rem; margin-bottom: 0.4rem; }
-    h2 { font-size: 1.35rem; margin-top: 2.2rem; border-bottom: 2px solid #e2e2e2; padding-bottom: 0.3rem; }
-    h3 { font-size: 1.1rem; margin-top: 1.4rem; color: #333; }
-    .tag { display: inline-block; background: #f0f4ff; color: #2244aa; border-radius: 4px; padding: 2px 8px; font-size: 0.82rem; margin-right: 5px; }
-    .cta-box { background: #f8f9ff; border-left: 4px solid #3355dd; padding: 1rem 1.4rem; margin: 2rem 0; border-radius: 4px; }
-    .cta-box a { color: #2244aa; font-weight: 600; }
-    .notice { background: #fff0f0; border-left: 4px solid #e53e3e; padding: 0.8rem 1.2rem; border-radius: 4px; margin: 1.5rem 0; font-size: 0.95rem; }
-    a { color: #2244aa; }
-    nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
-  
-        .secondary-artwork { margin: 32px 0; overflow: hidden; }
-        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
-        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
-        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
-        @media (min-width: 768px) {
-            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
-        }
-    </style>
+  <meta property="og:title" content="reflection — Model family catalog | NoCloudGPT">
+  <meta property="og:description" content="Catalog facts for reflection: capabilities (thinking), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nocloudgpt.com/models/reflection/">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "reflection", "description": "Catalog facts for reflection: capabilities (thinking), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/reflection/"}</script>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100">
 
-<nav><a href="/models/">← Model Menu</a> &nbsp;/&nbsp; Reflection</nav>
+  <div class="border-b border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+      <nav class="flex flex-wrap gap-4 text-slate-400">
+        <a href="/models/" class="text-white">Models</a>
+        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+        <a href="/services.html" class="hover:text-white">Services</a>
+        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
+        <a href="/contact.html" class="hover:text-white">Contact</a>
+        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+      </nav>
+    </div>
+  </div>
+  <header class="border-b border-slate-800 bg-slate-950/90">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">reflection</p>
+      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">reflection family</h1>
+      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
 
-<h1>Reflection 70B: Self-Correcting Reasoning Model</h1>
-<p>
-  <span class="tag">Self-Reflection</span>
-  <span class="tag">Reasoning</span>
-  <span class="tag">Error Correction</span>
-  <span class="tag">70B</span>
-</p>
+      <p class="mt-4 text-slate-400">Capabilities: thinking. Ollama families: reflection.</p>
+    </div>
+  </header>
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section>
+      <h2 class="text-2xl font-bold">Models in this family</h2>
+      <table class="mt-6 w-full text-left text-sm">
+        <thead class="text-slate-400">
+          <tr>
+            <th class="pb-3">Model</th>
+            <th class="pb-3">Params</th>
+            <th class="pb-3">Quant</th>
+            <th class="pb-3">Capabilities</th>
+            <th class="pb-3">Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="border-t border-slate-800">
+          <td class="py-3 pr-4"><a href="/models/model/reflection/" class="font-semibold text-cyan-300 hover:text-cyan-200">reflection</a></td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">thinking</td>
+          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
 
-<div class="notice">
-  <strong>Historical context:</strong> Reflection 70B generated significant controversy on release in late 2024 — initial benchmarks were disputed, and independent testing showed mixed results. The underlying technique (reflection tokens for self-correction) is real and interesting, but evaluate it carefully against your specific use case rather than relying on benchmark claims. The model is available and the approach is worth knowing about.
-</div>
-
-<p>
-  Reflection 70B, released by Matt Shumer and HyperWrite, introduces a specific training technique: the model is fine-tuned to use special <strong>reflection tokens</strong> (<code>&lt;reflection&gt;</code>) during generation to pause, review its reasoning, identify errors, and correct itself before producing a final answer. The idea is to build self-error-detection into the generation process itself rather than requiring external verification. Built on Llama 3.1 70B, it targets tasks where reasoning accuracy matters more than generation speed.
-</p>
-
-<h2>What Reflection 70B Is Good At</h2>
-<ul>
-  <li><strong>Self-correcting multi-step reasoning</strong> — the reflection mechanism catches some classes of reasoning errors mid-generation</li>
-  <li><strong>Tasks with verifiable answers</strong> — math, logic, and code where the model can check its own work</li>
-  <li><strong>Reducing overconfident wrong answers</strong> — the reflection process encourages uncertainty acknowledgment</li>
-  <li><strong>Research and experimentation</strong> — interesting as a technique to study; the approach is being extended in newer models</li>
-</ul>
-
-<h2>Deployment</h2>
-<p>
-  Reflection 70B runs on the same hardware as Llama 3.1 70B — two A100 40GB GPUs or equivalent 80GB VRAM total at 4-bit quantization:
-</p>
-<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>ollama run reflection:70b-q4_K_M</code></pre>
-
-<div class="cta-box">
-  <strong>Exploring self-correcting reasoning models?</strong><br />
-  Consider also evaluating <a href="/models/magistral/">Magistral</a> and
-  <a href="/models/cogito/">Cogito</a> for production reasoning workloads.
-  <a href="/models/quote.html">Build a deployment quote</a> for your setup.
-
-<!-- Secondary artwork -->
-<div class="secondary-artwork">
-  <a href="https://commons.wikimedia.org/wiki/File%3ALake_Seliger._Ostashkov._View_of_Voroniy_Island.jpg" target="_blank" rel="noopener">
-    <img src="/models/reflection/secondary.webp" alt="Reflection secondary visual">
-  </a>
-  <p class="secondary-caption">
-    Source: <a href="https://commons.wikimedia.org/wiki/File%3ALake_Seliger._Ostashkov._View_of_Voroniy_Island.jpg">Wikimedia Commons</a>
-  </p>
-</div>
-</div>
-
-<h2>Related Pages</h2>
-<ul>
-  <li><a href="/models/magistral/">Magistral (Mistral's reasoning model)</a></li>
-  <li><a href="/models/cogito/">Cogito (hybrid fast/thinking model)</a></li>
-  <li><a href="/models/llama/">Llama 3.1 (base model)</a></li>
-</ul>
-
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
+    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+  </footer>
 </body>
 </html>

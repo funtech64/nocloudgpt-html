@@ -1,0 +1,19 @@
+{
+  "slug": "wizard-math",
+  "displayName": "wizard-math",
+  "ollamaFamilies": [
+    "wizard-math"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "wizard-math"
+  ],
+  "sitePath": "/models/wizard-math/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

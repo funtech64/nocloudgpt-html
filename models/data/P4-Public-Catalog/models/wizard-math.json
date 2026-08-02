@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "wizard-math",
+  "familySlug": "wizard-math",
+  "displayName": "wizard-math",
+  "ollamaTag": "wizard-math",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "wizard-math",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/wizard-math/"
+}

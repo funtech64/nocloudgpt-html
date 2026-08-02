@@ -1,0 +1,19 @@
+{
+  "slug": "stablelm2",
+  "displayName": "stablelm2",
+  "ollamaFamilies": [
+    "stablelm2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "stablelm2"
+  ],
+  "sitePath": "/models/stablelm2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

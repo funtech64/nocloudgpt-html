@@ -1,0 +1,19 @@
+{
+  "slug": "bge-large",
+  "displayName": "bge-large",
+  "ollamaFamilies": [
+    "bge-large"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "embedding"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "bge-large"
+  ],
+  "sitePath": "/models/bge-large/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

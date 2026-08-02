@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "deepseek-llm",
+  "familySlug": "deepseek-llm",
+  "displayName": "deepseek-llm",
+  "ollamaTag": "deepseek-llm",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "deepseek-llm",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/deepseek-llm/"
+}

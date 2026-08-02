@@ -1,0 +1,31 @@
+{
+  "canonicalSlug": "deepseek-v4-flash",
+  "familySlug": "deepseek-v4-flash",
+  "displayName": "deepseek-v4-flash",
+  "ollamaTag": "deepseek-v4-flash:cloud",
+  "aliases": [
+    "deepseek-v4-flash:cloud"
+  ],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "cloud",
+    "thinking",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": true,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "deepseek-v4-flash:cloud",
+      "mode": "cloud",
+      "label": "cloud"
+    }
+  ],
+  "sitePath": "/models/model/deepseek-v4-flash/"
+}

@@ -1,0 +1,31 @@
+{
+  "canonicalSlug": "glm-5.2",
+  "familySlug": "glm-5.2",
+  "displayName": "glm-5.2",
+  "ollamaTag": "glm-5.2:cloud",
+  "aliases": [
+    "glm-5.2:cloud"
+  ],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "cloud",
+    "thinking",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": true,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "glm-5.2:cloud",
+      "mode": "cloud",
+      "label": "cloud"
+    }
+  ],
+  "sitePath": "/models/model/glm-5.2/"
+}

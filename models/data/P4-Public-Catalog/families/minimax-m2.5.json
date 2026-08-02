@@ -1,0 +1,19 @@
+{
+  "slug": "minimax-m2.5",
+  "displayName": "minimax-m2.5",
+  "ollamaFamilies": [
+    "minimax-m2.5"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "minimax-m2.5"
+  ],
+  "sitePath": "/models/minimax-m2.5/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "stale_source"
+}

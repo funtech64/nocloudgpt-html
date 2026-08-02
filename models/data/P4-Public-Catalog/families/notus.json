@@ -1,0 +1,19 @@
+{
+  "slug": "notus",
+  "displayName": "notus",
+  "ollamaFamilies": [
+    "notus"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "notus"
+  ],
+  "sitePath": "/models/notus/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

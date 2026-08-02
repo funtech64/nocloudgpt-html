@@ -1,0 +1,19 @@
+{
+  "slug": "smollm2",
+  "displayName": "smollm2",
+  "ollamaFamilies": [
+    "smollm2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "smollm2"
+  ],
+  "sitePath": "/models/smollm2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

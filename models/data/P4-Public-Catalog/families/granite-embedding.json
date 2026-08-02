@@ -1,0 +1,19 @@
+{
+  "slug": "granite-embedding",
+  "displayName": "granite-embedding",
+  "ollamaFamilies": [
+    "granite-embedding"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "embedding"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "granite-embedding"
+  ],
+  "sitePath": "/models/granite-embedding/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

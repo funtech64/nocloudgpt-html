@@ -1,0 +1,19 @@
+{
+  "slug": "duckdb-nsql",
+  "displayName": "duckdb-nsql",
+  "ollamaFamilies": [
+    "duckdb-nsql"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "duckdb-nsql"
+  ],
+  "sitePath": "/models/duckdb-nsql/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

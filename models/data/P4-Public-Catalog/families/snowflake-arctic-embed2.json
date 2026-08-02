@@ -1,0 +1,19 @@
+{
+  "slug": "snowflake-arctic-embed2",
+  "displayName": "snowflake-arctic-embed2",
+  "ollamaFamilies": [
+    "snowflake-arctic-embed2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "embedding"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "snowflake-arctic-embed2"
+  ],
+  "sitePath": "/models/snowflake-arctic-embed2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

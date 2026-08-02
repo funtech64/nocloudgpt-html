@@ -1,0 +1,20 @@
+{
+  "slug": "nemotron-cascade-2",
+  "displayName": "nemotron-cascade-2",
+  "ollamaFamilies": [
+    "nemotron-cascade-2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "nemotron-cascade-2"
+  ],
+  "sitePath": "/models/nemotron-cascade-2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

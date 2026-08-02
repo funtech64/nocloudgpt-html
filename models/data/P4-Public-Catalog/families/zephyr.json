@@ -1,0 +1,19 @@
+{
+  "slug": "zephyr",
+  "displayName": "zephyr",
+  "ollamaFamilies": [
+    "zephyr"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "zephyr"
+  ],
+  "sitePath": "/models/zephyr/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

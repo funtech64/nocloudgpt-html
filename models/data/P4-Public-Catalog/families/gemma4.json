@@ -1,0 +1,23 @@
+{
+  "slug": "gemma4",
+  "displayName": "gemma4",
+  "ollamaFamilies": [
+    "gemma4"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "cloud",
+    "embedding",
+    "thinking",
+    "tools",
+    "vision"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "gemma4"
+  ],
+  "sitePath": "/models/gemma4/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

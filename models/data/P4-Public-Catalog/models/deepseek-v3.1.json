@@ -1,0 +1,28 @@
+{
+  "canonicalSlug": "deepseek-v3.1",
+  "familySlug": "deepseek",
+  "displayName": "deepseek-v3.1",
+  "ollamaTag": "deepseek-v3.1",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "deepseek-v3.1",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/deepseek-v3.1/"
+}

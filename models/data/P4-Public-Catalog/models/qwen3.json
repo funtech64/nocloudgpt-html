@@ -1,0 +1,28 @@
+{
+  "canonicalSlug": "qwen3",
+  "familySlug": "qwen3.5",
+  "displayName": "qwen3",
+  "ollamaTag": "qwen3",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "qwen3",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/qwen3/"
+}

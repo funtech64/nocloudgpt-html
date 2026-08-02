@@ -1,0 +1,19 @@
+{
+  "slug": "medgemma",
+  "displayName": "medgemma",
+  "ollamaFamilies": [
+    "medgemma"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "vision"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "medgemma"
+  ],
+  "sitePath": "/models/medgemma/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

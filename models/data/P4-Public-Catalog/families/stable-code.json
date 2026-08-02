@@ -1,0 +1,19 @@
+{
+  "slug": "stable-code",
+  "displayName": "stable-code",
+  "ollamaFamilies": [
+    "stable-code"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "embedding"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "stable-code"
+  ],
+  "sitePath": "/models/stable-code/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

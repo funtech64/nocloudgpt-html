@@ -1,0 +1,29 @@
+{
+  "canonicalSlug": "llama3-3",
+  "familySlug": "llama",
+  "displayName": "llama3.3",
+  "ollamaTag": "llama3.3",
+  "aliases": [
+    "llama3.3"
+  ],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "llama3.3",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/llama3-3/"
+}

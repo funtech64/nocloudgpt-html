@@ -1,0 +1,19 @@
+{
+  "slug": "phind-codellama",
+  "displayName": "phind-codellama",
+  "ollamaFamilies": [
+    "phind-codellama"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "phind-codellama"
+  ],
+  "sitePath": "/models/phind-codellama/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

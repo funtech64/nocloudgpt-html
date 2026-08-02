@@ -1,0 +1,20 @@
+{
+  "slug": "granite4.1-guardian",
+  "displayName": "granite4.1-guardian",
+  "ollamaFamilies": [
+    "granite4.1-guardian"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "granite4.1-guardian"
+  ],
+  "sitePath": "/models/granite4.1-guardian/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

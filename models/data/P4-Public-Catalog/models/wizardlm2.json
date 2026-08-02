@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "wizardlm2",
+  "familySlug": "wizardlm2",
+  "displayName": "wizardlm2",
+  "ollamaTag": "wizardlm2",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "wizardlm2",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/wizardlm2/"
+}

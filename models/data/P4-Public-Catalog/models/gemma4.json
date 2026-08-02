@@ -1,0 +1,31 @@
+{
+  "canonicalSlug": "gemma4",
+  "familySlug": "gemma4",
+  "displayName": "gemma4",
+  "ollamaTag": "gemma4",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": 512,
+  "capabilities": [
+    "cloud",
+    "embedding",
+    "thinking",
+    "tools",
+    "vision"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": true,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "gemma4",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/gemma4/"
+}

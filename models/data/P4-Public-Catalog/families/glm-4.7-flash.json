@@ -1,0 +1,20 @@
+{
+  "slug": "glm-4.7-flash",
+  "displayName": "glm-4.7-flash",
+  "ollamaFamilies": [
+    "glm-4.7-flash"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "glm-4.7-flash"
+  ],
+  "sitePath": "/models/glm-4.7-flash/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

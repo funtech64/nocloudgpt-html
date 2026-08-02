@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "nomic-embed-text",
+  "familySlug": "nomic-embed-text",
+  "displayName": "nomic-embed-text",
+  "ollamaTag": "nomic-embed-text",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "embedding"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "nomic-embed-text",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/nomic-embed-text/"
+}

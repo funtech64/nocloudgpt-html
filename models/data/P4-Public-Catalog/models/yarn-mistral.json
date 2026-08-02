@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "yarn-mistral",
+  "familySlug": "yarn-mistral",
+  "displayName": "yarn-mistral",
+  "ollamaTag": "yarn-mistral",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "yarn-mistral",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/yarn-mistral/"
+}

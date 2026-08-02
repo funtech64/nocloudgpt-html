@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "codegeex4",
+  "familySlug": "codegeex4",
+  "displayName": "codegeex4",
+  "ollamaTag": "codegeex4",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "codegeex4",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/codegeex4/"
+}

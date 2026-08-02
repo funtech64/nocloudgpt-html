@@ -1,0 +1,20 @@
+{
+  "slug": "moondream",
+  "displayName": "moondream",
+  "ollamaFamilies": [
+    "moondream"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "thinking",
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "moondream"
+  ],
+  "sitePath": "/models/moondream/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

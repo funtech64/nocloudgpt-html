@@ -1,0 +1,24 @@
+{
+  "slug": "qwen",
+  "displayName": "qwen",
+  "ollamaFamilies": [
+    "qwen",
+    "qwen2.5"
+  ],
+  "aliases": [
+    "qwen2.5"
+  ],
+  "capabilities": [
+    "cloud",
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "qwen",
+    "qwen2.5"
+  ],
+  "sitePath": "/models/qwen/",
+  "modelCount": 2,
+  "seoEligible": true,
+  "availability": "available"
+}

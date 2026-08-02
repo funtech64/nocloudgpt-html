@@ -1,0 +1,19 @@
+{
+  "slug": "ornith",
+  "displayName": "ornith",
+  "ollamaFamilies": [
+    "ornith"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "ornith"
+  ],
+  "sitePath": "/models/ornith/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

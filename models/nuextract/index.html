@@ -3,184 +3,72 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>NuExtract — Private Structured Data Extraction AI | NoCloudGPT</title>
-  <meta name="description" content="Deploy NuExtract privately with NoCloudGPT. NuMind's structured extraction model pulls JSON from documents without sending sensitive records to a cloud API.">
+  <title>nuextract — Model family catalog | NoCloudGPT</title>
+  <meta name="description" content="Catalog facts for nuextract: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://nocloudgpt.com/models/nuextract/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="nuextract — Model family catalog | NoCloudGPT">
+  <meta property="og:description" content="Catalog facts for nuextract: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nocloudgpt.com/models/nuextract/">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "nuextract", "description": "Catalog facts for nuextract: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/nuextract/"}</script>
 </head>
 <body class="bg-slate-950 text-slate-100">
-  <header class="border-b border-slate-800 bg-slate-950">
+
+  <div class="border-b border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+      <nav class="flex flex-wrap gap-4 text-slate-400">
+        <a href="/models/" class="text-white">Models</a>
+        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+        <a href="/services.html" class="hover:text-white">Services</a>
+        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
+        <a href="/contact.html" class="hover:text-white">Contact</a>
+        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+      </nav>
+    </div>
+  </div>
+  <header class="border-b border-slate-800 bg-slate-950/90">
     <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="../index.html" class="text-sm font-semibold text-cyan-300">← Back to model menu</a>
-      <p class="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">NuExtract</p>
-      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">NuExtract — Structured Data Extraction Without Sending Your Documents to the Cloud</h1>
-      <p class="mt-6 max-w-3xl text-lg text-slate-300">NuExtract is NuMind's purpose-built extraction model — give it a document and a JSON schema, and it returns structured data. Deploy it privately and contracts, medical records, financial filings, and internal reports stay on your infrastructure throughout the extraction pipeline.</p>
-      <div class="mt-8 flex flex-wrap gap-3">
-        <a href="../quote.html" class="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
-        <a href="../deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day Lightsail pilot</a>
-        <a href="../deploy/on-premise.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
-      </div>
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">nuextract</p>
+      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">nuextract family</h1>
+      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
+
+      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: nuextract.</p>
     </div>
   </header>
-
   <main class="mx-auto max-w-6xl px-6 py-12">
-    <section class="grid gap-8 lg:grid-cols-[1.55fr_0.95fr]">
-      <article class="rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10">
-
-        <p class="text-slate-300">Structured data extraction — pulling specific fields, entities, relationships, and values from unstructured text into a consistent JSON format — is one of the most common AI tasks in enterprise automation. Invoice processing, contract review, medical record parsing, regulatory filing analysis, and customer data extraction all follow the same pattern: take a document in, get structured data out. The question is how you do it and where the document goes in the process.
-<!-- Secondary artwork -->
-<div class="secondary-artwork my-8 md:float-right md:ml-6 md:mb-4 md:max-w-[42%]">
-  <a href="https://commons.wikimedia.org/wiki/File%3AHP-Scanjet4C-ADF-C2525B_10.jpg" target="_blank" rel="noopener">
-    <img src="/models/nuextract/secondary.webp" alt="Nuextract secondary visual" class="rounded-xl border border-slate-700">
-  </a>
-  <p class="mt-1 text-center text-xs text-slate-400">
-    Source: <a href="https://commons.wikimedia.org/wiki/File%3AHP-Scanjet4C-ADF-C2525B_10.jpg" class="underline">Wikimedia Commons</a>
-  </p>
-</div>
-</p>
-        <p class="mt-4 text-slate-300">NuExtract was built by NuMind specifically for this task. Unlike general-purpose language models prompted to do extraction, NuExtract is trained on extraction tasks: you provide a template schema specifying what fields you want, provide the source document, and the model returns filled JSON. The specialization produces more consistent schema adherence than general models, particularly on longer documents and complex nested schemas. The model is available in 1B, 3.8B, and a larger NuExtract-large variant, making private deployment accessible from very modest hardware up to production server configurations.</p>
-        <p class="mt-4 text-slate-300">The privacy case for private NuExtract deployment is direct. Document extraction workflows typically operate on the most sensitive material an organization handles: contracts with pricing and liability terms, medical records with PHI, financial statements with non-public information, employment documents with personal data, and legal filings with privileged content. Routing this material through an external AI API creates data handling obligations, potential compliance violations, and IP exposure that a private deployment avoids entirely. NuExtract running on your server means your documents are processed locally and never transmitted to a third party.</p>
-
-        <h2 class="mt-10 text-3xl font-black">What NuExtract Was Built to Do</h2>
-        <p class="mt-5 text-slate-300">NuExtract's interface is deliberately simple: provide a JSON template with the fields you want extracted (with optional example values to guide format), provide the source text, and receive filled JSON. The model handles the extraction, type inference, and schema adherence. For repeating document types — where you process hundreds or thousands of documents with the same structure — this consistency is the primary value over a general model.</p>
-        <p class="mt-4 text-slate-300">The 1B variant is small enough to run on CPU-only hardware at practical speeds for batch processing workflows. For high-volume pipelines where extraction speed matters more than perfect accuracy on ambiguous fields, NuExtract-1B deployed on a multi-core server can process substantial document volumes without GPU hardware. The 3.8B variant improves accuracy on complex schemas and longer documents while remaining accessible on modest GPU hardware. NuExtract-large handles the most demanding extraction tasks where field complexity, document length, or schema depth push the smaller variants to their limits.</p>
-
-        <h2 class="mt-10 text-3xl font-black">Where NuExtract Consistently Delivers</h2>
-        <div class="mt-6 grid gap-4 md:grid-cols-2">
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <h3 class="text-xl font-bold text-cyan-200">Contract and legal document extraction</h3>
-            <p class="mt-3 text-slate-400">Parties, dates, payment terms, obligations, termination clauses, jurisdiction — NuExtract pulls structured fields from contracts reliably, handling the legal prose patterns that confuse general models. For legal operations teams processing high volumes of standard contract types, this directly reduces manual review time.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <h3 class="text-xl font-bold text-cyan-200">Medical record and clinical document parsing</h3>
-            <p class="mt-3 text-slate-400">Diagnoses, medications, dosages, dates, provider names, procedure codes — extracting structured data from clinical notes and medical records is a high-value, high-sensitivity task. Private NuExtract deployment means PHI never leaves your HIPAA-compliant environment while still enabling AI-assisted data extraction at scale.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <h3 class="text-xl font-bold text-cyan-200">Financial filing and report analysis</h3>
-            <p class="mt-3 text-slate-400">Revenue figures, line items, dates, entity names, and financial ratios from earnings reports, 10-K filings, invoices, and purchase orders. For finance teams, private extraction means material non-public information stays internal while still enabling AI-assisted processing at analyst-useful speeds.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <h3 class="text-xl font-bold text-cyan-200">Resume and application screening</h3>
-            <p class="mt-3 text-slate-400">Skills, experience duration, job titles, education, and contact information extracted consistently across candidate applications — enabling structured comparison and database population from unstructured CV submissions. Private deployment means applicant personal data stays within your HR systems.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <h3 class="text-xl font-bold text-cyan-200">Product and catalog data extraction</h3>
-            <p class="mt-3 text-slate-400">Technical specifications, dimensions, compatibility information, and pricing from supplier documents, datasheets, and product descriptions — extracted into a consistent schema for catalog management and e-commerce systems. Particularly valuable for organizations managing large numbers of SKUs across multiple suppliers.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <h3 class="text-xl font-bold text-cyan-200">Pipeline automation and ETL integration</h3>
-            <p class="mt-3 text-slate-400">NuExtract's consistent JSON output makes it directly integrable into ETL pipelines, document management systems, and automation workflows. Unlike a general chatbot where you need to parse natural language output, NuExtract gives you structured data you can feed directly into databases, APIs, and downstream systems.</p>
-          </div>
-        </div>
-
-        <h2 class="mt-10 text-3xl font-black">Who Should Be Running NuExtract</h2>
-
-        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Legal operations and contract management teams</h3>
-        <p class="mt-3 text-slate-300">Law firms, in-house legal departments, and contract management operations processing hundreds of contracts per month have a direct business case for private NuExtract deployment. Contract review time is expensive when done manually, and the specific risk of sending contract terms to an external AI service — exposing pricing, liability language, and deal structure to third-party processing — makes cloud-based extraction tools a practical liability. Private NuExtract handles the extraction locally and delivers the structured output the team actually needs.</p>
-
-        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Healthcare and clinical operations teams</h3>
-        <p class="mt-3 text-slate-300">For any organization processing PHI, the question is not whether to use AI-assisted extraction — the productivity case is too strong — but how to do it in a HIPAA-compatible way. Private NuExtract deployment on infrastructure that is already within your compliance boundary answers this question directly. The model processes clinical documents, returns structured data, and never transmits patient information externally.</p>
-
-        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Financial and accounting operations teams</h3>
-        <p class="mt-3 text-slate-300">Invoice processing, accounts payable automation, and financial data extraction are high-volume, repetitive tasks where AI assistance produces immediate cost savings. For public companies or fund managers handling material non-public information, cloud AI services create disclosure risk. Private NuExtract processes financial documents within the organization's own network, and the extracted data is the only thing that moves downstream.</p>
-
-        <h3 class="mt-8 text-2xl font-bold text-cyan-200">Government and public sector organizations</h3>
-        <p class="mt-3 text-slate-300">Government agencies processing public records, benefit applications, regulatory submissions, or any other sensitive constituent data often cannot use commercial cloud AI services due to FedRAMP requirements, data sovereignty mandates, or simply the political and legal risk of routing citizen data through a private technology company's servers. Private NuExtract deployment satisfies these requirements and delivers the extraction capability the organization needs.</p>
-
-        <h2 class="mt-10 text-3xl font-black">Hardware and Deployment Reality</h2>
-        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
-          <table class="w-full text-left text-sm">
-            <thead class="bg-slate-950 text-cyan-200">
-              <tr>
-                <th class="px-4 py-3">Configuration</th>
-                <th class="px-4 py-3">Recommended instance</th>
-                <th class="px-4 py-3">Best use</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-              <tr>
-                <td class="px-4 py-3 font-semibold text-white">NuExtract 1B</td>
-                <td class="px-4 py-3">2–4 GB RAM / CPU only</td>
-                <td class="px-4 py-3">High-volume batch extraction, simple schemas</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3 font-semibold text-white">NuExtract 3.8B Q4</td>
-                <td class="px-4 py-3">8 GB Lightsail</td>
-                <td class="px-4 py-3">Production extraction, complex schemas, moderate volume</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3 font-semibold text-white">NuExtract-large</td>
-                <td class="px-4 py-3">16–24 GB GPU instance</td>
-                <td class="px-4 py-3">Long documents, deep nested schemas, highest accuracy</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h2 class="mt-10 text-3xl font-black">Deploy NuExtract on Your Infrastructure</h2>
-        <p class="mt-5 text-slate-300">NoCloudGPT configures NuExtract on your Lightsail instance or on-premise server with Ollama and API endpoint access for pipeline integration. Schema template design assistance and pipeline integration support for common document management and ETL systems are available for team deployments.</p>
-        <div class="mt-6 grid gap-3 md:grid-cols-3">
-          <a href="../quote.html" class="rounded-2xl bg-cyan-300 p-5 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
-          <a href="../deploy/lightsail-guide.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Start the 90-day Lightsail pilot</a>
-          <a href="../deploy/on-premise.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Request on-premise installation</a>
-        </div>
-      </article>
-
-      <aside class="space-y-6">
-        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-8">
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">NuExtract deployment</p>
-          <h2 class="mt-3 text-3xl font-black">Extract structured data from sensitive documents. Locally. No API call.</h2>
-          <p class="mt-4 text-cyan-50">NuExtract runs your entire document extraction pipeline on-premise — contracts, medical records, financial filings — and outputs clean JSON without ever transmitting the source documents to a cloud service.</p>
-          <a href="../quote.html" class="mt-6 inline-block rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build a NuExtract quote</a>
-        </div>
-
-        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
-          <h3 class="text-xl font-bold">Best-fit workloads</h3>
-          <ul class="mt-4 space-y-3 text-slate-300">
-            <li>Contract and legal document extraction</li>
-            <li>Clinical record parsing (HIPAA-sensitive)</li>
-            <li>Invoice and financial document processing</li>
-            <li>Resume and application screening</li>
-            <li>Product catalog data extraction</li>
-            <li>ETL pipeline automation</li>
-          </ul>
-        </div>
-
-        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
-          <h3 class="text-xl font-bold">Key differentiators</h3>
-          <ul class="mt-4 space-y-3 text-slate-300">
-            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>Purpose-built for JSON extraction tasks</span></li>
-            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>Schema-first interface — define what you need</span></li>
-            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>1B variant runs on CPU only</span></li>
-            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>No document telemetry possible</span></li>
-            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>Direct pipeline integration via JSON output</span></li>
-          </ul>
-        </div>
-
-        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
-          <h3 class="text-xl font-bold">Related pages</h3>
-          <ul class="mt-4 space-y-3">
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="../reader-lm/index.html">Reader-LM — web content extraction</a></li>
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="../bge/index.html">BGE — document embeddings</a></li>
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="../nomic-embed/index.html">Nomic Embed</a></li>
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="../deploy/lightsail-guide.html">Lightsail setup guide</a></li>
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="../quote.html">Get a deployment quote</a></li>
-          </ul>
-        </div>
-      </aside>
+    <section>
+      <h2 class="text-2xl font-bold">Models in this family</h2>
+      <table class="mt-6 w-full text-left text-sm">
+        <thead class="text-slate-400">
+          <tr>
+            <th class="pb-3">Model</th>
+            <th class="pb-3">Params</th>
+            <th class="pb-3">Quant</th>
+            <th class="pb-3">Capabilities</th>
+            <th class="pb-3">Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="border-t border-slate-800">
+          <td class="py-3 pr-4"><a href="/models/model/nuextract/" class="font-semibold text-cyan-300 hover:text-cyan-200">nuextract</a></td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">text</td>
+          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
+        </tr>
+        </tbody>
+      </table>
     </section>
   </main>
 
-  <footer class="mt-16 border-t border-slate-800 bg-slate-950">
-    <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-slate-500">
-      <p>© 2025 NoCloudGPT. Private AI deployment on Amazon Lightsail and on-premise Linux servers.</p>
-      <p class="mt-2">
-        <a href="../../index.html" class="text-cyan-400 hover:text-cyan-300">Home</a> ·
-        <a href="../index.html" class="text-cyan-400 hover:text-cyan-300">Model menu</a> ·
-        <a href="../quote.html" class="text-cyan-400 hover:text-cyan-300">Get a quote</a>
-      </p>
-    </div>
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
+    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
   </footer>
 </body>
 </html>

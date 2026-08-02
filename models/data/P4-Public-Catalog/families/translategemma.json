@@ -1,0 +1,19 @@
+{
+  "slug": "translategemma",
+  "displayName": "translategemma",
+  "ollamaFamilies": [
+    "translategemma"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "translategemma"
+  ],
+  "sitePath": "/models/translategemma/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

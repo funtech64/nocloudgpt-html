@@ -1,0 +1,19 @@
+{
+  "slug": "llama2-chinese",
+  "displayName": "llama2-chinese",
+  "ollamaFamilies": [
+    "llama2-chinese"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "llama2-chinese"
+  ],
+  "sitePath": "/models/llama2-chinese/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

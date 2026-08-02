@@ -1,0 +1,4458 @@
+[
+  {
+    "slug": "alfred",
+    "displayName": "alfred",
+    "ollamaFamilies": [
+      "alfred"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "alfred"
+    ],
+    "sitePath": "/models/alfred/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "all-minilm",
+    "displayName": "all-minilm",
+    "ollamaFamilies": [
+      "all-minilm"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "all-minilm"
+    ],
+    "sitePath": "/models/all-minilm/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "athene-v2",
+    "displayName": "athene-v2",
+    "ollamaFamilies": [
+      "athene-v2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "athene-v2"
+    ],
+    "sitePath": "/models/athene-v2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "aya",
+    "displayName": "aya",
+    "ollamaFamilies": [
+      "aya"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "aya"
+    ],
+    "sitePath": "/models/aya/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "aya-expanse",
+    "displayName": "aya-expanse",
+    "ollamaFamilies": [
+      "aya-expanse"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "aya-expanse"
+    ],
+    "sitePath": "/models/aya-expanse/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "bakllava",
+    "displayName": "bakllava",
+    "ollamaFamilies": [
+      "bakllava"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "bakllava"
+    ],
+    "sitePath": "/models/bakllava/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "bespoke-minicheck",
+    "displayName": "bespoke-minicheck",
+    "ollamaFamilies": [
+      "bespoke-minicheck"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "bespoke-minicheck"
+    ],
+    "sitePath": "/models/bespoke-minicheck/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "bge-large",
+    "displayName": "bge-large",
+    "ollamaFamilies": [
+      "bge-large"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "bge-large"
+    ],
+    "sitePath": "/models/bge-large/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "bge-m3",
+    "displayName": "bge-m3",
+    "ollamaFamilies": [
+      "bge-m3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "bge-m3"
+    ],
+    "sitePath": "/models/bge-m3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "codebooga",
+    "displayName": "codebooga",
+    "ollamaFamilies": [
+      "codebooga"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "codebooga"
+    ],
+    "sitePath": "/models/codebooga/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "codegeex4",
+    "displayName": "codegeex4",
+    "ollamaFamilies": [
+      "codegeex4"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "codegeex4"
+    ],
+    "sitePath": "/models/codegeex4/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "codegemma",
+    "displayName": "codegemma",
+    "ollamaFamilies": [
+      "codegemma"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "codegemma"
+    ],
+    "sitePath": "/models/codegemma/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "codellama",
+    "displayName": "codellama",
+    "ollamaFamilies": [
+      "codellama"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "codellama"
+    ],
+    "sitePath": "/models/codellama/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "codeqwen",
+    "displayName": "codeqwen",
+    "ollamaFamilies": [
+      "codeqwen"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "codeqwen"
+    ],
+    "sitePath": "/models/codeqwen/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "codestral",
+    "displayName": "codestral",
+    "ollamaFamilies": [
+      "codestral"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "codestral"
+    ],
+    "sitePath": "/models/codestral/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "codeup",
+    "displayName": "codeup",
+    "ollamaFamilies": [
+      "codeup"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "codeup"
+    ],
+    "sitePath": "/models/codeup/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "cogito",
+    "displayName": "cogito",
+    "ollamaFamilies": [
+      "cogito"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "cogito"
+    ],
+    "sitePath": "/models/cogito/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "cogito-2.1",
+    "displayName": "cogito-2.1",
+    "ollamaFamilies": [
+      "cogito-2.1"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "cogito-2.1"
+    ],
+    "sitePath": "/models/cogito-2.1/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "command-a",
+    "displayName": "command-a",
+    "ollamaFamilies": [
+      "command-a"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "command-a"
+    ],
+    "sitePath": "/models/command-a/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "command-r",
+    "displayName": "command-r",
+    "ollamaFamilies": [
+      "command-r"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "command-r"
+    ],
+    "sitePath": "/models/command-r/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "command-r-plus",
+    "displayName": "command-r-plus",
+    "ollamaFamilies": [
+      "command-r-plus"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "command-r-plus"
+    ],
+    "sitePath": "/models/command-r-plus/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "command-r7b",
+    "displayName": "command-r7b",
+    "ollamaFamilies": [
+      "command-r7b"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "command-r7b"
+    ],
+    "sitePath": "/models/command-r7b/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "command-r7b-arabic",
+    "displayName": "command-r7b-arabic",
+    "ollamaFamilies": [
+      "command-r7b-arabic"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "command-r7b-arabic"
+    ],
+    "sitePath": "/models/command-r7b-arabic/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "dbrx",
+    "displayName": "dbrx",
+    "ollamaFamilies": [
+      "dbrx"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "dbrx"
+    ],
+    "sitePath": "/models/dbrx/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "deepcoder",
+    "displayName": "deepcoder",
+    "ollamaFamilies": [
+      "deepcoder"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "deepcoder"
+    ],
+    "sitePath": "/models/deepcoder/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "deepscaler",
+    "displayName": "deepscaler",
+    "ollamaFamilies": [
+      "deepscaler"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "deepscaler"
+    ],
+    "sitePath": "/models/deepscaler/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "deepseek",
+    "displayName": "deepseek-v3",
+    "ollamaFamilies": [
+      "deepseek-v3",
+      "deepseek-v3.1"
+    ],
+    "aliases": [
+      "deepseek-v3",
+      "deepseek-v3.1"
+    ],
+    "capabilities": [
+      "text",
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "deepseek-v3",
+      "deepseek-v3.1"
+    ],
+    "sitePath": "/models/deepseek/",
+    "modelCount": 2,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "deepseek-coder",
+    "displayName": "deepseek-coder",
+    "ollamaFamilies": [
+      "deepseek-coder"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "deepseek-coder"
+    ],
+    "sitePath": "/models/deepseek-coder/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "deepseek-coder-v2",
+    "displayName": "deepseek-coder-v2",
+    "ollamaFamilies": [
+      "deepseek-coder-v2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "deepseek-coder-v2"
+    ],
+    "sitePath": "/models/deepseek-coder-v2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "deepseek-llm",
+    "displayName": "deepseek-llm",
+    "ollamaFamilies": [
+      "deepseek-llm"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "deepseek-llm"
+    ],
+    "sitePath": "/models/deepseek-llm/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "deepseek-ocr",
+    "displayName": "deepseek-ocr",
+    "ollamaFamilies": [
+      "deepseek-ocr"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "deepseek-ocr"
+    ],
+    "sitePath": "/models/deepseek-ocr/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "deepseek-r1",
+    "displayName": "deepseek-r1",
+    "ollamaFamilies": [
+      "deepseek-r1"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "deepseek-r1"
+    ],
+    "sitePath": "/models/deepseek-r1/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "deepseek-v2",
+    "displayName": "deepseek-v2",
+    "ollamaFamilies": [
+      "deepseek-v2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "deepseek-v2"
+    ],
+    "sitePath": "/models/deepseek-v2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "deepseek-v2.5",
+    "displayName": "deepseek-v2.5",
+    "ollamaFamilies": [
+      "deepseek-v2.5"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "deepseek-v2.5"
+    ],
+    "sitePath": "/models/deepseek-v2.5/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "deepseek-v4-flash",
+    "displayName": "deepseek-v4-flash",
+    "ollamaFamilies": [
+      "deepseek-v4-flash"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "deepseek-v4-flash"
+    ],
+    "sitePath": "/models/deepseek-v4-flash/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "deepseek-v4-pro",
+    "displayName": "deepseek-v4-pro",
+    "ollamaFamilies": [
+      "deepseek-v4-pro"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "deepseek-v4-pro"
+    ],
+    "sitePath": "/models/deepseek-v4-pro/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "devstral",
+    "displayName": "devstral",
+    "ollamaFamilies": [
+      "devstral"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "devstral"
+    ],
+    "sitePath": "/models/devstral/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "devstral-2",
+    "displayName": "devstral-2",
+    "ollamaFamilies": [
+      "devstral-2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "devstral-2"
+    ],
+    "sitePath": "/models/devstral-2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "devstral-small-2",
+    "displayName": "devstral-small-2",
+    "ollamaFamilies": [
+      "devstral-small-2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "devstral-small-2"
+    ],
+    "sitePath": "/models/devstral-small-2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "dolphin-llama3",
+    "displayName": "dolphin-llama3",
+    "ollamaFamilies": [
+      "dolphin-llama3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "dolphin-llama3"
+    ],
+    "sitePath": "/models/dolphin-llama3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "dolphin-mistral",
+    "displayName": "dolphin-mistral",
+    "ollamaFamilies": [
+      "dolphin-mistral"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "dolphin-mistral"
+    ],
+    "sitePath": "/models/dolphin-mistral/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "dolphin-mixtral",
+    "displayName": "dolphin-mixtral",
+    "ollamaFamilies": [
+      "dolphin-mixtral"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "dolphin-mixtral"
+    ],
+    "sitePath": "/models/dolphin-mixtral/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "dolphin-phi",
+    "displayName": "dolphin-phi",
+    "ollamaFamilies": [
+      "dolphin-phi"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "dolphin-phi"
+    ],
+    "sitePath": "/models/dolphin-phi/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "dolphin3",
+    "displayName": "dolphin3",
+    "ollamaFamilies": [
+      "dolphin3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "dolphin3"
+    ],
+    "sitePath": "/models/dolphin3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "dolphincoder",
+    "displayName": "dolphincoder",
+    "ollamaFamilies": [
+      "dolphincoder"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "dolphincoder"
+    ],
+    "sitePath": "/models/dolphincoder/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "duckdb-nsql",
+    "displayName": "duckdb-nsql",
+    "ollamaFamilies": [
+      "duckdb-nsql"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "duckdb-nsql"
+    ],
+    "sitePath": "/models/duckdb-nsql/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "embeddinggemma",
+    "displayName": "embeddinggemma",
+    "ollamaFamilies": [
+      "embeddinggemma"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "embeddinggemma"
+    ],
+    "sitePath": "/models/embeddinggemma/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "everythinglm",
+    "displayName": "everythinglm",
+    "ollamaFamilies": [
+      "everythinglm"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "everythinglm"
+    ],
+    "sitePath": "/models/everythinglm/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "exaone-deep",
+    "displayName": "exaone-deep",
+    "ollamaFamilies": [
+      "exaone-deep"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "exaone-deep"
+    ],
+    "sitePath": "/models/exaone-deep/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "exaone3.5",
+    "displayName": "exaone3.5",
+    "ollamaFamilies": [
+      "exaone3.5"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "exaone3.5"
+    ],
+    "sitePath": "/models/exaone3.5/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "falcon",
+    "displayName": "falcon",
+    "ollamaFamilies": [
+      "falcon"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "falcon"
+    ],
+    "sitePath": "/models/falcon/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "falcon2",
+    "displayName": "falcon2",
+    "ollamaFamilies": [
+      "falcon2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "falcon2"
+    ],
+    "sitePath": "/models/falcon2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "falcon3",
+    "displayName": "falcon3",
+    "ollamaFamilies": [
+      "falcon3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "falcon3"
+    ],
+    "sitePath": "/models/falcon3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "firefunction-v2",
+    "displayName": "firefunction-v2",
+    "ollamaFamilies": [
+      "firefunction-v2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "firefunction-v2"
+    ],
+    "sitePath": "/models/firefunction-v2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "functiongemma",
+    "displayName": "functiongemma",
+    "ollamaFamilies": [
+      "functiongemma"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "tools"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "functiongemma"
+    ],
+    "sitePath": "/models/functiongemma/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "gemini-3-flash-preview",
+    "displayName": "gemini-3-flash-preview",
+    "ollamaFamilies": [
+      "gemini-3-flash-preview"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "gemini-3-flash-preview"
+    ],
+    "sitePath": "/models/gemini-3-flash-preview/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "gemma",
+    "displayName": "gemma",
+    "ollamaFamilies": [
+      "gemma"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "gemma"
+    ],
+    "sitePath": "/models/gemma/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "gemma2",
+    "displayName": "gemma2",
+    "ollamaFamilies": [
+      "gemma2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "gemma2"
+    ],
+    "sitePath": "/models/gemma2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "gemma3",
+    "displayName": "gemma3",
+    "ollamaFamilies": [
+      "gemma3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "vision"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "gemma3"
+    ],
+    "sitePath": "/models/gemma3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "gemma3n",
+    "displayName": "gemma3n",
+    "ollamaFamilies": [
+      "gemma3n"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "gemma3n"
+    ],
+    "sitePath": "/models/gemma3n/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "gemma4",
+    "displayName": "gemma4",
+    "ollamaFamilies": [
+      "gemma4"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "embedding",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "gemma4"
+    ],
+    "sitePath": "/models/gemma4/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "glm-4.7-flash",
+    "displayName": "glm-4.7-flash",
+    "ollamaFamilies": [
+      "glm-4.7-flash"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "glm-4.7-flash"
+    ],
+    "sitePath": "/models/glm-4.7-flash/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "glm-5.1",
+    "displayName": "glm-5.1",
+    "ollamaFamilies": [
+      "glm-5.1"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "glm-5.1"
+    ],
+    "sitePath": "/models/glm-5.1/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "glm-5.2",
+    "displayName": "glm-5.2",
+    "ollamaFamilies": [
+      "glm-5.2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "glm-5.2"
+    ],
+    "sitePath": "/models/glm-5.2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "glm-ocr",
+    "displayName": "glm-ocr",
+    "ollamaFamilies": [
+      "glm-ocr"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "glm-ocr"
+    ],
+    "sitePath": "/models/glm-ocr/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "glm4",
+    "displayName": "glm4",
+    "ollamaFamilies": [
+      "glm4"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "glm4"
+    ],
+    "sitePath": "/models/glm4/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "goliath",
+    "displayName": "goliath",
+    "ollamaFamilies": [
+      "goliath"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "goliath"
+    ],
+    "sitePath": "/models/goliath/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "gpt-oss",
+    "displayName": "gpt-oss",
+    "ollamaFamilies": [
+      "gpt-oss"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "gpt-oss"
+    ],
+    "sitePath": "/models/gpt-oss/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "gpt-oss-safeguard",
+    "displayName": "gpt-oss-safeguard",
+    "ollamaFamilies": [
+      "gpt-oss-safeguard"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "gpt-oss-safeguard"
+    ],
+    "sitePath": "/models/gpt-oss-safeguard/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "granite-code",
+    "displayName": "granite-code",
+    "ollamaFamilies": [
+      "granite-code"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "granite-code"
+    ],
+    "sitePath": "/models/granite-code/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "granite-embedding",
+    "displayName": "granite-embedding",
+    "ollamaFamilies": [
+      "granite-embedding"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "granite-embedding"
+    ],
+    "sitePath": "/models/granite-embedding/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "granite3-dense",
+    "displayName": "granite3-dense",
+    "ollamaFamilies": [
+      "granite3-dense"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "granite3-dense"
+    ],
+    "sitePath": "/models/granite3-dense/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "granite3-guardian",
+    "displayName": "granite3-guardian",
+    "ollamaFamilies": [
+      "granite3-guardian"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "granite3-guardian"
+    ],
+    "sitePath": "/models/granite3-guardian/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "granite3-moe",
+    "displayName": "granite3-moe",
+    "ollamaFamilies": [
+      "granite3-moe"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "granite3-moe"
+    ],
+    "sitePath": "/models/granite3-moe/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "granite3.1-dense",
+    "displayName": "granite3.1-dense",
+    "ollamaFamilies": [
+      "granite3.1-dense"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "granite3.1-dense"
+    ],
+    "sitePath": "/models/granite3.1-dense/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "granite3.1-moe",
+    "displayName": "granite3.1-moe",
+    "ollamaFamilies": [
+      "granite3.1-moe"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "granite3.1-moe"
+    ],
+    "sitePath": "/models/granite3.1-moe/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "granite3.2",
+    "displayName": "granite3.2",
+    "ollamaFamilies": [
+      "granite3.2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "granite3.2"
+    ],
+    "sitePath": "/models/granite3.2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "granite3.2-vision",
+    "displayName": "granite3.2-vision",
+    "ollamaFamilies": [
+      "granite3.2-vision"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "granite3.2-vision"
+    ],
+    "sitePath": "/models/granite3.2-vision/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "granite3.3",
+    "displayName": "granite3.3",
+    "ollamaFamilies": [
+      "granite3.3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "granite3.3"
+    ],
+    "sitePath": "/models/granite3.3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "granite4",
+    "displayName": "granite4",
+    "ollamaFamilies": [
+      "granite4"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "granite4"
+    ],
+    "sitePath": "/models/granite4/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "granite4.1",
+    "displayName": "granite4.1",
+    "ollamaFamilies": [
+      "granite4.1"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "granite4.1",
+      "ibm"
+    ],
+    "sitePath": "/models/granite4.1/",
+    "modelCount": 2,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "granite4.1-guardian",
+    "displayName": "granite4.1-guardian",
+    "ollamaFamilies": [
+      "granite4.1-guardian"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "granite4.1-guardian"
+    ],
+    "sitePath": "/models/granite4.1-guardian/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "hermes3",
+    "displayName": "hermes3",
+    "ollamaFamilies": [
+      "hermes3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "hermes3"
+    ],
+    "sitePath": "/models/hermes3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "internlm2",
+    "displayName": "internlm2",
+    "ollamaFamilies": [
+      "internlm2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "internlm2"
+    ],
+    "sitePath": "/models/internlm2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "kimi-k2.5",
+    "displayName": "kimi-k2.5",
+    "ollamaFamilies": [
+      "kimi-k2.5"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "kimi-k2.5"
+    ],
+    "sitePath": "/models/kimi-k2.5/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "stale_source"
+  },
+  {
+    "slug": "kimi-k2.6",
+    "displayName": "kimi-k2.6",
+    "ollamaFamilies": [
+      "kimi-k2.6"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "kimi-k2.6"
+    ],
+    "sitePath": "/models/kimi-k2.6/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "kimi-k2.7-code",
+    "displayName": "kimi-k2.7-code",
+    "ollamaFamilies": [
+      "kimi-k2.7-code"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "kimi-k2.7-code"
+    ],
+    "sitePath": "/models/kimi-k2.7-code/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "kimi-k3",
+    "displayName": "kimi-k3",
+    "ollamaFamilies": [
+      "kimi-k3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "kimi-k3"
+    ],
+    "sitePath": "/models/kimi-k3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "laguna-s-2.1",
+    "displayName": "laguna-s-2.1",
+    "ollamaFamilies": [
+      "laguna-s-2.1"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "laguna-s-2.1"
+    ],
+    "sitePath": "/models/laguna-s-2.1/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "laguna-xs-2.1",
+    "displayName": "laguna-xs-2.1",
+    "ollamaFamilies": [
+      "laguna-xs-2.1"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "laguna-xs-2.1"
+    ],
+    "sitePath": "/models/laguna-xs-2.1/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "laguna-xs.2",
+    "displayName": "laguna-xs.2",
+    "ollamaFamilies": [
+      "laguna-xs.2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "laguna-xs.2"
+    ],
+    "sitePath": "/models/laguna-xs.2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "lfm2",
+    "displayName": "lfm2",
+    "ollamaFamilies": [
+      "lfm2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "lfm2"
+    ],
+    "sitePath": "/models/lfm2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "lfm2.5",
+    "displayName": "lfm2.5",
+    "ollamaFamilies": [
+      "lfm2.5"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "lfm2.5"
+    ],
+    "sitePath": "/models/lfm2.5/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "lfm2.5-thinking",
+    "displayName": "lfm2.5-thinking",
+    "ollamaFamilies": [
+      "lfm2.5-thinking"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "lfm2.5-thinking"
+    ],
+    "sitePath": "/models/lfm2.5-thinking/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llama",
+    "displayName": "llama2",
+    "ollamaFamilies": [
+      "llama2",
+      "llama3.1",
+      "llama3.2",
+      "llama3.3"
+    ],
+    "aliases": [
+      "llama2",
+      "llama3.1",
+      "llama3.2",
+      "llama3.3"
+    ],
+    "capabilities": [
+      "text",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llama2",
+      "llama3.1",
+      "llama3.2",
+      "llama3.3"
+    ],
+    "sitePath": "/models/llama/",
+    "modelCount": 4,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llama-guard3",
+    "displayName": "llama-guard3",
+    "ollamaFamilies": [
+      "llama-guard3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llama-guard3"
+    ],
+    "sitePath": "/models/llama-guard3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llama-pro",
+    "displayName": "llama-pro",
+    "ollamaFamilies": [
+      "llama-pro"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llama-pro"
+    ],
+    "sitePath": "/models/llama-pro/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llama2-chinese",
+    "displayName": "llama2-chinese",
+    "ollamaFamilies": [
+      "llama2-chinese"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llama2-chinese"
+    ],
+    "sitePath": "/models/llama2-chinese/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llama2-uncensored",
+    "displayName": "llama2-uncensored",
+    "ollamaFamilies": [
+      "llama2-uncensored"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llama2-uncensored"
+    ],
+    "sitePath": "/models/llama2-uncensored/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llama3",
+    "displayName": "llama3",
+    "ollamaFamilies": [
+      "llama3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llama3"
+    ],
+    "sitePath": "/models/llama3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llama3-chatqa",
+    "displayName": "llama3-chatqa",
+    "ollamaFamilies": [
+      "llama3-chatqa"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llama3-chatqa"
+    ],
+    "sitePath": "/models/llama3-chatqa/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llama3-gradient",
+    "displayName": "llama3-gradient",
+    "ollamaFamilies": [
+      "llama3-gradient"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llama3-gradient"
+    ],
+    "sitePath": "/models/llama3-gradient/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llama3-groq-tool-use",
+    "displayName": "llama3-groq-tool-use",
+    "ollamaFamilies": [
+      "llama3-groq-tool-use"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llama3-groq-tool-use"
+    ],
+    "sitePath": "/models/llama3-groq-tool-use/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llama3.2-vision",
+    "displayName": "llama3.2-vision",
+    "ollamaFamilies": [
+      "llama3.2-vision"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llama3.2-vision"
+    ],
+    "sitePath": "/models/llama3.2-vision/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llama4",
+    "displayName": "llama4",
+    "ollamaFamilies": [
+      "llama4"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llama4"
+    ],
+    "sitePath": "/models/llama4/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llava",
+    "displayName": "llava",
+    "ollamaFamilies": [
+      "llava"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llava"
+    ],
+    "sitePath": "/models/llava/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llava-llama3",
+    "displayName": "llava-llama3",
+    "ollamaFamilies": [
+      "llava-llama3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llava-llama3"
+    ],
+    "sitePath": "/models/llava-llama3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "llava-phi3",
+    "displayName": "llava-phi3",
+    "ollamaFamilies": [
+      "llava-phi3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "llava-phi3"
+    ],
+    "sitePath": "/models/llava-phi3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "magicoder",
+    "displayName": "magicoder",
+    "ollamaFamilies": [
+      "magicoder"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "magicoder"
+    ],
+    "sitePath": "/models/magicoder/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "magistral",
+    "displayName": "magistral",
+    "ollamaFamilies": [
+      "magistral"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "magistral"
+    ],
+    "sitePath": "/models/magistral/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "marco-o1",
+    "displayName": "marco-o1",
+    "ollamaFamilies": [
+      "marco-o1"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "marco-o1"
+    ],
+    "sitePath": "/models/marco-o1/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "mathstral",
+    "displayName": "mathstral",
+    "ollamaFamilies": [
+      "mathstral"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "mathstral"
+    ],
+    "sitePath": "/models/mathstral/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "medgemma",
+    "displayName": "medgemma",
+    "ollamaFamilies": [
+      "medgemma"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "vision"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "medgemma"
+    ],
+    "sitePath": "/models/medgemma/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "medgemma1.5",
+    "displayName": "medgemma1.5",
+    "ollamaFamilies": [
+      "medgemma1.5"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "vision"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "medgemma1.5"
+    ],
+    "sitePath": "/models/medgemma1.5/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "meditron",
+    "displayName": "meditron",
+    "ollamaFamilies": [
+      "meditron"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "meditron"
+    ],
+    "sitePath": "/models/meditron/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "medllama2",
+    "displayName": "medllama2",
+    "ollamaFamilies": [
+      "medllama2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "medllama2"
+    ],
+    "sitePath": "/models/medllama2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "megadolphin",
+    "displayName": "megadolphin",
+    "ollamaFamilies": [
+      "megadolphin"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "megadolphin"
+    ],
+    "sitePath": "/models/megadolphin/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "minicpm-v",
+    "displayName": "minicpm-v",
+    "ollamaFamilies": [
+      "minicpm-v"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "minicpm-v"
+    ],
+    "sitePath": "/models/minicpm-v/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "minicpm-v4.5",
+    "displayName": "minicpm-v4.5",
+    "ollamaFamilies": [
+      "minicpm-v4.5"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "minicpm-v4.5"
+    ],
+    "sitePath": "/models/minicpm-v4.5/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "minicpm-v4.6",
+    "displayName": "minicpm-v4.6",
+    "ollamaFamilies": [
+      "minicpm-v4.6"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "minicpm-v4.6"
+    ],
+    "sitePath": "/models/minicpm-v4.6/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "minimax-m2.5",
+    "displayName": "minimax-m2.5",
+    "ollamaFamilies": [
+      "minimax-m2.5"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "minimax-m2.5"
+    ],
+    "sitePath": "/models/minimax-m2.5/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "stale_source"
+  },
+  {
+    "slug": "minimax-m2.7",
+    "displayName": "minimax-m2.7",
+    "ollamaFamilies": [
+      "minimax-m2.7"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "minimax-m2.7"
+    ],
+    "sitePath": "/models/minimax-m2.7/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "minimax-m3",
+    "displayName": "minimax-m3",
+    "ollamaFamilies": [
+      "minimax-m3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "minimax-m3"
+    ],
+    "sitePath": "/models/minimax-m3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "ministral-3",
+    "displayName": "ministral-3",
+    "ollamaFamilies": [
+      "ministral-3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "ministral-3"
+    ],
+    "sitePath": "/models/ministral-3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "mistral",
+    "displayName": "mistral",
+    "ollamaFamilies": [
+      "mistral"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "mistral"
+    ],
+    "sitePath": "/models/mistral/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "mistral-large",
+    "displayName": "mistral-large",
+    "ollamaFamilies": [
+      "mistral-large"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "mistral-large"
+    ],
+    "sitePath": "/models/mistral-large/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "mistral-large-3",
+    "displayName": "mistral-large-3",
+    "ollamaFamilies": [
+      "mistral-large-3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "mistral-large-3"
+    ],
+    "sitePath": "/models/mistral-large-3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "mistral-medium-3.5",
+    "displayName": "mistral-medium-3.5",
+    "ollamaFamilies": [
+      "mistral-medium-3.5"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "mistral-medium-3.5"
+    ],
+    "sitePath": "/models/mistral-medium-3.5/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "mistral-nemo",
+    "displayName": "mistral-nemo",
+    "ollamaFamilies": [
+      "mistral-nemo"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "mistral-nemo"
+    ],
+    "sitePath": "/models/mistral-nemo/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "mistral-openorca",
+    "displayName": "mistral-openorca",
+    "ollamaFamilies": [
+      "mistral-openorca"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "mistral-openorca"
+    ],
+    "sitePath": "/models/mistral-openorca/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "mistral-small",
+    "displayName": "mistral-small",
+    "ollamaFamilies": [
+      "mistral-small"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "mistral-small"
+    ],
+    "sitePath": "/models/mistral-small/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "mistral-small3.1",
+    "displayName": "mistral-small3.1",
+    "ollamaFamilies": [
+      "mistral-small3.1"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "mistral-small3.1"
+    ],
+    "sitePath": "/models/mistral-small3.1/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "mistral-small3.2",
+    "displayName": "mistral-small3.2",
+    "ollamaFamilies": [
+      "mistral-small3.2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "mistral-small3.2"
+    ],
+    "sitePath": "/models/mistral-small3.2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "mistrallite",
+    "displayName": "mistrallite",
+    "ollamaFamilies": [
+      "mistrallite"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "mistrallite"
+    ],
+    "sitePath": "/models/mistrallite/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "mixtral",
+    "displayName": "mixtral",
+    "ollamaFamilies": [
+      "mixtral"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "mixtral"
+    ],
+    "sitePath": "/models/mixtral/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "moondream",
+    "displayName": "moondream",
+    "ollamaFamilies": [
+      "moondream"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "moondream"
+    ],
+    "sitePath": "/models/moondream/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "mxbai-embed-large",
+    "displayName": "mxbai-embed-large",
+    "ollamaFamilies": [
+      "mxbai-embed-large"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "mxbai-embed-large"
+    ],
+    "sitePath": "/models/mxbai-embed-large/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nemotron",
+    "displayName": "nemotron",
+    "ollamaFamilies": [
+      "nemotron"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nemotron"
+    ],
+    "sitePath": "/models/nemotron/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nemotron-3-nano",
+    "displayName": "nemotron-3-nano",
+    "ollamaFamilies": [
+      "nemotron-3-nano"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nemotron-3-nano"
+    ],
+    "sitePath": "/models/nemotron-3-nano/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nemotron-3-super",
+    "displayName": "nemotron-3-super",
+    "ollamaFamilies": [
+      "nemotron-3-super"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nemotron-3-super"
+    ],
+    "sitePath": "/models/nemotron-3-super/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nemotron-3-ultra",
+    "displayName": "nemotron-3-ultra",
+    "ollamaFamilies": [
+      "nemotron-3-ultra"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nemotron-3-ultra"
+    ],
+    "sitePath": "/models/nemotron-3-ultra/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nemotron-cascade-2",
+    "displayName": "nemotron-cascade-2",
+    "ollamaFamilies": [
+      "nemotron-cascade-2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nemotron-cascade-2"
+    ],
+    "sitePath": "/models/nemotron-cascade-2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nemotron-mini",
+    "displayName": "nemotron-mini",
+    "ollamaFamilies": [
+      "nemotron-mini"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nemotron-mini"
+    ],
+    "sitePath": "/models/nemotron-mini/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nemotron3",
+    "displayName": "nemotron3",
+    "ollamaFamilies": [
+      "nemotron3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nemotron3"
+    ],
+    "sitePath": "/models/nemotron3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "neural-chat",
+    "displayName": "neural-chat",
+    "ollamaFamilies": [
+      "neural-chat"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "neural-chat"
+    ],
+    "sitePath": "/models/neural-chat/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nexusraven",
+    "displayName": "nexusraven",
+    "ollamaFamilies": [
+      "nexusraven"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nexusraven"
+    ],
+    "sitePath": "/models/nexusraven/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nomic-embed-text",
+    "displayName": "nomic-embed-text",
+    "ollamaFamilies": [
+      "nomic-embed-text"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nomic-embed-text"
+    ],
+    "sitePath": "/models/nomic-embed-text/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nomic-embed-text-v2-moe",
+    "displayName": "nomic-embed-text-v2-moe",
+    "ollamaFamilies": [
+      "nomic-embed-text-v2-moe"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nomic-embed-text-v2-moe"
+    ],
+    "sitePath": "/models/nomic-embed-text-v2-moe/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "north-mini-code-1.0",
+    "displayName": "north-mini-code-1.0",
+    "ollamaFamilies": [
+      "north-mini-code-1.0"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding",
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "north-mini-code-1.0"
+    ],
+    "sitePath": "/models/north-mini-code-1.0/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "notus",
+    "displayName": "notus",
+    "ollamaFamilies": [
+      "notus"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "notus"
+    ],
+    "sitePath": "/models/notus/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "notux",
+    "displayName": "notux",
+    "ollamaFamilies": [
+      "notux"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "notux"
+    ],
+    "sitePath": "/models/notux/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nous-hermes",
+    "displayName": "nous-hermes",
+    "ollamaFamilies": [
+      "nous-hermes"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nous-hermes"
+    ],
+    "sitePath": "/models/nous-hermes/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nous-hermes2",
+    "displayName": "nous-hermes2",
+    "ollamaFamilies": [
+      "nous-hermes2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nous-hermes2"
+    ],
+    "sitePath": "/models/nous-hermes2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nous-hermes2-mixtral",
+    "displayName": "nous-hermes2-mixtral",
+    "ollamaFamilies": [
+      "nous-hermes2-mixtral"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nous-hermes2-mixtral"
+    ],
+    "sitePath": "/models/nous-hermes2-mixtral/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "nuextract",
+    "displayName": "nuextract",
+    "ollamaFamilies": [
+      "nuextract"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "nuextract"
+    ],
+    "sitePath": "/models/nuextract/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "olmo-3",
+    "displayName": "olmo-3",
+    "ollamaFamilies": [
+      "olmo-3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "olmo-3"
+    ],
+    "sitePath": "/models/olmo-3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "olmo-3.1",
+    "displayName": "olmo-3.1",
+    "ollamaFamilies": [
+      "olmo-3.1"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "olmo-3.1"
+    ],
+    "sitePath": "/models/olmo-3.1/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "olmo2",
+    "displayName": "olmo2",
+    "ollamaFamilies": [
+      "olmo2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "olmo2"
+    ],
+    "sitePath": "/models/olmo2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "open-orca-platypus2",
+    "displayName": "open-orca-platypus2",
+    "ollamaFamilies": [
+      "open-orca-platypus2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "open-orca-platypus2"
+    ],
+    "sitePath": "/models/open-orca-platypus2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "openchat",
+    "displayName": "openchat",
+    "ollamaFamilies": [
+      "openchat"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "openchat"
+    ],
+    "sitePath": "/models/openchat/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "opencoder",
+    "displayName": "opencoder",
+    "ollamaFamilies": [
+      "opencoder"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "opencoder"
+    ],
+    "sitePath": "/models/opencoder/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "openhermes",
+    "displayName": "openhermes",
+    "ollamaFamilies": [
+      "openhermes"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "openhermes"
+    ],
+    "sitePath": "/models/openhermes/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "openthinker",
+    "displayName": "openthinker",
+    "ollamaFamilies": [
+      "openthinker"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "openthinker"
+    ],
+    "sitePath": "/models/openthinker/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "orca-mini",
+    "displayName": "orca-mini",
+    "ollamaFamilies": [
+      "orca-mini"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "orca-mini"
+    ],
+    "sitePath": "/models/orca-mini/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "orca2",
+    "displayName": "orca2",
+    "ollamaFamilies": [
+      "orca2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "orca2"
+    ],
+    "sitePath": "/models/orca2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "ornith",
+    "displayName": "ornith",
+    "ollamaFamilies": [
+      "ornith"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "ornith"
+    ],
+    "sitePath": "/models/ornith/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "paraphrase-multilingual",
+    "displayName": "paraphrase-multilingual",
+    "ollamaFamilies": [
+      "paraphrase-multilingual"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "paraphrase-multilingual"
+    ],
+    "sitePath": "/models/paraphrase-multilingual/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "phi",
+    "displayName": "phi",
+    "ollamaFamilies": [
+      "phi"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "phi"
+    ],
+    "sitePath": "/models/phi/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "phi3",
+    "displayName": "phi3",
+    "ollamaFamilies": [
+      "phi3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "phi3"
+    ],
+    "sitePath": "/models/phi3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "phi3.5",
+    "displayName": "phi3.5",
+    "ollamaFamilies": [
+      "phi3.5"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "phi3.5"
+    ],
+    "sitePath": "/models/phi3.5/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "phi4",
+    "displayName": "phi4",
+    "ollamaFamilies": [
+      "phi4"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "phi4"
+    ],
+    "sitePath": "/models/phi4/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "phi4-mini",
+    "displayName": "phi4-mini",
+    "ollamaFamilies": [
+      "phi4-mini"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "phi4-mini"
+    ],
+    "sitePath": "/models/phi4-mini/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "phi4-mini-reasoning",
+    "displayName": "phi4-mini-reasoning",
+    "ollamaFamilies": [
+      "phi4-mini-reasoning"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "phi4-mini-reasoning"
+    ],
+    "sitePath": "/models/phi4-mini-reasoning/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "phi4-reasoning",
+    "displayName": "phi4-reasoning",
+    "ollamaFamilies": [
+      "phi4-reasoning"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "phi4-reasoning"
+    ],
+    "sitePath": "/models/phi4-reasoning/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "phind-codellama",
+    "displayName": "phind-codellama",
+    "ollamaFamilies": [
+      "phind-codellama"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "phind-codellama"
+    ],
+    "sitePath": "/models/phind-codellama/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "qwen",
+    "displayName": "qwen",
+    "ollamaFamilies": [
+      "qwen",
+      "qwen2.5"
+    ],
+    "aliases": [
+      "qwen2.5"
+    ],
+    "capabilities": [
+      "cloud",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "qwen",
+      "qwen2.5"
+    ],
+    "sitePath": "/models/qwen/",
+    "modelCount": 2,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "qwen2",
+    "displayName": "qwen2",
+    "ollamaFamilies": [
+      "qwen2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "qwen2"
+    ],
+    "sitePath": "/models/qwen2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "qwen2-math",
+    "displayName": "qwen2-math",
+    "ollamaFamilies": [
+      "qwen2-math"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "qwen2-math"
+    ],
+    "sitePath": "/models/qwen2-math/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "qwen2.5-coder",
+    "displayName": "qwen2.5-coder",
+    "ollamaFamilies": [
+      "qwen2.5-coder"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "qwen2.5-coder"
+    ],
+    "sitePath": "/models/qwen2.5-coder/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "qwen2.5vl",
+    "displayName": "qwen2.5vl",
+    "ollamaFamilies": [
+      "qwen2.5vl"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "qwen2.5vl"
+    ],
+    "sitePath": "/models/qwen2.5vl/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "qwen3-coder",
+    "displayName": "qwen3-coder",
+    "ollamaFamilies": [
+      "qwen3-coder"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "qwen3-coder"
+    ],
+    "sitePath": "/models/qwen3-coder/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "qwen3-coder-next",
+    "displayName": "qwen3-coder-next",
+    "ollamaFamilies": [
+      "qwen3-coder-next"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "qwen3-coder-next"
+    ],
+    "sitePath": "/models/qwen3-coder-next/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "qwen3-embedding",
+    "displayName": "qwen3-embedding",
+    "ollamaFamilies": [
+      "qwen3-embedding"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "qwen3-embedding"
+    ],
+    "sitePath": "/models/qwen3-embedding/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "qwen3-next",
+    "displayName": "qwen3-next",
+    "ollamaFamilies": [
+      "qwen3-next"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "qwen3-next"
+    ],
+    "sitePath": "/models/qwen3-next/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "qwen3-vl",
+    "displayName": "qwen3-vl",
+    "ollamaFamilies": [
+      "qwen3-vl"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "qwen3-vl"
+    ],
+    "sitePath": "/models/qwen3-vl/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "qwen3.5",
+    "displayName": "qwen3",
+    "ollamaFamilies": [
+      "qwen3",
+      "qwen3.5"
+    ],
+    "aliases": [
+      "qwen3"
+    ],
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "qwen3",
+      "qwen3.5"
+    ],
+    "sitePath": "/models/qwen3.5/",
+    "modelCount": 2,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "qwen3.6",
+    "displayName": "qwen3.6",
+    "ollamaFamilies": [
+      "qwen3.6"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "qwen3.6"
+    ],
+    "sitePath": "/models/qwen3.6/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "qwq",
+    "displayName": "qwq",
+    "ollamaFamilies": [
+      "qwq"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "qwq"
+    ],
+    "sitePath": "/models/qwq/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "r1-1776",
+    "displayName": "r1-1776",
+    "ollamaFamilies": [
+      "r1-1776"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "r1-1776"
+    ],
+    "sitePath": "/models/r1-1776/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "reader-lm",
+    "displayName": "reader-lm",
+    "ollamaFamilies": [
+      "reader-lm"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "reader-lm"
+    ],
+    "sitePath": "/models/reader-lm/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "reflection",
+    "displayName": "reflection",
+    "ollamaFamilies": [
+      "reflection"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "thinking"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "reflection"
+    ],
+    "sitePath": "/models/reflection/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "rnj-1",
+    "displayName": "rnj-1",
+    "ollamaFamilies": [
+      "rnj-1"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "rnj-1"
+    ],
+    "sitePath": "/models/rnj-1/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "sailor2",
+    "displayName": "sailor2",
+    "ollamaFamilies": [
+      "sailor2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "sailor2"
+    ],
+    "sitePath": "/models/sailor2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "samantha-mistral",
+    "displayName": "samantha-mistral",
+    "ollamaFamilies": [
+      "samantha-mistral"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "samantha-mistral"
+    ],
+    "sitePath": "/models/samantha-mistral/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "shieldgemma",
+    "displayName": "shieldgemma",
+    "ollamaFamilies": [
+      "shieldgemma"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": true,
+    "modelSlugs": [
+      "shieldgemma"
+    ],
+    "sitePath": "/models/shieldgemma/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "smallthinker",
+    "displayName": "smallthinker",
+    "ollamaFamilies": [
+      "smallthinker"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "smallthinker"
+    ],
+    "sitePath": "/models/smallthinker/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "smollm",
+    "displayName": "smollm",
+    "ollamaFamilies": [
+      "smollm"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "smollm"
+    ],
+    "sitePath": "/models/smollm/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "smollm2",
+    "displayName": "smollm2",
+    "ollamaFamilies": [
+      "smollm2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "tools"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "smollm2"
+    ],
+    "sitePath": "/models/smollm2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "snowflake-arctic-embed",
+    "displayName": "snowflake-arctic-embed",
+    "ollamaFamilies": [
+      "snowflake-arctic-embed"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "snowflake-arctic-embed"
+    ],
+    "sitePath": "/models/snowflake-arctic-embed/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "snowflake-arctic-embed2",
+    "displayName": "snowflake-arctic-embed2",
+    "ollamaFamilies": [
+      "snowflake-arctic-embed2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "snowflake-arctic-embed2"
+    ],
+    "sitePath": "/models/snowflake-arctic-embed2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "solar",
+    "displayName": "solar",
+    "ollamaFamilies": [
+      "solar"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "solar"
+    ],
+    "sitePath": "/models/solar/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "solar-pro",
+    "displayName": "solar-pro",
+    "ollamaFamilies": [
+      "solar-pro"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "solar-pro"
+    ],
+    "sitePath": "/models/solar-pro/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "sqlcoder",
+    "displayName": "sqlcoder",
+    "ollamaFamilies": [
+      "sqlcoder"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "sqlcoder"
+    ],
+    "sitePath": "/models/sqlcoder/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "stable-beluga",
+    "displayName": "stable-beluga",
+    "ollamaFamilies": [
+      "stable-beluga"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "stable-beluga"
+    ],
+    "sitePath": "/models/stable-beluga/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "stable-code",
+    "displayName": "stable-code",
+    "ollamaFamilies": [
+      "stable-code"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "embedding"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "stable-code"
+    ],
+    "sitePath": "/models/stable-code/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "stablelm-zephyr",
+    "displayName": "stablelm-zephyr",
+    "ollamaFamilies": [
+      "stablelm-zephyr"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "stablelm-zephyr"
+    ],
+    "sitePath": "/models/stablelm-zephyr/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "stablelm2",
+    "displayName": "stablelm2",
+    "ollamaFamilies": [
+      "stablelm2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "stablelm2"
+    ],
+    "sitePath": "/models/stablelm2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "starcoder",
+    "displayName": "starcoder",
+    "ollamaFamilies": [
+      "starcoder"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "starcoder"
+    ],
+    "sitePath": "/models/starcoder/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "starcoder2",
+    "displayName": "starcoder2",
+    "ollamaFamilies": [
+      "starcoder2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "starcoder2"
+    ],
+    "sitePath": "/models/starcoder2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "starling-lm",
+    "displayName": "starling-lm",
+    "ollamaFamilies": [
+      "starling-lm"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "starling-lm"
+    ],
+    "sitePath": "/models/starling-lm/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "tinydolphin",
+    "displayName": "tinydolphin",
+    "ollamaFamilies": [
+      "tinydolphin"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "tinydolphin"
+    ],
+    "sitePath": "/models/tinydolphin/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "tinyllama",
+    "displayName": "tinyllama",
+    "ollamaFamilies": [
+      "tinyllama"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "tinyllama"
+    ],
+    "sitePath": "/models/tinyllama/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "translategemma",
+    "displayName": "translategemma",
+    "ollamaFamilies": [
+      "translategemma"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "vision"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "translategemma"
+    ],
+    "sitePath": "/models/translategemma/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "tulu3",
+    "displayName": "tulu3",
+    "ollamaFamilies": [
+      "tulu3"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "tulu3"
+    ],
+    "sitePath": "/models/tulu3/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "vicuna",
+    "displayName": "vicuna",
+    "ollamaFamilies": [
+      "vicuna"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "vicuna"
+    ],
+    "sitePath": "/models/vicuna/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "wizard-math",
+    "displayName": "wizard-math",
+    "ollamaFamilies": [
+      "wizard-math"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "wizard-math"
+    ],
+    "sitePath": "/models/wizard-math/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "wizard-vicuna",
+    "displayName": "wizard-vicuna",
+    "ollamaFamilies": [
+      "wizard-vicuna"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "wizard-vicuna"
+    ],
+    "sitePath": "/models/wizard-vicuna/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "wizard-vicuna-uncensored",
+    "displayName": "wizard-vicuna-uncensored",
+    "ollamaFamilies": [
+      "wizard-vicuna-uncensored"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "wizard-vicuna-uncensored"
+    ],
+    "sitePath": "/models/wizard-vicuna-uncensored/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "wizardcoder",
+    "displayName": "wizardcoder",
+    "ollamaFamilies": [
+      "wizardcoder"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "wizardcoder"
+    ],
+    "sitePath": "/models/wizardcoder/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "wizardlm",
+    "displayName": "wizardlm",
+    "ollamaFamilies": [
+      "wizardlm"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "wizardlm"
+    ],
+    "sitePath": "/models/wizardlm/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "wizardlm-uncensored",
+    "displayName": "wizardlm-uncensored",
+    "ollamaFamilies": [
+      "wizardlm-uncensored"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "wizardlm-uncensored"
+    ],
+    "sitePath": "/models/wizardlm-uncensored/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "wizardlm2",
+    "displayName": "wizardlm2",
+    "ollamaFamilies": [
+      "wizardlm2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "wizardlm2"
+    ],
+    "sitePath": "/models/wizardlm2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "xwinlm",
+    "displayName": "xwinlm",
+    "ollamaFamilies": [
+      "xwinlm"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "xwinlm"
+    ],
+    "sitePath": "/models/xwinlm/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "yarn-llama2",
+    "displayName": "yarn-llama2",
+    "ollamaFamilies": [
+      "yarn-llama2"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "yarn-llama2"
+    ],
+    "sitePath": "/models/yarn-llama2/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "yarn-mistral",
+    "displayName": "yarn-mistral",
+    "ollamaFamilies": [
+      "yarn-mistral"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "yarn-mistral"
+    ],
+    "sitePath": "/models/yarn-mistral/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "yi",
+    "displayName": "yi",
+    "ollamaFamilies": [
+      "yi"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "yi"
+    ],
+    "sitePath": "/models/yi/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "yi-coder",
+    "displayName": "yi-coder",
+    "ollamaFamilies": [
+      "yi-coder"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "yi-coder"
+    ],
+    "sitePath": "/models/yi-coder/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  },
+  {
+    "slug": "zephyr",
+    "displayName": "zephyr",
+    "ollamaFamilies": [
+      "zephyr"
+    ],
+    "aliases": [],
+    "capabilities": [
+      "text"
+    ],
+    "publisherVerified": false,
+    "modelSlugs": [
+      "zephyr"
+    ],
+    "sitePath": "/models/zephyr/",
+    "modelCount": 1,
+    "seoEligible": true,
+    "availability": "available"
+  }
+]

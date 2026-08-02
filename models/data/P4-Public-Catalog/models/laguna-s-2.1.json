@@ -1,0 +1,28 @@
+{
+  "canonicalSlug": "laguna-s-2.1",
+  "familySlug": "laguna-s-2.1",
+  "displayName": "laguna-s-2.1",
+  "ollamaTag": "laguna-s-2.1",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": 18,
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "laguna-s-2.1",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/laguna-s-2.1/"
+}

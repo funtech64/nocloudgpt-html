@@ -1,0 +1,19 @@
+{
+  "slug": "yarn-mistral",
+  "displayName": "yarn-mistral",
+  "ollamaFamilies": [
+    "yarn-mistral"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "yarn-mistral"
+  ],
+  "sitePath": "/models/yarn-mistral/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

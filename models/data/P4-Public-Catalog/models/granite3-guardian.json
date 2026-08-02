@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "granite3-guardian",
+  "familySlug": "granite3-guardian",
+  "displayName": "granite3-guardian",
+  "ollamaTag": "granite3-guardian",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "granite3-guardian",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/granite3-guardian/"
+}

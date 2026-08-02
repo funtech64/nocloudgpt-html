@@ -1,0 +1,26 @@
+{
+  "slug": "deepseek",
+  "displayName": "deepseek-v3",
+  "ollamaFamilies": [
+    "deepseek-v3",
+    "deepseek-v3.1"
+  ],
+  "aliases": [
+    "deepseek-v3",
+    "deepseek-v3.1"
+  ],
+  "capabilities": [
+    "text",
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "deepseek-v3",
+    "deepseek-v3.1"
+  ],
+  "sitePath": "/models/deepseek/",
+  "modelCount": 2,
+  "seoEligible": true,
+  "availability": "available"
+}

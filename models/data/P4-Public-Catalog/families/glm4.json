@@ -1,0 +1,19 @@
+{
+  "slug": "glm4",
+  "displayName": "glm4",
+  "ollamaFamilies": [
+    "glm4"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "glm4"
+  ],
+  "sitePath": "/models/glm4/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

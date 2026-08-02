@@ -1,126 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>magicoder — Model family catalog | NoCloudGPT</title>
+  <meta name="description" content="Catalog facts for magicoder: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nocloudgpt.com/models/magicoder/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>Magicoder on Ollama | Private Code Generation AI | NoCloudGPT.com</title>
-  <meta name="description" content="Run Magicoder locally with Ollama. A code generation model trained with OSS-Instruct — using open source code as seeds for novel problem synthesis. High benchmark performance on CPU-accessible hardware." />
+  <meta property="og:title" content="magicoder — Model family catalog | NoCloudGPT">
+  <meta property="og:description" content="Catalog facts for magicoder: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nocloudgpt.com/models/magicoder/">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "magicoder", "description": "Catalog facts for magicoder: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/magicoder/"}</script>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100">
 
-<h1>Magicoder: OSS-Trained Code Generation With Benchmark Performance That Fits on a Developer Laptop</h1>
+  <div class="border-b border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+      <nav class="flex flex-wrap gap-4 text-slate-400">
+        <a href="/models/" class="text-white">Models</a>
+        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+        <a href="/services.html" class="hover:text-white">Services</a>
+        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
+        <a href="/contact.html" class="hover:text-white">Contact</a>
+        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+      </nav>
+    </div>
+  </div>
+  <header class="border-b border-slate-800 bg-slate-950/90">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">magicoder</p>
+      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">magicoder family</h1>
+      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
 
-<p>Generating high-quality code requires more than a large model — it requires the right training signal. <strong>Magicoder</strong>, from the University of Illinois Urbana-Champaign, introduces a training methodology called <strong>OSS-Instruct</strong>: rather than relying on synthetic problem sets alone, it seeds code generation tasks from real open source code, producing a model that handles practical, real-world programming patterns more reliably than many larger competitors.</p>
+      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: magicoder.</p>
+    </div>
+  </header>
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section>
+      <h2 class="text-2xl font-bold">Models in this family</h2>
+      <table class="mt-6 w-full text-left text-sm">
+        <thead class="text-slate-400">
+          <tr>
+            <th class="pb-3">Model</th>
+            <th class="pb-3">Params</th>
+            <th class="pb-3">Quant</th>
+            <th class="pb-3">Capabilities</th>
+            <th class="pb-3">Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="border-t border-slate-800">
+          <td class="py-3 pr-4"><a href="/models/model/magicoder/" class="font-semibold text-cyan-300 hover:text-cyan-200">magicoder</a></td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">text</td>
+          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
 
-<p>The result is a 7B model that outperforms models twice its size on HumanEval benchmarks — and runs comfortably on a developer workstation via <code>ollama run magicoder</code>.</p>
-
----
-
-<h2>What Magicoder Actually Does</h2>
-
-<p>Magicoder is a code generation and instruction-following model optimized for practical developer tasks. Its OSS-Instruct training gives it an edge on real-world coding problems that synthetic datasets tend to miss.</p>
-
-
-<!-- Secondary artwork -->
-<div class="secondary-artwork">
-  <a href="https://commons.wikimedia.org/wiki/File%3AMagic_wand_MET_DP112632.jpg" target="_blank" rel="noopener">
-    <img src="/models/magicoder/secondary.webp" alt="Magicoder secondary visual">
-  </a>
-  <p class="secondary-caption">
-    Source: <a href="https://commons.wikimedia.org/wiki/File%3AMagic_wand_MET_DP112632.jpg">Wikimedia Commons</a>
-  </p>
-</div>
-<ul>
-  <li><strong>OSS-Instruct training methodology</strong> — trained on problems seeded from real open source repositories, improving performance on practical coding tasks beyond standard benchmarks</li>
-  <li><strong>Code generation and completion</strong> — generates complete functions, classes, and modules from natural language descriptions or partial code context</li>
-  <li><strong>Bug fixing and refactoring</strong> — identifies and corrects errors in existing code with explanation of the fix</li>
-  <li><strong>Multi-language support</strong> — strong performance in Python, JavaScript, Java, C++, and other mainstream languages</li>
-  <li><strong>Instruction-following for developer Q&A</strong> — answers technical questions, explains code behavior, and provides implementation guidance conversationally</li>
-  <li><strong>HumanEval competitive at 7B</strong> — benchmark scores competitive with models in the 13B–34B range, reducing hardware requirements without sacrificing output quality</li>
-</ul>
-
----
-
-<h2>Who Should Run Magicoder On-Premise</h2>
-
-<ul>
-  <li><strong>Individual developers on laptop hardware</strong> — engineers who want high-quality local code AI without investing in a GPU server or cloud subscription</li>
-  <li><strong>Startups and small engineering teams</strong> — organizations that need team-wide code assistance on a tight infrastructure budget</li>
-  <li><strong>Open source contributors</strong> — developers who appreciate a model trained on open source code and aligned with open source values</li>
-  <li><strong>Teams evaluating code AI quality</strong> — engineering leads who want to benchmark a smaller model before committing to larger infrastructure for a 13B or 34B deployment</li>
-  <li><strong>Education and bootcamp environments</strong> — instructors and students who need reliable local code generation without cloud dependencies or usage limits</li>
-</ul>
-
----
-
-<h2>Deployment Tiers and Compute Requirements</h2>
-
-<h3>Tier 1 — Laptop and Solo Developer: Magicoder 7B Q4</h3>
-<ul>
-  <li><strong>RAM required:</strong> 4–6GB</li>
-  <li><strong>Hardware:</strong> Developer laptop, Mac with 8GB unified memory, AWS Lightsail 8GB</li>
-  <li><strong>AWS cost:</strong> Lightsail 8GB ~$40/month</li>
-  <li><strong>Speed:</strong> 8–18 tokens/sec on CPU</li>
-  <li><strong>Best for:</strong> Individual developers, offline coding assistance, lightweight team deployments</li>
-</ul>
-<p><strong>Run it:</strong> <code>ollama run magicoder</code></p>
-
-<h3>Tier 2 — Team Server with GPU Acceleration: Magicoder 7B Q4</h3>
-<ul>
-  <li><strong>VRAM required:</strong> 8GB</li>
-  <li><strong>Hardware:</strong> AWS g4dn.xlarge (T4 16GB), RTX 3070, or equivalent workstation GPU</li>
-  <li><strong>AWS cost:</strong> ~$0.526/hour on-demand; ~$0.16/hour spot</li>
-  <li><strong>Speed:</strong> 40–65 tokens/sec</li>
-  <li><strong>Best for:</strong> Teams of 3–10 developers sharing a central code AI server, IDE plugin backends, CI/CD code review pipelines</li>
-</ul>
-<p><strong>Run it:</strong> <code>ollama run magicoder</code></p>
-
-<h3>Tier 3 — Higher Precision Team Deployment: Magicoder 7B Q8</h3>
-<ul>
-  <li><strong>VRAM required:</strong> 10–12GB</li>
-  <li><strong>Hardware:</strong> AWS g4dn.xlarge (T4 16GB), RTX 3080, or RTX 4070</li>
-  <li><strong>AWS cost:</strong> ~$0.526/hour on-demand</li>
-  <li><strong>Speed:</strong> 30–55 tokens/sec</li>
-  <li><strong>Best for:</strong> Teams prioritizing output quality over raw speed; code review tools where precision matters more than throughput</li>
-</ul>
-<p><strong>Run it:</strong> <code>ollama run magicoder:7b-code-q8_0</code></p>
-
----
-
-<h2>The Real Cost of Paying for Code AI That a 7B Model Matches</h2>
-
-<p>Magicoder's OSS-Instruct training produces benchmark performance that competes with models requiring significantly more infrastructure. That has a direct budget implication:</p>
-
-<ul>
-  <li>GitHub Copilot Individual: $10/month per developer. At 10 developers: $1,200/year — with all code routed through GitHub's servers</li>
-  <li>Magicoder 7B on AWS Lightsail 8GB: ~$480/year for the entire team, with full data control</li>
-  <li>On a developer's existing laptop: $0 infrastructure cost beyond the machine already in use</li>
-  <li>Every function, internal API reference, and proprietary algorithm submitted to Copilot leaves your network. Magicoder on local hardware does not</li>
-</ul>
-
-<p>When a 7B model matches larger competitors on the benchmarks that matter for day-to-day coding tasks, the case for paying more — and surrendering data control — weakens significantly.</p>
-
----
-
-<h2>Getting Started with Magicoder on Ollama</h2>
-
-<pre><code># Standard developer deployment
-ollama run magicoder
-
-# Higher precision for quality-critical workflows
-ollama run magicoder:7b-code-q8_0
-</code></pre>
-
-<p>Connect your IDE's Ollama-compatible extension to <code>http://localhost:11434</code> and completions run entirely on local hardware. No account required. No usage caps. No code leaving your environment.</p>
-
----
-
-<h2>Start Your 90-Day Private Code AI Pilot</h2>
-
-<p>NoCloudGPT.com provides deployment guides, hardware recommendations, and on-premise setup support for teams evaluating Magicoder and the broader Ollama model library.</p>
-
-<p><strong>Contact us to scope your pilot — before your next sprint ships proprietary code through a service your legal team hasn't reviewed.</strong></p>
-
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
+    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+  </footer>
 </body>
 </html>

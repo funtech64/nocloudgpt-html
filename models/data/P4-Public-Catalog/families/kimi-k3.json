@@ -1,0 +1,22 @@
+{
+  "slug": "kimi-k3",
+  "displayName": "kimi-k3",
+  "ollamaFamilies": [
+    "kimi-k3"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "cloud",
+    "thinking",
+    "tools",
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "kimi-k3"
+  ],
+  "sitePath": "/models/kimi-k3/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

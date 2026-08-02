@@ -1,0 +1,19 @@
+{
+  "slug": "llama3.2-vision",
+  "displayName": "llama3.2-vision",
+  "ollamaFamilies": [
+    "llama3.2-vision"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "llama3.2-vision"
+  ],
+  "sitePath": "/models/llama3.2-vision/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

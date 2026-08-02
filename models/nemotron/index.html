@@ -1,367 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>Run Nemotron Privately | NVIDIA's Open LLM via Ollama | NoCloudGPT</title>
-    <meta name="description" content="Deploy NVIDIA's Nemotron models privately using Ollama. Enterprise-grade AI without NVIDIA cloud telemetry. Self-hosted on AWS Lightsail or your own GPU infrastructure.">
-    <meta name="keywords" content="Nemotron private deployment, NVIDIA Nemotron Ollama, Nemotron 4 self-hosted, enterprise LLM privacy, NVIDIA open model local deployment">
-    <link rel="canonical" href="https://nocloudgpt.com/models/nemotron/">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0a; color: #e8e8e8; line-height: 1.7; }
-        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 60px 20px; text-align: center; border-bottom: 2px solid #76b900; }
-        .badge { display: inline-block; background: #76b900; color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase; }
-        h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; }
-        h1 span { color: #76b900; }
-        .subtitle { font-size: 1.15rem; color: #a0b4c8; max-width: 680px; margin: 0 auto 30px; }
-        .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .btn-primary { background: #76b900; color: #000; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; }
-        .btn-secondary { background: transparent; color: #76b900; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; border: 2px solid #76b900; }
-        nav { background: #111; padding: 12px 20px; text-align: center; border-bottom: 1px solid #222; }
-        nav a { color: #76b900; text-decoration: none; margin: 0 16px; font-size: 0.9rem; }
-        .container { max-width: 960px; margin: 0 auto; padding: 60px 20px; }
-        h2 { font-size: 1.9rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; }
-        h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; color: #76b900; }
-        p { margin-bottom: 18px; color: #c8d4e0; }
-        .highlight-box { background: #111827; border-left: 4px solid #76b900; padding: 24px 28px; border-radius: 0 8px 8px 0; margin: 32px 0; }
-        .highlight-box p { margin-bottom: 0; }
-        .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 32px 0; }
-        .model-card { background: #111; border: 1px solid #222; border-radius: 10px; padding: 24px; transition: border-color 0.2s; }
-        .model-card:hover { border-color: #76b900; }
-        .model-card h3 { margin-bottom: 8px; }
-        .model-card .size-badge { background: #1a2a0a; color: #76b900; padding: 3px 10px; border-radius: 12px; font-size: 0.78rem; font-weight: 600; display: inline-block; margin-bottom: 12px; }
-        .model-card p { font-size: 0.9rem; margin-bottom: 0; }
-        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 32px 0; }
-        .use-case-card { background: #0d1117; border: 1px solid #1e2d1e; border-radius: 10px; padding: 22px; }
-        .use-case-card h3 { color: #a8d878; margin-bottom: 10px; }
-        .use-case-card p { font-size: 0.88rem; margin-bottom: 0; }
-        .hardware-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
-        .hardware-table th { background: #111; color: #76b900; padding: 12px 16px; text-align: left; border-bottom: 2px solid #76b900; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .hardware-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; }
-        .hardware-table tr:hover td { background: #111; }
-        .code-block { background: #0d1117; border: 1px solid #1e2d3e; border-radius: 8px; padding: 20px 24px; margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.88rem; color: #79c0ff; overflow-x: auto; }
-        .code-block .comment { color: #6e7681; }
-        .warning-box { background: #1a1200; border: 1px solid #5a4200; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
-        .warning-box h3 { color: #f0a500; margin-bottom: 8px; }
-        .warning-box p { font-size: 0.9rem; margin-bottom: 0; }
-        .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
-        .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
-        .tag { background: #1a2a0a; color: #76b900; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
-        footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
-        footer a { color: #76b900; text-decoration: none; margin: 0 12px; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>nemotron — Model family catalog | NoCloudGPT</title>
+  <meta name="description" content="Catalog facts for nemotron: capabilities (tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nocloudgpt.com/models/nemotron/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="nemotron — Model family catalog | NoCloudGPT">
+  <meta property="og:description" content="Catalog facts for nemotron: capabilities (tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nocloudgpt.com/models/nemotron/">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "nemotron", "description": "Catalog facts for nemotron: capabilities (tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/nemotron/"}</script>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100">
 
-<header>
-    <div class="badge">NVIDIA Open Weights</div>
-    <h1>Run <span>Nemotron</span> Without NVIDIA's Cloud</h1>
-<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/nemotron -->
-      <a href="https://ollama.com/library/nemotron" target="_blank" rel="noopener noreferrer">
-        <img src="/models/nemotron/hero.webp" alt="nemotron model family hero" width="320" style="width:100%;max-width:320px;border-radius:12px;display:block;margin:24px auto 0;" />
-      </a>
-      <p style="margin-top:8px;font-size:0.75rem;color:#888;text-align:center;">Source: <a href="https://ollama.com/library/nemotron" target="_blank" rel="noopener noreferrer" style="color:#76b900;">Ollama</a></p>
-  <p class="subtitle">NVIDIA's enterprise-grade LLM family, deployed privately on your infrastructure via Ollama. No telemetry. No NGC account required. No data leaving your environment.</p>
-    <div class="cta-group">
-        <a href="/models/quote.html" class="btn-primary">Get Deployment Quote</a>
-        <a href="/models/deploy/" class="btn-secondary">Deployment Guide</a>
+  <div class="border-b border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+      <nav class="flex flex-wrap gap-4 text-slate-400">
+        <a href="/models/" class="text-white">Models</a>
+        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+        <a href="/services.html" class="hover:text-white">Services</a>
+        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
+        <a href="/contact.html" class="hover:text-white">Contact</a>
+        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+      </nav>
     </div>
-</header>
+  </div>
+  <header class="border-b border-slate-800 bg-slate-950/90">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">nemotron</p>
+      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">nemotron family</h1>
+      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
 
-<nav>
-    <a href="/">Home</a>
-    <a href="/models/nemotron/">Nemotron</a>
-    <a href="/models/nemotron4/">Nemotron-4</a>
-    <a href="/models/llama/">Llama</a>
-    <a href="/models/deepseek/">DeepSeek</a>
-    <a href="/models/granite/">Granite</a>
-</nav>
-
-<div class="container">
-
-    <h2>What Is Nemotron?</h2>
-
-    <p>Nemotron is NVIDIA's family of large language models, built on top of Llama base weights and fine-tuned using NVIDIA's proprietary alignment and synthetic data pipelines. The models are released under open licenses and are fully runnable via Ollama, making them accessible for private enterprise deployments without requiring NVIDIA cloud access, an NGC account, or any NVIDIA-managed inference endpoint.</p>
-
-    <p>The flagship model, Nemotron-4 340B, was trained on 9 trillion tokens and achieves benchmark scores that rival or exceed GPT-4 on a range of tasks including reasoning, code generation, and mathematical problem solving. Smaller variants — including the Nemotron Mini 4B — are optimized for edge deployment and resource-constrained environments.</p>
-
-    <p>For organizations that already operate NVIDIA GPU infrastructure — whether in a private data center, a co-location facility, or on GPU-equipped cloud instances — Nemotron offers a direct path to GPT-4-class performance without touching any cloud AI service or exposing sensitive queries to external APIs.</p>
-
-    <div class="highlight-box">
-        <p><strong>Privacy context:</strong> NVIDIA offers hosted inference through its NIM (NVIDIA Inference Microservices) platform. While NIM is technically designed for on-premise deployment, organizations using NVIDIA's cloud API endpoints are subject to NVIDIA's data handling policies. Running Nemotron locally via Ollama eliminates this surface entirely — inference happens on hardware you control, with no outbound connections to NVIDIA services.</p>
+      <p class="mt-4 text-slate-400">Capabilities: tools. Ollama families: nemotron.</p>
     </div>
-
-    <hr class="section-divider">
-
-    <h2>The Nemotron Model Family</h2>
-
-    <div class="model-grid">
-        <div class="model-card">
-            <h3>Nemotron Mini 4B</h3>
-            <span class="size-badge">4B Parameters</span>
-            <p>Compact model optimized for instruction following and on-device deployment. Fits in 4GB VRAM. Suitable for edge servers, Raspberry Pi clusters, and lightweight enterprise chatbots where GPU memory is limited.</p>
-        </div>
-        <div class="model-card">
-            <h3>Nemotron 12B</h3>
-            <span class="size-badge">12B Parameters</span>
-            <p>Mid-range variant balancing capability and resource efficiency. Strong performance on reasoning tasks with 8-16GB VRAM requirements. The practical choice for most enterprise inference servers running on Lightsail or small on-premise GPU nodes.</p>
-        </div>
-        <div class="model-card">
-            <h3>Nemotron-4 340B</h3>
-            <span class="size-badge">340B Parameters</span>
-            <p>NVIDIA's flagship open model. GPT-4 competitive on reasoning, code, and math. Requires multi-GPU deployment — typically 4x A100 80GB or equivalent. The reference model for organizations needing maximum capability with full data sovereignty.</p>
-        </div>
-        <div class="model-card">
-            <h3>Llama-3.1-Nemotron-70B</h3>
-            <span class="size-badge">70B Parameters</span>
-            <p>NVIDIA's alignment fine-tune of Meta's Llama 3.1 70B. Particularly strong on helpfulness benchmarks. Runs on a single A100 80GB or two A6000 48GB GPUs. The most balanced option for enterprise deployments needing high capability without 340B-scale hardware.</p>
-        </div>
-    </div>
-
-    <hr class="section-divider">
-
-    <h2>Who Nemotron Is For</h2>
-
-    <div class="use-case-grid">
-        <div class="use-case-card">
-            <h3>👤 Personal Use</h3>
-            <p>Nemotron targets enterprise GPU infrastructure, but the Nemotron Mini 4B is genuinely accessible — it fits in 4 GB and runs a capable private assistant on a single consumer GPU. For an enthusiast already running NVIDIA hardware, it is a clean, telemetry-free local model. The larger variants are out of reach for typical personal hardware.</p>
-        </div>
-        <div class="use-case-card">
-            <h3>🏢 Business &amp; Team Use</h3>
-            <p>Organizations already operating NVIDIA GPUs get a natural upgrade path: Llama-3.1-Nemotron-70B on a single A100 covers most enterprise assistant, summarization, and analysis work, and the NVIDIA Open Model License permits commercial use. For regulated teams, running it via Ollama removes the NGC account and NIM telemetry surface entirely.</p>
-        </div>
-        <div class="use-case-card">
-            <h3>⚙️ Developer &amp; Technical Use</h3>
-            <p>Nemotron's NVIDIA alignment pipeline produces strong code generation and reliable multi-step instruction following, which suits internal developer tools and structured-output automation. Ollama's single-binary deployment avoids NIM's CUDA-version and container complexity, so teams without dedicated MLOps can stand up a private endpoint quickly and keep proprietary code in-house.</p>
-        </div>
-        <div class="use-case-card">
-            <h3>🔬 Data Science &amp; Research Use</h3>
-            <p>Over 98% of Nemotron-4's alignment data was synthetically generated, and NVIDIA open-sourced both the pipeline and a companion Reward model. For research teams, that makes Nemotron useful not just for analysis but as a tool for generating and scoring synthetic training data to fine-tune smaller domain models — entirely on-premise.</p>
-        </div>
-    </div>
-
-    <hr class="section-divider">
-
-    <h2>Why Self-Host Nemotron Instead of Using NVIDIA NIM?</h2>
-
-    <p>NVIDIA's NIM platform is positioned as an on-premise solution, and in many configurations it does run locally. However, organizations evaluating Nemotron for sensitive workloads encounter several concerns that make a pure Ollama-based deployment preferable:</p>
-
-    <h3>Licensing and Telemetry Uncertainty</h3>
-    <p>NIM containers include telemetry components that report usage metrics back to NVIDIA. While NVIDIA states this telemetry does not include inference content, organizations subject to strict data governance requirements — healthcare, defense contracting, financial services — may find even usage telemetry unacceptable. Ollama runs with no such components.</p>
-
-    <h3>NGC Account Dependency</h3>
-    <p>NIM deployment requires an active NVIDIA GPU Cloud account, which creates an account-level dependency on NVIDIA infrastructure. If your organization needs to operate in an air-gapped environment or has policies against external service accounts for production AI systems, NIM introduces a compliance friction point. Ollama requires no accounts, no API keys, and no external service dependencies.</p>
-
-    <h3>Container Complexity vs. Operational Simplicity</h3>
-    <p>NIM uses complex containerization with specific NVIDIA driver and CUDA version requirements. Ollama abstracts this entirely, handling model quantization, memory management, and inference serving with a single binary and a one-line pull command. For teams without dedicated MLOps resources, Ollama-based Nemotron deployment is dramatically simpler to maintain.</p>
-
-    <div class="warning-box">
-        <h3>Important: Model Weights Licensing</h3>
-        <p>Nemotron models are released under NVIDIA's Open Model License, which permits commercial use but includes restrictions on redistribution and derivative model training. Review the license terms before production deployment. The license does not restrict private inference use.</p>
-    </div>
-
-    <hr class="section-divider">
-
-    <h2>Hardware Requirements</h2>
-
-    <table class="hardware-table">
-        <thead>
-            <tr>
-                <th>Model</th>
-                <th>VRAM Required</th>
-                <th>Recommended Hardware</th>
-                <th>Throughput</th>
-            </tr>
+  </header>
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section>
+      <h2 class="text-2xl font-bold">Models in this family</h2>
+      <table class="mt-6 w-full text-left text-sm">
+        <thead class="text-slate-400">
+          <tr>
+            <th class="pb-3">Model</th>
+            <th class="pb-3">Params</th>
+            <th class="pb-3">Quant</th>
+            <th class="pb-3">Capabilities</th>
+            <th class="pb-3">Availability</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Nemotron Mini 4B</td>
-                <td>4GB</td>
-                <td>AWS Lightsail 4GB / RTX 3060</td>
-                <td>~45 tokens/sec</td>
-            </tr>
-            <tr>
-                <td>Nemotron 12B (Q4)</td>
-                <td>8GB</td>
-                <td>AWS Lightsail 8GB / RTX 3080</td>
-                <td>~22 tokens/sec</td>
-            </tr>
-            <tr>
-                <td>Nemotron-70B (Q4)</td>
-                <td>40GB</td>
-                <td>A100 40GB / 2x RTX 3090</td>
-                <td>~12 tokens/sec</td>
-            </tr>
-            <tr>
-                <td>Nemotron-4 340B (Q4)</td>
-                <td>180GB+</td>
-                <td>4x A100 80GB / 8x H100</td>
-                <td>~4 tokens/sec</td>
-            </tr>
+        <tr class="border-t border-slate-800">
+          <td class="py-3 pr-4"><a href="/models/model/nemotron/" class="font-semibold text-cyan-300 hover:text-cyan-200">nemotron</a></td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">tools</td>
+          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
+        </tr>
         </tbody>
-    </table>
+      </table>
+    </section>
+  </main>
 
-    <hr class="section-divider">
-
-    <h2>Deploying Nemotron via Ollama</h2>
-
-    <div class="code-block">
-        <span class="comment"># Pull Nemotron Mini (4B) — runs on Lightsail 4GB</span><br>
-        ollama pull nemotron-mini<br><br>
-        <span class="comment"># Pull Nemotron 12B — runs on Lightsail 8GB</span><br>
-        ollama pull nemotron<br><br>
-        <span class="comment"># Pull Llama-3.1-Nemotron-70B — requires GPU instance</span><br>
-        ollama pull llama3.1-nemotron-70b<br><br>
-        <span class="comment"># Serve via OpenWebUI (after Ollama is running)</span><br>
-        docker run -d -p 3000:8080 \<br>
-        &nbsp;&nbsp;-e OLLAMA_BASE_URL=http://localhost:11434 \<br>
-        &nbsp;&nbsp;ghcr.io/open-webui/open-webui:main
-    </div>
-
-    <hr class="section-divider">
-
-    <h2>Enterprise Use Cases</h2>
-
-    <div class="use-case-grid">
-        <div class="use-case-card">
-            <h3>Engineering Teams</h3>
-            <p>Code review, architecture documentation, and technical specification drafting using a model that never sends your proprietary codebase to an external service.</p>
-        </div>
-        <div class="use-case-card">
-            <h3>Defense and Government</h3>
-            <p>Air-gapped deployment on existing NVIDIA GPU infrastructure. Nemotron's NVIDIA provenance provides institutional familiarity for procurement teams already operating NVIDIA hardware.</p>
-        </div>
-        <div class="use-case-card">
-            <h3>Financial Services</h3>
-            <p>Risk analysis, regulatory document summarization, and internal research synthesis on sensitive financial data that cannot leave the organization's network boundary.</p>
-        </div>
-        <div class="use-case-card">
-            <h3>Healthcare and Life Sciences</h3>
-            <p>Clinical note processing, research literature review, and protocol drafting under HIPAA constraints. On-premise Nemotron eliminates the BAA negotiation process entirely.</p>
-        </div>
-        <div class="use-case-card">
-            <h3>Legal Departments</h3>
-            <p>Contract analysis and due diligence on M&A documents using a model running inside the firm's existing IT perimeter, with no outside counsel data exposure concerns.</p>
-        </div>
-        <div class="use-case-card">
-            <h3>Manufacturing and Industrial</h3>
-            <p>Process documentation, quality control analysis, and technical training material generation on edge servers co-located with production facilities.</p>
-        </div>
-    </div>
-
-    <hr class="section-divider">
-
-    <h2>Nemotron vs. Other Private LLM Options</h2>
-
-    <div class="tag-list">
-        <span class="tag">vs. GPT-4 API</span>
-        <span class="tag">vs. Claude API</span>
-        <span class="tag">vs. Llama 3.1 70B</span>
-        <span class="tag">vs. Mixtral 8x22B</span>
-    </div>
-
-    <p>Nemotron-4 340B outperforms Llama 3.1 70B on most reasoning benchmarks while sharing a similar deployment profile for the 70B variant. For organizations already invested in NVIDIA GPU infrastructure, Nemotron provides a natural upgrade path from smaller models without changing the underlying hardware stack.</p>
-
-    <p>Against hosted APIs like GPT-4, the comparison is not primarily about benchmark scores — it is about data control. A Nemotron 70B deployment running on a single A100 in your data center processes queries that never leave your environment, cannot be logged by a third party, and are not subject to any provider's terms of service changes. For regulated industries, this is not a nice-to-have. It is often a compliance requirement.</p>
-
-    <p>Against Mixtral 8x22B, Nemotron's NVIDIA-optimized training pipeline produces stronger results on code and mathematics, while Mixtral maintains advantages in multilingual tasks and raw throughput on equivalent hardware due to the Mixture-of-Experts architecture.</p>
-
-    <hr class="section-divider">
-
-    <h2>Licensing Information</h2>
-
-    <p>Nemotron-4 and the Llama-Nemotron alignment fine-tunes are released under the NVIDIA Open Model License, which NVIDIA confirms is commercially usable, permits derivative models, and does not claim ownership of generated outputs. The one nuance: models built on Meta's Llama (such as Llama-3.1-Nemotron-70B) are additionally governed by the Llama Community License and carry the "Built with Llama" attribution requirement. Review the applicable terms before commercial deployment.</p>
-
-    <table class="hardware-table">
-        <thead>
-            <tr><th>Model</th><th>License</th><th>Commercial use</th><th>Model card</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>Nemotron-4 340B Instruct</td><td>NVIDIA Open Model License</td><td>Permitted</td><td><a href="https://huggingface.co/nvidia/Nemotron-4-340B-Instruct" target="_blank" rel="noopener" style="color:#76b900;">nvidia/Nemotron-4-340B-Instruct →</a></td></tr>
-            <tr><td>Llama-3.1-Nemotron-70B Instruct</td><td>NVIDIA Open Model License + Llama 3.1 Community License</td><td>Permitted, attribution required</td><td><a href="https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Instruct" target="_blank" rel="noopener" style="color:#76b900;">nvidia/Llama-3.1-Nemotron-70B-Instruct →</a></td></tr>
-            <tr><td>Nemotron Mini 4B Instruct</td><td>NVIDIA Open Model License</td><td>Permitted</td><td><a href="https://huggingface.co/nvidia/Nemotron-Mini-4B-Instruct" target="_blank" rel="noopener" style="color:#76b900;">nvidia/Nemotron-Mini-4B-Instruct →</a></td></tr>
-        </tbody>
-    </table>
-
-    <p style="font-size:0.85rem; color:#6e7681;">The NVIDIA Open Model License permits commercial use; Llama-based variants additionally require compliance with the Llama Community License and "Built with Llama" attribution. License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
-
-    <hr class="section-divider">
-
-    <h2>Available Model Sizes</h2>
-
-    <p>The Nemotron family spans edge-friendly to multi-GPU flagship sizes. NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins. NoCloudGPT confirms hardware requirements and selects the right quantization before your pilot begins.</p>
-
-    <table class="hardware-table">
-        <thead>
-            <tr><th>Model</th><th>Deployment tier</th><th>Best for</th><th></th></tr>
-        </thead>
-        <tbody>
-            <tr><td>Nemotron Mini 4B</td><td>Standard AI — 4 GB</td><td>Edge servers, lightweight private assistants</td><td><a href="/models/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
-            <tr><td>Nemotron 12B (Q4)</td><td>Standard AI — 8 GB</td><td>Most enterprise inference servers</td><td><a href="/models/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
-            <tr><td>Llama-3.1-Nemotron-70B (Q4)</td><td>Heavy AI — single A100 / 2× A6000</td><td>Balanced high-capability enterprise deployment</td><td><a href="/models/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
-            <tr><td>Nemotron-4 340B (Q4)</td><td>Enterprise AI — 4× A100 80GB+</td><td>Maximum capability with full data sovereignty</td><td><a href="/models/quote.html" style="color:#76b900;">Get quote →</a></td></tr>
-        </tbody>
-    </table>
-    <!-- INTERNAL: Verify Link each row to individual model-size pages when created before publishing. -->
-
-    <hr class="section-divider">
-
-    <h2>Deployment Options We Offer</h2>
-
-    <p>NoCloudGPT provides managed deployment of Nemotron models across three infrastructure tiers:</p>
-
-    <h3>Lightsail Managed (Nemotron Mini / 12B)</h3>
-    <p>Fully configured AWS Lightsail instances with Ollama, Nemotron, and OpenWebUI pre-installed. Suitable for teams of 5-50 users. Monthly flat-rate pricing. No GPU required for 4B and quantized 12B variants.</p>
-
-    <h3>GPU Instance Deployment (Nemotron 70B)</h3>
-    <p>Single A100 or equivalent deployment on AWS, Lambda Labs, or CoreWeave. Full private networking configuration, OpenWebUI with authentication, and optional integration with your existing SSO provider.</p>
-
-    <h3>On-Premise Installation (Nemotron 340B)</h3>
-    <p>We travel to your data center or configure remote deployment on your existing NVIDIA infrastructure. Includes Ollama cluster configuration, load balancing, and OpenWebUI enterprise setup with LDAP/Active Directory integration.</p>
-
-    <a href="/models/quote.html" class="btn-primary" style="display:inline-block; margin-top: 16px;">Request Deployment Quote</a>
-
-</div>
-
-<footer>
-    <p>
-        <a href="/">NoCloudGPT Home</a>
-        <a href="/models/nemotron/">Nemotron</a>
-        <a href="/models/nemotron4/">Nemotron-4 340B</a>
-        <a href="/models/granite/">Granite</a>
-        <a href="/models/olmo/">OLMo</a>
-        <a href="/models/glm/">GLM</a>
-        <a href="/models/deploy/">Deployment Guide</a>
-        <a href="/models/quote.html">Get Quote</a>
-    </p>
-    <p style="margin-top: 16px;">© 2025 NoCloudGPT. Private AI deployment specialists. Not affiliated with NVIDIA Corporation.</p>
-</footer>
-
-  <!-- ============================================================
-       ARTWORK AND SOURCE REFERENCES
-  ============================================================ -->
-  <section style="border-top:1px solid #1e293b; background:#0f172a; padding:2rem 1.5rem; margin-top:3rem;">
-    <div style="max-width:56rem; margin:0 auto; font-size:0.75rem; color:#64748b;">
-      <p style="font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Artwork and source references</p>
-      <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
-        <div>
-          <p style="font-weight:600; color:#94a3b8;">Hero image</p>
-          
-        </div>
-        <div>
-          <p style="font-weight:600; color:#94a3b8;">Developer reference</p>
-          <p style="margin-top:0.25rem;">Nemotron is developed by <a href="https://developer.nvidia.com/nemotron" target="_blank" rel="noopener" style="color:#67e8f9;">NVIDIA</a>. NoCloudGPT is an independent deployment service not affiliated with NVIDIA.</p>
-        </div>
-        <div>
-          <p style="font-weight:600; color:#94a3b8;">Model catalog</p>
-          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/nemotron" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: nemotron</a> for current tags and sizes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
+    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+  </footer>
 </body>
 </html>

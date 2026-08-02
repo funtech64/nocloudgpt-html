@@ -1,0 +1,28 @@
+{
+  "canonicalSlug": "command-r7b",
+  "familySlug": "command-r7b",
+  "displayName": "command-r7b",
+  "ollamaTag": "command-r7b",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "embedding",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "command-r7b",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/command-r7b/"
+}

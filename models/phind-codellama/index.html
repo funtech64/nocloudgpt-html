@@ -1,82 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>phind-codellama — Model family catalog | NoCloudGPT</title>
+  <meta name="description" content="Catalog facts for phind-codellama: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nocloudgpt.com/models/phind-codellama/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>Phind-CodeLlama: Private Self-Hosted Code Model for Developer Productivity | NoCloudGPT</title>
-  <meta name="description" content="Run Phind-CodeLlama on your own hardware. A Code Llama fine-tune optimized for real developer Q&A and multi-step problem solving. Deploy the 34B variant privately — no API costs, no data exposure." />
+  <meta property="og:title" content="phind-codellama — Model family catalog | NoCloudGPT">
+  <meta property="og:description" content="Catalog facts for phind-codellama: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nocloudgpt.com/models/phind-codellama/">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "phind-codellama", "description": "Catalog facts for phind-codellama: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/phind-codellama/"}</script>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100">
 
-<article>
+  <div class="border-b border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+      <nav class="flex flex-wrap gap-4 text-slate-400">
+        <a href="/models/" class="text-white">Models</a>
+        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+        <a href="/services.html" class="hover:text-white">Services</a>
+        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
+        <a href="/contact.html" class="hover:text-white">Contact</a>
+        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+      </nav>
+    </div>
+  </div>
+  <header class="border-b border-slate-800 bg-slate-950/90">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">phind-codellama</p>
+      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">phind-codellama family</h1>
+      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
 
-  <h1>Phind-CodeLlama: The Code Model Trained on How Developers Actually Ask Questions</h1>
-<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/phind-codellama -->
-  <a href="https://ollama.com/library/phind-codellama" target="_blank" rel="noopener noreferrer" style="display:inline-block;">
-    <img src="/models/phind-codellama/hero.webp" alt="phind-codellama model family hero" width="320" style="max-width:320px;border-radius:12px;display:block;margin:16px 0;" />
-  </a>
-  <p style="font-size:0.75rem;color:#888;margin-bottom:16px;">Source: <a href="https://ollama.com/library/phind-codellama" target="_blank" rel="noopener noreferrer">Ollama</a></p>
-<p>Most code models are trained to complete code. Phind-CodeLlama was fine-tuned to answer the way a senior engineer would — with context, reasoning, and explanation built into every response. Built on top of Code Llama 34B and fine-tuned by Phind on a proprietary dataset of real developer questions and high-quality answers, this model closes the gap between raw code generation and the kind of conversational technical assistance that actually accelerates engineering work.</p>
+      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: phind-codellama.</p>
+    </div>
+  </header>
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section>
+      <h2 class="text-2xl font-bold">Models in this family</h2>
+      <table class="mt-6 w-full text-left text-sm">
+        <thead class="text-slate-400">
+          <tr>
+            <th class="pb-3">Model</th>
+            <th class="pb-3">Params</th>
+            <th class="pb-3">Quant</th>
+            <th class="pb-3">Capabilities</th>
+            <th class="pb-3">Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="border-t border-slate-800">
+          <td class="py-3 pr-4"><a href="/models/model/phind-codellama/" class="font-semibold text-cyan-300 hover:text-cyan-200">phind-codellama</a></td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">text</td>
+          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
 
-  <p>Where a standard code model returns a function, Phind-CodeLlama returns the function, explains why it was structured that way, flags edge cases worth considering, and suggests follow-up steps. Deploy it with <code>ollama run phind-codellama</code> and your team gets a private, on-premise coding assistant that reasons through problems rather than pattern-matching to the nearest training example.</p>
-
-  <h2>What Phind-CodeLlama Does Well</h2>
-
-  <ul>
-    <li><strong>Conversational code problem solving:</strong> Handles multi-turn conversations about debugging, architecture decisions, and implementation tradeoffs — not just single-shot completions</li>
-    <li><strong>Detailed technical explanation:</strong> Produces thorough responses that explain the reasoning behind code, not just the code itself — useful for onboarding, documentation, and code review</li>
-    <li><strong>Debugging and root cause analysis:</strong> Given an error message and surrounding code, reasons through likely causes and proposes specific fixes with explanation</li>
-    <li><strong>Multi-language support:</strong> Inherits Code Llama's broad language coverage including Python, JavaScript, TypeScript, C++, Java, Go, Rust, and SQL</li>
-    <li><strong>Long-context reasoning:</strong> 16K context window supports loading full files, stack traces, test suites, or multi-module snippets into a single prompt</li>
-    <li><strong>Architecture and design guidance:</strong> Discusses system design choices, API structure, database schema decisions, and refactoring strategies at a level of depth that smaller models cannot sustain</li>
-  </ul>
-
-  <p>On HumanEval benchmarks at the time of its release, Phind-CodeLlama 34B outperformed GPT-4 on code generation tasks — a result driven by the quality of its fine-tuning dataset rather than raw parameter count. That fine-tuning emphasis on developer Q&A quality is what differentiates it from base Code Llama deployments of the same size.</p>
-
-  <h2>Who Should Deploy Phind-CodeLlama</h2>
-
-  <ul>
-    <li><strong>Engineering teams that ask their AI assistant questions</strong> rather than just triggering inline completions — Phind-CodeLlama is optimized for the chat-style interaction pattern</li>
-    <li><strong>Senior developers and architects</strong> who need a model capable of discussing tradeoffs, reviewing design decisions, and explaining complex code at depth</li>
-    <li><strong>Teams onboarding new engineers</strong> where a knowledgeable, always-available assistant that explains its reasoning accelerates ramp-up time</li>
-    <li><strong>Organizations running internal developer portals</strong> or knowledge bases who want a private AI layer that answers technical questions without routing queries to external services</li>
-    <li><strong>Security and compliance teams</strong> that need code review assistance but cannot send proprietary source code to a cloud API under their data handling policies</li>
-  </ul>
-
-  <h2>Deployment Tiers and Compute Requirements</h2>
-
-  <h3>High-Quality Single User — 34B Q4 (16–20GB RAM, CPU or GPU)</h3>
-  <p>Phind-CodeLlama is primarily offered as a 34B model, which reflects the minimum scale needed to sustain the reasoning depth its fine-tuning is designed to deliver. At Q4 quantization on CPU with 20GB available RAM, response speed is usable for non-interactive tasks and batch question answering. For interactive use, a GPU is strongly recommended. Pull with <code>ollama run phind-codellama:34b</code>.</p>
-
-  <h3>Interactive Single User — 34B Q4 (GPU, 16GB VRAM)</h3>
-  <p>On a workstation or cloud instance with a 16GB VRAM GPU — such as an NVIDIA RTX 4080, RTX 3090, or AWS <code>g4dn.xlarge</code> T4 — the 34B Q4 model runs at 15–25 tokens per second, which is fast enough for fluid conversational interaction. This is the recommended configuration for a senior developer or architect running Phind-CodeLlama as a personal private assistant. The T4 instance on AWS runs approximately $200–280 USD per month on a reserved basis.</p>
-
-  <h3>Shared Team Deployment — 34B Q4 (AWS g5.xlarge, A10G 24GB VRAM)</h3>
-  <p>For teams of 5–10 sharing a single endpoint, an AWS <code>g5.xlarge</code> with an A10G GPU and 24GB VRAM provides comfortable headroom for the 34B Q4 model with concurrent users. Expect 25–40 tokens per second throughput, sufficient for responsive chat-style interaction across a small team. Monthly reserved cost runs approximately $400–550 USD — a straightforward comparison against per-seat cloud AI subscriptions once team size exceeds four or five people. Pull with <code>ollama run phind-codellama:34b</code> on your shared Ollama server.</p>
-
-  <h2>The Real Cost of Routing Developer Questions Through a Cloud API</h2>
-
-  <p>When a developer asks a cloud-hosted AI assistant about a bug, they are transmitting source code, error messages, stack traces, and often surrounding context that reveals application architecture, data handling logic, and internal API structure. Under most cloud AI terms of service, this data passes through third-party infrastructure. Under some agreements it may be logged, reviewed, or used to improve models.</p>
-
-  <p>Phind-CodeLlama deployed on-premise means developer questions stay on your network. The debugging sessions, architecture discussions, and code review conversations that accumulate over months of team use never leave your environment. For organizations under SOC 2 audit, HIPAA obligations, or internal IP protection policies, this distinction is not optional — it is the condition under which an AI coding assistant can be approved for use at all.</p>
-
-  <h2>Integration and Workflow Compatibility</h2>
-
-  <ul>
-    <li><strong>OpenWebUI</strong> — deploy a browser-accessible chat interface so developers can have full conversational sessions with Phind-CodeLlama without leaving their browser</li>
-    <li><strong>Continue</strong> (VS Code / JetBrains) — configure as a chat model for in-editor technical Q&A and code explanation alongside your primary completion model</li>
-    <li><strong>Ollama API</strong> — OpenAI-compatible endpoint format means internal tooling, scripts, and automation that target the OpenAI API connect to your private instance with a single configuration change</li>
-    <li><strong>LangChain / LlamaIndex</strong> — use Phind-CodeLlama as the reasoning backbone for internal developer tools, automated code review pipelines, or technical documentation generators</li>
-  </ul>
-
-  <h2>Phind-CodeLlama vs. Base Code Llama</h2>
-
-  <p>Base Code Llama 34B is a strong code completion model. Phind-CodeLlama 34B is what Code Llama becomes when it has been specifically trained to respond to developer questions the way a knowledgeable colleague would. The fine-tuning dataset — drawn from real developer Q&A rather than synthetic examples — produces a model that matches the actual register and depth of technical conversation. If your team's primary use case is inline completion, base Code Llama is sufficient. If your team wants a conversational assistant that explains, debates, and reasons through code problems, Phind-CodeLlama is the more capable choice at the same parameter scale.</p>
-
-  <p><strong>Your engineering team's most sensitive technical conversations belong on your infrastructure, not in a cloud API log. Deploy Phind-CodeLlama privately and give your developers the reasoning-capable assistant they need without the data exposure they cannot afford.</strong></p>
-
-</article>
-
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
+    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+  </footer>
 </body>
 </html>

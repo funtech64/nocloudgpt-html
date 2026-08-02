@@ -1,0 +1,20 @@
+{
+  "slug": "command-r7b",
+  "displayName": "command-r7b",
+  "ollamaFamilies": [
+    "command-r7b"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "embedding",
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "command-r7b"
+  ],
+  "sitePath": "/models/command-r7b/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "minicpm-v",
+  "displayName": "minicpm-v",
+  "ollamaFamilies": [
+    "minicpm-v"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "minicpm-v"
+  ],
+  "sitePath": "/models/minicpm-v/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

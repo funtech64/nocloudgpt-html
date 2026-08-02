@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "codebooga",
+  "familySlug": "codebooga",
+  "displayName": "codebooga",
+  "ollamaTag": "codebooga",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "codebooga",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/codebooga/"
+}

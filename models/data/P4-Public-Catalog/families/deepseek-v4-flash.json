@@ -1,0 +1,21 @@
+{
+  "slug": "deepseek-v4-flash",
+  "displayName": "deepseek-v4-flash",
+  "ollamaFamilies": [
+    "deepseek-v4-flash"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "cloud",
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "deepseek-v4-flash"
+  ],
+  "sitePath": "/models/deepseek-v4-flash/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

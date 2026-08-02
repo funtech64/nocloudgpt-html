@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "llava-phi3",
+  "familySlug": "llava-phi3",
+  "displayName": "llava-phi3",
+  "ollamaTag": "llava-phi3",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "vision"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "llava-phi3",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/llava-phi3/"
+}

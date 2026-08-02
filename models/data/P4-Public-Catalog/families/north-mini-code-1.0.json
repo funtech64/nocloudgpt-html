@@ -1,0 +1,21 @@
+{
+  "slug": "north-mini-code-1.0",
+  "displayName": "north-mini-code-1.0",
+  "ollamaFamilies": [
+    "north-mini-code-1.0"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "embedding",
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "north-mini-code-1.0"
+  ],
+  "sitePath": "/models/north-mini-code-1.0/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

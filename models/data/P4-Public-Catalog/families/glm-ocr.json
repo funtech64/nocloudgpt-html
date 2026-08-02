@@ -1,0 +1,20 @@
+{
+  "slug": "glm-ocr",
+  "displayName": "glm-ocr",
+  "ollamaFamilies": [
+    "glm-ocr"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools",
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "glm-ocr"
+  ],
+  "sitePath": "/models/glm-ocr/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

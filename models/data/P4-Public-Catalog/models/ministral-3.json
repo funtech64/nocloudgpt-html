@@ -1,0 +1,28 @@
+{
+  "canonicalSlug": "ministral-3",
+  "familySlug": "ministral-3",
+  "displayName": "ministral-3",
+  "ollamaTag": "ministral-3",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "tools",
+    "vision"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "ministral-3",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/ministral-3/"
+}

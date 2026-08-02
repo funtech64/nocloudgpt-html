@@ -1,0 +1,29 @@
+{
+  "canonicalSlug": "granite-embedding",
+  "familySlug": "granite-embedding",
+  "displayName": "granite-embedding",
+  "ollamaTag": "granite-embedding:278m",
+  "aliases": [
+    "granite-embedding:278m"
+  ],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": 512,
+  "capabilities": [
+    "embedding"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "granite-embedding:278m",
+      "mode": "local",
+      "label": "278m"
+    }
+  ],
+  "sitePath": "/models/model/granite-embedding/"
+}

@@ -1,129 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>codegeex4 — Model family catalog | NoCloudGPT</title>
+  <meta name="description" content="Catalog facts for codegeex4: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nocloudgpt.com/models/codegeex4/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>CodeGeeX4 on Ollama | Private Code AI for Enterprise | NoCloudGPT.com</title>
-  <meta name="description" content="Run CodeGeeX4 locally with Ollama. A 9B all-in-one code AI from Zhipu AI supporting code generation, completion, explanation, repository-level context, and web search grounding — fully on-premise." />
+  <meta property="og:title" content="codegeex4 — Model family catalog | NoCloudGPT">
+  <meta property="og:description" content="Catalog facts for codegeex4: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nocloudgpt.com/models/codegeex4/">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "codegeex4", "description": "Catalog facts for codegeex4: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/codegeex4/"}</script>
 </head>
-<body>
-<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/codegeex4 -->
-    <div style="margin:24px auto 8px;max-width:320px;text-align:center;">
-      <a href="https://ollama.com/library/codegeex4" target="_blank" rel="noopener noreferrer">
-        <img src="/models/codegeex4/hero.webp" alt="codegeex4 model family hero" width="320" style="width:100%;max-width:320px;border-radius:12px;display:block;" />
-      </a>
-      <p style="margin-top:8px;font-size:0.75rem;color:#888;">Source: <a href="https://ollama.com/library/codegeex4" target="_blank" rel="noopener noreferrer" style="color:#76b900;">Ollama</a></p>
+<body class="bg-slate-950 text-slate-100">
+
+  <div class="border-b border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+      <nav class="flex flex-wrap gap-4 text-slate-400">
+        <a href="/models/" class="text-white">Models</a>
+        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+        <a href="/services.html" class="hover:text-white">Services</a>
+        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
+        <a href="/contact.html" class="hover:text-white">Contact</a>
+        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+      </nav>
     </div>
+  </div>
+  <header class="border-b border-slate-800 bg-slate-950/90">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">codegeex4</p>
+      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">codegeex4 family</h1>
+      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
 
+      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: codegeex4.</p>
+    </div>
+  </header>
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section>
+      <h2 class="text-2xl font-bold">Models in this family</h2>
+      <table class="mt-6 w-full text-left text-sm">
+        <thead class="text-slate-400">
+          <tr>
+            <th class="pb-3">Model</th>
+            <th class="pb-3">Params</th>
+            <th class="pb-3">Quant</th>
+            <th class="pb-3">Capabilities</th>
+            <th class="pb-3">Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="border-t border-slate-800">
+          <td class="py-3 pr-4"><a href="/models/model/codegeex4/" class="font-semibold text-cyan-300 hover:text-cyan-200">codegeex4</a></td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">text</td>
+          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
 
-<h1>CodeGeeX4: All-in-One Code AI With Repository-Level Context — Deployed On Your Infrastructure, Not Zhipu's</h1>
-
-<p>Most code AI tools handle one task reasonably well: autocomplete, or Q&A, or generation. Production engineering teams need all of them — and they need the model to understand code in context, not just in isolation. <strong>CodeGeeX4</strong>, developed by Zhipu AI and Tsinghua University, is a 9B all-in-one code model that combines generation, completion, explanation, repository-level understanding, and optional web search grounding in a single deployable package.</p>
-
-<p>It runs via <code>ollama run codegeex4</code> on hardware that fits within a standard team server budget — and keeps every line of proprietary code on your own infrastructure.</p>
-
----
-
-<h2>What CodeGeeX4 Actually Does</h2>
-
-<p>CodeGeeX4 is positioned as an all-in-one coding assistant rather than a single-task model. Its feature set reflects what engineering teams actually need across a working day.</p>
-
-<ul>
-  <li><strong>Code generation and completion</strong> — generates functions, classes, and modules from natural language descriptions with strong multi-language support including Python, Java, C++, JavaScript, Go, and Rust</li>
-  <li><strong>Fill-in-the-middle (FIM) completion</strong> — completes code given both prefix and suffix context, enabling accurate inline completions in IDE integrations</li>
-  <li><strong>Repository-level context understanding</strong> — processes cross-file context to provide completions and explanations aware of your actual codebase structure, not just the current file</li>
-  <li><strong>Code explanation and review</strong> — explains what existing code does, identifies issues, and suggests improvements with natural language rationale</li>
-  <li><strong>Test generation</strong> — produces unit tests and test cases from function signatures and implementation code</li>
-  <li><strong>Web search grounding</strong> — optional integration with search tools to ground code suggestions in current documentation and library references</li>
-  <li><strong>128K context window</strong> — handles large codebases, long files, and multi-file context within a single inference pass</li>
-</ul>
-
----
-
-<h2>Who Should Run CodeGeeX4 On-Premise</h2>
-
-<ul>
-  <li><strong>Engineering teams with large or complex codebases</strong> — organizations where repository-level context understanding is the difference between useful and useless code suggestions</li>
-  <li><strong>Teams building bilingual Chinese-English products</strong> — CodeGeeX4 has strong Chinese language documentation and instruction-following support alongside English, making it a natural fit for teams working across both</li>
-  <li><strong>Organizations requiring on-premise IDE integration</strong> — teams using VS Code, JetBrains, or Vim who want inline completions and Q&A without cloud routing</li>
-  <li><strong>Enterprises standardizing on a single code AI tool</strong> — organizations that want generation, completion, explanation, and testing from one model rather than managing multiple specialized deployments</li>
-  <li><strong>Security-conscious development teams</strong> — any team where proprietary algorithms, unreleased product code, or regulated data appears in the codebase being analyzed</li>
-</ul>
-
----
-
-<h2>Deployment Tiers and Compute Requirements</h2>
-
-<h3>Tier 1 — Developer Workstation: CodeGeeX4 9B Q4</h3>
-<ul>
-  <li><strong>RAM required:</strong> 6–8GB</li>
-  <li><strong>Hardware:</strong> Developer laptop, Mac with 16GB unified memory, AWS Lightsail 8GB</li>
-  <li><strong>AWS cost:</strong> Lightsail 8GB ~$40/month</li>
-  <li><strong>Speed:</strong> 8–16 tokens/sec on CPU</li>
-  <li><strong>Best for:</strong> Individual developers running local IDE completions, solo code review workflows, offline development environments</li>
-</ul>
-<p><strong>Run it:</strong> <code>ollama run codegeex4</code></p>
-
-<h3>Tier 2 — Team Code AI Server: CodeGeeX4 9B Q4 on GPU</h3>
-<ul>
-  <li><strong>VRAM required:</strong> 8–10GB</li>
-  <li><strong>Hardware:</strong> AWS g4dn.xlarge (T4 16GB), RTX 3080, RTX 4070, or equivalent</li>
-  <li><strong>AWS cost:</strong> ~$0.526/hour on-demand; ~$0.16/hour spot</li>
-  <li><strong>Speed:</strong> 40–65 tokens/sec</li>
-  <li><strong>Best for:</strong> Teams of 5–15 developers sharing a central code AI server, IDE plugin backends, repository-level analysis workflows</li>
-</ul>
-<p><strong>Run it:</strong> <code>ollama run codegeex4</code></p>
-
-<h3>Tier 3 — Enterprise Code AI Platform: CodeGeeX4 9B Q8</h3>
-<ul>
-  <li><strong>VRAM required:</strong> 12–16GB</li>
-  <li><strong>Hardware:</strong> AWS g4dn.xlarge (T4 16GB), RTX 4080, or A10G</li>
-  <li><strong>AWS cost:</strong> g4dn.xlarge ~$0.526/hour; g5.xlarge ~$1.006/hour</li>
-  <li><strong>Speed:</strong> 30–50 tokens/sec at higher precision</li>
-  <li><strong>Best for:</strong> Larger engineering teams requiring maximum output quality, repository-level context analysis at scale, CI/CD integration with automated code review</li>
-</ul>
-<p><strong>Run it:</strong> <code>ollama run codegeex4:9b-q8_0</code></p>
-
----
-
-<h2>The Real Cost of Routing Your Codebase Through a Cloud Code AI</h2>
-
-<p>Repository-level code AI is powerful precisely because it sees your whole codebase. That also means it sends your whole codebase — or large portions of it — to external servers with every context-aware query.</p>
-
-<ul>
-  <li>GitHub Copilot Enterprise, which offers repository indexing, costs $39/user/month — $46,800/year for a 100-person engineering team</li>
-  <li>Every repository-level query sends file contents, function signatures, internal API structures, and business logic to Microsoft and OpenAI infrastructure</li>
-  <li>CodeGeeX4 on a g4dn.xlarge spot instance costs approximately $1.28–$3.84/day and serves the entire team with zero data egress</li>
-  <li>For teams in regulated industries, the repository indexing features that make cloud code AI valuable are often the same features that make it a compliance liability</li>
-</ul>
-
-<p>CodeGeeX4's 128K context window means it can hold large cross-file context in memory. Your infrastructure. Your context. Your code.</p>
-
----
-
-<h2>Getting Started with CodeGeeX4 on Ollama</h2>
-
-<pre><code># Pull and run CodeGeeX4
-ollama run codegeex4
-
-# Higher precision for team server deployments
-ollama run codegeex4:9b-q8_0
-
-# Serve via local API for IDE plugin integration
-ollama serve
-# Endpoint: http://localhost:11434/api/chat
-</code></pre>
-
-<p>CodeGeeX4 supports the VS Code CodeGeeX extension and is compatible with any IDE plugin that targets an OpenAI-compatible local endpoint. Repository-level context can be passed via the API's context window without routing through cloud indexing services.</p>
-
----
-
-<h2>Start Your 90-Day Private Code AI Pilot</h2>
-
-<p>NoCloudGPT.com provides deployment guides, IDE integration support, and infrastructure sizing recommendations for engineering teams deploying CodeGeeX4 on-premise.</p>
-
-<p><strong>Contact us to scope your pilot — before your next repository-level query sends your entire codebase to infrastructure outside your security perimeter.</strong></p>
-
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
+    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "stablelm-zephyr",
+  "familySlug": "stablelm-zephyr",
+  "displayName": "stablelm-zephyr",
+  "ollamaTag": "stablelm-zephyr",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "stablelm-zephyr",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/stablelm-zephyr/"
+}

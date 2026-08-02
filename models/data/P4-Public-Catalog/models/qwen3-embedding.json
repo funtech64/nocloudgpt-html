@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "qwen3-embedding",
+  "familySlug": "qwen3-embedding",
+  "displayName": "qwen3-embedding",
+  "ollamaTag": "qwen3-embedding",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "embedding"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "qwen3-embedding",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/qwen3-embedding/"
+}

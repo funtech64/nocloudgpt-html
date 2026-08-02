@@ -1,0 +1,19 @@
+{
+  "slug": "deepseek-coder",
+  "displayName": "deepseek-coder",
+  "ollamaFamilies": [
+    "deepseek-coder"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "deepseek-coder"
+  ],
+  "sitePath": "/models/deepseek-coder/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

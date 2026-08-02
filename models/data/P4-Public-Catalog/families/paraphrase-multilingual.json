@@ -1,0 +1,19 @@
+{
+  "slug": "paraphrase-multilingual",
+  "displayName": "paraphrase-multilingual",
+  "ollamaFamilies": [
+    "paraphrase-multilingual"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "embedding"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "paraphrase-multilingual"
+  ],
+  "sitePath": "/models/paraphrase-multilingual/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

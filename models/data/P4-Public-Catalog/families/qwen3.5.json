@@ -1,0 +1,26 @@
+{
+  "slug": "qwen3.5",
+  "displayName": "qwen3",
+  "ollamaFamilies": [
+    "qwen3",
+    "qwen3.5"
+  ],
+  "aliases": [
+    "qwen3"
+  ],
+  "capabilities": [
+    "cloud",
+    "thinking",
+    "tools",
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "qwen3",
+    "qwen3.5"
+  ],
+  "sitePath": "/models/qwen3.5/",
+  "modelCount": 2,
+  "seoEligible": true,
+  "availability": "available"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "deepscaler",
+  "displayName": "deepscaler",
+  "ollamaFamilies": [
+    "deepscaler"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "deepscaler"
+  ],
+  "sitePath": "/models/deepscaler/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "llama2-uncensored",
+  "displayName": "llama2-uncensored",
+  "ollamaFamilies": [
+    "llama2-uncensored"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "llama2-uncensored"
+  ],
+  "sitePath": "/models/llama2-uncensored/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

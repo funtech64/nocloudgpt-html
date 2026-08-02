@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "qwen2.5-coder",
+  "familySlug": "qwen2.5-coder",
+  "displayName": "qwen2.5-coder",
+  "ollamaTag": "qwen2.5-coder",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "qwen2.5-coder",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/qwen2.5-coder/"
+}

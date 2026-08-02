@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "openthinker",
+  "familySlug": "openthinker",
+  "displayName": "openthinker",
+  "ollamaTag": "openthinker",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "openthinker",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/openthinker/"
+}

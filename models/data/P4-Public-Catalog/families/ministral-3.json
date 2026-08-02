@@ -1,0 +1,20 @@
+{
+  "slug": "ministral-3",
+  "displayName": "ministral-3",
+  "ollamaFamilies": [
+    "ministral-3"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools",
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "ministral-3"
+  ],
+  "sitePath": "/models/ministral-3/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

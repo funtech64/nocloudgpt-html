@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "nous-hermes2-mixtral",
+  "familySlug": "nous-hermes2-mixtral",
+  "displayName": "nous-hermes2-mixtral",
+  "ollamaTag": "nous-hermes2-mixtral",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "vision"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "nous-hermes2-mixtral",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/nous-hermes2-mixtral/"
+}

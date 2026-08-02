@@ -1,0 +1,19 @@
+{
+  "slug": "dolphin-mistral",
+  "displayName": "dolphin-mistral",
+  "ollamaFamilies": [
+    "dolphin-mistral"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "dolphin-mistral"
+  ],
+  "sitePath": "/models/dolphin-mistral/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

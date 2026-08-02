@@ -1,0 +1,28 @@
+{
+  "canonicalSlug": "granite4.1-guardian",
+  "familySlug": "granite4.1-guardian",
+  "displayName": "granite4.1-guardian",
+  "ollamaTag": "granite4.1-guardian",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "granite4.1-guardian",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/granite4.1-guardian/"
+}

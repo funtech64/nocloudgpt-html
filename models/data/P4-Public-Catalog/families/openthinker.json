@@ -1,0 +1,19 @@
+{
+  "slug": "openthinker",
+  "displayName": "openthinker",
+  "ollamaFamilies": [
+    "openthinker"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "openthinker"
+  ],
+  "sitePath": "/models/openthinker/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "granite3.2",
+  "displayName": "granite3.2",
+  "ollamaFamilies": [
+    "granite3.2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "granite3.2"
+  ],
+  "sitePath": "/models/granite3.2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

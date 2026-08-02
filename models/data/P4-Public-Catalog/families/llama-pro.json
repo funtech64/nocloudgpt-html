@@ -1,0 +1,19 @@
+{
+  "slug": "llama-pro",
+  "displayName": "llama-pro",
+  "ollamaFamilies": [
+    "llama-pro"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "llama-pro"
+  ],
+  "sitePath": "/models/llama-pro/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

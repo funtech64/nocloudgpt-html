@@ -1,0 +1,30 @@
+{
+  "canonicalSlug": "laguna-xs-2",
+  "familySlug": "laguna-xs.2",
+  "displayName": "laguna-xs.2",
+  "ollamaTag": "laguna-xs.2",
+  "aliases": [
+    "laguna-xs.2"
+  ],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": 512,
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "laguna-xs.2",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/laguna-xs-2/"
+}

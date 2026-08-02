@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "lfm2",
+  "familySlug": "lfm2",
+  "displayName": "lfm2",
+  "ollamaTag": "lfm2",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "lfm2",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/lfm2/"
+}

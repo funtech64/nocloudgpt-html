@@ -1,0 +1,19 @@
+{
+  "slug": "dolphin3",
+  "displayName": "dolphin3",
+  "ollamaFamilies": [
+    "dolphin3"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "dolphin3"
+  ],
+  "sitePath": "/models/dolphin3/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

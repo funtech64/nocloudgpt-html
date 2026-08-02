@@ -1,0 +1,19 @@
+{
+  "slug": "marco-o1",
+  "displayName": "marco-o1",
+  "ollamaFamilies": [
+    "marco-o1"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "marco-o1"
+  ],
+  "sitePath": "/models/marco-o1/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

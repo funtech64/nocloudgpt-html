@@ -1,0 +1,21 @@
+{
+  "slug": "devstral-2",
+  "displayName": "devstral-2",
+  "ollamaFamilies": [
+    "devstral-2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "cloud",
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "devstral-2"
+  ],
+  "sitePath": "/models/devstral-2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

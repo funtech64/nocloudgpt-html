@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "marco-o1",
+  "familySlug": "marco-o1",
+  "displayName": "marco-o1",
+  "ollamaTag": "marco-o1",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "marco-o1",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/marco-o1/"
+}

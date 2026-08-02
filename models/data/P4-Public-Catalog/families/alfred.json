@@ -1,0 +1,19 @@
+{
+  "slug": "alfred",
+  "displayName": "alfred",
+  "ollamaFamilies": [
+    "alfred"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "alfred"
+  ],
+  "sitePath": "/models/alfred/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

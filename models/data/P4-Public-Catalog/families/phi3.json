@@ -1,0 +1,19 @@
+{
+  "slug": "phi3",
+  "displayName": "phi3",
+  "ollamaFamilies": [
+    "phi3"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "phi3"
+  ],
+  "sitePath": "/models/phi3/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "orca-mini",
+  "familySlug": "orca-mini",
+  "displayName": "orca-mini",
+  "ollamaTag": "orca-mini",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "orca-mini",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/orca-mini/"
+}

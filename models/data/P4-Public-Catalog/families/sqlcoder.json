@@ -1,0 +1,19 @@
+{
+  "slug": "sqlcoder",
+  "displayName": "sqlcoder",
+  "ollamaFamilies": [
+    "sqlcoder"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "sqlcoder"
+  ],
+  "sitePath": "/models/sqlcoder/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}
