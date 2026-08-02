@@ -1,0 +1,19 @@
+{
+  "slug": "codellama",
+  "displayName": "codellama",
+  "ollamaFamilies": [
+    "codellama"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "codellama"
+  ],
+  "sitePath": "/models/codellama/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

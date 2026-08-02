@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "nous-hermes",
+  "familySlug": "nous-hermes",
+  "displayName": "nous-hermes",
+  "ollamaTag": "nous-hermes",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "nous-hermes",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/nous-hermes/"
+}

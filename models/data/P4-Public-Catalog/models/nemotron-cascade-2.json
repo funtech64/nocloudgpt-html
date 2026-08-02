@@ -1,0 +1,28 @@
+{
+  "canonicalSlug": "nemotron-cascade-2",
+  "familySlug": "nemotron-cascade-2",
+  "displayName": "nemotron-cascade-2",
+  "ollamaTag": "nemotron-cascade-2",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "nemotron-cascade-2",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/nemotron-cascade-2/"
+}

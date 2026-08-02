@@ -1,0 +1,20 @@
+{
+  "slug": "cogito",
+  "displayName": "cogito",
+  "ollamaFamilies": [
+    "cogito"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "cogito"
+  ],
+  "sitePath": "/models/cogito/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

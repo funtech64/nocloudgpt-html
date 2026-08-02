@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "vicuna",
+  "familySlug": "vicuna",
+  "displayName": "vicuna",
+  "ollamaTag": "vicuna",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": 2048,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "vicuna",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/vicuna/"
+}

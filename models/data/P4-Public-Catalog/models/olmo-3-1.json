@@ -1,0 +1,30 @@
+{
+  "canonicalSlug": "olmo-3-1",
+  "familySlug": "olmo-3.1",
+  "displayName": "olmo-3.1",
+  "ollamaTag": "olmo-3.1",
+  "aliases": [
+    "olmo-3.1"
+  ],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "olmo-3.1",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/olmo-3-1/"
+}

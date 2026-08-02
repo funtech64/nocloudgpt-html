@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "llama2-chinese",
+  "familySlug": "llama2-chinese",
+  "displayName": "llama2-chinese",
+  "ollamaTag": "llama2-chinese",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "llama2-chinese",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/llama2-chinese/"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "stablelm-zephyr",
+  "displayName": "stablelm-zephyr",
+  "ollamaFamilies": [
+    "stablelm-zephyr"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "stablelm-zephyr"
+  ],
+  "sitePath": "/models/stablelm-zephyr/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

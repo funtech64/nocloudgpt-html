@@ -1,0 +1,32 @@
+{
+  "canonicalSlug": "kimi-k2-7-code",
+  "familySlug": "kimi-k2.7-code",
+  "displayName": "kimi-k2.7-code",
+  "ollamaTag": "kimi-k2.7-code:cloud",
+  "aliases": [
+    "kimi-k2.7-code:cloud"
+  ],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "cloud",
+    "thinking",
+    "tools",
+    "vision"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": true,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "kimi-k2.7-code:cloud",
+      "mode": "cloud",
+      "label": "cloud"
+    }
+  ],
+  "sitePath": "/models/model/kimi-k2-7-code/"
+}

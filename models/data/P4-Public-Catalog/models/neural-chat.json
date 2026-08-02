@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "neural-chat",
+  "familySlug": "neural-chat",
+  "displayName": "neural-chat",
+  "ollamaTag": "neural-chat",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "neural-chat",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/neural-chat/"
+}

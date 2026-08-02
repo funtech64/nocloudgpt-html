@@ -1,0 +1,19 @@
+{
+  "slug": "rnj-1",
+  "displayName": "rnj-1",
+  "ollamaFamilies": [
+    "rnj-1"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "rnj-1"
+  ],
+  "sitePath": "/models/rnj-1/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

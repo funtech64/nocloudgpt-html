@@ -1,0 +1,19 @@
+{
+  "slug": "opencoder",
+  "displayName": "opencoder",
+  "ollamaFamilies": [
+    "opencoder"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "opencoder"
+  ],
+  "sitePath": "/models/opencoder/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

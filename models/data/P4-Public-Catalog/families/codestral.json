@@ -1,0 +1,19 @@
+{
+  "slug": "codestral",
+  "displayName": "codestral",
+  "ollamaFamilies": [
+    "codestral"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "codestral"
+  ],
+  "sitePath": "/models/codestral/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

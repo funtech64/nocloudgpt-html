@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "llama2-uncensored",
+  "familySlug": "llama2-uncensored",
+  "displayName": "llama2-uncensored",
+  "ollamaTag": "llama2-uncensored",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "llama2-uncensored",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/llama2-uncensored/"
+}

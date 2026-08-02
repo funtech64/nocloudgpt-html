@@ -1,0 +1,19 @@
+{
+  "slug": "mathstral",
+  "displayName": "mathstral",
+  "ollamaFamilies": [
+    "mathstral"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "mathstral"
+  ],
+  "sitePath": "/models/mathstral/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

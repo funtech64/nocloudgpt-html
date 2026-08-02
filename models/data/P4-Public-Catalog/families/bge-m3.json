@@ -1,0 +1,19 @@
+{
+  "slug": "bge-m3",
+  "displayName": "bge-m3",
+  "ollamaFamilies": [
+    "bge-m3"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "embedding"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "bge-m3"
+  ],
+  "sitePath": "/models/bge-m3/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

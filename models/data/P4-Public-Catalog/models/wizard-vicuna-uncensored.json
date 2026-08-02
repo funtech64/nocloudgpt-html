@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "wizard-vicuna-uncensored",
+  "familySlug": "wizard-vicuna-uncensored",
+  "displayName": "wizard-vicuna-uncensored",
+  "ollamaTag": "wizard-vicuna-uncensored",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "wizard-vicuna-uncensored",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/wizard-vicuna-uncensored/"
+}

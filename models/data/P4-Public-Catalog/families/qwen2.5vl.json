@@ -1,0 +1,20 @@
+{
+  "slug": "qwen2.5vl",
+  "displayName": "qwen2.5vl",
+  "ollamaFamilies": [
+    "qwen2.5vl"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools",
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "qwen2.5vl"
+  ],
+  "sitePath": "/models/qwen2.5vl/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

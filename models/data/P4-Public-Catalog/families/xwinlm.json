@@ -1,0 +1,19 @@
+{
+  "slug": "xwinlm",
+  "displayName": "xwinlm",
+  "ollamaFamilies": [
+    "xwinlm"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "xwinlm"
+  ],
+  "sitePath": "/models/xwinlm/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

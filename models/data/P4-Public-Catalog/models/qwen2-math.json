@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "qwen2-math",
+  "familySlug": "qwen2-math",
+  "displayName": "qwen2-math",
+  "ollamaTag": "qwen2-math",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "qwen2-math",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/qwen2-math/"
+}

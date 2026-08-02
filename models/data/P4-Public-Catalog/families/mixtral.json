@@ -1,0 +1,19 @@
+{
+  "slug": "mixtral",
+  "displayName": "mixtral",
+  "ollamaFamilies": [
+    "mixtral"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "mixtral"
+  ],
+  "sitePath": "/models/mixtral/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

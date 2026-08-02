@@ -1,0 +1,19 @@
+{
+  "slug": "r1-1776",
+  "displayName": "r1-1776",
+  "ollamaFamilies": [
+    "r1-1776"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "r1-1776"
+  ],
+  "sitePath": "/models/r1-1776/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

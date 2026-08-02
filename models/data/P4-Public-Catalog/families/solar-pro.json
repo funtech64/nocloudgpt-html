@@ -1,0 +1,19 @@
+{
+  "slug": "solar-pro",
+  "displayName": "solar-pro",
+  "ollamaFamilies": [
+    "solar-pro"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "solar-pro"
+  ],
+  "sitePath": "/models/solar-pro/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

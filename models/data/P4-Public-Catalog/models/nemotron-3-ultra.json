@@ -1,0 +1,31 @@
+{
+  "canonicalSlug": "nemotron-3-ultra",
+  "familySlug": "nemotron-3-ultra",
+  "displayName": "nemotron-3-ultra",
+  "ollamaTag": "nemotron-3-ultra:cloud",
+  "aliases": [
+    "nemotron-3-ultra:cloud"
+  ],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "cloud",
+    "thinking",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": true,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "nemotron-3-ultra:cloud",
+      "mode": "cloud",
+      "label": "cloud"
+    }
+  ],
+  "sitePath": "/models/model/nemotron-3-ultra/"
+}

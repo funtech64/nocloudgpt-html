@@ -1,0 +1,21 @@
+{
+  "slug": "mistral-medium-3.5",
+  "displayName": "mistral-medium-3.5",
+  "ollamaFamilies": [
+    "mistral-medium-3.5"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "thinking",
+    "tools",
+    "vision"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "mistral-medium-3.5"
+  ],
+  "sitePath": "/models/mistral-medium-3.5/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "goliath",
+  "displayName": "goliath",
+  "ollamaFamilies": [
+    "goliath"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "goliath"
+  ],
+  "sitePath": "/models/goliath/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

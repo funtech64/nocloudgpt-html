@@ -1,0 +1,30 @@
+{
+  "canonicalSlug": "gemini-3-flash-preview",
+  "familySlug": "gemini-3-flash-preview",
+  "displayName": "gemini-3-flash-preview",
+  "ollamaTag": "gemini-3-flash-preview",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "cloud",
+    "thinking",
+    "tools",
+    "vision"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": true,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "gemini-3-flash-preview",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/gemini-3-flash-preview/"
+}

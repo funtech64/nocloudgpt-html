@@ -1,0 +1,20 @@
+{
+  "slug": "laguna-xs.2",
+  "displayName": "laguna-xs.2",
+  "ollamaFamilies": [
+    "laguna-xs.2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "laguna-xs.2"
+  ],
+  "sitePath": "/models/laguna-xs.2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

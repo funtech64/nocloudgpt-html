@@ -1,0 +1,19 @@
+{
+  "slug": "open-orca-platypus2",
+  "displayName": "open-orca-platypus2",
+  "ollamaFamilies": [
+    "open-orca-platypus2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "open-orca-platypus2"
+  ],
+  "sitePath": "/models/open-orca-platypus2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

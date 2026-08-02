@@ -1,0 +1,19 @@
+{
+  "slug": "megadolphin",
+  "displayName": "megadolphin",
+  "ollamaFamilies": [
+    "megadolphin"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "megadolphin"
+  ],
+  "sitePath": "/models/megadolphin/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

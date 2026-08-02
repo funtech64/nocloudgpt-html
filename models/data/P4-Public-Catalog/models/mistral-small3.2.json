@@ -1,0 +1,28 @@
+{
+  "canonicalSlug": "mistral-small3.2",
+  "familySlug": "mistral-small3.2",
+  "displayName": "mistral-small3.2",
+  "ollamaTag": "mistral-small3.2",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "tools",
+    "vision"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "mistral-small3.2",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/mistral-small3.2/"
+}

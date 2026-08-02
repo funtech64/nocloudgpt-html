@@ -1,0 +1,19 @@
+{
+  "slug": "bakllava",
+  "displayName": "bakllava",
+  "ollamaFamilies": [
+    "bakllava"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "bakllava"
+  ],
+  "sitePath": "/models/bakllava/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

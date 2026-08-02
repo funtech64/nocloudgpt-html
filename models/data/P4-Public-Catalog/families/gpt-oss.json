@@ -1,0 +1,21 @@
+{
+  "slug": "gpt-oss",
+  "displayName": "gpt-oss",
+  "ollamaFamilies": [
+    "gpt-oss"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "cloud",
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "gpt-oss"
+  ],
+  "sitePath": "/models/gpt-oss/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

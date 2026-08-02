@@ -1,0 +1,29 @@
+{
+  "canonicalSlug": "wizardlm",
+  "familySlug": "wizardlm",
+  "displayName": "wizardlm",
+  "ollamaTag": "wizardlm:70b-llama2-q4_0",
+  "aliases": [
+    "wizardlm:70b-llama2-q4_0"
+  ],
+  "parameterSizeB": 70.0,
+  "quantization": "Q4",
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "wizardlm:70b-llama2-q4_0",
+      "mode": "local",
+      "label": "70b-llama2-q4_0"
+    }
+  ],
+  "sitePath": "/models/model/wizardlm/"
+}

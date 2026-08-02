@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "nuextract",
+  "familySlug": "nuextract",
+  "displayName": "nuextract",
+  "ollamaTag": "nuextract",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": 2000,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "nuextract",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/nuextract/"
+}

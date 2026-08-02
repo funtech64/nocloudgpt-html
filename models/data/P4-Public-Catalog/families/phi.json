@@ -1,0 +1,19 @@
+{
+  "slug": "phi",
+  "displayName": "phi",
+  "ollamaFamilies": [
+    "phi"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "phi"
+  ],
+  "sitePath": "/models/phi/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

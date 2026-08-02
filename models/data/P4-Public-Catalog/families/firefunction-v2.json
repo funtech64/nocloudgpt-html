@@ -1,0 +1,19 @@
+{
+  "slug": "firefunction-v2",
+  "displayName": "firefunction-v2",
+  "ollamaFamilies": [
+    "firefunction-v2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "firefunction-v2"
+  ],
+  "sitePath": "/models/firefunction-v2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

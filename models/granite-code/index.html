@@ -1,492 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>granite-code — Model family catalog | NoCloudGPT</title>
+  <meta name="description" content="Catalog facts for granite-code: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nocloudgpt.com/models/granite-code/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>IBM Granite Code on Ollama | Private Code AI | NoCloudGPT</title>
-  <meta name="description" content="Run IBM Granite Code models privately with Ollama. 116-language support, fill-in-the-middle completion, and 3B to 34B variants for engineering teams with strict IP and data security requirements." />
-  <meta name="keywords" content="IBM Granite Code Ollama, Granite Code private deployment, self-hosted code AI, Granite Code 34B, private GitHub Copilot alternative, code LLM enterprise" />
-  <link rel="canonical" href="https://nocloudgpt.com/models/granite-code/" />
+  <meta property="og:title" content="granite-code — Model family catalog | NoCloudGPT">
+  <meta property="og:description" content="Catalog facts for granite-code: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nocloudgpt.com/models/granite-code/">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "granite-code", "description": "Catalog facts for granite-code: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/granite-code/"}</script>
 </head>
-<body class="bg-gray-950 text-gray-100 font-sans">
+<body class="bg-slate-950 text-slate-100">
 
-  <!-- Nav -->
-  <nav class="border-b border-gray-800 px-6 py-4 flex items-center justify-between">
-    <a href="/" class="text-xl font-bold text-blue-400">NoCloudGPT</a>
-    <div class="flex gap-6 text-sm text-gray-400">
-      <a href="/models/" class="hover:text-white">Models</a>
-      <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-      <a href="/pricing.html" class="hover:text-white">Pricing</a>
-      <a href="/contact.html" class="hover:text-white">Contact</a>
+  <div class="border-b border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+      <nav class="flex flex-wrap gap-4 text-slate-400">
+        <a href="/models/" class="text-white">Models</a>
+        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+        <a href="/services.html" class="hover:text-white">Services</a>
+        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
+        <a href="/contact.html" class="hover:text-white">Contact</a>
+        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+      </nav>
     </div>
-  </nav>
+  </div>
+  <header class="border-b border-slate-800 bg-slate-950/90">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">granite-code</p>
+      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">granite-code family</h1>
+      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
 
-  <!-- Hero -->
-  
-<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/granite-code -->
-      <a href="https://ollama.com/library/granite-code" target="_blank" rel="noopener noreferrer" class="inline-block">
-        <img
-          src="/models/granite-code/hero.webp"
-          alt="granite code model family hero"
-          width="1200"
-          height="600"
-          class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
-        />
-      </a>
-      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/granite-code" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
-<section class="max-w-4xl mx-auto px-6 py-16">
-    <div class="flex items-center gap-3 mb-4 flex-wrap">
-      <span class="bg-blue-900 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">IBM Research</span>
-      <span class="bg-green-900 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">Apache 2.0</span>
-      <span class="bg-orange-900 text-orange-300 text-xs font-semibold px-3 py-1 rounded-full">116 Languages</span>
-      <span class="bg-purple-900 text-purple-300 text-xs font-semibold px-3 py-1 rounded-full">Fill-in-the-Middle</span>
+      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: granite-code.</p>
     </div>
-    <h1 class="text-4xl font-bold mb-4">IBM Granite Code: Private AI for Engineering Teams</h1>
-    <p class="text-xl text-gray-400 mb-8">
-      Granite Code brings enterprise-grade code intelligence to your private infrastructure. 116 programming languages, fill-in-the-middle completion, and model sizes from 3B to 34B — all running locally with Ollama so your proprietary source code never touches an external server.
-    </p>
-    <div class="flex gap-4 flex-wrap">
-      <a href="/models/deploy/" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold">Deploy Granite Code</a>
-      <a href="/models/granite/" class="border border-gray-600 hover:border-gray-400 text-gray-300 px-6 py-3 rounded-lg font-semibold">Granite Enterprise →</a>
-    </div>
-  </section>
-
-  <!-- The IP Problem -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">The Source Code IP Problem with Cloud AI</h2>
-    <p class="text-gray-300 mb-6">
-      GitHub Copilot, Amazon CodeWhisperer, and similar cloud-based code AI tools have a fundamental problem for organizations building proprietary software: every code completion request sends your source code to an external server. Your algorithms, your architecture decisions, your unreleased features — all transmitted to third-party infrastructure to generate a suggestion.
-    </p>
-    <p class="text-gray-300 mb-6">
-      For startups with early-stage intellectual property, defense contractors with controlled technical data, financial firms with proprietary trading algorithms, and enterprises with competitive technology advantages, this is not an acceptable trade-off. The productivity gains from AI-assisted coding are real, but not if they come at the cost of your most valuable assets.
-    </p>
-    <p class="text-gray-300 mb-6">
-      Granite Code running on Ollama through NoCloudGPT infrastructure eliminates this problem entirely. The model runs on hardware you control. Code completions are generated locally. Nothing leaves your network perimeter. Your source code stays proprietary.
-    </p>
-    <p class="text-gray-300">
-      IBM reinforces this with what it calls "code-safe" training for Granite Code — the model is trained exclusively on permissively licensed code with documented provenance, addressing both the data transmission concern and the training data IP concern that has made legal departments cautious about AI-assisted development.
-    </p>
-  </section>
-
-  <!-- Model Variants -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Granite Code Model Variants</h2>
-    <p class="text-gray-300 mb-8">
-      IBM releases Granite Code in four sizes, each targeting a different hardware tier and use case. All variants support the same 116-language corpus and fill-in-the-middle completion capability — the size difference primarily affects reasoning depth on complex multi-file problems.
-    </p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="flex items-center justify-between mb-3">
-          <h3 class="text-lg font-bold">Granite Code 3B</h3>
-          <span class="bg-green-900 text-green-300 text-xs px-2 py-1 rounded">Laptop Ready</span>
-        </div>
-        <p class="text-gray-400 text-sm mb-4">
-          Designed for developer workstations and CI/CD pipeline integration. Fast inference for inline completion, docstring generation, and single-function tasks.
-        </p>
-        <div class="text-xs text-gray-500 space-y-1">
-          <div>Parameters: 3B</div>
-          <div>VRAM: 3–4GB</div>
-          <div>Context: 2K / 128K (instruct)</div>
-          <div>Best for: Autocomplete, docstrings, unit tests</div>
-        </div>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="flex items-center justify-between mb-3">
-          <h3 class="text-lg font-bold">Granite Code 8B</h3>
-          <span class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded">Team Server</span>
-        </div>
-        <p class="text-gray-400 text-sm mb-4">
-          The balanced choice for shared team servers. Handles multi-function code generation, refactoring tasks, and code review assistance with strong accuracy.
-        </p>
-        <div class="text-xs text-gray-500 space-y-1">
-          <div>Parameters: 8B</div>
-          <div>VRAM: 8–10GB</div>
-          <div>Context: 4K / 128K (instruct)</div>
-          <div>Best for: Refactoring, multi-file edits, review</div>
-        </div>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="flex items-center justify-between mb-3">
-          <h3 class="text-lg font-bold">Granite Code 20B</h3>
-          <span class="bg-purple-900 text-purple-300 text-xs px-2 py-1 rounded">Production Grade</span>
-        </div>
-        <p class="text-gray-400 text-sm mb-4">
-          Mid-tier flagship balancing power and cost. Designed for complex algorithm implementation, large codebase navigation, and cross-language translation tasks.
-        </p>
-        <div class="text-xs text-gray-500 space-y-1">
-          <div>Parameters: 20B</div>
-          <div>VRAM: 20–24GB (A5000 / RTX 3090)</div>
-          <div>Context: 8K / 128K (instruct)</div>
-          <div>Best for: Algorithm design, codebase analysis</div>
-        </div>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="flex items-center justify-between mb-3">
-          <h3 class="text-lg font-bold">Granite Code 34B</h3>
-          <span class="bg-red-900 text-red-300 text-xs px-2 py-1 rounded">Flagship</span>
-        </div>
-        <p class="text-gray-400 text-sm mb-4">
-          IBM's most capable code model. Competes with the strongest commercial code AI systems on HumanEval and MultiPL-E benchmarks while running entirely on your infrastructure.
-        </p>
-        <div class="text-xs text-gray-500 space-y-1">
-          <div>Parameters: 34B</div>
-          <div>VRAM: 24GB+ (RTX 3090 / A6000 / H100)</div>
-          <div>Context: 8K / 128K (instruct)</div>
-          <div>Best for: Full system design, architecture review</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-      <h3 class="font-semibold mb-3">Base vs. Instruct Variants</h3>
-      <p class="text-gray-400 text-sm">
-        Each Granite Code size is released in two variants. <strong class="text-white">Base</strong> models are optimized for fill-in-the-middle (FIM) completion in IDE integrations — they complete code in context without conversational overhead. <strong class="text-white">Instruct</strong> models are fine-tuned for natural language instruction following, making them appropriate for chat-based code assistants, code explanation, and review workflows. For IDE plugins like Continue.dev or Aider, the base model delivers lower latency; for chat interfaces, use the instruct variant.
-      </p>
-    </div>
-  </section>
-
-  <!-- 116 Languages -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">116 Programming Languages: Coverage That Matches Real Codebases</h2>
-    <p class="text-gray-300 mb-6">
-      Most AI code tools optimize for Python, JavaScript, and TypeScript because that is where benchmark datasets are concentrated. Enterprise codebases rarely look like benchmarks. They contain legacy COBOL alongside modern Rust, SQL embedded in Java, YAML configuration files, shell scripts, and domain-specific languages that general-purpose code AI struggles with.
-    </p>
-    <p class="text-gray-300 mb-6">
-      IBM trained Granite Code on 116 programming languages specifically to address enterprise codebase diversity. The training corpus prioritizes languages commonly found in financial systems, infrastructure automation, and industrial software — not just the languages that perform well on academic benchmarks.
-    </p>
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-      {["Python", "JavaScript", "TypeScript", "Java", "Go", "Rust", "C/C++", "C#", "Ruby", "PHP", "Swift", "Kotlin", "SQL", "Bash/Shell", "YAML", "Dockerfile", "Terraform/HCL", "COBOL", "Fortran", "Scala"].map(lang => `
-      <div class="bg-gray-900 rounded-lg px-3 py-2 text-sm text-center text-gray-300 border border-gray-700">${lang}</div>
-      `).join('')}
-      <div class="bg-gray-800 rounded-lg px-3 py-2 text-sm text-center text-gray-500 border border-gray-700 col-span-2 md:col-span-4">+ 96 additional languages</div>
-    </div>
-
-    <div class="bg-blue-950 border border-blue-800 rounded-xl p-5">
-      <h3 class="font-semibold text-blue-300 mb-2">COBOL and Legacy Language Support</h3>
-      <p class="text-gray-300 text-sm">
-        IBM's deep history in enterprise computing means Granite Code has meaningful COBOL capability — a differentiator no other open-weight code model can credibly claim. For financial institutions and government agencies maintaining legacy COBOL systems, Granite Code can assist with modernization analysis, documentation generation, and incremental refactoring in ways that Python-centric models cannot.
-      </p>
-    </div>
-  </section>
-
-  <!-- Fill-in-the-Middle -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Fill-in-the-Middle: How Granite Code Works in Your IDE</h2>
-    <p class="text-gray-300 mb-6">
-      Standard language model completion works left-to-right: given what comes before the cursor, predict what comes next. This works acceptably for autocomplete but fails for the most common editing pattern in real development — inserting code in the middle of existing functions.
-    </p>
-    <p class="text-gray-300 mb-6">
-      Fill-in-the-middle (FIM) trains the model to use both prefix and suffix context. Granite Code sees what comes before the cursor <em>and</em> what comes after it, then generates the insertion that makes the complete code block logically consistent. This dramatically improves completion accuracy for:
-    </p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-      <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
-        <h3 class="font-semibold mb-2 text-blue-300">Function Body Completion</h3>
-        <p class="text-gray-400 text-sm">Write the function signature and the return statement — Granite Code fills in the implementation logic with awareness of both.</p>
-      </div>
-      <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
-        <h3 class="font-semibold mb-2 text-green-300">Error Handling Insertion</h3>
-        <p class="text-gray-400 text-sm">Insert try/catch blocks, input validation, or null checks into existing functions without breaking the surrounding logic.</p>
-      </div>
-      <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
-        <h3 class="font-semibold mb-2 text-purple-300">Test Case Generation</h3>
-        <p class="text-gray-400 text-sm">Generate unit tests that fit between existing test fixtures with awareness of the test runner patterns already in use.</p>
-      </div>
-      <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
-        <h3 class="font-semibold mb-2 text-yellow-300">Documentation Insertion</h3>
-        <p class="text-gray-400 text-sm">Add docstrings, inline comments, and type annotations that match existing documentation style in the file.</p>
-      </div>
-    </div>
-
-    <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-      <h3 class="font-semibold mb-3">FIM Prompt Format</h3>
-      <p class="text-gray-400 text-sm mb-3">Granite Code uses a standard FIM token format compatible with Ollama's API:</p>
-      <div class="bg-gray-800 rounded-lg p-4 font-mono text-sm text-green-400">
-        &lt;fim_prefix&gt;[code before cursor]&lt;fim_suffix&gt;[code after cursor]&lt;fim_middle&gt;
-      </div>
-      <p class="text-gray-400 text-sm mt-3">
-        IDE integrations like Continue.dev handle this formatting automatically — developers interact through standard completion UI without configuring FIM syntax manually.
-      </p>
-    </div>
-  </section>
-
-  <!-- IDE Integration -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">IDE Integration for Private Code AI</h2>
-    <p class="text-gray-300 mb-6">
-      Granite Code integrates with the same IDE plugins used for cloud-based code AI, but routes all requests to your local Ollama server instead of external APIs. Setup takes minutes and requires no code changes to existing development workflows.
-    </p>
-
-    <div class="space-y-4 mb-8">
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <div class="flex items-center gap-3 mb-3">
-          <div class="text-2xl">🔷</div>
-          <h3 class="font-bold">Continue.dev (VS Code / JetBrains)</h3>
-        </div>
-        <p class="text-gray-400 text-sm mb-3">The most feature-complete open-source AI coding assistant. Supports chat, inline completion, and codebase indexing. Configure it to point at your Ollama endpoint with Granite Code as the provider.</p>
-        <div class="bg-gray-800 rounded-lg p-3 font-mono text-xs text-green-400">
-          "provider": "ollama", "model": "granite-code:8b", "apiBase": "http://localhost:11434"
-        </div>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <div class="flex items-center gap-3 mb-3">
-          <div class="text-2xl">⚡</div>
-          <h3 class="font-bold">Aider (Terminal-Based)</h3>
-        </div>
-        <p class="text-gray-400 text-sm mb-3">Command-line AI pair programmer that works with your git repository. Excellent for multi-file refactoring tasks and feature implementation from natural language specs.</p>
-        <div class="bg-gray-800 rounded-lg p-3 font-mono text-xs text-green-400">
-          aider --model ollama/granite-code:34b --api-base http://localhost:11434
-        </div>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <div class="flex items-center gap-3 mb-3">
-          <div class="text-2xl">🤖</div>
-          <h3 class="font-bold">Tabby (Self-Hosted Copilot Server)</h3>
-        </div>
-        <p class="text-gray-400 text-sm mb-3">Open-source GitHub Copilot replacement that runs as a server for your entire engineering team. Can be configured to use Granite Code through Ollama as the backend model, providing team-wide AI completion from a single private deployment.</p>
-        <div class="bg-gray-800 rounded-lg p-3 font-mono text-xs text-green-400">
-          # tabby config: model: GraniteCode via Ollama backend
-        </div>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <div class="flex items-center gap-3 mb-3">
-          <div class="text-2xl">🔌</div>
-          <h3 class="font-bold">OpenAI-Compatible API</h3>
-        </div>
-        <p class="text-gray-400 text-sm">Ollama exposes an OpenAI-compatible API endpoint, meaning any tool that supports custom OpenAI API bases works with Granite Code without modification. This covers most commercial IDE plugins that allow custom endpoints.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Security Use Cases -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Who Needs Private Code AI</h2>
-
-    <div class="space-y-6">
-
-      <div class="border-l-4 border-blue-500 pl-6">
-        <h3 class="text-lg font-semibold mb-2">Defense and Aerospace Contractors</h3>
-        <p class="text-gray-300 text-sm">
-          Organizations working on ITAR-controlled technology, classified systems, or sensitive government contracts cannot use cloud-based code AI without creating export control and data classification violations. Granite Code on air-gapped or network-isolated infrastructure provides AI-assisted development within the required security boundary. IBM's government sector credentials make Granite a defensible vendor choice for contractor procurement processes.
-        </p>
-      </div>
-
-      <div class="border-l-4 border-green-500 pl-6">
-        <h3 class="text-lg font-semibold mb-2">Financial Technology and Algorithmic Trading</h3>
-        <p class="text-gray-300 text-sm">
-          Trading algorithms, risk models, and pricing engines represent competitive advantages worth hundreds of millions of dollars. Firms that have built proprietary quantitative systems cannot allow that code to be transmitted to external AI services — even with contractual data protection guarantees. Private Granite Code deployment allows quant developers and financial engineers to use AI assistance on their most sensitive code without IP exposure.
-        </p>
-      </div>
-
-      <div class="border-l-4 border-purple-500 pl-6">
-        <h3 class="text-lg font-semibold mb-2">Healthcare Technology</h3>
-        <p class="text-gray-300 text-sm">
-          Healthcare software often handles PHI directly in the codebase — database schemas, query strings, configuration files, and test fixtures may contain protected health information or reveal system architecture that creates HIPAA exposure. Development teams working on EHR systems, medical devices, and clinical platforms need code AI that operates entirely within their security perimeter.
-        </p>
-      </div>
-
-      <div class="border-l-4 border-yellow-500 pl-6">
-        <h3 class="text-lg font-semibold mb-2">Enterprise Software with Competitive IP</h3>
-        <p class="text-gray-300 text-sm">
-          Any company whose competitive advantage lives in software — whether that is a proprietary recommendation engine, a novel data processing pipeline, or a unique user experience implementation — has legitimate reasons to keep source code off external servers. Private Granite Code provides the productivity of AI-assisted development without the IP exposure of cloud-routed code completion.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Benchmarks -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Performance: Where Granite Code Stands</h2>
-    <p class="text-gray-300 mb-6">
-      Granite Code competes directly with open-weight code models from Meta (Code Llama), Alibaba (Qwen Coder), and DeepSeek on standard code generation benchmarks. The 34B flagship model achieves performance competitive with models significantly larger in parameter count, reflecting IBM's optimization focus on enterprise coding tasks.
-    </p>
-
-    <div class="overflow-x-auto mb-6">
-      <table class="w-full text-sm">
-        <thead>
-          <tr class="text-left border-b border-gray-700">
-            <th class="pb-3 text-gray-400">Model</th>
-            <th class="pb-3 text-gray-400">HumanEval Pass@1</th>
-            <th class="pb-3 text-gray-400">MultiPL-E</th>
-            <th class="pb-3 text-gray-400">Languages</th>
-            <th class="pb-3 text-gray-400">FIM Support</th>
+  </header>
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section>
+      <h2 class="text-2xl font-bold">Models in this family</h2>
+      <table class="mt-6 w-full text-left text-sm">
+        <thead class="text-slate-400">
+          <tr>
+            <th class="pb-3">Model</th>
+            <th class="pb-3">Params</th>
+            <th class="pb-3">Quant</th>
+            <th class="pb-3">Capabilities</th>
+            <th class="pb-3">Availability</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-gray-800">
-          <tr>
-            <td class="py-3 font-medium">Granite Code 34B</td>
-            <td class="py-3 text-green-400">~79%</td>
-            <td class="py-3 text-green-400">Strong</td>
-            <td class="py-3 text-gray-400">116</td>
-            <td class="py-3 text-green-400">Yes</td>
-          </tr>
-          <tr>
-            <td class="py-3 font-medium">Granite Code 20B</td>
-            <td class="py-3 text-blue-400">~72%</td>
-            <td class="py-3 text-blue-400">Good</td>
-            <td class="py-3 text-gray-400">116</td>
-            <td class="py-3 text-green-400">Yes</td>
-          </tr>
-          <tr>
-            <td class="py-3 font-medium">Granite Code 8B</td>
-            <td class="py-3 text-blue-400">~67%</td>
-            <td class="py-3 text-blue-400">Good</td>
-            <td class="py-3 text-gray-400">116</td>
-            <td class="py-3 text-green-400">Yes</td>
-          </tr>
-          <tr>
-            <td class="py-3 font-medium">Granite Code 3B</td>
-            <td class="py-3 text-yellow-400">~55%</td>
-            <td class="py-3 text-yellow-400">Moderate</td>
-            <td class="py-3 text-gray-400">116</td>
-            <td class="py-3 text-green-400">Yes</td>
-          </tr>
+        <tbody>
+        <tr class="border-t border-slate-800">
+          <td class="py-3 pr-4"><a href="/models/model/granite-code/" class="font-semibold text-cyan-300 hover:text-cyan-200">granite-code</a></td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">text</td>
+          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
+        </tr>
         </tbody>
       </table>
-    </div>
+    </section>
+  </main>
 
-    <p class="text-gray-500 text-xs">
-      Note: HumanEval Pass@1 figures are approximate and drawn from IBM's published model cards and third-party evaluations. Performance varies by task type and prompt format. Enterprise users should evaluate on their specific codebase and language mix.
-    </p>
-  </section>
-
-  <!-- Quick Start -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Quick Start: Granite Code with Ollama</h2>
-
-    <div class="space-y-4">
-      <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
-        <p class="text-xs text-gray-500 mb-2">Pull Granite Code 8B (balanced choice for most teams)</p>
-        <code class="text-green-400 text-sm">ollama pull granite-code:8b</code>
-      </div>
-      <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
-        <p class="text-xs text-gray-500 mb-2">Pull the instruct variant for chat-based code assistance</p>
-        <code class="text-green-400 text-sm">ollama pull granite-code:8b-instruct</code>
-      </div>
-      <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
-        <p class="text-xs text-gray-500 mb-2">Pull the flagship 34B model (requires 24GB+ VRAM)</p>
-        <code class="text-green-400 text-sm">ollama pull granite-code:34b</code>
-      </div>
-      <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
-        <p class="text-xs text-gray-500 mb-2">Test with a code generation prompt</p>
-        <code class="text-green-400 text-sm">ollama run granite-code:8b-instruct "Write a Python function that validates an email address using regex and returns True or False"</code>
-      </div>
-      <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
-        <p class="text-xs text-gray-500 mb-2">API call for programmatic integration</p>
-        <code class="text-green-400 text-sm">curl http://localhost:11434/api/generate -d '&#123;"model": "granite-code:8b-instruct", "prompt": "Explain this function and suggest improvements: [CODE]"&#125;'</code>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hardware -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-4">Hardware Deployment Guide</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <h3 class="font-semibold mb-3 text-green-400">Individual Developer Workstation</h3>
-        <p class="text-gray-400 text-sm mb-3">Granite Code 3B or 8B on a consumer GPU</p>
-        <ul class="text-xs text-gray-500 space-y-1">
-          <li>• RTX 3060 12GB → Granite Code 8B (quantized)</li>
-          <li>• RTX 4070 12GB → Granite Code 8B (full)</li>
-          <li>• M2/M3 MacBook Pro (16GB) → Granite Code 8B</li>
-          <li>• Inference speed: 20–40 tokens/sec</li>
-        </ul>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <h3 class="font-semibold mb-3 text-blue-400">Shared Team Server</h3>
-        <p class="text-gray-400 text-sm mb-3">Granite Code 20B serving 5–20 concurrent developers</p>
-        <ul class="text-xs text-gray-500 space-y-1">
-          <li>• RTX 3090 24GB → Granite Code 20B</li>
-          <li>• A5000 24GB → Granite Code 20B (stable)</li>
-          <li>• A6000 48GB → Granite Code 34B</li>
-          <li>• Inference speed: 15–25 tokens/sec</li>
-        </ul>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <h3 class="font-semibold mb-3 text-purple-400">Enterprise Deployment</h3>
-        <p class="text-gray-400 text-sm mb-3">Granite Code 34B serving engineering org</p>
-        <ul class="text-xs text-gray-500 space-y-1">
-          <li>• H100 80GB → Granite Code 34B (production)</li>
-          <li>• 2x A100 40GB → Granite Code 34B (multi-GPU)</li>
-          <li>• Load-balanced cluster for 100+ developers</li>
-          <li>• Inference speed: 40–80 tokens/sec</li>
-        </ul>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <h3 class="font-semibold mb-3 text-yellow-400">CI/CD Pipeline Integration</h3>
-        <p class="text-gray-400 text-sm mb-3">Automated code review and test generation</p>
-        <ul class="text-xs text-gray-500 space-y-1">
-          <li>• Granite Code 8B on dedicated inference server</li>
-          <li>• Triggered on PR submission for auto-review</li>
-          <li>• Generates test cases for new functions</li>
-          <li>• Flags potential security issues before merge</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Related -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Related Models</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <a href="/models/granite/" class="bg-gray-900 rounded-xl p-5 border border-gray-700 hover:border-blue-500 transition-colors">
-        <h3 class="font-bold mb-2">Granite Enterprise</h3>
-        <p class="text-gray-400 text-sm">General-purpose IBM Granite for document analysis, compliance, and enterprise workflows.</p>
-        <span class="text-blue-400 text-sm mt-3 block">Explore →</span>
-      </a>
-      <a href="/models/qwen2.5-coder/" class="bg-gray-900 rounded-xl p-5 border border-gray-700 hover:border-blue-500 transition-colors">
-        <h3 class="font-bold mb-2">Qwen 2.5 Coder</h3>
-        <p class="text-gray-400 text-sm">Alibaba's code-specialized family. Strong Python/JS performance, different training data provenance.</p>
-        <span class="text-blue-400 text-sm mt-3 block">Compare →</span>
-      </a>
-      <a href="/models/deepseek-coder/" class="bg-gray-900 rounded-xl p-5 border border-gray-700 hover:border-blue-500 transition-colors">
-        <h3 class="font-bold mb-2">DeepSeek Coder</h3>
-        <p class="text-gray-400 text-sm">Top HumanEval scores in the open-weight space. Compare with Granite Code 34B for your stack.</p>
-        <span class="text-blue-400 text-sm mt-3 block">Compare →</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="max-w-4xl mx-auto px-6 py-16 text-center border-t border-gray-800">
-    <h2 class="text-3xl font-bold mb-4">Keep Your Source Code Private</h2>
-    <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
-      Deploy Granite Code on your infrastructure. AI-assisted development with zero source code exposure — your algorithms stay yours.
-    </p>
-    <div class="flex gap-4 justify-center flex-wrap">
-      <a href="/models/deploy/" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg">Deploy Granite Code</a>
-      <a href="/contact.html" class="border border-gray-600 hover:border-gray-400 text-gray-300 px-8 py-4 rounded-lg font-semibold text-lg">Engineering Team Pricing</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-gray-800 px-6 py-8 text-center text-gray-500 text-sm">
-    <p>© 2025 NoCloudGPT. Private AI infrastructure for enterprise teams.</p>
-    <div class="flex justify-center gap-6 mt-3">
-      <a href="/contact.html" class="hover:text-gray-300">Privacy Policy</a>
-      <a href="/contact.html" class="hover:text-gray-300">Terms</a>
-      <a href="/models/" class="hover:text-gray-300">All Models</a>
-    </div>
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
+    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
   </footer>
-
 </body>
 </html>

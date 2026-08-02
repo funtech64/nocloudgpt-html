@@ -1,0 +1,19 @@
+{
+  "slug": "magicoder",
+  "displayName": "magicoder",
+  "ollamaFamilies": [
+    "magicoder"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "magicoder"
+  ],
+  "sitePath": "/models/magicoder/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

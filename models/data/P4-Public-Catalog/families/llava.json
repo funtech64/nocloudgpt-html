@@ -1,0 +1,19 @@
+{
+  "slug": "llava",
+  "displayName": "llava",
+  "ollamaFamilies": [
+    "llava"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "vision"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "llava"
+  ],
+  "sitePath": "/models/llava/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

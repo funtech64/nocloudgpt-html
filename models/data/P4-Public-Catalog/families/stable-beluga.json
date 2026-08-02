@@ -1,0 +1,19 @@
+{
+  "slug": "stable-beluga",
+  "displayName": "stable-beluga",
+  "ollamaFamilies": [
+    "stable-beluga"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "stable-beluga"
+  ],
+  "sitePath": "/models/stable-beluga/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

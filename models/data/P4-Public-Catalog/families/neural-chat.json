@@ -1,0 +1,19 @@
+{
+  "slug": "neural-chat",
+  "displayName": "neural-chat",
+  "ollamaFamilies": [
+    "neural-chat"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "neural-chat"
+  ],
+  "sitePath": "/models/neural-chat/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

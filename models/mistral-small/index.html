@@ -3,284 +3,72 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>Mistral Small — Enterprise Balance Point for Private AI | NoCloudGPT</title>
-  <meta name="description" content="Deploy Mistral Small 22B privately with NoCloudGPT. The enterprise balance point — stronger reasoning than 12B models, practical on professional GPU hardware, Apache 2.0.">
+  <title>mistral-small — Model family catalog | NoCloudGPT</title>
+  <meta name="description" content="Catalog facts for mistral-small: capabilities (tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://nocloudgpt.com/models/mistral-small/">
-  <meta property="og:title" content="Mistral Small 22B — Private Professional AI | NoCloudGPT">
-  <meta property="og:description" content="Deploy Mistral Small 22B privately with NoCloudGPT. The enterprise balance point — stronger reasoning than 12B models, practical on professional GPU hardware, Apache 2.0.">
-  <meta property="og:image" content="/models/mistral-small/og.webp">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="mistral-small — Model family catalog | NoCloudGPT">
+  <meta property="og:description" content="Catalog facts for mistral-small: capabilities (tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nocloudgpt.com/models/mistral-small/">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "mistral-small", "description": "Catalog facts for mistral-small: capabilities (tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/mistral-small/"}</script>
 </head>
 <body class="bg-slate-950 text-slate-100">
-  <header class="border-b border-slate-800 bg-slate-950">
-    <div class="mx-auto max-w-6xl px-6 py-4">
-      <nav class="flex items-center justify-between text-sm">
-        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-        <div class="flex gap-6 text-slate-400">
-          <a href="/models/" class="hover:text-white">Models</a>
-          <a href="/models/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
-          <a href="/models/quote.html" class="hover:text-white">Get a Quote</a>
-        </div>
+
+  <div class="border-b border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+      <nav class="flex flex-wrap gap-4 text-slate-400">
+        <a href="/models/" class="text-white">Models</a>
+        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+        <a href="/services.html" class="hover:text-white">Services</a>
+        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
+        <a href="/contact.html" class="hover:text-white">Contact</a>
+        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
       </nav>
     </div>
-  </header>
-  <section class="border-b border-slate-800 bg-slate-950">
-    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      
-            <!-- INTERNAL: hero.webp sourced from https://ollama.com/library/mistral-small -->
-      <a href="https://ollama.com/library/mistral-small" target="_blank" rel="noopener noreferrer" class="inline-block">
-<img
-        src="/models/mistral-small/hero.webp"
-        alt="Mistral Small 22B — private enterprise AI with NoCloudGPT"
-        width="1200" height="600"
-        class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-      />
-      </a>
-      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/mistral-small" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
-      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
-      </div>
-      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Mistral Small</p>
-      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">The Enterprise Balance Point — Stronger Reasoning on Professional GPU Hardware</h1>
-      <p class="mt-6 max-w-3xl text-lg text-slate-300">Mistral Small (22B parameters) is the tier between Mistral Nemo's document-processing efficiency and Mistral Large's frontier quality. It delivers substantially stronger reasoning on complex analysis tasks while remaining practical on professional workstation GPUs — an RTX 4080, 4090, or A4000.</p>
-      <p class="mt-4 max-w-3xl text-slate-400">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.</p>
-      <div class="mt-10 flex flex-wrap gap-3">
-        <a href="/models/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
-        <a href="/models/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
-        <a href="/models/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
-      </div>
-    </div>
-  </section>
-  <main class="mx-auto max-w-6xl px-6 py-12">
-    <div class="grid gap-10 lg:grid-cols-[1.55fr_0.95fr]">
-      <div class="space-y-14">
-
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
-          <h2 class="mt-3 text-3xl font-black">Mistral AI</h2>
-          <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
-            <!-- INTERNAL: Verify /assets/models/mistral-small/mistralsmall-developer.webp before publishing. -->
-          </div>
-          <p class="mt-6 text-slate-300">Mistral Small is Mistral AI's mid-range professional model, positioned between the 12B Nemo and the 123B Large. It retains Apache 2.0 licensing and the 128K context window while providing meaningfully better reasoning than the 12B tier for complex analysis and professional writing tasks.</p>
-          <p class="mt-4 text-slate-400">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.0 license terms for Mistral Small.</p>
-        </section>
-
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Why teams choose it</p>
-          <h2 class="mt-3 text-3xl font-black">Fast, Efficient Pre-Built Private AI</h2>
-          <div class="mt-6 grid gap-5 md:grid-cols-2">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6"><h3 class="text-lg font-bold text-cyan-200">Better reasoning than 12B, practical hardware</h3><p class="mt-3 text-slate-400">Teams that find Mistral Nemo 12B occasionally struggling with complex analysis tasks consistently find Mistral Small 22B the right answer — without requiring the 80+ GB GPU that Large demands.</p></div>            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6"><h3 class="text-lg font-bold text-cyan-200">Apache 2.0 at 22B</h3><p class="mt-3 text-slate-400">Commercial integration without the license review complexity of Llama or the Research License of Mistral Large. Clean procurement for commercial product integrations.</p></div>            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6"><h3 class="text-lg font-bold text-cyan-200">128K context for large documents</h3><p class="mt-3 text-slate-400">Same long-context capability as Nemo — complete contracts, reports, and documentation in a single inference call.</p></div>            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6"><h3 class="text-lg font-bold text-cyan-200">Professional GPU accessible</h3><p class="mt-3 text-slate-400">Fits on 16 GB VRAM (RTX 4080, 4090, A4000) at Q4 quantization. The right model for teams with professional workstation GPUs that can't justify A100-class hardware.</p></div>
-          </div>
-        </section>
-
-        <!-- SECTION: Who this model family is for -->
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
-          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
-          <div class="mt-6 grid gap-5 md:grid-cols-2">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <div class="flex items-center gap-2 mb-3">
-                <span class="text-lg">👤</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
-              </div>
-              <p class="mt-2 text-sm text-slate-400">Mistral Small is a practical choice if you want a fast, capable local model for everyday tasks without needing high-end hardware. It handles writing assistance, summarization, research, and general Q&amp;A well enough to serve as a daily driver for most personal use cases. While it doesn't match the depth of larger models like Mistral Large or Llama 3.3 on complex multi-step reasoning, it offers a strong balance of speed, coherence, and accessibility for users running AI on consumer or mid-range workstations.</p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <div class="flex items-center gap-2 mb-3">
-                <span class="text-lg">🏢</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
-              </div>
-              <p class="mt-2 text-sm text-slate-400">Teams that need a shared, private AI assistant for drafting communications, reviewing documents, answering internal questions, or supporting customer workflows will find Mistral Small well-suited to day-to-day volume. It follows instructions reliably and produces clean, consistent output — qualities that matter when multiple people depend on it. It is not the strongest choice for highly complex reasoning or advanced coding tasks, but for the majority of business writing and information work, it performs well above its size class while remaining efficient to run.</p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <div class="flex items-center gap-2 mb-3">
-                <span class="text-lg">⚙️</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
-              </div>
-              <p class="mt-2 text-sm text-slate-400">Developers can use Mistral Small effectively for code explanation, documentation drafting, boilerplate generation, and light debugging support. It handles common languages and frameworks competently and integrates well into local development workflows. Its speed and relatively low resource overhead make it practical to run alongside other tools without dominating your machine. For deeper algorithmic reasoning or complex architecture-level work, larger models will serve you better.</p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-              <div class="flex items-center gap-2 mb-3">
-                <span class="text-lg">🔬</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
-              </div>
-              <p class="mt-2 text-sm text-slate-400">Researchers and analysts will find Mistral Small useful for summarizing papers, explaining technical concepts, drafting reports, and working through structured questions in plain language. It is not a replacement for specialized scientific models on nuanced or multi-step inference tasks. However, for literature review support, methodology documentation, and translating technical findings into readable summaries, it is a fast and practical choice.</p>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
-          <h2 class="mt-3 text-3xl font-black">What to Use Mistral Small For</h2>
-          <div class="mt-6 grid gap-4 md:grid-cols-2">
-            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Complex professional analysis</h3><p class="mt-3 text-sm text-slate-400">Contract analysis, competitive research, financial modeling, and strategic documents where Nemo shows limits but Large is overkill.</p></div>            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">High-volume professional writing</h3><p class="mt-3 text-sm text-slate-400">Proposals, reports, and professional communications where quality matters enough to justify the hardware step up from Standard AI tier.</p></div>            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">European multilingual professional work</h3><p class="mt-3 text-sm text-slate-400">Mistral Small maintains strong European language performance alongside English for multinational professional teams.</p></div>            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Commercial AI product integration</h3><p class="mt-3 text-sm text-slate-400">Apache 2.0 licensing makes Mistral Small the clean choice for commercial software products that embed language AI.</p></div>
-          </div>
-        </section>
-
-        <!-- SECTION: Licensing information -->
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
-          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
-          <p class="mt-5 text-slate-300">Mistral Small is released under the <strong class="text-white">Mistral AI Research License</strong>. This license permits personal and research use, but commercial use generally requires a separate agreement with Mistral AI.</p>
-          <p class="mt-4 text-slate-300">If you intend to use Mistral Small to power a product, service, or internal business workflow that generates revenue or provides commercial value, you should review the license terms carefully and consider contacting Mistral AI directly to confirm your use case is covered.</p>
-          <p class="mt-5 text-slate-300"><strong class="text-white">Official model card:</strong></p>
-          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
-            <li><a href="https://huggingface.co/mistralai/Mistral-Small-Instruct-2409" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mistral-Small-Instruct-2409</a></li>
-          </ul>
-          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
-            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
-          </div>
-        </section>
-
-        <!-- SECTION: Available model sizes -->
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
-          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
-          <!-- INTERNAL: Verify Create individual size/variant pages for each Mistral Small quantization tier with hardware benchmarks and deployment guidance before publishing. -->
-          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-slate-950 text-cyan-200">
-                <tr>
-                  <th class="px-4 py-3">Model Size</th>
-                  <th class="px-4 py-3">Ollama Tag</th>
-                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
-                  <th class="px-4 py-3">Notes</th>
-                  <th class="px-4 py-3"></th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Mistral Small 22B</td>
-                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">mistral-small</code></td>
-                  <td class="px-4 py-3">Professional / Team</td>
-                  <td class="px-4 py-3">Best balance of capability and speed for this family. Requires a capable machine (16–24GB+ RAM recommended).</td>
-                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Mistral Small 22B (Q4 Quantized)</td>
-                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">mistral-small:22b-instruct-2409-q4_K_M</code></td>
-                  <td class="px-4 py-3">Starter / Personal</td>
-                  <td class="px-4 py-3">Reduced memory footprint. Good for users with 12–16GB RAM who want practical daily use.</td>
-                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-white">Mistral Small 22B (Q8 Quantized)</td>
-                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">mistral-small:22b-instruct-2409-q8_0</code></td>
-                  <td class="px-4 py-3">Professional</td>
-                  <td class="px-4 py-3">Higher fidelity than Q4 with more manageable size than full precision. Recommended for team deployments where output quality consistency matters.</td>
-                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
-            <p class="text-sm text-slate-300"><strong class="text-white">Hardware note:</strong> Quantized versions significantly reduce VRAM requirements. GPU acceleration is strongly recommended for responsive performance in team or interactive use cases.</p>
-          </div>
-        </section>
-
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Hardware and deployment reality</p>
-          <h2 class="mt-3 text-3xl font-black">Deployment Tiers</h2>
-          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-slate-950 text-cyan-200"><tr><th class="px-4 py-3">Model size</th><th class="px-4 py-3">NoCloudGPT tier</th><th class="px-4 py-3">Best use</th></tr></thead>
-              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
-                <tr><td class="px-4 py-3 font-semibold text-white">Mistral Small 22B Q4</td><td class="px-4 py-3">Professional AI (16 GB GPU)</td><td class="px-4 py-3">Recommended — fits RTX 4090 or A4000</td></tr>                <tr><td class="px-4 py-3 font-semibold text-white">Mistral Small 22B Q2</td><td class="px-4 py-3">Professional AI (10–12 GB)</td><td class="px-4 py-3">More accessible hardware at reduced quality</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section>
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Honest guidance</p>
-          <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model</h2>
-          <div class="mt-6 space-y-4">
-            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">You need long context on Standard AI hardware</h3><p class="mt-2 text-sm text-slate-400">Mistral Nemo 12B covers long-context document work on 10–12 GB without a GPU. If hardware is the constraint, Nemo is the better fit. <a href="/models/mistral/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Mistral →</a></p></div>            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">You need frontier-level quality</h3><p class="mt-2 text-sm text-slate-400">For the most demanding reasoning tasks, Mistral Large 2 (123B) provides further quality improvement at substantially higher hardware cost. <a href="/models/mistral-large/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Mistral Large →</a></p></div>
-          </div>
-        </section>
-
-        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
-          <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
-          <h2 class="mt-3 text-3xl font-black">Start Your Private Mistral Small Deployment</h2>
-          <p class="mt-5 text-slate-300">NoCloudGPT configures Mistral Small on your GPU workstation or on-premise server, installs Ollama and OpenWebUI with optimal quantization for your specific hardware, and confirms performance on your target workflows before handover.</p>
-          <div class="mt-8 grid gap-4 sm:grid-cols-3">
-            <a href="/models/quote.html" class="rounded-2xl bg-cyan-300 p-5 text-center font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
-            <a href="/models/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
-            <a href="/models/deploy/on-premise.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
-          </div>
-        </section>
-      </div>
-
-      <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
-        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-7">
-          <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Quick reference</p>
-          <h2 class="mt-3 text-2xl font-black">Mistral Small deployment</h2>
-          <p class="mt-3 text-sm text-cyan-50">Fast, efficient pre-built private AI. Deploy with Ollama and OpenWebUI on your own infrastructure.</p>
-          <dl class="mt-5 space-y-3 text-sm">
-            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Developer</dt><dd class="font-semibold text-white">Mistral AI</dd></div>            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Parameters</dt><dd class="font-semibold text-white">22B</dd></div>            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.0</dd></div>            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Context</dt><dd class="font-semibold text-white">128K tokens</dd></div>
-            <div class="flex justify-between"><dt class="text-slate-400">Recommended tier</dt><dd class="font-semibold text-white">Professional AI (16 GB GPU)</dd></div>
-          </dl>
-          <a href="/models/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build a Mistral Small quote</a>
-        </div>
-        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
-          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Best-fit workloads</h3>
-          <ul class="mt-4 space-y-3 text-sm text-slate-300">
-            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Complex professional analysis</li>            <li class="flex gap-2"><span class="text-cyan-400">✓</span> High-quality professional writing</li>            <li class="flex gap-2"><span class="text-cyan-400">✓</span> European multilingual work</li>            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Commercial AI integration</li>
-          </ul>
-        </div>
-        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
-          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Related pages</h3>
-          <ul class="mt-4 space-y-3 text-sm">
-            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/mistral/">Mistral family overview</a></li>            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/mistral-large/">Mistral Large — flagship</a></li>            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/mixtral/">Mixtral — MoE alternative</a></li>            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deploy/on-premise.html">On-premise GPU installation</a></li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-  </main>
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT is an independent deployment service. Not affiliated with Mistral AI or any model developer referenced on this page.</p>
-  
-  <div class="mx-auto max-w-6xl px-6 py-4">
-    <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
-      <strong class="text-slate-400">License information:</strong>
-      License terms for open-weight models are sourced from Hugging Face model cards and official repositories.
-      Licenses may vary by model generation, quantization, and deployment scale.
-      Always verify the current license at
-      <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
-      or the official developer repository before commercial deployment.
-      NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
-    </p>
   </div>
-  </footer>
+  <header class="border-b border-slate-800 bg-slate-950/90">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">mistral-small</p>
+      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">mistral-small family</h1>
+      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
 
-  <!-- ============================================================
-       ARTWORK AND SOURCE REFERENCES
-  ============================================================ -->
-  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
-    <div class="mx-auto max-w-6xl">
-      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
-      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
-        <div>
-          <p class="font-semibold text-slate-400">Hero image</p>
-          <p class="mt-1">AI-generated abstract artwork created for NoCloudGPT. Original work, no third-party license required.</p>
-          <!-- INTERNAL: Verify Replace with licensed photo when available before publishing. -->
-          <!-- Unsplash reference: https://unsplash.com/s/photos/small-business-technology -->
-        </div>
-        <div>
-          <p class="font-semibold text-slate-400">Developer reference</p>
-          <p class="mt-1">Mistral Small is developed by <a href="https://mistral.ai/" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Mistral AI</a>. NoCloudGPT is an independent deployment service not affiliated with Mistral AI.</p>
-        </div>
-        <div>
-          <p class="font-semibold text-slate-400">Model catalog reference</p>
-          <p class="mt-1">See the <a href="https://ollama.com/library/mistral-small" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Ollama library page for Mistral Small</a> for current model tags.</p>
-          <!-- card.webp, sidebar.webp, og.webp: TODO — see models/artwork-sources.md -->
-        </div>
-      </div>
+      <p class="mt-4 text-slate-400">Capabilities: tools. Ollama families: mistral-small.</p>
     </div>
-  </section>
+  </header>
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section>
+      <h2 class="text-2xl font-bold">Models in this family</h2>
+      <table class="mt-6 w-full text-left text-sm">
+        <thead class="text-slate-400">
+          <tr>
+            <th class="pb-3">Model</th>
+            <th class="pb-3">Params</th>
+            <th class="pb-3">Quant</th>
+            <th class="pb-3">Capabilities</th>
+            <th class="pb-3">Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="border-t border-slate-800">
+          <td class="py-3 pr-4"><a href="/models/model/mistral-small/" class="font-semibold text-cyan-300 hover:text-cyan-200">mistral-small</a></td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">tools</td>
+          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
 
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
+    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+  </footer>
 </body>
 </html>

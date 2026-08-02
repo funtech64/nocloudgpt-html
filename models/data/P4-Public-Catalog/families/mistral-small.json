@@ -1,0 +1,19 @@
+{
+  "slug": "mistral-small",
+  "displayName": "mistral-small",
+  "ollamaFamilies": [
+    "mistral-small"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "mistral-small"
+  ],
+  "sitePath": "/models/mistral-small/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

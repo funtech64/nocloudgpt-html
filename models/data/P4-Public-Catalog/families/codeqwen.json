@@ -1,0 +1,19 @@
+{
+  "slug": "codeqwen",
+  "displayName": "codeqwen",
+  "ollamaFamilies": [
+    "codeqwen"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "codeqwen"
+  ],
+  "sitePath": "/models/codeqwen/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

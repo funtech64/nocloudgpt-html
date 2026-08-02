@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "dolphin-llama3",
+  "familySlug": "dolphin-llama3",
+  "displayName": "dolphin-llama3",
+  "ollamaTag": "dolphin-llama3",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "dolphin-llama3",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/dolphin-llama3/"
+}

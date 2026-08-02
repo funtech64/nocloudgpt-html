@@ -1,0 +1,19 @@
+{
+  "slug": "yarn-llama2",
+  "displayName": "yarn-llama2",
+  "ollamaFamilies": [
+    "yarn-llama2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "yarn-llama2"
+  ],
+  "sitePath": "/models/yarn-llama2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

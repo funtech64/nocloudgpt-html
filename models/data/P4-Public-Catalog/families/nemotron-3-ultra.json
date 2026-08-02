@@ -1,0 +1,21 @@
+{
+  "slug": "nemotron-3-ultra",
+  "displayName": "nemotron-3-ultra",
+  "ollamaFamilies": [
+    "nemotron-3-ultra"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "cloud",
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "nemotron-3-ultra"
+  ],
+  "sitePath": "/models/nemotron-3-ultra/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

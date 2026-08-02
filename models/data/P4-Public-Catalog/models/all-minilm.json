@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "all-minilm",
+  "familySlug": "all-minilm",
+  "displayName": "all-minilm",
+  "ollamaTag": "all-minilm",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": 512,
+  "capabilities": [
+    "embedding"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "all-minilm",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/all-minilm/"
+}

@@ -1,0 +1,32 @@
+{
+  "canonicalSlug": "kimi-k3",
+  "familySlug": "kimi-k3",
+  "displayName": "kimi-k3",
+  "ollamaTag": "kimi-k3:cloud",
+  "aliases": [
+    "kimi-k3:cloud"
+  ],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "cloud",
+    "thinking",
+    "tools",
+    "vision"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": true,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "kimi-k3:cloud",
+      "mode": "cloud",
+      "label": "cloud"
+    }
+  ],
+  "sitePath": "/models/model/kimi-k3/"
+}

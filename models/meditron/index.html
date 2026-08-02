@@ -1,392 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>Run Meditron Privately | Medical AI via Ollama | NoCloudGPT</title>
-    <meta name="description" content="Deploy Meditron locally — a medical LLM fine-tuned on clinical literature. No patient data leaves your machine. Run with Ollama and Open WebUI.">
-    <meta name="keywords" content="Meditron local deployment, medical AI self-hosted, clinical LLM Ollama, healthcare AI private, EPFL medical model">
-    <link rel="canonical" href="https://nocloudgpt.com/models/meditron/">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0a; color: #e8e8e8; line-height: 1.7; }
-        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 60px 20px; text-align: center; border-bottom: 2px solid #76b900; }
-        .badge { display: inline-block; background: #76b900; color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase; }
-        h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; }
-        h1 span { color: #76b900; }
-        .subtitle { font-size: 1.15rem; color: #a0b4c8; max-width: 680px; margin: 0 auto 30px; }
-        .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .btn-primary { background: #76b900; color: #000; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; }
-        .btn-secondary { background: transparent; color: #76b900; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; border: 2px solid #76b900; }
-        nav { background: #111; padding: 12px 20px; text-align: center; border-bottom: 1px solid #222; }
-        nav a { color: #76b900; text-decoration: none; margin: 0 16px; font-size: 0.9rem; }
-        .container { max-width: 960px; margin: 0 auto; padding: 60px 20px; }
-        h2 { font-size: 1.9rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; }
-        h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; color: #76b900; }
-        p { margin-bottom: 18px; color: #c8d4e0; }
-        .highlight-box { background: #111827; border-left: 4px solid #76b900; padding: 24px 28px; border-radius: 0 8px 8px 0; margin: 32px 0; }
-        .highlight-box p { margin-bottom: 0; }
-        .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 32px 0; }
-        .model-card { background: #111; border: 1px solid #222; border-radius: 10px; padding: 24px; transition: border-color 0.2s; }
-        .model-card:hover { border-color: #76b900; }
-        .model-card h3 { margin-bottom: 8px; }
-        .model-card .size-badge { background: #1a2a0a; color: #76b900; padding: 3px 10px; border-radius: 12px; font-size: 0.78rem; font-weight: 600; display: inline-block; margin-bottom: 12px; }
-        .model-card p { font-size: 0.9rem; margin-bottom: 0; }
-        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 32px 0; }
-        .use-case-card { background: #0d1117; border: 1px solid #1e2d1e; border-radius: 10px; padding: 22px; }
-        .use-case-card h3 { color: #a8d878; margin-bottom: 10px; }
-        .use-case-card p { font-size: 0.88rem; margin-bottom: 0; }
-        .hardware-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
-        .hardware-table th { background: #111; color: #76b900; padding: 12px 16px; text-align: left; border-bottom: 2px solid #76b900; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .hardware-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; }
-        .hardware-table tr:hover td { background: #111; }
-        .code-block { background: #0d1117; border: 1px solid #1e2d3e; border-radius: 8px; padding: 20px 24px; margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.88rem; color: #79c0ff; overflow-x: auto; }
-        .code-block .comment { color: #6e7681; }
-        .warning-box { background: #1a0a0a; border: 1px solid #5a1a1a; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
-        .warning-box h3 { color: #f07070; margin-bottom: 8px; }
-        .warning-box p { font-size: 0.9rem; margin-bottom: 0; }
-        .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
-        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
-        .compare-table th { background: #111; color: #76b900; padding: 12px 16px; text-align: left; border-bottom: 2px solid #76b900; font-size: 0.85rem; }
-        .compare-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; }
-        footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
-        footer a { color: #76b900; text-decoration: none; margin: 0 12px; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>meditron — Model family catalog | NoCloudGPT</title>
+  <meta name="description" content="Catalog facts for meditron: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nocloudgpt.com/models/meditron/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="meditron — Model family catalog | NoCloudGPT">
+  <meta property="og:description" content="Catalog facts for meditron: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nocloudgpt.com/models/meditron/">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "meditron", "description": "Catalog facts for meditron: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/meditron/"}</script>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100">
 
-<header>
-    <div class="badge">Medical AI — EPFL</div>
-    <h1>Run <span>Meditron</span> Without Exposing Patient Data</h1>
-  <!-- INTERNAL: Verify Add hero.webp — see models/artwork-sources.md, row: meditron before publishing. -->
-
-    <p class="subtitle">Meditron is a medical LLM fine-tuned on PubMed abstracts, clinical guidelines, and medical literature. Deploy it locally via Ollama — sensitive healthcare queries never leave your machine.</p>
-    <div class="cta-group">
-        <a href="/models/quote.html" class="btn-primary">Get Deployment Quote</a>
-        <a href="/models/deploy/" class="btn-secondary">Deployment Guide</a>
+  <div class="border-b border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+      <nav class="flex flex-wrap gap-4 text-slate-400">
+        <a href="/models/" class="text-white">Models</a>
+        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+        <a href="/services.html" class="hover:text-white">Services</a>
+        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
+        <a href="/contact.html" class="hover:text-white">Contact</a>
+        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+      </nav>
     </div>
-</header>
+  </div>
+  <header class="border-b border-slate-800 bg-slate-950/90">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">meditron</p>
+      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">meditron family</h1>
+      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
 
-<nav>
-    <a href="/">Home</a>
-    <a href="/models/">Models</a>
-    <a href="/models/llama/">Llama</a>
-    <a href="/models/mistral/">Mistral</a>
-    <a href="/models/granite/">Granite</a>
-    <a href="/models/deepseek/">DeepSeek</a>
-</nav>
-
-
-<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/meditron -->
-    <div style="margin:24px auto 8px;max-width:320px;text-align:center;">
-      <a href="https://ollama.com/library/meditron" target="_blank" rel="noopener noreferrer">
-        <img src="/models/meditron/hero.webp" alt="meditron model family hero" width="320" style="width:100%;max-width:320px;border-radius:12px;display:block;" />
-      </a>
-      <p style="margin-top:8px;font-size:0.75rem;color:#888;">Source: <a href="https://ollama.com/library/meditron" target="_blank" rel="noopener noreferrer" style="color:#76b900;">Ollama</a></p>
+      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: meditron.</p>
     </div>
-<div class="container">
-
-    <h2>What Is Meditron?</h2>
-
-    <p>Meditron is a family of open-weight large language models developed by the EPFL LLM Team, fine-tuned specifically for medical and clinical knowledge. Built on the LLaMA 2 base and trained on a curated corpus that includes PubMed abstracts, medical guidelines, and clinical literature, Meditron was designed to bring capable medical reasoning to self-hostable models.</p>
-
-    <p>It comes in two sizes: <strong>Meditron 7B</strong> for resource-efficient local deployment, and <strong>Meditron 70B</strong> for deeper clinical reasoning on demanding benchmarks. Unlike general-purpose models that happen to know some medicine, Meditron was purpose-built for the domain — making it a focused tool for healthcare researchers, medical educators, and clinical software developers who need medical AI that stays local.</p>
-
-    <div class="highlight-box">
-        <p><strong>Why local matters for medical AI:</strong> Patient symptoms, diagnostic hypotheses, clinical notes, and research data all carry significant privacy implications. Routing these through a cloud API means trusting a third party with some of the most sensitive queries anyone makes. A locally deployed Meditron processes everything on your hardware — no API logging, no third-party access, no data leaving your network.</p>
-    </div>
-
-    <hr class="section-divider">
-
-    <h2>Model Variants</h2>
-
-    <div class="model-grid">
-        <div class="model-card">
-            <h3>Meditron 7B</h3>
-            <span class="size-badge">7B Parameters</span>
-            <p>The practical entry point for local medical AI. Runs on consumer GPUs with 6GB VRAM. Suitable for medical education, literature review, patient communication drafting, and healthcare IT prototyping. Fast enough for interactive use on modest hardware.</p>
-        </div>
-        <div class="model-card">
-            <h3>Meditron 70B</h3>
-            <span class="size-badge">70B Parameters</span>
-            <p>The full-capability variant for serious clinical reasoning tasks. Requires substantial hardware — 48GB+ VRAM — but delivers significantly deeper medical knowledge and more reliable clinical reasoning on demanding benchmark tasks. For organizations with GPU infrastructure, this is the version that competes with the strongest available medical models.</p>
-        </div>
-    </div>
-
-    <hr class="section-divider">
-
-    <h2>What Meditron Is Good At</h2>
-
-    <h3>Medical Question Answering</h3>
-    <p>Meditron was specifically trained on medical literature to answer clinical and biomedical questions accurately. It handles disease mechanisms, pharmacology, diagnostic criteria, and treatment guidelines with domain knowledge that general-purpose models lack. For medical education and reference tasks, the gap between Meditron and an unspecialized model is often significant.</p>
-
-    <h3>Clinical Reasoning Support</h3>
-    <p>The 70B variant demonstrates strong performance on clinical reasoning benchmarks — working through differential diagnoses, synthesizing presenting symptoms, and applying clinical guidelines. This is reference and reasoning support, not autonomous clinical decision-making, but for the right use cases the reasoning depth is genuinely useful.</p>
-
-    <h3>Medical Literature Review</h3>
-    <p>Researchers can query Meditron about study findings, pharmacological interactions, and treatment efficacy data from the medical literature it was trained on — keeping research queries and preliminary findings within a private environment rather than exposing them to commercial APIs.</p>
-
-    <h3>Healthcare IT Development</h3>
-    <p>Developers building clinical NLP features, medical knowledge bases, or healthcare software can use Meditron locally to prototype and test medical reasoning flows without exposing proprietary data or patient information to external services during development.</p>
-
-    <hr class="section-divider">
-
-    <h2>Who This Model Family is For</h2>
-
-    <h3>Personal Use</h3>
-    <p>Meditron is a strong choice for medical students, nurses, and healthcare professionals who want a private study companion for clinical reasoning, drug information, or guideline-based scenarios. Because it runs entirely on your own machine, you can explore medical questions without sending sensitive data to a third-party service. It is an educational and reference tool — not a substitute for a licensed physician — so all outputs should be verified against current clinical sources.</p>
-
-    <h3>Business / Team Use</h3>
-    <p>Clinics, telehealth providers, and health-tech teams can use Meditron to build private, on-premise tools for documentation drafting, patient education content, and clinical decision-support prototypes. Running it locally keeps protected health information inside your infrastructure, which is a significant advantage for HIPAA- and GDPR-conscious organizations. It should always be used with mandatory human review — Meditron is designed to assist clinicians, not replace clinical judgment.</p>
-
-    <h3>Developer &amp; Technical Use</h3>
-    <p>Developers building medical chat interfaces, triage assistants, or guideline-lookup tools will find Meditron a practical, license-friendly foundation that runs locally via Ollama. Its medical fine-tuning reduces the need for heavy prompt engineering around clinical knowledge. Note that it is built on the older Llama 2 architecture, so you may need to manage context limits and integrate retrieval (RAG) for the most current guidelines and references.</p>
-
-    <h3>Data Science &amp; Research Use</h3>
-    <p>Meditron was created by EPFL specifically for open medical research, making it one of the more transparent and reproducible medical LLMs available for fine-tuning and benchmarking. It is particularly valuable for studying clinical reasoning and adapting models for low-resource or humanitarian medical settings. Researchers should benchmark it against newer medical and generalist models, as both its architecture and training data predate more recent releases.</p>
-
-    <hr class="section-divider">
-
-    <h2>Licensing Information</h2>
-
-    <p>Meditron is released under the <strong>Llama 2 Community License</strong> (inherited from its Meta base model), with additional responsible-use guidance from EPFL. Commercial use is permitted under the standard Llama 2 terms, but the model is explicitly intended for research and clinical-support contexts that include qualified human oversight — not for autonomous clinical decision-making.</p>
-
-    <p>You should review the full terms and intended-use notes directly on the official model card before deploying.</p>
-
-    <p><strong>Official source:</strong></p>
-    <ul style="list-style:disc; padding-left:1.5rem; margin-bottom:18px; color:#c8d4e0;">
-        <li><a href="https://huggingface.co/epfl-llm/meditron" target="_blank" rel="noopener" style="color:#76b900;">epfl-llm/meditron on Hugging Face</a></li>
-    </ul>
-
-    <div class="highlight-box" style="border-left-color:#f59e0b; background:rgba(245, 158, 11, 0.08); border-color:rgba(245, 158, 11, 0.35);">
-        <p><strong style="color:#f59e0b;">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated (especially clinical) context.</p>
-    </div>
-
-    <hr class="section-divider">
-
-    <h2>Available Model Sizes</h2>
-
-    <!-- INTERNAL: Verify Create individual model size detail pages for meditron-7b and meditron-70b with hardware benchmarks and clinical prompt examples before publishing. -->
-
-    <table class="compare-table">
-        <thead>
-            <tr>
-                <th>Model Size</th>
-                <th>Ollama Tag</th>
-                <th>Recommended NoCloudGPT Tier</th>
-                <th>Notes</th>
-                <th></th>
-            </tr>
+  </header>
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section>
+      <h2 class="text-2xl font-bold">Models in this family</h2>
+      <table class="mt-6 w-full text-left text-sm">
+        <thead class="text-slate-400">
+          <tr>
+            <th class="pb-3">Model</th>
+            <th class="pb-3">Params</th>
+            <th class="pb-3">Quant</th>
+            <th class="pb-3">Capabilities</th>
+            <th class="pb-3">Availability</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><strong>Meditron 7B</strong></td>
-                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">meditron:7b</code></td>
-                <td>Starter / Workstation</td>
-                <td>Lightweight option for study tools, prototyping, and single-user clinical reference. Runs on modest GPUs or high-RAM machines.</td>
-                <td><a href="/models/quote.html" style="color:#76b900;">Get quote →</a></td>
-            </tr>
-            <tr>
-                <td><strong>Meditron 70B</strong></td>
-                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">meditron:70b</code></td>
-                <td>Professional / Server</td>
-                <td>Stronger clinical reasoning and medical knowledge for team deployments and research. Requires substantial GPU memory or multi-GPU setup.</td>
-                <td><a href="/models/quote.html" style="color:#76b900;">Get quote →</a></td>
-            </tr>
+        <tr class="border-t border-slate-800">
+          <td class="py-3 pr-4"><a href="/models/model/meditron/" class="font-semibold text-cyan-300 hover:text-cyan-200">meditron</a></td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">text</td>
+          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
+        </tr>
         </tbody>
-    </table>
+      </table>
+    </section>
+  </main>
 
-    <div class="highlight-box" style="margin-top:24px;">
-        <p><strong>Positioning note:</strong> Meditron is a <strong>specialized medical LLM</strong>. It performs best when used as a clinical reasoning and reference assistant with human oversight. For the most current guidelines, pair it with a retrieval (RAG) layer.</p>
-    </div>
-
-    <hr class="section-divider">
-
-    <h2>Meditron vs. MedGemma</h2>
-
-    <p>Both are purpose-built medical models available for local deployment. The key differences:</p>
-
-    <table class="compare-table">
-        <thead>
-            <tr>
-                <th>Feature</th>
-                <th>Meditron</th>
-                <th>MedGemma</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Developer</td>
-                <td>EPFL LLM Team</td>
-                <td>Google DeepMind</td>
-            </tr>
-            <tr>
-                <td>Base model</td>
-                <td>LLaMA 2</td>
-                <td>Gemma</td>
-            </tr>
-            <tr>
-                <td>Sizes</td>
-                <td>7B, 70B</td>
-                <td>4B, 27B</td>
-            </tr>
-            <tr>
-                <td>Training focus</td>
-                <td>PubMed, medical guidelines, clinical notes</td>
-                <td>Medical imaging + text</td>
-            </tr>
-            <tr>
-                <td>Multimodal</td>
-                <td>No</td>
-                <td>Yes (image + text)</td>
-            </tr>
-            <tr>
-                <td>70B variant</td>
-                <td>Yes</td>
-                <td>No</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p>If your use case involves medical images or radiology alongside text, MedGemma has a clear advantage. For pure clinical text reasoning — and especially if you need a 70B-scale medical model — Meditron remains the stronger choice. Both run via Ollama and can be compared side by side in Open WebUI.</p>
-
-    <hr class="section-divider">
-
-    <h2>Hardware Requirements</h2>
-
-    <table class="hardware-table">
-        <thead>
-            <tr>
-                <th>Model</th>
-                <th>VRAM Required</th>
-                <th>RAM (CPU Inference)</th>
-                <th>Notes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Meditron 7B</td>
-                <td>~6 GB</td>
-                <td>~16 GB</td>
-                <td>Runs on most consumer GPUs</td>
-            </tr>
-            <tr>
-                <td>Meditron 70B (Q4)</td>
-                <td>~40–48 GB</td>
-                <td>~80 GB</td>
-                <td>Requires high-end GPU or multi-GPU</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <hr class="section-divider">
-
-    <h2>Deploying Meditron via Ollama</h2>
-
-    <div class="code-block">
-        <span class="comment"># Meditron 7B — recommended starting point</span><br>
-        ollama pull meditron<br><br>
-        <span class="comment"># Meditron 70B — serious clinical reasoning tasks</span><br>
-        ollama pull meditron:70b<br><br>
-        <span class="comment"># Start Open WebUI</span><br>
-        docker run -d -p 3000:8080 \<br>
-        &nbsp;&nbsp;-e OLLAMA_BASE_URL=http://localhost:11434 \<br>
-        &nbsp;&nbsp;ghcr.io/open-webui/open-webui:main
-    </div>
-
-    <p>Once running, open <strong>http://localhost:3000</strong>, select meditron from the model dropdown, and begin your session. No accounts, no API keys, no data transmission.</p>
-
-    <hr class="section-divider">
-
-    <h2>Use Cases</h2>
-
-    <div class="use-case-grid">
-        <div class="use-case-card">
-            <h3>Medical Education</h3>
-            <p>Students preparing for USMLE, PLAB, or specialty boards can use Meditron as a study companion — asking mechanism-of-action questions, reviewing clinical presentations, and working through differential diagnoses privately.</p>
-        </div>
-        <div class="use-case-card">
-            <h3>Clinical Literature Review</h3>
-            <p>Researchers querying treatment guidelines, drug interactions, and study findings can keep their research focus private rather than routing sensitive academic work through commercial APIs.</p>
-        </div>
-        <div class="use-case-card">
-            <h3>Patient Communication Drafting</h3>
-            <p>Healthcare staff drafting patient education materials, appointment summaries, or condition explanations benefit from keeping this sensitive work entirely on-premise.</p>
-        </div>
-        <div class="use-case-card">
-            <h3>Healthcare IT Prototyping</h3>
-            <p>Developers building clinical NLP features can prototype and test medical reasoning flows locally without exposing proprietary data or patient records during development.</p>
-        </div>
-        <div class="use-case-card">
-            <h3>Continuing Medical Education</h3>
-            <p>Clinicians reviewing guidelines, exploring unfamiliar conditions, or refreshing knowledge in adjacent specialties get a focused domain-specific tool rather than a general chatbot.</p>
-        </div>
-        <div class="use-case-card">
-            <h3>Research Knowledge Base</h3>
-            <p>Academic medical centers can deploy Meditron as an internal research assistant — staff query the model's clinical knowledge without routing institutional research through external services.</p>
-        </div>
-    </div>
-
-    <hr class="section-divider">
-
-    <div class="warning-box">
-        <h3>Clinical Responsibility Notice</h3>
-        <p>Meditron is a research and reference tool. It must not serve as the sole basis for clinical diagnosis, treatment planning, drug prescribing, or emergency medical guidance. Medical AI — including purpose-built models like Meditron — can produce confident but incorrect output. Always verify against authoritative clinical sources and licensed medical professionals. Local deployment eliminates the privacy concern; it does not remove the need for clinical judgment.</p>
-    </div>
-
-    <hr class="section-divider">
-
-    <h2>Deployment Options We Offer</h2>
-
-    <h3>Local Workstation (Meditron 7B)</h3>
-    <p>For individual clinicians, researchers, or small teams — we configure Ollama, Meditron 7B, and Open WebUI on an existing machine. Single-user setup takes under an hour. All processing stays on that machine with no external connectivity required during inference.</p>
-
-    <h3>On-Premise Server (Meditron 70B)</h3>
-    <p>For healthcare organizations and research institutions needing the full 70B model, we configure GPU server deployments with network isolation, user authentication via Open WebUI, and optional integration with existing institutional SSO. All patient and research data stays within your network boundary.</p>
-
-    <div style="margin-top: 32px;">
-        <a href="/models/quote.html" class="btn-primary">Request Deployment Quote</a>
-        &nbsp;&nbsp;
-        <a href="/models/deploy/" class="btn-secondary">View Deployment Guide</a>
-    </div>
-
-</div>
-
-<footer>
-    <p>
-        <a href="/">NoCloudGPT Home</a>
-        <a href="/models/">All Models</a>
-        <a href="/models/llama/">Llama</a>
-        <a href="/models/granite/">Granite</a>
-        <a href="/models/deploy/">Deployment Guide</a>
-        <a href="/models/quote.html">Get Quote</a>
-    </p>
-    <p style="margin-top: 16px;">© 2025 NoCloudGPT. Private AI deployment specialists. Not affiliated with EPFL.</p>
-</footer>
-
-  <!-- ============================================================
-       ARTWORK AND SOURCE REFERENCES
-  ============================================================ -->
-  <section style="border-top:1px solid #1e293b; background:#0f172a; padding:2rem 1.5rem; margin-top:3rem;">
-    <div style="max-width:56rem; margin:0 auto; font-size:0.75rem; color:#64748b;">
-      <p style="font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Artwork and source references</p>
-      <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
-        <div>
-          <p style="font-weight:600; color:#94a3b8;">Hero image</p>
-          
-        </div>
-        <div>
-          <p style="font-weight:600; color:#94a3b8;">Developer reference</p>
-          <p style="margin-top:0.25rem;">Meditron is developed by <a href="https://github.com/epfLLM/meditron" target="_blank" rel="noopener" style="color:#67e8f9;">EPFL LLM Team</a>. NoCloudGPT is an independent deployment service not affiliated with EPFL LLM Team.</p>
-        </div>
-        <div>
-          <p style="font-weight:600; color:#94a3b8;">Model catalog</p>
-          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/meditron" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: meditron</a> for current tags and sizes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
+    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+  </footer>
 </body>
 </html>

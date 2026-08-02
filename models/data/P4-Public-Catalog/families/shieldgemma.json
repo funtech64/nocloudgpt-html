@@ -1,0 +1,19 @@
+{
+  "slug": "shieldgemma",
+  "displayName": "shieldgemma",
+  "ollamaFamilies": [
+    "shieldgemma"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "shieldgemma"
+  ],
+  "sitePath": "/models/shieldgemma/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

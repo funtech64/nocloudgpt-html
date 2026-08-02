@@ -1,0 +1,19 @@
+{
+  "slug": "wizard-vicuna",
+  "displayName": "wizard-vicuna",
+  "ollamaFamilies": [
+    "wizard-vicuna"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "wizard-vicuna"
+  ],
+  "sitePath": "/models/wizard-vicuna/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

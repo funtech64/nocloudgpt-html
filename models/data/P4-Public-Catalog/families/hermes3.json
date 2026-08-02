@@ -1,0 +1,19 @@
+{
+  "slug": "hermes3",
+  "displayName": "hermes3",
+  "ollamaFamilies": [
+    "hermes3"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "hermes3"
+  ],
+  "sitePath": "/models/hermes3/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

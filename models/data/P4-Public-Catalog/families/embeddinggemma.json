@@ -1,0 +1,19 @@
+{
+  "slug": "embeddinggemma",
+  "displayName": "embeddinggemma",
+  "ollamaFamilies": [
+    "embeddinggemma"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "embedding"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "embeddinggemma"
+  ],
+  "sitePath": "/models/embeddinggemma/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

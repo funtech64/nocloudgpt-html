@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "nexusraven",
+  "familySlug": "nexusraven",
+  "displayName": "nexusraven",
+  "ollamaTag": "nexusraven",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "nexusraven",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/nexusraven/"
+}

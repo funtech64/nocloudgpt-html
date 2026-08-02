@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "p4-public-catalog/1.0",
+  "projectionVersion": "4a.pin.2026-08-02",
+  "sourceRepo": "terminal-glass/8-ball",
+  "sourcePath": "P4-Public-Catalog",
+  "pinnedFrom": "scripts/catalog/pin_snapshot.py (Ollama library HTML snapshot)",
+  "generatedAt": "2026-08-02T02:19:58Z",
+  "counts": {
+    "ollamaLibraryFamilies": 234,
+    "siteFamilies": 228,
+    "models": 235,
+    "seoEligibleFamilies": 228,
+    "seoEligibleModels": 233,
+    "noindexSourceExceptions": 2
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "solar",
+  "displayName": "solar",
+  "ollamaFamilies": [
+    "solar"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "solar"
+  ],
+  "sitePath": "/models/solar/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

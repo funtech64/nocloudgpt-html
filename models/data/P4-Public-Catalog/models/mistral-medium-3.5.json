@@ -1,0 +1,29 @@
+{
+  "canonicalSlug": "mistral-medium-3.5",
+  "familySlug": "mistral-medium-3.5",
+  "displayName": "mistral-medium-3.5",
+  "ollamaTag": "mistral-medium-3.5",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "thinking",
+    "tools",
+    "vision"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "mistral-medium-3.5",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/mistral-medium-3.5/"
+}

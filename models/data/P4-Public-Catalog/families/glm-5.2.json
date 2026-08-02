@@ -1,0 +1,21 @@
+{
+  "slug": "glm-5.2",
+  "displayName": "glm-5.2",
+  "ollamaFamilies": [
+    "glm-5.2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "cloud",
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "glm-5.2"
+  ],
+  "sitePath": "/models/glm-5.2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

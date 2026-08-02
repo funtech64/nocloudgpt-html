@@ -1,0 +1,19 @@
+{
+  "slug": "gemma2",
+  "displayName": "gemma2",
+  "ollamaFamilies": [
+    "gemma2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "gemma2"
+  ],
+  "sitePath": "/models/gemma2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "tinydolphin",
+  "displayName": "tinydolphin",
+  "ollamaFamilies": [
+    "tinydolphin"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "tinydolphin"
+  ],
+  "sitePath": "/models/tinydolphin/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "phi4-mini",
+  "displayName": "phi4-mini",
+  "ollamaFamilies": [
+    "phi4-mini"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "phi4-mini"
+  ],
+  "sitePath": "/models/phi4-mini/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

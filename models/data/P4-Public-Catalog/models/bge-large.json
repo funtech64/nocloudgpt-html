@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "bge-large",
+  "familySlug": "bge-large",
+  "displayName": "bge-large",
+  "ollamaTag": "bge-large",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": 512,
+  "capabilities": [
+    "embedding"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "bge-large",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/bge-large/"
+}

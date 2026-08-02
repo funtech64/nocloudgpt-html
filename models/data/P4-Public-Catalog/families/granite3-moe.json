@@ -1,0 +1,19 @@
+{
+  "slug": "granite3-moe",
+  "displayName": "granite3-moe",
+  "ollamaFamilies": [
+    "granite3-moe"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "granite3-moe"
+  ],
+  "sitePath": "/models/granite3-moe/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

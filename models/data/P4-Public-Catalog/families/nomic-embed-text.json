@@ -1,0 +1,19 @@
+{
+  "slug": "nomic-embed-text",
+  "displayName": "nomic-embed-text",
+  "ollamaFamilies": [
+    "nomic-embed-text"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "embedding"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "nomic-embed-text"
+  ],
+  "sitePath": "/models/nomic-embed-text/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "medllama2",
+  "displayName": "medllama2",
+  "ollamaFamilies": [
+    "medllama2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "medllama2"
+  ],
+  "sitePath": "/models/medllama2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

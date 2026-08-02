@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "mxbai-embed-large",
+  "familySlug": "mxbai-embed-large",
+  "displayName": "mxbai-embed-large",
+  "ollamaTag": "mxbai-embed-large",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": 512,
+  "capabilities": [
+    "embedding"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "mxbai-embed-large",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/mxbai-embed-large/"
+}

@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "nemotron",
+  "familySlug": "nemotron",
+  "displayName": "nemotron",
+  "ollamaTag": "nemotron",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "nemotron",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/nemotron/"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "phi4",
+  "displayName": "phi4",
+  "ollamaFamilies": [
+    "phi4"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "phi4"
+  ],
+  "sitePath": "/models/phi4/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

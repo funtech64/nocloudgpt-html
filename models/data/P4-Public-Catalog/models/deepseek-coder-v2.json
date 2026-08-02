@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "deepseek-coder-v2",
+  "familySlug": "deepseek-coder-v2",
+  "displayName": "deepseek-coder-v2",
+  "ollamaTag": "deepseek-coder-v2",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "deepseek-coder-v2",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/deepseek-coder-v2/"
+}

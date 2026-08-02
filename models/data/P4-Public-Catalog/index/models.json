@@ -1,0 +1,6482 @@
+[
+  {
+    "canonicalSlug": "alfred",
+    "familySlug": "alfred",
+    "displayName": "alfred",
+    "ollamaTag": "alfred",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "alfred",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/alfred/"
+  },
+  {
+    "canonicalSlug": "all-minilm",
+    "familySlug": "all-minilm",
+    "displayName": "all-minilm",
+    "ollamaTag": "all-minilm",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 512,
+    "capabilities": [
+      "embedding"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "all-minilm",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/all-minilm/"
+  },
+  {
+    "canonicalSlug": "athene-v2",
+    "familySlug": "athene-v2",
+    "displayName": "athene-v2",
+    "ollamaTag": "athene-v2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "athene-v2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/athene-v2/"
+  },
+  {
+    "canonicalSlug": "aya",
+    "familySlug": "aya",
+    "displayName": "aya",
+    "ollamaTag": "aya",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "aya",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/aya/"
+  },
+  {
+    "canonicalSlug": "aya-expanse",
+    "familySlug": "aya-expanse",
+    "displayName": "aya-expanse",
+    "ollamaTag": "aya-expanse",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "aya-expanse",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/aya-expanse/"
+  },
+  {
+    "canonicalSlug": "bakllava",
+    "familySlug": "bakllava",
+    "displayName": "bakllava",
+    "ollamaTag": "bakllava",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "bakllava",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/bakllava/"
+  },
+  {
+    "canonicalSlug": "bespoke-minicheck",
+    "familySlug": "bespoke-minicheck",
+    "displayName": "bespoke-minicheck",
+    "ollamaTag": "bespoke-minicheck",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "bespoke-minicheck",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/bespoke-minicheck/"
+  },
+  {
+    "canonicalSlug": "bge-large",
+    "familySlug": "bge-large",
+    "displayName": "bge-large",
+    "ollamaTag": "bge-large",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 512,
+    "capabilities": [
+      "embedding"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "bge-large",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/bge-large/"
+  },
+  {
+    "canonicalSlug": "bge-m3",
+    "familySlug": "bge-m3",
+    "displayName": "bge-m3",
+    "ollamaTag": "bge-m3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 8192,
+    "capabilities": [
+      "embedding"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "bge-m3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/bge-m3/"
+  },
+  {
+    "canonicalSlug": "codebooga",
+    "familySlug": "codebooga",
+    "displayName": "codebooga",
+    "ollamaTag": "codebooga",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "codebooga",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/codebooga/"
+  },
+  {
+    "canonicalSlug": "codegeex4",
+    "familySlug": "codegeex4",
+    "displayName": "codegeex4",
+    "ollamaTag": "codegeex4",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "codegeex4",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/codegeex4/"
+  },
+  {
+    "canonicalSlug": "codegemma",
+    "familySlug": "codegemma",
+    "displayName": "codegemma",
+    "ollamaTag": "codegemma",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "codegemma",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/codegemma/"
+  },
+  {
+    "canonicalSlug": "codellama",
+    "familySlug": "codellama",
+    "displayName": "codellama",
+    "ollamaTag": "codellama",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "codellama",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/codellama/"
+  },
+  {
+    "canonicalSlug": "codeqwen",
+    "familySlug": "codeqwen",
+    "displayName": "codeqwen",
+    "ollamaTag": "codeqwen",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "codeqwen",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/codeqwen/"
+  },
+  {
+    "canonicalSlug": "codestral",
+    "familySlug": "codestral",
+    "displayName": "codestral",
+    "ollamaTag": "codestral",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "codestral",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/codestral/"
+  },
+  {
+    "canonicalSlug": "codeup",
+    "familySlug": "codeup",
+    "displayName": "codeup",
+    "ollamaTag": "codeup",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "codeup",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/codeup/"
+  },
+  {
+    "canonicalSlug": "cogito",
+    "familySlug": "cogito",
+    "displayName": "cogito",
+    "ollamaTag": "cogito",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "cogito",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/cogito/"
+  },
+  {
+    "canonicalSlug": "cogito-2.1",
+    "familySlug": "cogito-2.1",
+    "displayName": "cogito-2.1",
+    "ollamaTag": "cogito-2.1",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "cogito-2.1",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/cogito-2.1/"
+  },
+  {
+    "canonicalSlug": "command-a",
+    "familySlug": "command-a",
+    "displayName": "command-a",
+    "ollamaTag": "command-a",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "command-a",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/command-a/"
+  },
+  {
+    "canonicalSlug": "command-r",
+    "familySlug": "command-r",
+    "displayName": "command-r",
+    "ollamaTag": "command-r",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "command-r",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/command-r/"
+  },
+  {
+    "canonicalSlug": "command-r-plus",
+    "familySlug": "command-r-plus",
+    "displayName": "command-r-plus",
+    "ollamaTag": "command-r-plus",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "command-r-plus",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/command-r-plus/"
+  },
+  {
+    "canonicalSlug": "command-r7b",
+    "familySlug": "command-r7b",
+    "displayName": "command-r7b",
+    "ollamaTag": "command-r7b",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "embedding",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "command-r7b",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/command-r7b/"
+  },
+  {
+    "canonicalSlug": "command-r7b-arabic",
+    "familySlug": "command-r7b-arabic",
+    "displayName": "command-r7b-arabic",
+    "ollamaTag": "command-r7b-arabic",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "command-r7b-arabic",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/command-r7b-arabic/"
+  },
+  {
+    "canonicalSlug": "dbrx",
+    "familySlug": "dbrx",
+    "displayName": "dbrx",
+    "ollamaTag": "dbrx",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "dbrx",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/dbrx/"
+  },
+  {
+    "canonicalSlug": "deepcoder",
+    "familySlug": "deepcoder",
+    "displayName": "deepcoder",
+    "ollamaTag": "deepcoder",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "deepcoder",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/deepcoder/"
+  },
+  {
+    "canonicalSlug": "deepscaler",
+    "familySlug": "deepscaler",
+    "displayName": "deepscaler",
+    "ollamaTag": "deepscaler",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "deepscaler",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/deepscaler/"
+  },
+  {
+    "canonicalSlug": "deepseek-coder",
+    "familySlug": "deepseek-coder",
+    "displayName": "deepseek-coder",
+    "ollamaTag": "deepseek-coder",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "deepseek-coder",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/deepseek-coder/"
+  },
+  {
+    "canonicalSlug": "deepseek-coder-v2",
+    "familySlug": "deepseek-coder-v2",
+    "displayName": "deepseek-coder-v2",
+    "ollamaTag": "deepseek-coder-v2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "deepseek-coder-v2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/deepseek-coder-v2/"
+  },
+  {
+    "canonicalSlug": "deepseek-llm",
+    "familySlug": "deepseek-llm",
+    "displayName": "deepseek-llm",
+    "ollamaTag": "deepseek-llm",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "deepseek-llm",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/deepseek-llm/"
+  },
+  {
+    "canonicalSlug": "deepseek-ocr",
+    "familySlug": "deepseek-ocr",
+    "displayName": "deepseek-ocr",
+    "ollamaTag": "deepseek-ocr",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "deepseek-ocr",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/deepseek-ocr/"
+  },
+  {
+    "canonicalSlug": "deepseek-r1",
+    "familySlug": "deepseek-r1",
+    "displayName": "deepseek-r1",
+    "ollamaTag": "deepseek-r1",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "deepseek-r1",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/deepseek-r1/"
+  },
+  {
+    "canonicalSlug": "deepseek-v2",
+    "familySlug": "deepseek-v2",
+    "displayName": "deepseek-v2",
+    "ollamaTag": "deepseek-v2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "deepseek-v2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/deepseek-v2/"
+  },
+  {
+    "canonicalSlug": "deepseek-v2.5",
+    "familySlug": "deepseek-v2.5",
+    "displayName": "deepseek-v2.5",
+    "ollamaTag": "deepseek-v2.5",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "deepseek-v2.5",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/deepseek-v2.5/"
+  },
+  {
+    "canonicalSlug": "deepseek-v3",
+    "familySlug": "deepseek",
+    "displayName": "deepseek-v3",
+    "ollamaTag": "deepseek-v3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "deepseek-v3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/deepseek-v3/"
+  },
+  {
+    "canonicalSlug": "deepseek-v3.1",
+    "familySlug": "deepseek",
+    "displayName": "deepseek-v3.1",
+    "ollamaTag": "deepseek-v3.1",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "deepseek-v3.1",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/deepseek-v3.1/"
+  },
+  {
+    "canonicalSlug": "deepseek-v4-flash",
+    "familySlug": "deepseek-v4-flash",
+    "displayName": "deepseek-v4-flash",
+    "ollamaTag": "deepseek-v4-flash:cloud",
+    "aliases": [
+      "deepseek-v4-flash:cloud"
+    ],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "deepseek-v4-flash:cloud",
+        "mode": "cloud",
+        "label": "cloud"
+      }
+    ],
+    "sitePath": "/models/model/deepseek-v4-flash/"
+  },
+  {
+    "canonicalSlug": "deepseek-v4-pro",
+    "familySlug": "deepseek-v4-pro",
+    "displayName": "deepseek-v4-pro",
+    "ollamaTag": "deepseek-v4-pro:cloud",
+    "aliases": [
+      "deepseek-v4-pro:cloud"
+    ],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "deepseek-v4-pro:cloud",
+        "mode": "cloud",
+        "label": "cloud"
+      }
+    ],
+    "sitePath": "/models/model/deepseek-v4-pro/"
+  },
+  {
+    "canonicalSlug": "devstral",
+    "familySlug": "devstral",
+    "displayName": "devstral",
+    "ollamaTag": "devstral",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "devstral",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/devstral/"
+  },
+  {
+    "canonicalSlug": "devstral-2",
+    "familySlug": "devstral-2",
+    "displayName": "devstral-2",
+    "ollamaTag": "devstral-2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "devstral-2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/devstral-2/"
+  },
+  {
+    "canonicalSlug": "devstral-small-2",
+    "familySlug": "devstral-small-2",
+    "displayName": "devstral-small-2",
+    "ollamaTag": "devstral-small-2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "devstral-small-2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/devstral-small-2/"
+  },
+  {
+    "canonicalSlug": "dolphin-llama3",
+    "familySlug": "dolphin-llama3",
+    "displayName": "dolphin-llama3",
+    "ollamaTag": "dolphin-llama3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "dolphin-llama3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/dolphin-llama3/"
+  },
+  {
+    "canonicalSlug": "dolphin-mistral",
+    "familySlug": "dolphin-mistral",
+    "displayName": "dolphin-mistral",
+    "ollamaTag": "dolphin-mistral",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "dolphin-mistral",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/dolphin-mistral/"
+  },
+  {
+    "canonicalSlug": "dolphin-mixtral",
+    "familySlug": "dolphin-mixtral",
+    "displayName": "dolphin-mixtral",
+    "ollamaTag": "dolphin-mixtral",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "dolphin-mixtral",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/dolphin-mixtral/"
+  },
+  {
+    "canonicalSlug": "dolphin-phi",
+    "familySlug": "dolphin-phi",
+    "displayName": "dolphin-phi",
+    "ollamaTag": "dolphin-phi",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "dolphin-phi",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/dolphin-phi/"
+  },
+  {
+    "canonicalSlug": "dolphin3",
+    "familySlug": "dolphin3",
+    "displayName": "dolphin3",
+    "ollamaTag": "dolphin3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "dolphin3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/dolphin3/"
+  },
+  {
+    "canonicalSlug": "dolphincoder",
+    "familySlug": "dolphincoder",
+    "displayName": "dolphincoder",
+    "ollamaTag": "dolphincoder",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "dolphincoder",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/dolphincoder/"
+  },
+  {
+    "canonicalSlug": "duckdb-nsql",
+    "familySlug": "duckdb-nsql",
+    "displayName": "duckdb-nsql",
+    "ollamaTag": "duckdb-nsql",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "duckdb-nsql",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/duckdb-nsql/"
+  },
+  {
+    "canonicalSlug": "embeddinggemma",
+    "familySlug": "embeddinggemma",
+    "displayName": "embeddinggemma",
+    "ollamaTag": "embeddinggemma",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "embedding"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "embeddinggemma",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/embeddinggemma/"
+  },
+  {
+    "canonicalSlug": "everythinglm",
+    "familySlug": "everythinglm",
+    "displayName": "everythinglm",
+    "ollamaTag": "everythinglm",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "everythinglm",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/everythinglm/"
+  },
+  {
+    "canonicalSlug": "exaone-deep",
+    "familySlug": "exaone-deep",
+    "displayName": "exaone-deep",
+    "ollamaTag": "exaone-deep",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "exaone-deep",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/exaone-deep/"
+  },
+  {
+    "canonicalSlug": "exaone3.5",
+    "familySlug": "exaone3.5",
+    "displayName": "exaone3.5",
+    "ollamaTag": "exaone3.5",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "exaone3.5",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/exaone3.5/"
+  },
+  {
+    "canonicalSlug": "falcon",
+    "familySlug": "falcon",
+    "displayName": "falcon",
+    "ollamaTag": "falcon",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "falcon",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/falcon/"
+  },
+  {
+    "canonicalSlug": "falcon2",
+    "familySlug": "falcon2",
+    "displayName": "falcon2",
+    "ollamaTag": "falcon2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "falcon2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/falcon2/"
+  },
+  {
+    "canonicalSlug": "falcon3",
+    "familySlug": "falcon3",
+    "displayName": "falcon3",
+    "ollamaTag": "falcon3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "falcon3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/falcon3/"
+  },
+  {
+    "canonicalSlug": "firefunction-v2",
+    "familySlug": "firefunction-v2",
+    "displayName": "firefunction-v2",
+    "ollamaTag": "firefunction-v2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "firefunction-v2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/firefunction-v2/"
+  },
+  {
+    "canonicalSlug": "functiongemma",
+    "familySlug": "functiongemma",
+    "displayName": "functiongemma",
+    "ollamaTag": "functiongemma",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "functiongemma",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/functiongemma/"
+  },
+  {
+    "canonicalSlug": "gemini-3-flash-preview",
+    "familySlug": "gemini-3-flash-preview",
+    "displayName": "gemini-3-flash-preview",
+    "ollamaTag": "gemini-3-flash-preview",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "gemini-3-flash-preview",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/gemini-3-flash-preview/"
+  },
+  {
+    "canonicalSlug": "gemma",
+    "familySlug": "gemma",
+    "displayName": "gemma",
+    "ollamaTag": "gemma",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "gemma",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/gemma/"
+  },
+  {
+    "canonicalSlug": "gemma2",
+    "familySlug": "gemma2",
+    "displayName": "gemma2",
+    "ollamaTag": "gemma2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "gemma2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/gemma2/"
+  },
+  {
+    "canonicalSlug": "gemma3",
+    "familySlug": "gemma3",
+    "displayName": "gemma3",
+    "ollamaTag": "gemma3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "gemma3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/gemma3/"
+  },
+  {
+    "canonicalSlug": "gemma3n",
+    "familySlug": "gemma3n",
+    "displayName": "gemma3n",
+    "ollamaTag": "gemma3n",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "gemma3n",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/gemma3n/"
+  },
+  {
+    "canonicalSlug": "gemma4",
+    "familySlug": "gemma4",
+    "displayName": "gemma4",
+    "ollamaTag": "gemma4",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 512,
+    "capabilities": [
+      "cloud",
+      "embedding",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "gemma4",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/gemma4/"
+  },
+  {
+    "canonicalSlug": "glm-4.7-flash",
+    "familySlug": "glm-4.7-flash",
+    "displayName": "glm-4.7-flash",
+    "ollamaTag": "glm-4.7-flash",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "glm-4.7-flash",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/glm-4.7-flash/"
+  },
+  {
+    "canonicalSlug": "glm-5.1",
+    "familySlug": "glm-5.1",
+    "displayName": "glm-5.1",
+    "ollamaTag": "glm-5.1:cloud",
+    "aliases": [
+      "glm-5.1:cloud"
+    ],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "glm-5.1:cloud",
+        "mode": "cloud",
+        "label": "cloud"
+      }
+    ],
+    "sitePath": "/models/model/glm-5.1/"
+  },
+  {
+    "canonicalSlug": "glm-5.2",
+    "familySlug": "glm-5.2",
+    "displayName": "glm-5.2",
+    "ollamaTag": "glm-5.2:cloud",
+    "aliases": [
+      "glm-5.2:cloud"
+    ],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "glm-5.2:cloud",
+        "mode": "cloud",
+        "label": "cloud"
+      }
+    ],
+    "sitePath": "/models/model/glm-5.2/"
+  },
+  {
+    "canonicalSlug": "glm-ocr",
+    "familySlug": "glm-ocr",
+    "displayName": "glm-ocr",
+    "ollamaTag": "glm-ocr",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "glm-ocr",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/glm-ocr/"
+  },
+  {
+    "canonicalSlug": "glm4",
+    "familySlug": "glm4",
+    "displayName": "glm4",
+    "ollamaTag": "glm4",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "glm4",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/glm4/"
+  },
+  {
+    "canonicalSlug": "goliath",
+    "familySlug": "goliath",
+    "displayName": "goliath",
+    "ollamaTag": "goliath",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "goliath",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/goliath/"
+  },
+  {
+    "canonicalSlug": "gpt-oss",
+    "familySlug": "gpt-oss",
+    "displayName": "gpt-oss",
+    "ollamaTag": "gpt-oss",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "gpt-oss",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/gpt-oss/"
+  },
+  {
+    "canonicalSlug": "gpt-oss-safeguard",
+    "familySlug": "gpt-oss-safeguard",
+    "displayName": "gpt-oss-safeguard",
+    "ollamaTag": "gpt-oss-safeguard",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "gpt-oss-safeguard",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/gpt-oss-safeguard/"
+  },
+  {
+    "canonicalSlug": "granite-code",
+    "familySlug": "granite-code",
+    "displayName": "granite-code",
+    "ollamaTag": "granite-code",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "granite-code",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/granite-code/"
+  },
+  {
+    "canonicalSlug": "granite-embedding",
+    "familySlug": "granite-embedding",
+    "displayName": "granite-embedding",
+    "ollamaTag": "granite-embedding:278m",
+    "aliases": [
+      "granite-embedding:278m"
+    ],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 512,
+    "capabilities": [
+      "embedding"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "granite-embedding:278m",
+        "mode": "local",
+        "label": "278m"
+      }
+    ],
+    "sitePath": "/models/model/granite-embedding/"
+  },
+  {
+    "canonicalSlug": "granite3-dense",
+    "familySlug": "granite3-dense",
+    "displayName": "granite3-dense",
+    "ollamaTag": "granite3-dense",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "granite3-dense",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/granite3-dense/"
+  },
+  {
+    "canonicalSlug": "granite3-guardian",
+    "familySlug": "granite3-guardian",
+    "displayName": "granite3-guardian",
+    "ollamaTag": "granite3-guardian",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "granite3-guardian",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/granite3-guardian/"
+  },
+  {
+    "canonicalSlug": "granite3-moe",
+    "familySlug": "granite3-moe",
+    "displayName": "granite3-moe",
+    "ollamaTag": "granite3-moe",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "granite3-moe",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/granite3-moe/"
+  },
+  {
+    "canonicalSlug": "granite3.1-dense",
+    "familySlug": "granite3.1-dense",
+    "displayName": "granite3.1-dense",
+    "ollamaTag": "granite3.1-dense",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "granite3.1-dense",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/granite3.1-dense/"
+  },
+  {
+    "canonicalSlug": "granite3.1-moe",
+    "familySlug": "granite3.1-moe",
+    "displayName": "granite3.1-moe",
+    "ollamaTag": "granite3.1-moe",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "granite3.1-moe",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/granite3.1-moe/"
+  },
+  {
+    "canonicalSlug": "granite3.2",
+    "familySlug": "granite3.2",
+    "displayName": "granite3.2",
+    "ollamaTag": "granite3.2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "granite3.2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/granite3.2/"
+  },
+  {
+    "canonicalSlug": "granite3.2-vision",
+    "familySlug": "granite3.2-vision",
+    "displayName": "granite3.2-vision",
+    "ollamaTag": "granite3.2-vision",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "granite3.2-vision",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/granite3.2-vision/"
+  },
+  {
+    "canonicalSlug": "granite3.3",
+    "familySlug": "granite3.3",
+    "displayName": "granite3.3",
+    "ollamaTag": "granite3.3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "granite3.3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/granite3.3/"
+  },
+  {
+    "canonicalSlug": "granite4",
+    "familySlug": "granite4",
+    "displayName": "granite4",
+    "ollamaTag": "granite4",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "granite4",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/granite4/"
+  },
+  {
+    "canonicalSlug": "granite4.1",
+    "familySlug": "granite4.1",
+    "displayName": "granite4.1",
+    "ollamaTag": "granite4.1:3b",
+    "aliases": [
+      "granite4.1:3b"
+    ],
+    "parameterSizeB": 3.0,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "granite4.1:3b",
+        "mode": "local",
+        "label": "3b"
+      }
+    ],
+    "sitePath": "/models/model/granite4.1/"
+  },
+  {
+    "canonicalSlug": "granite4.1-guardian",
+    "familySlug": "granite4.1-guardian",
+    "displayName": "granite4.1-guardian",
+    "ollamaTag": "granite4.1-guardian",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "granite4.1-guardian",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/granite4.1-guardian/"
+  },
+  {
+    "canonicalSlug": "hermes3",
+    "familySlug": "hermes3",
+    "displayName": "hermes3",
+    "ollamaTag": "hermes3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "hermes3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/hermes3/"
+  },
+  {
+    "canonicalSlug": "ibm",
+    "familySlug": "granite4.1",
+    "displayName": "ibm",
+    "ollamaTag": "ibm",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "ibm",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/ibm/"
+  },
+  {
+    "canonicalSlug": "internlm2",
+    "familySlug": "internlm2",
+    "displayName": "internlm2",
+    "ollamaTag": "internlm2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "internlm2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/internlm2/"
+  },
+  {
+    "canonicalSlug": "kimi-k2.5",
+    "familySlug": "kimi-k2.5",
+    "displayName": "kimi-k2.5",
+    "ollamaTag": "kimi-k2.5",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "stale_source",
+    "localPrivateSuitable": false,
+    "cloudJetSuitable": false,
+    "seoEligible": false,
+    "noindex": true,
+    "sourceException": {
+      "type": "stale_source",
+      "label": "Temporarily unavailable source metadata",
+      "note": "Source catalog entry retained; not deleted."
+    },
+    "deploymentVariants": [
+      {
+        "tag": "kimi-k2.5",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/kimi-k2.5/"
+  },
+  {
+    "canonicalSlug": "kimi-k2.6",
+    "familySlug": "kimi-k2.6",
+    "displayName": "kimi-k2.6",
+    "ollamaTag": "kimi-k2.6:cloud",
+    "aliases": [
+      "kimi-k2.6:cloud"
+    ],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "kimi-k2.6:cloud",
+        "mode": "cloud",
+        "label": "cloud"
+      }
+    ],
+    "sitePath": "/models/model/kimi-k2.6/"
+  },
+  {
+    "canonicalSlug": "kimi-k2.7-code",
+    "familySlug": "kimi-k2.7-code",
+    "displayName": "kimi-k2.7-code",
+    "ollamaTag": "kimi-k2.7-code:cloud",
+    "aliases": [
+      "kimi-k2.7-code:cloud"
+    ],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "kimi-k2.7-code:cloud",
+        "mode": "cloud",
+        "label": "cloud"
+      }
+    ],
+    "sitePath": "/models/model/kimi-k2.7-code/"
+  },
+  {
+    "canonicalSlug": "kimi-k3",
+    "familySlug": "kimi-k3",
+    "displayName": "kimi-k3",
+    "ollamaTag": "kimi-k3:cloud",
+    "aliases": [
+      "kimi-k3:cloud"
+    ],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "kimi-k3:cloud",
+        "mode": "cloud",
+        "label": "cloud"
+      }
+    ],
+    "sitePath": "/models/model/kimi-k3/"
+  },
+  {
+    "canonicalSlug": "laguna-s-2.1",
+    "familySlug": "laguna-s-2.1",
+    "displayName": "laguna-s-2.1",
+    "ollamaTag": "laguna-s-2.1",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 18,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "laguna-s-2.1",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/laguna-s-2.1/"
+  },
+  {
+    "canonicalSlug": "laguna-xs-2.1",
+    "familySlug": "laguna-xs-2.1",
+    "displayName": "laguna-xs-2.1",
+    "ollamaTag": "laguna-xs-2.1",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 512,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "laguna-xs-2.1",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/laguna-xs-2.1/"
+  },
+  {
+    "canonicalSlug": "laguna-xs.2",
+    "familySlug": "laguna-xs.2",
+    "displayName": "laguna-xs.2",
+    "ollamaTag": "laguna-xs.2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 512,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "laguna-xs.2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/laguna-xs.2/"
+  },
+  {
+    "canonicalSlug": "lfm2",
+    "familySlug": "lfm2",
+    "displayName": "lfm2",
+    "ollamaTag": "lfm2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "lfm2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/lfm2/"
+  },
+  {
+    "canonicalSlug": "lfm2.5",
+    "familySlug": "lfm2.5",
+    "displayName": "lfm2.5",
+    "ollamaTag": "lfm2.5",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "lfm2.5",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/lfm2.5/"
+  },
+  {
+    "canonicalSlug": "lfm2.5-thinking",
+    "familySlug": "lfm2.5-thinking",
+    "displayName": "lfm2.5-thinking",
+    "ollamaTag": "lfm2.5-thinking",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 32768,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "lfm2.5-thinking",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/lfm2.5-thinking/"
+  },
+  {
+    "canonicalSlug": "llama-guard3",
+    "familySlug": "llama-guard3",
+    "displayName": "llama-guard3",
+    "ollamaTag": "llama-guard3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama-guard3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama-guard3/"
+  },
+  {
+    "canonicalSlug": "llama-pro",
+    "familySlug": "llama-pro",
+    "displayName": "llama-pro",
+    "ollamaTag": "llama-pro",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama-pro",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama-pro/"
+  },
+  {
+    "canonicalSlug": "llama2",
+    "familySlug": "llama",
+    "displayName": "llama2",
+    "ollamaTag": "llama2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama2/"
+  },
+  {
+    "canonicalSlug": "llama2-chinese",
+    "familySlug": "llama2-chinese",
+    "displayName": "llama2-chinese",
+    "ollamaTag": "llama2-chinese",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama2-chinese",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama2-chinese/"
+  },
+  {
+    "canonicalSlug": "llama2-uncensored",
+    "familySlug": "llama2-uncensored",
+    "displayName": "llama2-uncensored",
+    "ollamaTag": "llama2-uncensored",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama2-uncensored",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama2-uncensored/"
+  },
+  {
+    "canonicalSlug": "llama3",
+    "familySlug": "llama3",
+    "displayName": "llama3",
+    "ollamaTag": "llama3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama3/"
+  },
+  {
+    "canonicalSlug": "llama3-chatqa",
+    "familySlug": "llama3-chatqa",
+    "displayName": "llama3-chatqa",
+    "ollamaTag": "llama3-chatqa",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama3-chatqa",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama3-chatqa/"
+  },
+  {
+    "canonicalSlug": "llama3-gradient",
+    "familySlug": "llama3-gradient",
+    "displayName": "llama3-gradient",
+    "ollamaTag": "llama3-gradient",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama3-gradient",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama3-gradient/"
+  },
+  {
+    "canonicalSlug": "llama3-groq-tool-use",
+    "familySlug": "llama3-groq-tool-use",
+    "displayName": "llama3-groq-tool-use",
+    "ollamaTag": "llama3-groq-tool-use",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama3-groq-tool-use",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama3-groq-tool-use/"
+  },
+  {
+    "canonicalSlug": "llama3.1",
+    "familySlug": "llama",
+    "displayName": "llama3.1",
+    "ollamaTag": "llama3.1",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama3.1",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama3.1/"
+  },
+  {
+    "canonicalSlug": "llama3.2",
+    "familySlug": "llama",
+    "displayName": "llama3.2",
+    "ollamaTag": "llama3.2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama3.2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama3.2/"
+  },
+  {
+    "canonicalSlug": "llama3.2-vision",
+    "familySlug": "llama3.2-vision",
+    "displayName": "llama3.2-vision",
+    "ollamaTag": "llama3.2-vision",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama3.2-vision",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama3.2-vision/"
+  },
+  {
+    "canonicalSlug": "llama3.3",
+    "familySlug": "llama",
+    "displayName": "llama3.3",
+    "ollamaTag": "llama3.3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama3.3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama3.3/"
+  },
+  {
+    "canonicalSlug": "llama4",
+    "familySlug": "llama4",
+    "displayName": "llama4",
+    "ollamaTag": "llama4",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llama4",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llama4/"
+  },
+  {
+    "canonicalSlug": "llava",
+    "familySlug": "llava",
+    "displayName": "llava",
+    "ollamaTag": "llava",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llava",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llava/"
+  },
+  {
+    "canonicalSlug": "llava-llama3",
+    "familySlug": "llava-llama3",
+    "displayName": "llava-llama3",
+    "ollamaTag": "llava-llama3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llava-llama3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llava-llama3/"
+  },
+  {
+    "canonicalSlug": "llava-phi3",
+    "familySlug": "llava-phi3",
+    "displayName": "llava-phi3",
+    "ollamaTag": "llava-phi3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "llava-phi3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/llava-phi3/"
+  },
+  {
+    "canonicalSlug": "magicoder",
+    "familySlug": "magicoder",
+    "displayName": "magicoder",
+    "ollamaTag": "magicoder",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "magicoder",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/magicoder/"
+  },
+  {
+    "canonicalSlug": "magistral",
+    "familySlug": "magistral",
+    "displayName": "magistral",
+    "ollamaTag": "magistral",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "magistral",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/magistral/"
+  },
+  {
+    "canonicalSlug": "marco-o1",
+    "familySlug": "marco-o1",
+    "displayName": "marco-o1",
+    "ollamaTag": "marco-o1",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "marco-o1",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/marco-o1/"
+  },
+  {
+    "canonicalSlug": "mathstral",
+    "familySlug": "mathstral",
+    "displayName": "mathstral",
+    "ollamaTag": "mathstral",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "mathstral",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/mathstral/"
+  },
+  {
+    "canonicalSlug": "medgemma",
+    "familySlug": "medgemma",
+    "displayName": "medgemma",
+    "ollamaTag": "medgemma",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "medgemma",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/medgemma/"
+  },
+  {
+    "canonicalSlug": "medgemma1.5",
+    "familySlug": "medgemma1.5",
+    "displayName": "medgemma1.5",
+    "ollamaTag": "medgemma1.5",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "medgemma1.5",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/medgemma1.5/"
+  },
+  {
+    "canonicalSlug": "meditron",
+    "familySlug": "meditron",
+    "displayName": "meditron",
+    "ollamaTag": "meditron",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "meditron",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/meditron/"
+  },
+  {
+    "canonicalSlug": "medllama2",
+    "familySlug": "medllama2",
+    "displayName": "medllama2",
+    "ollamaTag": "medllama2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "medllama2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/medllama2/"
+  },
+  {
+    "canonicalSlug": "megadolphin",
+    "familySlug": "megadolphin",
+    "displayName": "megadolphin",
+    "ollamaTag": "megadolphin",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "megadolphin",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/megadolphin/"
+  },
+  {
+    "canonicalSlug": "minicpm-v",
+    "familySlug": "minicpm-v",
+    "displayName": "minicpm-v",
+    "ollamaTag": "minicpm-v",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 640,
+    "capabilities": [
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "minicpm-v",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/minicpm-v/"
+  },
+  {
+    "canonicalSlug": "minicpm-v4.5",
+    "familySlug": "minicpm-v4.5",
+    "displayName": "minicpm-v4.5",
+    "ollamaTag": "minicpm-v4.5",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 1536,
+    "capabilities": [
+      "thinking",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "minicpm-v4.5",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/minicpm-v4.5/"
+  },
+  {
+    "canonicalSlug": "minicpm-v4.6",
+    "familySlug": "minicpm-v4.6",
+    "displayName": "minicpm-v4.6",
+    "ollamaTag": "minicpm-v4.6",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 4,
+    "capabilities": [
+      "thinking",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "minicpm-v4.6",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/minicpm-v4.6/"
+  },
+  {
+    "canonicalSlug": "minimax-m2.5",
+    "familySlug": "minimax-m2.5",
+    "displayName": "minimax-m2.5",
+    "ollamaTag": "minimax-m2.5",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "stale_source",
+    "localPrivateSuitable": false,
+    "cloudJetSuitable": false,
+    "seoEligible": false,
+    "noindex": true,
+    "sourceException": {
+      "type": "stale_source",
+      "label": "Temporarily unavailable source metadata",
+      "note": "Source catalog entry retained; not deleted."
+    },
+    "deploymentVariants": [
+      {
+        "tag": "minimax-m2.5",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/minimax-m2.5/"
+  },
+  {
+    "canonicalSlug": "minimax-m2.7",
+    "familySlug": "minimax-m2.7",
+    "displayName": "minimax-m2.7",
+    "ollamaTag": "minimax-m2.7:cloud",
+    "aliases": [
+      "minimax-m2.7:cloud"
+    ],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 2000,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "minimax-m2.7:cloud",
+        "mode": "cloud",
+        "label": "cloud"
+      }
+    ],
+    "sitePath": "/models/model/minimax-m2.7/"
+  },
+  {
+    "canonicalSlug": "minimax-m3",
+    "familySlug": "minimax-m3",
+    "displayName": "minimax-m3",
+    "ollamaTag": "minimax-m3:cloud",
+    "aliases": [
+      "minimax-m3:cloud"
+    ],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "minimax-m3:cloud",
+        "mode": "cloud",
+        "label": "cloud"
+      }
+    ],
+    "sitePath": "/models/model/minimax-m3/"
+  },
+  {
+    "canonicalSlug": "ministral-3",
+    "familySlug": "ministral-3",
+    "displayName": "ministral-3",
+    "ollamaTag": "ministral-3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "ministral-3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/ministral-3/"
+  },
+  {
+    "canonicalSlug": "mistral",
+    "familySlug": "mistral",
+    "displayName": "mistral",
+    "ollamaTag": "mistral",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "mistral",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/mistral/"
+  },
+  {
+    "canonicalSlug": "mistral-large",
+    "familySlug": "mistral-large",
+    "displayName": "mistral-large",
+    "ollamaTag": "mistral-large",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "mistral-large",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/mistral-large/"
+  },
+  {
+    "canonicalSlug": "mistral-large-3",
+    "familySlug": "mistral-large-3",
+    "displayName": "mistral-large-3",
+    "ollamaTag": "mistral-large-3:675b-cloud",
+    "aliases": [
+      "mistral-large-3:675b-cloud"
+    ],
+    "parameterSizeB": 675.0,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "mistral-large-3:675b-cloud",
+        "mode": "cloud",
+        "label": "675b-cloud"
+      }
+    ],
+    "sitePath": "/models/model/mistral-large-3/"
+  },
+  {
+    "canonicalSlug": "mistral-medium-3.5",
+    "familySlug": "mistral-medium-3.5",
+    "displayName": "mistral-medium-3.5",
+    "ollamaTag": "mistral-medium-3.5",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "mistral-medium-3.5",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/mistral-medium-3.5/"
+  },
+  {
+    "canonicalSlug": "mistral-nemo",
+    "familySlug": "mistral-nemo",
+    "displayName": "mistral-nemo",
+    "ollamaTag": "mistral-nemo",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "mistral-nemo",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/mistral-nemo/"
+  },
+  {
+    "canonicalSlug": "mistral-openorca",
+    "familySlug": "mistral-openorca",
+    "displayName": "mistral-openorca",
+    "ollamaTag": "mistral-openorca",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "mistral-openorca",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/mistral-openorca/"
+  },
+  {
+    "canonicalSlug": "mistral-small",
+    "familySlug": "mistral-small",
+    "displayName": "mistral-small",
+    "ollamaTag": "mistral-small",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "mistral-small",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/mistral-small/"
+  },
+  {
+    "canonicalSlug": "mistral-small3.1",
+    "familySlug": "mistral-small3.1",
+    "displayName": "mistral-small3.1",
+    "ollamaTag": "mistral-small3.1",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 150,
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "mistral-small3.1",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/mistral-small3.1/"
+  },
+  {
+    "canonicalSlug": "mistral-small3.2",
+    "familySlug": "mistral-small3.2",
+    "displayName": "mistral-small3.2",
+    "ollamaTag": "mistral-small3.2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "mistral-small3.2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/mistral-small3.2/"
+  },
+  {
+    "canonicalSlug": "mistrallite",
+    "familySlug": "mistrallite",
+    "displayName": "mistrallite",
+    "ollamaTag": "mistrallite",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "mistrallite",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/mistrallite/"
+  },
+  {
+    "canonicalSlug": "mixtral",
+    "familySlug": "mixtral",
+    "displayName": "mixtral",
+    "ollamaTag": "mixtral",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "mixtral",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/mixtral/"
+  },
+  {
+    "canonicalSlug": "moondream",
+    "familySlug": "moondream",
+    "displayName": "moondream",
+    "ollamaTag": "moondream",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "moondream",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/moondream/"
+  },
+  {
+    "canonicalSlug": "mxbai-embed-large",
+    "familySlug": "mxbai-embed-large",
+    "displayName": "mxbai-embed-large",
+    "ollamaTag": "mxbai-embed-large",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 512,
+    "capabilities": [
+      "embedding"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "mxbai-embed-large",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/mxbai-embed-large/"
+  },
+  {
+    "canonicalSlug": "nemotron",
+    "familySlug": "nemotron",
+    "displayName": "nemotron",
+    "ollamaTag": "nemotron",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nemotron",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/nemotron/"
+  },
+  {
+    "canonicalSlug": "nemotron-3-nano",
+    "familySlug": "nemotron-3-nano",
+    "displayName": "nemotron-3-nano",
+    "ollamaTag": "nemotron-3-nano",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nemotron-3-nano",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/nemotron-3-nano/"
+  },
+  {
+    "canonicalSlug": "nemotron-3-super",
+    "familySlug": "nemotron-3-super",
+    "displayName": "nemotron-3-super",
+    "ollamaTag": "nemotron-3-super",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nemotron-3-super",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/nemotron-3-super/"
+  },
+  {
+    "canonicalSlug": "nemotron-3-ultra",
+    "familySlug": "nemotron-3-ultra",
+    "displayName": "nemotron-3-ultra",
+    "ollamaTag": "nemotron-3-ultra:cloud",
+    "aliases": [
+      "nemotron-3-ultra:cloud"
+    ],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nemotron-3-ultra:cloud",
+        "mode": "cloud",
+        "label": "cloud"
+      }
+    ],
+    "sitePath": "/models/model/nemotron-3-ultra/"
+  },
+  {
+    "canonicalSlug": "nemotron-cascade-2",
+    "familySlug": "nemotron-cascade-2",
+    "displayName": "nemotron-cascade-2",
+    "ollamaTag": "nemotron-cascade-2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nemotron-cascade-2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/nemotron-cascade-2/"
+  },
+  {
+    "canonicalSlug": "nemotron-mini",
+    "familySlug": "nemotron-mini",
+    "displayName": "nemotron-mini",
+    "ollamaTag": "nemotron-mini",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 4096,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nemotron-mini",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/nemotron-mini/"
+  },
+  {
+    "canonicalSlug": "nemotron3",
+    "familySlug": "nemotron3",
+    "displayName": "nemotron3",
+    "ollamaTag": "nemotron3:33b",
+    "aliases": [
+      "nemotron3:33b"
+    ],
+    "parameterSizeB": 33.0,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nemotron3:33b",
+        "mode": "local",
+        "label": "33b"
+      }
+    ],
+    "sitePath": "/models/model/nemotron3/"
+  },
+  {
+    "canonicalSlug": "neural-chat",
+    "familySlug": "neural-chat",
+    "displayName": "neural-chat",
+    "ollamaTag": "neural-chat",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "neural-chat",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/neural-chat/"
+  },
+  {
+    "canonicalSlug": "nexusraven",
+    "familySlug": "nexusraven",
+    "displayName": "nexusraven",
+    "ollamaTag": "nexusraven",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nexusraven",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/nexusraven/"
+  },
+  {
+    "canonicalSlug": "nomic-embed-text",
+    "familySlug": "nomic-embed-text",
+    "displayName": "nomic-embed-text",
+    "ollamaTag": "nomic-embed-text",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "embedding"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nomic-embed-text",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/nomic-embed-text/"
+  },
+  {
+    "canonicalSlug": "nomic-embed-text-v2-moe",
+    "familySlug": "nomic-embed-text-v2-moe",
+    "displayName": "nomic-embed-text-v2-moe",
+    "ollamaTag": "nomic-embed-text-v2-moe",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 512,
+    "capabilities": [
+      "embedding"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nomic-embed-text-v2-moe",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/nomic-embed-text-v2-moe/"
+  },
+  {
+    "canonicalSlug": "north-mini-code-1.0",
+    "familySlug": "north-mini-code-1.0",
+    "displayName": "north-mini-code-1.0",
+    "ollamaTag": "north-mini-code-1.0",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "embedding",
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "north-mini-code-1.0",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/north-mini-code-1.0/"
+  },
+  {
+    "canonicalSlug": "notus",
+    "familySlug": "notus",
+    "displayName": "notus",
+    "ollamaTag": "notus",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "notus",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/notus/"
+  },
+  {
+    "canonicalSlug": "notux",
+    "familySlug": "notux",
+    "displayName": "notux",
+    "ollamaTag": "notux",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "notux",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/notux/"
+  },
+  {
+    "canonicalSlug": "nous-hermes",
+    "familySlug": "nous-hermes",
+    "displayName": "nous-hermes",
+    "ollamaTag": "nous-hermes",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nous-hermes",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/nous-hermes/"
+  },
+  {
+    "canonicalSlug": "nous-hermes2",
+    "familySlug": "nous-hermes2",
+    "displayName": "nous-hermes2",
+    "ollamaTag": "nous-hermes2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nous-hermes2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/nous-hermes2/"
+  },
+  {
+    "canonicalSlug": "nous-hermes2-mixtral",
+    "familySlug": "nous-hermes2-mixtral",
+    "displayName": "nous-hermes2-mixtral",
+    "ollamaTag": "nous-hermes2-mixtral",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nous-hermes2-mixtral",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/nous-hermes2-mixtral/"
+  },
+  {
+    "canonicalSlug": "nuextract",
+    "familySlug": "nuextract",
+    "displayName": "nuextract",
+    "ollamaTag": "nuextract",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 2000,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "nuextract",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/nuextract/"
+  },
+  {
+    "canonicalSlug": "olmo-3",
+    "familySlug": "olmo-3",
+    "displayName": "olmo-3",
+    "ollamaTag": "olmo-3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "olmo-3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/olmo-3/"
+  },
+  {
+    "canonicalSlug": "olmo-3.1",
+    "familySlug": "olmo-3.1",
+    "displayName": "olmo-3.1",
+    "ollamaTag": "olmo-3.1",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "olmo-3.1",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/olmo-3.1/"
+  },
+  {
+    "canonicalSlug": "olmo2",
+    "familySlug": "olmo2",
+    "displayName": "olmo2",
+    "ollamaTag": "olmo2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "olmo2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/olmo2/"
+  },
+  {
+    "canonicalSlug": "open-orca-platypus2",
+    "familySlug": "open-orca-platypus2",
+    "displayName": "open-orca-platypus2",
+    "ollamaTag": "open-orca-platypus2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "open-orca-platypus2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/open-orca-platypus2/"
+  },
+  {
+    "canonicalSlug": "openchat",
+    "familySlug": "openchat",
+    "displayName": "openchat",
+    "ollamaTag": "openchat",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "openchat",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/openchat/"
+  },
+  {
+    "canonicalSlug": "opencoder",
+    "familySlug": "opencoder",
+    "displayName": "opencoder",
+    "ollamaTag": "opencoder",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "opencoder",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/opencoder/"
+  },
+  {
+    "canonicalSlug": "openhermes",
+    "familySlug": "openhermes",
+    "displayName": "openhermes",
+    "ollamaTag": "openhermes",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "openhermes",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/openhermes/"
+  },
+  {
+    "canonicalSlug": "openthinker",
+    "familySlug": "openthinker",
+    "displayName": "openthinker",
+    "ollamaTag": "openthinker",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "openthinker",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/openthinker/"
+  },
+  {
+    "canonicalSlug": "orca-mini",
+    "familySlug": "orca-mini",
+    "displayName": "orca-mini",
+    "ollamaTag": "orca-mini",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "orca-mini",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/orca-mini/"
+  },
+  {
+    "canonicalSlug": "orca2",
+    "familySlug": "orca2",
+    "displayName": "orca2",
+    "ollamaTag": "orca2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "orca2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/orca2/"
+  },
+  {
+    "canonicalSlug": "ornith",
+    "familySlug": "ornith",
+    "displayName": "ornith",
+    "ollamaTag": "ornith",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "ornith",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/ornith/"
+  },
+  {
+    "canonicalSlug": "paraphrase-multilingual",
+    "familySlug": "paraphrase-multilingual",
+    "displayName": "paraphrase-multilingual",
+    "ollamaTag": "paraphrase-multilingual",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 512,
+    "capabilities": [
+      "embedding"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "paraphrase-multilingual",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/paraphrase-multilingual/"
+  },
+  {
+    "canonicalSlug": "phi",
+    "familySlug": "phi",
+    "displayName": "phi",
+    "ollamaTag": "phi",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "phi",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/phi/"
+  },
+  {
+    "canonicalSlug": "phi3",
+    "familySlug": "phi3",
+    "displayName": "phi3",
+    "ollamaTag": "phi3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "phi3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/phi3/"
+  },
+  {
+    "canonicalSlug": "phi3.5",
+    "familySlug": "phi3.5",
+    "displayName": "phi3.5",
+    "ollamaTag": "phi3.5",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "phi3.5",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/phi3.5/"
+  },
+  {
+    "canonicalSlug": "phi4",
+    "familySlug": "phi4",
+    "displayName": "phi4",
+    "ollamaTag": "phi4",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "phi4",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/phi4/"
+  },
+  {
+    "canonicalSlug": "phi4-mini",
+    "familySlug": "phi4-mini",
+    "displayName": "phi4-mini",
+    "ollamaTag": "phi4-mini",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "phi4-mini",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/phi4-mini/"
+  },
+  {
+    "canonicalSlug": "phi4-mini-reasoning",
+    "familySlug": "phi4-mini-reasoning",
+    "displayName": "phi4-mini-reasoning",
+    "ollamaTag": "phi4-mini-reasoning",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "phi4-mini-reasoning",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/phi4-mini-reasoning/"
+  },
+  {
+    "canonicalSlug": "phi4-reasoning",
+    "familySlug": "phi4-reasoning",
+    "displayName": "phi4-reasoning",
+    "ollamaTag": "phi4-reasoning",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "phi4-reasoning",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/phi4-reasoning/"
+  },
+  {
+    "canonicalSlug": "phind-codellama",
+    "familySlug": "phind-codellama",
+    "displayName": "phind-codellama",
+    "ollamaTag": "phind-codellama",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "phind-codellama",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/phind-codellama/"
+  },
+  {
+    "canonicalSlug": "qwen",
+    "familySlug": "qwen",
+    "displayName": "qwen",
+    "ollamaTag": "qwen",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen/"
+  },
+  {
+    "canonicalSlug": "qwen2",
+    "familySlug": "qwen2",
+    "displayName": "qwen2",
+    "ollamaTag": "qwen2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "embedding",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen2/"
+  },
+  {
+    "canonicalSlug": "qwen2-math",
+    "familySlug": "qwen2-math",
+    "displayName": "qwen2-math",
+    "ollamaTag": "qwen2-math",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen2-math",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen2-math/"
+  },
+  {
+    "canonicalSlug": "qwen2.5",
+    "familySlug": "qwen",
+    "displayName": "qwen2.5",
+    "ollamaTag": "qwen2.5",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen2.5",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen2.5/"
+  },
+  {
+    "canonicalSlug": "qwen2.5-coder",
+    "familySlug": "qwen2.5-coder",
+    "displayName": "qwen2.5-coder",
+    "ollamaTag": "qwen2.5-coder",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen2.5-coder",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen2.5-coder/"
+  },
+  {
+    "canonicalSlug": "qwen2.5vl",
+    "familySlug": "qwen2.5vl",
+    "displayName": "qwen2.5vl",
+    "ollamaTag": "qwen2.5vl",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen2.5vl",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen2.5vl/"
+  },
+  {
+    "canonicalSlug": "qwen3",
+    "familySlug": "qwen3.5",
+    "displayName": "qwen3",
+    "ollamaTag": "qwen3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen3/"
+  },
+  {
+    "canonicalSlug": "qwen3-coder",
+    "familySlug": "qwen3-coder",
+    "displayName": "qwen3-coder",
+    "ollamaTag": "qwen3-coder",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen3-coder",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen3-coder/"
+  },
+  {
+    "canonicalSlug": "qwen3-coder-next",
+    "familySlug": "qwen3-coder-next",
+    "displayName": "qwen3-coder-next",
+    "ollamaTag": "qwen3-coder-next",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen3-coder-next",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen3-coder-next/"
+  },
+  {
+    "canonicalSlug": "qwen3-embedding",
+    "familySlug": "qwen3-embedding",
+    "displayName": "qwen3-embedding",
+    "ollamaTag": "qwen3-embedding",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "embedding"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen3-embedding",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen3-embedding/"
+  },
+  {
+    "canonicalSlug": "qwen3-next",
+    "familySlug": "qwen3-next",
+    "displayName": "qwen3-next",
+    "ollamaTag": "qwen3-next",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen3-next",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen3-next/"
+  },
+  {
+    "canonicalSlug": "qwen3-vl",
+    "familySlug": "qwen3-vl",
+    "displayName": "qwen3-vl",
+    "ollamaTag": "qwen3-vl",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen3-vl",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen3-vl/"
+  },
+  {
+    "canonicalSlug": "qwen3.5",
+    "familySlug": "qwen3.5",
+    "displayName": "qwen3.5",
+    "ollamaTag": "qwen3.5",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "cloud",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": true,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen3.5",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen3.5/"
+  },
+  {
+    "canonicalSlug": "qwen3.6",
+    "familySlug": "qwen3.6",
+    "displayName": "qwen3.6",
+    "ollamaTag": "qwen3.6",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwen3.6",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwen3.6/"
+  },
+  {
+    "canonicalSlug": "qwq",
+    "familySlug": "qwq",
+    "displayName": "qwq",
+    "ollamaTag": "qwq",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking",
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "qwq",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/qwq/"
+  },
+  {
+    "canonicalSlug": "r1-1776",
+    "familySlug": "r1-1776",
+    "displayName": "r1-1776",
+    "ollamaTag": "r1-1776",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "r1-1776",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/r1-1776/"
+  },
+  {
+    "canonicalSlug": "reader-lm",
+    "familySlug": "reader-lm",
+    "displayName": "reader-lm",
+    "ollamaTag": "reader-lm",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "reader-lm",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/reader-lm/"
+  },
+  {
+    "canonicalSlug": "reflection",
+    "familySlug": "reflection",
+    "displayName": "reflection",
+    "ollamaTag": "reflection",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "thinking"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "reflection",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/reflection/"
+  },
+  {
+    "canonicalSlug": "rnj-1",
+    "familySlug": "rnj-1",
+    "displayName": "rnj-1",
+    "ollamaTag": "rnj-1",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "rnj-1",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/rnj-1/"
+  },
+  {
+    "canonicalSlug": "sailor2",
+    "familySlug": "sailor2",
+    "displayName": "sailor2",
+    "ollamaTag": "sailor2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "sailor2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/sailor2/"
+  },
+  {
+    "canonicalSlug": "samantha-mistral",
+    "familySlug": "samantha-mistral",
+    "displayName": "samantha-mistral",
+    "ollamaTag": "samantha-mistral",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "samantha-mistral",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/samantha-mistral/"
+  },
+  {
+    "canonicalSlug": "shieldgemma",
+    "familySlug": "shieldgemma",
+    "displayName": "shieldgemma",
+    "ollamaTag": "shieldgemma",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "shieldgemma",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/shieldgemma/"
+  },
+  {
+    "canonicalSlug": "smallthinker",
+    "familySlug": "smallthinker",
+    "displayName": "smallthinker",
+    "ollamaTag": "smallthinker",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "smallthinker",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/smallthinker/"
+  },
+  {
+    "canonicalSlug": "smollm",
+    "familySlug": "smollm",
+    "displayName": "smollm",
+    "ollamaTag": "smollm",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "smollm",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/smollm/"
+  },
+  {
+    "canonicalSlug": "smollm2",
+    "familySlug": "smollm2",
+    "displayName": "smollm2",
+    "ollamaTag": "smollm2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "tools"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "smollm2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/smollm2/"
+  },
+  {
+    "canonicalSlug": "snowflake-arctic-embed",
+    "familySlug": "snowflake-arctic-embed",
+    "displayName": "snowflake-arctic-embed",
+    "ollamaTag": "snowflake-arctic-embed",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 512,
+    "capabilities": [
+      "embedding"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "snowflake-arctic-embed",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/snowflake-arctic-embed/"
+  },
+  {
+    "canonicalSlug": "snowflake-arctic-embed2",
+    "familySlug": "snowflake-arctic-embed2",
+    "displayName": "snowflake-arctic-embed2",
+    "ollamaTag": "snowflake-arctic-embed2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "embedding"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "snowflake-arctic-embed2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/snowflake-arctic-embed2/"
+  },
+  {
+    "canonicalSlug": "solar",
+    "familySlug": "solar",
+    "displayName": "solar",
+    "ollamaTag": "solar",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "solar",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/solar/"
+  },
+  {
+    "canonicalSlug": "solar-pro",
+    "familySlug": "solar-pro",
+    "displayName": "solar-pro",
+    "ollamaTag": "solar-pro",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "solar-pro",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/solar-pro/"
+  },
+  {
+    "canonicalSlug": "sqlcoder",
+    "familySlug": "sqlcoder",
+    "displayName": "sqlcoder",
+    "ollamaTag": "sqlcoder",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "sqlcoder",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/sqlcoder/"
+  },
+  {
+    "canonicalSlug": "stable-beluga",
+    "familySlug": "stable-beluga",
+    "displayName": "stable-beluga",
+    "ollamaTag": "stable-beluga",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "stable-beluga",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/stable-beluga/"
+  },
+  {
+    "canonicalSlug": "stable-code",
+    "familySlug": "stable-code",
+    "displayName": "stable-code",
+    "ollamaTag": "stable-code",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "embedding"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "stable-code",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/stable-code/"
+  },
+  {
+    "canonicalSlug": "stablelm-zephyr",
+    "familySlug": "stablelm-zephyr",
+    "displayName": "stablelm-zephyr",
+    "ollamaTag": "stablelm-zephyr",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "stablelm-zephyr",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/stablelm-zephyr/"
+  },
+  {
+    "canonicalSlug": "stablelm2",
+    "familySlug": "stablelm2",
+    "displayName": "stablelm2",
+    "ollamaTag": "stablelm2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "stablelm2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/stablelm2/"
+  },
+  {
+    "canonicalSlug": "starcoder",
+    "familySlug": "starcoder",
+    "displayName": "starcoder",
+    "ollamaTag": "starcoder",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "starcoder",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/starcoder/"
+  },
+  {
+    "canonicalSlug": "starcoder2",
+    "familySlug": "starcoder2",
+    "displayName": "starcoder2",
+    "ollamaTag": "starcoder2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 16384,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "starcoder2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/starcoder2/"
+  },
+  {
+    "canonicalSlug": "starling-lm",
+    "familySlug": "starling-lm",
+    "displayName": "starling-lm",
+    "ollamaTag": "starling-lm",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "starling-lm",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/starling-lm/"
+  },
+  {
+    "canonicalSlug": "tinydolphin",
+    "familySlug": "tinydolphin",
+    "displayName": "tinydolphin",
+    "ollamaTag": "tinydolphin",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "tinydolphin",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/tinydolphin/"
+  },
+  {
+    "canonicalSlug": "tinyllama",
+    "familySlug": "tinyllama",
+    "displayName": "tinyllama",
+    "ollamaTag": "tinyllama",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "tinyllama",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/tinyllama/"
+  },
+  {
+    "canonicalSlug": "translategemma",
+    "familySlug": "translategemma",
+    "displayName": "translategemma",
+    "ollamaTag": "translategemma",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "vision"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "translategemma",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/translategemma/"
+  },
+  {
+    "canonicalSlug": "tulu3",
+    "familySlug": "tulu3",
+    "displayName": "tulu3",
+    "ollamaTag": "tulu3",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "tulu3",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/tulu3/"
+  },
+  {
+    "canonicalSlug": "vicuna",
+    "familySlug": "vicuna",
+    "displayName": "vicuna",
+    "ollamaTag": "vicuna",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": 2048,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "vicuna",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/vicuna/"
+  },
+  {
+    "canonicalSlug": "wizard-math",
+    "familySlug": "wizard-math",
+    "displayName": "wizard-math",
+    "ollamaTag": "wizard-math",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "wizard-math",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/wizard-math/"
+  },
+  {
+    "canonicalSlug": "wizard-vicuna",
+    "familySlug": "wizard-vicuna",
+    "displayName": "wizard-vicuna",
+    "ollamaTag": "wizard-vicuna",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "wizard-vicuna",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/wizard-vicuna/"
+  },
+  {
+    "canonicalSlug": "wizard-vicuna-uncensored",
+    "familySlug": "wizard-vicuna-uncensored",
+    "displayName": "wizard-vicuna-uncensored",
+    "ollamaTag": "wizard-vicuna-uncensored",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "wizard-vicuna-uncensored",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/wizard-vicuna-uncensored/"
+  },
+  {
+    "canonicalSlug": "wizardcoder",
+    "familySlug": "wizardcoder",
+    "displayName": "wizardcoder",
+    "ollamaTag": "wizardcoder",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "wizardcoder",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/wizardcoder/"
+  },
+  {
+    "canonicalSlug": "wizardlm",
+    "familySlug": "wizardlm",
+    "displayName": "wizardlm",
+    "ollamaTag": "wizardlm:70b-llama2-q4_0",
+    "aliases": [
+      "wizardlm:70b-llama2-q4_0"
+    ],
+    "parameterSizeB": 70.0,
+    "quantization": "Q4",
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "wizardlm:70b-llama2-q4_0",
+        "mode": "local",
+        "label": "70b-llama2-q4_0"
+      }
+    ],
+    "sitePath": "/models/model/wizardlm/"
+  },
+  {
+    "canonicalSlug": "wizardlm-uncensored",
+    "familySlug": "wizardlm-uncensored",
+    "displayName": "wizardlm-uncensored",
+    "ollamaTag": "wizardlm-uncensored",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "wizardlm-uncensored",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/wizardlm-uncensored/"
+  },
+  {
+    "canonicalSlug": "wizardlm2",
+    "familySlug": "wizardlm2",
+    "displayName": "wizardlm2",
+    "ollamaTag": "wizardlm2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "wizardlm2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/wizardlm2/"
+  },
+  {
+    "canonicalSlug": "xwinlm",
+    "familySlug": "xwinlm",
+    "displayName": "xwinlm",
+    "ollamaTag": "xwinlm",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "xwinlm",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/xwinlm/"
+  },
+  {
+    "canonicalSlug": "yarn-llama2",
+    "familySlug": "yarn-llama2",
+    "displayName": "yarn-llama2",
+    "ollamaTag": "yarn-llama2",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "yarn-llama2",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/yarn-llama2/"
+  },
+  {
+    "canonicalSlug": "yarn-mistral",
+    "familySlug": "yarn-mistral",
+    "displayName": "yarn-mistral",
+    "ollamaTag": "yarn-mistral",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "yarn-mistral",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/yarn-mistral/"
+  },
+  {
+    "canonicalSlug": "yi",
+    "familySlug": "yi",
+    "displayName": "yi",
+    "ollamaTag": "yi",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "yi",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/yi/"
+  },
+  {
+    "canonicalSlug": "yi-coder",
+    "familySlug": "yi-coder",
+    "displayName": "yi-coder",
+    "ollamaTag": "yi-coder",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "yi-coder",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/yi-coder/"
+  },
+  {
+    "canonicalSlug": "zephyr",
+    "familySlug": "zephyr",
+    "displayName": "zephyr",
+    "ollamaTag": "zephyr",
+    "aliases": [],
+    "parameterSizeB": null,
+    "quantization": null,
+    "contextTokens": null,
+    "capabilities": [
+      "text"
+    ],
+    "availability": "available",
+    "localPrivateSuitable": true,
+    "cloudJetSuitable": false,
+    "seoEligible": true,
+    "noindex": false,
+    "sourceException": null,
+    "deploymentVariants": [
+      {
+        "tag": "zephyr",
+        "mode": "local",
+        "label": "latest"
+      }
+    ],
+    "sitePath": "/models/model/zephyr/"
+  }
+]

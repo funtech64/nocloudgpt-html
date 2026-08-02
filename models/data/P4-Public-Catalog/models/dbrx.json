@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "dbrx",
+  "familySlug": "dbrx",
+  "displayName": "dbrx",
+  "ollamaTag": "dbrx",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "dbrx",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/dbrx/"
+}

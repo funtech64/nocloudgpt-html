@@ -1,0 +1,19 @@
+{
+  "slug": "tulu3",
+  "displayName": "tulu3",
+  "ollamaFamilies": [
+    "tulu3"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "tulu3"
+  ],
+  "sitePath": "/models/tulu3/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "llama3-chatqa",
+  "displayName": "llama3-chatqa",
+  "ollamaFamilies": [
+    "llama3-chatqa"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "llama3-chatqa"
+  ],
+  "sitePath": "/models/llama3-chatqa/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

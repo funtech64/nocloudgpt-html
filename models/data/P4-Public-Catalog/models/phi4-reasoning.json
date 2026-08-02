@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "phi4-reasoning",
+  "familySlug": "phi4-reasoning",
+  "displayName": "phi4-reasoning",
+  "ollamaTag": "phi4-reasoning",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "phi4-reasoning",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/phi4-reasoning/"
+}

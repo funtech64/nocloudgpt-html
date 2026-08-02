@@ -1,0 +1,19 @@
+{
+  "slug": "granite-code",
+  "displayName": "granite-code",
+  "ollamaFamilies": [
+    "granite-code"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "granite-code"
+  ],
+  "sitePath": "/models/granite-code/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

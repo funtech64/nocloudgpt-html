@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "megadolphin",
+  "familySlug": "megadolphin",
+  "displayName": "megadolphin",
+  "ollamaTag": "megadolphin",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "megadolphin",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/megadolphin/"
+}

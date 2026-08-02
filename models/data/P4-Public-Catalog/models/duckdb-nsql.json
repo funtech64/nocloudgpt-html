@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "duckdb-nsql",
+  "familySlug": "duckdb-nsql",
+  "displayName": "duckdb-nsql",
+  "ollamaTag": "duckdb-nsql",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "duckdb-nsql",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/duckdb-nsql/"
+}

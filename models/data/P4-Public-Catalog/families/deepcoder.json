@@ -1,0 +1,19 @@
+{
+  "slug": "deepcoder",
+  "displayName": "deepcoder",
+  "ollamaFamilies": [
+    "deepcoder"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "deepcoder"
+  ],
+  "sitePath": "/models/deepcoder/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

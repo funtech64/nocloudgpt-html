@@ -1,0 +1,19 @@
+{
+  "slug": "olmo2",
+  "displayName": "olmo2",
+  "ollamaFamilies": [
+    "olmo2"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "olmo2"
+  ],
+  "sitePath": "/models/olmo2/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

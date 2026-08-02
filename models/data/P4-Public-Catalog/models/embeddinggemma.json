@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "embeddinggemma",
+  "familySlug": "embeddinggemma",
+  "displayName": "embeddinggemma",
+  "ollamaTag": "embeddinggemma",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "embedding"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "embeddinggemma",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/embeddinggemma/"
+}

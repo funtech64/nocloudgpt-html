@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "zephyr",
+  "familySlug": "zephyr",
+  "displayName": "zephyr",
+  "ollamaTag": "zephyr",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "text"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "zephyr",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/zephyr/"
+}

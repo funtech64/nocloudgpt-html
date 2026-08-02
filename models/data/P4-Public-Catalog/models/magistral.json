@@ -1,0 +1,28 @@
+{
+  "canonicalSlug": "magistral",
+  "familySlug": "magistral",
+  "displayName": "magistral",
+  "ollamaTag": "magistral",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "magistral",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/magistral/"
+}

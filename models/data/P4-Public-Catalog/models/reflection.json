@@ -1,0 +1,27 @@
+{
+  "canonicalSlug": "reflection",
+  "familySlug": "reflection",
+  "displayName": "reflection",
+  "ollamaTag": "reflection",
+  "aliases": [],
+  "parameterSizeB": null,
+  "quantization": null,
+  "contextTokens": null,
+  "capabilities": [
+    "thinking"
+  ],
+  "availability": "available",
+  "localPrivateSuitable": true,
+  "cloudJetSuitable": false,
+  "seoEligible": true,
+  "noindex": false,
+  "sourceException": null,
+  "deploymentVariants": [
+    {
+      "tag": "reflection",
+      "mode": "local",
+      "label": "latest"
+    }
+  ],
+  "sitePath": "/models/model/reflection/"
+}

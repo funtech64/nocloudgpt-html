@@ -1,0 +1,20 @@
+{
+  "slug": "qwen3-coder-next",
+  "displayName": "qwen3-coder-next",
+  "ollamaFamilies": [
+    "qwen3-coder-next"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "thinking",
+    "tools"
+  ],
+  "publisherVerified": false,
+  "modelSlugs": [
+    "qwen3-coder-next"
+  ],
+  "sitePath": "/models/qwen3-coder-next/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

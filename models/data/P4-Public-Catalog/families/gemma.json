@@ -1,0 +1,19 @@
+{
+  "slug": "gemma",
+  "displayName": "gemma",
+  "ollamaFamilies": [
+    "gemma"
+  ],
+  "aliases": [],
+  "capabilities": [
+    "text"
+  ],
+  "publisherVerified": true,
+  "modelSlugs": [
+    "gemma"
+  ],
+  "sitePath": "/models/gemma/",
+  "modelCount": 1,
+  "seoEligible": true,
+  "availability": "available"
+}

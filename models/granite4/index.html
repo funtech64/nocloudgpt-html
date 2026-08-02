@@ -1,669 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>granite4 — Model family catalog | NoCloudGPT</title>
+  <meta name="description" content="Catalog facts for granite4: capabilities (tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nocloudgpt.com/models/granite4/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>IBM Granite 4 on Ollama | Next-Gen Enterprise AI | NoCloudGPT</title>
-  <meta name="description" content="Granite 4 represents IBM's next generation of enterprise AI models. Plan your private deployment now — extended context, enhanced reasoning, and deeper compliance tooling for legal, finance, and regulated industries." />
-  <meta name="keywords" content="IBM Granite 4 Ollama, Granite 4 private deployment, next-gen IBM AI, Granite 4 enterprise, self-hosted IBM AI 2025, Granite 4 release date" />
-  <link rel="canonical" href="https://nocloudgpt.com/models/granite4/" />
+  <meta property="og:title" content="granite4 — Model family catalog | NoCloudGPT">
+  <meta property="og:description" content="Catalog facts for granite4: capabilities (tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nocloudgpt.com/models/granite4/">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "granite4", "description": "Catalog facts for granite4: capabilities (tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/granite4/"}</script>
 </head>
-<body class="bg-gray-950 text-gray-100 font-sans">
+<body class="bg-slate-950 text-slate-100">
 
-  <!-- Nav -->
-  <nav class="border-b border-gray-800 px-6 py-4 flex items-center justify-between">
-    <a href="/" class="text-xl font-bold text-blue-400">NoCloudGPT</a>
-    <div class="flex gap-6 text-sm text-gray-400">
-      <a href="/models/" class="hover:text-white">Models</a>
-      <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-      <a href="/pricing.html" class="hover:text-white">Pricing</a>
-      <a href="/contact.html" class="hover:text-white">Contact</a>
+  <div class="border-b border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+      <nav class="flex flex-wrap gap-4 text-slate-400">
+        <a href="/models/" class="text-white">Models</a>
+        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
+        <a href="/services.html" class="hover:text-white">Services</a>
+        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
+        <a href="/contact.html" class="hover:text-white">Contact</a>
+        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+      </nav>
     </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="max-w-4xl mx-auto px-6 py-16">
-    <div class="flex items-center gap-3 mb-4 flex-wrap">
-      <span class="bg-green-900 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">Now Available</span>
-      <span class="bg-blue-900 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">IBM Research</span>
-      <span class="bg-green-900 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">Apache 2.0</span>
-      <span class="bg-purple-900 text-purple-300 text-xs font-semibold px-3 py-1 rounded-full">Hybrid Mamba-2 / MoE</span>
-    </div>
-    
-                  <!-- INTERNAL: hero.webp sourced from https://ollama.com/library/granite4 -->
-      <a href="https://ollama.com/library/granite4" target="_blank" rel="noopener noreferrer" class="inline-block">
-<img
-        src="/models/granite4/hero.webp"
-        alt="IBM Granite 4 — next-generation enterprise AI with NoCloudGPT"
-        width="1200" height="600"
-        class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-      />
-      </a>
-      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/granite4" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
-      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
-      </div>
-      <h1 class="text-4xl font-bold mb-4">IBM Granite 4: Enterprise-Credible Open AI, Now Available for Private Deployment</h1>
-    <p class="text-xl text-gray-400 mb-8">
-      IBM's Granite family is the most enterprise-credible open-weight AI series available today, and Granite 4.0 carries that foundation forward: a hybrid Mamba-2/transformer architecture with mixture-of-experts in the larger models, Apache 2.0 licensing, documented training data, ISO 42001 certification, and cryptographically signed weights — the package regulated industries need where other models cannot go.
-    </p>
-    <div class="bg-green-950 border border-green-800 rounded-xl p-4 mb-8">
-      <div class="flex items-start gap-3">
-        <span class="text-green-400 text-lg">✓</span>
-        <div>
-          <p class="text-green-300 font-semibold text-sm">Granite 4.0 is released and deployable today</p>
-          <p class="text-gray-400 text-sm mt-1">The initial Granite 4.0 lineup — H-Small, H-Tiny, H-Micro, and a dense Micro — is available through Ollama and Hugging Face under Apache 2.0. NoCloudGPT deploys it privately on your infrastructure. <a href="/models/quote.html" class="text-blue-400 underline">Build your Granite 4 deployment quote →</a> Confirm current Ollama tags and any additional sizes before planning.</p>
-        </div>
-      </div>
-    </div>
-    <div class="flex gap-4 flex-wrap">
-      <a href="/models/quote.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold">Build your deployment quote</a>
-      <a href="/models/granite/" class="border border-gray-600 hover:border-gray-400 text-gray-300 px-6 py-3 rounded-lg font-semibold">See the Granite family</a>
-    </div>
-  </section>
-
-  <!-- Who this model family is for -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Who This Model Family is For</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="text-lg">👤</span>
-          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Personal use</span>
-        </div>
-        <p class="text-gray-400 text-sm">Granite 4 is primarily built for enterprise and professional use, so it may be more model than most casual users need. However, technically curious individuals who want a well-trained, reliable model with documented data provenance will find it consistent and trustworthy for writing, research summaries, and structured reasoning. If you value transparency around training data and prefer a model that behaves predictably, Granite 4 is worth considering — though lighter models like Phi 4 or Gemma 3 may feel more responsive for everyday personal tasks.</p>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="text-lg">🏢</span>
-          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Business / team use</span>
-        </div>
-        <p class="text-gray-400 text-sm">Granite 4 is one of the stronger options for organizations that need a private, auditable AI for real business workflows. It performs well on policy document drafting, internal knowledge base Q&amp;A, compliance-aware summarization, and structured data extraction. IBM's emphasis on curated, high-quality training data results in more reliable outputs, which matters in regulated industries such as finance, healthcare, and legal services. Teams that want an on-premises model they can control and audit — without sending sensitive documents to external services — will find Granite 4 a practical and trustworthy choice.</p>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="text-lg">⚙️</span>
-          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Developer &amp; technical use</span>
-        </div>
-        <p class="text-gray-400 text-sm">Granite 4 performs well on code generation and explanation tasks across common enterprise languages and frameworks. It is a solid option for internal developer tooling, code review assistance, and documenting legacy systems. IBM's transparency around training data sourcing helps reduce legal ambiguity when using AI-assisted code in production environments. Developers building RAG pipelines or tool-calling agents will find its instruction-following behavior reliable and predictable. If you are integrating local AI into CI/CD pipelines or internal developer platforms, Granite 4 is worth serious evaluation.</p>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="text-lg">🔬</span>
-          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Data science &amp; research</span>
-        </div>
-        <p class="text-gray-400 text-sm">Researchers and data scientists who need a model with documented training methodology and traceable data provenance will appreciate IBM's unusually transparent approach. Granite 4 handles structured reasoning, tabular data interpretation, and multi-step analytical prompts with good consistency. It is a practical choice for teams building internal research tools, automated report generation, or domain-specific fine-tuning projects where training data quality and auditability matter. Its reliability makes it especially relevant in regulated research environments such as clinical trials, financial modeling, or government work.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Licensing information -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Licensing Information</h2>
-    <p class="text-gray-300 mb-4">
-      Granite 4 models are released by IBM under the <strong class="text-white">Apache 2.0 License</strong>, which is one of the most permissive and business-friendly open-source licenses available. This means you can use, modify, and deploy Granite 4 for both personal and commercial purposes without royalty fees or restrictive usage thresholds.
-    </p>
-    <p class="text-gray-300 mb-6">
-      You should still review the full model card and any responsible use guidelines on the official page before deploying in production, especially in regulated industries.
-    </p>
-    <p class="text-gray-300 mb-2"><strong class="text-white">Official model card:</strong></p>
-    <ul class="list-disc space-y-2 pl-5 text-gray-300 mb-6">
-      <li><a href="https://huggingface.co/ibm-granite" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300">ibm-granite/granite-4 on Hugging Face</a></li>
-    </ul>
-    <div class="rounded-xl border border-amber-800/50 bg-amber-950/30 p-5">
-      <p class="text-sm text-gray-300"><strong class="text-amber-400">Disclaimer:</strong> NoCloudGPT provides the software infrastructure to deploy AI models privately. We do not grant, manage, or verify licensing rights for third-party models. It is your responsibility to ensure your use of any model complies with its license terms. This does not constitute legal advice.</p>
-    </div>
-  </section>
-
-  <!-- Available model sizes -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Available Model Sizes</h2>
-    <p class="text-gray-300 mb-6">
-      Granite 4 focuses on delivering strong performance at efficient sizes through high-quality training data rather than raw parameter count.
-    </p>
-    <!-- INTERNAL: Verify Create individual size pages for each Granite 4 variant with hardware benchmarks and deployment guidance before publishing. -->
-    <div class="overflow-x-auto rounded-xl border border-gray-700">
-      <table class="w-full text-sm">
-        <thead class="bg-gray-900 text-gray-400">
-          <tr class="text-left">
-            <th class="px-4 py-3">Model Size</th>
-            <th class="px-4 py-3">Ollama Tag</th>
-            <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
-            <th class="px-4 py-3">Notes</th>
-            <th class="px-4 py-3"></th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-800 bg-gray-900/40 text-gray-300">
-          <tr>
-            <td class="px-4 py-3 font-semibold text-white">Granite 4 2B</td>
-            <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-cyan-400">granite4:2b</code></td>
-            <td class="px-4 py-3">Starter / Edge</td>
-            <td class="px-4 py-3">Lightweight and efficient. Good for basic summarization, classification, and always-on internal tools.</td>
-            <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs whitespace-nowrap">Get quote →</a></td>
-          </tr>
-          <tr>
-            <td class="px-4 py-3 font-semibold text-white">Granite 4 8B</td>
-            <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-cyan-400">granite4:8b</code></td>
-            <td class="px-4 py-3">Standard</td>
-            <td class="px-4 py-3">The practical sweet spot for most business deployments. Handles coding, structured reasoning, and document tasks reliably.</td>
-            <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs whitespace-nowrap">Get quote →</a></td>
-          </tr>
-          <tr>
-            <td class="px-4 py-3 font-semibold text-white">Granite 4 14B</td>
-            <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-cyan-400">granite4:14b</code></td>
-            <td class="px-4 py-3">Standard / Professional</td>
-            <td class="px-4 py-3">Noticeably stronger on multi-step reasoning and longer context tasks. Recommended for knowledge-intensive workflows.</td>
-            <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs whitespace-nowrap">Get quote →</a></td>
-          </tr>
-          <tr>
-            <td class="px-4 py-3 font-semibold text-white">Granite 4 32B</td>
-            <td class="px-4 py-3"><code class="rounded bg-gray-800 px-1.5 py-0.5 text-cyan-400">granite4:32b</code></td>
-            <td class="px-4 py-3">Professional / Enterprise</td>
-            <td class="px-4 py-3">Best performance in the family for complex enterprise use cases. Requires dedicated GPU resources.</td>
-            <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300 text-xs whitespace-nowrap">Get quote →</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- Why Granite Matters -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Why the Granite Lineage Matters for Enterprise AI</h2>
-    <p class="text-gray-300 mb-6">
-      The open-weight AI landscape is crowded with impressive models. Meta releases Llama. Google releases Gemma. Alibaba releases Qwen. DeepSeek releases R1. Each has genuine technical merit and each has found a community of practitioners building on top of it. But for enterprise buyers operating in regulated industries — finance, healthcare, legal, government — model technical performance is only part of the evaluation criteria. Equally important: who built it, what was it trained on, what are the licensing terms, and who stands behind it legally and commercially?
-    </p>
-    <p class="text-gray-300 mb-6">
-      IBM Granite answers those questions more completely than any other open-weight model family. IBM is a century-old enterprise technology company with a defined legal entity, existing enterprise contracts, government security clearances, and a global professional services organization. When IBM says Granite Code is trained on "code-safe" permissively licensed data with documented provenance, that statement comes with IBM's legal and reputational credibility behind it — not just a GitHub README.
-    </p>
-    <p class="text-gray-300 mb-6">
-      The Granite 3.x generation established the pattern: Apache 2.0 licensing, transparent training data documentation, IBM indemnification for enterprise customers, and model sizes calibrated for real enterprise hardware rather than research clusters. Granite 3.1 extended context windows to 128K tokens — enough to process entire contract portfolios, full codebases, or complete regulatory filings in a single context.
-    </p>
-    <p class="text-gray-300">
-      Granite 4 will build on this foundation. Based on IBM's published research directions and the trajectory of the Granite 3.x releases, the next generation is likely to push further on reasoning capability, longer context, multimodal inputs, and the compliance and safety tooling that matters specifically to enterprise buyers rather than general consumers.
-    </p>
-  </section>
-
-  <!-- What to Expect -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">What Granite 4 Delivers — and Where It Is Heading</h2>
-    <p class="text-gray-300 mb-8">
-      The initial Granite 4.0 release confirmed the headline architecture: a hybrid Mamba-2/transformer design with mixture-of-experts in the larger models, delivering substantially lower memory use and faster inference on long-context and multi-session workloads, all under Apache 2.0. The themes below combine what has shipped with the directions IBM continues to develop across the Granite 4 series. Treat forward-looking items — especially around multimodal and 1M+ context — as planning assumptions rather than confirmed specifications for every variant, and confirm current capabilities on the model cards.
-    </p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="text-3xl mb-3">🧠</div>
-        <h3 class="text-lg font-bold mb-3">Extended Reasoning Capability</h3>
-        <p class="text-gray-400 text-sm mb-3">
-          The most significant trend across the 2024–2025 AI landscape is the shift toward reasoning-capable models — models that "think" through multi-step problems rather than generating answers directly. IBM has published research on chain-of-thought reasoning for enterprise tasks, and Granite 4 is expected to incorporate reasoning capability at the model level rather than as a prompting technique.
-        </p>
-        <p class="text-gray-400 text-sm">
-          For enterprise use cases, this matters most in legal document analysis (multi-step contract interpretation), financial modeling (multi-variable risk assessment), and compliance checking (tracing regulatory requirements through multiple document layers).
-        </p>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="text-3xl mb-3">📄</div>
-        <h3 class="text-lg font-bold mb-3">Extended Context Windows</h3>
-        <p class="text-gray-400 text-sm mb-3">
-          Granite 3.1 reached 128K tokens — a substantial improvement over the 4K–32K context of earlier models. The industry trend is pushing toward 1M+ token context, and Granite 4 is expected to match or approach this range.
-        </p>
-        <p class="text-gray-400 text-sm">
-          For enterprise document processing, 1M token context enables processing complete merger agreement portfolios, full audit trails, multi-year financial records, and entire regulatory submission packages without chunking — a workflow change that eliminates a major source of AI-assisted analysis errors.
-        </p>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="text-3xl mb-3">👁️</div>
-        <h3 class="text-lg font-bold mb-3">Multimodal Document Understanding</h3>
-        <p class="text-gray-400 text-sm mb-3">
-          Enterprise documents are not plain text. Financial filings contain charts and tables. Legal documents contain scanned signatures and stamps. Technical specifications contain diagrams. Engineering drawings are visual artifacts. Granite 4 is expected to incorporate vision capability specifically tuned for enterprise document formats.
-        </p>
-        <p class="text-gray-400 text-sm">
-          Unlike consumer-focused vision models optimized for photos and creative images, IBM's enterprise focus suggests Granite 4 vision capability will emphasize structured document understanding: balance sheet table extraction, organizational chart parsing, and technical drawing analysis.
-        </p>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="text-3xl mb-3">🛡️</div>
-        <h3 class="text-lg font-bold mb-3">Enhanced Compliance and Safety Tooling</h3>
-        <p class="text-gray-400 text-sm mb-3">
-          IBM has invested heavily in AI governance tooling through its Watson OpenScale and AI Factsheets products. Granite 4 is expected to ship with tighter integration between the model and IBM's governance framework — enabling automated bias detection, output explainability, and regulatory compliance checking at the model level rather than requiring separate tooling.
-        </p>
-        <p class="text-gray-400 text-sm">
-          This matters for industries where AI output must be auditable: financial advice under MiFID II, medical diagnostic support under FDA guidance, and HR decisions under Equal Employment Opportunity requirements.
-        </p>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="text-3xl mb-3">⚡</div>
-        <h3 class="text-lg font-bold mb-3">Mixture-of-Experts Architecture</h3>
-        <p class="text-gray-400 text-sm mb-3">
-          The shift from dense transformers to mixture-of-experts (MoE) architecture has produced dramatic efficiency gains across the industry — Mixtral 8x7B demonstrated that a 47B parameter MoE model can match 70B dense model performance at a fraction of the inference cost.
-        </p>
-        <p class="text-gray-400 text-sm">
-          Granite 4 is expected to adopt MoE architecture, enabling significantly larger total parameter counts while keeping active parameters — and therefore hardware requirements — aligned with Granite 3.x deployment patterns. An organization running Granite 3.1 8B today could potentially run a Granite 4 MoE model with substantially higher capability on the same hardware.
-        </p>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="text-3xl mb-3">🔧</div>
-        <h3 class="text-lg font-bold mb-3">Improved Fine-Tuning Infrastructure</h3>
-        <p class="text-gray-400 text-sm mb-3">
-          IBM has published research on efficient fine-tuning methods for enterprise model customization. Granite 4 is expected to ship with better-documented fine-tuning recipes, adapter compatibility, and integration with IBM's watsonx platform for organizations that need domain-specific customization beyond base model capability.
-        </p>
-        <p class="text-gray-400 text-sm">
-          For regulated industries, the ability to fine-tune on proprietary data without that data leaving your infrastructure — and with IBM's legal backing for the fine-tuning process — addresses a compliance gap that currently limits AI adoption in sensitive sectors.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Granite 3.x as Foundation -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Building on Granite 3.x: What's Available Today</h2>
-    <p class="text-gray-300 mb-8">
-      While Granite 4 is in development, the current Granite 3.1 generation delivers substantial enterprise capability available for immediate deployment through Ollama. Organizations planning for Granite 4 adoption should begin deploying Granite 3.1 now — the operational patterns, integration architecture, and governance frameworks you establish today will carry forward to Granite 4 with minimal disruption.
-    </p>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <h3 class="font-bold mb-2">Granite 3.1 2B</h3>
-        <p class="text-gray-400 text-sm mb-3">Edge deployment, classification, form extraction</p>
-        <div class="text-xs text-gray-500 space-y-1">
-          <div>Context: 128K tokens</div>
-          <div>VRAM: 2–3GB</div>
-          <div>License: Apache 2.0</div>
-        </div>
-        <div class="mt-4 bg-gray-800 rounded p-2 font-mono text-xs text-green-400">
-          ollama pull granite3.1-dense:2b
-        </div>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <h3 class="font-bold mb-2">Granite 3.1 8B</h3>
-        <p class="text-gray-400 text-sm mb-3">Document analysis, contract review, compliance workflows</p>
-        <div class="text-xs text-gray-500 space-y-1">
-          <div>Context: 128K tokens</div>
-          <div>VRAM: 8–10GB</div>
-          <div>License: Apache 2.0</div>
-        </div>
-        <div class="mt-4 bg-gray-800 rounded p-2 font-mono text-xs text-green-400">
-          ollama pull granite3.1-dense:8b
-        </div>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <h3 class="font-bold mb-2">Granite 3.1 MoE</h3>
-        <p class="text-gray-400 text-sm mb-3">High-throughput classification at low active parameter cost</p>
-        <div class="text-xs text-gray-500 space-y-1">
-          <div>Context: 128K tokens</div>
-          <div>VRAM: 4–5GB active</div>
-          <div>License: Apache 2.0</div>
-        </div>
-        <div class="mt-4 bg-gray-800 rounded p-2 font-mono text-xs text-green-400">
-          ollama pull granite3.1-moe:3b
-        </div>
-      </div>
-
-    </div>
-
-    <div class="bg-blue-950 border border-blue-800 rounded-xl p-5">
-      <h3 class="font-semibold text-blue-300 mb-2">Migration Path: Granite 3.1 → Granite 4</h3>
-      <p class="text-gray-300 text-sm">
-        IBM has maintained strong backward compatibility across Granite generations. Organizations deploying Granite 3.1 on Ollama today should expect the Granite 4 upgrade path to involve pulling a new model tag and updating system prompts where needed — not rebuilding integration architecture. The Apache 2.0 license, Ollama compatibility, and API patterns are expected to remain consistent.
-      </p>
-    </div>
-  </section>
-
-  <!-- Planning Guide -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Enterprise Planning Guide: Preparing for Granite 4</h2>
-    <p class="text-gray-300 mb-8">
-      Organizations that start their Granite deployment with the current 3.1 generation will be better positioned to adopt Granite 4 when it ships. Here is how to structure that preparation.
-    </p>
-
-    <div class="space-y-6">
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="flex items-start gap-4">
-          <div class="bg-blue-900 text-blue-300 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">1</div>
-          <div>
-            <h3 class="font-bold mb-2">Establish Private Infrastructure Now</h3>
-            <p class="text-gray-400 text-sm">
-              Deploy NoCloudGPT-managed Ollama infrastructure for Granite 3.1 today. The same servers, networking configuration, and access controls that run Granite 3.1 will run Granite 4. Infrastructure investment made now is not wasted — it becomes the foundation for the next generation.
-            </p>
-            <p class="text-gray-400 text-sm mt-2">
-              Organizations that wait until Granite 4 ships face a longer deployment timeline because they will be establishing infrastructure and running security reviews simultaneously with model evaluation.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="flex items-start gap-4">
-          <div class="bg-blue-900 text-blue-300 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">2</div>
-          <div>
-            <h3 class="font-bold mb-2">Build Your Evaluation Dataset</h3>
-            <p class="text-gray-400 text-sm">
-              Create a domain-specific evaluation set drawn from your actual use cases — contract clauses you need to analyze, compliance questions relevant to your regulatory environment, code tasks specific to your tech stack. This evaluation set lets you compare Granite 3.1 against Granite 4 on work that actually matters to your organization rather than generic benchmarks.
-            </p>
-            <p class="text-gray-400 text-sm mt-2">
-              Organizations with evaluation datasets in hand can validate a new model release in days. Those without them spend weeks defining evaluation criteria after the model ships.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="flex items-start gap-4">
-          <div class="bg-blue-900 text-blue-300 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">3</div>
-          <div>
-            <h3 class="font-bold mb-2">Document Your Compliance Framework</h3>
-            <p class="text-gray-400 text-sm">
-              Identify which regulatory requirements apply to your AI deployment: GDPR data residency requirements, HIPAA security rules, SOC 2 audit requirements, financial services AI guidance, or sector-specific regulations. Document how your current Granite 3.1 deployment addresses each requirement.
-            </p>
-            <p class="text-gray-400 text-sm mt-2">
-              When Granite 4 ships, you will need to re-validate compliance for the new model. Having a documented framework makes this a structured process rather than an ad-hoc review that delays deployment.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="flex items-start gap-4">
-          <div class="bg-blue-900 text-blue-300 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">4</div>
-          <div>
-            <h3 class="font-bold mb-2">Engage Your IBM Account Team</h3>
-            <p class="text-gray-400 text-sm">
-              IBM enterprise customers with existing watsonx or Cloud Pak contracts will likely receive early access to Granite 4 through IBM's standard product preview program. If you have an IBM account relationship, ensure your team is engaged on the Granite roadmap specifically — IBM's enterprise sales teams can provide roadmap visibility that is not publicly documented.
-            </p>
-            <p class="text-gray-400 text-sm mt-2">
-              For organizations without existing IBM relationships, NoCloudGPT can facilitate introductions to IBM's AI partner ecosystem for enterprise Granite deployments.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-6 border border-gray-700">
-        <div class="flex items-start gap-4">
-          <div class="bg-blue-900 text-blue-300 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">5</div>
-          <div>
-            <h3 class="font-bold mb-2">Plan Hardware for Extended Context and MoE</h3>
-            <p class="text-gray-400 text-sm">
-              If Granite 4 adopts 1M+ token context, context window processing becomes memory-bound in ways that Granite 3.1 at 128K is not. Filling a 1M token context requires significant VRAM — even with efficient attention mechanisms, organizations should plan for hardware that can handle longer context without aggressive quantization.
-            </p>
-            <p class="text-gray-400 text-sm mt-2">
-              A practical planning assumption: size hardware for Granite 4 at approximately 1.5x the VRAM of your current Granite 3.1 deployment to accommodate extended context capability without constraint.
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Industry Applications -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">What Granite 4 Enables by Industry</h2>
-
-    <div class="space-y-5">
-
-      <div class="border-l-4 border-blue-500 pl-6">
-        <h3 class="text-lg font-semibold mb-2">Legal Services and Law Firms</h3>
-        <p class="text-gray-300 text-sm mb-2">
-          Extended context in Granite 4 enables processing complete transaction document sets — merger agreements, exhibits, disclosure schedules, and ancillary documents — in a single model context. This eliminates the current limitation where document chunking causes AI systems to miss cross-document references and defined terms that only appear once in a 500-page deal binder.
-        </p>
-        <p class="text-gray-300 text-sm">
-          Enhanced reasoning capability will improve contract clause interpretation — moving from pattern-matching to genuine legal reasoning about how ambiguous provisions would likely be interpreted. Combined with IBM's indemnification program, this creates a defensible AI-assisted legal review workflow.
-        </p>
-      </div>
-
-      <div class="border-l-4 border-green-500 pl-6">
-        <h3 class="text-lg font-semibold mb-2">Financial Services and Banking</h3>
-        <p class="text-gray-300 text-sm mb-2">
-          Multimodal document understanding in Granite 4 addresses a critical gap in financial AI: the inability to process charts, tables, and structured data embedded in PDFs. Annual reports, regulatory filings, and audit documents contain financial data in visual formats that current text-only models miss entirely.
-        </p>
-        <p class="text-gray-300 text-sm">
-          The enhanced compliance tooling expected in Granite 4 maps directly to financial services regulatory requirements — automated documentation of AI decision inputs and outputs for MiFID II, BCBS 239, and SR 11-7 model risk management compliance.
-        </p>
-      </div>
-
-      <div class="border-l-4 border-purple-500 pl-6">
-        <h3 class="text-lg font-semibold mb-2">Healthcare and Life Sciences</h3>
-        <p class="text-gray-300 text-sm mb-2">
-          Extended context enables processing complete patient records, clinical trial datasets, and regulatory submission packages — use cases that currently require splitting documents across multiple model calls with consequent loss of longitudinal context.
-        </p>
-        <p class="text-gray-300 text-sm">
-          IBM's AI governance tooling integration in Granite 4 will be particularly valuable for healthcare AI under FDA guidance on Software as a Medical Device (SaMD) — automated logging, bias detection, and explainability documentation at the model level reduces the compliance overhead of deploying AI in clinical workflows.
-        </p>
-      </div>
-
-      <div class="border-l-4 border-yellow-500 pl-6">
-        <h3 class="text-lg font-semibold mb-2">Government and Public Sector</h3>
-        <p class="text-gray-300 text-sm mb-2">
-          IBM's existing government contracts and Federal Risk and Authorization Management Program (FedRAMP) relationships position Granite 4 as the most likely open-weight model to achieve government-grade deployment authorization. Organizations building AI systems for government customers benefit from building on infrastructure with an established government compliance pathway.
-        </p>
-        <p class="text-gray-300 text-sm">
-          The transparent training data documentation that IBM maintains for the Granite series satisfies the provenance requirements increasingly expected in government AI procurement — a requirement that most open-weight models cannot credibly meet.
-        </p>
-      </div>
-
-      <div class="border-l-4 border-red-500 pl-6">
-        <h3 class="text-lg font-semibold mb-2">Enterprise Software and Technology</h3>
-        <p class="text-gray-300 text-sm mb-2">
-          For engineering organizations, Granite 4's expected improvements in reasoning capability will advance Granite Code's ability to handle architectural-level code analysis — understanding how a proposed change to one service affects dependent services across a distributed system, not just analyzing individual functions.
-        </p>
-        <p class="text-gray-300 text-sm">
-          Extended context for Granite Code means entire repository codebases can be analyzed in context rather than file-by-file — enabling AI-assisted code review that understands system-level implications rather than only local code quality.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Competitive Context -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">How Granite 4 Fits the Competitive Landscape</h2>
-    <p class="text-gray-300 mb-6">
-      By the time Granite 4 ships, the open-weight AI landscape will likely include Llama 4 in production deployment, Gemma 4, Qwen 3.5, and potentially further iterations from DeepSeek and Mistral. The technical performance race across these families is intensely competitive, and Granite 4 may not lead on every benchmark metric.
-    </p>
-    <p class="text-gray-300 mb-6">
-      That is not the right frame for enterprise evaluation. Granite's competitive position is not primarily about benchmark performance — it is about the full enterprise deployment package that IBM provides alongside the model. When a financial regulator asks your Chief Risk Officer to explain why your AI system generated a specific output, "we used an open-weight model from a Chinese AI lab" and "we used IBM's enterprise AI platform with documented training data and model governance" produce very different conversations.
-    </p>
-
-    <div class="overflow-x-auto mb-6">
-      <table class="w-full text-sm">
-        <thead>
-          <tr class="text-left border-b border-gray-700">
-            <th class="pb-3 text-gray-400">Factor</th>
-            <th class="pb-3 text-gray-400">Granite 4</th>
-            <th class="pb-3 text-gray-400">Llama 4</th>
-            <th class="pb-3 text-gray-400">Gemma 4</th>
-            <th class="pb-3 text-gray-400">Qwen 3</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-800">
-          <tr>
-            <td class="py-3 text-gray-300">License</td>
-            <td class="py-3 text-green-400">Apache 2.0 ✓</td>
-            <td class="py-3 text-yellow-400">Llama License</td>
-            <td class="py-3 text-green-400">Apache 2.0 ✓</td>
-            <td class="py-3 text-green-400">Apache 2.0 ✓</td>
-          </tr>
-          <tr>
-            <td class="py-3 text-gray-300">Training Data Transparency</td>
-            <td class="py-3 text-green-400">Full ✓</td>
-            <td class="py-3 text-red-400">Partial</td>
-            <td class="py-3 text-yellow-400">Partial</td>
-            <td class="py-3 text-red-400">Limited</td>
-          </tr>
-          <tr>
-            <td class="py-3 text-gray-300">Commercial Indemnification</td>
-            <td class="py-3 text-green-400">Yes (IBM) ✓</td>
-            <td class="py-3 text-red-400">No</td>
-            <td class="py-3 text-red-400">No</td>
-            <td class="py-3 text-red-400">No</td>
-          </tr>
-          <tr>
-            <td class="py-3 text-gray-300">Enterprise Support SLA</td>
-            <td class="py-3 text-green-400">Yes ✓</td>
-            <td class="py-3 text-red-400">No</td>
-            <td class="py-3 text-red-400">No</td>
-            <td class="py-3 text-red-400">No</td>
-          </tr>
-          <tr>
-            <td class="py-3 text-gray-300">Government Procurement Path</td>
-            <td class="py-3 text-green-400">Established ✓</td>
-            <td class="py-3 text-yellow-400">Emerging</td>
-            <td class="py-3 text-yellow-400">Emerging</td>
-            <td class="py-3 text-red-400">Restricted</td>
-          </tr>
-          <tr>
-            <td class="py-3 text-gray-300">Origin Jurisdiction</td>
-            <td class="py-3 text-green-400">USA ✓</td>
-            <td class="py-3 text-green-400">USA ✓</td>
-            <td class="py-3 text-green-400">USA ✓</td>
-            <td class="py-3 text-yellow-400">China</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="text-gray-500 text-xs">
-      Note: Llama 4, Gemma 4, and Qwen 3 details are anticipated based on predecessor releases. Table will be updated as specifications are confirmed. Granite 4 details inferred from IBM Research trajectory.
-    </p>
-  </section>
-
-  <!-- Current Deployment -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Start with Granite 3.1 Today</h2>
-    <p class="text-gray-300 mb-8">
-      The most effective way to prepare for Granite 4 is to deploy Granite 3.1 now. You learn your organization's specific use case requirements, validate your infrastructure and security architecture, develop your evaluation datasets, and build organizational familiarity with private AI deployment — all before the pressure of a new model release.
-    </p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <h3 class="font-semibold mb-3">Quick Start Commands</h3>
-        <div class="space-y-2">
-          <div class="bg-gray-800 rounded p-2 font-mono text-xs text-green-400">ollama pull granite3.1-dense:8b</div>
-          <div class="bg-gray-800 rounded p-2 font-mono text-xs text-green-400">ollama pull granite3.1-dense:2b</div>
-          <div class="bg-gray-800 rounded p-2 font-mono text-xs text-green-400">ollama pull granite3.1-moe:3b</div>
-          <div class="bg-gray-800 rounded p-2 font-mono text-xs text-green-400">ollama pull granite-code:8b</div>
-        </div>
-      </div>
-
-      <div class="bg-gray-900 rounded-xl p-5 border border-gray-700">
-        <h3 class="font-semibold mb-3">Recommended First Deployments</h3>
-        <ul class="text-gray-400 text-sm space-y-2">
-          <li>• Legal: Contract clause extraction and comparison</li>
-          <li>• Finance: Earnings call transcript analysis</li>
-          <li>• Engineering: Code review and documentation</li>
-          <li>• HR: Policy document Q&A</li>
-          <li>• Ops: Incident report summarization</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Notify Section -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <div class="bg-gradient-to-r from-blue-950 to-gray-900 rounded-2xl p-8 border border-blue-800">
-      <h2 class="text-2xl font-bold mb-3">Get Notified When Granite 4 Arrives</h2>
-      <p class="text-gray-400 mb-6">
-        We monitor IBM Research publications, GitHub releases, and Ollama model registry updates. When Granite 4 becomes available for private deployment, we will notify registered organizations and publish updated deployment guides within 24 hours of release.
-      </p>
-      <div class="flex gap-4 flex-wrap">
-        <a href="/contact.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold">Register for Early Access</a>
-        <a href="/models/granite/" class="border border-blue-600 text-blue-400 hover:border-blue-400 px-6 py-3 rounded-lg font-semibold">Deploy Granite 3.1 Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Related -->
-  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-800">
-    <h2 class="text-2xl font-bold mb-6">Related IBM Granite Pages</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <a href="/models/granite/" class="bg-gray-900 rounded-xl p-5 border border-gray-700 hover:border-blue-500 transition-colors">
-        <h3 class="font-bold mb-2">Granite Enterprise</h3>
-        <p class="text-gray-400 text-sm">Granite 3.0 and 3.1 for document analysis, compliance, and enterprise NLP workflows.</p>
-        <span class="text-blue-400 text-sm mt-3 block">Deploy Now →</span>
-      </a>
-      <a href="/models/granite-code/" class="bg-gray-900 rounded-xl p-5 border border-gray-700 hover:border-blue-500 transition-colors">
-        <h3 class="font-bold mb-2">Granite Code</h3>
-        <p class="text-gray-400 text-sm">116-language private code AI. Keep proprietary source code off external servers.</p>
-        <span class="text-blue-400 text-sm mt-3 block">Explore →</span>
-      </a>
-      <a href="/models/llama4/" class="bg-gray-900 rounded-xl p-5 border border-gray-700 hover:border-blue-500 transition-colors">
-        <h3 class="font-bold mb-2">Llama 4 (Coming Soon)</h3>
-        <p class="text-gray-400 text-sm">Meta's next-generation open model. Compare with Granite 4 for your enterprise use case.</p>
-        <span class="text-blue-400 text-sm mt-3 block">Preview →</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-gray-800 px-6 py-8 text-center text-gray-500 text-sm">
-    <p>© 2025 NoCloudGPT. Private AI infrastructure for enterprise teams.</p>
-    <p class="mt-2 text-xs">Granite 4 specifications on this page are planning assumptions based on IBM Research trajectory, not confirmed release details. Page updated as new information becomes available.</p>
-    <div class="flex justify-center gap-6 mt-3">
-      <a href="/contact.html" class="hover:text-gray-300">Privacy Policy</a>
-      <a href="/contact.html" class="hover:text-gray-300">Terms</a>
-      <a href="/models/" class="hover:text-gray-300">All Models</a>
-    </div>
-  
-  <div class="mx-auto max-w-6xl px-6 py-4">
-    <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
-      <strong class="text-slate-400">License information:</strong>
-      License terms for open-weight models are sourced from Hugging Face model cards and official repositories.
-      Licenses may vary by model generation, quantization, and deployment scale.
-      Always verify the current license at
-      <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
-      or the official developer repository before commercial deployment.
-      NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
-    </p>
   </div>
-  </footer>
+  <header class="border-b border-slate-800 bg-slate-950/90">
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">granite4</p>
+      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">granite4 family</h1>
+      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
 
-
-  <!-- ============================================================
-       ARTWORK AND SOURCE REFERENCES
-  ============================================================ -->
-  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
-    <div class="mx-auto max-w-6xl">
-      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
-      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
-        <div>
-          <p class="font-semibold text-slate-400">Hero image</p>
-          <p class="mt-1">AI-generated abstract artwork created for NoCloudGPT. Original work, no third-party license required.</p>
-          <!-- INTERNAL: Verify Replace with licensed photo when available before publishing. -->
-          <!-- Unsplash reference: https://unsplash.com/s/photos/enterprise-technology -->
-        </div>
-        <div>
-          <p class="font-semibold text-slate-400">Developer reference</p>
-          <p class="mt-1">Granite 4 is developed by <a href="https://www.ibm.com/granite" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">IBM Research</a>. NoCloudGPT is an independent deployment service not affiliated with IBM Research.</p>
-        </div>
-        <div>
-          <p class="font-semibold text-slate-400">Model catalog reference</p>
-          <p class="mt-1">See the <a href="https://ollama.com/library/granite4" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Ollama library page for Granite 4</a> for current model tags.</p>
-          <!-- card.webp, sidebar.webp, og.webp: TODO — see models/artwork-sources.md -->
-        </div>
-      </div>
+      <p class="mt-4 text-slate-400">Capabilities: tools. Ollama families: granite4.</p>
     </div>
-  </section>
+  </header>
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section>
+      <h2 class="text-2xl font-bold">Models in this family</h2>
+      <table class="mt-6 w-full text-left text-sm">
+        <thead class="text-slate-400">
+          <tr>
+            <th class="pb-3">Model</th>
+            <th class="pb-3">Params</th>
+            <th class="pb-3">Quant</th>
+            <th class="pb-3">Capabilities</th>
+            <th class="pb-3">Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="border-t border-slate-800">
+          <td class="py-3 pr-4"><a href="/models/model/granite4/" class="font-semibold text-cyan-300 hover:text-cyan-200">granite4</a></td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">—</td>
+          <td class="py-3 pr-4 text-slate-400">tools</td>
+          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
 
+  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
+    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
+    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+  </footer>
 </body>
 </html>
