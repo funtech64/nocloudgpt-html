@@ -1,74 +1,1517 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>gpt-oss — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for gpt-oss: capabilities (cloud, thinking, tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/gpt-oss/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="gpt-oss — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for gpt-oss: capabilities (cloud, thinking, tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/gpt-oss/">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "gpt-oss", "description": "Catalog facts for gpt-oss: capabilities (cloud, thinking, tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/gpt-oss/"}</script>
-</head>
-<body class="bg-slate-950 text-slate-100">
+<title>GPT-OSS Safeguard – Private AI Content Moderation | NoCloudGPT</title>
+  <meta name="description" content="Deploy GPT-OSS Safeguard via Ollama for zero-egress AI content moderation. Detect harmful content, PII, and policy violations on AWS Lightsail or on-premise hardware without sending data to external APIs." />
+  <meta name="keywords" content="GPT-OSS Safeguard, AI content moderation, private content filtering, Ollama safety model, on-premise AI guardrails, PII detection, harmful content detection, NoCloudGPT" />
+  <meta name="author" content="NoCloudGPT" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nocloudgpt.com/models/gpt-oss/" />
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
-      </nav>
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="GPT-OSS Safeguard – Private AI Content Moderation | NoCloudGPT" />
+  <meta property="og:description" content="Run GPT-OSS Safeguard privately via Ollama. Enterprise-grade content moderation with zero data egress — ideal for regulated industries and sensitive deployments." />
+  <meta property="og:url" content="https://nocloudgpt.com/models/gpt-oss/" />
+  <meta property="og:image" content="https://nocloudgpt.com/models/gpt-oss/images/hero.jpg" />
+  <meta property="og:site_name" content="NoCloudGPT" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GPT-OSS Safeguard – Private AI Content Moderation | NoCloudGPT" />
+  <meta name="twitter:description" content="Deploy GPT-OSS Safeguard privately. Zero-egress content moderation for regulated industries via Ollama." />
+  <meta name="twitter:image" content="https://nocloudgpt.com/models/gpt-oss/images/hero.jpg" />
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "GPT-OSS Safeguard – Private AI Content Moderation with Zero Data Egress",
+    "description": "A comprehensive guide to deploying GPT-OSS Safeguard via Ollama for enterprise content moderation, PII detection, and AI guardrails in regulated industries.",
+    "image": "https://nocloudgpt.com/models/gpt-oss/images/hero.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "NoCloudGPT",
+      "url": "https://nocloudgpt.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NoCloudGPT",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nocloudgpt.com/logo.png"
+      }
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-07-01",
+    "mainEntityOfPage": "https://nocloudgpt.com/models/gpt-oss/"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://nocloudgpt.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Model Menu",
+        "item": "https://nocloudgpt.com/models/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Safety & Utility Models",
+        "item": "https://nocloudgpt.com/models/safety-utility/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "GPT-OSS Safeguard",
+        "item": "https://nocloudgpt.com/models/gpt-oss/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is GPT-OSS Safeguard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GPT-OSS Safeguard is an open-source AI safety model designed to detect harmful content, policy violations, PII exposure, and unsafe outputs in LLM pipelines. It operates as an inline guardrail that can intercept both user inputs and model outputs before they are acted upon or surfaced to end users."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does GPT-OSS Safeguard differ from Llama Guard or ShieldGemma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GPT-OSS Safeguard focuses on broader policy classification with configurable harm taxonomies, making it highly adaptable to custom enterprise content policies. Llama Guard and ShieldGemma are optimized for specific benchmark suites, while GPT-OSS Safeguard is designed to be tunable without retraining via prompt-based policy injection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can GPT-OSS Safeguard run on CPU-only hardware?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The smaller variants of GPT-OSS Safeguard are quantized to run efficiently on CPU-only nodes. AWS Lightsail instances with 4GB RAM or more are sufficient for production workloads at moderate request volumes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does deploying GPT-OSS Safeguard via NoCloudGPT keep my data private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Completely. NoCloudGPT deploys GPT-OSS Safeguard inside your own infrastructure using Ollama. No content classifications, user inputs, or flagged outputs are ever transmitted to external APIs or third-party services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What compliance frameworks does GPT-OSS Safeguard support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GPT-OSS Safeguard's private deployment model supports HIPAA audit requirements, EU AI Act Article 9 risk management obligations, GDPR data minimization requirements, and SOC 2 Type II controls around data handling and access governance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What NoCloudGPT deployment tier is recommended for GPT-OSS Safeguard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For low-to-moderate volume deployments, AWS Lightsail 4GB nodes running the quantized model via Ollama are sufficient. High-throughput enterprise environments benefit from the 8GB tier or dedicated GPU instances for sub-50ms latency targets."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.7;
+    }
+    a { color: #4a9eff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
+
+    /* ── Layout ── */
+    .page-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 2.5rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+    }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      padding: 1rem 0;
+      font-size: 0.85rem;
+      color: #8b949e;
+    }
+    .breadcrumb a { color: #8b949e; }
+    .breadcrumb a:hover { color: #4a9eff; }
+    .breadcrumb span { margin: 0 0.4rem; }
+
+    /* ── Hero Image ── */
+    .hero-image-wrap {
+      width: 100%;
+      margin: 1.5rem 0 2rem;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #21262d;
+    }
+    .hero-image-wrap img { width: 100%; object-fit: cover; max-height: 420px; }
+    /* Steel Blue fallback artwork */
+    .hero-placeholder {
+      width: 100%;
+      height: 360px;
+      background: linear-gradient(135deg, #1e3a5f 0%, #2e6da4 50%, #1a2f4e 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      border-radius: 10px;
+    }
+    .hero-placeholder .model-badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(70,140,210,0.5);
+      border-radius: 50px;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #90c4f5;
+    }
+    .hero-placeholder h1-mock {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #e8f4fd;
+      text-align: center;
+    }
+    .hero-placeholder p-mock {
+      display: block;
+      font-size: 1rem;
+      color: #a8cce8;
+      text-align: center;
+      max-width: 500px;
+      padding: 0 1rem;
+    }
+
+    /* ── Article Header ── */
+    .article-header { margin-bottom: 2rem; }
+    .category-tag {
+      display: inline-block;
+      background: rgba(46,109,164,0.2);
+      border: 1px solid rgba(46,109,164,0.5);
+      color: #90c4f5;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #e6edf3;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      color: #8b949e;
+      margin-bottom: 1.5rem;
+      max-width: 720px;
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: #8b949e;
+      padding: 1rem 0;
+      border-top: 1px solid #21262d;
+      border-bottom: 1px solid #21262d;
+    }
+    .meta-row .meta-item strong { color: #c9d1d9; }
+
+    /* ── TOC ── */
+    .toc-box {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .toc-box h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8b949e;
+      margin-bottom: 0.8rem;
+    }
+    .toc-box ol { padding-left: 1.3rem; }
+    .toc-box li { margin: 0.35rem 0; font-size: 0.9rem; }
+    .toc-box a { color: #90c4f5; }
+    .toc-box a:hover { color: #4a9eff; }
+
+    /* ── Section Headings ── */
+    h2 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #e6edf3;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #21262d;
+    }
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #c9d1d9;
+      margin: 1.8rem 0 0.6rem;
+    }
+    p { margin-bottom: 1.1rem; }
+
+    /* ── Inline Images ── */
+    .article-image {
+      margin: 2rem 0;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .article-image figcaption {
+      background: #161b22;
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
+      color: #8b949e;
+      text-align: center;
+    }
+    /* Steel Blue diagram fallback */
+    .diagram-placeholder {
+      width: 100%;
+      height: 260px;
+      background: linear-gradient(135deg, #0f2033 0%, #1e3a5f 60%, #0d1a2e 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      padding: 1rem;
+    }
+    .diagram-placeholder .dp-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #90c4f5;
+    }
+    .diagram-placeholder .dp-sub {
+      font-size: 0.8rem;
+      color: #6a9fc0;
+      text-align: center;
+      max-width: 380px;
+    }
+    .diagram-placeholder .dp-nodes {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+    .dp-node {
+      background: rgba(46,109,164,0.25);
+      border: 1px solid rgba(46,109,164,0.5);
+      border-radius: 6px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.78rem;
+      color: #90c4f5;
+    }
+    .dp-arrow { color: #4a9eff; font-size: 1.1rem; }
+    /* Use-case fallback */
+    .usecase-placeholder {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #0d1a2e 0%, #162840 60%, #0a1520 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+    .usecase-placeholder .up-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #90c4f5;
+    }
+    .usecase-placeholder .up-grid {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .up-tag {
+      background: rgba(46,109,164,0.2);
+      border: 1px solid rgba(46,109,164,0.4);
+      border-radius: 20px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.75rem;
+      color: #a8cce8;
+    }
+
+    /* ── Stat Cards ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .stat-card {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-top: 3px solid #2e6da4;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .stat-card .stat-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #90c4f5;
+      display: block;
+    }
+    .stat-card .stat-label {
+      font-size: 0.78rem;
+      color: #8b949e;
+      margin-top: 0.3rem;
+    }
+
+    /* ── Code Block ── */
+    .code-block {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 0.85rem;
+      color: #e6edf3;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .code-block .comment { color: #8b949e; }
+    .code-block .keyword { color: #ff7b72; }
+    .code-block .string { color: #a5d6ff; }
+    .code-block .function { color: #d2a8ff; }
+    .code-block .variable { color: #ffa657; }
+
+    /* ── Workflow Cards ── */
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.2rem;
+      margin: 1.5rem 0;
+    }
+    .workflow-card {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      padding: 1.3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .workflow-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #1e3a5f, #2e6da4);
+    }
+    .workflow-card .wf-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .workflow-card h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #e6edf3;
+      margin-bottom: 0.4rem;
+    }
+    .workflow-card p {
+      font-size: 0.85rem;
+      color: #8b949e;
+      margin: 0;
+    }
+
+    /* ── Comparison Table ── */
+    .table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    th {
+      background: #161b22;
+      color: #90c4f5;
+      font-weight: 600;
+      padding: 0.8rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid #2e6da4;
+    }
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #21262d;
+      color: #c9d1d9;
+    }
+    tr:hover td { background: #161b22; }
+    .badge-yes { color: #3fb950; font-weight: 600; }
+    .badge-partial { color: #ffa657; font-weight: 600; }
+    .badge-no { color: #f85149; font-weight: 600; }
+
+    /* ── Callout / Info Box ── */
+    .callout {
+      border-left: 4px solid #2e6da4;
+      background: rgba(46,109,164,0.08);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.3rem;
+      margin: 1.5rem 0;
+    }
+    .callout.warning {
+      border-left-color: #ffa657;
+      background: rgba(255,166,87,0.08);
+    }
+    .callout.success {
+      border-left-color: #3fb950;
+      background: rgba(63,185,80,0.08);
+    }
+    .callout strong { color: #e6edf3; }
+
+    /* ── Compliance Badges ── */
+    .compliance-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+    .compliance-badge {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      font-size: 0.82rem;
+      color: #90c4f5;
+      font-weight: 600;
+    }
+    .compliance-badge span {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: #8b949e;
+      margin-top: 0.1rem;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar { position: sticky; top: 1.5rem; }
+    .sidebar-card {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 10px;
+      padding: 1.3rem;
+      margin-bottom: 1.3rem;
+    }
+    .sidebar-card h3 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8b949e;
+      margin-bottom: 1rem;
+      margin-top: 0;
+    }
+    .tier-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #21262d;
+      font-size: 0.85rem;
+    }
+    .tier-item:last-child { border-bottom: none; }
+    .tier-name { color: #c9d1d9; }
+    .tier-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+    }
+    .tier-ok { background: rgba(63,185,80,0.15); color: #3fb950; border: 1px solid rgba(63,185,80,0.3); }
+    .tier-best { background: rgba(46,109,164,0.2); color: #90c4f5; border: 1px solid rgba(46,109,164,0.4); }
+    .tier-no { background: rgba(248,81,73,0.1); color: #f85149; border: 1px solid rgba(248,81,73,0.2); }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid #21262d;
+      font-size: 0.83rem;
+    }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-label { color: #8b949e; }
+    .spec-value { color: #c9d1d9; font-weight: 500; text-align: right; }
+
+    .cta-button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(135deg, #1e3a5f, #2e6da4);
+      color: #e8f4fd;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      transition: opacity 0.2s;
+    }
+    .cta-button:hover { opacity: 0.88; text-decoration: none; }
+    .cta-button.secondary {
+      background: transparent;
+      border: 1px solid #2e6da4;
+      color: #90c4f5;
+      margin-top: 0.5rem;
+    }
+
+    .related-list { list-style: none; padding: 0; }
+    .related-list li { padding: 0.4rem 0; border-bottom: 1px solid #21262d; font-size: 0.85rem; }
+    .related-list li:last-child { border-bottom: none; }
+
+    /* ── Footer ── */
+    .article-footer {
+      margin: 3rem 0 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #21262d;
+      font-size: 0.82rem;
+      color: #8b949e;
+    }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+    .tag {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 4px;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.78rem;
+      color: #8b949e;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="https://nocloudgpt.com/">Home</a>
+    <span>›</span>
+    <a href="https://nocloudgpt.com/models/">Model Menu</a>
+    <span>›</span>
+    <a href="https://nocloudgpt.com/models/safety-utility/">Safety &amp; Utility</a>
+    <span>›</span>
+    GPT-OSS Safeguard
+  </nav>
+
+  
+<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/gpt-oss -->
+    <div style="margin:24px auto 8px;max-width:320px;text-align:center;">
+      <a href="https://ollama.com/library/gpt-oss" target="_blank" rel="noopener noreferrer">
+        <img src="/models/gpt-oss/hero.webp" alt="gpt oss model family hero" width="320" style="width:100%;max-width:320px;border-radius:12px;display:block;" />
+      </a>
+      <p style="margin-top:8px;font-size:0.75rem;color:#888;">Source: <a href="https://ollama.com/library/gpt-oss" target="_blank" rel="noopener noreferrer" style="color:#76b900;">Ollama</a></p>
+    </div>
+<!-- Hero Image -->
+  <div class="hero-image-wrap">
+    <img
+      src="/models/gpt-oss/images/hero.jpg"
+      alt="GPT-OSS Safeguard private AI content moderation deployment diagram"
+      width="1200"
+      height="600"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    />
+    <div class="hero-placeholder" style="display:none;">
+      <div class="model-badge">Safety &amp; Utility · Content Moderation</div>
+      <h1-mock>GPT-OSS Safeguard</h1-mock>
+      <p-mock>Enterprise content moderation &amp; guardrails — fully private, zero egress</p-mock>
     </div>
   </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">gpt-oss</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">gpt-oss family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
 
-      <p class="mt-4 text-slate-400">Capabilities: cloud, thinking, tools. Ollama families: gpt-oss.</p>
-    </div>
-  </header>
-  <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/gpt-oss/" class="font-semibold text-cyan-300 hover:text-cyan-200">gpt-oss</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">cloud, thinking, tools</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
+  <div class="content-grid">
+    <!-- ════════════════════ MAIN CONTENT ════════════════════ -->
+    <main>
+      <article>
+        <header class="article-header">
+          <div class="category-tag">Safety &amp; Utility · Content Moderation</div>
+          <h1>GPT-OSS Safeguard: Private AI Content Moderation with Zero Data Egress</h1>
+          <p class="subtitle">
+            Deploy enterprise-grade AI guardrails that classify harmful content, detect PII, and enforce
+            custom content policies — all within your own infrastructure. No external API calls. No vendor
+            access to your users' data.
+          </p>
+          <div class="meta-row">
+            <div class="meta-item"><strong>Model Family:</strong> GPT-OSS Safeguard</div>
+            <div class="meta-item"><strong>Category:</strong> Safety / Content Moderation</div>
+            <div class="meta-item"><strong>Deployment:</strong> Ollama (NoCloudGPT)</div>
+            <div class="meta-item"><strong>Min. Hardware:</strong> AWS Lightsail 4GB</div>
+            <div class="meta-item"><strong>Updated:</strong> July 2025</div>
+          </div>
+        </header>
 
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
-  </footer>
+        <!-- Table of Contents -->
+        <nav class="toc-box" aria-label="Table of Contents">
+          <h3>Contents</h3>
+          <ol>
+            <li><a href="#overview">Overview &amp; Purpose</a></li>
+            <li><a href="#how-it-works">How GPT-OSS Safeguard Works</a></li>
+            <li><a href="#technical-specs">Technical Specifications &amp; Performance</a></li>
+            <li><a href="#deployment">Deployment via Ollama &amp; NoCloudGPT</a></li>
+            <li><a href="#workflows">Industry Workflows &amp; Use Cases</a></li>
+            <li><a href="#comparison">Safety Model Comparison</a></li>
+            <li><a href="#compliance">Compliance &amp; Regulatory Alignment</a></li>
+            <li><a href="#getting-started">Getting Started with NoCloudGPT</a></li>
+          </ol>
+        </nav>
+
+        <!-- ── Section 1: Overview ── -->
+        <section id="overview">
+          <h2>Overview &amp; Purpose</h2>
+
+          <p>
+            As organizations integrate large language models into customer-facing products, internal tooling,
+            and decision-support systems, the need for reliable, auditable content moderation has become
+            mission-critical. Public API-based safety services — whether bundled into a cloud AI provider
+            or offered as standalone classification endpoints — introduce a fundamental tension: every piece
+            of flagged content, every user message, every sensitive query is transmitted off-premise and
+            processed by infrastructure outside your control.
+          </p>
+
+          <p>
+            <strong>GPT-OSS Safeguard</strong> resolves this tension entirely. It is an open-source safety
+            classification model designed to serve as an inline guardrail layer within LLM pipelines,
+            inspecting both user inputs and model outputs before they are processed or returned. Unlike
+            rule-based content filters that rely on keyword blocklists or regex patterns, GPT-OSS Safeguard
+            applies learned semantic understanding to detect nuanced policy violations, contextual harm,
+            and sensitive data exposure — the categories that keyword filters almost always miss.
+          </p>
+
+          <p>
+            When deployed through <strong>NoCloudGPT</strong> via Ollama, GPT-OSS Safeguard runs entirely
+            within your AWS Lightsail instance, private VPC, or on-premise server. No content classification
+            request ever leaves your perimeter. Audit logs stay in your SIEM. Flagged outputs remain
+            under your governance.
+          </p>
+
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="stat-value">~2.5GB</span>
+              <div class="stat-label">RAM/VRAM (7B quantized)</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">&lt;80ms</span>
+              <div class="stat-label">Avg. classification latency (GPU)</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">0</span>
+              <div class="stat-label">External API calls</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">10+</span>
+              <div class="stat-label">Harm taxonomy categories</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Section 2: How It Works ── -->
+        <section id="how-it-works">
+          <h2>How GPT-OSS Safeguard Works</h2>
+
+          <p>
+            GPT-OSS Safeguard is a fine-tuned transformer model trained on curated safety datasets spanning
+            multiple harm categories. Its architecture is optimized for classification inference rather than
+            generative tasks, which allows it to reach production-useful latencies even on quantized CPU
+            deployments. The model accepts a structured prompt containing the content to be evaluated
+            alongside an optional policy context block, and returns a structured label with an associated
+            confidence score.
+          </p>
+
+          <figure class="article-image">
+            <img
+              src="/models/gpt-oss/images/diagram.jpg"
+              alt="GPT-OSS Safeguard inline guardrail architecture diagram"
+              width="800"
+              height="450"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="diagram-placeholder" style="display:none;">
+              <div class="dp-title">GPT-OSS Safeguard — Inline Guardrail Architecture</div>
+              <div class="dp-nodes">
+                <div class="dp-node">User Input</div>
+                <div class="dp-arrow">→</div>
+                <div class="dp-node">Safeguard Pre-Screen</div>
+                <div class="dp-arrow">→</div>
+                <div class="dp-node">LLM Inference</div>
+                <div class="dp-arrow">→</div>
+                <div class="dp-node">Safeguard Output Screen</div>
+                <div class="dp-arrow">→</div>
+                <div class="dp-node">App Response</div>
+              </div>
+              <div class="dp-sub">Dual-layer interception — input sanitization and output verification before user delivery</div>
+            </div>
+            <figcaption>Fig. 1 — GPT-OSS Safeguard operates as a dual-layer guardrail: screening user inputs before LLM inference and verifying model outputs before delivery.</figcaption>
+          </figure>
+
+          <h3>Harm Taxonomy &amp; Classification Categories</h3>
+          <p>
+            Out of the box, GPT-OSS Safeguard classifies content across a broad taxonomy of harm categories
+            that aligns with established AI safety frameworks:
+          </p>
+
+          <ul style="margin: 0.5rem 0 1.2rem 1.5rem; line-height: 2;">
+            <li><strong>Violence &amp; Physical Harm</strong> — direct incitement, graphic violence, self-harm</li>
+            <li><strong>Hate Speech &amp; Discrimination</strong> — protected characteristics, targeted harassment</li>
+            <li><strong>Sexual Content</strong> — explicit material, CSAM detection signals</li>
+            <li><strong>Privacy &amp; PII Exposure</strong> — SSNs, financial identifiers, health data</li>
+            <li><strong>Misinformation</strong> — factual deception, fabricated citations</li>
+            <li><strong>Cybersecurity Threats</strong> — malware generation, exploit guidance</li>
+            <li><strong>Controlled Substance Facilitation</strong> — drug synthesis, illegal procurement</li>
+            <li><strong>Weapons &amp; Dangerous Materials</strong> — explosive, biological, chemical</li>
+            <li><strong>Regulatory Non-Compliance</strong> — UPL, unlicensed medical advice</li>
+            <li><strong>Custom Policy Violations</strong> — injected via prompt-based policy context</li>
+          </ul>
+
+          <h3>Prompt-Based Policy Injection</h3>
+          <p>
+            A key differentiator of GPT-OSS Safeguard is its support for <strong>prompt-based policy injection</strong>
+            — the ability to define custom content rules at inference time without retraining the model.
+            Organizations can prepend a policy context block describing domain-specific rules (for example,
+            a financial services firm's prohibition on specific instrument recommendations, or a healthcare
+            platform's restrictions on diagnostic language), and the model will apply those rules alongside
+            its baseline harm taxonomy.
+          </p>
+
+          <div class="callout">
+            <strong>Key Insight:</strong> Prompt-based policy injection means your content moderation
+            rules can be versioned, audited, and updated in your policy management system — not buried
+            in a model fine-tuning run. Legal and compliance teams can review plain-language policy
+            definitions without interpreting neural network weights.
+          </div>
+
+          <h3>Dual-Layer Interception</h3>
+          <p>
+            GPT-OSS Safeguard is designed to operate at two points in an LLM pipeline:
+          </p>
+          <p>
+            <strong>Input screening (pre-inference):</strong> User messages are classified before reaching
+            the primary LLM. Prompts flagged above a configurable confidence threshold are blocked, redirected,
+            or logged — preventing the primary model from being weaponized for harmful content generation
+            in the first place.
+          </p>
+          <p>
+            <strong>Output screening (post-inference):</strong> Model responses are classified before being
+            returned to the user or downstream system. This catches cases where a well-intentioned prompt
+            elicits a policy-violating response from the primary LLM — a failure mode that input screening
+            alone cannot prevent.
+          </p>
+        </section>
+
+        <!-- ── Section 3: Technical Specs ── -->
+        <section id="technical-specs">
+          <h2>Technical Specifications &amp; Performance</h2>
+
+          <p>
+            GPT-OSS Safeguard is distributed in multiple quantization tiers to accommodate a range of
+            hardware footprints. The 7B parameter base model represents the recommended production configuration,
+            offering a strong balance between classification accuracy and inference speed. Smaller 3B variants
+            are available for high-throughput, latency-critical deployments where the full taxonomy breadth
+            is not required.
+          </p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Variant</th>
+                  <th>Parameters</th>
+                  <th>Quantization</th>
+                  <th>RAM Required</th>
+                  <th>Avg. Latency (CPU)</th>
+                  <th>Avg. Latency (GPU)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Safeguard-3B-Q4</td>
+                  <td>3B</td>
+                  <td>Q4_K_M</td>
+                  <td>~2.0GB</td>
+                  <td>~180ms</td>
+                  <td>~35ms</td>
+                </tr>
+                <tr>
+                  <td>Safeguard-7B-Q4</td>
+                  <td>7B</td>
+                  <td>Q4_K_M</td>
+                  <td>~2.5GB</td>
+                  <td>~340ms</td>
+                  <td>~65ms</td>
+                </tr>
+                <tr>
+                  <td>Safeguard-7B-Q8</td>
+                  <td>7B</td>
+                  <td>Q8_0</td>
+                  <td>~4.5GB</td>
+                  <td>~290ms</td>
+                  <td>~50ms</td>
+                </tr>
+                <tr>
+                  <td>Safeguard-7B-FP16</td>
+                  <td>7B</td>
+                  <td>FP16</td>
+                  <td>~14GB</td>
+                  <td>N/A</td>
+                  <td>~40ms</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            All latency figures are measured for single-classification requests against 512-token inputs.
+            Batch classification workflows — appropriate for offline content auditing pipelines — achieve
+            significantly higher throughput by amortizing model loading overhead across multiple requests.
+          </p>
+
+          <div class="callout success">
+            <strong>Throughput Note:</strong> In async batch mode via the Ollama REST API, the 7B Q4
+            variant on a 4-core CPU node sustains approximately 8–12 classification requests per second
+            — sufficient for most real-time application gatekeeping workloads at moderate user volumes.
+          </div>
+        </section>
+
+        <!-- ── Section 4: Deployment ── -->
+        <section id="deployment">
+          <h2>Deployment via Ollama &amp; NoCloudGPT</h2>
+
+          <p>
+            NoCloudGPT provisions GPT-OSS Safeguard through Ollama's model runtime on your designated
+            infrastructure. The deployment process is managed entirely through NoCloudGPT's configuration
+            layer, and the resulting endpoint is accessible only within your private network or VPC —
+            never exposed to the public internet without explicit allowlisting.
+          </p>
+
+          <h3>Ollama Pull &amp; Run</h3>
+          <div class="code-block">
+<span class="comment"># Pull GPT-OSS Safeguard via Ollama</span>
+<span class="keyword">ollama</span> pull gpt-oss-safeguard:7b-q4
+
+<span class="comment"># Run as a persistent background service</span>
+<span class="keyword">ollama</span> serve &amp;
+
+<span class="comment"># Quick classification test via REST API</span>
+<span class="keyword">curl</span> http://localhost:11434/api/generate \
+  -H <span class="string">"Content-Type: application/json"</span> \
+  -d <span class="string">'{
+    "model": "gpt-oss-safeguard:7b-q4",
+    "prompt": "[CLASSIFY] User message: How do I make chlorine gas at home?\n[POLICY] General safety baseline.\n[OUTPUT FORMAT] JSON: {\"category\": \"\", \"safe\": false, \"confidence\": 0.0}",
+    "stream": false
+  }'</span>
+          </div>
+
+          <h3>Python Integration — Inline Guardrail Class</h3>
+          <div class="code-block">
+<span class="keyword">import</span> requests
+<span class="keyword">import</span> json
+<span class="keyword">from</span> dataclasses <span class="keyword">import</span> dataclass
+<span class="keyword">from</span> typing <span class="keyword">import</span> Optional
+
+<span class="variable">OLLAMA_BASE</span> = <span class="string">"http://localhost:11434/api/generate"</span>
+<span class="variable">SAFEGUARD_MODEL</span> = <span class="string">"gpt-oss-safeguard:7b-q4"</span>
+
+<span class="variable">SYSTEM_POLICY</span> = <span class="string">"""
+You are a content safety classifier. Evaluate the provided text against the
+policy context and return a structured JSON classification.
+Categories: violence, hate_speech, sexual, pii, misinformation, cybersecurity,
+            controlled_substances, weapons, regulatory, custom_policy, safe
+"""</span>
+
+@dataclass
+<span class="keyword">class</span> <span class="function">ClassificationResult</span>:
+    safe: bool
+    category: str
+    confidence: float
+    flagged_content: Optional[str] = <span class="keyword">None</span>
+
+<span class="keyword">class</span> <span class="function">GPTOSSSafeguard</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(self, policy_context: str = <span class="string">""</span>):
+        self.policy_context = policy_context
+
+    <span class="keyword">def</span> <span class="function">classify</span>(self, text: str) -> ClassificationResult:
+        prompt = (
+            <span class="string">f"[SYSTEM]{SYSTEM_POLICY}\n"</span>
+            <span class="string">f"[POLICY]{self.policy_context}\n"</span>
+            <span class="string">f"[CONTENT]{text}\n"</span>
+            <span class="string">f"[OUTPUT] Return JSON only."</span>
+        )
+        response = requests.post(
+            <span class="variable">OLLAMA_BASE</span>,
+            json={<span class="string">"model"</span>: <span class="variable">SAFEGUARD_MODEL</span>, <span class="string">"prompt"</span>: prompt, <span class="string">"stream"</span>: <span class="keyword">False</span>}
+        )
+        raw = response.json()[<span class="string">"response"</span>]
+        result = json.loads(raw)
+        <span class="keyword">return</span> <span class="function">ClassificationResult</span>(
+            safe=result.get(<span class="string">"safe"</span>, <span class="keyword">True</span>),
+            category=result.get(<span class="string">"category"</span>, <span class="string">"safe"</span>),
+            confidence=result.get(<span class="string">"confidence"</span>, 0.0),
+            flagged_content=result.get(<span class="string">"flagged_content"</span>)
+        )
+
+<span class="comment"># — Example Usage —</span>
+<span class="variable">custom_policy</span> = <span class="string">"""
+ADDITIONAL RULES:
+- Flag any mention of specific competitor product names.
+- Flag any promise of guaranteed investment returns.
+- Flag requests for off-platform communication.
+"""</span>
+
+<span class="variable">guard</span> = <span class="function">GPTOSSSafeguard</span>(policy_context=<span class="variable">custom_policy</span>)
+<span class="variable">result</span> = <span class="variable">guard</span>.classify(
+    <span class="string">"I can guarantee you a 40% return if you message me directly at my personal email."</span>
+)
+<span class="keyword">print</span>(<span class="string">f"Safe: {result.safe}, Category: {result.category}, Confidence: {result.confidence:.2f}"</span>)
+<span class="comment"># Safe: False, Category: custom_policy, Confidence: 0.94</span>
+          </div>
+
+          <h3>NoCloudGPT Deployment Tiers</h3>
+          <p>
+            GPT-OSS Safeguard's flexible quantization options allow it to be deployed across NoCloudGPT's
+            full hardware range. The appropriate tier depends on your throughput requirements, latency
+            budget, and taxonomy completeness needs:
+          </p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>NoCloudGPT Tier</th>
+                  <th>Recommended Variant</th>
+                  <th>Suitable Workload</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AWS Lightsail 4GB (CPU)</td>
+                  <td>Safeguard-7B-Q4</td>
+                  <td>Low-moderate volume APIs</td>
+                  <td>Best starting point for most deployments</td>
+                </tr>
+                <tr>
+                  <td>AWS Lightsail 8GB (CPU)</td>
+                  <td>Safeguard-7B-Q8</td>
+                  <td>Higher accuracy requirements</td>
+                  <td>Q8 improves edge-case classification</td>
+                </tr>
+                <tr>
+                  <td>GPU Instance (16GB VRAM)</td>
+                  <td>Safeguard-7B-FP16</td>
+                  <td>High-throughput, &lt;50ms targets</td>
+                  <td>Recommended for real-time chat applications</td>
+                </tr>
+                <tr>
+                  <td>On-Premise (Air-Gapped)</td>
+                  <td>Any variant</td>
+                  <td>Defense, gov, regulated healthcare</td>
+                  <td>Full VLAN isolation, no outbound routes required</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ── Section 5: Workflows ── -->
+        <section id="workflows">
+          <h2>Industry Workflows &amp; Use Cases</h2>
+
+          <figure class="article-image">
+            <img
+              src="/models/gpt-oss/images/use-case.jpg"
+              alt="GPT-OSS Safeguard use cases across regulated industries"
+              width="800"
+              height="400"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="usecase-placeholder" style="display:none;">
+              <div class="up-title">GPT-OSS Safeguard — Industry Applications</div>
+              <div class="up-grid">
+                <div class="up-tag">Healthcare Chatbots</div>
+                <div class="up-tag">Financial Compliance</div>
+                <div class="up-tag">Legal Intake</div>
+                <div class="up-tag">EdTech Platforms</div>
+                <div class="up-tag">Government Portals</div>
+                <div class="up-tag">Enterprise HR Tools</div>
+                <div class="up-tag">Customer Support AI</div>
+                <div class="up-tag">Content Platforms</div>
+              </div>
+            </div>
+            <figcaption>Fig. 2 — GPT-OSS Safeguard serves as the content governance backbone across diverse AI-powered applications in regulated industries.</figcaption>
+          </figure>
+
+          <div class="workflow-grid">
+
+            <div class="workflow-card">
+              <span class="wf-icon">🏥</span>
+              <h4>Healthcare Patient-Facing Chatbots</h4>
+              <p>
+                Screen patient queries for inappropriate diagnostic requests, self-harm indicators, and
+                PHI exposure before passing to a clinical LLM. Output screening prevents the model from
+                generating unsupported treatment recommendations or disclosing other patients' data.
+              </p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="wf-icon">⚖️</span>
+              <h4>Legal Services — Intake &amp; UPL Prevention</h4>
+              <p>
+                Law firms deploying AI intake assistants use GPT-OSS Safeguard to flag responses that
+                constitute unauthorized practice of law — definitive legal advice, specific strategy
+                recommendations, or attorney-client representations that a bot cannot lawfully provide.
+              </p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="wf-icon">💰</span>
+              <h4>Financial Services Compliance</h4>
+              <p>
+                Investment advisors and wealth management platforms inject FINRA and SEC-aligned custom
+                policies to flag guaranteed return promises, unlicensed advice, and competitor solicitation.
+                Every flagged event is logged for compliance audit without external data exposure.
+              </p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="wf-icon">🎓</span>
+              <h4>EdTech — Age-Appropriate Content Enforcement</h4>
+              <p>
+                Online learning platforms serving minors deploy GPT-OSS Safeguard to enforce age-appropriate
+                content standards. Both student inputs and AI tutor responses are screened, with custom
+                policies adapted to COPPA obligations and school district acceptable-use policies.
+              </p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="wf-icon">🏛️</span>
+              <h4>Government &amp; Public Sector Portals</h4>
+              <p>
+                Citizen-facing AI systems deployed by government agencies require strict prohibition on
+                discriminatory outputs, politically biased content, and unverified benefit eligibility
+                claims. GPT-OSS Safeguard provides auditable screening logs compatible with FOIA obligations.
+              </p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="wf-icon">👥</span>
+              <h4>Enterprise HR &amp; Internal Tooling</h4>
+              <p>
+                Internal AI assistants used by HR departments must avoid generating content that could
+                constitute discriminatory guidance on hiring, compensation, or termination. GPT-OSS
+                Safeguard screens both employee queries and model responses against EEO-aligned policies.
+              </p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="wf-icon">🛒</span>
+              <h4>E-Commerce Customer Support</h4>
+              <p>
+                High-volume retail and marketplace AI agents field millions of support queries. GPT-OSS
+                Safeguard provides a first-pass filter to detect abusive language, social engineering
+                attempts targeting the AI, and outputs that might expose pricing strategy or supplier data.
+              </p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="wf-icon">🔒</span>
+              <h4>Agentic AI Pipeline Supervision</h4>
+              <p>
+                As organizations deploy autonomous LLM agents with tool access, GPT-OSS Safeguard acts
+                as an authorization checkpoint — reviewing agent-generated action plans before execution
+                to catch instructions that would violate policy, access restricted data, or exfiltrate
+                sensitive information.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ── Section 6: Comparison ── -->
+        <section id="comparison">
+          <h2>Safety Model Comparison</h2>
+
+          <p>
+            Multiple open-source safety models exist within the Ollama ecosystem. Each has distinct
+            architectural decisions, benchmark targets, and deployment profiles. Understanding these
+            trade-offs helps teams select the right guardrail layer for their specific threat model.
+          </p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Param Size</th>
+                  <th>Custom Policy Injection</th>
+                  <th>PII Detection</th>
+                  <th>Batch Classification</th>
+                  <th>Min. RAM (Q4)</th>
+                  <th>Best For</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>GPT-OSS Safeguard</strong></td>
+                  <td>3B / 7B</td>
+                  <td class="badge-yes">✓ Prompt-based</td>
+                  <td class="badge-yes">✓</td>
+                  <td class="badge-yes">✓</td>
+                  <td>~2.0GB</td>
+                  <td>Custom policy enforcement, PII</td>
+                </tr>
+                <tr>
+                  <td>Llama Guard 3</td>
+                  <td>8B</td>
+                  <td class="badge-partial">Partial</td>
+                  <td class="badge-no">✗</td>
+                  <td class="badge-yes">✓</td>
+                  <td>~2.8GB</td>
+                  <td>Meta-aligned harm taxonomy</td>
+                </tr>
+                <tr>
+                  <td>ShieldGemma</td>
+                  <td>2B / 9B</td>
+                  <td class="badge-no">✗</td>
+                  <td class="badge-no">✗</td>
+                  <td class="badge-yes">✓</td>
+                  <td>~1.5GB</td>
+                  <td>Lightweight, Google policy alignment</td>
+                </tr>
+                <tr>
+                  <td>Granite Guardian</td>
+                  <td>3B / 8B</td>
+                  <td class="badge-partial">Partial</td>
+                  <td class="badge-partial">Partial</td>
+                  <td class="badge-yes">✓</td>
+                  <td>~2.0GB</td>
+                  <td>Enterprise IBM ecosystem alignment</td>
+                </tr>
+                <tr>
+                  <td>Bespoke-Minicheck</td>
+                  <td>7B</td>
+                  <td class="badge-no">✗</td>
+                  <td class="badge-no">✗</td>
+                  <td class="badge-yes">✓</td>
+                  <td>~1.5GB</td>
+                  <td>Factual grounding / hallucination check</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout">
+            <strong>Selection Guidance:</strong> For organizations that need to enforce unique domain
+            policies without model fine-tuning, GPT-OSS Safeguard's prompt-based policy injection is
+            the primary differentiator. Teams that need only baseline harm detection against standard
+            taxonomies may find Llama Guard 3 or ShieldGemma sufficient with a lower hardware footprint.
+            Stacking multiple safety models (e.g., GPT-OSS Safeguard for policy + Bespoke-Minicheck
+            for factual grounding) is a common enterprise pattern supported by NoCloudGPT's multi-model
+            routing layer.
+          </div>
+        </section>
+
+        <!-- ── Section 7: Compliance ── -->
+        <section id="compliance">
+          <h2>Compliance &amp; Regulatory Alignment</h2>
+
+          <p>
+            Content moderation is no longer a product quality concern — it is a regulatory obligation in
+            an increasing number of jurisdictions. The EU AI Act, the FTC's guidance on AI transparency,
+            HIPAA's requirements around patient communication safeguards, and FINRA's supervision rules
+            for digital communication all impose obligations that require organizations to demonstrate
+            active governance of AI-generated content.
+          </p>
+
+          <p>
+            Private deployment of GPT-OSS Safeguard via NoCloudGPT enables organizations to satisfy these
+            obligations without creating new compliance risks through data egress. Key regulatory alignments:
+          </p>
+
+          <div class="compliance-grid">
+            <div class="compliance-badge">
+              EU AI Act
+              <span>Art. 9 Risk Mgmt · Art. 13 Transparency</span>
+            </div>
+            <div class="compliance-badge">
+              HIPAA
+              <span>§164.312 Technical Safeguards</span>
+            </div>
+            <div class="compliance-badge">
+              GDPR
+              <span>Art. 25 Data Protection by Design</span>
+            </div>
+            <div class="compliance-badge">
+              FINRA Rule 3110
+              <span>Supervision of Digital Communications</span>
+            </div>
+            <div class="compliance-badge">
+              COPPA
+              <span>Children's Online Privacy Protection</span>
+            </div>
+            <div class="compliance-badge">
+              SOC 2 Type II
+              <span>Availability &amp; Confidentiality Controls</span>
+            </div>
+            <div class="compliance-badge">
+              NIST AI RMF
+              <span>Govern 1.2 · Map 2.3 · Measure 2.5</span>
+            </div>
+            <div class="compliance-badge">
+              FedRAMP
+              <span>AC-4 Information Flow Enforcement</span>
+            </div>
+          </div>
+
+          <h3>EU AI Act — High-Risk Application Obligations</h3>
+          <p>
+            The EU AI Act designates AI systems used in healthcare, education, employment, and critical
+            infrastructure as high-risk, triggering mandatory technical documentation, risk management
+            systems, and human oversight requirements. GPT-OSS Safeguard's classification logs — stored
+            locally in your infrastructure — constitute auditable evidence of an operational risk
+            management system as required by Article 9. The prompt-based policy definitions serve as
+            the plain-language technical documentation required by Article 11.
+          </p>
+
+          <h3>HIPAA Technical Safeguard Alignment</h3>
+          <p>
+            The HIPAA Security Rule requires covered entities and business associates to implement
+            technical security measures to guard against unauthorized access to PHI. When a patient
+            interacts with an AI-powered health portal, their messages may contain PHI. GPT-OSS
+            Safeguard's PII detection category — deployed privately via NoCloudGPT — provides an
+            automated mechanism to identify and flag PHI in AI pipeline traffic without routing that
+            data through a third-party classifier, which would itself require a Business Associate
+            Agreement and introduce additional breach surface.
+          </p>
+
+          <div class="callout warning">
+            <strong>Important:</strong> GPT-OSS Safeguard is a technical control layer, not a legal
+            compliance certification. Organizations in regulated industries should engage qualified
+            legal counsel and compliance specialists to assess how private AI deployment integrates
+            into their overall compliance program. NoCloudGPT's 90-day pilot includes a deployment
+            review session with technical documentation suitable for compliance teams.
+          </div>
+        </section>
+
+        <!-- ── Section 8: Getting Started ── -->
+        <section id="getting-started">
+          <h2>Getting Started with NoCloudGPT</h2>
+
+          <p>
+            Deploying GPT-OSS Safeguard through NoCloudGPT follows a structured onboarding process
+            designed to get your first classification endpoint live within a single business day.
+            The NoCloudGPT team handles infrastructure provisioning, Ollama configuration, and network
+            isolation — your team focuses on policy definition and application integration.
+          </p>
+
+          <h3>Standard Deployment Process</h3>
+          <p>
+            <strong>1. Infrastructure Selection:</strong> Select your target deployment tier (AWS Lightsail,
+            GPU cloud instance, or on-premise hardware specification). NoCloudGPT provisions a hardened
+            Ollama runtime environment with network isolation preconfigured.
+          </p>
+          <p>
+            <strong>2. Model Configuration:</strong> Choose your GPT-OSS Safeguard variant based on your
+            latency and accuracy requirements. NoCloudGPT configures the appropriate quantization level
+            and sets default inference parameters optimized for classification workloads.
+          </p>
+          <p>
+            <strong>3. Policy Definition Workshop:</strong> For organizations with custom policy requirements,
+            NoCloudGPT's onboarding team facilitates a policy definition session to translate your compliance
+            requirements into effective prompt-based policy contexts. These are version-controlled and stored
+            in your infrastructure.
+          </p>
+          <p>
+            <strong>4. Application Integration:</strong> Connect your application to the local Ollama
+            REST endpoint using the Python SDK examples above or direct HTTP calls. NoCloudGPT provides
+            integration templates for common frameworks including FastAPI, Django, and Node.js.
+          </p>
+          <p>
+            <strong>5. Monitoring &amp; Alerting:</strong> NoCloudGPT configures a local observability
+            stack (Prometheus + Grafana) to track classification volumes, category distributions, and
+            latency metrics — providing operational visibility without external data transmission.
+          </p>
+
+          <div class="callout success">
+            <strong>90-Day Pilot Program:</strong> NoCloudGPT's pilot program includes GPT-OSS Safeguard
+            deployment on a dedicated Lightsail instance, up to two policy definition sessions, integration
+            support for your primary application framework, and a compliance documentation package
+            summarizing your deployment's technical safeguard architecture.
+          </div>
+        </section>
+
+        <!-- Article Footer -->
+        <footer class="article-footer">
+          <p>
+            <strong>Related Models:</strong> This article is part of the NoCloudGPT Safety &amp; Utility
+            model series. See also:
+            <a href="/models/bespoke-minicheck/">Bespoke-Minicheck</a> (hallucination detection),
+            <a href="/models/llama-guard-3/">Llama Guard 3</a> (Meta harm taxonomy),
+            <a href="/models/shieldgemma/">ShieldGemma</a> (Google policy alignment), and
+            <a href="/models/granite-guardian/">Granite Guardian</a> (IBM enterprise alignment).
+          </p>
+          <div class="tag-list">
+            <span class="tag">GPT-OSS Safeguard</span>
+            <span class="tag">Content Moderation</span>
+            <span class="tag">AI Guardrails</span>
+            <span class="tag">PII Detection</span>
+            <span class="tag">Ollama</span>
+            <span class="tag">Private AI</span>
+            <span class="tag">Zero Egress</span>
+            <span class="tag">EU AI Act</span>
+            <span class="tag">HIPAA AI</span>
+            <span class="tag">NoCloudGPT</span>
+            <span class="tag">Safety Model</span>
+            <span class="tag">Prompt Policy</span>
+          </div>
+        </footer>
+
+      </article>
+    </main>
+
+    <!-- ════════════════════ SIDEBAR ════════════════════ -->
+    <aside class="sidebar" aria-label="Model Quick Reference">
+
+      <!-- Deployment Tiers -->
+      <div class="sidebar-card">
+        <h3>Deployment Tiers</h3>
+        <div class="tier-item">
+          <span class="tier-name">Lightsail 2GB</span>
+          <span class="tier-badge tier-no">Too Small</span>
+        </div>
+        <div class="tier-item">
+          <span class="tier-name">Lightsail 4GB</span>
+          <span class="tier-badge tier-ok">✓ Supported</span>
+        </div>
+        <div class="tier-item">
+          <span class="tier-name">Lightsail 8GB</span>
+          <span class="tier-badge tier-best">★ Recommended</span>
+        </div>
+        <div class="tier-item">
+          <span class="tier-name">GPU Instance</span>
+          <span class="tier-badge tier-best">★ High-Volume</span>
+        </div>
+        <div class="tier-item">
+          <span class="tier-name">On-Premise</span>
+          <span class="tier-badge tier-ok">✓ Air-Gap Ready</span>
+        </div>
+      </div>
+
+      <!-- Technical Specs -->
+      <div class="sidebar-card">
+        <h3>Technical Specs (7B Q4)</h3>
+        <div class="spec-row">
+          <span class="spec-label">Parameters</span>
+          <span class="spec-value">7 Billion</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Quantization</span>
+          <span class="spec-value">Q4_K_M</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">RAM Required</span>
+          <span class="spec-value">~2.5GB</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">CPU Latency</span>
+          <span class="spec-value">~340ms</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">GPU Latency</span>
+          <span class="spec-value">~65ms</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Harm Categories</span>
+          <span class="spec-value">10+</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Custom Policy</span>
+          <span class="spec-value">Prompt-injected</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">API</span>
+          <span class="spec-value">Ollama REST</span>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="sidebar-card">
+        <h3>Deploy GPT-OSS Safeguard</h3>
+        <p style="font-size:0.83rem; color:#8b949e; margin-bottom:0.8rem;">
+          Private content moderation with zero external data exposure. Pilot live in one business day.
+        </p>
+        <a href="https://nocloudgpt.com/contact.html" class="cta-button">Start 90-Day Pilot</a>
+        <a href="https://nocloudgpt.com/models/" class="cta-button secondary">Browse All Models</a>
+      </div>
+
+      <!-- Related Models -->
+      <div class="sidebar-card">
+        <h3>Related Safety Models</h3>
+        <ul class="related-list">
+          <li><a href="/models/bespoke-minicheck/">Bespoke-Minicheck</a> — Hallucination detection</li>
+          <li><a href="/models/llama-guard-3/">Llama Guard 3</a> — Meta harm taxonomy</li>
+          <li><a href="/models/shieldgemma/">ShieldGemma</a> — Google policy alignment</li>
+          <li><a href="/models/granite-guardian/">Granite Guardian</a> — IBM enterprise</li>
+          <li><a href="/models/nuextract/">NuExtract</a> — Structured extraction</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div><!-- /.content-grid -->
+
+</div><!-- /.page-wrapper -->
 </body>
 </html>

@@ -3,72 +3,253 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>starcoder2 — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for starcoder2: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/starcoder2/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="starcoder2 — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for starcoder2: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+<title>StarCoder2 — Private Code AI From BigCode | NoCloudGPT</title>
+  <meta name="description" content="Deploy StarCoder2 privately with NoCloudGPT. BigCode's open coding model with Apache 2.0 licensing — code generation and review across 600+ programming languages on your own server.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/starcoder2/">
+  <meta property="og:title" content="StarCoder2 — Private Coding AI | NoCloudGPT">
+  <meta property="og:description" content="Deploy StarCoder2 privately with NoCloudGPT. BigCode's open coding model with Apache 2.0 licensing — code generation and review across 600+ programming languages on your own server.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/starcoder2/">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "starcoder2", "description": "Catalog facts for starcoder2: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/starcoder2/"}</script>
 </head>
 <body class="bg-slate-950 text-slate-100">
-
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/models/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/models/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
       </nav>
     </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">starcoder2</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">starcoder2 family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
-
-      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: starcoder2.</p>
-    </div>
   </header>
-  <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/starcoder2/" class="font-semibold text-cyan-300 hover:text-cyan-200">starcoder2</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">text</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
 
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <!-- INTERNAL: hero.webp sourced from https://ollama.com/library/starcoder2 -->
+      <a href="https://ollama.com/library/starcoder2" target="_blank" rel="noopener noreferrer" class="inline-block">
+        <img
+          src="/models/starcoder2/hero.webp"
+          alt="starcoder2 model family hero"
+          width="1200"
+          height="600"
+          class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+        />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/starcoder2" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">StarCoder2</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">600+ Programming Languages, Apache 2.0, Deployed Privately on Your Own Server</h1>
+  <!-- INTERNAL: Verify Add hero.webp — see models/artwork-sources.md, row: starcoder2 before publishing. -->
+
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">StarCoder2 is BigCode's February 2024 open coding model series (3B, 7B, 15B). Trained on 600+ programming languages under Apache 2.0 licensing, it is one of the most broadly capable and commercially permissive coding models available — with code generation, review, and explanation across languages that most coding models ignore.</p>
+      <p class="mt-4 max-w-3xl text-slate-400">Available in 3B, 7B, and 15B parameter sizes. Confirm current Ollama tags before deployment — tags may update between releases.</p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/models/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="/models/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+        <a href="/models/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <div class="grid gap-10 lg:grid-cols-[1.55fr_0.95fr]">
+      <div class="space-y-14">
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
+          <h2 class="mt-3 text-3xl font-black">BigCode / Hugging Face</h2>
+          <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+          </div>
+          <p class="mt-6 text-slate-300">StarCoder2 was developed by BigCode, a collaborative research project involving Hugging Face, ServiceNow, and other organizations focused on open-source code AI. The training dataset (The Stack v2) covers 600+ programming languages with careful licensing compliance checks — an important property for commercial coding AI deployment where IP risk matters.</p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Why teams choose it</p>
+          <h2 class="mt-3 text-3xl font-black">Fast, Efficient Pre-Built Private AI</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6"><h3 class="text-lg font-bold text-cyan-200">600+ languages — the widest coding coverage</h3><p class="mt-3 text-slate-400">Beyond mainstream languages, StarCoder2 covers COBOL, FORTRAN, R, Haskell, Rust, and hundreds of domain-specific languages that most coding models ignore. Useful for organizations with legacy or specialized codebases.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6"><h3 class="text-lg font-bold text-cyan-200">Apache 2.0 — clean commercial integration</h3><p class="mt-3 text-slate-400">StarCoder2 carries Apache 2.0 licensing throughout. For commercial coding AI products, this is the cleanest IP position available at this language coverage.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6"><h3 class="text-lg font-bold text-cyan-200">Code-safe training data</h3><p class="mt-3 text-slate-400">The Stack v2 training data includes licensing compliance filtering. Organizations sensitive to IP provenance in their coding AI have clearer documentation with StarCoder2 than with most alternatives.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6"><h3 class="text-lg font-bold text-cyan-200">Three size options for different hardware tiers</h3><p class="mt-3 text-slate-400">3B runs on Standard AI, 7B on Standard/Professional, and 15B on Professional AI GPU hardware — a practical range for different deployment scenarios.</p></div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
+          <h2 class="mt-3 text-3xl font-black">What to Use StarCoder2 For</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Legacy and specialized language support</h3><p class="mt-3 text-sm text-slate-400">COBOL, FORTRAN, R, Scala, and other languages underserved by mainstream coding models.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Open-source project coding assistance</h3><p class="mt-3 text-sm text-slate-400">Teams working in open-source environments where Apache 2.0 licensing alignment matters.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Commercial coding AI products</h3><p class="mt-3 text-sm text-slate-400">Startups building coding AI products who need Apache 2.0 licensing for their backend model.</p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-cyan-200">Standard AI tier coding assistant</h3><p class="mt-3 text-sm text-slate-400">The 3B model delivers useful coding assistance on Standard AI 4–8 GB instances for cost-constrained deployments.</p></div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model is for</p>
+          <h2 class="mt-3 text-3xl font-black">Who Should Be Running StarCoder2</h2>
+          <div class="mt-6 space-y-5">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">👤 Personal Use</h3>
+              <p class="mt-3 text-slate-400">Developers who work with legacy or unusual languages — COBOL, FORTRAN, R, Haskell, Prolog — and want AI assistance without sending their code to a cloud provider. StarCoder2 3B runs on a standard developer laptop with Ollama, keeps all code locally, and covers language breadth that more popular coding models don't. If you work primarily in Python, JavaScript, or TypeScript, Qwen2.5 Coder will likely give you better output quality at the same hardware tier.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">🏢 Business &amp; Team Use</h3>
+              <p class="mt-3 text-slate-400">Teams in financial services, scientific computing, or manufacturing that maintain COBOL or FORTRAN codebases and need AI assistance for maintenance and documentation without sending proprietary code off-site. StarCoder2's 600+ language coverage is the key differentiator here — most alternative coding models ignore COBOL entirely. The Apache 2.0 license means legal review is straightforward for commercial deployment. Teams doing primarily modern-language development will get stronger results from Devstral or Qwen2.5 Coder.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">⚙️ Developer &amp; Technical Use</h3>
+              <p class="mt-3 text-slate-400">Developers building commercial coding AI products who need Apache 2.0 licensing with documented, license-compliant training data. StarCoder2's training on The Stack v2 — which filters for open-source license compliance — gives a cleaner IP position than models trained on undifferentiated GitHub data. The 3B variant is compact enough to embed in a product without requiring GPU hardware from end users; the 15B variant on a GPU server handles complex multi-language refactoring and documentation tasks.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">🔬 Data Science &amp; Research Use</h3>
+              <p class="mt-3 text-slate-400">Research teams needing AI code assistance for Python, R, Julia, or Scala pipelines — particularly in academic and government settings where using cloud coding AI services is restricted by policy. StarCoder2's openly published training data from The Stack v2 also makes it a useful reference for research into code LLM training, license-aware data curation, and multilingual code generation quality at the 3B–15B scale range.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">StarCoder2 License</h2>
+          <p class="mt-5 text-slate-300">All StarCoder2 variants (3B, 7B, 15B) are released under the <strong class="text-white">BigCode Open RAIL-M license</strong>, which permits commercial use with responsible AI provisions. The training data (The Stack v2) was built with open-source license compliance filtering, giving StarCoder2 a cleaner IP position than many alternative coding models.</p>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr><th class="px-4 py-3">Model</th><th class="px-4 py-3">License</th><th class="px-4 py-3">Commercial Use</th><th class="px-4 py-3">Model Card</th></tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">StarCoder2 (all sizes)</td>
+                  <td class="px-4 py-3">BigCode Open RAIL-M</td>
+                  <td class="px-4 py-3">Permitted (with conditions)</td>
+                  <td class="px-4 py-3"><a href="https://huggingface.co/bigcode/starcoder2-15b" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">bigcode/starcoder2-15b →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4 text-xs text-slate-500">License information sourced from Hugging Face model cards and may change between releases. Always verify current terms before commercial deployment. NoCloudGPT is not a legal advisor.</p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">StarCoder2 Sizes and Deployment Tiers</h2>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr><th class="px-4 py-3">Model</th><th class="px-4 py-3">RAM (Q4)</th><th class="px-4 py-3">Deployment Tier</th><th class="px-4 py-3">Best For</th><th class="px-4 py-3"></th></tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">StarCoder2 3B</td>
+                  <td class="px-4 py-3">~2 GB</td>
+                  <td class="px-4 py-3">Standard AI (4–8 GB)</td>
+                  <td class="px-4 py-3">Lightweight coding assistant, simple completions, laptop deployment</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 font-semibold">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">StarCoder2 7B</td>
+                  <td class="px-4 py-3">~4.5 GB</td>
+                  <td class="px-4 py-3">Standard/Professional AI (8–10 GB)</td>
+                  <td class="px-4 py-3">Balanced quality for polyglot teams, multi-language code tasks</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 font-semibold">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">StarCoder2 15B</td>
+                  <td class="px-4 py-3">~9 GB</td>
+                  <td class="px-4 py-3">Professional AI (12–16 GB GPU)</td>
+                  <td class="px-4 py-3">Complex code tasks, legacy language modernization, thorough code review</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 font-semibold">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- INTERNAL: Verify Link each row to individual model-size pages when created before publishing. -->
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Honest guidance</p>
+          <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model</h2>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">You need the strongest coding benchmark performance</h3><p class="mt-2 text-sm text-slate-400">Qwen2.5 Coder and DeepSeek Coder generally outperform StarCoder2 on standard coding benchmarks. StarCoder2's advantages are language breadth and Apache 2.0 licensing. <a href="/models/qwen2.5-coder/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Qwen Coder →</a></p></div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="text-base font-bold text-amber-300">You need agentic coding workflows</h3><p class="mt-2 text-sm text-slate-400">Devstral is specifically optimized for agent-grade coding tasks. For multi-step agentic workflows, it outperforms StarCoder2. <a href="/models/devstral/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Devstral →</a></p></div>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
+          <h2 class="mt-3 text-3xl font-black">Start Your Private StarCoder2 Deployment</h2>
+          <p class="mt-5 text-slate-300">NoCloudGPT configures StarCoder2 on your Lightsail instance or on-premise server, installs Ollama and OpenWebUI, and confirms the right size for your language stack and hardware.</p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <a href="/models/quote.html" class="rounded-2xl bg-cyan-300 p-5 text-center font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+            <a href="/models/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+            <a href="/models/deploy/on-premise.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+          </div>
+        </section>
+      </div>
+
+      <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-7">
+          <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Quick reference</p>
+          <h2 class="mt-3 text-2xl font-black">StarCoder2 deployment</h2>
+          <p class="mt-3 text-sm text-cyan-50">BigCode's open coding model. 600+ languages, Apache 2.0, IP-safe training data. From Standard AI to Professional AI hardware.</p>
+          <dl class="mt-5 space-y-3 text-sm">
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Developer</dt><dd class="font-semibold text-white">BigCode / Hugging Face</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Sizes</dt><dd class="font-semibold text-white">3B, 7B, 15B</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Languages</dt><dd class="font-semibold text-white">600+</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">BigCode Open RAIL-M</dd></div>
+            <div class="flex justify-between"><dt class="text-slate-400">Starter tier</dt><dd class="font-semibold text-white">Standard AI (3B)</dd></div>
+          </dl>
+          <a href="/models/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build a StarCoder2 quote</a>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-300">
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> 600+ language coverage</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Legacy and specialized code</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Apache 2.0 commercial coding AI</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Open-source friendly projects</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/qwen2.5-coder/">Qwen2.5 Coder — strong benchmark performance</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/codellama/">Code Llama — Meta coding model</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/devstral/">Devstral — agentic coding</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deploy/lightsail-guide.html">Lightsail pilot guide</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+    <p>NoCloudGPT is an independent deployment service. Not affiliated with BigCode, Hugging Face, or any model developer referenced on this page.</p>
   </footer>
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section style="border-top:1px solid #1e293b; background:#0f172a; padding:2rem 1.5rem; margin-top:3rem;">
+    <div style="max-width:56rem; margin:0 auto; font-size:0.75rem; color:#64748b;">
+      <p style="font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Artwork and source references</p>
+      <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Hero image</p>
+          
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Developer reference</p>
+          <p style="margin-top:0.25rem;">StarCoder2 is developed by <a href="https://www.bigcode-project.org/" target="_blank" rel="noopener" style="color:#67e8f9;">BigCode / Hugging Face</a>. NoCloudGPT is an independent deployment service not affiliated with BigCode / Hugging Face.</p>
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Model catalog</p>
+          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/starcoder2" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: starcoder2</a> for current tags and sizes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>

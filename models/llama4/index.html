@@ -3,72 +3,407 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>llama4 — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for llama4: capabilities (tools, vision), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/llama4/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="llama4 — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for llama4: capabilities (tools, vision), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+<title>Llama 4 — Meta's Natively Multimodal Private AI | NoCloudGPT</title>
+  <meta name="description" content="Deploy Llama 4 Scout or Maverick privately with NoCloudGPT. A newer Meta generation brings native vision, Mixture-of-Experts efficiency, and competitive frontier performance to your own infrastructure.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/llama4/">
+  <meta property="og:title" content="Llama 4 — Private Multimodal AI | NoCloudGPT">
+  <meta property="og:description" content="Run Llama 4 Scout or Maverick on your own server. Native vision, MoE efficiency, and long context — without routing data through external APIs.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/llama4/">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "llama4", "description": "Catalog facts for llama4: capabilities (tools, vision), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/llama4/"}</script>
 </head>
 <body class="bg-slate-950 text-slate-100">
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/models/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/models/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
       </nav>
     </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">llama4</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">llama4 family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
-
-      <p class="mt-4 text-slate-400">Capabilities: tools, vision. Ollama families: llama4.</p>
-    </div>
   </header>
+
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      <!-- INTERNAL: hero.webp sourced from https://ollama.com/library/llama4 -->
+      <a href="https://ollama.com/library/llama4" target="_blank" rel="noopener noreferrer" class="inline-block">
+        <img
+          src="/models/llama4/hero.webp"
+          alt="llama4 model family hero"
+          width="1200"
+          height="600"
+          class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+        />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/llama4" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Llama 4 Family</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+        Meta's Natively Multimodal AI — Vision, Reasoning, and Long Context on Your Own Server
+      </h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">
+        Llama 4 is Meta's most capable open-weight generation. Scout and Maverick bring
+        native vision understanding, Mixture-of-Experts architecture, and context windows
+        measured in millions of tokens — all deployable on your own infrastructure with
+        Ollama and OpenWebUI. No data leaves your server by default.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-400">
+        Competitive with frontier commercial models across a wide range of benchmarks.
+        NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
+        before publishing — performance details evolve as models and evaluations update.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/models/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="/models/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+        <a href="/models/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </section>
+
   <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/llama4/" class="font-semibold text-cyan-300 hover:text-cyan-200">llama4</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">tools, vision</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
-        </tbody>
-      </table>
-    </section>
+    <div class="grid gap-10 lg:grid-cols-[1.55fr_0.95fr]">
+      <div class="space-y-14">
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">What this model family is</p>
+          <h2 class="mt-3 text-3xl font-black">Meta's Fourth-Generation Open AI — Natively Multimodal, MoE-Efficient, Long-Context</h2>
+          <p class="mt-5 text-slate-300">
+            Llama 4 represents a significant architectural step from earlier Llama generations.
+            Where Llama 3 was a dense transformer, Llama 4 adopts a Mixture-of-Experts design
+            that activates only a fraction of its parameters per token — delivering better output
+            quality at lower active compute cost. The Scout model brings a 10M+ token context
+            window, meaning entire codebases, document libraries, or long research corpora fit
+            in a single context without chunking.
+          </p>
+          <p class="mt-4 text-slate-300">
+            Equally important: Llama 4 is natively multimodal. Both Scout and Maverick process
+            images alongside text without requiring a separate vision model. Organizations that
+            need AI to handle documents with embedded images, visual Q&amp;A, or screenshot
+            analysis can now do it from a single private Llama 4 deployment.
+          </p>
+
+          <div class="mt-8 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-cyan-500/30 bg-cyan-950/40 p-6">
+              <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Llama 4 Scout</p>
+              <h3 class="mt-2 text-lg font-bold text-white">17B×16E MoE — The practical deployment</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                17B active parameters across a 16-expert MoE architecture. 10M token context window.
+                Native vision. The recommended Llama 4 model for most private deployments — strong
+                capability with more manageable hardware requirements than Maverick.
+                NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-violet-500/30 bg-violet-950/40 p-6">
+              <p class="text-xs font-bold uppercase tracking-widest text-violet-300">Llama 4 Maverick</p>
+              <h3 class="mt-2 text-lg font-bold text-white">17B×128E MoE — High-capability flagship</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                17B active parameters across 128 experts — significantly larger total parameter
+                count with the same active compute efficiency. Competitive with frontier commercial
+                models on complex reasoning tasks. Requires substantial hardware.
+                NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
+          <h2 class="mt-3 text-3xl font-black">Meta AI Research</h2>
+          <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+          </div>
+          <p class="mt-6 text-slate-300">
+            Llama 4 was released by Meta AI Research in April 2025 as the fourth generation
+            of Meta's open-weight model series. Meta AI is the AI research division of Meta
+            Platforms, and the Llama series has become the most widely deployed open-weight
+            model lineage across research, production, and private deployment globally.
+          </p>
+          <p class="mt-4 text-slate-300">
+            NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.Earlier Llama generations used a
+            custom community license with commercial restrictions above certain user thresholds.
+            Llama 4 license terms should be reviewed before production deployment.
+          </p>
+          <p class="mt-4 text-slate-300">
+            NoCloudGPT is an independent deployment service and is not affiliated with Meta AI.
+          </p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Why teams choose it</p>
+          <h2 class="mt-3 text-3xl font-black">What Makes Llama 4 the Right Choice for Private Deployment</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Native vision without a second deployment</h3>
+              <p class="mt-3 text-slate-400">
+                Llama 4's built-in vision capability means one deployment handles both text and
+                images. Documents with embedded charts, screenshots, scanned forms, and visual
+                diagrams are processed privately in a single inference call.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Frontier-competitive quality, private by default</h3>
+              <p class="mt-3 text-slate-400">
+                Organizations that previously needed GPT-4o or Claude for demanding reasoning
+                tasks now have a comparable open-weight option that runs on infrastructure
+                they control. No prompts, documents, or images leave your server.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">10M token context window (Scout)</h3>
+              <p class="mt-3 text-slate-400">
+                Scout's 10M token context is orders of magnitude beyond previous Llama generations.
+                Entire codebases, research libraries, or year-long document collections can be
+                analyzed in a single context — eliminating the chunking complexity that causes
+                AI pipelines to lose cross-document reference.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">MoE efficiency — more capability per GPU hour</h3>
+              <p class="mt-3 text-slate-400">
+                The Mixture-of-Experts design means Llama 4 delivers significantly more capability
+                than a dense model of equivalent active parameter count. On-premise GPU investments
+                go further with Llama 4 than with equivalent-quality dense alternatives.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Llama 4 is a strong pick if you want a capable home assistant that handles long documents, multi-step questions, and image understanding without sending anything to a cloud provider. The smaller Scout variant runs comfortably on a single high-end consumer GPU or a well-equipped workstation, making it realistic for hobbyists who already own decent hardware. Be aware that Llama 4 is a mixture-of-experts architecture, so RAM and VRAM requirements are higher than the parameter count alone suggests — you're loading all experts even if only some activate per token.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">For small and mid-sized teams, Llama 4 Scout offers a practical balance: native multimodal input, a very long context window (useful for contracts, transcripts, and internal knowledge bases), and competitive instruction-following without the per-token costs of hosted APIs. Maverick is a better fit for organizations that need stronger reasoning across customer support automation, internal copilots, or document-heavy workflows. Keep in mind the Llama 4 Community License has commercial restrictions for very large companies (see below), which may affect enterprise buyers.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Llama 4 is well-suited for building RAG systems, agentic workflows, and code-assist tools where long-context recall actually matters — Scout's 10M token context is genuinely useful for whole-repo analysis, though effective recall at the extremes is still an open question. Native image input simplifies multimodal pipelines that previously required separate vision models. Tool-calling and structured output work reliably, but expect to spend time on prompt engineering and evals; Llama 4 is less polished out-of-the-box than closed frontier models.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Researchers get an openly available MoE model with transparent weights, making it a rare option for studying expert routing, long-context behavior, and multimodal alignment at scale. Llama 4 is a reasonable baseline for fine-tuning experiments, distillation work, and comparative benchmarking against Llama 3, Mistral, and Qwen families. Limitations: training data details remain partial, and the largest Behemoth variant has not been released as open weights, which restricts certain reproducibility studies.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
+          <h2 class="mt-3 text-3xl font-black">What to Use Llama 4 For</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Document analysis with images and text</h3>
+              <p class="mt-3 text-sm text-slate-400">Legal filings with embedded tables, financial reports with charts, engineering drawings alongside specs — Llama 4 processes the full document in one pass without external vision services.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Long-document research and synthesis</h3>
+              <p class="mt-3 text-sm text-slate-400">Scout's 10M context enables analysis across entire document collections — regulatory archives, research corpora, or multi-year correspondence — in a single private inference session.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Complex reasoning and professional writing</h3>
+              <p class="mt-3 text-sm text-slate-400">Demanding analytical tasks — multi-step problem decomposition, competitive intelligence, legal reasoning, financial analysis — where previous open-weight generations showed clear limits.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Code generation and technical work</h3>
+              <p class="mt-3 text-sm text-slate-400">Repository-scale code analysis, architecture-level review, and sophisticated code generation where proprietary source code cannot leave internal infrastructure.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Which size should you choose?</p>
+          <h2 class="mt-3 text-3xl font-black">Scout or Maverick — Choosing Your Llama 4 Deployment</h2>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <h3 class="text-lg font-bold text-white">Llama 4 Scout — Professional AI</h3>
+                <span class="rounded-full bg-cyan-800 px-3 py-1 text-xs font-bold text-cyan-100">Practical default</span>
+              </div>
+              <p class="mt-3 text-slate-400">
+                The recommended starting point for most Llama 4 deployments. 17B active parameters,
+                10M token context, native vision. Requires GPU hardware — plan for 20+ GB VRAM at
+                practical quantization. NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
+                current Ollama tags before deployment planning.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <h3 class="text-lg font-bold text-white">Llama 4 Maverick — Enterprise AI</h3>
+                <span class="rounded-full bg-violet-800 px-3 py-1 text-xs font-bold text-violet-100">Frontier quality</span>
+              </div>
+              <p class="mt-3 text-slate-400">
+                128 experts with 17B active — frontier-competitive quality. Requires substantial
+                GPU infrastructure. Right for organizations where output quality is non-negotiable
+                and the hardware investment is justified. Plan a full hardware conversation before
+                committing to Maverick. NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Honest guidance</p>
+          <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model Instead</h2>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">You need the most efficient option for modest hardware</h3>
+              <p class="mt-2 text-sm text-slate-400">Llama 4 requires GPU hardware. For small cloud instances or CPU-only servers, Llama 3.1 8B or Qwen 4B still deliver strong everyday quality. <a href="/models/llama/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Llama 3.x →</a></p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">Your workload is pure chain-of-thought reasoning</h3>
+              <p class="mt-2 text-sm text-slate-400">For compliance review and auditable reasoning, DeepSeek R1's explicit chain-of-thought output may be a better fit than Llama 4's general reasoning. <a href="/models/deepseek-r1/" class="ml-1 text-cyan-300 hover:text-cyan-200">See DeepSeek R1 →</a></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">Llama 4 is released under the <strong class="text-white">Llama 4 Community License Agreement</strong>, an open-weights license with specific restrictions. Key points:</p>
+          <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-300">
+            <li><strong class="text-white">Free for most commercial and personal use</strong>, including fine-tuning and derivative models.</li>
+            <li><strong class="text-white">Acceptable Use Policy</strong> applies (no use for weapons, CSAM, mass surveillance, etc.).</li>
+            <li><strong class="text-white">700M monthly active user threshold</strong>: companies whose products exceeded 700M MAU as of the Llama 4 release date must request a separate license from Meta.</li>
+            <li><strong class="text-white">Attribution required</strong>: derivative models must include "Llama" in their name and display "Built with Llama."</li>
+            <li><strong class="text-white">EU restriction</strong>: at release, Meta's license restricted multimodal model use for entities domiciled in the EU. Confirm current status before deploying in that region.</li>
+          </ul>
+          <p class="mt-5 text-slate-300">Official model cards:</p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">meta-llama/Llama-4-Scout-17B-16E-Instruct</a></li>
+            <li><a href="https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">meta-llama/Llama-4-Maverick-17B-128E-Instruct</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> Licensing terms change. Always verify the current license directly on the official Hugging Face model card before deploying commercially. NoCloudGPT does not provide legal advice.</p>
+          </div>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <!-- INTERNAL: Verify Build individual deep-dive pages for each Llama 4 variant (Scout, Maverick, Behemoth when released) with benchmarks, hardware sizing calculators, and deployment recipes before publishing. -->
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Llama 4 Scout <span class="font-normal text-slate-400">(17B active / 109B total, 16 experts)</span></td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">llama4:scout</code></td>
+                  <td class="px-4 py-3">Workstation / Pro GPU</td>
+                  <td class="px-4 py-3">Multimodal, 10M context window, fits on a single H100 (or quantized on 1× 80GB GPU). Best general-purpose pick.</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Llama 4 Maverick <span class="font-normal text-slate-400">(17B active / 400B total, 128 experts)</span></td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">llama4:maverick</code></td>
+                  <td class="px-4 py-3">Multi-GPU Server</td>
+                  <td class="px-4 py-3">Stronger reasoning and coding than Scout; requires significant VRAM (multi-GPU H100/H200 or quantized on 1× node).</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Llama 4 Behemoth <span class="font-normal text-slate-400">(288B active / ~2T total)</span></td>
+                  <td class="px-4 py-3 italic text-slate-500">Not released as open weights</td>
+                  <td class="px-4 py-3">N/A (not deployable)</td>
+                  <td class="px-4 py-3">Meta's teacher model. Used internally for distillation; no public weights available at this time.</td>
+                  <td class="px-4 py-3 text-slate-500">—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+            <p class="text-sm text-slate-300">Llama 4's MoE design means <strong class="text-white">total parameters dictate memory, but active parameters dictate inference speed</strong>. Scout is dramatically cheaper to run than its 109B total parameter count implies — closer to a dense 17B in throughput, but with much higher memory needs. Sizing matters; request a quote and we'll match the model to your actual hardware budget.</p>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
+          <h2 class="mt-3 text-3xl font-black">Start Your Private Llama 4 Deployment</h2>
+          <p class="mt-5 text-slate-300">
+            Llama 4 deployments require a hardware conversation before the pilot begins. NoCloudGPT
+            will help you evaluate Scout vs Maverick, confirm current hardware requirements, and
+            configure Ollama and OpenWebUI with vision support enabled for your use case.
+          </p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <a href="/models/quote.html" class="rounded-2xl bg-cyan-300 p-5 text-center font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+            <a href="/models/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+            <a href="/models/deploy/on-premise.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-7">
+          <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Quick reference</p>
+          <h2 class="mt-3 text-2xl font-black">Llama 4 deployment</h2>
+          <p class="mt-3 text-sm text-cyan-50">a newer Meta generation. Native vision, MoE architecture, million-token context. Frontier-competitive quality on your own hardware.</p>
+          <dl class="mt-5 space-y-3 text-sm">
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Developer</dt><dd class="font-semibold text-white">Meta AI Research</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Models</dt><dd class="font-semibold text-white">Scout, Maverick</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Architecture</dt><dd class="font-semibold text-white">Mixture-of-Experts</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Context (Scout)</dt><dd class="font-semibold text-white">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Vision</dt><dd class="font-semibold text-white">Native (both models)</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.</dd></div>
+            <div class="flex justify-between"><dt class="text-slate-400">Min. tier</dt><dd class="font-semibold text-white">Heavy AI (GPU)</dd></div>
+          </dl>
+          <a href="/models/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build a Llama 4 quote</a>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-300">
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Document analysis with images</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Long-document research (10M context)</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Complex reasoning and analysis</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Repository-scale code work</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Frontier-quality private AI</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/llama/">Llama family overview</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/llama3.3/">Llama 3.3 — 70B quality</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/llama-3.2-vision/">Llama 3.2 Vision</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deepseek-r1/">DeepSeek R1 — reasoning</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deepseek/">DeepSeek family</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deploy/on-premise.html">On-premise GPU installation</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
   </main>
 
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+    <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Meta AI or any model developer referenced on this page.</p>
   </footer>
 </body>
 </html>

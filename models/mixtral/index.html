@@ -3,72 +3,477 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mixtral — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for mixtral: capabilities (tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/mixtral/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="mixtral — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for mixtral: capabilities (tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+<title>Mixtral Models — High-Capability Private AI with Mixture-of-Experts Efficiency | NoCloudGPT</title>
+  <meta name="description" content="Deploy Mixtral 8x7B or Mixtral 8x22B privately with NoCloudGPT. Mistral's MoE architecture delivers near-70B reasoning quality at a fraction of the compute cost.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/mixtral/">
+  <meta property="og:title" content="Mixtral — MoE Private AI | NoCloudGPT">
+  <meta property="og:description" content="Run Mixtral 8x7B or 8x22B privately on your own server. High-capability reasoning and analysis without high infrastructure cost.">
+  <meta property="og:image" content="/models/mixtral/og.webp">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/mixtral/">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "mixtral", "description": "Catalog facts for mixtral: capabilities (tools), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/mixtral/"}</script>
 </head>
 <body class="bg-slate-950 text-slate-100">
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/models/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/models/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
       </nav>
     </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">mixtral</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">mixtral family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
-
-      <p class="mt-4 text-slate-400">Capabilities: tools. Ollama families: mixtral.</p>
-    </div>
   </header>
+
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+            <!-- INTERNAL: hero.webp sourced from https://ollama.com/library/mixtral -->
+      <a href="https://ollama.com/library/mixtral" target="_blank" rel="noopener noreferrer" class="inline-block">
+<img
+        src="/models/mixtral/hero.webp"
+        alt="Mixtral MoE model family — high-capability AI privately deployed with NoCloudGPT"
+        width="1200"
+        height="600"
+        class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+      />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/mixtral" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
+      </div>
+
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Mixtral Model Family</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+        Large-Model Capability at Smaller Compute Cost — Running Privately on Your Server
+      </h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">
+        Mixtral's Mixture-of-Experts (MoE) architecture routes each query through only the
+        most relevant subset of the model, delivering reasoning quality close to a dense 70B
+        model while consuming compute closer to a 13B. Strong performance, practical hardware.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-400">
+        Built by Mistral AI. Apache 2.0 licensed. Runs privately on your own server through
+        Ollama — no data leaves your infrastructure by default.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/models/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="/models/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+        <a href="/models/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </section>
+
   <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/mixtral/" class="font-semibold text-cyan-300 hover:text-cyan-200">mixtral</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">tools</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
-        </tbody>
-      </table>
-    </section>
+    <div class="grid gap-10 lg:grid-cols-[1.55fr_0.95fr]">
+      <div class="space-y-14">
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">What this model family is</p>
+          <h2 class="mt-3 text-3xl font-black">An Architecture Built for High Capability at Realistic Hardware Cost</h2>
+          <p class="mt-5 text-slate-300">
+            Mixtral is Mistral AI's Mixture-of-Experts model family. Unlike dense models that
+            activate all parameters for every token, Mixtral routes each token through only two
+            of its eight expert networks — dramatically reducing the compute per inference while
+            retaining the knowledge stored across the full parameter set. Mixtral 8x7B has 47
+            billion total parameters but processes each token at roughly the cost of a 13B model.
+          </p>
+          <p class="mt-4 text-slate-300">
+            For private deployments, this matters because it means you can run a model with
+            near-70B reasoning quality on hardware that handles a 13B at inference speed —
+            provided you have sufficient RAM to load the full model. The catch is memory:
+            all 47B parameters must be loaded even though only a fraction are active at once.
+          </p>
+          <p class="mt-4 text-slate-300">
+            Mixtral is released under the Apache 2.0 license, making it one of the strongest
+            commercially-licensed high-capability open models available.
+            NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
+          </p>
+
+          <div class="mt-8 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-cyan-500/30 bg-cyan-950/40 p-6">
+              <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Mixtral 8x7B</p>
+              <h3 class="mt-2 text-lg font-bold text-white">47B total / ~13B active per token</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                The practical MoE deployment. Needs approximately 24–48 GB RAM depending on
+                quantization. Strong general reasoning, coding, and multi-domain analysis.
+                The right choice for organizations with dual-GPU workstations or high-memory
+                instances who need more capability than a 13B but cannot justify a full 70B.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-violet-500/30 bg-violet-950/40 p-6">
+              <p class="text-xs font-bold uppercase tracking-widest text-violet-300">Mixtral 8x22B</p>
+              <h3 class="mt-2 text-lg font-bold text-white">141B total / ~39B active per token</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                The flagship open MoE model under Apache 2.0. Frontier-quality reasoning and
+                analysis. Requires 48–96 GB RAM at Q4. For organizations in regulated sectors
+                that need the highest quality open reasoning available without data leaving
+                their infrastructure.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
+          <h2 class="mt-3 text-3xl font-black">Mistral AI</h2>
+          <p class="mt-5 text-slate-300">
+            Mixtral is developed by Mistral AI, the Paris-based AI company founded in 2023 by
+            former Meta AI and Google DeepMind researchers. Mixtral 8x7B, released in December
+            2023, was a landmark release that demonstrated MoE architectures could deliver
+            dramatically better quality-per-compute ratios for open-weight models. The Apache 2.0
+            license makes it one of the most commercially usable high-capability open models.
+          </p>
+          <p class="mt-4 text-slate-300">
+            NoCloudGPT is an independent deployment service and is not affiliated with or
+            endorsed by Mistral AI. We help organizations deploy Mixtral on their own
+            infrastructure using Ollama.
+          </p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Why teams choose it</p>
+          <h2 class="mt-3 text-3xl font-black">The Case for MoE Private Deployment</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Near-70B quality at lower inference cost</h3>
+              <p class="mt-3 text-slate-400">
+                Mixtral 8x7B delivers reasoning depth that would otherwise require a 65–70B dense
+                model, at the inference compute of a 13B. For organizations with the RAM to load
+                it, this is the most compute-efficient path to high-quality private AI.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Apache 2.0 — cleanest commercial license at this quality</h3>
+              <p class="mt-3 text-slate-400">
+                Mixtral 8x22B is the most capable open model available under Apache 2.0 licensing.
+                For legal, compliance, and procurement teams, this removes the license review
+                burden that Llama's custom terms create for commercial integrations.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Multi-domain reasoning and analysis</h3>
+              <p class="mt-3 text-slate-400">
+                Strong performance across research synthesis, complex document analysis,
+                multi-step reasoning, and advanced coding tasks. For high-complexity workflows
+                where smaller models show clear limits, Mixtral is the practical step up.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Data sovereignty for sensitive regulated workflows</h3>
+              <p class="mt-3 text-slate-400">
+                For legal, financial, and healthcare teams that need near-frontier reasoning
+                quality but cannot route sensitive documents through cloud AI APIs, Mixtral
+                on on-premise hardware provides the most capable private AI path available
+                under an open license.
+              </p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Mixtral is a practical choice for individuals who want a capable AI assistant without needing top-tier hardware. Its mixture-of-experts architecture activates only a portion of the model per token, delivering strong performance at lower memory and compute cost than dense models of similar total size. The 8x7B and 8x22B variants remain useful for creative writing, multilingual work, general reasoning, and light coding on consumer or workstation GPUs. If you value efficiency and don't need the absolute latest benchmark performance, Mixtral still delivers good real-world results.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business &amp; team use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">For small to mid-sized teams, Mixtral offers a cost-effective way to run a capable model locally or on modest infrastructure. Its efficiency makes it attractive for internal tools, customer support automation, content generation, and document processing where you want strong performance without the hardware demands of newer 70B+ dense models. It handles multiple languages well and performs reliably on structured tasks. However, for teams that need cutting-edge reasoning or coding performance, newer models (Llama 4, Qwen 2.5, DeepSeek R1) will generally outperform it.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Developers building tools, agents, or internal applications will find Mixtral's mixture-of-experts design efficient for inference, especially when running multiple instances or serving moderate traffic. It supports solid coding and reasoning capabilities and integrates cleanly with frameworks like LangChain or LlamaIndex. While it was state-of-the-art when released, it has since been surpassed by newer architectures in complex multi-step reasoning and advanced coding tasks. It remains a pragmatic choice when inference cost and speed matter more than peak capability.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Researchers and data scientists can still use Mixtral effectively for data analysis, summarization, classification, and exploratory work, particularly when compute budget is limited. Its efficiency allows running meaningful experiments without requiring large GPU clusters. However, for state-of-the-art results on complex reasoning, mathematics, or coding benchmarks, newer models now outperform the Mixtral family. It can serve as a solid baseline or efficiency-focused option in research settings where resource constraints are a factor.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
+          <h2 class="mt-3 text-3xl font-black">What to Use Mixtral For</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Complex document analysis and legal work</h3>
+              <p class="mt-3 text-sm text-slate-400">Complex reasoning over full contracts, legal briefs, and regulatory documents. Where Mistral Nemo starts to miss nuanced clause interpretation, Mixtral's depth shows clear improvement.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Research synthesis and strategic analysis</h3>
+              <p class="mt-3 text-sm text-slate-400">Analysts and researchers who need to synthesize multiple sources, build structured arguments, and produce high-quality professional documents with minimal editing.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Advanced code generation and review</h3>
+              <p class="mt-3 text-sm text-slate-400">Multi-file code generation, architectural reasoning, and code review for complex systems where the narrow context of smaller models limits output quality.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Private frontier-quality deployments</h3>
+              <p class="mt-3 text-sm text-slate-400">Organizations in regulated sectors that need the highest available open-model quality for internal workflows without any data leaving premises. Mixtral 8x22B under Apache 2.0 is the benchmark for this use case.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">Mixtral models are released under the <strong class="text-white">Apache 2.0 License</strong>, which is one of the most permissive and business-friendly open-source licenses available. You can use, modify, and deploy Mixtral for both personal and commercial purposes without royalty fees or restrictive usage thresholds.</p>
+          <p class="mt-4 text-slate-300">This makes Mixtral straightforward for most organizations from a licensing perspective. As with any model, you should still review the specific model card for any additional usage guidelines from Mistral AI.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official model cards:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mixtral-8x7B-Instruct-v0.1</a></li>
+            <li><a href="https://huggingface.co/mistralai/Mixtral-8x22B-Instruct-v0.1" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">mistralai/Mixtral-8x22B-Instruct-v0.1</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides the software infrastructure to deploy AI models privately. We do not grant, manage, or verify licensing rights for third-party models. It is your responsibility to ensure your use of any model complies with its license terms. This does not constitute legal advice.</p>
+          </div>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <!-- INTERNAL: Verify Create individual size pages for each Mixtral variant with hardware benchmarks and deployment guidance before publishing. -->
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Mixtral 8x7B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">mixtral:8x7b</code></td>
+                  <td class="px-4 py-3">Standard</td>
+                  <td class="px-4 py-3">Efficient MoE model. Good balance of performance and resource usage. Still useful for many general tasks.</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Mixtral 8x22B</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">mixtral:8x22b</code></td>
+                  <td class="px-4 py-3">Professional</td>
+                  <td class="px-4 py-3">Significantly stronger than 8x7B. Requires more VRAM but offers better reasoning and coding quality.</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-white">Note:</strong> Mixtral uses a mixture-of-experts architecture. Only a subset of parameters is active during inference, which improves efficiency compared to dense models of similar total size. However, newer dense and MoE models have since surpassed Mixtral in most capability benchmarks.</p>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Hardware and deployment reality</p>
+          <h2 class="mt-3 text-3xl font-black">What You Actually Need to Run Mixtral</h2>
+          <p class="mt-5 text-slate-300">
+            Mixtral's key constraint is that all parameters must be in memory even though
+            only a fraction activate per inference. RAM requirements at Q4_K_M quantization:
+          </p>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model</th>
+                  <th class="px-4 py-3">NoCloudGPT tier</th>
+                  <th class="px-4 py-3">Hardware needed</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Mixtral 8x7B (Q4)</td>
+                  <td class="px-4 py-3">Heavy AI (24–48 GB)</td>
+                  <td class="px-4 py-3">Dual RTX 4090 or 48GB professional GPU</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Mixtral 8x22B (Q4)</td>
+                  <td class="px-4 py-3">Enterprise AI (48–96 GB)</td>
+                  <td class="px-4 py-3">Multi-GPU or A100 / on-premise server</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-5 text-sm text-slate-400">
+            Mixtral is not suitable for small cloud instances. If you are budget-constrained,
+            start with Mistral Nemo 12B on a Standard AI instance and evaluate whether
+            Mixtral's capability jump justifies the hardware investment for your workload.
+            NoCloudGPT will help you compare options before committing.
+          </p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Honest guidance</p>
+          <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model Instead</h2>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">You do not have GPU hardware or a high-RAM instance</h3>
+              <p class="mt-2 text-sm text-slate-400">
+                Mixtral requires 24 GB+ RAM at minimum. Without the right hardware, start with
+                Mistral Nemo 12B which runs comfortably on a Standard AI instance.
+                <a href="/models/mistral/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Mistral →</a>
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">Your primary need is reasoning with chain-of-thought output</h3>
+              <p class="mt-2 text-sm text-slate-400">
+                DeepSeek R1's explicit reasoning traces make it the better choice for compliance
+                review, financial analysis, and any workflow where auditable reasoning matters.
+                <a href="/models/deepseek/" class="ml-1 text-cyan-300 hover:text-cyan-200">See DeepSeek →</a>
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">Your budget is very cost-sensitive</h3>
+              <p class="mt-2 text-sm text-slate-400">
+                For cost-constrained teams, Gemma 9B or Phi 4 on a Standard AI instance delivers
+                good daily-use quality at a fraction of the hardware investment Mixtral requires.
+                <a href="/models/gemma/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Gemma →</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
+          <h2 class="mt-3 text-3xl font-black">Start Your Private Mixtral Deployment</h2>
+          <p class="mt-5 text-slate-300">
+            Mixtral deployments require a hardware conversation before the pilot begins.
+            NoCloudGPT will help you evaluate whether the capability gain justifies the
+            hardware investment for your specific workload, then configure Ollama and
+            OpenWebUI on your GPU instance or on-premise server.
+          </p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <a href="/models/quote.html" class="rounded-2xl bg-cyan-300 p-5 text-center font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+            <a href="/models/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+            <a href="/models/deploy/on-premise.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
+
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-7">
+          <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Quick reference</p>
+          <h2 class="mt-3 text-2xl font-black">Mixtral deployment</h2>
+          <p class="mt-3 text-sm text-cyan-50">MoE architecture. Near-70B quality at lower compute — but requires substantial RAM to load the full model.</p>
+          <dl class="mt-5 space-y-3 text-sm">
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Developer</dt>
+              <dd class="font-semibold text-white">Mistral AI</dd>
+            </div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Architecture</dt>
+              <dd class="font-semibold text-white">Mixture-of-Experts</dd>
+            </div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Key models</dt>
+              <dd class="font-semibold text-white">8x7B, 8x22B</dd>
+            </div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">License</dt>
+              <dd class="font-semibold text-white">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.0</dd>
+            </div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2">
+              <dt class="text-slate-400">Min. RAM (8x7B)</dt>
+              <dd class="font-semibold text-white">~24 GB at Q4</dd>
+            </div>
+            <div class="flex justify-between">
+              <dt class="text-slate-400">Recommended tier</dt>
+              <dd class="font-semibold text-white">Heavy AI+</dd>
+            </div>
+          </dl>
+          <a href="/models/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build a Mixtral quote</a>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-300">
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Complex document and legal analysis</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Research synthesis and strategic writing</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Advanced code generation and review</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> High-quality private frontier-class AI</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Regulated-sector data sovereignty</li>
+          </ul>
+        </div>
+
+        <!-- INTERNAL: Verify /assets/models/mixtral/mixtral-card.webp — 300×128 recommended before publishing. -->
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Model artwork</h3>
+          <div class="mt-4 flex h-32 w-full items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-950 text-xs text-slate-500 text-center px-4">
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/mistral/">Mistral — standard model family</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deepseek/">DeepSeek — reasoning and chain-of-thought</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/llama/">Llama — general-purpose private AI</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deploy/on-premise.html">On-premise GPU installation</a></li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
   </main>
 
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+    <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Mistral AI or any model developer referenced on this page.</p>
   </footer>
+
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
+      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="font-semibold text-slate-400">Hero image</p>
+          <p class="mt-1">AI-generated abstract artwork created for NoCloudGPT. Original work, no third-party license required.</p>
+          <!-- INTERNAL: Verify Replace with licensed photo from Unsplash when available before publishing. -->
+          <!-- Unsplash search reference: https://unsplash.com/s/photos/network-nodes -->
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Developer reference</p>
+          <p class="mt-1">Mixtral is developed by <a href="https://mistral.ai/news/mixtral-of-experts/" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Mistral AI</a>. NoCloudGPT is an independent deployment service and is not affiliated with or endorsed by Mistral AI.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Model catalog reference</p>
+          <p class="mt-1">See the <a href="https://ollama.com/library/mixtral" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Ollama library page for Mixtral</a> for current model tags, sizes, and release notes.</p>
+          <!-- card.webp, sidebar.webp, og.webp: TODO — see models/artwork-sources.md -->
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>

@@ -3,72 +3,279 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>reader-lm — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for reader-lm: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/reader-lm/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="reader-lm — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for reader-lm: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/reader-lm/">
+<title>Reader-LM — Private Web Content Extraction and Markdown Conversion | NoCloudGPT</title>
+  <meta name="description" content="Deploy Reader-LM privately with NoCloudGPT. Jina AI's web content extraction model converts raw HTML to clean markdown for RAG pipelines and research tools.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/reader-lm/">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "reader-lm", "description": "Catalog facts for reader-lm: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/reader-lm/"}</script>
 </head>
 <body class="bg-slate-950 text-slate-100">
-
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
-      </nav>
-    </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">reader-lm</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">reader-lm family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
-
-      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: reader-lm.</p>
+  <header class="border-b border-slate-800 bg-slate-950">
+<div class="mx-auto max-w-6xl px-6 py-12">
+      <a href="../index.html" class="text-sm font-semibold text-cyan-300">← Back to model menu</a>
+      <p class="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Reader-LM</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Reader-LM — Convert Any Web Page to Clean Markdown for Your Private RAG Pipeline</h1>
+<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/reader-lm -->
+      <a href="https://ollama.com/library/reader-lm" target="_blank" rel="noopener noreferrer" class="inline-block">
+        <img
+          src="/models/reader-lm/hero.webp"
+          alt="reader-lm model family hero"
+          width="1200"
+          height="600"
+          class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+        />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/reader-lm" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
+<p class="mt-6 max-w-3xl text-lg text-slate-300">Reader-LM is Jina AI's purpose-built web content extraction model — it takes raw HTML, including the noise of ads, navigation, scripts, and boilerplate, and returns clean markdown containing only the meaningful content. Deploy it privately as the ingestion layer for a RAG system that never sends your target URLs or their content to a cloud service.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="../quote.html" class="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="../deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day Lightsail pilot</a>
+        <a href="../deploy/on-premise.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
     </div>
   </header>
+
   <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/reader-lm/" class="font-semibold text-cyan-300 hover:text-cyan-200">reader-lm</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">text</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
-        </tbody>
-      </table>
+    <section class="grid gap-8 lg:grid-cols-[1.55fr_0.95fr]">
+      <article class="rounded-3xl border border-slate-800 bg-slate-900 p-8 md:p-10">
+
+        <p class="text-slate-300">Every retrieval-augmented generation system needs an ingestion layer — something that takes content from the world and transforms it into a form suitable for embedding, chunking, and retrieval. For web content, this ingestion problem is surprisingly hard. A typical web page is 70–90% noise: navigation menus, advertisement containers, cookie consent banners, JavaScript bundles, social share widgets, footer links, and tracking pixels. The actual article, documentation, or product content that you want to index is buried in this structure, and simple HTML stripping produces text that is nearly as noisy as the original HTML.</p>
+        <p class="mt-4 text-slate-300">Reader-LM solves this problem with a model specifically trained to distinguish meaningful content from structural and decorative noise. Given raw HTML, it returns clean markdown — headings preserved, code blocks formatted, tables structured, lists maintained, and boilerplate removed. The result feeds directly into the embedding step of a RAG pipeline without requiring the additional preprocessing steps that general-purpose HTML cleaning tools typically need.</p>
+        <p class="mt-4 text-slate-300">Reader-LM 2 is the current version, released by Jina AI in 2024. It is available in 0.5B and 1.5B parameter versions, both small enough to run on CPU-only hardware at practical speeds for batch and real-time ingestion workflows. The model supports documents up to 256K tokens, handling even the longest technical documentation pages and dense research articles. Private deployment means the URLs you are ingesting, the content of those pages, and the structure of your knowledge base never leave your infrastructure.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Why the Ingestion Layer Matters as Much as the LLM</h2>
+        <p class="mt-5 text-slate-300">RAG system quality is determined at every stage of the pipeline, and the ingestion and extraction stage is where most production systems underperform. An embedding model working on poorly extracted, noise-contaminated text will produce embeddings that don't reliably cluster by meaning. A retrieval system working on those embeddings will return chunks that contain the right topic surrounded by irrelevant navigational content. And the LLM generating the final answer will either ignore the noise and miss context, or include it and produce confused, poorly-grounded responses.</p>
+        <p class="mt-4 text-slate-300">Reader-LM addresses this at the root. Clean extraction means cleaner chunks, better embeddings, more reliable retrieval, and ultimately more accurate generated answers. For organizations investing in private RAG infrastructure, the extraction layer is often the most neglected component and the one that produces the most improvement when done properly.</p>
+        <p class="mt-4 text-slate-300">The privacy dimension of the ingestion layer is also underappreciated. Organizations building competitive intelligence systems, research monitoring tools, or internal knowledge bases often use non-public or sensitive URLs as sources. Routing these through Jina AI's public reader API — or any external service — means revealing what you are monitoring, researching, or indexing to a third party. Private Reader-LM deployment means your research targets and ingest patterns stay internal.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Where Reader-LM Consistently Delivers</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">RAG pipeline web ingestion</h3>
+            <p class="mt-3 text-slate-400">As the first stage in a retrieval pipeline, Reader-LM converts crawled or fetched HTML into clean markdown that feeds directly into chunking and embedding steps. The structured output — with preserved headings, code blocks, and tables — produces chunks that embed more meaningfully than raw-text extraction.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Technical documentation indexing</h3>
+            <p class="mt-3 text-slate-400">API reference pages, developer documentation, and technical wikis are structurally complex HTML — nested navigation, code samples, version selectors, and cross-reference links. Reader-LM extracts the actual content while preserving the code block structure and heading hierarchy that makes technical documentation useful when retrieved.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">News and research article extraction</h3>
+            <p class="mt-3 text-slate-400">News pages, academic preprint servers, and research publication sites wrap thin content in heavy advertising and tracking infrastructure. Reader-LM reliably identifies and extracts article content, bylines, dates, and structured body text while discarding the surrounding noise.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">E-commerce and product page extraction</h3>
+            <p class="mt-3 text-slate-400">Product descriptions, specifications, pricing information, and structured attributes from e-commerce pages — extracted cleanly for competitive monitoring, catalog building, and price tracking systems. The consistent markdown output simplifies the downstream parsing and database population steps.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Internal wiki and intranet content indexing</h3>
+            <p class="mt-3 text-slate-400">Confluence pages, Notion exports, SharePoint documents, and internal wikis are often HTML-heavy and structurally inconsistent. Reader-LM normalizes this content into clean markdown suitable for a private enterprise search and RAG system — without routing internal documentation through any external service.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 class="text-xl font-bold text-cyan-200">Competitive intelligence monitoring</h3>
+            <p class="mt-3 text-slate-400">Monitoring competitor websites, press release pages, regulatory filings, and job postings requires ingesting content that reveals what you are tracking. Private Reader-LM deployment means your monitoring targets stay confidential while the extraction quality supports reliable change detection and content analysis.</p>
+          </div>
+        </div>
+
+        <!-- SECTION: Who this model family is for -->
+        <p class="mt-10 text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+        <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
+        <div class="mt-6 grid gap-5 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-lg">👤</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">Reader LM is a strong choice if you want to build a clean, private reading archive from web articles, documentation, or saved pages. It converts messy HTML into well-structured Markdown by removing ads, navigation, sidebars, and other boilerplate. This makes it ideal for personal knowledge bases (Obsidian, Logseq, Markdown files) where you want readable, searchable content without the noise. Keep in mind it is a specialized conversion tool — it does not summarize, answer questions, or act as a chatbot.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-lg">🏢</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">Teams that maintain internal wikis, documentation portals, or content libraries will find Reader LM useful for standardizing messy web content into consistent Markdown suitable for ingestion into knowledge platforms or RAG systems. It is particularly helpful when migrating legacy HTML documentation or scraped web content into modern systems. Running it through NoCloudGPT keeps all sensitive internal or customer-facing pages on your own infrastructure during conversion.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-lg">⚙️</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">Developers building content pipelines, RAG preprocessing steps, or documentation tooling will appreciate that Reader LM is purpose-built for the HTML → Markdown conversion task. It handles boilerplate removal, preserves headings/links/structure, and produces output that downstream embedding models can use effectively. It is best paired with crawlers or ingestion jobs rather than used as a general reasoning or chat model.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-lg">🔬</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+            </div>
+            <p class="mt-2 text-sm text-slate-400">Researchers building corpora from web sources benefit from Reader LM's ability to produce clean, consistently formatted text that is much easier to chunk, embed, and analyze than raw HTML. It excels at extracting meaningful body content from noisy pages, which improves dataset quality for retrieval or fine-tuning workflows. It should be treated as a focused extraction component in a data pipeline, not as an analysis or labeling model.</p>
+          </div>
+        </div>
+
+        <!-- SECTION: Licensing information -->
+        <p class="mt-10 text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+        <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+        <p class="mt-5 text-slate-300">Reader LM is released by Jina AI. Before deploying it commercially, you should review the exact license terms directly on the official model card, as details regarding commercial use and redistribution are maintained by the model authors.</p>
+        <p class="mt-5 text-slate-300"><strong class="text-white">Official model card:</strong></p>
+        <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+          <li><a href="https://huggingface.co/jinaai/ReaderLM" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">jinaai/ReaderLM on Hugging Face</a></li>
+        </ul>
+        <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+          <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+        </div>
+
+        <!-- SECTION: Available model sizes -->
+        <p class="mt-10 text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+        <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+        <!-- INTERNAL: Verify Create individual model size detail pages for reader-lm-0.5b and reader-lm-1.5b with throughput benchmarks and example conversions before publishing. -->
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Model Size</th>
+                <th class="px-4 py-3">Ollama Tag</th>
+                <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                <th class="px-4 py-3">Notes</th>
+                <th class="px-4 py-3"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Reader LM 0.5B</td>
+                <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">reader-lm:0.5b</code></td>
+                <td class="px-4 py-3">Starter</td>
+                <td class="px-4 py-3">Lightweight option for high-volume conversion where speed and low resource use matter most. Good for personal archives and simpler pages.</td>
+                <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Reader LM 1.5B</td>
+                <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">reader-lm:1.5b</code></td>
+                <td class="px-4 py-3">Standard</td>
+                <td class="px-4 py-3">Better at preserving structure on messy, deeply nested pages. Recommended for most production pipelines and RAG ingestion.</td>
+                <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-950 p-5">
+          <p class="text-sm text-slate-300"><strong class="text-white">Positioning note:</strong> Reader LM is a <strong class="text-white">specialized HTML-to-Markdown converter</strong>, not a general chat or reasoning model. It performs best when given raw web/HTML content that needs to be cleaned into structured Markdown for knowledge bases or RAG systems.</p>
+        </div>
+
+        <h2 class="mt-10 text-3xl font-black">Hardware and Deployment Reality</h2>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-950 text-cyan-200">
+              <tr>
+                <th class="px-4 py-3">Configuration</th>
+                <th class="px-4 py-3">Recommended instance</th>
+                <th class="px-4 py-3">Best use</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Reader-LM 2 0.5B</td>
+                <td class="px-4 py-3">1–2 GB RAM / CPU only</td>
+                <td class="px-4 py-3">High-volume batch ingestion, standard pages</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Reader-LM 2 1.5B</td>
+                <td class="px-4 py-3">4 GB RAM / CPU or light GPU</td>
+                <td class="px-4 py-3">Complex pages, technical documentation, better quality</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-white">Reader-LM + embedding model</td>
+                <td class="px-4 py-3">8 GB Lightsail</td>
+                <td class="px-4 py-3">Complete private RAG ingestion pipeline on one instance</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-5 text-slate-300">Reader-LM is small enough that it can run alongside an embedding model on the same instance, making a complete private RAG ingestion pipeline — fetch, extract, embed — feasible on an 8 GB Lightsail instance. For production pipelines with higher throughput requirements, Reader-LM scales horizontally across CPU instances without GPU requirements.</p>
+
+        <h2 class="mt-10 text-3xl font-black">Deploy Reader-LM on Your Infrastructure</h2>
+        <p class="mt-5 text-slate-300">NoCloudGPT configures Reader-LM as part of a complete private RAG stack or as a standalone extraction service, paired with your choice of embedding model and vector store. Pipeline integration for common RAG frameworks including LangChain, LlamaIndex, and Haystack is available.</p>
+        <div class="mt-6 grid gap-3 md:grid-cols-3">
+          <a href="../quote.html" class="rounded-2xl bg-cyan-300 p-5 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+          <a href="../deploy/lightsail-guide.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Start the 90-day Lightsail pilot</a>
+          <a href="../deploy/on-premise.html" class="rounded-2xl border border-slate-700 p-5 font-bold text-white hover:bg-slate-950">Request on-premise installation</a>
+        </div>
+      </article>
+
+      <aside class="space-y-6">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-8">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-200">Reader-LM deployment</p>
+          <h2 class="mt-3 text-3xl font-black">Clean web extraction for private RAG. No cloud API. No URL telemetry.</h2>
+          <p class="mt-4 text-cyan-50">Reader-LM converts noisy HTML to clean markdown on your server — the first stage of a private RAG pipeline that keeps your research targets, content sources, and knowledge base entirely internal.</p>
+          <a href="../quote.html" class="mt-6 inline-block rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build a Reader-LM quote</a>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li>RAG pipeline web ingestion</li>
+            <li>Technical documentation indexing</li>
+            <li>Competitive intelligence monitoring</li>
+            <li>News and research monitoring</li>
+            <li>Internal wiki and intranet extraction</li>
+            <li>E-commerce content extraction</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Key differentiators</h3>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>Purpose-built for HTML-to-markdown extraction</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>256K token context — handles any page length</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>0.5B variant runs on minimal CPU hardware</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>No URL or content telemetry possible</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-cyan-400">✓</span><span>Preserves code blocks, tables, and structure</span></li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
+          <h3 class="text-xl font-bold">Related pages</h3>
+          <ul class="mt-4 space-y-3">
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="../nuextract/index.html">NuExtract — structured document extraction</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="../bge/index.html">BGE — document embeddings</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="../nomic-embed/index.html">Nomic Embed</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="../snowflake-arctic-embed/index.html">Snowflake Arctic Embed</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="../quote.html">Get a deployment quote</a></li>
+          </ul>
+        </div>
+      </aside>
     </section>
   </main>
 
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+  <footer class="mt-16 border-t border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-slate-500">
+      <p>© 2025 NoCloudGPT. Private AI deployment on Amazon Lightsail and on-premise Linux servers.</p>
+      <p class="mt-2">
+        <a href="../../index.html" class="text-cyan-400 hover:text-cyan-300">Home</a> ·
+        <a href="../index.html" class="text-cyan-400 hover:text-cyan-300">Model menu</a> ·
+        <a href="../quote.html" class="text-cyan-400 hover:text-cyan-300">Get a quote</a>
+      </p>
+    </div>
   </footer>
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section style="border-top:1px solid #1e293b; background:#0f172a; padding:2rem 1.5rem; margin-top:3rem;">
+    <div style="max-width:56rem; margin:0 auto; font-size:0.75rem; color:#64748b;">
+      <p style="font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Artwork and source references</p>
+      <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Hero image</p>
+          
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Developer reference</p>
+          <p style="margin-top:0.25rem;">Reader LM is developed by <a href="https://huggingface.co/jinaai" target="_blank" rel="noopener" style="color:#67e8f9;">Jina AI</a>. NoCloudGPT is an independent deployment service not affiliated with Jina AI.</p>
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Model catalog</p>
+          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/reader-lm" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: reader-lm</a> for current tags and sizes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>

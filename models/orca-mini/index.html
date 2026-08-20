@@ -1,74 +1,286 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>orca-mini — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for orca-mini: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/orca-mini/">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="orca-mini — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for orca-mini: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/orca-mini/">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "orca-mini", "description": "Catalog facts for orca-mini: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/orca-mini/"}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Run Orca-mini Privately | Lightweight Instruction LLM via Ollama | NoCloudGPT</title>
+    <meta name="description" content="Deploy Orca-mini locally — a lightweight, instruction-tuned model family based on the Orca research approach. Fast on modest hardware via Ollama in 3B, 7B, and 13B sizes.">
+    <meta name="keywords" content="Orca-mini local deployment, Orca mini Ollama, lightweight instruction LLM, open source LLM self-hosted, Orca-mini 3B 7B 13B private AI">
+    <link rel="canonical" href="https://nocloudgpt.com/models/orca-mini/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0a; color: #e8e8e8; line-height: 1.7; }
+        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 60px 20px; text-align: center; border-bottom: 2px solid #76b900; }
+        .badge { display: inline-block; background: #76b900; color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase; }
+        h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; }
+        h1 span { color: #76b900; }
+        .subtitle { font-size: 1.15rem; color: #a0b4c8; max-width: 680px; margin: 0 auto 30px; }
+        .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: #76b900; color: #000; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; }
+        .btn-secondary { background: transparent; color: #76b900; padding: 14px 32px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; border: 2px solid #76b900; }
+        nav { background: #111; padding: 12px 20px; text-align: center; border-bottom: 1px solid #222; }
+        nav a { color: #76b900; text-decoration: none; margin: 0 16px; font-size: 0.9rem; }
+        .container { max-width: 960px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 1.9rem; font-weight: 700; margin-bottom: 20px; color: #ffffff; }
+        h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; color: #76b900; }
+        p { margin-bottom: 18px; color: #c8d4e0; }
+        .highlight-box { background: #111827; border-left: 4px solid #76b900; padding: 24px 28px; border-radius: 0 8px 8px 0; margin: 32px 0; }
+        .highlight-box p { margin-bottom: 0; }
+        .legacy-box { background: #1a1200; border: 1px solid #4a3800; border-radius: 8px; padding: 24px 28px; margin: 32px 0; }
+        .legacy-box h3 { color: #f0c040; margin-bottom: 10px; }
+        .legacy-box p { font-size: 0.92rem; margin-bottom: 0; }
+        .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 32px 0; }
+        .model-card { background: #111; border: 1px solid #222; border-radius: 10px; padding: 24px; transition: border-color 0.2s; }
+        .model-card:hover { border-color: #76b900; }
+        .model-card h3 { margin-bottom: 8px; }
+        .model-card .size-badge { background: #1a2a0a; color: #76b900; padding: 3px 10px; border-radius: 12px; font-size: 0.78rem; font-weight: 600; display: inline-block; margin-bottom: 12px; }
+        .model-card p { font-size: 0.9rem; margin-bottom: 0; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 32px 0; }
+        .use-case-card { background: #0d1117; border: 1px solid #1e2d1e; border-radius: 10px; padding: 22px; }
+        .use-case-card h3 { color: #a8d878; margin-bottom: 10px; }
+        .use-case-card p { font-size: 0.88rem; margin-bottom: 0; }
+        .hardware-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .hardware-table th { background: #111; color: #76b900; padding: 12px 16px; text-align: left; border-bottom: 2px solid #76b900; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .hardware-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; }
+        .hardware-table tr:hover td { background: #111; }
+        .code-block { background: #0d1117; border: 1px solid #1e2d3e; border-radius: 8px; padding: 20px 24px; margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.88rem; color: #79c0ff; overflow-x: auto; }
+        .code-block .comment { color: #6e7681; }
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .compare-table th { background: #111; color: #76b900; padding: 12px 16px; text-align: left; border-bottom: 2px solid #76b900; font-size: 0.85rem; }
+        .compare-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #c8d4e0; }
+        .section-divider { border: none; border-top: 1px solid #1a1a1a; margin: 48px 0; }
+        footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 40px 20px; text-align: center; color: #555; font-size: 0.85rem; }
+        footer a { color: #76b900; text-decoration: none; margin: 0 12px; }
+    
+        .secondary-artwork { margin: 32px 0; overflow: hidden; }
+        .secondary-artwork img { width: 100%; border-radius: 12px; border: 1px solid #333; display: block; }
+        .secondary-artwork .secondary-caption { margin-top: 6px; text-align: center; font-size: 0.75rem; color: #8a9aaa; }
+        .secondary-artwork .secondary-caption a { color: inherit; text-decoration: underline; }
+        @media (min-width: 768px) {
+            .secondary-artwork { float: right; max-width: 42%; margin: 0 0 16px 24px; }
+        }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100">
+<body>
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
-      </nav>
+<header>
+    <div class="badge">Lightweight Instruction Tuning · Ollama Ready</div>
+    <h1>Run <span>Orca-mini</span> — Fast, Private AI on Modest Hardware</h1>
+    <p class="subtitle">Orca-mini is a family of small, instruction-tuned models based on the original Orca research approach. Lightweight, fast, and easy to run locally via Ollama — a practical starting point for private AI without heavy infrastructure.</p>
+    <div class="cta-group">
+        <a href="/models/quote.html" class="btn-primary">Get Deployment Quote</a>
+        <a href="/models/deploy/" class="btn-secondary">Deployment Guide</a>
     </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">orca-mini</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">orca-mini family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
+</header>
 
-      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: orca-mini.</p>
+<nav>
+    <a href="/">Home</a>
+    <a href="/models/">Models</a>
+    <a href="/models/phi/">Phi</a>
+    <a href="/models/gemma/">Gemma</a>
+    <a href="/models/mistral/">Mistral</a>
+    <a href="/models/alpaca/">Alpaca</a>
+</nav>
+
+<div class="container">
+
+    <h2>What Is Orca-mini?</h2>
+
+    <p>Orca-mini is a community-maintained family of instruction-tuned models inspired by Microsoft's Orca research — which demonstrated that smaller models could learn complex reasoning patterns from larger teacher models. The Orca-mini variants distill that instruction-following approach into compact 3B, 7B, and 13B models that run comfortably on laptops, entry-level GPUs, and modest cloud instances.</p>
+
+    <p>Available directly through Ollama, Orca-mini is one of the most accessible ways to get a conversational local LLM running quickly. It handles general-purpose Q&amp;A, drafting, summarization, and lightweight automation well — though it is not designed for complex multi-step reasoning, production-grade coding, or mission-critical business workflows.</p>
+
+    <div class="highlight-box">
+        <p><strong>Know the licensing limits:</strong> Orca-mini builds on LLaMA-derived weights and carries non-commercial research restrictions. It is a strong choice for personal experimentation, learning, and research — but teams needing commercial deployment should evaluate Gemma, Mistral, or Phi-3 instead.</p>
     </div>
-  </header>
-  <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
+
+    <!-- Secondary artwork -->
+<div class="secondary-artwork">
+  <a href="https://commons.wikimedia.org/wiki/File%3AKiller_Whales_Hunting_a_Seal.jpg" target="_blank" rel="noopener">
+    <img src="/models/orca-mini/secondary.webp" alt="Orca Mini secondary visual">
+  </a>
+  <p class="secondary-caption">
+    Source: <a href="https://commons.wikimedia.org/wiki/File%3AKiller_Whales_Hunting_a_Seal.jpg">Wikimedia Commons</a>
+  </p>
+</div>
+
+
+    <hr class="section-divider">
+
+    <h2>Why Teams Choose Orca-mini</h2>
+
+    <div class="model-grid">
+        <div class="model-card">
+            <h3>Runs on Modest Hardware</h3>
+            <span class="size-badge">3B–13B Range</span>
+            <p>The 3B variant runs on most laptops. The 7B and 13B sizes scale up coherence and instruction-following without requiring enterprise GPU infrastructure.</p>
+        </div>
+        <div class="model-card">
+            <h3>Fast Ollama Integration</h3>
+            <span class="size-badge">One-Command Deploy</span>
+            <p>Pull and run with a single Ollama command. No complex setup — ideal for homelab users, prototypes, and quick local AI experiments.</p>
+        </div>
+        <div class="model-card">
+            <h3>Orca-Style Instruction Tuning</h3>
+            <span class="size-badge">Research Lineage</span>
+            <p>Built on the Orca methodology of learning from explanation-rich training signals — useful for studying how distilled instruction-following scales across model sizes.</p>
+        </div>
+        <div class="model-card">
+            <h3>Private by Default</h3>
+            <span class="size-badge">Local Inference</span>
+            <p>All inference stays on your machine. No API logging, no cloud dependency — suitable for privacy-conscious personal and internal team use.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Who This Model Family is For</h2>
+
+    <p>Orca-mini is a family of small, instruction-tuned models based on the original Orca research approach. It's designed to be lightweight, fast, and easy to run on modest hardware, making it a practical starting point for users who want a private, local LLM without heavy infrastructure. It's best suited for general-purpose conversational tasks, learning, and lightweight automation rather than complex reasoning or production-grade workloads.</p>
+
+    <h3>Personal Use</h3>
+    <p>Orca-mini is a great fit for individuals who want a private, offline assistant for everyday tasks like drafting emails, summarizing notes, brainstorming ideas, and answering general questions. Its small footprint means it runs smoothly on laptops and entry-level desktops, making it ideal for users new to local AI or those with limited hardware.</p>
+
+    <h3>Business / Team Use</h3>
+    <p>Small teams can use Orca-mini for internal productivity tasks such as drafting communications, generating meeting summaries, or powering simple internal chat tools. It's well-suited for low-risk, high-volume tasks where speed and privacy matter more than deep reasoning. For customer-facing or mission-critical work, a larger model family is recommended.</p>
+
+    <h3>Developer &amp; Technical Use</h3>
+    <p>Developers can use Orca-mini as a lightweight backend for prototypes, chat interfaces, and local AI experiments. Its fast response times and low resource needs make it ideal for embedding into desktop apps, CLI tools, or testing pipelines. It's also useful as a baseline model when benchmarking against larger or more specialized models.</p>
+
+    <h3>Data Science &amp; Research Use</h3>
+    <p>Researchers and data scientists can use Orca-mini to explore instruction-tuning behavior, compare small-model performance, or run controlled experiments where reproducibility and low compute overhead are priorities. It's a useful reference model for studying how distilled instruction-following capabilities scale across model sizes.</p>
+
+    <hr class="section-divider">
+
+    <h2>Licensing Information</h2>
+
+    <p>Orca-mini models are based on LLaMA-derived weights and are therefore subject to the same non-commercial research restrictions as the original LLaMA models. They are generally <strong>not licensed for commercial use</strong>, paid products, or revenue-generating services.</p>
+
+    <p>If you need a commercially usable small model, consider alternatives such as Gemma, Mistral, or Phi-3 instead.</p>
+
+    <div class="highlight-box" style="border-left-color:#f59e0b; background:rgba(245, 158, 11, 0.08); border-color:rgba(245, 158, 11, 0.35);">
+        <p><strong style="color:#f59e0b;">Disclaimer:</strong> This summary is provided for general informational purposes only and does <strong>not</strong> constitute legal advice. License terms can change, and your specific use case may have additional considerations. Always review the official model license and consult a qualified attorney before deploying Orca-mini in any non-research context.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Available Model Sizes</h2>
+
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th>Model Size</th>
+                <th>Ollama Tag</th>
+                <th>Recommended NoCloudGPT Tier</th>
+                <th>Notes</th>
+            </tr>
         </thead>
         <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/orca-mini/" class="font-semibold text-cyan-300 hover:text-cyan-200">orca-mini</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">text</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
+            <tr>
+                <td><strong>3B</strong></td>
+                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">orca-mini</code> / <code style="font-family:'Courier New',monospace;color:#79c0ff;">orca-mini:3b</code></td>
+                <td>Starter</td>
+                <td>Fastest variant; ideal for laptops, lightweight chat, and quick prototyping.</td>
+            </tr>
+            <tr>
+                <td><strong>7B</strong></td>
+                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">orca-mini:7b</code></td>
+                <td>Standard</td>
+                <td>Balanced choice for general-purpose tasks with better coherence and instruction-following.</td>
+            </tr>
+            <tr>
+                <td><strong>13B</strong></td>
+                <td><code style="font-family:'Courier New',monospace;color:#79c0ff;">orca-mini:13b</code></td>
+                <td>Pro</td>
+                <td>Strongest reasoning in the family; recommended for richer conversations and more demanding tasks.</td>
+            </tr>
         </tbody>
-      </table>
-    </section>
-  </main>
+    </table>
 
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
-  </footer>
+    <div class="highlight-box" style="margin-top:24px;">
+        <p><strong>Positioning note:</strong> Orca-mini is best understood as an entry-level, instruction-tuned family optimized for speed and accessibility. Choose the 3B variant for maximum responsiveness on modest hardware, the 7B for a balanced everyday assistant, and the 13B when you need the most capable Orca-mini experience. For complex reasoning, long-context work, or production-grade applications, consider stepping up to a larger or more modern model family.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Running Orca-mini via Ollama</h2>
+
+    <div class="code-block">
+        <span class="comment"># Default (3B)</span><br>
+        ollama pull orca-mini<br>
+        ollama run orca-mini<br><br>
+        <span class="comment"># Specific sizes</span><br>
+        ollama pull orca-mini:7b<br>
+        ollama pull orca-mini:13b<br><br>
+        <span class="comment"># Start Open WebUI</span><br>
+        docker run -d -p 3000:8080 \<br>
+        &nbsp;&nbsp;-e OLLAMA_BASE_URL=http://localhost:11434 \<br>
+        &nbsp;&nbsp;ghcr.io/open-webui/open-webui:main
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Hardware Requirements</h2>
+
+    <table class="hardware-table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>VRAM Required</th>
+                <th>RAM (CPU)</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Orca-mini 3B</td>
+                <td>~3 GB</td>
+                <td>~6 GB</td>
+                <td>Runs on most laptops and entry-level hardware</td>
+            </tr>
+            <tr>
+                <td>Orca-mini 7B</td>
+                <td>~5 GB</td>
+                <td>~10 GB</td>
+                <td>Balanced everyday assistant size</td>
+            </tr>
+            <tr>
+                <td>Orca-mini 13B</td>
+                <td>~8 GB</td>
+                <td>~16 GB</td>
+                <td>Strongest variant; needs more RAM/VRAM</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr class="section-divider">
+
+    <h2>What We Actually Recommend</h2>
+
+    <p>Orca-mini is a solid entry point for local AI — especially if you want something fast and lightweight on modest hardware. For commercial deployments or mission-critical workloads, we recommend Gemma, Mistral, or Phi-3 for clearer licensing and stronger overall capability.</p>
+
+    <p>Tell us what you need — chat assistance, prototyping, internal tools, or research baselines — and we'll match you with the right model and deployment tier.</p>
+
+    <div style="margin-top: 32px;">
+        <a href="/models/quote.html" class="btn-primary">Get a Model Recommendation</a>
+        &nbsp;&nbsp;
+        <a href="/models/" class="btn-secondary">Browse All Models</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>
+        <a href="/">NoCloudGPT Home</a>
+        <a href="/models/">All Models</a>
+        <a href="/models/phi/">Phi</a>
+        <a href="/models/gemma/">Gemma</a>
+        <a href="/models/mistral/">Mistral</a>
+        <a href="/models/alpaca/">Alpaca</a>
+    </p>
+    <p style="margin-top: 16px;">© 2025 NoCloudGPT. Private AI deployment specialists. Not affiliated with Microsoft or any model developer referenced on this page.</p>
+</footer>
+
 </body>
 </html>

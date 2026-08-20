@@ -1,74 +1,202 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>solar — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for solar: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/solar/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="solar — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for solar: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/solar/">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "solar", "description": "Catalog facts for solar: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/solar/"}</script>
+<title>Solar Models (Solar 10.7B, Solar Pro) – Private Deployment | NoCloudGPT</title>
+  <meta name="description" content="Upstage's Solar 10.7B is an efficient instruction model that outperforms many larger models. Deploy Solar privately for document AI and enterprise chat." />
+  <link rel="canonical" href="https://nocloudgpt.com/models/solar/" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; color: #1a1a1a; line-height: 1.7; }
+    h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+    h2 { font-size: 1.35rem; margin-top: 2.2rem; border-bottom: 2px solid #e2e2e2; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.4rem; color: #333; }
+    .tag { display: inline-block; background: #f0f4ff; color: #2244aa; border-radius: 4px; padding: 2px 8px; font-size: 0.82rem; margin-right: 5px; }
+    .cta-box { background: #f8f9ff; border-left: 4px solid #3355dd; padding: 1rem 1.4rem; margin: 2rem 0; border-radius: 4px; }
+    .cta-box a { color: #2244aa; font-weight: 600; }
+    .notice { background: #fff8e1; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; border-radius: 4px; margin: 1.5rem 0; font-size: 0.95rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 0.6rem 0.9rem; text-align: left; }
+    th { background: #f3f3f3; }
+    a { color: #2244aa; }
+    nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100">
+<body>
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
-      </nav>
+<nav><a href="/models/">← Model Menu</a> &nbsp;/&nbsp; Solar</nav>
+
+
+<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/solar -->
+    <div style="margin:24px auto 8px;max-width:320px;text-align:center;">
+      <a href="https://ollama.com/library/solar" target="_blank" rel="noopener noreferrer">
+        <img src="/models/solar/hero.webp" alt="solar model family hero" width="320" style="width:100%;max-width:320px;border-radius:12px;display:block;" />
+      </a>
+      <p style="margin-top:8px;font-size:0.75rem;color:#888;">Source: <a href="https://ollama.com/library/solar" target="_blank" rel="noopener noreferrer" style="color:#76b900;">Ollama</a></p>
     </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">solar</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">solar family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
+<h1>Solar: Upstage's Depth-Upscaled Instruction Models</h1>
+  <!-- INTERNAL: Verify Add hero.webp — see models/artwork-sources.md, row: solar before publishing. -->
 
-      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: solar.</p>
+<p>
+  <span class="tag">Instruction</span>
+  <span class="tag">Document AI</span>
+  <span class="tag">10.7B</span>
+  <span class="tag">Open Weights</span>
+</p>
+
+<p>
+  Solar is an open-weight model family from <strong>Upstage</strong>, a Korean AI company known for its document understanding products. The flagship <strong>Solar 10.7B</strong> uses a technique called <em>depth upscaling</em> — essentially merging two Mistral 7B models and continuing training — to produce a 10.7B model that punches well above its weight class. When released, it topped the HuggingFace Open LLM Leaderboard for its size tier. Solar Pro is a larger, higher-capability variant for enterprise deployments.
+</p>
+
+<h2>What Solar Is Good At</h2>
+<ul>
+  <li><strong>Instruction following and chat</strong> — Solar Instruct is notably well-aligned and follows complex instructions reliably</li>
+  <li><strong>Document understanding</strong> — Upstage's document AI roots show; Solar handles structured and semi-structured document Q&A well</li>
+  <li><strong>Reasoning</strong> — strong benchmark performance on reasoning tasks for a sub-13B model</li>
+  <li><strong>RAG integration</strong> — clean instruction following makes it easy to build retrieval pipelines around</li>
+  <li><strong>Korean and English</strong> — bilingual capability with solid Korean output quality</li>
+</ul>
+
+<h2>Who This Model Family is For</h2>
+
+<h3>Personal Use</h3>
+<p>
+  Solar is a practical choice if you want a capable local assistant that runs well on modest hardware. The original Solar 10.7B model offers solid reasoning and clean output for everyday writing, summarization, and Q&A. While it remains efficient, it has been surpassed by newer compact models on most benchmarks. For privacy-focused users who value low resource usage, it is still a sensible option for general tasks.
+</p>
+
+<h3>Business / Team Use</h3>
+<p>
+  Teams that need grounded, on-premise AI for document-heavy workflows — such as internal knowledge search, drafting, and structured summarization — will find Solar useful due to its reputation for staying faithful to provided context. The smaller models keep deployment costs predictable, while the newer Solar Open 100B MoE provides significantly higher capacity for organizations that need more performance without sending data to the cloud. A focused pilot is recommended before standardizing on the larger MoE model.
+</p>
+
+<h3>Developer &amp; Technical Use</h3>
+<p>
+  Developers building internal tools, RAG pipelines, or applications that require predictable behavior will appreciate Solar's efficiency and groundedness. The 10.7B size is light enough to embed in apps without large GPU budgets. The Solar Open 100B MoE offers more headroom for demanding workloads while maintaining efficient inference thanks to its mixture-of-experts architecture. Plan for the increased memory and serving requirements if moving beyond the compact sizes.
+</p>
+
+<h3>Data Science &amp; Research Use</h3>
+<p>
+  Solar is interesting for researchers studying model efficiency and architecture trade-offs. Upstage's Depth Up-Scaling approach produced strong results for its size, making the 10.7B model a useful reference point for reproducible experiments on limited hardware. The newer Solar Open 100B MoE provides a valuable data point for studying large open mixture-of-experts behavior, though community tooling and findings are still maturing.
+</p>
+
+<h2>Model Variants at a Glance</h2>
+<table>
+  <thead>
+    <tr><th>Model</th><th>Parameters</th><th>VRAM (4-bit)</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Solar 10.7B Instruct</td><td>10.7B</td><td>~7GB</td><td>Flagship open-weight Solar; excellent quality/size ratio</td></tr>
+    <tr><td>Solar Pro Preview</td><td>22B</td><td>~14GB</td><td>Higher capability; enterprise document focus</td></tr>
+  </tbody>
+</table>
+
+<h2>NoCloudGPT Deployment Guidance</h2>
+
+<h3>Small Cloud Server</h3>
+<p>
+  Solar 10.7B Instruct runs comfortably on a <code>g4dn.xlarge</code> (16GB VRAM). Use Ollama:
+</p>
+<pre style="background:#f4f4f4;padding:1rem;border-radius:4px;overflow-x:auto;"><code>ollama run solar:10.7b-instruct-v1-q4_K_M</code></pre>
+
+<h3>Local Linux Machine</h3>
+<p>
+  Q4_K_M GGUF fits easily on a 12GB GPU. For CPU-only machines, the GGUF runs acceptably on 16GB RAM systems via llama.cpp.
+</p>
+
+<h3>On-Premise Server</h3>
+<p>
+  Solar Pro (22B) runs well on a single A10G (24GB) or two RTX 4090s. Serve with vLLM for multi-user access.
+</p>
+
+<h2>Available Model Sizes</h2>
+
+<!-- INTERNAL: Verify Create individual model size detail pages for solar-10.7b and solar-100b-moe with hardware benchmarks before publishing. -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Model Size</th>
+      <th>Ollama Tag</th>
+      <th>Recommended NoCloudGPT Tier</th>
+      <th>Notes</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Solar 10.7B</strong></td>
+      <td><code>solar:10.7b</code></td>
+      <td>Starter / Standard</td>
+      <td>Efficient and well-rounded for its size. Strong for personal use, RAG, and lightweight team tools, though newer compact models now lead on benchmarks.</td>
+      <td><a href="/models/quote.html">Get quote →</a></td>
+    </tr>
+    <tr>
+      <td><strong>Solar Open 100B MoE</strong></td>
+      <td><code>solar:100b</code></td>
+      <td>Professional / Enterprise</td>
+      <td>High-capacity mixture-of-experts model with efficient inference relative to its size. Newer to the open ecosystem — a focused pilot is recommended before large-scale deployment.</td>
+      <td><a href="/models/quote.html">Get quote →</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Positioning note:</strong> The Solar 10.7B remains a capable and efficient model for many general-purpose tasks. The newer Solar Open 100B MoE offers significantly more capacity for demanding workloads. For maximum performance on current benchmarks, newer families (Llama 3.3, Qwen 2.5, DeepSeek V3) are generally stronger.</p>
+
+<h2>Licensing Information</h2>
+
+<p>
+  Licensing for Solar models varies by specific release. The widely used Solar 10.7B has historically been available under relatively permissive terms. The newer Solar Open 100B MoE has its own license that should be reviewed directly, as commercial use rights and redistribution conditions can differ between versions.
+</p>
+
+<p>
+  Because Upstage maintains multiple Solar releases with distinct terms, always confirm the exact license on the official model card for the specific size you intend to deploy.
+</p>
+
+<p><strong>Official source:</strong></p>
+<ul>
+  <li><a href="https://huggingface.co/upstage">upstage on Hugging Face</a></li>
+</ul>
+
+<div class="notice">
+  <strong>Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.
+</div>
+
+<div class="cta-box">
+  <strong>Want Solar running on your own infrastructure?</strong><br />
+  <a href="/models/quote.html">Build a deployment quote</a> or follow the
+  <a href="/models/deploy/">90-day Lightsail pilot guide</a>.
+</div>
+
+<h2>Related Pages</h2>
+<ul>
+  <li><a href="/models/mistral/">Mistral 7B (Solar's architectural parent)</a></li>
+  <li><a href="/models/phi/">Phi-3 Medium (comparable size, different strengths)</a></li>
+  <li><a href="/models/compare/">Compare open models</a></li>
+</ul>
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section style="border-top:1px solid #1e293b; background:#0f172a; padding:2rem 1.5rem; margin-top:3rem;">
+    <div style="max-width:56rem; margin:0 auto; font-size:0.75rem; color:#64748b;">
+      <p style="font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Artwork and source references</p>
+      <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Hero image</p>
+          
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Developer reference</p>
+          <p style="margin-top:0.25rem;">Solar is developed by <a href="https://upstage.ai/" target="_blank" rel="noopener" style="color:#67e8f9;">Upstage AI</a>. NoCloudGPT is an independent deployment service not affiliated with Upstage AI.</p>
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Model catalog</p>
+          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/solar" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: solar</a> for current tags and sizes.</p>
+        </div>
+      </div>
     </div>
-  </header>
-  <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/solar/" class="font-semibold text-cyan-300 hover:text-cyan-200">solar</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">text</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
+  </section>
 
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
-  </footer>
 </body>
 </html>

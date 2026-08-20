@@ -3,72 +3,375 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>phi4 — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for phi4: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/phi4/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="phi4 — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for phi4: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
+<title>Phi-4 — Microsoft's 14B Model With Outsized Reasoning Quality | NoCloudGPT</title>
+  <meta name="description" content="Deploy Microsoft Phi-4 privately with NoCloudGPT. 14B parameters, strong mathematical and coding reasoning, MIT license — the practical default for teams who want quality without GPU infrastructure.">
+  <link rel="canonical" href="https://nocloudgpt.com/models/phi4/">
+  <meta property="og:title" content="Phi-4 — Private Reasoning AI on Standard Hardware | NoCloudGPT">
+  <meta property="og:description" content="Run Microsoft Phi-4 on your own server. Strong reasoning and coding at 14B — Standard AI tier hardware, no GPU required.">
+  <meta property="og:image" content="/models/phi4/og.webp">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/phi4/">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "phi4", "description": "Catalog facts for phi4: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/phi4/"}</script>
 </head>
 <body class="bg-slate-950 text-slate-100">
 
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <nav class="flex items-center justify-between text-sm">
+        <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
+        <div class="flex gap-6 text-slate-400">
+          <a href="/models/" class="hover:text-white">Models</a>
+          <a href="/models/deploy/lightsail-guide.html" class="hover:text-white">Deploy</a>
+          <a href="/models/quote.html" class="hover:text-white">Get a Quote</a>
+        </div>
       </nav>
     </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">phi4</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">phi4 family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
-
-      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: phi4.</p>
-    </div>
   </header>
+
+  <section class="border-b border-slate-800 bg-slate-950">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
+      
+            <!-- INTERNAL: hero.webp sourced from https://ollama.com/library/phi4 -->
+      <a href="https://ollama.com/library/phi4" target="_blank" rel="noopener noreferrer" class="inline-block">
+<img
+        src="/models/phi4/hero.webp"
+        alt="Microsoft Phi-4 — private reasoning AI with NoCloudGPT"
+        width="1200" height="600"
+        class="mt-8 mb-2 w-full max-w-xs rounded-2xl object-cover"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+      />
+      </a>
+      <p class="mb-6 text-xs text-slate-500">Source: <a href="https://ollama.com/library/phi4" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-400">Ollama</a></p>
+      <div class="mt-8 mb-6 flex h-28 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500" style="display:none;">
+      </div>
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Phi-4</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+        Microsoft's 14B Model That Reasons Like a Much Larger One
+      </h1>
+      <p class="mt-6 max-w-3xl text-lg text-slate-300">
+        Phi-4 is a Microsoft Research small model, trained on meticulously curated
+        high-quality data rather than raw scale. At 14 billion parameters, it delivers
+        reasoning, mathematics, and coding performance that consistently competes with
+        models several times its size — on Standard AI hardware, without a GPU.
+      </p>
+      <p class="mt-4 max-w-3xl text-slate-400">
+        MIT licensed. Released December 2024. The recommended practical default for teams
+        that need quality private AI without GPU infrastructure investment.
+        NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/models/quote.html" class="rounded-xl bg-cyan-300 px-6 py-3 font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+        <a href="/models/deploy/lightsail-guide.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+        <a href="/models/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-6 py-3 font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+      </div>
+    </div>
+  </section>
+
   <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/phi4/" class="font-semibold text-cyan-300 hover:text-cyan-200">phi4</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">text</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
-        </tbody>
-      </table>
-    </section>
+    <div class="grid gap-10 lg:grid-cols-[1.55fr_0.95fr]">
+      <div class="space-y-14">
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">What this model is</p>
+          <h2 class="mt-3 text-3xl font-black">Quality-Focused Training That Punches Far Above 14B</h2>
+          <p class="mt-5 text-slate-300">
+            Phi-4 is Microsoft Research's December 2024 release — a 14B parameter dense model
+            trained on a carefully filtered mix of synthetic and high-quality curated data.
+            The result is a model that ranks among the strongest at its size class on mathematical
+            reasoning, code generation, and instruction following benchmarks.
+          </p>
+          <p class="mt-4 text-slate-300">
+            For private deployments, the practical significance is that Phi-4 at Q4 quantization
+            runs comfortably on a 4–8 GB Lightsail instance — Standard AI tier — without GPU
+            hardware. Teams get noticeably better reasoning quality than 7B models while staying
+            on modest infrastructure.
+          </p>
+          <p class="mt-4 text-slate-300">
+            Phi-4 also includes a reasoning variant (Phi-4 Reasoning) that produces explicit
+            chain-of-thought output, similar to DeepSeek R1's approach but at a smaller footprint.
+            NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
+          </p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who developed it</p>
+          <h2 class="mt-3 text-3xl font-black">Microsoft Research</h2>
+          <div class="mt-6 flex h-20 w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-slate-600 bg-slate-900 text-sm text-slate-500">
+            <!-- INTERNAL: Verify /assets/models/phi4/phi4-developer.webp before publishing. -->
+          </div>
+          <p class="mt-6 text-slate-300">
+            Phi-4 was released by Microsoft Research in December 2024, following the Phi-3
+            series that demonstrated small models could dramatically outperform their size class
+            with the right training data strategy. Phi-4 extends this approach with a larger
+            14B parameter count and further improvements to data curation.
+          </p>
+          <p class="mt-4 text-slate-300">
+            Released under MIT license — one of the most commercially permissive licenses in the
+            open-weight AI space. NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.
+          </p>
+          <p class="mt-4 text-slate-300">NoCloudGPT is independent of Microsoft. We help organizations deploy Phi-4 on their own infrastructure using Ollama.</p>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Why teams choose it</p>
+          <h2 class="mt-3 text-3xl font-black">The Case for Phi-4 as Your Private AI Default</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Strong reasoning without GPU infrastructure</h3>
+              <p class="mt-3 text-slate-400">Phi-4 runs on a Standard AI 4–8 GB instance at useful speeds. For teams that need better reasoning quality than a 7B model but cannot justify GPU infrastructure, Phi-4 is the practical step up.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Mathematics and quantitative reasoning</h3>
+              <p class="mt-3 text-slate-400">Phi-4 shows particularly strong performance on mathematical benchmarks — step-by-step problem solving, formula reasoning, and quantitative analysis for finance, engineering, and education contexts.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">Code generation and debugging</h3>
+              <p class="mt-3 text-slate-400">Strong code generation across Python, JavaScript, SQL, and common languages. For teams that need coding assistance alongside business writing from one deployment, Phi-4 handles both well.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-lg font-bold text-cyan-200">MIT license — no review friction</h3>
+              <p class="mt-3 text-slate-400">Phi-4's MIT licensing is straightforward for legal and procurement teams to approve — no community license edge cases, no commercial use restrictions for most deployment scenarios.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION: Who this model family is for -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Who this model family is for</p>
+          <h2 class="mt-3 text-3xl font-black">Who This Model Family is For</h2>
+          <div class="mt-6 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">👤</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Personal use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Phi 4 is an excellent choice if you want a genuinely capable AI assistant that runs well on modest hardware. Its 14B size delivers strong reasoning, writing, and math performance without requiring a high-end server. If you've been frustrated by smaller models feeling limited but don't have the hardware (or budget) for a 70B+ model, Phi 4 hits a practical sweet spot. It's notably good at following nuanced instructions and explaining its reasoning for a model of its size.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🏢</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Business / team use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">For small to mid-sized teams that need a private AI assistant for documentation, summarization, structured analysis, or internal knowledge work, Phi 4 offers strong capability without demanding enterprise-grade infrastructure. Microsoft trained it on high-quality, curated data, which tends to result in cleaner and more reliable outputs compared to many open models of similar size. It performs well on multi-step reasoning and structured tasks, making it useful for customer-facing draft workflows, internal tools, and light automation. Because it can run efficiently on a single GPU server, infrastructure costs stay manageable as your team grows.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">⚙️</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Developer &amp; technical use</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Phi 4 performs exceptionally well on coding and reasoning tasks relative to its size. It's a practical tool for code review, documentation generation, debugging assistance, and explaining unfamiliar codebases — all while running privately on your own hardware. Developers who used Phi 3 will notice meaningful improvements in reliability on multi-step logic and fewer hallucinations on technical details. It's fast enough on modern hardware to feel responsive in interactive development workflows. If you're building a private coding assistant or integrating AI into an internal dev toolchain, this is one of the most resource-efficient serious options available.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-lg">🔬</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Data science &amp; research</span>
+              </div>
+              <p class="mt-2 text-sm text-slate-400">Phi 4's strong mathematical reasoning makes it genuinely useful for research-adjacent work such as explaining statistical methods, reviewing analytical logic, drafting methodology sections, or working through quantitative problems. While it is not a replacement for domain-expert review or frontier models on cutting-edge research, it performs well above what its parameter count suggests for day-to-day research productivity tasks. Researchers in sensitive fields (healthcare, legal, government) will appreciate that it can run fully on-premises with nothing leaving the network.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Best-fit workloads</p>
+          <h2 class="mt-3 text-3xl font-black">What to Use Phi-4 For</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Business writing and professional Q&A</h3>
+              <p class="mt-3 text-sm text-slate-400">Document drafting, internal Q&A assistants, policy lookup bots, and communication support — the full daily business AI workload without GPU infrastructure.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Mathematical reasoning and STEM tutoring</h3>
+              <p class="mt-3 text-sm text-slate-400">Step-by-step problem solving for finance, engineering, research, and education. Phi-4 is one of the strongest 14B models for mathematical correctness.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Private coding assistant on Standard hardware</h3>
+              <p class="mt-3 text-sm text-slate-400">Code generation, debugging, and explanation across common languages. Source code stays on your server — no routing through cloud coding AI providers.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-cyan-200">Edge and cost-constrained deployments</h3>
+              <p class="mt-3 text-sm text-slate-400">For organizations where budget limits the infrastructure tier but reasoning quality matters, Phi-4 on Standard AI delivers the strongest quality at that hardware level.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Hardware and deployment reality</p>
+          <h2 class="mt-3 text-3xl font-black">What You Actually Need to Run Phi-4</h2>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr><th class="px-4 py-3">Model</th><th class="px-4 py-3">Tier</th><th class="px-4 py-3">Best use</th></tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr><td class="px-4 py-3 font-semibold text-white">Phi-4 (14B) Q4</td><td class="px-4 py-3">Standard AI (4–8 GB)</td><td class="px-4 py-3">Everyday private AI — recommended default</td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-white">Phi-4 Reasoning Q4</td><td class="px-4 py-3">Standard AI (4–8 GB)</td><td class="px-4 py-3">Chain-of-thought for analytical workflows</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4 text-sm text-slate-400">NoCloudGPT will confirm current model availability, license terms, tags, and hardware fit before deployment begins.Context length in use and concurrent users affect performance.</p>
+        </section>
+
+        <!-- SECTION: Licensing information -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Licensing information</p>
+          <h2 class="mt-3 text-3xl font-black">Licensing Information</h2>
+          <p class="mt-5 text-slate-300">Phi 4 is released by Microsoft under a <strong class="text-white">permissive open license</strong> that allows both personal and commercial use. Unlike some earlier Microsoft models, Phi 4 does not require a separate commercial agreement for most standard business deployments.</p>
+          <p class="mt-4 text-slate-300">You should still review the full license terms on the official model card, especially if you plan to redistribute the model or use it in highly regulated environments.</p>
+          <p class="mt-5 text-slate-300"><strong class="text-white">Official model card:</strong></p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+            <li><a href="https://huggingface.co/microsoft/phi-4" target="_blank" rel="noopener" class="text-cyan-300 hover:text-cyan-200">microsoft/phi-4</a></li>
+          </ul>
+          <div class="mt-5 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-amber-300">Disclaimer:</strong> NoCloudGPT provides the software infrastructure to deploy AI models privately. We do not grant, manage, or verify licensing rights for third-party models. It is your responsibility to ensure your use of any model complies with its license terms. This does not constitute legal advice.</p>
+          </div>
+        </section>
+
+        <!-- SECTION: Available model sizes -->
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Available model sizes</p>
+          <h2 class="mt-3 text-3xl font-black">Available Model Sizes</h2>
+          <p class="mt-5 text-slate-300">Phi 4 is currently available in a single main size (14B). Different quantization levels significantly affect hardware requirements and output quality.</p>
+          <!-- INTERNAL: Verify Create individual size/variant pages for Phi 4 with hardware benchmarks and deployment guidance before publishing. -->
+          <div class="mt-6 overflow-hidden rounded-2xl border border-slate-800">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-950 text-cyan-200">
+                <tr>
+                  <th class="px-4 py-3">Model Size</th>
+                  <th class="px-4 py-3">Ollama Tag</th>
+                  <th class="px-4 py-3">Recommended NoCloudGPT Tier</th>
+                  <th class="px-4 py-3">Notes</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 bg-slate-900 text-slate-300">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Phi 4 14B (Q4 Quantized)</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">phi4</code></td>
+                  <td class="px-4 py-3">Standard</td>
+                  <td class="px-4 py-3">Best balance of quality and speed for most users. Runs well on a single 16GB GPU. Recommended starting point for most deployments.</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-white">Phi 4 14B (Q8 Quantized)</td>
+                  <td class="px-4 py-3"><code class="rounded bg-slate-800 px-1.5 py-0.5 text-cyan-200">phi4:14b-q8_0</code></td>
+                  <td class="px-4 py-3">Performance</td>
+                  <td class="px-4 py-3">Higher output fidelity than Q4. Requires ~24GB+ VRAM. Good choice for coding and math-heavy workflows.</td>
+                  <td class="px-4 py-3"><a href="/models/quote.html" class="text-cyan-300 hover:text-cyan-200 text-xs whitespace-nowrap">Get quote →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+            <p class="text-sm text-slate-300"><strong class="text-white">Hardware note:</strong> Phi 4 is one of the more accessible high-quality models to self-host. The Q4 version runs comfortably on consumer-grade GPUs, while Q8 offers better quality at the cost of higher VRAM usage.</p>
+          </div>
+        </section>
+
+        <section>
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">Honest guidance</p>
+          <h2 class="mt-3 text-3xl font-black">When to Choose a Different Model Instead</h2>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">You need long-context document processing</h3>
+              <p class="mt-2 text-sm text-slate-400">Phi-4's context window is more limited than Llama 4 Scout or Mistral Nemo. For large document collections, a longer-context model handles the workflow better. <a href="/models/mistral/" class="ml-1 text-cyan-300 hover:text-cyan-200">See Mistral →</a></p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 class="text-base font-bold text-amber-300">You need frontier-quality reasoning</h3>
+              <p class="mt-2 text-sm text-slate-400">For the most demanding analytical tasks, DeepSeek R1 distilled 32B+ or Llama 4 Scout provide higher reasoning ceiling at the cost of more hardware. <a href="/models/deepseek-r1/" class="ml-1 text-cyan-300 hover:text-cyan-200">See DeepSeek R1 →</a></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-cyan-500/30 bg-cyan-950/40 p-8 md:p-10">
+          <p class="text-sm font-bold uppercase tracking-widest text-cyan-300">Deploy with NoCloudGPT</p>
+          <h2 class="mt-3 text-3xl font-black">Start Your Private Phi-4 Deployment</h2>
+          <p class="mt-5 text-slate-300">NoCloudGPT configures Phi-4 on your Lightsail instance or on-premise server, installs Ollama and OpenWebUI, and selects the right quantization for your hardware. Most installations are live within one business day.</p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <a href="/models/quote.html" class="rounded-2xl bg-cyan-300 p-5 text-center font-bold text-slate-950 hover:bg-cyan-200">Build your deployment quote</a>
+            <a href="/models/deploy/lightsail-guide.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Start the 90-day pilot</a>
+            <a href="/models/deploy/on-premise.html" class="rounded-2xl border border-slate-600 p-5 text-center font-bold text-white hover:bg-slate-900">Request on-premise installation</a>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
+        <div class="rounded-3xl border border-cyan-500/30 bg-cyan-950/60 p-7">
+          <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Quick reference</p>
+          <h2 class="mt-3 text-2xl font-black">Phi-4 deployment</h2>
+          <p class="mt-3 text-sm text-cyan-50">14B parameters. Strong reasoning without GPU. MIT licensed. The practical private AI default for Standard AI hardware.</p>
+          <dl class="mt-5 space-y-3 text-sm">
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Developer</dt><dd class="font-semibold text-white">Microsoft Research</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Parameters</dt><dd class="font-semibold text-white">14B</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">License</dt><dd class="font-semibold text-white">MIT</dd></div>
+            <div class="flex justify-between border-b border-cyan-900 pb-2"><dt class="text-slate-400">Starter tier</dt><dd class="font-semibold text-white">Standard AI (4–8 GB)</dd></div>
+            <div class="flex justify-between"><dt class="text-slate-400">Released</dt><dd class="font-semibold text-white">December 2024</dd></div>
+          </dl>
+          <a href="/models/quote.html" class="mt-6 block rounded-xl bg-cyan-300 px-5 py-3 text-center font-bold text-slate-950 hover:bg-cyan-200">Build a Phi-4 quote</a>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Best-fit workloads</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-300">
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Business writing and professional Q&A</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Mathematical and STEM reasoning</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Private coding assistant</li>
+            <li class="flex gap-2"><span class="text-cyan-400">✓</span> Cost-efficient private AI default</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+          <h3 class="text-base font-bold uppercase tracking-widest text-slate-400">Related pages</h3>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/phi/">Phi family overview</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deepseek-r1/">DeepSeek R1 — chain-of-thought</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/gemma/">Gemma — alternative small model</a></li>
+            <li><a class="text-cyan-300 hover:text-cyan-200" href="/models/deploy/lightsail-guide.html">Lightsail pilot guide</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
   </main>
 
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+    <p>NoCloudGPT is an independent deployment service. All model names and trademarks are the property of their respective developers. NoCloudGPT is not affiliated with or endorsed by Microsoft or any model developer referenced on this page.</p>
+  
+  <div class="mx-auto max-w-6xl px-6 py-4">
+    <p class="text-xs text-slate-500 border border-slate-800 rounded-xl px-4 py-3 bg-slate-900">
+      <strong class="text-slate-400">License information:</strong>
+      License terms for open-weight models are sourced from Hugging Face model cards and official repositories.
+      Licenses may vary by model generation, quantization, and deployment scale.
+      Always verify the current license at
+      <a href="https://huggingface.co/models" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Hugging Face</a>
+      or the official developer repository before commercial deployment.
+      NoCloudGPT is not a legal advisor; consult qualified counsel for compliance-critical deployments.
+    </p>
+  </div>
   </footer>
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section class="border-t border-slate-800 bg-slate-900 px-6 py-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Artwork and source references</p>
+      <div class="mt-4 grid gap-4 text-xs text-slate-500 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="font-semibold text-slate-400">Hero image</p>
+          <p class="mt-1">AI-generated abstract artwork created for NoCloudGPT. Original work, no third-party license required.</p>
+          <!-- INTERNAL: Verify Replace with licensed photo when available before publishing. -->
+          <!-- Unsplash reference: https://unsplash.com/s/photos/reasoning -->
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Developer reference</p>
+          <p class="mt-1">Phi-4 is developed by <a href="https://ai.azure.com/catalog/models/Phi-4" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Microsoft Research</a>. NoCloudGPT is an independent deployment service not affiliated with Microsoft Research.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-slate-400">Model catalog reference</p>
+          <p class="mt-1">See the <a href="https://ollama.com/library/phi4" target="_blank" rel="noopener" class="text-cyan-600 hover:text-cyan-500">Ollama library page for Phi-4</a> for current model tags.</p>
+          <!-- card.webp, sidebar.webp, og.webp: TODO — see models/artwork-sources.md -->
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>

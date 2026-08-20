@@ -1,74 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>duckdb-nsql — Model family catalog | NoCloudGPT</title>
-  <meta name="description" content="Catalog facts for duckdb-nsql: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nocloudgpt.com/models/duckdb-nsql/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="duckdb-nsql — Model family catalog | NoCloudGPT">
-  <meta property="og:description" content="Catalog facts for duckdb-nsql: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nocloudgpt.com/models/duckdb-nsql/">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "duckdb-nsql", "description": "Catalog facts for duckdb-nsql: capabilities (text), 1 catalog model(s), deployment variants. terminal.glass helps deploy; weights are not sold here.", "url": "https://nocloudgpt.com/models/duckdb-nsql/"}</script>
+<title>DuckDB-NSQL: Private Text-to-SQL for Analytical Workloads | NoCloudGPT</title>
+  <meta name="description" content="Run DuckDB-NSQL on your own hardware. A 7B text-to-SQL model fine-tuned specifically for DuckDB's analytical SQL dialect. Deploy privately for local data analysis without schema exposure." />
 </head>
-<body class="bg-slate-950 text-slate-100">
-
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
-      </nav>
+<body>
+<!-- INTERNAL: hero.webp sourced from https://ollama.com/library/duckdb-nsql -->
+    <div style="margin:24px auto 8px;max-width:320px;text-align:center;">
+      <a href="https://ollama.com/library/duckdb-nsql" target="_blank" rel="noopener noreferrer">
+        <img src="/models/duckdb-nsql/hero.webp" alt="duckdb nsql model family hero" width="320" style="width:100%;max-width:320px;border-radius:12px;display:block;" />
+      </a>
+      <p style="margin-top:8px;font-size:0.75rem;color:#888;">Source: <a href="https://ollama.com/library/duckdb-nsql" target="_blank" rel="noopener noreferrer" style="color:#76b900;">Ollama</a></p>
     </div>
-  </div>
-  <header class="border-b border-slate-800 bg-slate-950/90">
-    <div class="mx-auto max-w-6xl px-6 py-12">
-      <a href="/models/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">← Back to model catalog</a>
-      <p class="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">duckdb-nsql</p>
-      <h1 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">duckdb-nsql family</h1>
-      <p class="mt-4 max-w-3xl text-lg text-slate-300">Factual catalog summary from the pinned public projection. Publisher status: unverified publisher metadata.</p>
 
-      <p class="mt-4 text-slate-400">Capabilities: text. Ollama families: duckdb-nsql.</p>
+
+<article>
+
+  <h1>DuckDB-NSQL: Natural Language SQL for Analytical Workloads, Deployed Privately</h1>
+  <!-- INTERNAL: Verify Add hero.webp — see models/artwork-sources.md, row: duckdb-nsql before publishing. -->
+
+
+  <p>DuckDB has become the default engine for local analytical workloads — fast, embedded, requiring no server, and capable of querying Parquet files, CSVs, and in-memory datasets with full SQL expressiveness. The gap it has not closed on its own is natural language access: data analysts who can describe what they want in plain English still need to translate that description into DuckDB's specific SQL dialect, including its analytical extensions and syntax preferences that differ from standard SQL in meaningful ways.</p>
+
+  <p>DuckDB-NSQL fills that gap. A 7B model fine-tuned specifically on DuckDB SQL by Numbers Station, it translates natural language questions into accurate DuckDB-dialect queries against provided schemas. Available via <code>ollama run duckdb-nsql</code>, it runs on CPU-only hardware, requires no GPU, and keeps your data schemas and query history entirely on-premise — no cloud API, no schema transmission, no data governance exposure.</p>
+
+  <h2>What DuckDB-NSQL Does Well</h2>
+
+  <ul>
+    <li><strong>DuckDB-specific SQL generation:</strong> Fine-tuned on DuckDB's dialect rather than generic SQL — correctly uses DuckDB's analytical functions, syntax patterns, and extensions that general-purpose models frequently misapply</li>
+    <li><strong>Analytical query construction:</strong> Strong performance on the aggregation-heavy, window-function-rich queries that characterize analytical workloads — GROUP BY, PARTITION OVER, QUALIFY, and DuckDB's PIVOT syntax</li>
+    <li><strong>File-based schema awareness:</strong> Generates queries against Parquet files, CSV datasets, and in-memory tables when schema context is provided — matches the actual DuckDB use pattern rather than assuming a traditional database server</li>
+    <li><strong>Lightweight deployment:</strong> At 7B parameters and Q4 quantization, runs on 4–6GB RAM with no GPU requirement — fits on any analyst's laptop or a minimal cloud instance</li>
+    <li><strong>Query explanation:</strong> Translates existing DuckDB queries into plain language descriptions for documentation, onboarding, and cross-team communication</li>
+    <li><strong>Iterative query refinement:</strong> Supports follow-up prompts that modify a generated query — "now filter to only rows where X" — maintaining schema context across a multi-turn session</li>
+  </ul>
+
+  <h2>Who This Model Family is For</h2>
+
+  <h3>Personal Use</h3>
+  <p>DuckDB NSQL is a practical tool if you work with local datasets (CSVs, Parquet files, or DuckDB databases) and want to generate queries using plain English instead of memorizing complex SQL syntax. It's especially useful for hobbyists, side projects, or personal data exploration on a laptop. Keep in mind this is a specialized SQL generation model — it does not chat, summarize, or act as a general assistant.</p>
+
+  <h3>Business / Team Use</h3>
+  <p>Teams that have standardized on DuckDB for local analytics, embedded reporting, or fast in-process querying can use DuckDB NSQL to make data access more accessible across the organization. Analysts and non-technical users can describe what they need and receive valid DuckDB queries, reducing reliance on a single SQL expert. Running it through NoCloudGPT keeps sensitive schemas and data entirely on your own infrastructure — an important advantage for finance, healthcare, and regulated industries.</p>
+
+  <h3>Developer &amp; Technical Use</h3>
+  <p>Developers building internal data tools, dashboards, or natural-language query interfaces on top of DuckDB will find this model useful as a focused text-to-SQL engine. It is specifically tuned for DuckDB's dialect, which reduces syntax mismatches compared to general-purpose models. Its output should be treated as a first draft — always validate queries before running them against production data.</p>
+
+  <h3>Data Science &amp; Research Use</h3>
+  <p>Data scientists and researchers using DuckDB for fast local exploration of analytical datasets will appreciate how DuckDB NSQL accelerates exploratory querying and prototyping of aggregations and joins. It handles the analytical patterns DuckDB excels at, allowing you to stay focused on your analysis rather than syntax. It is not a general reasoning or statistical modeling tool — its value is narrowly focused on turning natural language into correct DuckDB SQL.</p>
+
+  <h2>Licensing Information</h2>
+
+  <p>DuckDB NSQL was developed by MotherDuck and Numbers Station. Licensing depends on the specific variant and its underlying base model. Most published versions use permissive terms, but you should always confirm the exact license on the official model card before commercial deployment.</p>
+
+  <p><strong>Official source:</strong></p>
+  <ul>
+    <li><a href="https://huggingface.co/duckdb">DuckDB NSQL on Hugging Face</a></li>
+  </ul>
+
+  <p><strong>Disclaimer:</strong> NoCloudGPT provides this licensing summary as a convenience reference only. It does not constitute legal advice. License terms can change. Always review the official model card and consult your legal counsel before deploying any model in a commercial or regulated context.</p>
+
+  <h2>Available Model Sizes</h2>
+
+  <!-- INTERNAL: Verify Create individual model size detail pages for duckdb-nsql-7b with schema examples and prompt patterns before publishing. -->
+
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Model Size</th>
+        <th>Ollama Tag</th>
+        <th>Recommended NoCloudGPT Tier</th>
+        <th>Notes</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>DuckDB NSQL 7B</strong></td>
+        <td><code>duckdb-nsql:7b</code></td>
+        <td>Starter / Small Workstation</td>
+        <td>The standard release. Strong DuckDB-specific SQL generation with modest hardware requirements. Best for individuals and small teams.</td>
+        <td><a href="/models/quote.html">Get quote →</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Positioning note:</strong> DuckDB NSQL is a <strong>specialized SQL generation model</strong> optimized for DuckDB. It performs best when generating analytical queries against DuckDB databases and is not intended as a general-purpose chat model or for other database systems without adaptation.</p>
+
+  <h2>Deployment Requirements</h2>
+
+  <h3>Local Analyst Workstation — 7B Q4 (4–6GB RAM, CPU only)</h3>
+  <p>DuckDB-NSQL is a single-variant deployment — the 7B Q4 model is the standard release and is designed to run on analyst hardware without GPU requirements. On a laptop or workstation with 4–6GB of available RAM, it provides interactive natural language query generation with response times of 5–15 tokens per second on modern CPU hardware. This is fast enough for the iterative exploration pattern typical of analytical work — ask a question, review the generated query, execute it in DuckDB, refine and repeat. Pull with <code>ollama run duckdb-nsql</code>.</p>
+
+  <h3>Shared Team Instance — 7B Q4 (AWS Lightsail 4GB or CPU instance)</h3>
+  <p>For teams that want a shared natural language query endpoint, DuckDB-NSQL runs comfortably on an AWS Lightsail instance with 4GB RAM — the lowest-cost shared deployment option in this model catalog. Multiple analysts can submit queries to a single Ollama endpoint without requiring dedicated GPU infrastructure. Lightsail 4GB instances run approximately $20–40 USD per month, making this one of the most cost-effective private AI deployments available for analytical teams.</p>
+
+  <h2>The Real Cost of Analytical Schema Exposure</h2>
+
+  <p>Analytical datasets frequently contain the most sensitive data an organization holds: revenue figures, customer cohort breakdowns, clinical outcomes, research results, and competitive intelligence. The schemas that organize this data — table names, column names, metric definitions — describe your analytical framework in terms that are meaningful to competitors and regulators alike. Sending this schema context to a cloud API as part of every natural language query creates an exposure surface that most data governance frameworks have not explicitly addressed.</p>
+
+  <p>DuckDB-NSQL on-premise means your analytical schemas never leave your local environment. The questions your analysts ask, the dataset structures they query against, and the patterns in their query history stay within your infrastructure boundary. For organizations handling financial data under SOC 2, clinical data under HIPAA, or proprietary research data under internal classification policies, local deployment is the only deployment model that satisfies governance requirements.</p>
+
+  <h2>Integration and Workflow Compatibility</h2>
+
+  <ul>
+    <li><strong>DuckDB CLI and Python API</strong> — use DuckDB-NSQL to generate queries, then execute them directly against your local DuckDB instance in the same workflow</li>
+    <li><strong>Jupyter and notebook environments</strong> — embed natural language query generation into data science notebooks via the Ollama Python library</li>
+    <li><strong>OpenWebUI</strong> — provide a browser interface for non-technical analysts to submit natural language questions against shared DuckDB datasets</li>
+    <li><strong>Ollama API</strong> — integrate DuckDB-NSQL into internal analytics tools, dashboards, or data portals via the OpenAI-compatible endpoint</li>
+    <li><strong>LangChain</strong> — chain DuckDB-NSQL with DuckDB's Python connector for fully automated natural language to query execution pipelines</li>
+  </ul>
+
+  <p><strong>Your analytical data is your most sensitive asset. Deploy DuckDB-NSQL privately and give your team natural language access to local datasets without routing your schema or query context through a cloud API.</strong></p>
+
+</article>
+
+  <!-- ============================================================
+       ARTWORK AND SOURCE REFERENCES
+  ============================================================ -->
+  <section style="border-top:1px solid #1e293b; background:#0f172a; padding:2rem 1.5rem; margin-top:3rem;">
+    <div style="max-width:56rem; margin:0 auto; font-size:0.75rem; color:#64748b;">
+      <p style="font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Artwork and source references</p>
+      <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Hero image</p>
+          
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Developer reference</p>
+          <p style="margin-top:0.25rem;">DuckDB NSQL is developed by <a href="https://duckdb.org/" target="_blank" rel="noopener" style="color:#67e8f9;">Defog AI</a>. NoCloudGPT is an independent deployment service not affiliated with Defog AI.</p>
+        </div>
+        <div>
+          <p style="font-weight:600; color:#94a3b8;">Model catalog</p>
+          <p style="margin-top:0.25rem;">See <a href="https://ollama.com/library/duckdb-nsql" target="_blank" rel="noopener" style="color:#67e8f9;">Ollama library: duckdb-nsql</a> for current tags and sizes.</p>
+        </div>
+      </div>
     </div>
-  </header>
-  <main class="mx-auto max-w-6xl px-6 py-12">
-    <section>
-      <h2 class="text-2xl font-bold">Models in this family</h2>
-      <table class="mt-6 w-full text-left text-sm">
-        <thead class="text-slate-400">
-          <tr>
-            <th class="pb-3">Model</th>
-            <th class="pb-3">Params</th>
-            <th class="pb-3">Quant</th>
-            <th class="pb-3">Capabilities</th>
-            <th class="pb-3">Availability</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr class="border-t border-slate-800">
-          <td class="py-3 pr-4"><a href="/models/model/duckdb-nsql/" class="font-semibold text-cyan-300 hover:text-cyan-200">duckdb-nsql</a></td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">—</td>
-          <td class="py-3 pr-4 text-slate-400">text</td>
-          <td class="py-3 text-sm"><span class="text-emerald-400">available</span></td>
-        </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
+  </section>
 
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
-  </footer>
 </body>
 </html>

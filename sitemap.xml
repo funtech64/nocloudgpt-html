@@ -13,11 +13,31 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/airoboros/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/alfred/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/all-minilm/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/alpaca/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/aquila/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/arctic-llm/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/arctic/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -30,6 +50,14 @@
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/aya/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/bagel/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/baichuan/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -46,6 +74,14 @@
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/bge-m3/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/bge/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/chatglm/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -177,6 +213,14 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/compare/compare-vs-chatgpt/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/compare/gpt2-vs-modern-llms/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/compare/index.html</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -194,6 +238,14 @@
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/compare/local-vs-cloud-ai.html</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/compare/vs-claude/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/compare/vs-copilot/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -241,7 +293,15 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/deepseek-v3.1/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/deepseek-v3.2-cloud/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/deepseek-v3/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -321,6 +381,10 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/dolphin/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/dolphin3/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -333,6 +397,10 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/embedding-gemma/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/embeddinggemma/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -342,6 +410,10 @@
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/exaone-deep/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/exaone/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -362,6 +434,10 @@
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/firefunction-v2/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/firefunction/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -437,11 +513,23 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/glm/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/glm4/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/glm5/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/goliath/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/gpt-2/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -462,6 +550,14 @@
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/granite-embedding/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/granite-guardian/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/granite/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -509,7 +605,15 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/grok/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/hermes3/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/internlm/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -517,11 +621,11 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/kimi-k2.5-cloud/</loc>
+    <loc>https://nocloudgpt.com/models/jamba/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/kimi-k2.5/</loc>
+    <loc>https://nocloudgpt.com/models/kimi-k2.5-cloud/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -545,6 +649,10 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/kimi/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/laguna-s-2.1/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -557,6 +665,14 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/laguna/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/lfm/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/lfm2.5-thinking/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -566,6 +682,26 @@
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/lfm2/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/llama-3.1-405b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/llama-3.2-vision/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/llama-3.2/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/llama-guard-3/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/llama-guard/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -589,6 +725,10 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/llama2/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/llama3-chatqa/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -601,7 +741,19 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/llama3.1/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/llama3.2-vision/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/llama3.2/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/llama3.3/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -637,6 +789,10 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/math/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/mathstral/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -661,6 +817,10 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/mimo/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/minicpm-v/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -673,15 +833,15 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/minimax-M2.5-Cloud/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/minimax-m2-cloud/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/minimax-m2.1-cloud/</loc>
-    <lastmod>2026-08-02</lastmod>
-  </url>
-  <url>
-    <loc>https://nocloudgpt.com/models/minimax-m2.5/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -701,11 +861,23 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/minimax/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/ministral-3-cloud/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/ministral-3/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/ministral/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/mistral-family/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -757,143 +929,235 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/alfred/</loc>
+    <loc>https://nocloudgpt.com/models/model/alfred-40b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/all-minilm/</loc>
+    <loc>https://nocloudgpt.com/models/model/all-minilm-22m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/athene-v2/</loc>
+    <loc>https://nocloudgpt.com/models/model/all-minilm-33m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/aya-expanse/</loc>
+    <loc>https://nocloudgpt.com/models/model/athene-v2-72b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/aya/</loc>
+    <loc>https://nocloudgpt.com/models/model/aya-35b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/bakllava/</loc>
+    <loc>https://nocloudgpt.com/models/model/aya-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/bespoke-minicheck/</loc>
+    <loc>https://nocloudgpt.com/models/model/aya-expanse-32b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/bge-large/</loc>
+    <loc>https://nocloudgpt.com/models/model/aya-expanse-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/bge-m3/</loc>
+    <loc>https://nocloudgpt.com/models/model/bakllava-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/codebooga/</loc>
+    <loc>https://nocloudgpt.com/models/model/bespoke-minicheck-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/codegeex4/</loc>
+    <loc>https://nocloudgpt.com/models/model/bge-large-335m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/codegemma/</loc>
+    <loc>https://nocloudgpt.com/models/model/bge-m3-567m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/codellama/</loc>
+    <loc>https://nocloudgpt.com/models/model/codebooga-34b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/codeqwen/</loc>
+    <loc>https://nocloudgpt.com/models/model/codegeex4-9b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/codestral/</loc>
+    <loc>https://nocloudgpt.com/models/model/codegemma-2b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/codeup/</loc>
+    <loc>https://nocloudgpt.com/models/model/codegemma-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/cogito-2.1/</loc>
+    <loc>https://nocloudgpt.com/models/model/codellama-13b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/cogito/</loc>
+    <loc>https://nocloudgpt.com/models/model/codellama-34b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/command-a/</loc>
+    <loc>https://nocloudgpt.com/models/model/codellama-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/command-r-plus/</loc>
+    <loc>https://nocloudgpt.com/models/model/codellama-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/command-r/</loc>
+    <loc>https://nocloudgpt.com/models/model/codeqwen-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/command-r7b-arabic/</loc>
+    <loc>https://nocloudgpt.com/models/model/codestral-22b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/command-r7b/</loc>
+    <loc>https://nocloudgpt.com/models/model/codeup-13b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/dbrx/</loc>
+    <loc>https://nocloudgpt.com/models/model/cogito-14b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/deepcoder/</loc>
+    <loc>https://nocloudgpt.com/models/model/cogito-2.1-671b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/deepscaler/</loc>
+    <loc>https://nocloudgpt.com/models/model/cogito-32b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/deepseek-coder-v2/</loc>
+    <loc>https://nocloudgpt.com/models/model/cogito-3b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/deepseek-coder/</loc>
+    <loc>https://nocloudgpt.com/models/model/cogito-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/deepseek-llm/</loc>
+    <loc>https://nocloudgpt.com/models/model/cogito-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/deepseek-ocr/</loc>
+    <loc>https://nocloudgpt.com/models/model/command-a-111b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/deepseek-r1/</loc>
+    <loc>https://nocloudgpt.com/models/model/command-r-35b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/deepseek-v2.5/</loc>
+    <loc>https://nocloudgpt.com/models/model/command-r-plus-104b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/deepseek-v2/</loc>
+    <loc>https://nocloudgpt.com/models/model/command-r7b-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/deepseek-v3.1/</loc>
+    <loc>https://nocloudgpt.com/models/model/command-r7b-arabic-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/deepseek-v3/</loc>
+    <loc>https://nocloudgpt.com/models/model/dbrx-132b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepcoder-1.5b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepcoder-14b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepscaler-1.5b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-coder-1.3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-coder-33b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-coder-6.7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-coder-v2-16b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-coder-v2-236b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-llm-67b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-llm-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-ocr-3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-r1-1.5b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-r1-14b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-r1-32b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-r1-671b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-r1-70b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-r1-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-r1-8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-v2-16b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-v2-236b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-v2.5-236b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-v3-671b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/deepseek-v3.1-671b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -905,23 +1169,27 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/devstral-2/</loc>
+    <loc>https://nocloudgpt.com/models/model/devstral-2-123b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/devstral-small-2/</loc>
+    <loc>https://nocloudgpt.com/models/model/devstral-24b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/devstral/</loc>
+    <loc>https://nocloudgpt.com/models/model/devstral-small-2-24b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/dolphin-llama3/</loc>
+    <loc>https://nocloudgpt.com/models/model/dolphin-llama3-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/dolphin-mistral/</loc>
+    <loc>https://nocloudgpt.com/models/model/dolphin-llama3-8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/dolphin-mistral-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -929,55 +1197,95 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/dolphin-phi/</loc>
+    <loc>https://nocloudgpt.com/models/model/dolphin-phi-2.7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/dolphin3/</loc>
+    <loc>https://nocloudgpt.com/models/model/dolphin3-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/dolphincoder/</loc>
+    <loc>https://nocloudgpt.com/models/model/dolphincoder-15b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/duckdb-nsql/</loc>
+    <loc>https://nocloudgpt.com/models/model/dolphincoder-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/embeddinggemma/</loc>
+    <loc>https://nocloudgpt.com/models/model/duckdb-nsql-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/everythinglm/</loc>
+    <loc>https://nocloudgpt.com/models/model/embeddinggemma-300m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/exaone-deep/</loc>
+    <loc>https://nocloudgpt.com/models/model/everythinglm-13b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/exaone3.5/</loc>
+    <loc>https://nocloudgpt.com/models/model/exaone-deep-2.4b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/falcon/</loc>
+    <loc>https://nocloudgpt.com/models/model/exaone-deep-32b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/falcon2/</loc>
+    <loc>https://nocloudgpt.com/models/model/exaone-deep-7.8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/falcon3/</loc>
+    <loc>https://nocloudgpt.com/models/model/exaone3.5-2.4b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/firefunction-v2/</loc>
+    <loc>https://nocloudgpt.com/models/model/exaone3.5-32b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/functiongemma/</loc>
+    <loc>https://nocloudgpt.com/models/model/exaone3.5-7.8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/falcon-180b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/falcon-40b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/falcon-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/falcon2-11b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/falcon3-10b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/falcon3-1b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/falcon3-3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/falcon3-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/firefunction-v2-70b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/functiongemma-270m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -985,19 +1293,59 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/gemma/</loc>
+    <loc>https://nocloudgpt.com/models/model/gemma-2b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/gemma2/</loc>
+    <loc>https://nocloudgpt.com/models/model/gemma-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/gemma3/</loc>
+    <loc>https://nocloudgpt.com/models/model/gemma2-27b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/gemma2-2b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/gemma2-9b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/gemma3-12b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/gemma3-1b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/gemma3-270m/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/gemma3-27b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/gemma3-4b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/model/gemma3n/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/gemma4-12b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/gemma4-26b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/gemma4-31b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1021,67 +1369,147 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/glm4/</loc>
+    <loc>https://nocloudgpt.com/models/model/glm4-9b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/goliath/</loc>
+    <loc>https://nocloudgpt.com/models/model/goliath-120b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/gpt-oss-safeguard/</loc>
+    <loc>https://nocloudgpt.com/models/model/gpt-oss-120b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/gpt-oss/</loc>
+    <loc>https://nocloudgpt.com/models/model/gpt-oss-20b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/granite-code/</loc>
+    <loc>https://nocloudgpt.com/models/model/gpt-oss-safeguard-120b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/granite-embedding/</loc>
+    <loc>https://nocloudgpt.com/models/model/gpt-oss-safeguard-20b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/granite3-dense/</loc>
+    <loc>https://nocloudgpt.com/models/model/granite-code-20b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/granite3-guardian/</loc>
+    <loc>https://nocloudgpt.com/models/model/granite-code-34b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/granite3-moe/</loc>
+    <loc>https://nocloudgpt.com/models/model/granite-code-3b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/granite3.1-dense/</loc>
+    <loc>https://nocloudgpt.com/models/model/granite-code-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/granite3.1-moe/</loc>
+    <loc>https://nocloudgpt.com/models/model/granite-embedding-278m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/granite3.2-vision/</loc>
+    <loc>https://nocloudgpt.com/models/model/granite-embedding-30m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/granite3.2/</loc>
+    <loc>https://nocloudgpt.com/models/model/granite3-dense-2b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/granite3.3/</loc>
+    <loc>https://nocloudgpt.com/models/model/granite3-dense-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/granite4.1-guardian/</loc>
+    <loc>https://nocloudgpt.com/models/model/granite3-guardian-2b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/granite4.1/</loc>
+    <loc>https://nocloudgpt.com/models/model/granite3-guardian-8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite3-moe-1b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite3-moe-3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite3.1-dense-2b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite3.1-dense-8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite3.1-moe-1b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite3.1-moe-3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite3.2-2b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite3.2-8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite3.2-vision-2b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite3.3-2b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite3.3-8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite4-1b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite4-32b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite4-350m/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite4-3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite4-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite4.1-30b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite4.1-3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite4.1-8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/granite4.1-guardian-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1089,15 +1517,35 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/hermes3/</loc>
+    <loc>https://nocloudgpt.com/models/model/hermes3-3b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/ibm/</loc>
+    <loc>https://nocloudgpt.com/models/model/hermes3-405b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/internlm2/</loc>
+    <loc>https://nocloudgpt.com/models/model/hermes3-70b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/hermes3-8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/internlm2-1.8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/internlm2-1m/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/internlm2-20b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/internlm2-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1125,127 +1573,207 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/lfm2.5-thinking/</loc>
+    <loc>https://nocloudgpt.com/models/model/lfm2-24b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/lfm2.5/</loc>
+    <loc>https://nocloudgpt.com/models/model/lfm2.5-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/lfm2/</loc>
+    <loc>https://nocloudgpt.com/models/model/lfm2.5-thinking-1.2b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama-guard3/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama-guard3-1b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama-pro/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama-guard3-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama2-chinese/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama-pro-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama2-uncensored/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama2-13b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama2/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama2-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama3-chatqa/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama2-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama3-gradient/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama2-chinese-13b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama3-groq-tool-use/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama2-chinese-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama3.1/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama2-uncensored-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama3.2-vision/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama2-uncensored-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama3.2/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama3.3/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama3/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3-chatqa-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llama4/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3-chatqa-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llava-llama3/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3-gradient-1048k/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llava-phi3/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3-gradient-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/llava/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3-gradient-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/magicoder/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3-groq-tool-use-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/magistral/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3-groq-tool-use-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/marco-o1/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3.1-405b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/mathstral/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3.1-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/medgemma/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3.1-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/medgemma1.5/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3.2-1b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/meditron/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3.2-3b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/medllama2/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3.2-vision-11b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/megadolphin/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3.2-vision-90b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/minicpm-v/</loc>
+    <loc>https://nocloudgpt.com/models/model/llama3.3-70b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/llama4-17b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/llava-13b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/llava-34b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/llava-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/llava-llama3-8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/llava-phi3-3.8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/magicoder-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/magistral-24b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/marco-o1-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/mathstral-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/medgemma-27b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/medgemma-4b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/medgemma1.5-4b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/meditron-70b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/meditron-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/medllama2-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/megadolphin-120b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/minicpm-v-8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/minicpm-v4.5-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/model/minicpm-v4.5/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/minicpm-v4.6-1b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1261,47 +1789,59 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/ministral-3/</loc>
+    <loc>https://nocloudgpt.com/models/model/ministral-3-14b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/mistral-large-3/</loc>
+    <loc>https://nocloudgpt.com/models/model/ministral-3-3b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/mistral-large/</loc>
+    <loc>https://nocloudgpt.com/models/model/ministral-3-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/mistral-medium-3.5/</loc>
+    <loc>https://nocloudgpt.com/models/model/mistral-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/mistral-nemo/</loc>
+    <loc>https://nocloudgpt.com/models/model/mistral-large-123b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/mistral-openorca/</loc>
+    <loc>https://nocloudgpt.com/models/model/mistral-large-3-675b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/mistral-small/</loc>
+    <loc>https://nocloudgpt.com/models/model/mistral-medium-3.5-128b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/mistral-small3.1/</loc>
+    <loc>https://nocloudgpt.com/models/model/mistral-nemo-12b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/mistral-small3.2/</loc>
+    <loc>https://nocloudgpt.com/models/model/mistral-openorca-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/mistral/</loc>
+    <loc>https://nocloudgpt.com/models/model/mistral-small-22b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/mistrallite/</loc>
+    <loc>https://nocloudgpt.com/models/model/mistral-small-24b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/mistral-small3.1-24b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/mistral-small3.2-24b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/mistrallite-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1309,19 +1849,23 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/moondream/</loc>
+    <loc>https://nocloudgpt.com/models/model/moondream-1.8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/mxbai-embed-large/</loc>
+    <loc>https://nocloudgpt.com/models/model/mxbai-embed-large-335m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/nemotron-3-nano/</loc>
+    <loc>https://nocloudgpt.com/models/model/nemotron-3-nano-30b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/nemotron-3-super/</loc>
+    <loc>https://nocloudgpt.com/models/model/nemotron-3-nano-4b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/nemotron-3-super-120b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1329,27 +1873,31 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/nemotron-cascade-2/</loc>
+    <loc>https://nocloudgpt.com/models/model/nemotron-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/nemotron-mini/</loc>
+    <loc>https://nocloudgpt.com/models/model/nemotron-cascade-2-30b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/nemotron/</loc>
+    <loc>https://nocloudgpt.com/models/model/nemotron-mini-4b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/nemotron3/</loc>
+    <loc>https://nocloudgpt.com/models/model/nemotron3-33b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/neural-chat/</loc>
+    <loc>https://nocloudgpt.com/models/model/neural-chat-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/nexusraven/</loc>
+    <loc>https://nocloudgpt.com/models/model/nexusraven-13b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/nomic-embed-text-137m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1357,15 +1905,11 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/nomic-embed-text/</loc>
-    <lastmod>2026-08-02</lastmod>
-  </url>
-  <url>
     <loc>https://nocloudgpt.com/models/model/north-mini-code-1.0/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/notus/</loc>
+    <loc>https://nocloudgpt.com/models/model/notus-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1373,7 +1917,23 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/nous-hermes/</loc>
+    <loc>https://nocloudgpt.com/models/model/nous-hermes-13b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/nous-hermes-70b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/nous-hermes-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/nous-hermes2-10.7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/nous-hermes2-34b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1381,115 +1941,295 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/nous-hermes2/</loc>
+    <loc>https://nocloudgpt.com/models/model/nuextract-3.8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/nuextract/</loc>
+    <loc>https://nocloudgpt.com/models/model/olmo-3-32b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/olmo-3.1/</loc>
+    <loc>https://nocloudgpt.com/models/model/olmo-3-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/olmo-3/</loc>
+    <loc>https://nocloudgpt.com/models/model/olmo-3.1-32b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/olmo2/</loc>
+    <loc>https://nocloudgpt.com/models/model/olmo2-13b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/open-orca-platypus2/</loc>
+    <loc>https://nocloudgpt.com/models/model/olmo2-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/openchat/</loc>
+    <loc>https://nocloudgpt.com/models/model/open-orca-platypus2-13b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/opencoder/</loc>
+    <loc>https://nocloudgpt.com/models/model/openchat-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/openhermes/</loc>
+    <loc>https://nocloudgpt.com/models/model/opencoder-1.5b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/openthinker/</loc>
+    <loc>https://nocloudgpt.com/models/model/opencoder-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/orca-mini/</loc>
+    <loc>https://nocloudgpt.com/models/model/openhermes-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/orca2/</loc>
+    <loc>https://nocloudgpt.com/models/model/openthinker-32b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/ornith/</loc>
+    <loc>https://nocloudgpt.com/models/model/openthinker-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/paraphrase-multilingual/</loc>
+    <loc>https://nocloudgpt.com/models/model/orca-mini-13b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/phi/</loc>
+    <loc>https://nocloudgpt.com/models/model/orca-mini-3b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/phi3.5/</loc>
+    <loc>https://nocloudgpt.com/models/model/orca-mini-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/phi3/</loc>
+    <loc>https://nocloudgpt.com/models/model/orca-mini-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/phi4-mini-reasoning/</loc>
+    <loc>https://nocloudgpt.com/models/model/orca2-13b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/phi4-mini/</loc>
+    <loc>https://nocloudgpt.com/models/model/orca2-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/phi4-reasoning/</loc>
+    <loc>https://nocloudgpt.com/models/model/ornith-35b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/phi4/</loc>
+    <loc>https://nocloudgpt.com/models/model/ornith-9b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/phind-codellama/</loc>
+    <loc>https://nocloudgpt.com/models/model/paraphrase-multilingual-278m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwen/</loc>
+    <loc>https://nocloudgpt.com/models/model/phi-2.7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwen2-math/</loc>
+    <loc>https://nocloudgpt.com/models/model/phi3-14b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwen2.5-coder/</loc>
+    <loc>https://nocloudgpt.com/models/model/phi3-3.8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwen2.5/</loc>
+    <loc>https://nocloudgpt.com/models/model/phi3.5-3.8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwen2.5vl/</loc>
+    <loc>https://nocloudgpt.com/models/model/phi4-14b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwen2/</loc>
+    <loc>https://nocloudgpt.com/models/model/phi4-mini-3.8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/phi4-mini-reasoning-3.8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/phi4-reasoning-14b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/phind-codellama-34b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen-0.5b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen-1.8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen-110b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen-14b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen-32b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen-4b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen-72b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2-0.5b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2-1.5b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2-72b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2-math-1.5b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2-math-72b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2-math-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5-0.5b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5-1.5b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5-14b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5-32b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5-3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5-72b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5-coder-0.5b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5-coder-1.5b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5-coder-14b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5-coder-32b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5-coder-3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5-coder-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5vl-32b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5vl-3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5vl-72b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen2.5vl-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen3-0.6b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen3-1.7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen3-14b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen3-235b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen3-30b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen3-32b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen3-4b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen3-8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen3-coder-30b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/qwen3-coder-480b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1497,167 +2237,379 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwen3-coder/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3-embedding-0.6b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwen3-embedding/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3-embedding-4b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwen3-next/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3-embedding-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwen3-vl/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3-next-80b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwen3.5/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3-vl-235b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwen3.6/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3-vl-2b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwen3/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3-vl-30b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/qwq/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3-vl-32b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/r1-1776/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3-vl-4b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/reader-lm/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3-vl-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/reflection/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3.5-0.8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/rnj-1/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3.5-122b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/sailor2/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3.5-27b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/samantha-mistral/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3.5-2b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/shieldgemma/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3.5-35b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/smallthinker/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3.5-397b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/smollm/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3.5-4b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/smollm2/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3.5-9b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/snowflake-arctic-embed/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3.6-27b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/snowflake-arctic-embed2/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwen3.6-35b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/solar-pro/</loc>
+    <loc>https://nocloudgpt.com/models/model/qwq-32b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/solar/</loc>
+    <loc>https://nocloudgpt.com/models/model/r1-1776-671b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/sqlcoder/</loc>
+    <loc>https://nocloudgpt.com/models/model/r1-1776-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/stable-beluga/</loc>
+    <loc>https://nocloudgpt.com/models/model/reader-lm-0.5b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/stable-code/</loc>
+    <loc>https://nocloudgpt.com/models/model/reader-lm-1.5b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/stablelm-zephyr/</loc>
+    <loc>https://nocloudgpt.com/models/model/reflection-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/stablelm2/</loc>
+    <loc>https://nocloudgpt.com/models/model/rnj-1-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/starcoder/</loc>
+    <loc>https://nocloudgpt.com/models/model/sailor2-1b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/starcoder2/</loc>
+    <loc>https://nocloudgpt.com/models/model/sailor2-20b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/starling-lm/</loc>
+    <loc>https://nocloudgpt.com/models/model/sailor2-8b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/tinydolphin/</loc>
+    <loc>https://nocloudgpt.com/models/model/samantha-mistral-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/tinyllama/</loc>
+    <loc>https://nocloudgpt.com/models/model/shieldgemma-27b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/translategemma/</loc>
+    <loc>https://nocloudgpt.com/models/model/shieldgemma-2b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/tulu3/</loc>
+    <loc>https://nocloudgpt.com/models/model/shieldgemma-9b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/vicuna/</loc>
+    <loc>https://nocloudgpt.com/models/model/smallthinker-3b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/wizard-math/</loc>
+    <loc>https://nocloudgpt.com/models/model/smollm-1.7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/wizard-vicuna-uncensored/</loc>
+    <loc>https://nocloudgpt.com/models/model/smollm-135m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/wizard-vicuna/</loc>
+    <loc>https://nocloudgpt.com/models/model/smollm-360m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/wizardcoder/</loc>
+    <loc>https://nocloudgpt.com/models/model/smollm2-1.7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/wizardlm-uncensored/</loc>
+    <loc>https://nocloudgpt.com/models/model/smollm2-135m/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/wizardlm/</loc>
+    <loc>https://nocloudgpt.com/models/model/smollm2-360m/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/snowflake-arctic-embed-110m/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/snowflake-arctic-embed-137m/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/snowflake-arctic-embed-22m/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/snowflake-arctic-embed-335m/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/snowflake-arctic-embed-33m/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/snowflake-arctic-embed2-568m/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/solar-10.7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/solar-pro-22b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/sqlcoder-15b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/sqlcoder-70b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/sqlcoder-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/stable-beluga-13b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/stable-beluga-70b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/stable-beluga-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/stable-code-3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/stablelm-zephyr-3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/stablelm2-1.6b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/stablelm2-12b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/starcoder-15b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/starcoder-1b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/starcoder-3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/starcoder-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/starcoder2-15b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/starcoder2-3b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/starcoder2-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/starling-lm-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/tinydolphin-1.1b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/tinyllama-1.1b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/translategemma-12b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/translategemma-27b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/translategemma-4b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/tulu3-70b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/tulu3-8b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/vicuna-13b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/vicuna-33b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/vicuna-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizard-math-13b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizard-math-70b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizard-math-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizard-vicuna-13b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizard-vicuna-uncensored-13b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizard-vicuna-uncensored-30b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizard-vicuna-uncensored-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizardcoder-13b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizardcoder-33b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizardcoder-34b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizardcoder-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizardlm-13b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizardlm-30b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizardlm-70b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizardlm-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizardlm-uncensored-13b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/wizardlm2-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1665,27 +2617,55 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/xwinlm/</loc>
+    <loc>https://nocloudgpt.com/models/model/xwinlm-13b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/yarn-llama2/</loc>
+    <loc>https://nocloudgpt.com/models/model/xwinlm-70b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/yarn-mistral/</loc>
+    <loc>https://nocloudgpt.com/models/model/xwinlm-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/yi-coder/</loc>
+    <loc>https://nocloudgpt.com/models/model/yarn-llama2-13b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/yi/</loc>
+    <loc>https://nocloudgpt.com/models/model/yarn-llama2-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
-    <loc>https://nocloudgpt.com/models/model/zephyr/</loc>
+    <loc>https://nocloudgpt.com/models/model/yarn-mistral-7b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/yi-34b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/yi-6b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/yi-9b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/yi-coder-1.5b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/yi-coder-9b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/zephyr-141b/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/model/zephyr-7b/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1694,6 +2674,14 @@
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/mxbai-embed-large/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/mxbai/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/mythomax/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1733,6 +2721,10 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/nemotron4/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/neural-chat/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -1746,6 +2738,18 @@
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/nomic-embed-text/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/nomic-embed/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/nomic/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/noroma/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1773,7 +2777,15 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/nous/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/nuextract/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/obsidian/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1782,6 +2794,10 @@
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/olmo-3/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/olmo/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1821,6 +2837,14 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/paligemma/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/pangu/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/paraphrase-multilingual/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -1857,11 +2881,23 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/pixtral/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/pricing.html</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/quote.html</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/qwen-embedding/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/qwen-vl/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1874,6 +2910,10 @@
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/qwen2.5-coder/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/qwen2.5/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1925,6 +2965,10 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/qwen3/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/qwq/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -1937,7 +2981,15 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/recurrentgemma/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/reflection/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/reka/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -1957,6 +3009,14 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/samantha/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/seallm/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/shieldgemma/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -1970,6 +3030,10 @@
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/smollm2/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/snowball/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -2005,6 +3069,10 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/stablelm/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/stablelm2/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -2021,6 +3089,14 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/starling/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/tigerbot/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/tinydolphin/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
@@ -2033,11 +3109,19 @@
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
+    <loc>https://nocloudgpt.com/models/tulu/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://nocloudgpt.com/models/tulu3/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/vicuna/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/whisper/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
@@ -2086,6 +3170,14 @@
   </url>
   <url>
     <loc>https://nocloudgpt.com/models/yi/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/zamba/</loc>
+    <lastmod>2026-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://nocloudgpt.com/models/zamba2/</loc>
     <lastmod>2026-08-02</lastmod>
   </url>
   <url>
