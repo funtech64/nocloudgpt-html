@@ -61,7 +61,7 @@ def nav_html() -> str:
         <a href="/services.html" class="hover:text-white">Services</a>
         <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
         <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">terminal.glass pricing</a>
+        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">Glass Instance pricing</a>
       </nav>
     </div>
   </div>"""
@@ -70,8 +70,8 @@ def nav_html() -> str:
 def footer_html() -> str:
     return """
   <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT helps you select and deploy open models on infrastructure you control. terminal.glass does not sell model weights.</p>
-    <p class="mt-2"><a href="/models/quote.html" class="text-cyan-400 hover:text-cyan-300">Plan deployment fit</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
+    <p>NoCloudGPT (nocloudgpt.com) is the educational model catalog and private Linux deployment guide. Sales, Glass Licenses, and Glass Instances are at <a href="https://terminal.glass/pricing/" class="text-cyan-400 hover:text-cyan-300" target="_blank" rel="noopener">terminal.glass</a>.</p>
+    <p class="mt-2"><a href="https://terminal.glass/pricing/" class="text-cyan-400 hover:text-cyan-300" target="_blank" rel="noopener">Glass Instance pricing</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
   </footer>"""
 
 
@@ -111,14 +111,14 @@ def deployment_cta(model: dict) -> str:
     parts = []
     if model.get("localPrivateSuitable") and model.get("availability") == "available":
         parts.append(
-            '<a href="/models/quote.html" class="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Plan private deployment</a>'
+            '<a href="/models/deploy/" class="rounded-xl bg-cyan-300 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-200">Ubuntu Linux deployment</a>'
         )
         parts.append(
-            '<a href="/models/deploy/on-premise.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">On-premise guide</a>'
+            '<a href="/models/deploy/ollama-openwebui.html" class="rounded-xl border border-slate-700 px-5 py-3 font-bold text-white hover:bg-slate-900">Ollama + OpenWebUI guide</a>'
         )
     if model.get("cloudJetSuitable"):
         parts.append(
-            '<a href="https://terminal.glass/jet-agents/" class="rounded-xl border border-cyan-500/50 px-5 py-3 font-bold text-cyan-100 hover:bg-slate-900" target="_blank" rel="noopener">Jet Agents (cloud lane)</a>'
+            '<a href="https://terminal.glass/jet-agents/" class="rounded-xl border border-cyan-500/50 px-5 py-3 font-bold text-cyan-100 hover:bg-slate-900" target="_blank" rel="noopener">Jet Agents on terminal.glass</a>'
         )
     if not parts:
         parts.append(
@@ -311,30 +311,71 @@ def write_model_page(model: dict, family: dict) -> Path:
     return out_path
 
 
+CLOUD_CATALOG = ROOT / "models" / "data" / "terminal-glass-cloud-models.json"
+
+
+def cloud_catalog_section_html() -> str:
+    if not CLOUD_CATALOG.is_file():
+        return ""
+    entries = load_json(CLOUD_CATALOG)
+    active = [
+        e for e in entries
+        if e.get("status") == "active" and not e.get("aliasOf")
+    ]
+    active.sort(key=lambda e: (e.get("priority", 999), e.get("slug", "")))
+    cards = []
+    for entry in active:
+        slug = entry["slug"]
+        name = escape(entry.get("displayName", slug))
+        category = escape(entry.get("category", "").replace("-", " "))
+        folder = entry.get("folder", f"/models/{slug}/")
+        cards.append(
+            f'<a href="{escape(folder)}" class="rounded-xl border border-slate-800 bg-slate-950 p-4 hover:border-cyan-500/50 block">'
+            f'<div class="text-xs uppercase tracking-wider text-cyan-300">Glass Instance · Ollama Cloud</div>'
+            f'<div class="mt-1 font-bold text-white">{name}</div>'
+            f'<div class="mt-2 text-xs text-slate-400">{category}</div></a>'
+        )
+    grid = "\n        ".join(cards)
+    return f"""
+    <section class="mt-10 rounded-2xl border border-slate-800 bg-slate-900 p-6">
+      <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">Ollama Cloud deployment lane</p>
+          <h2 class="mt-2 text-2xl font-bold text-white">Cloud model families for Terminal.Glass Glass Instances</h2>
+          <p class="mt-2 max-w-3xl text-sm text-slate-400">Each Glass License covers one Linux server or cloud VM running one Terminal.Glass instance. Ollama Cloud handles inference; your host runs OpenWebUI and local tools. Glass Instance packages and pricing: <a href="https://terminal.glass/pricing/" class="text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener">Sunrise Starter $199 (2 licenses)</a>, <a href="https://terminal.glass/pricing/" class="text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener">Sunrise Business $399 (6)</a>, extra license $99.</p>
+        </div>
+        <a href="/models/deploy/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">Deployment options →</a>
+      </div>
+      <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {grid}
+      </div>
+    </section>"""
+
+
 def write_catalog_landing(manifest: dict) -> Path:
     browse_path = CATALOG / "index" / "browse.json"
     browse_json = json.dumps(load_json(browse_path))
     out_path = ROOT / "models" / "index.html"
-    title = "Private AI Model Catalog — Search &amp; deploy with NoCloudGPT"
+    title = "AI Model Catalog — NoCloudGPT"
     desc = (
-        f"Search {manifest['counts']['siteFamilies']} model families and "
-        f"{manifest['counts']['models']} catalog models. Filter by capability, availability, and deployment lane."
+        "240 documented AI model families, more than 44,000 documented deployment sizes, "
+        "and more than 100 Meta AI options. Filter by capability, availability, and deployment lane."
     )
     canonical = f"{SITE}/models/"
 
     html = f"""<!doctype html>
 <html lang="en">
 <head>
-{head_block("Private AI Model Catalog — Deploy with NoCloudGPT", desc.replace("&amp;", "&"), canonical)}
+{head_block("AI Model Catalog — NoCloudGPT", desc, canonical)}
 </head>
 <body class="bg-slate-950 text-slate-100">
 {nav_html()}
   <header class="border-b border-slate-800 bg-slate-950/90">
     <div class="mx-auto max-w-7xl px-6 py-10">
-      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">Catalog · pinned projection</p>
-      <h1 class="mt-3 text-4xl font-bold tracking-tight md:text-5xl">Find a model, plan a deployment.</h1>
-      <p class="mt-5 max-w-3xl text-lg text-slate-300">Search families and canonical models from the pinned Phase 4A public catalog. No live Ollama requests at page load.</p>
-      <p class="mt-2 text-sm text-slate-500">Manifest: {escape(manifest.get('projectionVersion', ''))}</p>
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">NoCloudGPT model catalog</p>
+      <h1 class="mt-3 text-4xl font-bold tracking-tight md:text-5xl">Browse model families and plan your deployment.</h1>
+      <p class="mt-5 max-w-3xl text-lg text-slate-300">240 documented AI model families, more than 44,000 documented deployment sizes, and more than 100 Meta AI options. Search by capability, hardware fit, and deployment lane. Happy Nerds Menu and DokuWiki are included with every Glass Instance.</p>
+      <p class="mt-4 text-sm text-slate-400">Private Linux deployments: Ubuntu Linux VM or server. Customer-owned cloud: <a href="/models/deploy/lightsail-guide.html" class="text-cyan-300 hover:text-cyan-200">AWS Lightsail</a> and <a href="/models/deploy/" class="text-cyan-300 hover:text-cyan-200">DigitalOcean</a> with guided sizing. GCP and Azure guides coming soon.</p>
     </div>
   </header>
   <main class="mx-auto max-w-7xl px-6 py-10">
@@ -361,7 +402,7 @@ def write_catalog_landing(manifest: dict) -> Path:
             <option value="yes">Suitable</option>
           </select>
         </label>
-        <label class="text-sm text-slate-400">Cloud / Jet
+        <label class="text-sm text-slate-400">Ollama Cloud
           <select id="filter-cloud" class="ml-2 rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-sm">
             <option value="">Any</option>
             <option value="yes">Supported</option>
@@ -389,8 +430,9 @@ def write_catalog_landing(manifest: dict) -> Path:
       </div>
       <div id="results" class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
     </section>
+{cloud_catalog_section_html()}
     <section class="mt-10 text-sm text-slate-500">
-      <p>Families: {manifest['counts']['seoEligibleFamilies']} SEO-eligible · Models: {manifest['counts']['seoEligibleModels']} SEO-eligible · Source exceptions (noindex): {manifest['counts']['noindexSourceExceptions']}</p>
+      <p>Catalog projection: {manifest['counts']['seoEligibleFamilies']} SEO-eligible families · {manifest['counts']['seoEligibleModels']} SEO-eligible models · Sales and Glass Licenses at <a href="https://terminal.glass/pricing/" class="text-cyan-400 hover:text-cyan-300" target="_blank" rel="noopener">terminal.glass/pricing</a></p>
     </section>
   </main>
 {footer_html()}

@@ -43,8 +43,9 @@ These pages are for **Terminal Glass Cloud Instances**, not local NoCloudGPT ins
 26. `/models/mistral-large-3-cloud/index.html` — `mistral-large-3`
 27. `/models/minimax-m3-cloud/index.html` — `minimax-m3`
 28. `/models/glm-5.2-cloud/index.html` — `glm-5.2`
-29. `/models/kimi-k2.7-code-cloud/index.html` — `kimi-k2.7-code`
-30. `/models/nemotron-3-ultra-cloud/index.html` — `nemotron-3-ultra`
+29. `/models/kimi-k2.7-cloud/index.html` — `kimi-k2.7-code` (Terminal.Glass slug; same Ollama family as kimi-k2.7-code-cloud)
+30. `/models/kimi-k2.7-code-cloud/index.html` — `kimi-k2.7-code`
+31. `/models/nemotron-3-ultra-cloud/index.html` — `nemotron-3-ultra`
 
 ## Hold / do not build as cloud pages yet
 
