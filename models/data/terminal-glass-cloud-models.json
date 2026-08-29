@@ -337,6 +337,18 @@
   },
   {
     "priority": 29,
+    "slug": "kimi-k2.7-cloud",
+    "displayName": "Kimi K2.7 Cloud",
+    "ollamaFamily": "kimi-k2.7-code",
+    "exampleRun": "ollama run kimi-k2.7-code:<tag>-cloud",
+    "category": "coding-agentic",
+    "folder": "/models/kimi-k2.7-cloud/",
+    "localFamilyFolder": "/models/kimi/",
+    "deploymentMode": "terminal-glass-cloud",
+    "status": "active"
+  },
+  {
+    "priority": 30,
     "slug": "kimi-k2.7-code-cloud",
     "displayName": "Kimi K2.7 Code Cloud",
     "ollamaFamily": "kimi-k2.7-code",
@@ -345,10 +357,11 @@
     "folder": "/models/kimi-k2.7-code-cloud/",
     "localFamilyFolder": "/models/kimi/",
     "deploymentMode": "terminal-glass-cloud",
-    "status": "active"
+    "status": "active",
+    "aliasOf": "kimi-k2.7-cloud"
   },
   {
-    "priority": 30,
+    "priority": 31,
     "slug": "nemotron-3-ultra-cloud",
     "displayName": "Nemotron 3 Ultra Cloud",
     "ollamaFamily": "nemotron-3-ultra",

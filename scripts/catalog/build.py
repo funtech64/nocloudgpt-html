@@ -311,6 +311,47 @@ def write_model_page(model: dict, family: dict) -> Path:
     return out_path
 
 
+CLOUD_CATALOG = ROOT / "models" / "data" / "terminal-glass-cloud-models.json"
+
+
+def cloud_catalog_section_html() -> str:
+    if not CLOUD_CATALOG.is_file():
+        return ""
+    entries = load_json(CLOUD_CATALOG)
+    active = [
+        e for e in entries
+        if e.get("status") == "active" and not e.get("aliasOf")
+    ]
+    active.sort(key=lambda e: (e.get("priority", 999), e.get("slug", "")))
+    cards = []
+    for entry in active:
+        slug = entry["slug"]
+        name = escape(entry.get("displayName", slug))
+        category = escape(entry.get("category", "").replace("-", " "))
+        folder = entry.get("folder", f"/models/{slug}/")
+        cards.append(
+            f'<a href="{escape(folder)}" class="rounded-xl border border-slate-800 bg-slate-950 p-4 hover:border-cyan-500/50 block">'
+            f'<div class="text-xs uppercase tracking-wider text-cyan-300">Terminal Glass Cloud</div>'
+            f'<div class="mt-1 font-bold text-white">{name}</div>'
+            f'<div class="mt-2 text-xs text-slate-400">{category}</div></a>'
+        )
+    grid = "\n        ".join(cards)
+    return f"""
+    <section class="mt-10 rounded-2xl border border-slate-800 bg-slate-900 p-6">
+      <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">Cloud deployment lane</p>
+          <h2 class="mt-2 text-2xl font-bold text-white">Terminal Glass cloud model families</h2>
+          <p class="mt-2 max-w-3xl text-sm text-slate-400">Ollama Cloud-backed inference with a small local Linux host. Licensing and packages: <a href="https://terminal.glass/pricing/" class="text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener">terminal.glass pricing</a>.</p>
+        </div>
+        <a href="/models/deploy/" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">Deployment options →</a>
+      </div>
+      <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {grid}
+      </div>
+    </section>"""
+
+
 def write_catalog_landing(manifest: dict) -> Path:
     browse_path = CATALOG / "index" / "browse.json"
     browse_json = json.dumps(load_json(browse_path))
@@ -389,6 +430,7 @@ def write_catalog_landing(manifest: dict) -> Path:
       </div>
       <div id="results" class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
     </section>
+{cloud_catalog_section_html()}
     <section class="mt-10 text-sm text-slate-500">
       <p>Families: {manifest['counts']['seoEligibleFamilies']} SEO-eligible · Models: {manifest['counts']['seoEligibleModels']} SEO-eligible · Source exceptions (noindex): {manifest['counts']['noindexSourceExceptions']}</p>
     </section>
