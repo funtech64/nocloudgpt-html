@@ -42,9 +42,13 @@ This means precise, minimal section insertions and copy improvements only.
 Update outdated pages including `pricing.html`, `quote.html`, and related sales/quote flows.  
 Do **not** work on Phase 5 until a human explicitly says Phase 1 is complete.
 
-## 4. New Marketing Direction (terminal.glass)
+## 4. New Marketing Direction (COLORS.chat + terminal.glass)
 
-terminal.glass is being repositioned as a **deterministic, one-script deployment platform** for SEO AI workers and MLOps professionals who want headless operation.
+COLORS.chat is the customer-facing product (Spectrum Mark + workspace UI). nocloudgpt.com explains private/local deployment. YourCloudGPT explains customer-owned cloud. terminal.glass remains the sales/deployment hub. colors.chat is the Shopify order-now store. colorschat.com is YouTube.
+
+Do not invent new prices. Sunrise Starter $199 / Business $399 / additional Glass License $99. Do not restyle catalog family pages in brand passes.
+
+terminal.glass is also a **deterministic, one-script deployment platform** for SEO AI workers and MLOps professionals who want headless operation.
 
 **Key Positioning:**
 - “Turn Any Server into an SEO AI Worker.”
