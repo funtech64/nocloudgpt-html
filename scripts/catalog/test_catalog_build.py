@@ -81,6 +81,15 @@ class CatalogBuildTests(unittest.TestCase):
             if path.is_dir() and ":" in path.name:
                 self.fail(f"unexpected variant route: {path.name}")
 
+    def test_editorial_family_pages_survive_rebuild(self) -> None:
+        llama = ROOT / "models" / "llama" / "index.html"
+        before = llama.read_text(encoding="utf-8")
+        self.assertIn("Llama Models — Private AI Foundation Models", before)
+        self.assertNotIn("Factual catalog summary from the pinned public projection", before)
+        subprocess.run([sys.executable, str(BUILD)], capture_output=True, text=True, check=True)
+        after = llama.read_text(encoding="utf-8")
+        self.assertEqual(before, after)
+
 
 if __name__ == "__main__":
     unittest.main()

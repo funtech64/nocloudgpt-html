@@ -129,8 +129,18 @@ def deployment_cta(model: dict) -> str:
 
 # Families with dedicated Terminal Glass cloud marketing pages — do not overwrite with catalog template.
 PRESERVE_FAMILY_PAGES = frozenset(
-    {p.name for p in (ROOT / "models").iterdir() if p.is_dir() and p.name.endswith("-cloud")}
+    {p.name for p in (ROOT / "models").iterdir() if p.is_dir() and p.name.lower().endswith("-cloud")}
 )
+
+# Generated stubs always include this sentence. Hand-written family pages do not.
+GENERATED_FAMILY_MARKER = "Factual catalog summary from the pinned public projection"
+
+
+def is_editorial_family_page(path: Path) -> bool:
+    """Return True when an existing family page is hand-written, not a catalog stub."""
+    if not path.is_file():
+        return False
+    return GENERATED_FAMILY_MARKER not in path.read_text(encoding="utf-8")
 
 
 def write_family_page(family: dict, models: list[dict]) -> Path | None:
@@ -140,6 +150,8 @@ def write_family_page(family: dict, models: list[dict]) -> Path | None:
     out_dir = ROOT / "models" / slug
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "index.html"
+    if is_editorial_family_page(out_path):
+        return None
 
     fam_models = [m for m in models if m["familySlug"] == slug]
     verified = "verified publisher" if family.get("publisherVerified") else "unverified publisher metadata"
@@ -569,9 +581,13 @@ def main() -> int:
     family_by_slug = {f["slug"]: f for f in families}
 
     family_paths = []
+    editorial_preserved = 0
     model_paths = []
     for f in families:
         if f.get("seoEligible"):
+            existing = ROOT / "models" / f["slug"] / "index.html"
+            if is_editorial_family_page(existing) and f["slug"] not in PRESERVE_FAMILY_PAGES:
+                editorial_preserved += 1
             p = write_family_page(f, models)
             if p:
                 family_paths.append(p)
@@ -602,6 +618,7 @@ def main() -> int:
 
     summary = {
         "familyPages": len(family_paths),
+        "editorialPreserved": editorial_preserved,
         "modelPages": len(model_paths),
         "landing": str(landing.relative_to(ROOT)),
         "sitemap": str(sitemap.relative_to(ROOT)),
