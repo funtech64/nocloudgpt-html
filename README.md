@@ -1,16 +1,29 @@
 # NoCloudGPT Website
 
-This repository contains the public website for **NoCloudGPT** — a private AI deployment platform that helps businesses and individuals run powerful open-source models on infrastructure they control.
+This repository contains the public website for **NoCloudGPT** — the private-deployment explanation site for **COLORS.chat**.
+
+**COLORS.chat** is the product customers see: a private AI workspace (Spectrum Mark, cyan → teal → amber). **colorsXUI** is the operations name. Customers buy *COLORS.chat, powered by colorsXUI*.
+
+## Brand network
+
+| Site | Role |
+|------|------|
+| [colorschat.com](https://colorschat.com) | YouTube |
+| [colors.chat](https://colors.chat) | Shopify storefront — Order now |
+| [terminal.glass](https://terminal.glass) | Linux software, Glass Licenses, Glass Agents, Jet Agents, cloud deployments |
+| [nocloudgpt.com](https://nocloudgpt.com) | This site — model catalog and where COLORS.chat runs (Mac / Linux / private) |
+
+NoCloudGPT and YourCloudGPT are **deployment explanations**, not competing products.
 
 ## What is NoCloudGPT?
 
-NoCloudGPT makes private AI simple. It provides a **single-script deployment** experience using Ollama + OpenWebUI, so users can run ChatGPT-style interfaces privately without becoming Linux administrators or paying ongoing API fees.
+NoCloudGPT explains how to run COLORS.chat privately on a Mac or Linux server you control (including air-gapped hosts). YourCloudGPT explains customer-owned cloud (AWS, Lightsail, DigitalOcean). Installers and licenses stay on terminal.glass.
 
 The platform focuses on:
 - True data privacy (nothing leaves your server)
-- Simple one-command installation
+- Simple one-command installation via terminal.glass
 - Clear guidance on which models to use
-- Flexible deployment across three clean options
+- Flexible deployment across Mac, Linux, and customer cloud
 
 ## Deployment Options
 
@@ -26,14 +39,15 @@ These replace older “hybrid / on-prem / cloud” language. The goal is clarity
 
 ## Site Structure
 
-| Path              | Purpose                                      |
-|-------------------|----------------------------------------------|
-| `index.html`      | Main homepage                                |
-| `/models/`        | Model family catalog (70+ families)          |
-| `/deploy/`        | Deployment guides (including 90-day pilot)   |
-| `pricing.html`    | Platform tiers + Compute tiers               |
-| `quote.html`      | Interactive quote builder                    |
-| `contact.html`    | Contact form                                 |
+| Path | Purpose |
+|------|---------|
+| `index.html` | COLORS.chat homepage + NoCloudGPT / YourCloudGPT explanations |
+| `software.html` | COLORS.chat product page (Spectrum Mark + workspace) |
+| `/models/` | Model family catalog (do not restyle family pages for brand work) |
+| `/models/deploy/` | Deployment guides |
+| `pricing.html` | Educational licensing — checkout stays on terminal.glass |
+| `contact.html` | Contact form |
+| `brand/` | Canonical Spectrum Mark and product screenshots |
 
 ## Current Focus (Phase 1)
 
@@ -51,7 +65,7 @@ The site emphasizes **simplicity and honesty**:
 - No raw AWS pricing or confusing infrastructure details on family pages
 - Strong focus on real-world use cases
 
-**Note:** `pricing.html`, `quote.html`, and related sales pages are currently outdated and will be updated in **Phase 5** after Phase 1 is complete.
+Marketing chrome uses the COLORS.chat Spectrum Mark (`#06B6D4` → `#0D9488` → `#F59E0B`). Catalog family pages and published prices/license counts are not redesigned in brand passes.
 
 ## 90-Day Free Pilot
 

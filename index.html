@@ -3,203 +3,247 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NoCloudGPT • Private AI Deployments</title>
-  <meta name="description" content="Educational guides for private AI, self-hosted models, and NoCloudGPT deployments — part of the terminal.glass platform.">
+  <title>COLORS.chat • Your private AI workspace | NoCloudGPT</title>
+  <meta name="description" content="COLORS.chat is your private AI workspace. Run it on your Mac, your Linux server, or your cloud. NoCloudGPT explains local deployment; terminal.glass handles licenses and installers.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://nocloudgpt.com/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="NoCloudGPT • Private AI Deployments">
-  <meta property="og:description" content="Run powerful open-source AI models privately with simple one-script deployments. Educational model catalog and deployment guides.">
+  <link rel="apple-touch-icon" href="/brand/brand-mark.png">
+  <meta property="og:title" content="COLORS.chat • Your private AI workspace">
+  <meta property="og:description" content="Run COLORS.chat on your Mac, your Linux server, or your cloud. NoCloudGPT is the private deployment path inside the COLORS.chat network.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nocloudgpt.com/">
   <meta property="og:site_name" content="NoCloudGPT">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="NoCloudGPT • Private AI Deployments">
-  <meta name="twitter:description" content="Educational guides for private AI, self-hosting, and open models.">
+  <meta property="og:image" content="https://nocloudgpt.com/brand/colors-chat-workspace.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="COLORS.chat • Your private AI workspace">
+  <meta name="twitter:description" content="Your private AI workspace. Run it on your Mac, your Linux server, or your cloud.">
+  <meta name="twitter:image" content="https://nocloudgpt.com/brand/colors-chat-workspace.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
-  <style>
-    :root {
-      --accent: #2f6fed;
-    }
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f8fbff;
-      color: #18324a;
-      line-height: 1.6;
-      margin: 0;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-    header {
-      background: white;
-      border-bottom: 1px solid #d7e3f0;
-      padding: 1rem 0;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: #10263a;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      color: #18324a;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .hero {
-      padding: 5rem 0 4rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #10263a;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      color: #5f748b;
-      max-width: 620px;
-      margin: 0 auto 2rem;
-    }
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-weight: 600;
-      text-decoration: none;
-      margin: 0 0.5rem;
-    }
-    .btn-primary {
-      background: #2f6fed;
-      color: white;
-    }
-    .btn-secondary {
-      background: white;
-      color: #2f6fed;
-      border: 2px solid #2f6fed;
-    }
-    .section {
-      padding: 3rem 0;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: white;
-      border: 1px solid #d7e3f0;
-      border-radius: 12px;
-      padding: 1.75rem;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #10263a;
-    }
-    footer {
-      background: #10263a;
-      color: #a8c0d8;
-      padding: 2rem 0;
-      text-align: center;
-      font-size: 0.95rem;
-    }
-  </style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <nav>
-      <div class="logo">NoCloudGPT</div>
-      <div>
-        <a href="/services.html">Services</a>
-        <a href="/models/">Models</a>
-        <a href="/software.html">Software</a>
-        <a href="/models/deploy/">Deploy</a>
-        <a href="/contact.html">Contact</a>
-        <a href="https://terminal.glass" target="_blank" rel="noopener">terminal.glass</a>
-      </div>
+<div class="ecosystem-bar">
+  <div class="container ecosystem-inner">
+    <span class="ecosystem-label">COLORS.chat network</span>
+    <div>
+      <a href="https://colorschat.com" target="_blank" rel="noopener">colorschat.com · YouTube</a>
+      <a href="https://colors.chat" target="_blank" rel="noopener">colors.chat · Order now</a>
+      <a href="https://terminal.glass" target="_blank" rel="noopener">terminal.glass · Deploy</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="/" class="lockup" aria-label="COLORS.chat via NoCloudGPT">
+      <span class="spectrum-mark" aria-hidden="true"></span>
+      <span class="lockup-text">
+        <strong class="wordmark">COLORS.chat</strong>
+        <span>Private deployment · NoCloudGPT</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/software.html">Product</a>
+      <a href="/models/deploy/">Deploy</a>
+      <a href="/models/">Models</a>
+      <a href="/pricing.html">Licensing</a>
+      <a href="/services.html">Services</a>
+      <a href="/contact.html">Contact</a>
+      <a class="btn btn-primary" href="https://colors.chat" target="_blank" rel="noopener" style="min-height:40px;padding:0.45rem 1rem;">Order now</a>
     </nav>
   </div>
 </header>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="container">
-    <h1>Private AI.<br>Technical guides you control.</h1>
-    <p>NoCloudGPT is the local and private deployment option within the terminal.glass platform — model catalogs, deployment guides, and educational resources for self-hosted AI.</p>
-    
-    <div style="margin-top: 2rem;">
-      <a href="/models/" class="btn btn-primary">Browse Model Catalog</a>
-      <a href="/models/deploy/" class="btn btn-secondary">Deployment Guides</a>
-      <a href="https://terminal.glass/pricing/" class="btn btn-secondary" target="_blank" rel="noopener">View Deployment Pricing</a>
-    </div>
-  </div>
-</section>
-
-<!-- Value -->
-<section class="section">
-  <div class="container">
-    <h2>Three Clean Deployment Paths</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Air-Gapped</h3>
-        <p>Maximum privacy and isolation. Run everything behind your firewall with zero outbound dependencies.</p>
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">COLORS.chat Spectrum Mark</p>
+        <h1><span class="wordmark">COLORS.chat</span><br>Your private AI workspace.</h1>
+        <p class="lede">Run it on your Mac, your Linux server, or your cloud.</p>
+        <p>This is the software customers see. NoCloudGPT explains where that workspace runs privately. YourCloudGPT explains customer-owned cloud. Licenses, installers, Glass Agents, and Jet Agents live on terminal.glass. Order on colors.chat.</p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="https://colors.chat" target="_blank" rel="noopener">Order COLORS.chat</a>
+          <a class="btn btn-secondary" href="https://terminal.glass/pricing/" target="_blank" rel="noopener">View deployment pricing</a>
+          <a class="btn btn-ghost" href="/software.html">See the product</a>
+        </div>
+        <p class="powered" style="margin-top:1.2rem;">COLORS.chat, powered by colorsXUI · Licensed through terminal.glass</p>
       </div>
-      <div class="card">
-        <h3>AWS Lightsail</h3>
-        <p>Simple, reliable cloud deployment with Amazon infrastructure — without the complexity.</p>
-      </div>
-      <div class="card">
-        <h3>DigitalOcean</h3>
-        <p>Fast, developer-friendly infrastructure for quick and clean private AI deployments.</p>
+      <figure class="product-frame">
+        <img src="/brand/colors-chat-auth.jpg" width="1400" height="933" alt="COLORS.chat sign-in screen with Spectrum Mark, gradient wordmark, and Sign In button">
+        <figcaption class="frame-caption">The COLORS.chat authentication screen — Spectrum Mark, gradient wordmark, spectrum Sign In.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <p class="eyebrow">The workspace you buy</p>
+      <h2>Evidence that you are buying software — not an installation service.</h2>
+      <p style="max-width:46rem;">COLORS.chat is the private chat workspace: models, documents, team access, and agents on infrastructure you control. The Spectrum Mark and this interface are the visual anchor across nocloudgpt.com, colors.chat, colorschat.com, and terminal.glass.</p>
+      <figure class="product-frame" style="margin-top:1.4rem;">
+        <img src="/brand/colors-chat-workspace.jpg" width="1536" height="1024" alt="COLORS.chat private AI workspace with sidebar, spectrum lockup, and message composer">
+        <figcaption class="frame-caption">COLORS.chat workspace — New Chat chrome, private briefing history, and the spectrum lockup in the empty state.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <p class="eyebrow">One brand, four destinations</p>
+      <h2>Linked together on purpose.</h2>
+      <div class="grid-4" style="margin-top:1.2rem;">
+        <article class="card">
+          <p class="site-tag">YouTube</p>
+          <h3>colorschat.com</h3>
+          <p>Watch walkthroughs, deploy stories, and product updates for COLORS.chat.</p>
+          <p><a href="https://colorschat.com" target="_blank" rel="noopener">Open YouTube hub →</a></p>
+        </article>
+        <article class="card">
+          <p class="site-tag">Shopify · Order now</p>
+          <h3>colors.chat</h3>
+          <p>The storefront. Order COLORS.chat and related software packages here.</p>
+          <p><a href="https://colors.chat" target="_blank" rel="noopener">Order now →</a></p>
+        </article>
+        <article class="card">
+          <p class="site-tag">Linux software</p>
+          <h3>terminal.glass</h3>
+          <p>Sales and deployment hub: Glass Licenses, one-script installers, Glass Agents, Jet Agents, and cloud paths.</p>
+          <p><a href="https://terminal.glass" target="_blank" rel="noopener">Deploy with terminal.glass →</a></p>
+        </article>
+        <article class="card">
+          <p class="site-tag">This site</p>
+          <h3>nocloudgpt.com</h3>
+          <p>Deployment explanation: model catalog, private Linux / Mac paths, and how COLORS.chat stays on hardware you control.</p>
+          <p><a href="/models/deploy/">Read deployment guides →</a></p>
+        </article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Model Catalog -->
-<section class="section" style="background: white;">
-  <div class="container">
-    <h2>Explore 70+ Model Families</h2>
-    <p style="text-align: center; max-width: 620px; margin: 0 auto 2rem; color: #5f748b;">
-      Find the right model for your workload. Every family page includes clear use cases, deployment recommendations, and honest guidance.
-    </p>
-    <div style="text-align: center;">
-      <a href="/models/" class="btn btn-primary">Browse the Full Catalog →</a>
+  <section class="band">
+    <div class="container">
+      <p class="eyebrow">Where it runs</p>
+      <h2>NoCloudGPT and YourCloudGPT explain the path. COLORS.chat is the product.</h2>
+      <p style="max-width:46rem;">These are not competing brands. They describe where your private workspace lives after you buy COLORS.chat.</p>
+      <div class="grid-3" style="margin-top:1.2rem;">
+        <article class="card">
+          <h3>Mac</h3>
+          <p>Run COLORS.chat on a Mac you own. Local models, local chats, local documents.</p>
+        </article>
+        <article class="card">
+          <h3>NoCloudGPT · Linux</h3>
+          <p>Air-gapped or on-premise Ubuntu/Debian servers. Maximum privacy. Inference stays on hardware you control.</p>
+          <p><a href="/models/deploy/on-premise.html">On-premise guide →</a></p>
+        </article>
+        <article class="card">
+          <h3>YourCloudGPT · Cloud</h3>
+          <p>Customer-owned AWS, Lightsail, or DigitalOcean. You keep the cloud account. terminal.glass provides the installer and activation.</p>
+          <p><a href="/models/deploy/lightsail-guide.html">Lightsail guide →</a></p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- terminal.glass -->
-<section class="section">
-  <div class="container" style="max-width: 720px; text-align: center;">
-    <h2>Ready to deploy with Glass Licenses?</h2>
-    <p style="color: #5f748b; margin-bottom: 1.5rem;">
-      terminal.glass is the licensing, pricing, and deployment sales destination for supported NoCloudGPT installations. Browse technical fit here; purchase packages on terminal.glass.
-    </p>
-    <a href="https://terminal.glass/pricing/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 36px;">
-      View Deployment Pricing →
-    </a>
-    <p style="margin-top: 1rem; color: #5f748b; font-size: 0.95rem;">
-      <a href="/pricing.html">Read the NoCloudGPT licensing overview</a>
-    </p>
-  </div>
-</section>
+  <section class="band">
+    <div class="container">
+      <p class="eyebrow">Sunrise packages</p>
+      <h2>Same licenses. COLORS.chat visual identity.</h2>
+      <p class="note">Authoritative checkout stays on terminal.glass. Quantities and prices are unchanged.</p>
+      <div class="grid-3" style="margin-top:1.2rem;">
+        <article class="card">
+          <h3>Sunrise Starter</h3>
+          <p class="price">$199 <span>· 2 portable Glass Licenses</span></p>
+          <p>First COLORS.chat hosts — a private workspace plus room for a second supported deployment.</p>
+        </article>
+        <article class="card">
+          <h3>Sunrise Business</h3>
+          <p class="price">$399 <span>· 6 portable Glass Licenses</span></p>
+          <p>Teams and multi-location rollouts. Same product, more concurrent Glass Instances.</p>
+        </article>
+        <article class="card">
+          <h3>Additional Glass License</h3>
+          <p class="price">$99 <span>· one more active deployment</span></p>
+          <p>Add another Mac, Linux server, cloud instance, or supported agent lane.</p>
+        </article>
+      </div>
+      <div class="button-row">
+        <a class="btn btn-primary" href="https://terminal.glass/pricing/" target="_blank" rel="noopener">Confirm pricing on terminal.glass</a>
+        <a class="btn btn-secondary" href="/pricing.html">Licensing overview</a>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <div class="container">
-    <p>Colorado, USA • Private AI You Control • Part of the terminal.glass platform</p>
-    <p style="margin-top: 0.5rem; opacity: 0.7;">© 2026 NoCloudGPT</p>
+  <section class="band">
+    <div class="container">
+      <p class="eyebrow">Agents, models, catalog</p>
+      <h2>Under the COLORS.chat workspace.</h2>
+      <div class="grid-3" style="margin-top:1.2rem;">
+        <article class="card">
+          <h3>Glass Agents</h3>
+          <p>OpenClaw-powered agents that work through tools and workflows you approve. Sold and deployed through terminal.glass.</p>
+        </article>
+        <article class="card">
+          <h3>Jet Agents</h3>
+          <p>Ollama CPU/GPU compute agents that run the private models selected for the workload.</p>
+        </article>
+        <article class="card">
+          <h3>240 model families</h3>
+          <p>The NoCloudGPT catalog stays the technical fit guide — prices and family pages are unchanged. COLORS.chat is the interface those models appear in.</p>
+          <p><a href="/models/">Browse the catalog →</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <div class="cta-panel">
+        <p class="eyebrow" style="color:#7ee3ef;">Ready</p>
+        <h2>Order COLORS.chat. Deploy it where you want it.</h2>
+        <p>Storefront on colors.chat. Licenses and Linux/cloud installers on terminal.glass. This site explains the private path — models, hardware, and NoCloudGPT versus YourCloudGPT.</p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="https://colors.chat" target="_blank" rel="noopener">Order now on colors.chat</a>
+          <a class="btn btn-secondary" href="https://terminal.glass/pricing/" target="_blank" rel="noopener">terminal.glass pricing</a>
+          <a class="btn btn-ghost" href="/contact.html" style="color:#fff;border-color:rgba(255,255,255,0.2);">Technical questions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="/" class="lockup" style="margin-bottom:0.8rem;">
+        <span class="spectrum-mark" aria-hidden="true"></span>
+        <span class="lockup-text">
+          <strong class="wordmark">COLORS.chat</strong>
+          <span>via NoCloudGPT</span>
+        </span>
+      </a>
+      <p>Colorado, USA · Remote services available · In-person: Denver Metro Area only</p>
+      <p>© 2026 NoCloudGPT · COLORS.chat, powered by colorsXUI</p>
+    </div>
+    <div>
+      <h3>Network</h3>
+      <a href="https://colorschat.com" target="_blank" rel="noopener">colorschat.com · YouTube</a>
+      <a href="https://colors.chat" target="_blank" rel="noopener">colors.chat · Order now</a>
+      <a href="https://terminal.glass" target="_blank" rel="noopener">terminal.glass · Deploy</a>
+      <a href="https://terminal.glass/pricing/" target="_blank" rel="noopener">Glass License pricing</a>
+    </div>
+    <div>
+      <h3>This site</h3>
+      <a href="/software.html">Product</a>
+      <a href="/models/">Model catalog</a>
+      <a href="/models/deploy/">Deployment guides</a>
+      <a href="/pricing.html">Licensing overview</a>
+      <a href="/contact.html">Contact</a>
+    </div>
   </div>
 </footer>
 
