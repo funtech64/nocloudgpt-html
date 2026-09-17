@@ -90,6 +90,24 @@ class CatalogBuildTests(unittest.TestCase):
         after = llama.read_text(encoding="utf-8")
         self.assertEqual(before, after)
 
+    def test_spectrum_artwork_on_catalog_surfaces(self) -> None:
+        samples = (
+            "models/index.html",
+            "models/llama/index.html",
+            "models/zephyr/index.html",
+            "models/alfred/index.html",
+            "models/model/llama3/index.html",
+            "models/deploy/index.html",
+            "models/quote.html",
+            "models/chatgpt-alternatives/index.html",
+        )
+        for rel in samples:
+            html = (ROOT / rel).read_text(encoding="utf-8")
+            self.assertIn("spectrum-mark", html, rel)
+            self.assertIn("colors-chat-workspace.jpg", html, rel)
+            self.assertIn("/brand/chrome.css", html, rel)
+            self.assertEqual(html.count('data-spectrum-chrome="1"'), 1, rel)
+
 
 if __name__ == "__main__":
     unittest.main()
