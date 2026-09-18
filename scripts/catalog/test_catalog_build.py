@@ -81,6 +81,33 @@ class CatalogBuildTests(unittest.TestCase):
             if path.is_dir() and ":" in path.name:
                 self.fail(f"unexpected variant route: {path.name}")
 
+    def test_editorial_family_pages_survive_rebuild(self) -> None:
+        llama = ROOT / "models" / "llama" / "index.html"
+        before = llama.read_text(encoding="utf-8")
+        self.assertIn("Llama Models — Private AI Foundation Models", before)
+        self.assertNotIn("Factual catalog summary from the pinned public projection", before)
+        subprocess.run([sys.executable, str(BUILD)], capture_output=True, text=True, check=True)
+        after = llama.read_text(encoding="utf-8")
+        self.assertEqual(before, after)
+
+    def test_spectrum_artwork_on_catalog_surfaces(self) -> None:
+        samples = (
+            "models/index.html",
+            "models/llama/index.html",
+            "models/zephyr/index.html",
+            "models/alfred/index.html",
+            "models/model/llama3/index.html",
+            "models/deploy/index.html",
+            "models/quote.html",
+            "models/chatgpt-alternatives/index.html",
+        )
+        for rel in samples:
+            html = (ROOT / rel).read_text(encoding="utf-8")
+            self.assertIn("spectrum-mark", html, rel)
+            self.assertIn("colors-chat-workspace.jpg", html, rel)
+            self.assertIn("/brand/chrome.css", html, rel)
+            self.assertEqual(html.count('data-spectrum-chrome="1"'), 1, rel)
+
 
 if __name__ == "__main__":
     unittest.main()

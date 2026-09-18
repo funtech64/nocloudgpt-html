@@ -11,6 +11,8 @@ from datetime import date
 from html import escape
 from pathlib import Path
 
+from chrome import HEAD_LINKS, site_chrome, site_footer
+
 ROOT = Path(__file__).resolve().parents[2]
 CATALOG = ROOT / "models" / "data" / "P4-Public-Catalog"
 SITE = "https://nocloudgpt.com"
@@ -50,29 +52,12 @@ def load_json(path: Path) -> object:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def nav_html() -> str:
-    return """
-  <div class="border-b border-slate-800 bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
-      <a href="/" class="font-bold text-cyan-300 hover:text-cyan-200">NoCloudGPT</a>
-      <nav class="flex flex-wrap gap-4 text-slate-400">
-        <a href="/models/" class="text-white">Models</a>
-        <a href="/models/deploy/" class="hover:text-white">Deploy</a>
-        <a href="/services.html" class="hover:text-white">Services</a>
-        <a href="/models/pricing.html" class="hover:text-white">Licensing</a>
-        <a href="/contact.html" class="hover:text-white">Contact</a>
-        <a href="https://terminal.glass/pricing/" class="hover:text-white" target="_blank" rel="noopener">Glass Instance pricing</a>
-      </nav>
-    </div>
-  </div>"""
+def nav_html(active: str = "models") -> str:
+    return site_chrome(active)
 
 
 def footer_html() -> str:
-    return """
-  <footer class="border-t border-slate-800 bg-slate-950 px-6 py-10 text-center text-sm text-slate-500">
-    <p>NoCloudGPT (nocloudgpt.com) is the educational model catalog and private Linux deployment guide. Sales, Glass Licenses, and Glass Instances are at <a href="https://terminal.glass/pricing/" class="text-cyan-400 hover:text-cyan-300" target="_blank" rel="noopener">terminal.glass</a>.</p>
-    <p class="mt-2"><a href="https://terminal.glass/pricing/" class="text-cyan-400 hover:text-cyan-300" target="_blank" rel="noopener">Glass Instance pricing</a> · <a href="/models/deploy/index.html" class="text-cyan-400 hover:text-cyan-300">Deployment options</a></p>
-  </footer>"""
+    return site_footer()
 
 
 def head_block(
@@ -96,6 +81,7 @@ def head_block(
   <meta property="og:description" content="{escape(description)}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{escape(canonical)}">
+{HEAD_LINKS}
   <script src="https://cdn.tailwindcss.com"></script>{ld}"""
 
 
@@ -129,8 +115,18 @@ def deployment_cta(model: dict) -> str:
 
 # Families with dedicated Terminal Glass cloud marketing pages — do not overwrite with catalog template.
 PRESERVE_FAMILY_PAGES = frozenset(
-    {p.name for p in (ROOT / "models").iterdir() if p.is_dir() and p.name.endswith("-cloud")}
+    {p.name for p in (ROOT / "models").iterdir() if p.is_dir() and p.name.lower().endswith("-cloud")}
 )
+
+# Generated stubs always include this sentence. Hand-written family pages do not.
+GENERATED_FAMILY_MARKER = "Factual catalog summary from the pinned public projection"
+
+
+def is_editorial_family_page(path: Path) -> bool:
+    """Return True when an existing family page is hand-written, not a catalog stub."""
+    if not path.is_file():
+        return False
+    return GENERATED_FAMILY_MARKER not in path.read_text(encoding="utf-8")
 
 
 def write_family_page(family: dict, models: list[dict]) -> Path | None:
@@ -140,6 +136,8 @@ def write_family_page(family: dict, models: list[dict]) -> Path | None:
     out_dir = ROOT / "models" / slug
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "index.html"
+    if is_editorial_family_page(out_path):
+        return None
 
     fam_models = [m for m in models if m["familySlug"] == slug]
     verified = "verified publisher" if family.get("publisherVerified") else "unverified publisher metadata"
@@ -372,7 +370,7 @@ def write_catalog_landing(manifest: dict) -> Path:
 {nav_html()}
   <header class="border-b border-slate-800 bg-slate-950/90">
     <div class="mx-auto max-w-7xl px-6 py-10">
-      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">NoCloudGPT model catalog</p>
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">COLORS.chat · NoCloudGPT catalog</p>
       <h1 class="mt-3 text-4xl font-bold tracking-tight md:text-5xl">Browse model families and plan your deployment.</h1>
       <p class="mt-5 max-w-3xl text-lg text-slate-300">240 documented AI model families, more than 44,000 documented deployment sizes, and more than 100 Meta AI options. Search by capability, hardware fit, and deployment lane. Happy Nerds Menu and DokuWiki are included with every Glass Instance.</p>
       <p class="mt-4 text-sm text-slate-400">Private Linux deployments: Ubuntu Linux VM or server. Customer-owned cloud: <a href="/models/deploy/lightsail-guide.html" class="text-cyan-300 hover:text-cyan-200">AWS Lightsail</a> and <a href="/models/deploy/" class="text-cyan-300 hover:text-cyan-200">DigitalOcean</a> with guided sizing. GCP and Azure guides coming soon.</p>
@@ -569,9 +567,13 @@ def main() -> int:
     family_by_slug = {f["slug"]: f for f in families}
 
     family_paths = []
+    editorial_preserved = 0
     model_paths = []
     for f in families:
         if f.get("seoEligible"):
+            existing = ROOT / "models" / f["slug"] / "index.html"
+            if is_editorial_family_page(existing) and f["slug"] not in PRESERVE_FAMILY_PAGES:
+                editorial_preserved += 1
             p = write_family_page(f, models)
             if p:
                 family_paths.append(p)
@@ -602,6 +604,7 @@ def main() -> int:
 
     summary = {
         "familyPages": len(family_paths),
+        "editorialPreserved": editorial_preserved,
         "modelPages": len(model_paths),
         "landing": str(landing.relative_to(ROOT)),
         "sitemap": str(sitemap.relative_to(ROOT)),
