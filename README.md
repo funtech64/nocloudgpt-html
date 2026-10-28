@@ -8,8 +8,8 @@ This repository contains the public website for **NoCloudGPT** — the private-d
 
 | Site | Role |
 |------|------|
-| [colorschat.com](https://colorschat.com) | YouTube |
-| [colors.chat](https://colors.chat) | Shopify storefront — Order now |
+| [colorschat.com](https://colorschat.com) | COLORS.chat public marketing site: Independent AI and Jets |
+| [shop.nocloudgpt.com](https://shop.nocloudgpt.com) | Shopify storefront — Shop Software (colors.chat redirects here) |
 | [terminal.glass](https://terminal.glass) | Linux software, Glass Licenses, Glass Agents, Jet Agents, cloud deployments |
 | [nocloudgpt.com](https://nocloudgpt.com) | This site — model catalog and where COLORS.chat runs (Mac / Linux / private) |
 
@@ -66,6 +66,8 @@ The site emphasizes **simplicity and honesty**:
 - Strong focus on real-world use cases
 
 Marketing chrome uses the COLORS.chat Spectrum Mark (`#06B6D4` → `#0D9488` → `#F59E0B`). Catalog family pages and published prices/license counts are not redesigned in brand passes.
+
+The October 2026 storefront-parity work uses Shopify's published Horizon theme as visual reference: predominantly white surfaces, black typography/controls, Inter font, neutral grey dividers, and the verified Shopify homepage hero image. The Spectrum Mark and product-workspace screenshots remain branded accents. Shopping buttons link directly to `https://shop.nocloudgpt.com`, while `colors.chat` is a redirect. See `PUBLIC-WEBSITE-ART-DIRECTION.md` for provenance and review checklist.
 
 ## 90-Day Free Pilot
 
