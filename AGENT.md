@@ -44,9 +44,11 @@ Do **not** work on Phase 5 until a human explicitly says Phase 1 is complete.
 
 ## 4. New Marketing Direction (COLORS.chat + terminal.glass)
 
-COLORS.chat is the customer-facing product (Spectrum Mark + workspace UI). nocloudgpt.com explains private/local deployment. YourCloudGPT explains customer-owned cloud. terminal.glass remains the sales/deployment hub. colors.chat is the Shopify order-now store. colorschat.com is YouTube.
+COLORS.chat is the customer-facing product (Spectrum Mark + workspace UI). nocloudgpt.com explains private/local deployment. YourCloudGPT explains customer-owned cloud. terminal.glass remains the sales/deployment hub. shop.nocloudgpt.com is the connected Shopify storefront; colors.chat redirects to it. colorschat.com is the customer-facing COLORS.chat marketing site (Independent AI and Jets), not just YouTube.
 
 Do not invent new prices. Sunrise Starter $199 / Business $399 / additional Glass License $99. Do not restyle catalog family pages in brand passes.
+
+**October 2026 artwork alignment:** Use the live Shopify Horizon store's white/black/Inter visual foundations; keep the canonical COLORS.chat Spectrum Mark and existing workspace screenshots as accents. Update top-level HTML, shared CSS, and the catalog chrome source rather than mass-editing model editorial content. Source storefront: https://shop.nocloudgpt.com. Do not copy product prices from Shopify onto terminal.glass licensing explainers.
 
 terminal.glass is also a **deterministic, one-script deployment platform** for SEO AI workers and MLOps professionals who want headless operation.
 
