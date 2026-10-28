@@ -384,7 +384,7 @@ footer.site-footer {
   cursor: pointer;
 }
 
- .switch-btn.active {
+.switch-btn.active {
   background: #000000;
   color: #fff;
   border-color: transparent;
