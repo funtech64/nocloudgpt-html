@@ -327,6 +327,14 @@ def cloud_catalog_section_html() -> str:
         name = escape(entry.get("displayName", slug))
         category = escape(entry.get("category", "").replace("-", " "))
         folder = entry.get("folder", f"/models/{slug}/")
+        # Public catalog entries may be active before their editorial page exists.
+        # Never publish a navigation card that leads to a static-site 404.
+        if folder.startswith("/models/"):
+            landing = ROOT / folder.lstrip("/")
+            if folder.endswith("/"):
+                landing = landing / "index.html"
+            if not landing.is_file():
+                continue
         cards.append(
             f'<a href="{escape(folder)}" class="rounded-xl border border-slate-800 bg-slate-950 p-4 hover:border-cyan-500/50 block">'
             f'<div class="text-xs uppercase tracking-wider text-cyan-300">Glass Instance · Ollama Cloud</div>'

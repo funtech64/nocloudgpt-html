@@ -1,0 +1,40 @@
+name: Stage 1 public website checks
+
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'software.html'
+      - 'services.html'
+      - 'contact.html'
+      - 'pricing.html'
+      - 'styles.css'
+      - 'brand/**'
+      - 'models/**'
+      - 'scripts/catalog/**'
+      - 'scripts/site/**'
+      - '.github/workflows/site-stage1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Stage 1 storefront smoke checks
+        run: python3 -m unittest discover -s scripts/site -p 'test_*.py' -v
+      - name: Catalog regression suite
+        run: python3 scripts/catalog/test_catalog_build.py
+      - name: Verify pinned catalog landing is reproducible
+        run: git diff --exit-code -- models/index.html
+      - name: Stage 1 smoke checks after catalog regeneration
+        run: python3 -m unittest discover -s scripts/site -p 'test_*.py' -v
