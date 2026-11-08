@@ -1,4 +1,4 @@
-name: Stage 1 public website checks
+name: Public website checks
 
 on:
   pull_request:
@@ -26,15 +26,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Install Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Stage 1 storefront smoke checks
+      - name: Public website and shared chrome smoke checks
         run: python3 -m unittest discover -s scripts/site -p 'test_*.py' -v
+      - name: Verify shared model chrome is synchronized
+        run: python3 scripts/catalog/sync_public_chrome.py --check
+      - name: Verify Stage 2 preserves editorial bytes against PR base
+        if: github.event_name == 'pull_request' && github.head_ref == 'site/stage-2-public-chrome-2026-10'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python3 scripts/catalog/sync_public_chrome.py --check --verify-editorial-against "$BASE_SHA"
       - name: Catalog regression suite
         run: python3 scripts/catalog/test_catalog_build.py
       - name: Verify pinned catalog landing is reproducible
         run: git diff --exit-code -- models/index.html
-      - name: Stage 1 smoke checks after catalog regeneration
-        run: python3 -m unittest discover -s scripts/site -p 'test_*.py' -v
+      - name: Public website checks after catalog regeneration
+        run: |
+          python3 -m unittest discover -s scripts/site -p 'test_*.py' -v
+          python3 scripts/catalog/sync_public_chrome.py --check
